@@ -123,7 +123,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlutonic.loader,
+            loader: MiniCssExtractPlugin.loader,
             options: {
               name: '[name].[ext]?[hash]',
             }
