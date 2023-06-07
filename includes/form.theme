@@ -6,10 +6,10 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\gin\TonicDescriptionToggle;
-use Drupal\gin\TonicPreRender;
-use Drupal\gin\TonicContentFormHelper;
-use Drupal\gin\TonicSettings;
+use Drupal\tonic\TonicDescriptionToggle;
+use Drupal\tonic\TonicPreRender;
+use Drupal\tonic\TonicContentFormHelper;
+use Drupal\tonic\TonicSettings;
 
 /**
  * Implements form_alter_HOOK() for some major form changes.
@@ -53,7 +53,7 @@ function tonic_form_user_form_alter(&$form, FormStateInterface $form_state) {
     return;
   }
 
-  /** @var \Drupal\gin\TonicSettings $settings */
+  /** @var \Drupal\tonic\TonicSettings $settings */
   $settings = \Drupal::classResolver(TonicSettings::class);
 
   if ($settings->allowUserOverrides()) {
@@ -165,7 +165,7 @@ function tonic_element_info_alter(&$info) {
  * Implements template_preprocess_HOOK() for text_format_wrapper.
  */
 function tonic_preprocess_text_format_wrapper(&$variables) {
-  /** @var \Drupal\gin\TonicSettings $settings */
+  /** @var \Drupal\tonic\TonicSettings $settings */
   $settings = \Drupal::classResolver(TonicSettings::class);
   if ($settings->get('show_description_toggle') && !empty($variables['description'])) {
     $variables['description_display'] = 'invisible';

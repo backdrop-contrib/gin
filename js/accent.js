@@ -3,7 +3,7 @@
 ((Drupal, drupalSettings, once) => {
   Drupal.behaviors.tonicAccent = {
     attach: function attach(context) {
-      once('ginAccent', 'body', context).forEach(() => {
+      once('tonicAccent', 'body', context).forEach(() => {
         // Check Darkmode.
         Drupal.tonicAccent.checkDarkmode();
 
@@ -19,7 +19,7 @@
   Drupal.tonicAccent = {
     setAccentColor: function setAccentColor(preset = null, color = null) {
       const accentColorPreset = preset != null ? preset : drupalSettings.tonic.preset_accent_color;
-      document.body.setAttribute('data-gin-accent', accentColorPreset);
+      document.body.setAttribute('data-tonic-accent', accentColorPreset);
 
       if (accentColorPreset === 'custom') {
         this.setCustomAccentColor(color);
@@ -35,9 +35,9 @@
         const strippedAccentColor = accentColor.replace('#', '');
         const darkAccentColor = this.mixColor('ffffff', strippedAccentColor, 65).replace('#', '');
         const style = document.createElement('style');
-        style.className = 'gin-custom-colors';
+        style.className = 'tonic-custom-colors';
         style.innerHTML = `
-          [data-gin-accent="custom"] {\n\
+          [data-tonic-accent="custom"] {\n\
             --tonic-color-primary-rgb: ${this.hexToRgb(accentColor)};\n\
             --tonic-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n\
             --tonic-color-primary-active: ${this.shadeColor(accentColor, -15)};\n\
@@ -45,8 +45,8 @@
             --tonic-bg-header: ${this.mixColor('ffffff', strippedAccentColor, 85)};\n\
             --tonic-color-sticky-rgb: ${this.hexToRgb(this.mixColor('ffffff', strippedAccentColor, 92))};\n\
           }\n\
-          .tonic--dark-mode[data-gin-accent="custom"],\n\
-          .tonic--dark-mode [data-gin-accent="custom"] {\n\
+          .tonic--dark-mode[data-tonic-accent="custom"],\n\
+          .tonic--dark-mode [data-tonic-accent="custom"] {\n\
             --tonic-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n\
             --tonic-color-primary-hover: ${this.mixColor('ffffff', strippedAccentColor, 55)};\n\
             --tonic-color-primary-active: ${this.mixColor('ffffff', strippedAccentColor, 50)};\n\
@@ -67,7 +67,7 @@
 
     setFocusColor: function setFocusColor(preset = null, color = null) {
       const focusColorPreset = preset != null ? preset : drupalSettings.tonic.preset_focus_color;
-      document.body.setAttribute('data-gin-focus', focusColorPreset);
+      document.body.setAttribute('data-tonic-focus', focusColorPreset);
 
       if (focusColorPreset === 'custom') {
        this.setCustomFocusColor(color);
@@ -84,13 +84,13 @@
         const strippedAccentColor = accentColor.replace('#', '');
         const darkAccentColor = this.mixColor('ffffff', strippedAccentColor, 65);
         const style = document.createElement('style');
-        style.className = 'gin-custom-focus';
+        style.className = 'tonic-custom-focus';
         style.innerHTML = `
-          [data-gin-focus="custom"] {\n\
+          [data-tonic-focus="custom"] {\n\
             --tonic-color-focus: ${accentColor};\n\
           }\n\
-          .tonic--dark-mode[data-gin-focus="custom"],\n\
-          .tonic--dark-mode [data-gin-focus="custom"] {\n\
+          .tonic--dark-mode[data-tonic-focus="custom"],\n\
+          .tonic--dark-mode [data-tonic-focus="custom"] {\n\
             --tonic-color-focus: ${darkAccentColor};\n\
           }`;
 

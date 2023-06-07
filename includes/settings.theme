@@ -6,7 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\gin\TonicSettings;
+use Drupal\tonic\TonicSettings;
 
 /**
  * Custom theme settings.
@@ -33,7 +33,7 @@ function tonic_form_system_theme_settings_alter(&$form, FormStateInterface $form
    * General settings.
    * * //////////////////////////
    */
-  /** @var \Drupal\gin\TonicSettings $settings */
+  /** @var \Drupal\tonic\TonicSettings $settings */
   $settings = \Drupal::classResolver(TonicSettings::class);
 
   $form['custom_settings'] = [

@@ -16,7 +16,7 @@
    */
   Drupal.behaviors.tonicEscapeAdmin = {
     attach: (context) => {
-      once('ginEscapeAdmin', '[data-gin-toolbar-escape-admin]', context).forEach(el => {
+      once('tonicEscapeAdmin', '[data-tonic-toolbar-escape-admin]', context).forEach(el => {
         const escapeAdminPath = sessionStorage.getItem('escapeAdminPath');
 
         if (drupalSettings.path.currentPathIsAdmin && escapeAdminPath !== null) {
@@ -28,7 +28,7 @@
 
   Drupal.tonicToolbar = {
     init: function (context) {
-      once('ginToolbarInit', '#gin-toolbar-bar', context).forEach(() => {
+      once('tonicToolbarInit', '#gin-toolbar-bar', context).forEach(() => {
         const toolbarTrigger = document.querySelector('.toolbar-menu__trigger');
 
         // Check for Drupal trayVerticalLocked and remove it.
@@ -56,7 +56,7 @@
       });
 
       // Toolbar toggle
-      once('ginToolbarToggle', '.toolbar-menu__trigger', context).forEach(el => el.addEventListener('click', e => {
+      once('tonicToolbarToggle', '.toolbar-menu__trigger', context).forEach(el => el.addEventListener('click', e => {
         e.preventDefault();
         this.toggleToolbar();
       }));

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\gin;
+namespace Drupal\tonic;
 
 use Drupal\Component\Plugin\Exception\PluginNotFoundException;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;

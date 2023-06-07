@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\gin;
+namespace Drupal\tonic;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;

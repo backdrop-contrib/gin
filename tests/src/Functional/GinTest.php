@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\gin\Functional;
+namespace Drupal\Tests\tonic\Functional;
 
 use Drupal\Tests\BrowserTestBase;
 

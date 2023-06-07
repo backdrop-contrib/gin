@@ -6,7 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\gin\TonicSettings;
+use Drupal\tonic\TonicSettings;
 
 /**
  * Accent color element.
@@ -15,7 +15,7 @@ function _tonic_accent_radios($element) {
   $options = array_keys($element['#options']);
 
   foreach ($options as $values) {
-    $element[$values]['#attributes']['data-gin-accent'] = $element[$values]['#return_value'];
+    $element[$values]['#attributes']['data-tonic-accent'] = $element[$values]['#return_value'];
   }
 
   return $element;
@@ -31,7 +31,7 @@ function _tonic_toolbar_radios($element) {
 
   foreach ($options as $values) {
     $element[$values]['#attributes']['class'][] = 'toolbar-option__' . $element[$values]['#return_value'];
-    $element[$values]['#attributes']['data-gin-toolbar'] = $element[$values]['#return_value'];
+    $element[$values]['#attributes']['data-tonic-toolbar'] = $element[$values]['#return_value'];
   }
 
   return $element;
@@ -45,7 +45,7 @@ function _tonic_user_form_submit(&$form, FormStateInterface $form_state) {
   $account = $form_state->getBuildInfo()['callback_object']->getEntity();
 
   $enabledUserOverrides = $form_state->getValue('enable_user_settings');
-  /** @var \Drupal\gin\TonicSettings $settings */
+  /** @var \Drupal\tonic\TonicSettings $settings */
   $settings = \Drupal::classResolver(TonicSettings::class);
   if ($enabledUserOverrides) {
     $user_settings = [

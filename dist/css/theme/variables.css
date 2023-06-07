@@ -121,7 +121,7 @@
   }
 }
 
-[data-gin-layout-density=small] {
+[data-tonic-layout-density=small] {
   --tonic-spacing-density-xxs: .15625rem;
   --tonic-spacing-density-xs: .3125rem;
   --tonic-spacing-density-s: .46875rem;
@@ -132,7 +132,7 @@
   --tonic-spacing-density-xxxl: 2.5rem;
 }
 
-[data-gin-layout-density=medium] {
+[data-tonic-layout-density=medium] {
   --tonic-spacing-density-xxs: .1875rem;
   --tonic-spacing-density-xs: .375rem;
   --tonic-spacing-density-s: .5625rem;

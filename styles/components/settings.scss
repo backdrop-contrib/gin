@@ -41,7 +41,7 @@
         }
 
         // Custom
-        &[data-gin-accent="custom"] {
+        &[data-tonic-accent="custom"] {
           background-color: #fff;
           background-image: url(~settings/custom-color.jpg);
           background-size: 100%;
@@ -215,7 +215,7 @@
 [data-drupal-selector="edit-classic-toolbar"] {
   .form-radios .form-item input {
     // Standard: Sidebar
-    &[data-gin-toolbar=vertical] {
+    &[data-tonic-toolbar=vertical] {
       background-image: url(~settings/toolbar_sidebar.png);
 
       .tonic--dark-mode & {
@@ -224,7 +224,7 @@
     }
 
     // Minimal
-    &[data-gin-toolbar=horizontal] {
+    &[data-tonic-toolbar=horizontal] {
       background-image: url(~settings/toolbar_minimal.png);
 
       .tonic--dark-mode & {
@@ -233,7 +233,7 @@
     }
 
     // Classic/Legacy
-    &[data-gin-toolbar=classic] {
+    &[data-tonic-toolbar=classic] {
       background-image: url(~settings/toolbar_legacy.png);
 
       .tonic--dark-mode & {

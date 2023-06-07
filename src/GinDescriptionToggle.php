@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\gin;
+namespace Drupal\tonic;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -14,27 +14,27 @@ class TonicDescriptionToggle implements ContainerInjectionInterface {
   /**
    * The content form helper class.
    *
-   * @var \Drupal\gin\TonicContentFormHelper
+   * @var \Drupal\tonic\TonicContentFormHelper
    */
   protected $contentFormHelper;
 
   /**
    * The tonic theme settings class.
    *
-   * @var \Drupal\gin\TonicSettings
+   * @var \Drupal\tonic\TonicSettings
    */
-  protected $ginSettings;
+  protected $tonicSettings;
 
   /**
    * TonicDescriptionToggle constructor.
    *
-   * @param \Drupal\gin\TonicSettings $ginSettings
+   * @param \Drupal\tonic\TonicSettings $tonicSettings
    *   The tonic theme settings class.
-   * @param \Drupal\gin\TonicContentFormHelper $contentFormHelper
+   * @param \Drupal\tonic\TonicContentFormHelper $contentFormHelper
    *   The content form helper class.
    */
-  public function __construct(TonicSettings $ginSettings, TonicContentFormHelper $contentFormHelper) {
-    $this->ginSettings = $ginSettings;
+  public function __construct(TonicSettings $tonicSettings, TonicContentFormHelper $contentFormHelper) {
+    $this->ginSettings = $tonicSettings;
     $this->contentFormHelper = $contentFormHelper;
   }
 

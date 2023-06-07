@@ -5,9 +5,9 @@
  * page.theme
  */
 
-use Drupal\gin\TonicContentFormHelper;
+use Drupal\tonic\TonicContentFormHelper;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\gin\TonicSettings;
+use Drupal\tonic\TonicSettings;
 use Drupal\node\Entity\Node;
 
 /**
@@ -18,7 +18,7 @@ function tonic_preprocess_page(&$variables) {
   $activeThemeName = \Drupal::theme()->getActiveTheme()->getName();
   $variables['active_admin_theme'] = $activeThemeName;
 
-  /** @var \Drupal\gin\TonicSettings $settings */
+  /** @var \Drupal\tonic\TonicSettings $settings */
   $settings = \Drupal::classResolver(TonicSettings::class);
 
   // Expose Toolbar variant.

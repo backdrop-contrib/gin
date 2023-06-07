@@ -9,7 +9,7 @@
     setAccentColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
       const accentColorPreset = null != preset ? preset : drupalSettings.tonic.preset_accent_color;
-      document.body.setAttribute("data-gin-accent", accentColorPreset), "custom" === accentColorPreset && this.setCustomAccentColor(color);
+      document.body.setAttribute("data-tonic-accent", accentColorPreset), "custom" === accentColorPreset && this.setCustomAccentColor(color);
     },
     setCustomAccentColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
@@ -17,7 +17,7 @@
       if (accentColor) {
         this.clearAccentColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65).replace("#", ""), style = document.createElement("style");
-        style.className = "tonic-custom-colors", style.innerHTML = `\n          [data-gin-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(accentColor)};\n            --tonic-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n            --tonic-color-primary-active: ${this.shadeColor(accentColor, -15)};\n            --tonic-bg-app-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 97))};\n            --tonic-bg-header: ${this.mixColor("ffffff", strippedAccentColor, 85)};\n            --tonic-color-sticky-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 92))};\n          }\n          .tonic--dark-mode[data-gin-accent="custom"],\n          .tonic--dark-mode [data-gin-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n            --tonic-color-primary-hover: ${this.mixColor("ffffff", strippedAccentColor, 55)};\n            --tonic-color-primary-active: ${this.mixColor("ffffff", strippedAccentColor, 50)};\n            --tonic-bg-header: ${this.mixColor("2A2A2D", darkAccentColor, 88)};\n          }\n        `,
+        style.className = "tonic-custom-colors", style.innerHTML = `\n          [data-tonic-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(accentColor)};\n            --tonic-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n            --tonic-color-primary-active: ${this.shadeColor(accentColor, -15)};\n            --tonic-bg-app-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 97))};\n            --tonic-bg-header: ${this.mixColor("ffffff", strippedAccentColor, 85)};\n            --tonic-color-sticky-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 92))};\n          }\n          .tonic--dark-mode[data-tonic-accent="custom"],\n          .tonic--dark-mode [data-tonic-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n            --tonic-color-primary-hover: ${this.mixColor("ffffff", strippedAccentColor, 55)};\n            --tonic-color-primary-active: ${this.mixColor("ffffff", strippedAccentColor, 50)};\n            --tonic-bg-header: ${this.mixColor("2A2A2D", darkAccentColor, 88)};\n          }\n        `,
         element.append(style);
       }
     },
@@ -31,7 +31,7 @@
     setFocusColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
       const focusColorPreset = null != preset ? preset : drupalSettings.tonic.preset_focus_color;
-      document.body.setAttribute("data-gin-focus", focusColorPreset), "custom" === focusColorPreset && this.setCustomFocusColor(color);
+      document.body.setAttribute("data-tonic-focus", focusColorPreset), "custom" === focusColorPreset && this.setCustomFocusColor(color);
     },
     setCustomFocusColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
@@ -39,7 +39,7 @@
       if (accentColor) {
         this.clearFocusColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65), style = document.createElement("style");
-        style.className = "tonic-custom-focus", style.innerHTML = `\n          [data-gin-focus="custom"] {\n            --tonic-color-focus: ${accentColor};\n          }\n          .tonic--dark-mode[data-gin-focus="custom"],\n          .tonic--dark-mode [data-gin-focus="custom"] {\n            --tonic-color-focus: ${darkAccentColor};\n          }`,
+        style.className = "tonic-custom-focus", style.innerHTML = `\n          [data-tonic-focus="custom"] {\n            --tonic-color-focus: ${accentColor};\n          }\n          .tonic--dark-mode[data-tonic-focus="custom"],\n          .tonic--dark-mode [data-tonic-focus="custom"] {\n            --tonic-color-focus: ${darkAccentColor};\n          }`,
         element.append(style);
       }
     },

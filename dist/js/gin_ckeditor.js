@@ -15,14 +15,14 @@
           void 0 === CKEDITOR.skinName && (CKEDITOR.skinName = CKEDITOR.skin.name), CKEDITOR.config.contextmenu_contentsCss.push(CKEDITOR.skin.getPath("editor"), variablesCss, accentCss, contentsCss)),
           CKEDITOR.on("instanceReady", (element => {
             const editor = element.editor;
-            editor.document.$.body.setAttribute("data-gin-accent", accentColorPreset), "custom" === accentColorPreset && accentColor && Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head),
+            editor.document.$.body.setAttribute("data-tonic-accent", accentColorPreset), "custom" === accentColorPreset && accentColor && Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head),
             editor.on("mode", (function() {
-              "wysiwyg" == this.mode && (editor.document.$.body.setAttribute("data-gin-accent", accentColorPreset),
+              "wysiwyg" == this.mode && (editor.document.$.body.setAttribute("data-tonic-accent", accentColorPreset),
               "custom" === accentColorPreset && accentColor && Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head),
               "auto" === localStorage.getItem("Drupal.tonic.darkmode") && (window.matchMedia("(prefers-color-scheme: dark)").matches ? editor.document.$.body.classList.add(darkmodeClass) : editor.document.$.body.classList.remove(darkmodeClass)));
             })), editor.on("menuShow", (function(element) {
               const darkModeClass = 1 == localStorage.getItem("Drupal.tonic.darkmode") || "auto" === localStorage.getItem("Drupal.tonic.darkmode") && window.matchMedia("(prefers-color-scheme: dark)").matches ? darkmodeClass : "", iframeElement = element.data[0].element.$.childNodes[0].contentWindow.document;
-              darkModeClass && iframeElement.body.classList.add(darkModeClass), iframeElement.body.setAttribute("data-gin-accent", accentColorPreset),
+              darkModeClass && iframeElement.body.classList.add(darkModeClass), iframeElement.body.setAttribute("data-tonic-accent", accentColorPreset),
               "custom" === accentColorPreset && accentColor && Drupal.tonicAccent.setCustomAccentColor(accentColor, iframeElement.head);
             })), window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e => {
               e.matches && "auto" === localStorage.getItem("Drupal.tonic.darkmode") && (editor.document.$.body.classList.add(darkmodeClass),

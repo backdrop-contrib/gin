@@ -41,7 +41,7 @@
   box-shadow: inset 0 0 0 2px var(--tonic-bg-layer), inset 0 0 0 4px var(--tonic-color-primary);
 }
 
-[data-drupal-selector=edit-preset-accent-color] .form-radios .form-item--preset-accent-color input[data-gin-accent=custom] {
+[data-drupal-selector=edit-preset-accent-color] .form-radios .form-item--preset-accent-color input[data-tonic-accent=custom] {
   background-color: #fff;
   background-image: url(../../media/settings/custom-color.jpg);
   background-size: 100%;
@@ -49,7 +49,7 @@
   border-color: var(--tonic-border-color);
 }
 
-[data-drupal-selector=edit-preset-accent-color] .form-radios .form-item--preset-accent-color input[data-gin-accent=custom]:checked {
+[data-drupal-selector=edit-preset-accent-color] .form-radios .form-item--preset-accent-color input[data-tonic-accent=custom]:checked {
   background-color: #fff;
   border-color: var(--tonic-border-color);
   border-width: 1px;
@@ -257,27 +257,27 @@
   margin-bottom: var(--tonic-spacing-m);
 }
 
-[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=vertical] {
+[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=vertical] {
   background-image: url(../../media/settings/toolbar_sidebar.png);
 }
 
-.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=vertical] {
+.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=vertical] {
   background-image: url(../../media/settings/toolbar_sidebar_darkmode.png);
 }
 
-[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=horizontal] {
+[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=horizontal] {
   background-image: url(../../media/settings/toolbar_minimal.png);
 }
 
-.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=horizontal] {
+.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=horizontal] {
   background-image: url(../../media/settings/toolbar_minimal_darkmode.png);
 }
 
-[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=classic] {
+[data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=classic] {
   background-image: url(../../media/settings/toolbar_legacy.png);
 }
 
-.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-gin-toolbar=classic] {
+.tonic--dark-mode [data-drupal-selector=edit-classic-toolbar] .form-radios .form-item input[data-tonic-toolbar=classic] {
   background-image: url(../../media/settings/toolbar_legacy_darkmode.png);
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\gin;
+namespace Drupal\tonic;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
@@ -142,7 +142,7 @@ class TonicContentFormHelper implements ContainerInjectionInterface {
         '#multilingual' => TRUE,
         '#attributes' => [
           'class' => [
-            'gin-sticky',
+            'tonic-sticky',
           ],
         ],
       ];
@@ -172,7 +172,7 @@ class TonicContentFormHelper implements ContainerInjectionInterface {
         '#multilingual' => TRUE,
         '#attributes' => [
           'class' => [
-            'gin-sidebar',
+            'tonic-sidebar',
           ],
         ],
       ];
@@ -209,7 +209,7 @@ class TonicContentFormHelper implements ContainerInjectionInterface {
     $form['#attached']['library'][] = 'tonic/edit_form';
 
     // Add a class that allows the logic in edit_form.js to identify the form.
-    $form['#attributes']['class'][] = 'gin-node-edit-form';
+    $form['#attributes']['class'][] = 'tonic-node-edit-form';
 
     // If not logged in hide changed and author node info on add forms.
     $not_logged_in = $this->currentUser->isAnonymous();

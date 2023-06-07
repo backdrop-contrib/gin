@@ -9,7 +9,7 @@
 
   Drupal.tonicCKEditor = {
     init: (context) => {
-      once('ginCKEditors', 'body', context).forEach(() => {
+      once('tonicCKEditors', 'body', context).forEach(() => {
         if (window.CKEDITOR && CKEDITOR !== undefined) {
           // If on CKEditor config, do nothing.
           if (drupalSettings.path.currentPath.indexOf('admin/config/content/formats/manage') > -1) {
@@ -62,7 +62,7 @@
             const editor = element.editor;
 
             // Initial accent color.
-            editor.document.$.body.setAttribute('data-gin-accent', accentColorPreset);
+            editor.document.$.body.setAttribute('data-tonic-accent', accentColorPreset);
 
             if (accentColorPreset === 'custom' && accentColor) {
               Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head);
@@ -71,7 +71,7 @@
             // Change from Code to Editor.
             editor.on('mode', function() {
               if (this.mode == 'wysiwyg') {
-                editor.document.$.body.setAttribute('data-gin-accent', accentColorPreset);
+                editor.document.$.body.setAttribute('data-tonic-accent', accentColorPreset);
 
                 if (accentColorPreset === 'custom' && accentColor) {
                   Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head);
@@ -98,7 +98,7 @@
                 iframeElement.body.classList.add(darkModeClass);
               }
 
-              iframeElement.body.setAttribute('data-gin-accent', accentColorPreset);
+              iframeElement.body.setAttribute('data-tonic-accent', accentColorPreset);
 
               if (accentColorPreset === 'custom' && accentColor) {
                 Drupal.tonicAccent.setCustomAccentColor(accentColor, iframeElement.head);

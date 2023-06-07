@@ -20,7 +20,7 @@
  * @see template_preprocess_toolbar()
  */
 #}
-{% set tonic_toolbar_id = toolbar_variant != 'classic' ? 'gin-toolbar-bar' : 'toolbar-bar' %}
+{% set tonic_toolbar_id = toolbar_variant != 'classic' ? 'tonic-toolbar-bar' : 'toolbar-bar' %}
 <div{{ attributes.addClass('toolbar') }}>
   <nav{{ toolbar_attributes.addClass('toolbar-bar', 'clearfix').setAttribute('id', tonic_toolbar_id) }}>
     <h2 class="visually-hidden">{{ toolbar_heading }}</h2>

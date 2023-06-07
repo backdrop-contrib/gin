@@ -7,7 +7,7 @@
 
   Drupal.tonicTableHeader = {
     init: function (context) {
-      once('ginTableHeader', '.sticky-enabled', context).forEach(el => {
+      once('tonicTableHeader', '.sticky-enabled', context).forEach(el => {
         // Watch sticky table header.
         const stickyOffsetTop = this.stickyPosition();
         const observer = new IntersectionObserver(

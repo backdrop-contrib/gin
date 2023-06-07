@@ -13,7 +13,7 @@
 
   Drupal.tonicSidebar = {
     init: function (context) {
-      once('ginSidebarInit', '#tonic_sidebar', context).forEach(() => {
+      once('tonicSidebarInit', '#tonic_sidebar', context).forEach(() => {
         // If variable does not exist, create it, default being to show sidebar.
         if (!localStorage.getItem(storageDesktop)) {
           localStorage.setItem(storageDesktop, 'true');
@@ -41,14 +41,14 @@
       });
 
       // Toolbar toggle
-      once('ginSidebarToggle', '.meta-sidebar__trigger', context).forEach(el => el.addEventListener('click', e => {
+      once('tonicSidebarToggle', '.meta-sidebar__trigger', context).forEach(el => el.addEventListener('click', e => {
         e.preventDefault();
         this.removeInlineStyles();
         this.toggleSidebar();
       }));
 
       // Toolbar close
-      once('ginSidebarClose', '.meta-sidebar__close, .meta-sidebar__overlay', context).forEach(el => el.addEventListener('click', e => {
+      once('tonicSidebarClose', '.meta-sidebar__close, .meta-sidebar__overlay', context).forEach(el => el.addEventListener('click', e => {
         e.preventDefault();
         this.removeInlineStyles();
         this.collapseSidebar();

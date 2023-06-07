@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // Toolbar Check.
 if (localStorage.getItem('Drupal.tonic.toolbarExpanded')) {
   const style = document.createElement('style');
-  const className = 'gin-toolbar-inline-styles';
+  const className = 'tonic-toolbar-inline-styles';
   style.className = className;
 
   if (localStorage.getItem('Drupal.tonic.toolbarExpanded') === 'true') {
@@ -76,7 +76,7 @@ if (localStorage.getItem('Drupal.tonic.toolbarExpanded')) {
 // Sidebar check.
 if (localStorage.getItem('Drupal.tonic.sidebarExpanded.desktop')) {
   const style = document.createElement('style');
-  const className = 'gin-sidebar-inline-styles';
+  const className = 'tonic-sidebar-inline-styles';
   style.className = className;
 
   if (window.innerWidth < 1024 || localStorage.getItem('Drupal.tonic.sidebarExpanded.desktop') === 'false') {

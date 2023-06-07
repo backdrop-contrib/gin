@@ -36,7 +36,7 @@ function tonic_preprocess_breadcrumb(&$variables) {
         }
         else {
           // Let escapeAdmin override the return URL.
-          $variables['breadcrumb'][$key]['attributes']['data'] = 'data-gin-toolbar-escape-admin';
+          $variables['breadcrumb'][$key]['attributes']['data'] = 'data-tonic-toolbar-escape-admin';
         }
       }
       elseif ($item['url'] === $url) {

@@ -79,7 +79,7 @@
   }
 
   // Spacings
-  @each $name, $size in $ginSpacings {
+  @each $name, $size in $tonicSpacings {
     --tonic-spacing-#{$name}: #{rem($size)};
   }
 
@@ -149,16 +149,16 @@
 }
 
 // Density spacings
-@each $name, $density in $ginLayoutDensity {
+@each $name, $density in $tonicLayoutDensity {
   @if $name == 'default' {
     :root {
-      @each $name, $size in $ginSpacings {
+      @each $name, $size in $tonicSpacings {
         --tonic-spacing-density-#{$name}: #{rem($size * $density)};
       }
     }
   } @else {
-    [data-gin-layout-density=#{$name}] {
-      @each $name, $size in $ginSpacings {
+    [data-tonic-layout-density=#{$name}] {
+      @each $name, $size in $tonicSpacings {
         --tonic-spacing-density-#{$name}: #{rem($size * $density)};
       }
     }

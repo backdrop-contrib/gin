@@ -1,4 +1,4 @@
-[data-gin-accent] {
+[data-tonic-accent] {
   --tonic-color-primary: rgb(var(--tonic-color-primary-rgb));
   --tonic-color-primary-light: rgba(var(--tonic-color-primary-rgb), .15);
   --tonic-bg-app: rgb(var(--tonic-bg-app-rgb));
@@ -8,14 +8,14 @@
   --tonic-shadow-primary-light: rgba(var(--tonic-color-primary-rgb), .45);
 }
 
-.tonic--dark-mode[data-gin-accent],
-.tonic--dark-mode [data-gin-accent] {
+.tonic--dark-mode[data-tonic-accent],
+.tonic--dark-mode [data-tonic-accent] {
   --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .08);
   --tonic-bg-app-rgb: #{color.red($colorDarkAppBackground)}, #{color.green($colorDarkAppBackground)}, #{color.blue($colorDarkAppBackground)};
 }
 
 // Light mode
-$ginColors: (
+$tonicColors: (
   blue: #0550e6,
   light_blue: #3275e0,
   dark_purple: #4300bf,
@@ -30,8 +30,8 @@ $ginColors: (
   custom: #111111,
 );
 
-@each $name, $color in $ginColors {
-  [data-gin-accent=#{'' + $name}] {
+@each $name, $color in $tonicColors {
+  [data-tonic-accent=#{'' + $name}] {
     $bgColor: mix(white, $color, 97%);
     $lightColor: mix(white, $color, 80%);
     $stickyColor: mix(white, $color, 92%);
@@ -54,7 +54,7 @@ $ginColors: (
 }
 
 // Dark mode
-$ginDarkmodeColors: (
+$tonicDarkmodeColors: (
   blue: #90aeef,
   claro_blue: #7391d8,
   light_blue: #82bfe8,
@@ -70,11 +70,11 @@ $ginDarkmodeColors: (
   custom: #ffffff,
 );
 
-@each $name, $color in $ginDarkmodeColors {
+@each $name, $color in $tonicDarkmodeColors {
   $lightColor: mix(#2A2A2D, $color, 80%);
 
-  .tonic--dark-mode[data-gin-accent=#{'' + $name}],
-  .tonic--dark-mode [data-gin-accent=#{'' + $name}] {
+  .tonic--dark-mode[data-tonic-accent=#{'' + $name}],
+  .tonic--dark-mode [data-tonic-accent=#{'' + $name}] {
     --tonic-color-primary-rgb: #{color.red($color)}, #{color.green($color)}, #{color.blue($color)};
     --tonic-color-primary-light-rgb: #{color.red($lightColor)}, #{color.green($lightColor)}, #{color.blue($lightColor)};
     --tonic-color-primary-hover: #{mix(white, $color, 10%)};
@@ -119,7 +119,7 @@ $ginDarkmodeColors: (
 }
 
 // Focus
-$ginFocusColors: (
+$tonicFocusColors: (
   green: rgba(8, 163, 144, .6), //= #08a390
   claro: rgba(38, 167, 105, .6), //= #26a769
   orange: rgba(236, 124, 87, .6), //= #ec7c57
@@ -127,8 +127,8 @@ $ginFocusColors: (
   accent: rgba(var(--tonic-color-primary-rgb), .6),
 );
 
-@each $name, $color in $ginFocusColors {
-  [data-gin-focus=#{'' + $name}] {
+@each $name, $color in $tonicFocusColors {
+  [data-tonic-focus=#{'' + $name}] {
     --tonic-color-focus: #{$color};
   }
 }

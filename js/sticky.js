@@ -5,7 +5,7 @@
 ((Drupal) => {
   Drupal.behaviors.tonicSticky = {
     attach: (context) => {
-      const tonicSticky = once('ginSticky', document.querySelectorAll('.region-sticky-watcher'));
+      const tonicSticky = once('tonicSticky', document.querySelectorAll('.region-sticky-watcher'));
       tonicSticky.forEach(() => {
         // Watch sticky header
         const observer = new IntersectionObserver(

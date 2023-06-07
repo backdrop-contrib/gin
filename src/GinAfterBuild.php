@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\gin;
+namespace Drupal\tonic;
 
 use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\Core\Url;
@@ -21,7 +21,7 @@ class TonicAfterBuild implements TrustedCallbackInterface {
    */
   public static function overriddenSettingByUser(array $element) {
 
-    /** @var \Drupal\gin\TonicSettings $settings */
+    /** @var \Drupal\tonic\TonicSettings $settings */
     $settings = \Drupal::classResolver(TonicSettings::class);
 
     // Check if this is overridden by the logged in user.

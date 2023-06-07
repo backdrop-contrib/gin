@@ -14,7 +14,7 @@
 
   Drupal.tonicMessages = {
     dismissMessages: (context = document) => {
-      once('gin-messages-dismiss', '.messages .button--dismiss', context).forEach(dismissButton => {
+      once('tonic-messages-dismiss', '.messages .button--dismiss', context).forEach(dismissButton => {
         dismissButton.addEventListener('click', e => {
           e.preventDefault();
           const message = e.currentTarget.closest('.messages-list__item');

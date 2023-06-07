@@ -5,8 +5,8 @@
  * html.theme
  */
 
-use Drupal\gin\TonicContentFormHelper;
-use Drupal\gin\TonicSettings;
+use Drupal\tonic\TonicContentFormHelper;
+use Drupal\tonic\TonicSettings;
 
 /**
  * Implements hook_preprocess_HOOK() for html.
@@ -17,15 +17,15 @@ function tonic_preprocess_html(&$variables) {
 
   if ($tonic_activated) {
     // Get theme settings.
-    /** @var \Drupal\gin\TonicSettings $settings */
+    /** @var \Drupal\tonic\TonicSettings $settings */
     $settings = \Drupal::classResolver(TonicSettings::class);
     $toolbar = $settings->get('classic_toolbar');
 
     // Set accent color.
-    $variables['attributes']['data-gin-accent'] = $settings->get('preset_accent_color');
+    $variables['attributes']['data-tonic-accent'] = $settings->get('preset_accent_color');
 
     // Set focus color.
-    $variables['attributes']['data-gin-focus'] = $settings->get('preset_focus_color');
+    $variables['attributes']['data-tonic-focus'] = $settings->get('preset_focus_color');
 
     // High contrast mode.
     if ($settings->get('high_contrast_mode')) {
@@ -33,7 +33,7 @@ function tonic_preprocess_html(&$variables) {
     }
 
     // Set layout density.
-    $variables['attributes']['data-gin-layout-density'] = $settings->get('layout_density');
+    $variables['attributes']['data-tonic-layout-density'] = $settings->get('layout_density');
 
     // Edit form? Use the new Tonic Edit form layout.
     if (\Drupal::classResolver(TonicContentFormHelper::class)->isContentForm()) {
