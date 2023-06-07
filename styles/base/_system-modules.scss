@@ -1,15 +1,15 @@
 .system-modules,
 .system-modules-uninstall {
   label {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
   }
 
   details {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 }
 
 .admin-requirements,
 .admin-required {
-  color: var(--gin-color-text-light);
+  color: var(--tonic-color-text-light);
 }

@@ -1,25 +1,25 @@
 body.cke_editable_themed {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
 
-  &.gin--dark-mode {
-    background-color: var(--gin-bg-layer2);
+  &.tonic--dark-mode {
+    background-color: var(--tonic-bg-layer2);
   }
 }
 
 a {
-  color: var(--gin-color-primary);
+  color: var(--tonic-color-primary);
 }
 
 .cke_panel_grouptitle {
-  color: var(--gin-color-title);
-  background: var(--gin-bg-layer2);
+  color: var(--tonic-color-title);
+  background: var(--tonic-bg-layer2);
 }
 
 .cke_panel_listItem.cke_selected a,
 .cke_panel_listItem a:hover,
 .cke_panel_listItem a:focus,
 .cke_panel_listItem a:active {
-  background-color: var(--gin-color-primary-light);
+  background-color: var(--tonic-color-primary-light);
 }
 
 .cke_editable {
@@ -28,33 +28,33 @@ a {
 
 /* CKE Context Menu */
 .cke_panel_block {
-  border-color: var(--gin-border-color-form-element);
-  border-radius: var(--gin-border-m);
+  border-color: var(--tonic-border-color-form-element);
+  border-radius: var(--tonic-border-m);
 
   .cke_menu {
     .cke_menubutton_icon {
-      background-color: var(--gin-bg-app);
+      background-color: var(--tonic-bg-app);
       .cke_button_icon {
-        .gin--dark-mode & {
+        .tonic--dark-mode & {
           filter: invert(1);
         }
       }
     }
     .cke_menubutton_label {
-      color: var(--gin-color-text);
+      color: var(--tonic-color-text);
     }
     .cke_menubutton_shortcut {
-      color: var(--gin-color-text-light);
+      color: var(--tonic-color-text-light);
     }
 
     a {
       &:hover,
       &:focus,
       &:active {
-        background-color: var(--gin-color-primary-light);
+        background-color: var(--tonic-color-primary-light);
 
         .cke_menubutton_icon {
-          background-color: var(--gin-color-primary-light);
+          background-color: var(--tonic-color-primary-light);
         }
       }
     }

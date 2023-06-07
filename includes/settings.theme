@@ -6,12 +6,12 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\gin\GinSettings;
+use Drupal\gin\TonicSettings;
 
 /**
  * Custom theme settings.
  */
-function gin_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+function tonic_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
     return;
@@ -33,8 +33,8 @@ function gin_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
    * General settings.
    * * //////////////////////////
    */
-  /** @var \Drupal\gin\GinSettings $settings */
-  $settings = \Drupal::classResolver(GinSettings::class);
+  /** @var \Drupal\gin\TonicSettings $settings */
+  $settings = \Drupal::classResolver(TonicSettings::class);
 
   $form['custom_settings'] = [
     '#type' => 'details',
@@ -45,7 +45,7 @@ function gin_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
   // Allow user settings.
   $form['custom_settings']['show_user_theme_settings'] = [
     '#type' => 'checkbox',
-    '#title' => t('Users can override Gin settings'),
+    '#title' => t('Users can override Tonic settings'),
     '#description' => t('Expose the admin theme settings to users.'),
     '#default_value' => $settings->getDefault('show_user_theme_settings'),
   ];
@@ -62,18 +62,18 @@ function gin_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
   if ($settings->getDefault('icon_default') === FALSE) {
     $form['logo']['default_logo']['#default_value'] = FALSE;
     $form['logo']['settings']['logo_path']['#default_value'] = $settings->getDefault('icon_path');
-    $form['#submit'][] = '_gin_form_system_theme_settings_form_submit';
+    $form['#submit'][] = '_tonic_form_system_theme_settings_form_submit';
   }
 
   // Attach custom library.
-  $form['#attached']['library'][] = 'gin/settings';
+  $form['#attached']['library'][] = 'tonic/settings';
 }
 
 /**
  * Cleanup settings.
  */
-function _gin_form_system_theme_settings_form_submit(&$form, FormStateInterface $form_state) {
-  $config = \Drupal::configFactory()->getEditable('gin.settings');
+function _tonic_form_system_theme_settings_form_submit(&$form, FormStateInterface $form_state) {
+  $config = \Drupal::configFactory()->getEditable('tonic.settings');
   $config->clear('icon_path')
     ->clear('icon_default')
     ->save();

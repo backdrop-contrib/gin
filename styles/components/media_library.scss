@@ -3,7 +3,7 @@
   &-item &-item__edit,
   &-item &-item__remove,
   &-item &-item__remove.button {
-    border-color: var(--gin-border-color) !important;
+    border-color: var(--tonic-border-color) !important;
 
     &:link,
     &:hover,
@@ -16,8 +16,8 @@
     &:hover,
     &:focus,
     &:active {
-      box-shadow: 0 0 0 1px var(--gin-color-focus-border),
-                  0 0 0 4px var(--gin-color-focus) !important;
+      box-shadow: 0 0 0 1px var(--tonic-color-focus-border),
+                  0 0 0 4px var(--tonic-color-focus) !important;
     }
 
     &,
@@ -26,7 +26,7 @@
     &:active {
       width: 32px;
       height: 32px;
-      margin: var(--gin-spacing-s);
+      margin: var(--tonic-spacing-s);
       background-color: white;
       border-radius: 50%;
       box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
@@ -59,7 +59,7 @@
   }
 
   &--grid {
-    border-radius: var(--gin-border-xl);
+    border-radius: var(--tonic-border-xl);
 
     &::before,
     &.is-hover::before,
@@ -70,7 +70,7 @@
 
     // User is dragging item.
     &.sortable-chosen {
-      background: var(--gin-bg-layer);
+      background: var(--tonic-bg-layer);
       box-shadow: 0 0 48px rgba(0, 0, 0, 0.075) !important;
       outline: none;
 
@@ -82,7 +82,7 @@
 
     // Show where to drag to.
     &.sortable-ghost {
-      border: 2px dashed var(--gin-border-color);
+      border: 2px dashed var(--tonic-border-color);
     }
   }
 
@@ -100,7 +100,7 @@
   }
 
   &__name {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
     word-break: break-all;
     text-overflow: initial;
     white-space: initial;
@@ -110,11 +110,11 @@
 
   &__attributes {
     position: static;
-    padding: var(--gin-spacing-xs);
+    padding: var(--tonic-spacing-xs);
     background: none;
   }
 
-  // Hide Claro outline, we use Gin's instead
+  // Hide Claro outline, we use Tonic's instead
   &:focus &__preview-wrapper {
     box-shadow: none;
   }
@@ -122,8 +122,8 @@
   & &__preview {
     position: relative;
     padding-bottom: 100%;
-    border: 1px solid var(--gin-border-color);
-    border-radius: var(--gin-border-xl);
+    border: 1px solid var(--tonic-border-color);
+    border-radius: var(--tonic-border-xl);
     overflow: hidden;
 
     .field {
@@ -139,25 +139,25 @@
   }
 
   &.is-hover &__preview {
-    border-color: var(--gin-color-text);
-    box-shadow: 0 0 0 2px var(--gin-color-text);
+    border-color: var(--tonic-color-text);
+    box-shadow: 0 0 0 2px var(--tonic-color-text);
   }
 
   &.checked &__preview,
   &.is-active &__preview {
-    border-color: var(--gin-color-primary);
-    box-shadow: 0 0 0 2px var(--gin-color-primary);
+    border-color: var(--tonic-color-primary);
+    box-shadow: 0 0 0 2px var(--tonic-color-primary);
   }
 
   &__click-to-select-checkbox .form-boolean {
     width: 29px;
     height: 29px;
-    border-radius: var(--gin-border-xs);
+    border-radius: var(--tonic-border-xs);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
 
     &,
-    .gin--dark-mode & {
-      border-radius: var(--gin-border-xs);
+    .tonic--dark-mode & {
+      border-radius: var(--tonic-border-xs);
 
       &:not(:checked) {
         background-color: white;
@@ -168,19 +168,19 @@
       }
 
       &:focus {
-        box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus) !important;
+        box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus) !important;
       }
 
       &:checked {
-        background-color: var(--gin-color-primary);
-        border-color: var(--gin-color-primary);
+        background-color: var(--tonic-color-primary);
+        border-color: var(--tonic-color-primary);
         box-shadow: none;
       }
     }
   }
 
   .form-item {
-    margin: var(--gin-spacing-xs);
+    margin: var(--tonic-spacing-xs);
   }
 
   // Drupal 9.2 Throbber Fix
@@ -195,8 +195,8 @@
 
 fieldset.media-library-widget {
   .media-library-widget__toggle-weight {
-    font-size: var(--gin-font-size-xxs);
-    padding: var(--gin-spacing-xs);
+    font-size: var(--tonic-font-size-xxs);
+    padding: var(--tonic-spacing-xs);
   }
 
   .media-library {
@@ -204,14 +204,14 @@ fieldset.media-library-widget {
     &-item .media-library-item__edit,
     &-item .media-library-item__remove,
     &-item .media-library-item__remove.button {
-      margin: var(--gin-spacing-xs);
+      margin: var(--tonic-spacing-xs);
     }
   }
 }
 
 .media-library-widget-empty-text {
-  color: var(--gin-color-text-light);
-  margin: 0 0 calc(var(--gin-spacing-xs) * -1) 0;
+  color: var(--tonic-color-text-light);
+  margin: 0 0 calc(var(--tonic-spacing-xs) * -1) 0;
 }
 
 .media-library-open-button {
@@ -220,7 +220,7 @@ fieldset.media-library-widget {
 
 .media-library-add-form {
   &__preview {
-    background: var(--gin-bg-app);
+    background: var(--tonic-bg-app);
   }
 
   &__input-wrapper {
@@ -243,13 +243,13 @@ fieldset.media-library-widget {
 }
 
 .media-library-menu {
-  border-color: var(--gin-border-color);
-  background-color: var(--gin-bg-app);
+  border-color: var(--tonic-border-color);
+  background-color: var(--tonic-bg-app);
 
   &__link {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
     text-shadow: none;
-    border-color: var(--gin-border-color);
+    border-color: var(--tonic-border-color);
     background-color: transparent;
 
     &:active,
@@ -259,43 +259,43 @@ fieldset.media-library-widget {
     &:hover:focus,
     &.active:hover,
     &.active:focus {
-      color: var(--gin-color-primary);
+      color: var(--tonic-color-primary);
       text-shadow: none;
-      background-color: var(--gin-bg-layer);
+      background-color: var(--tonic-bg-layer);
       border-right: 0 none;
-      border-bottom: 1px solid var(--gin-border-color);
+      border-bottom: 1px solid var(--tonic-border-color);
       box-shadow: none;
     }
 
     &.active::before {
-      border-left-color: var(--gin-color-primary);
+      border-left-color: var(--tonic-color-primary);
     }
 
     &:focus::after {
-      border: var(--gin-border-xs) solid var(--gin-color-focus);
+      border: var(--tonic-border-xs) solid var(--tonic-color-focus);
     }
   }
 }
 
 + .media-library-content {
-  border-left: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--tonic-border-color);
 }
 
 .media-library-view {
   .view-header {
-    padding: var(--gin-spacing-m);
-    color: var(--gin-color-text);
+    padding: var(--tonic-spacing-m);
+    color: var(--tonic-color-text);
     text-decoration: none;
-    background: var(--gin-bg-layer3);
-    border-radius: var(--gin-border-m);
-    box-shadow: var(--gin-shadow-l1);
+    background: var(--tonic-bg-layer3);
+    border-radius: var(--tonic-border-m);
+    box-shadow: var(--tonic-shadow-l1);
   }
 }
 
 .media-library-wrapper {
   .views-display-link {
     position: relative;
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
     text-decoration: none;
     background-image: none;
     white-space: nowrap;
@@ -308,14 +308,14 @@ fieldset.media-library-widget {
       position: absolute;
       left: 0;
       top: 1px;
-      background-color: var(--gin-color-text);
+      background-color: var(--tonic-color-text);
     }
 
     &.is-active {
-      color: var(--gin-color-primary);
+      color: var(--tonic-color-primary);
 
       &::before {
-        background-color: var(--gin-color-primary);
+        background-color: var(--tonic-color-primary);
       }
     }
   }
@@ -335,23 +335,23 @@ fieldset.media-library-widget {
 
 .media-library-content {
   border-left: 0 none;
-  border-color: var(--gin-border-color);
+  border-color: var(--tonic-border-color);
 }
 
 .media-library-select-all {
-  color: var(--gin-color-title);
+  color: var(--tonic-color-title);
   padding: 1rem;
   margin-left: 0;
   margin-top: 0;
-  background: var(--gin-bg-layer);
-  border-bottom-left-radius: var(--gin-border-m);
-  border-bottom-right-radius: var(--gin-border-m);
+  background: var(--tonic-bg-layer);
+  border-bottom-left-radius: var(--tonic-border-m);
+  border-bottom-right-radius: var(--tonic-border-m);
   box-sizing: border-box;
 
   @include mq(medium) {
     z-index: 98;
     position: sticky;
-    top: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset));
+    top: calc(var(--tonic-toolbar-y-offset) + var(--tonic-sticky-offset));
   }
 }
 
@@ -365,8 +365,8 @@ fieldset.media-library-widget {
 .ui-dialog {
   .views-exposed-form,
   .views-form {
-    .gin--dark-mode & {
-      background: var(--gin-bg-layer2);
+    .tonic--dark-mode & {
+      background: var(--tonic-bg-layer2);
     }
   }
 }
@@ -386,7 +386,7 @@ fieldset.media-library-widget {
     margin-top: 0;
 
     .button:not(:last-child) {
-      margin-right: var(--gin-spacing-xs);
+      margin-right: var(--tonic-spacing-xs);
     }
   }
 
@@ -410,13 +410,13 @@ fieldset.media-library-widget {
 .field--name-field-media {
   &.field--widget-entity-reference-autocomplete {
     fieldset.form-item {
-      padding: var(--gin-spacing-xl) calc(var(--gin-spacing-l) - var(--gin-spacing-xxs)) var(--gin-spacing-m) calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
-      border: 1px solid var(--gin-border-color);
+      padding: var(--tonic-spacing-xl) calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs)) var(--tonic-spacing-m) calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs));
+      border: 1px solid var(--tonic-border-color);
 
       > legend {
-        font-weight: var(--gin-font-weight-heavy);
+        font-weight: var(--tonic-font-weight-heavy);
         position: relative;
-        top: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
+        top: calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs));
         transform: translateY(50%);
 
         &::before {
@@ -425,9 +425,9 @@ fieldset.media-library-widget {
           width: 100%;
           height: 1px;
           position: absolute;
-          top: calc((var(--gin-spacing-l) - var(--gin-spacing-xxs)) * -1);
+          top: calc((var(--tonic-spacing-l) - var(--tonic-spacing-xxs)) * -1);
           left: 0;
-          background: var(--gin-border-color);
+          background: var(--tonic-border-color);
         }
       }
 
@@ -441,5 +441,5 @@ fieldset.media-library-widget {
 }
 
 .media-library-selected-count {
-  color: var(--gin-color-text-light);
+  color: var(--tonic-color-text-light);
 }

@@ -1,11 +1,11 @@
 ((Drupal, once) => {
-  Drupal.behaviors.ginMediaLibrary = {
+  Drupal.behaviors.tonicMediaLibrary = {
     attach: function attach() {
-      Drupal.ginMediaLibrary.init();
+      Drupal.tonicMediaLibrary.init();
     },
   };
 
-  Drupal.ginMediaLibrary = {
+  Drupal.tonicMediaLibrary = {
     init: function () {
       once('media-library-select-all', '.js-media-library-view[data-view-display-id="page"]').forEach(el => {
         if (el.querySelectorAll('.js-media-library-item').length) {
@@ -58,7 +58,7 @@
               selectAll.dispatchEvent(new Event('change'));
             }
 
-            Drupal.ginMediaLibrary.bulkOperations();
+            Drupal.tonicMediaLibrary.bulkOperations();
           });
         });
     },

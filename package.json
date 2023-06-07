@@ -1,5 +1,5 @@
 {
-  "name": "gin",
+  "name": "tonic",
   "version": "3.1.0",
   "description": "Frontend build tools",
   "scripts": {
@@ -14,7 +14,7 @@
   "keywords": [
     "drupal",
     "webpack",
-    "gin",
+    "tonic",
     "frontend"
   ],
   "devDependencies": {
@@ -62,6 +62,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git.drupalcode.org/project/gin"
+    "url": "git.drupalcode.org/project/tonic"
   }
 }

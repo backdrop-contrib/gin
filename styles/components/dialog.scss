@@ -1,20 +1,20 @@
 .ui-dialog:not(.ui-dialog-off-canvas) {
   max-width: $breakpointWide;
   border: 0 none !important;
-  border-radius: var(--gin-border-m);
-  background: var(--gin-bg-layer);
+  border-radius: var(--tonic-border-m);
+  background: var(--tonic-bg-layer);
 
   // Dialog without title
   .ui-dialog-content:first-of-type {
-    border-top-left-radius: var(--gin-border-m);
-    border-top-right-radius: var(--gin-border-m);
+    border-top-left-radius: var(--tonic-border-m);
+    border-top-right-radius: var(--tonic-border-m);
   }
 
   // Node actions placement
   .layout-region-node-actions {
     position: absolute;
     bottom: 0;
-    left: var(--gin-spacing-m);
+    left: var(--tonic-spacing-m);
     top: auto;
     right: auto;
   }
@@ -27,7 +27,7 @@
   // Views exposed form override for dialog
   .views-exposed-form.views-exposed-form,
   .views-displays {
-    border: 1px solid var(--gin-border-color-layer);
+    border: 1px solid var(--tonic-border-color-layer);
   }
 }
 
@@ -43,47 +43,47 @@
   /*rtl:ignore*/
   left: 0;
   top: 0;
-  font-family: var(--gin-font);
+  font-family: var(--tonic-font);
   outline: none;
 
   &,
   &:focus,
   &:focus:active,
   &:focus:hover {
-    box-shadow: var(--gin-shadow-l1);
+    box-shadow: var(--tonic-shadow-l1);
   }
 
   .ui-dialog-titlebar {
     line-height: 1.2;
-    padding: var(--gin-spacing-m) var(--gin-spacing-l);
+    padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
     background: $colorDarkAppBackground;
     border: 0 none;
-    border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+    border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
     position: relative;
   }
 
   .ui-dialog-title {
-    font-size: var(--gin-font-size-l);
-    font-weight: var(--gin-font-weight-normal);
+    font-size: var(--tonic-font-size-l);
+    font-weight: var(--tonic-font-weight-normal);
     color: #fff;
     width: 100%;
-    padding-right: var(--gin-spacing-xl);
+    padding-right: var(--tonic-spacing-xl);
     box-sizing: border-box;
   }
 
   .ui-dialog-content {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 
   .ui-widget-content.ui-dialog-buttonpane {
-    padding: var(--gin-spacing-s) var(--gin-spacing-l);
-    border-top: 1px solid var(--gin-border-color-layer);
-    border-bottom-left-radius: var(--gin-border-m);
-    border-bottom-right-radius: var(--gin-border-m);
-    background: var(--gin-bg-app);
+    padding: var(--tonic-spacing-s) var(--tonic-spacing-l);
+    border-top: 1px solid var(--tonic-border-color-layer);
+    border-bottom-left-radius: var(--tonic-border-m);
+    border-bottom-right-radius: var(--tonic-border-m);
+    background: var(--tonic-bg-app);
 
     .button {
-      font-weight: var(--gin-font-weight-heavy);
+      font-weight: var(--tonic-font-weight-heavy);
       margin-top: 0;
       margin-bottom: 0;
 
@@ -96,7 +96,7 @@
   .ui-widget-content.ui-dialog-buttonpane,
   [data-drupal-selector*="-remove-form"] {
     .button.button--danger {
-      border-color: var(--gin-color-danger) !important;
+      border-color: var(--tonic-color-danger) !important;
     }
   }
 
@@ -110,7 +110,7 @@
     left: auto;
     right: 0;
     opacity: .8;
-    margin: 0 var(--gin-spacing-l);
+    margin: 0 var(--tonic-spacing-l);
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -124,7 +124,7 @@
       transform: none;
       background: #fff;
       mask-image: icon('close');
-      mask-size: var(--gin-icon-size-close) var(--gin-icon-size-close);
+      mask-size: var(--tonic-icon-size-close) var(--tonic-icon-size-close);
       mask-repeat: no-repeat;
       mask-position: center center;
     }
@@ -135,13 +135,13 @@
   }
 
   .ui-widget-content.ui-dialog-content {
-    padding-left: var(--gin-spacing-l);
-    padding-right: var(--gin-spacing-l);
-    background: var(--gin-bg-layer);
+    padding-left: var(--tonic-spacing-l);
+    padding-right: var(--tonic-spacing-l);
+    background: var(--tonic-bg-layer);
   }
 
-  .gin-layer-wrapper {
-    margin-bottom: var(--gin-spacing-l);
+  .tonic-layer-wrapper {
+    margin-bottom: var(--tonic-spacing-l);
   }
 }
 
@@ -150,36 +150,36 @@
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
-  width: calc(100% - var(--gin-spacing-xl)) !important;
+  width: calc(100% - var(--tonic-spacing-xl)) !important;
   transform: translate(-50%, -50%);
 
   @include mq(large) {
-    width: calc(100% - var(--gin-spacing-xxxl)) !important;
+    width: calc(100% - var(--tonic-spacing-xxxl)) !important;
   }
 }
 
 ul.paragraphs-add-dialog-list {
-  margin: var(--gin-spacing-l) 0;
+  margin: var(--tonic-spacing-l) 0;
 }
 
 .ui-widget-overlay {
   opacity: .9;
-  background: var(--gin-bg-layer2);
+  background: var(--tonic-bg-layer2);
 }
 
 .views-ui-dialog {
   .views-offset-bottom {
-    border-top: 1px solid var(--gin-border-color);
+    border-top: 1px solid var(--tonic-border-color);
   }
 }
 
 .ui-widget-content a {
-  color: var(--gin-color-primary);
+  color: var(--tonic-color-primary);
 }
 
 // Off canvas dialog.
 .ui-widget.ui-dialog.ui-dialog-off-canvas {
-  --gin-offcanvas-active: var(--gin-color-primary);
+  --tonic-offcanvas-active: var(--tonic-color-primary);
   background: #444;
   border: 0 none;
   box-shadow: 0 0 48px rgba(0, 0, 0, .075);
@@ -195,12 +195,12 @@ ul.paragraphs-add-dialog-list {
   }
 
   .fieldset {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 
   #drupal-off-canvas {
     .button--primary[type=submit] {
-      background: var(--gin-offcanvas-active);
+      background: var(--tonic-offcanvas-active);
     }
   }
 }
@@ -212,7 +212,7 @@ ul.paragraphs-add-dialog-list {
 
 // Webform Off canvas
 .ui-dialog.webform-off-canvas .ui-widget-content.ui-dialog-content {
-  background: var(--gin-bg-layer);
+  background: var(--tonic-bg-layer);
 }
 
 // Token

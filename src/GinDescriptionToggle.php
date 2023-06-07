@@ -8,32 +8,32 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Service to handle toggling form descriptions.
  */
-class GinDescriptionToggle implements ContainerInjectionInterface {
+class TonicDescriptionToggle implements ContainerInjectionInterface {
 
 
   /**
    * The content form helper class.
    *
-   * @var \Drupal\gin\GinContentFormHelper
+   * @var \Drupal\gin\TonicContentFormHelper
    */
   protected $contentFormHelper;
 
   /**
-   * The gin theme settings class.
+   * The tonic theme settings class.
    *
-   * @var \Drupal\gin\GinSettings
+   * @var \Drupal\gin\TonicSettings
    */
   protected $ginSettings;
 
   /**
-   * GinDescriptionToggle constructor.
+   * TonicDescriptionToggle constructor.
    *
-   * @param \Drupal\gin\GinSettings $ginSettings
-   *   The gin theme settings class.
-   * @param \Drupal\gin\GinContentFormHelper $contentFormHelper
+   * @param \Drupal\gin\TonicSettings $ginSettings
+   *   The tonic theme settings class.
+   * @param \Drupal\gin\TonicContentFormHelper $contentFormHelper
    *   The content form helper class.
    */
-  public function __construct(GinSettings $ginSettings, GinContentFormHelper $contentFormHelper) {
+  public function __construct(TonicSettings $ginSettings, TonicContentFormHelper $contentFormHelper) {
     $this->ginSettings = $ginSettings;
     $this->contentFormHelper = $contentFormHelper;
   }
@@ -45,8 +45,8 @@ class GinDescriptionToggle implements ContainerInjectionInterface {
     $classResolver = $container->get('class_resolver');
 
     return new static(
-      $classResolver->getInstanceFromDefinition(GinSettings::class),
-      $classResolver->getInstanceFromDefinition(GinContentFormHelper::class),
+      $classResolver->getInstanceFromDefinition(TonicSettings::class),
+      $classResolver->getInstanceFromDefinition(TonicContentFormHelper::class),
     );
   }
 

@@ -1,31 +1,31 @@
 #coffee-form {
-  padding: var(--gin-spacing-xxs);
+  padding: var(--tonic-spacing-xxs);
   background: #000;
-  border-radius: var(--gin-border-l);
+  border-radius: var(--tonic-border-l);
 
   #coffee-form-inner,
   #coffee-q {
-    color: var(--gin-color-title);
-    background: var(--gin-bg-layer);
-    border-radius: var(--gin-border-m);
+    color: var(--tonic-color-title);
+    background: var(--tonic-bg-layer);
+    border-radius: var(--tonic-border-m);
   }
 
   #coffee-results {
     a {
-      color: var(--gin-color-title);
-      border-radius: var(--gin-border-m);
+      color: var(--tonic-color-title);
+      border-radius: var(--tonic-border-m);
 
       .description {
-        color: var(--gin-color-text-light);
-        padding-top: var(--gin-spacing-xxs);
+        color: var(--tonic-color-text-light);
+        padding-top: var(--tonic-spacing-xxs);
       }
 
       &:hover,
       &.ui-state-active {
-        background: var(--gin-color-primary);
+        background: var(--tonic-color-primary);
 
         &, .description {
-          color: var(--gin-color-button-text);
+          color: var(--tonic-color-button-text);
         }
 
         .description {
@@ -40,7 +40,7 @@
     box-shadow: none;
 
     .ui-menu-item-wrapper {
-      padding: var(--gin-spacing-m);
+      padding: var(--tonic-spacing-m);
     }
   }
 }

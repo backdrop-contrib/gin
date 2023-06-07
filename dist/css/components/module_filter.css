@@ -4,36 +4,36 @@
 }
 
 .modules-tabs__pane, .modules-tabs__menu, .modules-tabs__menu-item {
-  background: var(--gin-bg-layer);
+  background: var(--tonic-bg-layer);
 }
 
 .modules-tabs__pane {
-  padding: var(--gin-spacing-l) var(--gin-spacing-l) 0 var(--gin-spacing-l);
+  padding: var(--tonic-spacing-l) var(--tonic-spacing-l) 0 var(--tonic-spacing-l);
 }
 
 [dir="ltr"] .modules-tabs__pane {
-  border-left: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--tonic-border-color);
 }
 
 [dir="rtl"] .modules-tabs__pane {
-  border-right: 1px solid var(--gin-border-color);
+  border-right: 1px solid var(--tonic-border-color);
 }
 
 .modules-tabs__pane table tr.enabling {
-  background: var(--gin-bg-green-light);
+  background: var(--tonic-bg-green-light);
 }
 
 .modules-tabs__menu-item {
-  border-top: 1px solid var(--gin-border-color);
+  border-top: 1px solid var(--tonic-border-color);
 }
 
 .modules-tabs__menu-item.tab__new {
-  border-bottom: 1px solid var(--gin-border-color);
+  border-bottom: 1px solid var(--tonic-border-color);
 }
 
 .modules-tabs__menu-item.disabled {
   background-color: transparent;
-  border-top-color: var(--gin-border-color);
+  border-top-color: var(--tonic-border-color);
   border-bottom-color: transparent;
 }
 
@@ -41,18 +41,18 @@
 .modules-tabs__menu-item a:hover,
 .modules-tabs__menu-item a:focus,
 .modules-tabs__menu-item a:active {
-  background: var(--gin-bg-item-hover);
+  background: var(--tonic-bg-item-hover);
 }
 
 .modules-tabs__menu-item.is-selected a,
 .modules-tabs__menu-item.is-selected a:hover,
 .modules-tabs__menu-item.is-selected a:focus,
 .modules-tabs__menu-item.is-selected a:active {
-  background: var(--gin-bg-layer);
+  background: var(--tonic-bg-layer);
 }
 
 .modules-tabs__menu-item ul.enabling {
-  color: var(--gin-color-green);
+  color: var(--tonic-color-green);
 }
 
 #module-filter-update-status-form .table-filter {
@@ -80,21 +80,21 @@
 }
 
 [dir="ltr"] #module-filter-update-status-form .table-filter .winnow-clear:after {
-  right: var(--gin-spacing-xs);
+  right: var(--tonic-spacing-xs);
 }
 
 [dir="rtl"] #module-filter-update-status-form .table-filter .winnow-clear:after {
-  left: var(--gin-spacing-xs);
+  left: var(--tonic-spacing-xs);
 }
 
 #module-filter-update-status-form .table-filter input.form-search {
   width: 100%;
-  padding: var(--gin-spacing-m);
+  padding: var(--tonic-spacing-m);
 }
 
 #module-filter-update-status-form .table-filter .form-type--search {
   margin-top: 0;
-  margin-bottom: var(--gin-spacing-xs);
+  margin-bottom: var(--tonic-spacing-xs);
 }
 
 .system-modules-uninstall .winnow-input {
@@ -118,6 +118,6 @@
 }
 
 .system-modules td details a {
-  color: var(--gin-color-primary);
+  color: var(--tonic-color-primary);
 }
 

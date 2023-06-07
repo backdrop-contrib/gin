@@ -2,18 +2,18 @@
 
 ((Drupal, once) => {
   const breakpoint = 1024;
-  const storageMobile = 'Drupal.gin.sidebarExpanded.mobile';
-  const storageDesktop = 'Drupal.gin.sidebarExpanded.desktop';
+  const storageMobile = 'Drupal.tonic.sidebarExpanded.mobile';
+  const storageDesktop = 'Drupal.tonic.sidebarExpanded.desktop';
 
-  Drupal.behaviors.ginSidebar = {
+  Drupal.behaviors.tonicSidebar = {
     attach: function attach(context) {
-      Drupal.ginSidebar.init(context);
+      Drupal.tonicSidebar.init(context);
     },
   };
 
-  Drupal.ginSidebar = {
+  Drupal.tonicSidebar = {
     init: function (context) {
-      once('ginSidebarInit', '#gin_sidebar', context).forEach(() => {
+      once('ginSidebarInit', '#tonic_sidebar', context).forEach(() => {
         // If variable does not exist, create it, default being to show sidebar.
         if (!localStorage.getItem(storageDesktop)) {
           localStorage.setItem(storageDesktop, 'true');
@@ -58,10 +58,10 @@
     toggleSidebar: () => {
       // Set active state.
       if (document.querySelector('.meta-sidebar__trigger').classList.contains('is-active')) {
-        Drupal.ginSidebar.collapseSidebar();
+        Drupal.tonicSidebar.collapseSidebar();
       }
       else {
-        Drupal.ginSidebar.showSidebar();
+        Drupal.tonicSidebar.showSidebar();
       }
     },
 
@@ -98,24 +98,24 @@
     },
 
     handleResize: () => {
-      Drupal.ginSidebar.removeInlineStyles();
+      Drupal.tonicSidebar.removeInlineStyles();
 
       // If small viewport, always collapse sidebar.
       if (window.innerWidth < breakpoint) {
-        Drupal.ginSidebar.collapseSidebar();
+        Drupal.tonicSidebar.collapseSidebar();
       } else {
         // If large viewport, show sidebar if it was open before.
         if (localStorage.getItem(storageDesktop) === 'true') {
-          Drupal.ginSidebar.showSidebar();
+          Drupal.tonicSidebar.showSidebar();
         } else {
-          Drupal.ginSidebar.collapseSidebar();
+          Drupal.tonicSidebar.collapseSidebar();
         }
       }
     },
 
     removeInlineStyles: () => {
       // Remove init styles.
-      const elementToRemove = document.querySelector('.gin-sidebar-inline-styles');
+      const elementToRemove = document.querySelector('.tonic-sidebar-inline-styles');
       if (elementToRemove) {
         elementToRemove.parentNode.removeChild(elementToRemove);
       }

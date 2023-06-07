@@ -43,12 +43,12 @@
           item.is_expanded ? 'menu-item--expanded',
           item.is_collapsed ? 'menu-item--collapsed',
           item.in_active_trail ? 'menu-item--active-trail',
-          item.gin_id ? 'menu-item__' ~ item.gin_id
+          item.tonic_id ? 'menu-item__' ~ item.tonic_id
         ]
       %}
 
       {# Add Home if it doesn't exist #}
-      {% if menu_level == 0 and loop.index == 1 and item.gin_id != 'admin_toolbar_tools-help' %}
+      {% if menu_level == 0 and loop.index == 1 and item.tonic_id != 'admin_toolbar_tools-help' %}
         <li class="menu-item menu-item--expanded menu-item__tools">
           {% if icon_default == false and icon_path != '' %}
             <a href="{{ path('<front>') }}" class="toolbar-logo" data-drupal-link-system-path="<front>">
@@ -62,7 +62,7 @@
         </li>
       {% endif %}
 
-      {# {% if menu_level == 0 and item.gin_id == 'help-main' %}
+      {# {% if menu_level == 0 and item.tonic_id == 'help-main' %}
         <li class="menu-item menu-item__spacer menu-item--no-link"></li>
       {% endif %} #}
 
@@ -92,11 +92,11 @@
       {% endif %}
 
       <li{{ item.attributes.addClass(classes) }}>
-        {% if item.gin_id == 'admin_toolbar_tools-help' and icon_default == false and icon_path != '' %}
+        {% if item.tonic_id == 'admin_toolbar_tools-help' and icon_default == false and icon_path != '' %}
           <a href="{{ path('<front>') }}" class="toolbar-logo" data-drupal-link-system-path="<front>">
             <img src="{{ file_url(icon_path) }}" class="toolbar-icon-home" alt="{{ 'Home'|t }}" />
           </a>
-        {% elseif item.gin_id == 'admin_toolbar_tools-help' %}
+        {% elseif item.tonic_id == 'admin_toolbar_tools-help' %}
           {{ link('Drupal', item.url, {'class': ['toolbar-icon-default']}) }}
         {% else %}
           {{ link(item.title, item.url, {'class': [item.in_active_trail ? 'is-active']}) }}

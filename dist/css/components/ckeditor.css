@@ -1,37 +1,37 @@
-.gin--dark-mode .cke.cke .cke_inner,
-.gin--dark-mode .cke.cke .cke_wysiwyg_frame,
-.gin--dark-mode .cke.cke .cke_wysiwyg_div {
-  background: var(--gin-bg-layer2);
+.tonic--dark-mode .cke.cke .cke_inner,
+.tonic--dark-mode .cke.cke .cke_wysiwyg_frame,
+.tonic--dark-mode .cke.cke .cke_wysiwyg_div {
+  background: var(--tonic-bg-layer2);
 }
 
 .cke.cke.cke_chrome {
   width: 100% !important;
-  border-color: var(--gin-border-color-form-element);
-  border-radius: var(--gin-border-m);
+  border-color: var(--tonic-border-color-form-element);
+  border-radius: var(--tonic-border-m);
 }
 
 .cke.cke .cke_inner {
-  border-radius: var(--gin-border-m);
+  border-radius: var(--tonic-border-m);
 }
 
 .cke.cke .cke_top {
-  background: var(--gin-bg-layer);
-  border-bottom: 1px solid var(--gin-border-color);
-  border-radius: calc(var(--gin-border-m) - 1px) calc(var(--gin-border-m) - 1px) 0 0;
+  background: var(--tonic-bg-layer);
+  border-bottom: 1px solid var(--tonic-border-color);
+  border-radius: calc(var(--tonic-border-m) - 1px) calc(var(--tonic-border-m) - 1px) 0 0;
 }
 
-.gin--dark-mode .cke.cke .cke_top {
-  background: var(--gin-bg-layer2);
+.tonic--dark-mode .cke.cke .cke_top {
+  background: var(--tonic-bg-layer2);
 }
 
 .cke.cke .cke_bottom {
-  background: var(--gin-bg-layer3);
-  border-radius: 0 0 calc(var(--gin-border-m) - 1px) calc(var(--gin-border-m) - 1px);
+  background: var(--tonic-bg-layer3);
+  border-radius: 0 0 calc(var(--tonic-border-m) - 1px) calc(var(--tonic-border-m) - 1px);
 }
 
 .cke.cke .cke_contents {
-  padding-left: var(--gin-spacing-xs);
-  padding-right: var(--gin-spacing-xs);
+  padding-left: var(--tonic-spacing-xs);
+  padding-right: var(--tonic-spacing-xs);
 }
 
 .cke.cke .cke_path_empty:only-child::after {
@@ -39,28 +39,28 @@
 }
 
 [dir="ltr"] .cke.cke .cke_combo::after {
-  border-right: 1px solid var(--gin-border-color);
+  border-right: 1px solid var(--tonic-border-color);
 }
 
 [dir="rtl"] .cke.cke .cke_combo::after {
-  border-left: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--tonic-border-color);
 }
 
 .cke.cke .cke_combo_text {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
 }
 
 .cke.cke .cke_combo_on a.cke_combo_button,
 .cke.cke .cke_combo_off a.cke_combo_button:hover,
 .cke.cke .cke_combo_off a.cke_combo_button:focus,
 .cke.cke .cke_combo_off a.cke_combo_button:active {
-  background: var(--gin-bg-app);
-  border: 1px solid var(--gin-bg-layer2);
+  background: var(--tonic-bg-app);
+  border: 1px solid var(--tonic-bg-layer2);
 }
 
 .cke.cke a.cke_path_item,
 .cke.cke span.cke_path_empty {
-  color: var(--gin-color-text-light);
+  color: var(--tonic-color-text-light);
 }
 
 .cke.cke a.cke_button {
@@ -72,16 +72,16 @@
 }
 
 .cke.cke a.cke_button_off:hover, .cke.cke a.cke_button_off:focus, .cke.cke a.cke_button_off:active {
-  background: var(--gin-bg-item-hover);
-  border: 1px solid var(--gin-border-color-layer2);
+  background: var(--tonic-bg-item-hover);
+  border: 1px solid var(--tonic-border-color-layer2);
 }
 
-.gin--dark-mode .cke.cke .cke_button span {
+.tonic--dark-mode .cke.cke .cke_button span {
   filter: invert(1);
 }
 
 .cke.cke.cke_panel {
-  background-color: var(--gin-bg-app);
+  background-color: var(--tonic-bg-app);
   border: 0 none;
 }
 
@@ -90,19 +90,19 @@
 .cke:hover .cke_contents,
 .cke:hover .cke_top,
 .cke:hover .cke_bottom {
-  border-color: var(--gin-color-text);
+  border-color: var(--tonic-color-text);
 }
 
-.gin--dark-mode .cke.cke_chrome.cke_focus,
-.gin--dark-mode .cke.cke_chrome:hover,
-.gin--dark-mode .cke:hover .cke_contents,
-.gin--dark-mode .cke:hover .cke_top,
-.gin--dark-mode .cke:hover .cke_bottom {
-  border-color: var(--gin-border-color-layer2);
+.tonic--dark-mode .cke.cke_chrome.cke_focus,
+.tonic--dark-mode .cke.cke_chrome:hover,
+.tonic--dark-mode .cke:hover .cke_contents,
+.tonic--dark-mode .cke:hover .cke_top,
+.tonic--dark-mode .cke:hover .cke_bottom {
+  border-color: var(--tonic-border-color-layer2);
 }
 
-.cke:hover .cke_top, .gin--dark-mode .cke:hover .cke_top {
-  border-bottom-color: var(--gin-border-color);
+.cke:hover .cke_top, .tonic--dark-mode .cke:hover .cke_top {
+  border-bottom-color: var(--tonic-border-color);
 }
 
 .cke.cke_chrome.cke_focus:hover,
@@ -113,7 +113,7 @@
 .error + .cke.cke_focus .cke_contents,
 .error + .cke.cke_focus .cke_top,
 .error + .cke.cke_focus .cke_bottom {
-  border-color: var(--gin-color-text);
+  border-color: var(--tonic-color-text);
 }
 
 .cke_top,
@@ -121,31 +121,31 @@
 .cke.cke_focus .cke_top,
 .error + .cke.cke_focus .cke_top,
 .error + .cke.cke_chrome.cke_focus:hover .cke_top {
-  border-bottom: 1px solid var(--gin-border-color);
+  border-bottom: 1px solid var(--tonic-border-color);
 }
 
 .cke textarea.cke_source {
-  padding: var(--gin-spacing-s) var(--gin-spacing-xs);
-  color: var(--gin-color-text);
+  padding: var(--tonic-spacing-s) var(--tonic-spacing-xs);
+  color: var(--tonic-color-text);
   background-color: transparent;
 }
 
 body .cke_notification_info {
   opacity: 1;
-  padding: var(--gin-spacing-xs);
-  background: var(--gin-bg-layer4);
+  padding: var(--tonic-spacing-xs);
+  background: var(--tonic-bg-layer4);
   border: 0 none;
-  border-radius: var(--gin-border-m);
-  box-shadow: var(--gin-shadow-l1);
+  border-radius: var(--tonic-border-m);
+  box-shadow: var(--tonic-shadow-l1);
 }
 
 body .cke_notification_info .cke_notification_message {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
 }
 
 body .cke_notification_info .cke_notification_close {
-  top: var(--gin-spacing-xxs);
-  background: var(--gin-color-text);
+  top: var(--tonic-spacing-xxs);
+  background: var(--tonic-color-text);
   -webkit-mask-image: url("../../media/sprite.svg#close-view");
           mask-image: url("../../media/sprite.svg#close-view");
   -webkit-mask-position: center center;
@@ -157,14 +157,14 @@ body .cke_notification_info .cke_notification_close {
 }
 
 [dir="ltr"] body .cke_notification_info .cke_notification_close {
-  right: var(--gin-spacing-xxs);
+  right: var(--tonic-spacing-xxs);
 }
 
 [dir="rtl"] body .cke_notification_info .cke_notification_close {
-  left: var(--gin-spacing-xxs);
+  left: var(--tonic-spacing-xxs);
 }
 
 .filter-tips {
-  color: var(--gin-color-text-light);
+  color: var(--tonic-color-text-light);
 }
 

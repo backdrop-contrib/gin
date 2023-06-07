@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - gin
-id: gin_content
-theme: gin
+    - tonic
+id: tonic_content
+theme: tonic
 region: content
 weight: 0
 provider: null

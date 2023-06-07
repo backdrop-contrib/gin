@@ -5,17 +5,17 @@ namespace Drupal\Tests\gin\Functional;
 use Drupal\Tests\BrowserTestBase;
 
 /**
- * Tests the gin admin theme.
+ * Tests the tonic admin theme.
  *
- * @group gin
+ * @group tonic
  */
-class GinTest extends BrowserTestBase {
+class TonicTest extends BrowserTestBase {
 
   /**
    * Modules to enable.
    *
-   * Install the shortcut module so that gin.settings has its schema checked.
-   * There's currently no way for Gin to provide a default and have valid
+   * Install the shortcut module so that tonic.settings has its schema checked.
+   * There's currently no way for Tonic to provide a default and have valid
    * configuration as themes cannot react to a module install.
    *
    * @var string[]
@@ -33,11 +33,11 @@ class GinTest extends BrowserTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    $this->assertTrue(\Drupal::service('theme_installer')->install(['gin']));
+    $this->assertTrue(\Drupal::service('theme_installer')->install(['tonic']));
     $this->container->get('config.factory')
       ->getEditable('system.theme')
-      ->set('default', 'gin')
-      ->set('admin', 'gin')
+      ->set('default', 'tonic')
+      ->set('admin', 'tonic')
       ->save();
 
     $adminUser = $this->drupalCreateUser([
@@ -48,15 +48,15 @@ class GinTest extends BrowserTestBase {
   }
 
   /**
-   * Tests that the Gin theme always adds its message CSS and Classy's.
+   * Tests that the Tonic theme always adds its message CSS and Classy's.
    */
-  public function testDefaultGinSettings() {
+  public function testDefaultTonicSettings() {
     $response = $this->drupalGet('/admin/content');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertStringContainsString('"darkmode":"0"', $response);
     $this->assertStringContainsString('"preset_accent_color":"blue"', $response);
-    $this->assertStringContainsString('"preset_focus_color":"gin"', $response);
-    $this->assertSession()->responseContains('gin.css');
+    $this->assertStringContainsString('"preset_focus_color":"tonic"', $response);
+    $this->assertSession()->responseContains('tonic.css');
     $this->assertSession()->responseContains('toolbar.css');
     $this->assertSession()->responseNotContains('classic_toolbar.css');
   }
@@ -65,7 +65,7 @@ class GinTest extends BrowserTestBase {
    * Tests Darkmode setting.
    */
   public function testDarkModeSetting() {
-    \Drupal::configFactory()->getEditable('gin.settings')->set('enable_darkmode', '1')->save();
+    \Drupal::configFactory()->getEditable('tonic.settings')->set('enable_darkmode', '1')->save();
     $response = $this->drupalGet('/admin/content');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertStringContainsString('"darkmode":"1"', $response);
@@ -75,7 +75,7 @@ class GinTest extends BrowserTestBase {
    * Tests Classic Drupal Toolbar setting.
    */
   public function testClassicToolbarSetting() {
-    \Drupal::configFactory()->getEditable('gin.settings')->set('classic_toolbar', 'classic')->save();
+    \Drupal::configFactory()->getEditable('tonic.settings')->set('classic_toolbar', 'classic')->save();
     $this->drupalGet('/admin/content');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertSession()->responseContains('classic_toolbar.css');
@@ -85,7 +85,7 @@ class GinTest extends BrowserTestBase {
    * Tests Color Accent setting.
    */
   public function testAccentColorSetting() {
-    \Drupal::configFactory()->getEditable('gin.settings')->set('preset_accent_color', 'red')->save();
+    \Drupal::configFactory()->getEditable('tonic.settings')->set('preset_accent_color', 'red')->save();
     $response = $this->drupalGet('/admin/content');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertStringContainsString('"preset_accent_color":"red"', $response);
@@ -95,7 +95,7 @@ class GinTest extends BrowserTestBase {
    * Tests Focus Accent setting.
    */
   public function testFocusColorSetting() {
-    \Drupal::configFactory()->getEditable('gin.settings')->set('preset_focus_color', 'blue')->save();
+    \Drupal::configFactory()->getEditable('tonic.settings')->set('preset_focus_color', 'blue')->save();
     $response = $this->drupalGet('/admin/content');
     $this->assertSession()->statusCodeEquals(200);
     $this->assertStringContainsString('"preset_focus_color":"blue"', $response);
@@ -105,7 +105,7 @@ class GinTest extends BrowserTestBase {
    * Test user settings.
    */
   public function testUserSettings() {
-    \Drupal::configFactory()->getEditable('gin.settings')->set('show_user_theme_settings', TRUE)->save();
+    \Drupal::configFactory()->getEditable('tonic.settings')->set('show_user_theme_settings', TRUE)->save();
 
     $user1 = $this->createUser();
     $this->drupalLogin($user1);

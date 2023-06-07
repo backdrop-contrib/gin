@@ -4,7 +4,7 @@
     vertical-align: middle;
 
     &:focus::before {
-      box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+      box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
     }
   }
 
@@ -21,7 +21,7 @@
   margin-top: 0;
 
   .action-link {
-    margin-bottom: var(--gin-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
 
     .action-link {
       margin-bottom: 0;
@@ -34,12 +34,12 @@
 .field--widget-entity-reference-paragraphs,
 .field--type-link,
 .field--type-smartdate {
-  .gin-layer-wrapper > .tabledrag-toggle-weight-wrapper {
+  .tonic-layer-wrapper > .tabledrag-toggle-weight-wrapper {
     @include mq(small) {
       position: relative;
       z-index: 1;
-      margin-right: var(--gin-spacing-m);
-      margin-bottom: calc(var(--gin-spacing-xxl) * -1);
+      margin-right: var(--tonic-spacing-m);
+      margin-bottom: calc(var(--tonic-spacing-xxl) * -1);
       pointer-events: none;
     }
 
@@ -52,7 +52,7 @@
 .tabledrag-handle {
   &::after {
     background-image: none;
-    background-color: var(--gin-color-text-light);
+    background-color: var(--tonic-color-text-light);
     mask-image: icon('drag');
     mask-repeat: no-repeat;
     mask-position: center center;
@@ -62,22 +62,22 @@
   &:hover {
     &::after {
       transform: scale(1);
-      background-color: var(--gin-color-primary);
+      background-color: var(--tonic-color-primary);
     }
   }
 }
 
 .draggable.drag, .draggable.drag:focus {
-  background-color: var(--gin-bg-layer2);
+  background-color: var(--tonic-bg-layer2);
 
-  .gin--dark-mode & {
-    background-color: var(--gin-color-primary-light-hover);
+  .tonic--dark-mode & {
+    background-color: var(--tonic-color-primary-light-hover);
   }
 }
 
 .draggable.drag-previous {
-  background-color: var(--gin-bg-layer2);
-  box-shadow: inset 6px 0 0 0 var(--gin-color-warning);
+  background-color: var(--tonic-bg-layer2);
+  box-shadow: inset 6px 0 0 0 var(--tonic-color-warning);
 }
 
 .tabledrag-leaf td,
@@ -86,12 +86,12 @@
 }
 
 .tabledrag-cell {
-  padding-top: var(--gin-spacing-density-m);
-  padding-bottom: var(--gin-spacing-density-m);
+  padding-top: var(--tonic-spacing-density-m);
+  padding-bottom: var(--tonic-spacing-density-m);
 
   &-content {
-    margin-top: var(--gin-spacing-xs);
-    margin-bottom: var(--gin-spacing-xs);
+    margin-top: var(--tonic-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
   }
 
   &-content__item {
@@ -103,10 +103,10 @@
 
 .field-plugin-settings-edit-wrapper,
 .field-plugin-settings-edit-wrapper + a {
-  margin-top: var(--gin-spacing-m);
-  margin-bottom: var(--gin-spacing-m);
+  margin-top: var(--tonic-spacing-m);
+  margin-bottom: var(--tonic-spacing-m);
 }
 
 .field-plugin-settings-edit-wrapper + a {
-  margin-top: var(--gin-spacing-s);
+  margin-top: var(--tonic-spacing-s);
 }

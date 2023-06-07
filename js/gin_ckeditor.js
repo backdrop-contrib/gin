@@ -1,13 +1,13 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginCKEditor = {
+  Drupal.behaviors.tonicCKEditor = {
     attach: (context) => {
-      Drupal.ginCKEditor.init(context);
+      Drupal.tonicCKEditor.init(context);
     }
   };
 
-  Drupal.ginCKEditor = {
+  Drupal.tonicCKEditor = {
     init: (context) => {
       once('ginCKEditors', 'body', context).forEach(() => {
         if (window.CKEDITOR && CKEDITOR !== undefined) {
@@ -17,17 +17,17 @@
           }
 
           // Get configs.
-          const variablesCss = drupalSettings.gin.variables_css_path;
-          const accentCss = drupalSettings.gin.accent_css_path;
-          const contentsCss = drupalSettings.gin.ckeditor_css_path;
-          const accentColorPreset = drupalSettings.gin.preset_accent_color;
-          const accentColor = drupalSettings.gin.accent_color;
-          const darkmodeClass = drupalSettings.gin.darkmode_class;
+          const variablesCss = drupalSettings.tonic.variables_css_path;
+          const accentCss = drupalSettings.tonic.accent_css_path;
+          const contentsCss = drupalSettings.tonic.ckeditor_css_path;
+          const accentColorPreset = drupalSettings.tonic.preset_accent_color;
+          const accentColor = drupalSettings.tonic.accent_color;
+          const darkmodeClass = drupalSettings.tonic.darkmode_class;
 
           // Class for Darkmode.
           if (
-            localStorage.getItem('Drupal.gin.darkmode') == 1 ||
-            localStorage.getItem('Drupal.gin.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
+            localStorage.getItem('Drupal.tonic.darkmode') == 1 ||
+            localStorage.getItem('Drupal.tonic.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
           ) {
             CKEDITOR.config.bodyClass = darkmodeClass;
           }
@@ -65,7 +65,7 @@
             editor.document.$.body.setAttribute('data-gin-accent', accentColorPreset);
 
             if (accentColorPreset === 'custom' && accentColor) {
-              Drupal.ginAccent.setCustomAccentColor(accentColor, editor.document.$.head);
+              Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head);
             }
 
             // Change from Code to Editor.
@@ -74,10 +74,10 @@
                 editor.document.$.body.setAttribute('data-gin-accent', accentColorPreset);
 
                 if (accentColorPreset === 'custom' && accentColor) {
-                  Drupal.ginAccent.setCustomAccentColor(accentColor, editor.document.$.head);
+                  Drupal.tonicAccent.setCustomAccentColor(accentColor, editor.document.$.head);
                 }
 
-                if (localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+                if (localStorage.getItem('Drupal.tonic.darkmode') === 'auto') {
                   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     editor.document.$.body.classList.add(darkmodeClass);
                   } else {
@@ -89,7 +89,7 @@
 
             // Contextual menu.
             editor.on('menuShow', function(element) {
-              const darkModeClass = localStorage.getItem('Drupal.gin.darkmode') == 1 || localStorage.getItem('Drupal.gin.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
+              const darkModeClass = localStorage.getItem('Drupal.tonic.darkmode') == 1 || localStorage.getItem('Drupal.tonic.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? darkmodeClass
                 : '';
               const iframeElement = element.data[0].element.$.childNodes[0].contentWindow.document;
@@ -101,13 +101,13 @@
               iframeElement.body.setAttribute('data-gin-accent', accentColorPreset);
 
               if (accentColorPreset === 'custom' && accentColor) {
-                Drupal.ginAccent.setCustomAccentColor(accentColor, iframeElement.head);
+                Drupal.tonicAccent.setCustomAccentColor(accentColor, iframeElement.head);
               }
             });
 
             // Toggle Darkmode.
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-              if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+              if (e.matches && localStorage.getItem('Drupal.tonic.darkmode') === 'auto') {
                 editor.document.$.body.classList.add(darkmodeClass);
 
                 if (document.querySelectorAll(`.${editor.id}.cke_panel`).length > 0) {
@@ -119,7 +119,7 @@
 
             // Change to Lightmode.
             window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
-              if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+              if (e.matches && localStorage.getItem('Drupal.tonic.darkmode') === 'auto') {
                 editor.document.$.body.classList.remove(darkmodeClass);
 
                 if (document.querySelectorAll(`.${editor.id}.cke_panel`).length > 0) {

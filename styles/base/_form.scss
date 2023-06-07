@@ -1,42 +1,42 @@
 $maxWidth: 520px;
 
 .form-element {
-  color: var(--gin-color-text);
-  background-color: var(--gin-bg-input);
-  border: 1px solid var(--gin-border-color-form-element);
-  border-radius: var(--gin-border-m);
+  color: var(--tonic-color-text);
+  background-color: var(--tonic-bg-input);
+  border: 1px solid var(--tonic-border-color-form-element);
+  border-radius: var(--tonic-border-m);
   box-sizing: border-box;
-  transition: var(--gin-transition);
+  transition: var(--tonic-transition);
 
   &:hover {
-    border-color: var(--gin-color-text);
-    box-shadow: inset 0 0 0 1px var(--gin-color-text);
+    border-color: var(--tonic-color-text);
+    box-shadow: inset 0 0 0 1px var(--tonic-color-text);
   }
 
   &--small,
   &--extrasmall {
-    font-size: var(--gin-font-size-s);
+    font-size: var(--tonic-font-size-s);
     line-height: 1.5;
-    border-radius: var(--gin-border-s);
+    border-radius: var(--tonic-border-s);
   }
 
   &[disabled],
   &[disabled]:hover {
     cursor: not-allowed;
-    color: var(--gin-color-disabled);
-    background-color: var(--gin-color-disabled-bg) !important;
-    border-color: var(--gin-color-disabled-border);
+    color: var(--tonic-color-disabled);
+    background-color: var(--tonic-color-disabled-bg) !important;
+    border-color: var(--tonic-color-disabled-border);
     box-shadow: none;
   }
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     color-scheme: dark;
   }
 }
 
 .form-textarea-wrapper {
   // box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
-  border-radius: var(--gin-border-m);
+  border-radius: var(--tonic-border-m);
 
   textarea {
     max-width: 100%;
@@ -65,31 +65,31 @@ $maxWidth: 520px;
 
 .password-strength {
   &__title {
-    color: var(--gin-color-text-light);
+    color: var(--tonic-color-text-light);
   }
 
   &__text {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
   }
 }
 
 .password-suggestions {
-  color: var(--gin-color-text-light);
-  border: 1px solid var(--gin-border-color-layer2);
+  color: var(--tonic-color-text-light);
+  border: 1px solid var(--tonic-border-color-layer2);
   background-color: transparent;
 }
 
 // Select
 .form-element--type-select {
-  padding-right: calc(var(--gin-spacing-xs) + var(--gin-spacing-xl) - 1px);
+  padding-right: calc(var(--tonic-spacing-xs) + var(--tonic-spacing-xl) - 1px);
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23ffffff'/%3E%3C/svg%3E%0A");
   }
 }
 
 .form-element--type-select--small {
-  font-size: var(--gin-font-size-xs);
+  font-size: var(--tonic-font-size-xs);
   min-height: 2.25rem;
   line-height: 1.4;
   padding-top: .474rem; // 0.79rem * 1.2 / 2
@@ -100,33 +100,33 @@ $maxWidth: 520px;
 .form-boolean {
   width: 21px;
   height: 21px;
-  border-color: var(--gin-border-color-form-element);
-  border-radius: var(--gin-border-xs);
+  border-color: var(--tonic-border-color-form-element);
+  border-radius: var(--tonic-border-xs);
 }
 
 // Darkmode Checkbox
 .form-boolean--type-checkbox {
   &:not(:checked) {
-    .gin--dark-mode & {
-      background: var(--gin-bg-input);
+    .tonic--dark-mode & {
+      background: var(--tonic-bg-input);
     }
   }
 
   &:checked {
-    background-color: var(--gin-color-primary);
+    background-color: var(--tonic-color-primary);
 
     &:not(:disabled) {
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: icon('checked');
       }
     }
 
     &:hover {
-      background-color: var(--gin-color-primary-hover);
+      background-color: var(--tonic-color-primary-hover);
     }
 
     &:active {
-      background-color: var(--gin-color-primary-active);
+      background-color: var(--tonic-color-primary-active);
     }
   }
 }
@@ -142,7 +142,7 @@ $maxWidth: 520px;
     vertical-align: top;
     width: 2.5rem;
     height: 1.5rem;
-    border-radius: var(--gin-border-l);
+    border-radius: var(--tonic-border-l);
     box-sizing: border-box;
 
     &__inner {
@@ -151,14 +151,14 @@ $maxWidth: 520px;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      clip-path: circle(var(--gin-spacing-l) at 50% 50%); // Fix Safari bug
-      background-color: var(--gin-color-disabled);
+      clip-path: circle(var(--tonic-spacing-l) at 50% 50%); // Fix Safari bug
+      background-color: var(--tonic-color-disabled);
       border: 3px solid transparent;
-      border-radius: var(--gin-border-l);
+      border-radius: var(--tonic-border-l);
       box-sizing: border-box;
 
-      .gin--dark-mode & {
-        background-color: var(--gin-bg-input);
+      .tonic--dark-mode & {
+        background-color: var(--tonic-bg-input);
       }
 
       &:before {
@@ -171,8 +171,8 @@ $maxWidth: 520px;
         transform: translateX(-16px);
         transition: transform .3s;
 
-        .gin--dark-mode & {
-          background-color: var(--gin-border-color-form-element);
+        .tonic--dark-mode & {
+          background-color: var(--tonic-border-color-form-element);
         }
       }
     }
@@ -204,29 +204,29 @@ $maxWidth: 520px;
     }
 
     &:checked ~ .checkbox-toggle {
-      border-color: var(--gin-color-primary-light-active);
+      border-color: var(--tonic-color-primary-light-active);
 
-      .gin--high-contrast-mode & {
-        border-color: var(--gin-border-color);
+      .tonic--high-contrast-mode & {
+        border-color: var(--tonic-border-color);
       }
 
       .checkbox-toggle__inner {
-        background-color: var(--gin-switch);
+        background-color: var(--tonic-switch);
 
-        .gin--dark-mode & {
-          background-color: var(--gin-color-primary-light-active);
+        .tonic--dark-mode & {
+          background-color: var(--tonic-color-primary-light-active);
         }
 
         &:before {
           transform: translateX(16px);
           background-color: #fff;
 
-          .gin--dark-mode & {
-            background-color: var(--gin-color-primary-hover);
+          .tonic--dark-mode & {
+            background-color: var(--tonic-color-primary-hover);
           }
 
-          .gin--high-contrast-mode & {
-            background-color: var(--gin-border-color);
+          .tonic--high-contrast-mode & {
+            background-color: var(--tonic-border-color);
           }
         }
       }
@@ -234,7 +234,7 @@ $maxWidth: 520px;
 
     &:active ~ .checkbox-toggle .checkbox-toggle__inner,
     &:focus ~ .checkbox-toggle .checkbox-toggle__inner {
-      box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+      box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
     }
 
     // Disabled state: set cursor to not-allowed
@@ -247,7 +247,7 @@ $maxWidth: 520px;
     &:disabled ~ .checkbox-toggle:hover,
     &:disabled:checked ~ .checkbox-toggle .checkbox-toggle__inner,
     &:disabled:checked ~ .checkbox-toggle:hover .checkbox-toggle__inner {
-      background-color: var(--gin-color-disabled);
+      background-color: var(--tonic-color-disabled);
 
       &::before {
         background-color: #fff;
@@ -259,17 +259,17 @@ $maxWidth: 520px;
   label {
     z-index: 1;
     position: relative;
-    padding-left: var(--gin-spacing-xxs);
+    padding-left: var(--tonic-spacing-xxs);
     padding-bottom: 0;
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 }
 
 .form-boolean {
   &:hover, &:active {
-    .gin--dark-mode & {
+    .tonic--dark-mode & {
       box-shadow: none;
-      border-color: var(--gin-color-text);
+      border-color: var(--tonic-color-text);
     }
   }
 }
@@ -277,52 +277,52 @@ $maxWidth: 520px;
 .form-boolean--type-radio {
   &, &:hover, &:active, &:focus, &:hover:focus {
     background-image: none;
-    background-color: var(--gin-bg-input);
-    border-color: var(--gin-border-color-form-element);
+    background-color: var(--tonic-bg-input);
+    border-color: var(--tonic-border-color-form-element);
     border-radius: 50%;
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2);
+    box-shadow: inset 0 0 0 1px var(--tonic-border-color-layer2);
 
-    &, .gin--dark-mode & {
-      border-color: var(--gin-color-text);
+    &, .tonic--dark-mode & {
+      border-color: var(--tonic-color-text);
     }
   }
 
   &:active, &:focus {
-    box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2),
-                0 0 0 1px var(--gin-color-focus-border),
-                0 0 0 4px var(--gin-color-focus);
+    box-shadow: inset 0 0 0 1px var(--tonic-border-color-layer2),
+                0 0 0 1px var(--tonic-color-focus-border),
+                0 0 0 4px var(--tonic-color-focus);
   }
 
   &:checked:not(:disabled) {
     &, &:hover {
       background-image: none;
-      background-color: var(--gin-bg-layer);
-      box-shadow: inset 0 0 0 5px var(--gin-color-primary);
+      background-color: var(--tonic-bg-layer);
+      box-shadow: inset 0 0 0 5px var(--tonic-color-primary);
     }
 
     &:active, &:focus, &:hover:focus {
-      box-shadow: inset 0 0 0 5px var(--gin-color-primary),
-                  0 0 0 1px var(--gin-color-focus-border),
-                  0 0 0 4px var(--gin-color-focus);
-      border-color: var(--gin-color-focus-border);
+      box-shadow: inset 0 0 0 5px var(--tonic-color-primary),
+                  0 0 0 1px var(--tonic-color-focus-border),
+                  0 0 0 4px var(--tonic-color-focus);
+      border-color: var(--tonic-color-focus-border);
     }
   }
 
   &:disabled {
     &, &:hover {
       cursor: not-allowed;
-      background: var(--gin-color-disabled-bg);
-      border-color: var(--gin-color-disabled-border);
+      background: var(--tonic-color-disabled-bg);
+      border-color: var(--tonic-color-disabled-border);
     }
   }
 
   &:checked:disabled {
     &, &:hover {
-      background: var(--gin-color-disabled);
-      box-shadow: inset 0 0 0 5px var(--gin-color-disabled-bg);
+      background: var(--tonic-color-disabled);
+      box-shadow: inset 0 0 0 5px var(--tonic-color-disabled-bg);
     }
   }
 }
@@ -330,12 +330,12 @@ $maxWidth: 520px;
 .form-boolean--type-checkbox[disabled] {
   &, &:hover {
     cursor: not-allowed;
-    background-color: var(--gin-color-disabled-bg);
-    border-color: var(--gin-color-disabled-border);
+    background-color: var(--tonic-color-disabled-bg);
+    border-color: var(--tonic-color-disabled-border);
 
     &:checked {
-      border-color: var(--gin-color-disabled-border);
-      background-color: var(--gin-color-disabled-bg);
+      border-color: var(--tonic-color-disabled-border);
+      background-color: var(--tonic-color-disabled-bg);
       box-shadow: none;
     }
   }
@@ -344,8 +344,8 @@ $maxWidth: 520px;
 .form-radios,
 .form-checkboxes {
   .form-type--boolean {
-    margin-top: var(--gin-spacing-xs);
-    margin-bottom: var(--gin-spacing-xs);
+    margin-top: var(--tonic-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
   }
 }
 
@@ -362,13 +362,13 @@ $maxWidth: 520px;
 
 // Fieldgroup
 fieldset:not(.fieldgroup) {
-  color: var(--gin-color-text-light);
-  padding-top: var(--gin-spacing-xs);
+  color: var(--tonic-color-text-light);
+  padding-top: var(--tonic-spacing-xs);
   padding-left: 0;
   padding-right: 0;
   background: transparent;
-  border-color: var(--gin-border-color);
-  border-radius: var(--gin-border-m);
+  border-color: var(--tonic-border-color);
+  border-radius: var(--tonic-border-m);
   box-shadow: none;
 
   > legend {
@@ -380,29 +380,29 @@ fieldset:not(.fieldgroup) {
   }
 
   &.error {
-    border: 2px solid var(--gin-color-danger);
+    border: 2px solid var(--tonic-color-danger);
   }
 }
 
 .fieldset__label,
 .fieldset__label--group,
 .form-item__label {
-  font-size: var(--gin-font-size-s);
-  font-weight: var(--gin-font-weight-semibold);
-  color: var(--gin-color-title);
+  font-size: var(--tonic-font-size-s);
+  font-weight: var(--tonic-font-weight-semibold);
+  color: var(--tonic-color-title);
   margin-top: 0;
-  margin-bottom: var(--gin-spacing-xs);
+  margin-bottom: var(--tonic-spacing-xs);
 }
 
 .form-item__label.has-error,
 .form-item__error-message {
-  color: var(--gin-color-danger);
+  color: var(--tonic-color-danger);
 }
 
 .form-item__description,
 .fieldset__description {
   max-width: $maxWidth;
-  color: var(--gin-color-text-light);
+  color: var(--tonic-color-text-light);
 }
 
 .form-item__label.form-required::after,
@@ -411,7 +411,7 @@ fieldset:not(.fieldgroup) {
 .horizontal-tab-button .form-required::after,
 .vertical-tabs__menu-link .form-required::after {
   content: "*";
-  color: var(--gin-color-danger);
+  color: var(--tonic-color-danger);
   line-height: 1;
   margin-right: .15em;
   margin-left: .15em;
@@ -420,7 +420,7 @@ fieldset:not(.fieldgroup) {
 }
 
 .claro-details.error {
-  border: 2px solid var(--gin-color-danger);
+  border: 2px solid var(--tonic-color-danger);
 }
 
 .claro-details__summary:not(.form-required) {
@@ -431,7 +431,7 @@ fieldset:not(.fieldgroup) {
 
 .form-item__warning {
   display: inline-block;
-  margin-top: var(--gin-spacing-xs);
+  margin-top: var(--tonic-spacing-xs);
 }
 
 html.js .form-autocomplete {
@@ -447,7 +447,7 @@ html.js .form-autocomplete {
 
 .required-mark {
   &::after {
-    background: var(--gin-color-danger);
+    background: var(--tonic-color-danger);
     mask-image: icon('asterisk');
     mask-position: center center;
     mask-size: 100% 100%;
@@ -476,12 +476,12 @@ html.js .form-autocomplete {
 
 // Autocomplete field
 html.js input.form-linkit-autocomplete {
-  padding-right: var(--gin-spacing-xl);
+  padding-right: var(--tonic-spacing-xl);
   background-position: right 8px center;
 }
 
 .claro-autocomplete {
-  width: calc(100% - var(--gin-spacing-m));
+  width: calc(100% - var(--tonic-spacing-m));
 
   .form-autocomplete {
     width: 100%;
@@ -489,7 +489,7 @@ html.js input.form-linkit-autocomplete {
 }
 
 .no-touchevents .form-element--type-select.form-element--extrasmall {
-  font-size: var(--gin-font-size-s);
+  font-size: var(--tonic-font-size-s);
   line-height: 1.5;
   min-height: 1.75rem;
 }
@@ -501,7 +501,7 @@ html.js input.form-linkit-autocomplete {
 
 .image-style-new {
   .form-item {
-    margin-right: var(--gin-spacing-xxs);
+    margin-right: var(--tonic-spacing-xxs);
   }
 }
 
@@ -511,20 +511,20 @@ tr .form-item {
 }
 
 .container-inline .form-item {
-  margin-top: var(--gin-spacing-density-s);
-  margin-bottom: var(--gin-spacing-density-s);
+  margin-top: var(--tonic-spacing-density-s);
+  margin-bottom: var(--tonic-spacing-density-s);
 }
 
 .field-plugin-settings-edit-form {
-  margin-top: var(--gin-spacing-s);
+  margin-top: var(--tonic-spacing-s);
 
   .form-item {
-    margin-top: var(--gin-spacing-m);
-    margin-bottom: var(--gin-spacing-m);
+    margin-top: var(--tonic-spacing-m);
+    margin-bottom: var(--tonic-spacing-m);
   }
 
   .form-boolean-group .form-item {
-    margin-top: var(--gin-spacing-xs);
-    margin-bottom: var(--gin-spacing-xs);
+    margin-top: var(--tonic-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
   }
 }

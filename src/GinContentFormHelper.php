@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Service to handle content form overrides.
  */
-class GinContentFormHelper implements ContainerInjectionInterface {
+class TonicContentFormHelper implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
 
@@ -47,7 +47,7 @@ class GinContentFormHelper implements ContainerInjectionInterface {
   protected $themeManager;
 
   /**
-   * GinContentFormHelper constructor.
+   * TonicContentFormHelper constructor.
    *
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.
@@ -135,8 +135,8 @@ class GinContentFormHelper implements ContainerInjectionInterface {
         $form['actions']['preview']['#weight'] = $save_weight - 1;
       }
 
-      // Create gin_actions group.
-      $form['gin_actions'] = [
+      // Create tonic_actions group.
+      $form['tonic_actions'] = [
         '#type' => 'container',
         '#weight' => -1,
         '#multilingual' => TRUE,
@@ -146,26 +146,26 @@ class GinContentFormHelper implements ContainerInjectionInterface {
           ],
         ],
       ];
-      // Assign status to gin_actions.
-      $form['status']['#group'] = 'gin_actions';
+      // Assign status to tonic_actions.
+      $form['status']['#group'] = 'tonic_actions';
 
       // Move all actions over.
-      $form['gin_actions']['actions'] = ($form['actions']) ?? [];
-      $form['gin_actions']['actions']['#weight'] = 130;
+      $form['tonic_actions']['actions'] = ($form['actions']) ?? [];
+      $form['tonic_actions']['actions']['#weight'] = 130;
 
-      // Now let's just remove delete, as we'll move that over to gin_sidebar.
-      unset($form['gin_actions']['actions']['delete']);
-      unset($form['gin_actions']['actions']['delete_translation']);
+      // Now let's just remove delete, as we'll move that over to tonic_sidebar.
+      unset($form['tonic_actions']['actions']['delete']);
+      unset($form['tonic_actions']['actions']['delete_translation']);
 
       // Add sidebar toggle.
-      $form['gin_actions']['gin_sidebar_toggle'] = [
-        '#markup' => '<a href="#toggle-sidebar" class="meta-sidebar__trigger trigger" role="button" title="' . t('Hide sidebar panel') . '" aria-controls="gin_sidebar"><span class="visually-hidden">' . t('Hide sidebar panel') . '</span></a>',
+      $form['tonic_actions']['tonic_sidebar_toggle'] = [
+        '#markup' => '<a href="#toggle-sidebar" class="meta-sidebar__trigger trigger" role="button" title="' . t('Hide sidebar panel') . '" aria-controls="tonic_sidebar"><span class="visually-hidden">' . t('Hide sidebar panel') . '</span></a>',
         '#weight' => '999',
       ];
-      $form['#attached']['library'][] = 'gin/sidebar';
+      $form['#attached']['library'][] = 'tonic/sidebar';
 
-      // Create gin_sidebar group.
-      $form['gin_sidebar'] = [
+      // Create tonic_sidebar group.
+      $form['tonic_sidebar'] = [
         '#group' => 'meta',
         '#type' => 'container',
         '#weight' => 99,
@@ -177,26 +177,26 @@ class GinContentFormHelper implements ContainerInjectionInterface {
         ],
       ];
       // Copy footer over.
-      $form['gin_sidebar']['footer'] = ($form['footer']) ?? [];
+      $form['tonic_sidebar']['footer'] = ($form['footer']) ?? [];
       // Copy actions.
-      $form['gin_sidebar']['actions'] = [];
-      $form['gin_sidebar']['actions']['#type'] = ($form['actions']['#type']) ?? [];
+      $form['tonic_sidebar']['actions'] = [];
+      $form['tonic_sidebar']['actions']['#type'] = ($form['actions']['#type']) ?? [];
       // Copy delete action.
-      $form['gin_sidebar']['actions']['delete'] = ($form['actions']['delete']) ?? [];
+      $form['tonic_sidebar']['actions']['delete'] = ($form['actions']['delete']) ?? [];
       // Copy delete_translation action.
       if (isset($form['actions']['delete_translation'])) {
-        $form['gin_sidebar']['actions']['delete_translation'] = ($form['actions']['delete_translation']) ?? [];
-        $form['gin_sidebar']['actions']['delete_translation']['#attributes']['class'][] = 'button--danger';
-        $form['gin_sidebar']['actions']['delete_translation']['#attributes']['class'][] = 'action-link';
+        $form['tonic_sidebar']['actions']['delete_translation'] = ($form['actions']['delete_translation']) ?? [];
+        $form['tonic_sidebar']['actions']['delete_translation']['#attributes']['class'][] = 'button--danger';
+        $form['tonic_sidebar']['actions']['delete_translation']['#attributes']['class'][] = 'action-link';
       }
 
       // Sidebar close button.
       $close_sidebar_translation = t('Close sidebar panel');
-      $form['gin_sidebar']['gin_sidebar_close'] = [
+      $form['tonic_sidebar']['tonic_sidebar_close'] = [
         '#markup' => '<a href="#close-sidebar" class="meta-sidebar__close trigger" role="button" title="' . $close_sidebar_translation . '"><span class="visually-hidden">' . $close_sidebar_translation . '</span></a>',
       ];
 
-      $form['gin_sidebar_overlay'] = [
+      $form['tonic_sidebar_overlay'] = [
         '#markup' => '<div class="meta-sidebar__overlay trigger"></div>',
       ];
     }
@@ -206,7 +206,7 @@ class GinContentFormHelper implements ContainerInjectionInterface {
     $form['#theme'] = ['node_edit_form'];
     // Attach libraries.
     $form['#attached']['library'][] = 'claro/node-form';
-    $form['#attached']['library'][] = 'gin/edit_form';
+    $form['#attached']['library'][] = 'tonic/edit_form';
 
     // Add a class that allows the logic in edit_form.js to identify the form.
     $form['#attributes']['class'][] = 'gin-node-edit-form';
@@ -225,8 +225,8 @@ class GinContentFormHelper implements ContainerInjectionInterface {
   /**
    * Check if we´re on a content edit form.
    *
-   * _gin_is_content_form() is replaced by
-   * \Drupal::classResolver(GinContentFormHelper::class)->isContentForm().
+   * _tonic_is_content_form() is replaced by
+   * \Drupal::classResolver(TonicContentFormHelper::class)->isContentForm().
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -250,10 +250,10 @@ class GinContentFormHelper implements ContainerInjectionInterface {
       'entity.node.edit_form',
     ];
 
-    $additional_routes = $this->moduleHandler->invokeAll('gin_content_form_routes');
+    $additional_routes = $this->moduleHandler->invokeAll('tonic_content_form_routes');
     $route_names = array_merge($additional_routes, $route_names);
-    $this->moduleHandler->alter('gin_content_form_routes', $route_names);
-    $this->themeManager->alter('gin_content_form_routes', $route_names);
+    $this->moduleHandler->alter('tonic_content_form_routes', $route_names);
+    $this->themeManager->alter('tonic_content_form_routes', $route_names);
 
     if (
       in_array($route_name, $route_names, TRUE) ||
@@ -265,7 +265,7 @@ class GinContentFormHelper implements ContainerInjectionInterface {
 
     // Forms to exclude.
     // If media library widget, don't use new content edit form.
-    // gin_preprocess_html is not triggered here, so checking
+    // tonic_preprocess_html is not triggered here, so checking
     // the form id is enough.
     $form_ids_to_ignore = [
       'media_library_add_form_',

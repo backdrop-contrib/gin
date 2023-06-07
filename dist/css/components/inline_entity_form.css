@@ -1,5 +1,5 @@
 .ief-entity-table .ief-row-form {
-  border: 1px solid var(--gin-border-color);
+  border: 1px solid var(--tonic-border-color);
 }
 
 .ief-entity-table .ief-row-form:hover {
@@ -11,18 +11,18 @@
 }
 
 .ief-entity-table .ief-row-form .form-item {
-  margin-top: var(--gin-spacing-density-s);
-  margin-bottom: var(--gin-spacing-density-s);
+  margin-top: var(--tonic-spacing-density-s);
+  margin-bottom: var(--tonic-spacing-density-s);
 }
 
 .ief-form > .form-wrapper > .form-wrapper:last-of-type {
-  background: var(--gin-bg-layer2);
-  padding: 0 var(--gin-spacing-m);
-  margin: 0 calc(var(--gin-spacing-m) * -1);
+  background: var(--tonic-bg-layer2);
+  padding: 0 var(--tonic-spacing-m);
+  margin: 0 calc(var(--tonic-spacing-m) * -1);
 }
 
 .ief-form.ief-form-bottom {
-  border: 1px solid var(--gin-border-color);
+  border: 1px solid var(--tonic-border-color);
 }
 
 .ief-form.ief-form-bottom .fieldset__wrapper {
@@ -37,19 +37,19 @@
 }
 
 [dir="ltr"] .paragraphs-tabs-wrapper .field-multiple-table .ief-entity-table .draggable.drag-previous > .tabledrag-cell::before {
-  left: var(--gin-spacing-xs);
+  left: var(--tonic-spacing-xs);
 }
 
 [dir="rtl"] .paragraphs-tabs-wrapper .field-multiple-table .ief-entity-table .draggable.drag-previous > .tabledrag-cell::before {
-  right: var(--gin-spacing-xs);
+  right: var(--tonic-spacing-xs);
 }
 
 [dir="ltr"] .paragraphs-tabs-wrapper .field-multiple-table .ief-entity-table .draggable .tabledrag-cell-content__item {
-  padding-left: var(--gin-spacing-s);
+  padding-left: var(--tonic-spacing-s);
 }
 
 [dir="rtl"] .paragraphs-tabs-wrapper .field-multiple-table .ief-entity-table .draggable .tabledrag-cell-content__item {
-  padding-right: var(--gin-spacing-s);
+  padding-right: var(--tonic-spacing-s);
 }
 
 .paragraphs-tabs-wrapper .field-multiple-table .ief-entity-operations {

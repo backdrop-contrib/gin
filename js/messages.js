@@ -6,19 +6,19 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, once) => {
-  Drupal.behaviors.ginMessages = {
+  Drupal.behaviors.tonicMessages = {
     attach: (context) => {
-      Drupal.ginMessages.dismissMessages(context);
+      Drupal.tonicMessages.dismissMessages(context);
     }
   };
 
-  Drupal.ginMessages = {
+  Drupal.tonicMessages = {
     dismissMessages: (context = document) => {
       once('gin-messages-dismiss', '.messages .button--dismiss', context).forEach(dismissButton => {
         dismissButton.addEventListener('click', e => {
           e.preventDefault();
           const message = e.currentTarget.closest('.messages-list__item');
-          Drupal.ginMessages.hideMessage(message);
+          Drupal.tonicMessages.hideMessage(message);
         });
       });
     },

@@ -3,7 +3,7 @@
   .form-radios {
     display: flex;
     flex-wrap: wrap;
-    margin-top: var(--gin-spacing-xs);
+    margin-top: var(--tonic-spacing-xs);
 
     .form-item--preset-accent-color {
       position: relative;
@@ -12,13 +12,13 @@
         cursor: pointer;
         width: 32px;
         height: 32px;
-        top: var(--gin-spacing-m);
-        margin-right: var(--gin-spacing-xs);
+        top: var(--tonic-spacing-m);
+        margin-right: var(--tonic-spacing-xs);
         border-color: transparent;
 
         &,
-        .gin--dark-mode & {
-          background-color: var(--gin-color-primary);
+        .tonic--dark-mode & {
+          background-color: var(--tonic-color-primary);
         }
 
         &:hover {
@@ -29,15 +29,15 @@
         &:focus,
         &:focus:hover,
         &:checked {
-          border-color: var(--gin-color-primary);
+          border-color: var(--tonic-color-primary);
         }
 
         &:focus:checked,
         &:focus,
         &:checked {
-          background-color: var(--gin-color-primary);
-          box-shadow: inset 0 0 0 2px var(--gin-bg-layer),
-                      inset 0 0 0 4px var(--gin-color-primary);
+          background-color: var(--tonic-color-primary);
+          box-shadow: inset 0 0 0 2px var(--tonic-bg-layer),
+                      inset 0 0 0 4px var(--tonic-color-primary);
         }
 
         // Custom
@@ -46,11 +46,11 @@
           background-image: url(~settings/custom-color.jpg);
           background-size: 100%;
           background-repeat: no-repeat;
-          border-color: var(--gin-border-color);
+          border-color: var(--tonic-border-color);
 
           &:checked {
             background-color: #fff;
-            border-color: var(--gin-border-color);
+            border-color: var(--tonic-border-color);
             border-width: 1px;
           }
         }
@@ -63,10 +63,10 @@
         position: absolute;
         top: 100%;
         left: -10px;
-        padding: var(--gin-spacing-xs);
-        color: var(--gin-color-contextual-text);
-        background: var(--gin-color-contextual);
-        border-radius: var(--gin-border-xs);
+        padding: var(--tonic-spacing-xs);
+        color: var(--tonic-color-contextual-text);
+        background: var(--tonic-color-contextual);
+        border-radius: var(--tonic-border-xs);
         transform: translateX(-50%);
       }
 
@@ -86,11 +86,11 @@
   .form-type--color,
   .form-type--textfield {
     float: left;
-    margin: 0 0 0var(--gin-spacing-xs) 0;
+    margin: 0 0 0var(--tonic-spacing-xs) 0;
   }
 
   .form-type--color {
-    margin-right: var(--gin-spacing-xs);
+    margin-right: var(--tonic-spacing-xs);
   }
 
   .fieldset__description {
@@ -103,12 +103,12 @@
   .form-radios {
     display: inline-flex;
     flex-wrap: wrap;
-    padding: .1875rem var(--gin-spacing-xs);
-    border: 1px solid var(--gin-border-color-form-element);
-    border-radius: var(--gin-spacing-xl);
+    padding: .1875rem var(--tonic-spacing-xs);
+    border: 1px solid var(--tonic-border-color-form-element);
+    border-radius: var(--tonic-spacing-xl);
 
-    .gin--dark-mode & {
-      background: var(--gin-bg-layer2);
+    .tonic--dark-mode & {
+      background: var(--tonic-bg-layer2);
     }
 
     .form-type--radio {
@@ -119,15 +119,15 @@
 
     .form-item__label {
       display: inline-block;
-      padding: .375rem var(--gin-spacing-m);
-      margin: var(--gin-spacing-xxs) 0;
+      padding: .375rem var(--tonic-spacing-m);
+      margin: var(--tonic-spacing-xxs) 0;
       border: 2px solid transparent;
-      border-radius: var(--gin-border-xl);
+      border-radius: var(--tonic-border-xl);
       box-sizing: border-box;
 
       &:hover {
-        color: var(--gin-color-primary);
-        background: var(--gin-color-primary-light-hover);
+        color: var(--tonic-color-primary);
+        background: var(--tonic-color-primary-light-hover);
       }
     }
 
@@ -140,14 +140,14 @@
       border: 0;
 
       &:focus + .form-item__label {
-        box-shadow: 0 0 0 1px var(--gin-color-focus-border),
-                    0 0 0 4px var(--gin-color-focus);
+        box-shadow: 0 0 0 1px var(--tonic-color-focus-border),
+                    0 0 0 4px var(--tonic-color-focus);
       }
 
       &:checked + .form-item__label {
-        font-weight: var(--gin-font-weight-bold);
-        color: var(--gin-color-primary-active);
-        background: var(--gin-color-primary-light-active);
+        font-weight: var(--tonic-font-weight-bold);
+        color: var(--tonic-color-primary-active);
+        background: var(--tonic-color-primary-light-active);
       }
     }
   }
@@ -159,14 +159,14 @@
   .form-radios {
     display: flex;
     flex-wrap: wrap;
-    margin-top: var(--gin-spacing-xs);
+    margin-top: var(--tonic-spacing-xs);
 
     .form-item {
       position: relative;
       display: flex;
       flex-wrap: wrap;
       width: 140px;
-      margin: 0 var(--gin-spacing-s) 0 0;
+      margin: 0 var(--tonic-spacing-s) 0 0;
 
       input {
         cursor: pointer;
@@ -174,27 +174,27 @@
         width: 140px;
         height: 100px;
         margin-left: 0;
-        border-radius: var(--gin-border-l);
+        border-radius: var(--tonic-border-l);
         transform: none;
 
         &
         &:focus {
-          border-color: var(--gin-color-text);
+          border-color: var(--tonic-color-text);
           box-shadow: none;
         }
 
         &:checked {
-          border-color: var(--gin-color-primary);
-          box-shadow: inset 0 0 0 1px var(--gin-color-primary);
+          border-color: var(--tonic-color-primary);
+          box-shadow: inset 0 0 0 1px var(--tonic-color-primary);
         }
 
         &:focus {
-          box-shadow: 0 0 0 3px var(--gin-color-focus);
+          box-shadow: 0 0 0 3px var(--tonic-color-focus);
         }
 
         &:checked:focus {
-          box-shadow: inset 0 0 0 1px var(--gin-color-primary),
-                      0 0 0 3px var(--gin-color-focus);
+          box-shadow: inset 0 0 0 1px var(--tonic-color-primary),
+                      0 0 0 3px var(--tonic-color-focus);
         }
 
         background-repeat: no-repeat;
@@ -202,10 +202,10 @@
       }
 
       .form-item__label {
-        font-size: var(--gin-font-size-xxs);
+        font-size: var(--tonic-font-size-xxs);
         display: block;
-        margin-top: var(--gin-spacing-xs);
-        margin-bottom: var(--gin-spacing-m);
+        margin-top: var(--tonic-spacing-xs);
+        margin-bottom: var(--tonic-spacing-m);
       }
     }
   }
@@ -218,7 +218,7 @@
     &[data-gin-toolbar=vertical] {
       background-image: url(~settings/toolbar_sidebar.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/toolbar_sidebar_darkmode.png);
       }
     }
@@ -227,7 +227,7 @@
     &[data-gin-toolbar=horizontal] {
       background-image: url(~settings/toolbar_minimal.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/toolbar_minimal_darkmode.png);
       }
     }
@@ -236,7 +236,7 @@
     &[data-gin-toolbar=classic] {
       background-image: url(~settings/toolbar_legacy.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/toolbar_legacy_darkmode.png);
       }
     }
@@ -250,7 +250,7 @@
     &[data-drupal-selector=edit-layout-density-default] {
       background-image: url(~settings/layout_density_default.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/layout_density_default_darkmode.png);
       }
     }
@@ -259,7 +259,7 @@
     &[data-drupal-selector=edit-layout-density-medium] {
       background-image: url(~settings/layout_density_medium.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/layout_density_default_darkmode.png);
       }
     }
@@ -268,7 +268,7 @@
     &[data-drupal-selector=edit-layout-density-small] {
       background-image: url(~settings/layout_density_small.png);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         background-image: url(~settings/layout_density_small_darkmode.png);
       }
     }

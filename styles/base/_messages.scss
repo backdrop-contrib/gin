@@ -1,13 +1,13 @@
 .messages {
   position: relative;
-  padding: var(--gin-spacing-m);
+  padding: var(--tonic-spacing-m);
   border: 2px solid transparent;
-  border-radius: var(--gin-border-l);
-  transition: opacity var(--gin-transition-fast);
+  border-radius: var(--tonic-border-l);
+  transition: opacity var(--tonic-transition-fast);
   opacity: 1;
 
-  .gin--dark-mode & {
-    box-shadow: 0 6px 16px var(--gin-border-color-layer);
+  .tonic--dark-mode & {
+    box-shadow: 0 6px 16px var(--tonic-border-color-layer);
   }
 
   &, &-list {
@@ -27,7 +27,7 @@
   }
 
   &__title {
-    font-weight: var(--gin-font-weight-bold);
+    font-weight: var(--tonic-font-weight-bold);
   }
 
   &__title,
@@ -38,7 +38,7 @@
   .messages__header {
     position: relative;
     background-image: none;
-    margin-bottom: var(--gin-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
     margin-right: 1.5em;
 
     &:before {
@@ -56,15 +56,15 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: var(--gin-spacing-s);
+    margin: var(--tonic-spacing-s);
     padding: 0;
     height: 29px;
     width: 29px;
     color: transparent;
     text-indent: -99999px;
-    border-radius: var(--gin-border-m);
+    border-radius: var(--tonic-border-m);
     border-color: transparent !important;
-    transition: var(--gin-transition);
+    transition: var(--tonic-transition);
     box-shadow: none;
 
     &:hover:not(:focus) {
@@ -76,7 +76,7 @@
     &:focus,
     &:hover:focus {
       .icon-close {
-        background-color: var(--gin-bg-app);
+        background-color: var(--tonic-bg-app);
       }
     }
 
@@ -100,15 +100,15 @@
   }
 
   &.messages--info {
-    color: var(--gin-color-info-light);
-    background-color: var(--gin-bg-info);
-    border-color: var(--gin-bg-info);
+    color: var(--tonic-color-info-light);
+    background-color: var(--tonic-bg-info);
+    border-color: var(--tonic-bg-info);
 
     .messages__header {
       background: none;
 
       &:before {
-        background-color: var(--gin-color-info-light);
+        background-color: var(--tonic-color-info-light);
         mask-image: icon('info');
         mask-repeat: no-repeat;
         mask-position: center left;
@@ -117,18 +117,18 @@
 
     .button--dismiss {
       .icon-close:link {
-        background-color: var(--gin-color-info-light);
+        background-color: var(--tonic-color-info-light);
       }
     }
   }
 
   &.messages--status {
-    color: var(--gin-color-green-light);
-    background-color: var(--gin-bg-green);
+    color: var(--tonic-color-green-light);
+    background-color: var(--tonic-bg-green);
 
     .messages__header {
       &:before {
-        background-color: var(--gin-color-green-light);
+        background-color: var(--tonic-color-green-light);
         mask-image: icon('status');
         mask-repeat: no-repeat;
         mask-position: center left;
@@ -137,19 +137,19 @@
 
     .button--dismiss {
       .icon-close:link {
-        background-color: var(--gin-color-green-light);
+        background-color: var(--tonic-color-green-light);
       }
     }
 
   }
 
   &.messages--warning {
-    color: var(--gin-color-warning-light);
-    background-color: var(--gin-bg-warning);
+    color: var(--tonic-color-warning-light);
+    background-color: var(--tonic-bg-warning);
 
     .messages__header {
       &:before {
-        background-color: var(--gin-color-warning-light);
+        background-color: var(--tonic-color-warning-light);
         mask-image: icon('warning');
         mask-repeat: no-repeat;
         mask-position: center left;
@@ -158,18 +158,18 @@
 
     .button--dismiss {
       .icon-close:link {
-        background-color: var(--gin-color-warning-light);
+        background-color: var(--tonic-color-warning-light);
       }
     }
   }
 
   &--error {
-    color: var(--gin-color-danger-light);
-    background-color: var(--gin-bg-danger);
+    color: var(--tonic-color-danger-light);
+    background-color: var(--tonic-bg-danger);
 
     .messages__header {
       &:before {
-        background-color: var(--gin-color-danger-light);
+        background-color: var(--tonic-color-danger-light);
         mask-image: icon('error');
         mask-repeat: no-repeat;
         mask-position: center left;
@@ -178,7 +178,7 @@
 
     .button--dismiss {
       .icon-close:link {
-        background-color: var(--gin-color-danger-light);
+        background-color: var(--tonic-color-danger-light);
       }
     }
   }

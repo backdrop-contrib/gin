@@ -5,7 +5,7 @@
 }
 
 .system-status-report__row {
-  border-bottom: 1px solid var(--gin-border-color);
+  border-bottom: 1px solid var(--tonic-border-color);
 }
 
 .system-status-counter__status-icon {
@@ -17,7 +17,7 @@
 .system-status-general-info,
 .system-status-report__requirements-group,
 .system-status-report {
-  padding: var(--gin-spacing-m);
+  padding: var(--tonic-spacing-m);
 
   h3 + .divider,
   .divider:last-child {
@@ -27,7 +27,7 @@
 
 .system-status-general-info {
   &__items {
-    margin: var(--gin-spacing-m) 0 0;
+    margin: var(--tonic-spacing-m) 0 0;
   }
 
   &__item {
@@ -40,7 +40,7 @@
 .system-status-report__requirements-group > h3,
 .system-themes-list__header {
   text-transform: none;
-  margin: calc(var(--gin-spacing-xs) * -1) 0 var(--gin-spacing-m) 0;
+  margin: calc(var(--tonic-spacing-xs) * -1) 0 var(--tonic-spacing-m) 0;
 }
 
 .claro-details__summary--system-status-report {

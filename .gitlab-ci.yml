@@ -1,6 +1,6 @@
 include:
   # This remote project centralize our CI "golden path" https://docs.gitlab.com/ee/ci/yaml/#includefile
-  remote: 'https://gitlab.com/drupalspoons/composer-plugin/-/raw/master/templates/.gitlab-ci.yml'
+  remote: 'https://gitlab.com/drupalspoons/composer-plutonic/-/raw/master/templates/.gitlab-ci.yml'
 
 # Override phpcs config
 phpcs:

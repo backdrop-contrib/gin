@@ -13,7 +13,7 @@ use Drupal\Core\StringTranslation\StringTranslationTrait;
 /**
  * Service to handle overridden user settings.
  */
-class GinSettings implements ContainerInjectionInterface {
+class TonicSettings implements ContainerInjectionInterface {
 
   use StringTranslationTrait;
 
@@ -82,13 +82,13 @@ class GinSettings implements ContainerInjectionInterface {
       $account = $this->currentUser;
     }
     if ($this->userOverrideEnabled($account)) {
-      $settings = $this->userData->get('gin', $account->id(), 'settings');
+      $settings = $this->userData->get('tonic', $account->id(), 'settings');
       if (isset($settings[$name])) {
         $value = $settings[$name];
       }
       else {
         // Try loading legacy settings from user data.
-        $value = $this->userData->get('gin', $account->id(), $name);
+        $value = $this->userData->get('tonic', $account->id(), $name);
       }
     }
     if (is_null($value)) {
@@ -125,13 +125,13 @@ class GinSettings implements ContainerInjectionInterface {
       $account = $this->currentUser;
     }
     // All settings are deleted to remove legacy settings.
-    $this->userData->delete('gin', $account->id());
-    $this->userData->set('gin', $account->id(), 'enable_user_settings', TRUE);
-    $this->userData->set('gin', $account->id(), 'settings', $settings);
+    $this->userData->delete('tonic', $account->id());
+    $this->userData->set('tonic', $account->id(), 'enable_user_settings', TRUE);
+    $this->userData->set('tonic', $account->id(), 'settings', $settings);
   }
 
   /**
-   * Clears all gin settings for the current user.
+   * Clears all tonic settings for the current user.
    *
    * @param \Drupal\Core\Session\AccountInterface|null $account
    *   The account object. Current user if NULL.
@@ -140,7 +140,7 @@ class GinSettings implements ContainerInjectionInterface {
     if (!$account) {
       $account = $this->currentUser;
     }
-    $this->userData->delete('gin', $account->id());
+    $this->userData->delete('tonic', $account->id());
   }
 
   /**
@@ -167,7 +167,7 @@ class GinSettings implements ContainerInjectionInterface {
     if (!$account) {
       $account = $this->currentUser;
     }
-    return $this->allowUserOverrides() && (bool) $this->userData->get('gin', $account->id(), 'enable_user_settings');
+    return $this->allowUserOverrides() && (bool) $this->userData->get('tonic', $account->id(), 'enable_user_settings');
   }
 
   /**
@@ -295,7 +295,7 @@ class GinSettings implements ContainerInjectionInterface {
       '#title' => $this->t('Accent color'),
       '#default_value' => $account ? $this->get('preset_accent_color', $account) : $this->getDefault('preset_accent_color'),
       '#options' => [
-        'blue' => $this->t('Gin Blue (Default)'),
+        'blue' => $this->t('Tonic Blue (Default)'),
         'light_blue' => $this->t('Light Blue'),
         'dark_purple' => $this->t('Dark Purple'),
         'purple' => $this->t('Purple'),
@@ -309,7 +309,7 @@ class GinSettings implements ContainerInjectionInterface {
         'custom' => $this->t('Custom'),
       ],
       '#after_build' => [
-        '_gin_accent_radios',
+        '_tonic_accent_radios',
       ],
     ];
 
@@ -357,7 +357,7 @@ class GinSettings implements ContainerInjectionInterface {
       '#title' => $this->t('Focus color'),
       '#default_value' => $account ? $this->get('preset_focus_color', $account) : $this->getDefault('preset_focus_color'),
       '#options' => [
-        'gin' => $this->t('Gin Focus color (Default)'),
+        'tonic' => $this->t('Tonic Focus color (Default)'),
         'green' => $this->t('Green'),
         'claro' => $this->t('Claro Green'),
         'orange' => $this->t('Orange'),
@@ -424,7 +424,7 @@ class GinSettings implements ContainerInjectionInterface {
         'classic' => $this->t('Legacy, Classic Drupal Toolbar'),
       ],
       '#after_build' => [
-        '_gin_toolbar_radios',
+        '_tonic_toolbar_radios',
       ],
     ];
 
@@ -462,7 +462,7 @@ class GinSettings implements ContainerInjectionInterface {
     if (!$account) {
       foreach ($form as $key => $element) {
         $form[$key]['#after_build'][] = [
-          GinAfterBuild::class, 'overriddenSettingByUser',
+          TonicAfterBuild::class, 'overriddenSettingByUser',
         ];
       }
     }

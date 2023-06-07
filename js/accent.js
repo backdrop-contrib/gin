@@ -1,24 +1,24 @@
 /* eslint-disable no-bitwise, no-nested-ternary, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginAccent = {
+  Drupal.behaviors.tonicAccent = {
     attach: function attach(context) {
       once('ginAccent', 'body', context).forEach(() => {
         // Check Darkmode.
-        Drupal.ginAccent.checkDarkmode();
+        Drupal.tonicAccent.checkDarkmode();
 
         // Set accent color.
-        Drupal.ginAccent.setAccentColor();
+        Drupal.tonicAccent.setAccentColor();
 
         // Set focus color.
-        Drupal.ginAccent.setFocusColor();
+        Drupal.tonicAccent.setFocusColor();
       });
     },
   };
 
-  Drupal.ginAccent = {
+  Drupal.tonicAccent = {
     setAccentColor: function setAccentColor(preset = null, color = null) {
-      const accentColorPreset = preset != null ? preset : drupalSettings.gin.preset_accent_color;
+      const accentColorPreset = preset != null ? preset : drupalSettings.tonic.preset_accent_color;
       document.body.setAttribute('data-gin-accent', accentColorPreset);
 
       if (accentColorPreset === 'custom') {
@@ -28,7 +28,7 @@
 
     setCustomAccentColor: function setCustomAccentColor(color = null, element = document.body) {
       // If custom color is set, generate colors through JS.
-      const accentColor = color != null ? color : drupalSettings.gin.accent_color;
+      const accentColor = color != null ? color : drupalSettings.tonic.accent_color;
       if (accentColor) {
         this.clearAccentColor(element);
 
@@ -38,19 +38,19 @@
         style.className = 'gin-custom-colors';
         style.innerHTML = `
           [data-gin-accent="custom"] {\n\
-            --gin-color-primary-rgb: ${this.hexToRgb(accentColor)};\n\
-            --gin-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n\
-            --gin-color-primary-active: ${this.shadeColor(accentColor, -15)};\n\
-            --gin-bg-app-rgb: ${this.hexToRgb(this.mixColor('ffffff', strippedAccentColor, 97))};\n\
-            --gin-bg-header: ${this.mixColor('ffffff', strippedAccentColor, 85)};\n\
-            --gin-color-sticky-rgb: ${this.hexToRgb(this.mixColor('ffffff', strippedAccentColor, 92))};\n\
+            --tonic-color-primary-rgb: ${this.hexToRgb(accentColor)};\n\
+            --tonic-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n\
+            --tonic-color-primary-active: ${this.shadeColor(accentColor, -15)};\n\
+            --tonic-bg-app-rgb: ${this.hexToRgb(this.mixColor('ffffff', strippedAccentColor, 97))};\n\
+            --tonic-bg-header: ${this.mixColor('ffffff', strippedAccentColor, 85)};\n\
+            --tonic-color-sticky-rgb: ${this.hexToRgb(this.mixColor('ffffff', strippedAccentColor, 92))};\n\
           }\n\
-          .gin--dark-mode[data-gin-accent="custom"],\n\
-          .gin--dark-mode [data-gin-accent="custom"] {\n\
-            --gin-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n\
-            --gin-color-primary-hover: ${this.mixColor('ffffff', strippedAccentColor, 55)};\n\
-            --gin-color-primary-active: ${this.mixColor('ffffff', strippedAccentColor, 50)};\n\
-            --gin-bg-header: ${this.mixColor('2A2A2D', darkAccentColor, 88)};\n\
+          .tonic--dark-mode[data-gin-accent="custom"],\n\
+          .tonic--dark-mode [data-gin-accent="custom"] {\n\
+            --tonic-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n\
+            --tonic-color-primary-hover: ${this.mixColor('ffffff', strippedAccentColor, 55)};\n\
+            --tonic-color-primary-active: ${this.mixColor('ffffff', strippedAccentColor, 50)};\n\
+            --tonic-bg-header: ${this.mixColor('2A2A2D', darkAccentColor, 88)};\n\
           }\n\
         `;
 
@@ -59,14 +59,14 @@
     },
 
     clearAccentColor: (element = document.body) => {
-      if (element.querySelectorAll('.gin-custom-colors').length > 0) {
-        const removeElement = element.querySelector('.gin-custom-colors');
+      if (element.querySelectorAll('.tonic-custom-colors').length > 0) {
+        const removeElement = element.querySelector('.tonic-custom-colors');
         removeElement.parentNode.removeChild(removeElement);
       }
     },
 
     setFocusColor: function setFocusColor(preset = null, color = null) {
-      const focusColorPreset = preset != null ? preset : drupalSettings.gin.preset_focus_color;
+      const focusColorPreset = preset != null ? preset : drupalSettings.tonic.preset_focus_color;
       document.body.setAttribute('data-gin-focus', focusColorPreset);
 
       if (focusColorPreset === 'custom') {
@@ -75,7 +75,7 @@
     },
 
     setCustomFocusColor: function setCustomFocusColor(color = null, element = document.body) {
-      const accentColor = color != null ? color : drupalSettings.gin.focus_color;
+      const accentColor = color != null ? color : drupalSettings.tonic.focus_color;
 
       // Set preset color.
       if (accentColor) {
@@ -87,11 +87,11 @@
         style.className = 'gin-custom-focus';
         style.innerHTML = `
           [data-gin-focus="custom"] {\n\
-            --gin-color-focus: ${accentColor};\n\
+            --tonic-color-focus: ${accentColor};\n\
           }\n\
-          .gin--dark-mode[data-gin-focus="custom"],\n\
-          .gin--dark-mode [data-gin-focus="custom"] {\n\
-            --gin-color-focus: ${darkAccentColor};\n\
+          .tonic--dark-mode[data-gin-focus="custom"],\n\
+          .tonic--dark-mode [data-gin-focus="custom"] {\n\
+            --tonic-color-focus: ${darkAccentColor};\n\
           }`;
 
         element.append(style);
@@ -99,25 +99,25 @@
     },
 
     clearFocusColor: (element = document.body) => {
-      if (element.querySelectorAll('.gin-custom-focus').length > 0) {
-        const removeElement = element.querySelector('.gin-custom-focus');
+      if (element.querySelectorAll('.tonic-custom-focus').length > 0) {
+        const removeElement = element.querySelector('.tonic-custom-focus');
         removeElement.parentNode.removeChild(removeElement);
       }
     },
 
     checkDarkmode: () => {
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeClass = drupalSettings.tonic.darkmode_class;
 
       // Change to Darkmode.
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+        if (e.matches && localStorage.getItem('Drupal.tonic.darkmode') === 'auto') {
           document.querySelector('html').classList.add(darkmodeClass);
         }
       });
 
       // Change to Lightmode.
       window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
-        if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+        if (e.matches && localStorage.getItem('Drupal.tonic.darkmode') === 'auto') {
           document.querySelector('html').classList.remove(darkmodeClass);
         }
       });

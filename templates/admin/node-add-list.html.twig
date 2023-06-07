@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Gin's theme implementation to list node types available for adding content.
+ * Tonic's theme implementation to list node types available for adding content.
  *
  * Available variables:
  * - bundles: A list of content types, each with the following properties:
@@ -17,7 +17,7 @@
  * @see claro_preprocess_node_add_list()
  */
 #}
-{% extends '@gin/admin/entity-add-list.html.twig' %}
+{% extends '@tonic/admin/entity-add-list.html.twig' %}
 
 {% set create_content = path('node.type_add') %}
 {%

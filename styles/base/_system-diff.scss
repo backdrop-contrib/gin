@@ -1,6 +1,6 @@
 table.diff {
   .diffchange {
-    color: var(--gin-color-danger);
+    color: var(--tonic-color-danger);
   }
 
   .diff-context {
@@ -8,43 +8,43 @@ table.diff {
   }
 
   td {
-    padding: var(--gin-spacing-xs);
+    padding: var(--tonic-spacing-xs);
     height: initial;
   }
 
   tr {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
 
     .field-name {
-      background-color: var(--gin-bg-header);
+      background-color: var(--tonic-bg-header);
     }
 
     .diff-deletedline {
-      background-color: var(--gin-color-danger-lightest);
+      background-color: var(--tonic-color-danger-lightest);
 
       .diffchange {
-        color: var(--gin-bg-danger);
+        color: var(--tonic-bg-danger);
       }
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         .diffchange {
-          color: var(--gin-color-button-text);
+          color: var(--tonic-color-button-text);
         }
       }
     }
 
     .diff-addedline {
-      background-color: var(--gin-color-green-lightest);
+      background-color: var(--tonic-color-green-lightest);
 
       .diffchange {
-        color: var(--gin-bg-green);
+        color: var(--tonic-bg-green);
       }
 
-      .gin--dark-mode & {
-        background: var(--gin-bg-green);
+      .tonic--dark-mode & {
+        background: var(--tonic-bg-green);
 
         .diffchange {
-          color: var(--gin-color-button-text);
+          color: var(--tonic-color-button-text);
         }
       }
     }

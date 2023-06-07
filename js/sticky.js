@@ -3,10 +3,10 @@
 'use strict';
 
 ((Drupal) => {
-  Drupal.behaviors.ginSticky = {
+  Drupal.behaviors.tonicSticky = {
     attach: (context) => {
-      const ginSticky = once('ginSticky', document.querySelectorAll('.region-sticky-watcher'));
-      ginSticky.forEach(() => {
+      const tonicSticky = once('ginSticky', document.querySelectorAll('.region-sticky-watcher'));
+      tonicSticky.forEach(() => {
         // Watch sticky header
         const observer = new IntersectionObserver(
           ([e]) => {

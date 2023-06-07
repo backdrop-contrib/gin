@@ -1,12 +1,12 @@
 {
-    "name": "drupal/gin",
+    "name": "drupal/tonic",
     "description": "For a better Admin and Content Editor Experience.",
     "type": "drupal-theme",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/gin",
+    "homepage": "https://www.drupal.org/project/tonic",
     "support": {
-        "issues": "https://www.drupal.org/project/issues/gin",
-        "source": "https://git.drupalcode.org/project/gin"
+        "issues": "https://www.drupal.org/project/issues/tonic",
+        "source": "https://git.drupalcode.org/project/tonic"
     },
     "authors": [
         {
@@ -33,7 +33,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "drupal/gin_toolbar": "^1.0@beta"
+        "drupal/tonic_toolbar": "^1.0@beta"
     },
     "scripts": {
         "phpcs": "phpcs -s --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 0 'web/modules/custom'"

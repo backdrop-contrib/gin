@@ -6,9 +6,9 @@ use Drupal\Core\Security\TrustedCallbackInterface;
 use Drupal\Core\Url;
 
 /**
- * After build callbacks for the gin theme.
+ * After build callbacks for the tonic theme.
  */
-class GinAfterBuild implements TrustedCallbackInterface {
+class TonicAfterBuild implements TrustedCallbackInterface {
 
   /**
    * After build callback to modify the description if a setting is overwritten.
@@ -21,8 +21,8 @@ class GinAfterBuild implements TrustedCallbackInterface {
    */
   public static function overriddenSettingByUser(array $element) {
 
-    /** @var \Drupal\gin\GinSettings $settings */
-    $settings = \Drupal::classResolver(GinSettings::class);
+    /** @var \Drupal\gin\TonicSettings $settings */
+    $settings = \Drupal::classResolver(TonicSettings::class);
 
     // Check if this is overridden by the logged in user.
     if ($element && isset($element['#name']) && $settings->overridden($element['#name'])) {

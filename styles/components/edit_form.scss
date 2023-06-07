@@ -1,11 +1,11 @@
 // Node layout
-.gin--edit-form {
+.tonic--edit-form {
   // Has sidebar, save the space
   @include mq(large) {
-    padding-right: var(--gin-sidebar-offset);
+    padding-right: var(--tonic-sidebar-offset);
 
     .dialog-off-canvas-main-canvas {
-      transition: padding-left var(--gin-transition-fast);
+      transition: padding-left var(--tonic-transition-fast);
     }
 
     // If off-canvas dialog is shown
@@ -26,7 +26,7 @@
   }
 
   // Hide edit secondary toolbar item
-  .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .contextual-toolbar-tab {
+  .tonic-secondary-toolbar .toolbar-secondary .toolbar-bar .contextual-toolbar-tab {
     display: none;
   }
 
@@ -85,29 +85,29 @@
 
     .layout-region-node-secondary {
       z-index: 103;
-      width: var(--gin-sidebar-width);
-      height: calc(100% - var(--gin-toolbar-y-offset));
+      width: var(--tonic-sidebar-width);
+      height: calc(100% - var(--tonic-toolbar-y-offset));
       position: fixed;
-      top: var(--gin-toolbar-y-offset);
+      top: var(--tonic-toolbar-y-offset);
       right: 0;
       margin: 0;
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      background:var(--gin-bg-layer);
-      border-left: 1px solid var(--gin-border-color-layer);
-      transition: all var(--gin-transition-fast);
+      background:var(--tonic-bg-layer);
+      border-left: 1px solid var(--tonic-border-color-layer);
+      transition: all var(--tonic-transition-fast);
 
-      .gin--dark-mode & {
+      .tonic--dark-mode & {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
       }
 
-      .gin-sidebar {
+      .tonic-sidebar {
         .form-actions {
           margin: 0;
 
           .action-link {
-            margin-top: var(--gin-spacing-xs);
+            margin-top: var(--tonic-spacing-xs);
             margin-bottom: 0;
           }
         }
@@ -115,7 +115,7 @@
 
       .field--name-revision-log,
       .field--name-revision-log-message {
-        margin-top: var(--gin-spacing-l);
+        margin-top: var(--tonic-spacing-l);
       }
 
       .accordion {
@@ -128,34 +128,34 @@
         $sidebarSpacer: 1.5rem;
 
         &__header {
-          color: var(--gin-color-text);
+          color: var(--tonic-color-text);
           padding-left: $sidebarSpacer;
           padding-right: $sidebarSpacer;
-          background-color: var(--gin-bg-layer);
+          background-color: var(--tonic-bg-layer);
           border: 0 none;
 
           @include mq($to: medium) {
-            padding-top: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
-            padding-right: var(--gin-spacing-l);
+            padding-top: calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs));
+            padding-right: var(--tonic-spacing-l);
           }
         }
 
         &__title {
-          color: var(--gin-color-title);
-          font-weight: var(--gin-font-weight-semibold);
-          margin-top: var(--gin-spacing-xxs);
-          margin-bottom: var(--gin-spacing-m);
+          color: var(--tonic-color-title);
+          font-weight: var(--tonic-font-weight-semibold);
+          margin-top: var(--tonic-spacing-xxs);
+          margin-bottom: var(--tonic-spacing-m);
           text-shadow: none;
         }
 
         > .accordion__item {
           margin: 0;
           border: 0 none;
-          border-bottom: 1px solid var(--gin-border-color-layer);
+          border-bottom: 1px solid var(--tonic-border-color-layer);
           border-radius: 0;
 
-          .gin--dark-mode & {
-            border-color: var(--gin-border-color);
+          .tonic--dark-mode & {
+            border-color: var(--tonic-border-color);
           }
 
           > .claro-details__summary {
@@ -168,7 +168,7 @@
             }
 
             &::before {
-              top: var(--gin-spacing-xl);
+              top: var(--tonic-spacing-xl);
               left: $sidebarSpacer;
             }
 
@@ -182,7 +182,7 @@
             margin-right: $sidebarSpacer;
 
             .claro-details__wrapper {
-              margin: var(--gin-spacing-l);
+              margin: var(--tonic-spacing-l);
             }
           }
 
@@ -223,7 +223,7 @@
 
               &:first-of-type {
                 @include mq(tiny) {
-                  margin-right: var(--gin-spacing-xs);
+                  margin-right: var(--tonic-spacing-xs);
                 }
 
                 @include mq(large, wide) {
@@ -247,12 +247,12 @@
   }
 
   .revision-current {
-    background-color: var(--gin-color-primary-light-active);
+    background-color: var(--tonic-color-primary-light-active);
   }
 
   .field--name-title .form-element {
-    font-size: var(--gin-font-size-h3);
-    font-weight: var(--gin-font-weight-semibold);
+    font-size: var(--tonic-font-size-h3);
+    font-weight: var(--tonic-font-weight-semibold);
     line-height: normal;
     letter-spacing: -0.025em;
     width: 100%;

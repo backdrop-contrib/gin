@@ -1,11 +1,11 @@
 html {
-  font-family: var(--gin-font);
-  scroll-padding-top: var(--gin-scroll-offset) !important;
+  font-family: var(--tonic-font);
+  scroll-padding-top: var(--tonic-scroll-offset) !important;
 }
 
 body {
-  color: var(--gin-color-text);
-  background: var(--gin-bg-app);
+  color: var(--tonic-color-text);
+  background: var(--tonic-bg-app);
   overflow-x: hidden;
 
   @include mq(large) {
@@ -15,23 +15,23 @@ body {
 
 h1, h2, h3 {
   letter-spacing: -.025em;
-  font-weight: var(--gin-font-weight-normal);;
+  font-weight: var(--tonic-font-weight-normal);;
 }
 
 h2 {
-  font-size: var(--gin-font-size-h2);
+  font-size: var(--tonic-font-size-h2);
 }
 
 h3 {
-  font-size: var(--gin-font-size-h3);
+  font-size: var(--tonic-font-size-h3);
 }
 
 ::selection {
-  background: var(--gin-color-primary-light-hover);
+  background: var(--tonic-color-primary-light-hover);
 }
 
 ::-moz-selection {
-  background: var(--gin-color-primary-light-hover);
+  background: var(--tonic-color-primary-light-hover);
 }
 
 a {

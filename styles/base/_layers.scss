@@ -5,13 +5,13 @@
   > .region-content,
   > .region-highlighted {
     @include mq(small) {
-      margin-top: var(--gin-spacing-l);
+      margin-top: var(--tonic-spacing-l);
     }
   }
 }
 
-.gin-layer-wrapper,
-.gin-layer-wrapper-shadow,
+.tonic-layer-wrapper,
+.tonic-layer-wrapper-shadow,
 .block-system > form,
 .views-exposed-form.views-exposed-form,
 .views-edit-view,
@@ -22,19 +22,19 @@
 .admin.my-workbench
 {
   margin-top: 0;
-  box-shadow: var(--gin-shadow-l1);
-  border-radius: var(--gin-border-l);
+  box-shadow: var(--tonic-shadow-l1);
+  border-radius: var(--tonic-border-l);
 
-  .gin--dark-mode & {
-    box-shadow: 0 6px 16px var(--gin-border-color-layer);
+  .tonic--dark-mode & {
+    box-shadow: 0 6px 16px var(--tonic-border-color-layer);
   }
 
-  .gin--high-contrast-mode & {
+  .tonic--high-contrast-mode & {
     box-shadow: none;
   }
 }
 
-.gin-layer-wrapper,
+.tonic-layer-wrapper,
 .block-system-main-block > form,
 .views-exposed-form.views-exposed-form,
 .views-edit-view,
@@ -44,13 +44,13 @@
 .admin.my-workbench
 {
   width: 100%;
-  padding: var(--gin-spacing-s);
-  background: var(--gin-bg-layer);
-  border: 1px solid var(--gin-border-color-layer);
+  padding: var(--tonic-spacing-s);
+  background: var(--tonic-bg-layer);
+  border: 1px solid var(--tonic-border-color-layer);
   box-sizing: border-box;
 
   @include mq(small) {
-    padding: var(--gin-spacing-l);
+    padding: var(--tonic-spacing-l);
   }
 
   // Remove extra spacing on top of form.

@@ -12,11 +12,11 @@ use Drupal\Core\Entity\ContentEntityInterface;
 /**
  * Breadcrumb.
  */
-function gin_preprocess_breadcrumb(&$variables) {
+function tonic_preprocess_breadcrumb(&$variables) {
   // Alter node breadcrumb.
   if ($variables['breadcrumb']) {
     foreach ($variables['breadcrumb'] as $key => $item) {
-      $entity = _gin_get_route_entity();
+      $entity = _tonic_get_route_entity();
       $entity_id = $entity ? $entity->getEntityTypeId() : NULL;
       $url = $entity ? $entity->toUrl() : NULL;
 
@@ -88,7 +88,7 @@ function gin_preprocess_breadcrumb(&$variables) {
  * @return null|\Drupal\Core\Entity\ContentEntityInterface
  *   Returns the content entity.
  */
-function _gin_get_route_entity() {
+function _tonic_get_route_entity() {
   $route_match = \Drupal::routeMatch();
   // Entity will be found in the route parameters.
   if (($route = $route_match->getRouteObject()) && ($parameters = $route->getOption('parameters'))) {

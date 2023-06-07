@@ -4,25 +4,25 @@
 
 // Legacy Check: Transform old localStorage items to newer ones.
 function checkLegacy() {
-  if (localStorage.getItem('GinDarkMode')) {
-    localStorage.setItem('Drupal.gin.darkmode', localStorage.getItem('GinDarkMode'));
-    localStorage.removeItem('GinDarkMode');
+  if (localStorage.getItem('TonicDarkMode')) {
+    localStorage.setItem('Drupal.tonic.darkmode', localStorage.getItem('TonicDarkMode'));
+    localStorage.removeItem('TonicDarkMode');
   }
 
-  if (localStorage.getItem('GinSidebarOpen')) {
-    localStorage.setItem('Drupal.gin.toolbarExpanded', localStorage.getItem('GinSidebarOpen'));
-    localStorage.removeItem('GinSidebarOpen');
+  if (localStorage.getItem('TonicSidebarOpen')) {
+    localStorage.setItem('Drupal.tonic.toolbarExpanded', localStorage.getItem('TonicSidebarOpen'));
+    localStorage.removeItem('TonicSidebarOpen');
   }
 }
 
 checkLegacy();
 
 // Darkmode Check.
-function ginInitDarkmode() {
-  const darkModeClass = 'gin--dark-mode';
+function tonicInitDarkmode() {
+  const darkModeClass = 'tonic--dark-mode';
   if (
-    localStorage.getItem('Drupal.gin.darkmode') == 1 ||
-    (localStorage.getItem('Drupal.gin.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    localStorage.getItem('Drupal.tonic.darkmode') == 1 ||
+    (localStorage.getItem('Drupal.tonic.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
     document.documentElement.classList.add(darkModeClass);
   } else {
@@ -32,36 +32,36 @@ function ginInitDarkmode() {
 
 ginInitDarkmode();
 
-// GinDarkMode is not set yet.
+// TonicDarkMode is not set yet.
 window.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('Drupal.gin.darkmode')) {
-    localStorage.setItem('Drupal.gin.darkmode', drupalSettings.gin.darkmode);
-    ginInitDarkmode();
+  if (!localStorage.getItem('Drupal.tonic.darkmode')) {
+    localStorage.setItem('Drupal.tonic.darkmode', drupalSettings.tonic.darkmode);
+    tonicInitDarkmode();
   }
 });
 
 // Toolbar Check.
-if (localStorage.getItem('Drupal.gin.toolbarExpanded')) {
+if (localStorage.getItem('Drupal.tonic.toolbarExpanded')) {
   const style = document.createElement('style');
   const className = 'gin-toolbar-inline-styles';
   style.className = className;
 
-  if (localStorage.getItem('Drupal.gin.toolbarExpanded') === 'true') {
+  if (localStorage.getItem('Drupal.tonic.toolbarExpanded') === 'true') {
     style.innerHTML = `
     @media (min-width: 976px) {
-      body.gin--vertical-toolbar:not([data-toolbar-menu=open]) {
+      body.tonic--vertical-toolbar:not([data-toolbar-menu=open]) {
         padding-inline-start: 256px;
         transition: none;
       }
 
-      .gin--vertical-toolbar .toolbar-menu-administration {
-        min-width: var(--gin-toolbar-width, 256px);
+      .tonic--vertical-toolbar .toolbar-menu-administration {
+        min-width: var(--tonic-toolbar-width, 256px);
         transition: none;
       }
 
-      .gin--vertical-toolbar .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-icon,
-      .gin--vertical-toolbar .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box > .toolbar-icon {
-        min-width: calc(var(--gin-toolbar-width, 256px) - 16px);
+      .tonic--vertical-toolbar .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-icon,
+      .tonic--vertical-toolbar .toolbar-menu-administration > .toolbar-menu > .menu-item > .toolbar-box > .toolbar-icon {
+        min-width: calc(var(--tonic-toolbar-width, 256px) - 16px);
       }
     }
     `;
@@ -74,21 +74,21 @@ if (localStorage.getItem('Drupal.gin.toolbarExpanded')) {
 }
 
 // Sidebar check.
-if (localStorage.getItem('Drupal.gin.sidebarExpanded.desktop')) {
+if (localStorage.getItem('Drupal.tonic.sidebarExpanded.desktop')) {
   const style = document.createElement('style');
   const className = 'gin-sidebar-inline-styles';
   style.className = className;
 
-  if (window.innerWidth < 1024 || localStorage.getItem('Drupal.gin.sidebarExpanded.desktop') === 'false') {
+  if (window.innerWidth < 1024 || localStorage.getItem('Drupal.tonic.sidebarExpanded.desktop') === 'false') {
     style.innerHTML = `
     body {
-      --gin-sidebar-offset: 0px;
+      --tonic-sidebar-offset: 0px;
       padding-inline-end: 0;
       transition: none;
     }
 
     .layout-region-node-secondary {
-      transform: translateX(var(--gin-sidebar-width, 360px));
+      transform: translateX(var(--tonic-sidebar-width, 360px));
       transition: none;
     }
 

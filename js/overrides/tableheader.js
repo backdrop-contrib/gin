@@ -1,22 +1,22 @@
 ((Drupal, once) => {
-  Drupal.behaviors.ginTableHeader = {
+  Drupal.behaviors.tonicTableHeader = {
     attach: (context) => {
-      Drupal.ginTableHeader.init(context);
+      Drupal.tonicTableHeader.init(context);
     },
   };
 
-  Drupal.ginTableHeader = {
+  Drupal.tonicTableHeader = {
     init: function (context) {
       once('ginTableHeader', '.sticky-enabled', context).forEach(el => {
         // Watch sticky table header.
         const stickyOffsetTop = this.stickyPosition();
         const observer = new IntersectionObserver(
           ([e]) => {
-            if (context.querySelector('.gin-table-scroll-wrapper')) {
+            if (context.querySelector('.tonic-table-scroll-wrapper')) {
               if (!e.isIntersecting && e.rootBounds.top === stickyOffsetTop) {
-                context.querySelector('.gin-table-scroll-wrapper').classList.add('--is-sticky');
+                context.querySelector('.tonic-table-scroll-wrapper').classList.add('--is-sticky');
               } else {
-                context.querySelector('.gin-table-scroll-wrapper').classList.remove('--is-sticky');
+                context.querySelector('.tonic-table-scroll-wrapper').classList.remove('--is-sticky');
               }
             }
           },
@@ -38,7 +38,7 @@
     },
     stickyPosition: () => {
       let offsetTop = 0;
-      if (document.body.classList.contains('gin--classic-toolbar')) {
+      if (document.body.classList.contains('tonic--classic-toolbar')) {
         offsetTop = document.querySelector('#toolbar-bar').clientHeight;
       } else {
         const toolbar = document.querySelector('#gin-toolbar-bar');

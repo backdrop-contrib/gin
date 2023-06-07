@@ -1,5 +1,5 @@
-# Schema for the configuration files of the Gin theme.
-gin.settings:
+# Schema for the configuration files of the Tonic theme.
+tonic.settings:
   type: theme_settings
   label: 'gin settings'
   mapping:

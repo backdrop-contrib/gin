@@ -3,10 +3,10 @@
 }
 
 #toolbar-item-workbench-tray .toolbar-icon:before {
-  background: var(--gin-icon-color);
+  background: var(--tonic-icon-color);
   background-image: none;
-  -webkit-mask-size: var(--gin-icon-size-toolbar) var(--gin-icon-size-toolbar);
-          mask-size: var(--gin-icon-size-toolbar) var(--gin-icon-size-toolbar);
+  -webkit-mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+          mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center center;
@@ -14,15 +14,15 @@
 }
 
 [dir="ltr"] #toolbar-item-workbench-tray .toolbar-icon:before {
-  left: var(--gin-spacing-s);
+  left: var(--tonic-spacing-s);
 }
 
 [dir="rtl"] #toolbar-item-workbench-tray .toolbar-icon:before {
-  right: var(--gin-spacing-s);
+  right: var(--tonic-spacing-s);
 }
 
 #toolbar-item-workbench-tray .toolbar-icon:hover:before, #toolbar-item-workbench-tray .toolbar-icon.is-active:before {
-  background: var(--gin-color-primary);
+  background: var(--tonic-color-primary);
 }
 
 #toolbar-item-workbench-tray .toolbar-icon-workbench-content:before {
@@ -50,7 +50,7 @@
           mask-image: url("../../media/sprite.svg#config-view");
 }
 
-.gin-secondary-toolbar .toolbar-secondary .toolbar-tray .toolbar-icon:before {
+.tonic-secondary-toolbar .toolbar-secondary .toolbar-tray .toolbar-icon:before {
   display: none;
 }
 

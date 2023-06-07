@@ -10,9 +10,9 @@ use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * User picture build callback for the gin theme.
+ * User picture build callback for the tonic theme.
  */
-class GinUserPicture implements ContainerInjectionInterface, TrustedCallbackInterface {
+class TonicUserPicture implements ContainerInjectionInterface, TrustedCallbackInterface {
 
   /**
    * The currently authenticated user.
@@ -29,7 +29,7 @@ class GinUserPicture implements ContainerInjectionInterface, TrustedCallbackInte
   protected $entityTypeManager;
 
   /**
-   * GinUserPicture constructor.
+   * TonicUserPicture constructor.
    *
    * @param \Drupal\Core\Session\AccountInterface $current_user
    *   The current user.

@@ -3,13 +3,13 @@
 'use strict';
 
 ((Drupal) => {
-  Drupal.behaviors.ginEditForm = {
+  Drupal.behaviors.tonicEditForm = {
     attach: (context) => {
-      once('ginEditForm', '.region-content form.gin-node-edit-form', context).forEach(form => {
-        const sticky = context.querySelector('.gin-sticky');
+      once('ginEditForm', '.region-content form.tonic-node-edit-form', context).forEach(form => {
+        const sticky = context.querySelector('.tonic-sticky');
         const newParent = context.querySelector('.region-sticky__items__inner');
 
-        if (newParent && newParent.querySelectorAll('.gin-sticky').length === 0) {
+        if (newParent && newParent.querySelectorAll('.tonic-sticky').length === 0) {
           newParent.appendChild(sticky);
 
           // Attach form elements to main form
@@ -18,7 +18,7 @@
           if (actionButtons.length > 0) {
             actionButtons.forEach((el) => {
               el.setAttribute('form', form.getAttribute('id'));
-              el.setAttribute('id', el.getAttribute('id') + '--gin-edit-form');
+              el.setAttribute('id', el.getAttribute('id') + '--tonic-edit-form');
             });
           }
         }

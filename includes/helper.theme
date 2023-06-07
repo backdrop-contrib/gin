@@ -6,12 +6,12 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\gin\GinSettings;
+use Drupal\gin\TonicSettings;
 
 /**
  * Accent color element.
  */
-function _gin_accent_radios($element) {
+function _tonic_accent_radios($element) {
   $options = array_keys($element['#options']);
 
   foreach ($options as $values) {
@@ -24,7 +24,7 @@ function _gin_accent_radios($element) {
 /**
  * Toolbar element.
  */
-function _gin_toolbar_radios($element) {
+function _tonic_toolbar_radios($element) {
   $options = array_keys($element['#options']);
 
   $element['#attributes']['class'][] = 'toolbar-option';
@@ -38,15 +38,15 @@ function _gin_toolbar_radios($element) {
 }
 
 /**
- * Implements helper function _gin_user_form_submit().
+ * Implements helper function _tonic_user_form_submit().
  */
-function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
+function _tonic_user_form_submit(&$form, FormStateInterface $form_state) {
   /** @var \Drupal\Core\Session\AccountInterface $account */
   $account = $form_state->getBuildInfo()['callback_object']->getEntity();
 
   $enabledUserOverrides = $form_state->getValue('enable_user_settings');
-  /** @var \Drupal\gin\GinSettings $settings */
-  $settings = \Drupal::classResolver(GinSettings::class);
+  /** @var \Drupal\gin\TonicSettings $settings */
+  $settings = \Drupal::classResolver(TonicSettings::class);
   if ($enabledUserOverrides) {
     $user_settings = [
       'enable_darkmode' => $form_state->getValue('enable_darkmode'),
@@ -67,9 +67,9 @@ function _gin_user_form_submit(&$form, FormStateInterface $form_state) {
 }
 
 /**
- * Helper function for check if Gin is active.
+ * Helper function for check if Tonic is active.
  */
-function _gin_is_active() {
+function _tonic_is_active() {
   $theme_handler = \Drupal::service('theme_handler')->listInfo();
 
   // Check if set as frontend theme.
@@ -96,7 +96,7 @@ function _gin_is_active() {
   }
 
   $base_themes = array_merge($admin_base_themes, $frontend_base_themes);
-  $gin_activated = array_key_exists('gin', $base_themes);
+  $tonic_activated = array_key_exists('tonic', $base_themes);
 
-  return $gin_activated;
+  return $tonic_activated;
 }

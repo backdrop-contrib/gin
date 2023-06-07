@@ -4,9 +4,9 @@ dependencies:
   module:
     - system
   theme:
-    - gin
-id: gin_breadcrumbs
-theme: gin
+    - tonic
+id: tonic_breadcrumbs
+theme: tonic
 region: breadcrumb
 weight: 0
 provider: null

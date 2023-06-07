@@ -7,17 +7,17 @@
   // Custom icons
   .toolbar-icon {
     &:before {
-      left: var(--gin-spacing-s);
-      background: var(--gin-icon-color);
+      left: var(--tonic-spacing-s);
+      background: var(--tonic-icon-color);
       background-image: none;
-      mask-size: var(--gin-icon-size-toolbar) var(--gin-icon-size-toolbar);
+      mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
       mask-repeat: no-repeat;
       mask-position: center center;
     }
 
     &:hover:before,
     &.is-active:before {
-      background: var(--gin-color-primary);
+      background: var(--tonic-color-primary);
     }
   }
 
@@ -52,7 +52,7 @@
   }
 }
 
-.gin-secondary-toolbar .toolbar-secondary {
+.tonic-secondary-toolbar .toolbar-secondary {
   // Hide icons
   .toolbar-tray .toolbar-icon {
     &:before {

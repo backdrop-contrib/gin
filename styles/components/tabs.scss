@@ -5,9 +5,9 @@
 // Tabs
 .tabs-wrapper,
 .horizontal-tabs ul.horizontal-tabs-list {
-  padding: 0 var(--gin-spacing-xs);
-  margin-left: calc(var(--gin-spacing-xs) * -1);
-  margin-right: calc(var(--gin-spacing-xs) * -1);
+  padding: 0 var(--tonic-spacing-xs);
+  margin-left: calc(var(--tonic-spacing-xs) * -1);
+  margin-right: calc(var(--tonic-spacing-xs) * -1);
 
   @include mq(small) {
     padding: 0;
@@ -17,13 +17,13 @@
 // Vertical tabs
 .tabs-wrapper:not(.is-horizontal) {
   .tabs {
-    .gin--dark-mode & {
+    .tonic--dark-mode & {
       border-color: #8E929C;
     }
 
     &__tab {
-      .gin--dark-mode & {
-        background-color: var(--gin-bg-item-hover);
+      .tonic--dark-mode & {
+        background-color: var(--tonic-bg-item-hover);
         border-color: #8E929C;
       }
     }
@@ -36,13 +36,13 @@
   }
 }
 
-.gin--dark-mode {
+.tonic--dark-mode {
   .tabs {
-    border-color: var(--gin-border-color-layer2);
+    border-color: var(--tonic-border-color-layer2);
 
     .tabs__tab,
     .tabs__tab.is-active {
-      border-color: var(--gin-border-color-layer2);
+      border-color: var(--tonic-border-color-layer2);
       background-color: transparent;
     }
   }
@@ -52,11 +52,11 @@
 .claro-details__summary,
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a
 {
-  color: var(--gin-color-text);
-  font-size: var(--gin-font-size);
-  font-weight: var(--gin-font-weight-bold);
-  padding-top: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
-  padding-bottom: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
+  color: var(--tonic-color-text);
+  font-size: var(--tonic-font-size);
+  font-weight: var(--tonic-font-weight-bold);
+  padding-top: calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs));
+  padding-bottom: calc(var(--tonic-spacing-l) - var(--tonic-spacing-xxs));
 
   strong {
     font-weight: inherit;
@@ -66,33 +66,33 @@
 .tabs__link.is-active,
 .claro-details__summary[aria-expanded=true],
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button.selected a {
-  font-weight: var(--gin-font-weight-bold);
+  font-weight: var(--tonic-font-weight-bold);
 }
 
 .is-horizontal .tabs__link,
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a {
   &:hover,
   &:focus {
-    color: var(--gin-color-primary);
-    background: var(--gin-bg-item-hover);
+    color: var(--tonic-color-primary);
+    background: var(--tonic-bg-item-hover);
   }
 }
 
 .claro-details {
-  color: var(--gin-color-text);
-  border: 1px solid var(--gin-border-color);
-  border-radius: var(--gin-border-m);
+  color: var(--tonic-color-text);
+  border: 1px solid var(--tonic-border-color);
+  border-radius: var(--tonic-border-m);
   box-shadow: none;
 }
 
 .claro-details__summary {
   &::after {
-    border-radius: var(--gin-border-m);
+    border-radius: var(--tonic-border-m);
   }
 
   &:hover {
-    color: var(--gin-color-primary);
-    background-color: var(--gin-bg-item-hover);
+    color: var(--tonic-color-primary);
+    background-color: var(--tonic-bg-item-hover);
   }
 }
 
@@ -103,11 +103,11 @@
 
   @include mq(small) {
     width: 100%;
-    padding: .3125rem var(--gin-spacing-xs) var(--gin-spacing-l);
-    margin-bottom: calc(var(--gin-spacing-l) * -1);
+    padding: .3125rem var(--tonic-spacing-xs) var(--tonic-spacing-l);
+    margin-bottom: calc(var(--tonic-spacing-l) * -1);
     overflow-x: auto;
 
-    .gin--edit-form & {
+    .tonic--edit-form & {
       padding-top: .4rem;
     }
   }
@@ -120,14 +120,14 @@
     left: 0;
     display: block;
     width: 100%;
-    max-width: calc(100% + var(--gin-spacing-xs));
-    border-bottom: 1px solid var(--gin-border-color);
-    transition: var(--gin-transition);
+    max-width: calc(100% + var(--tonic-spacing-xs));
+    border-bottom: 1px solid var(--tonic-border-color);
+    transition: var(--tonic-transition);
 
     @include mq(small) {
-      left: var(--gin-spacing-xs);
-      bottom: var(--gin-spacing-l);
-      max-width: calc(100% - var(--gin-spacing-m));
+      left: var(--tonic-spacing-xs);
+      bottom: var(--tonic-spacing-l);
+      max-width: calc(100% - var(--tonic-spacing-m));
     }
   }
 
@@ -138,13 +138,13 @@
     &:focus-within {
       &::after {
         content: "";
-        width: calc(100% + var(--gin-spacing-xs));
+        width: calc(100% + var(--tonic-spacing-xs));
         height: 4px;
-        background: var(--gin-bg-app);
+        background: var(--tonic-bg-app);
         display: block;
         position: absolute;
-        bottom: calc(var(--gin-spacing-xxs) * -1);
-        left: calc(var(--gin-spacing-xxs) * -1);
+        bottom: calc(var(--tonic-spacing-xxs) * -1);
+        left: calc(var(--tonic-spacing-xxs) * -1);
         z-index: 3;
       }
     }
@@ -153,7 +153,7 @@
   .horizontal-tab-button {
     &:focus-within {
       &::after {
-        background: var(--gin-bg-layer);
+        background: var(--tonic-bg-layer);
       }
     }
   }
@@ -162,12 +162,12 @@
 .horizontal-tabs ul.horizontal-tabs-list {
   &::before {
     z-index: 1;
-    background: var(--gin-bg-layer);
+    background: var(--tonic-bg-layer);
   }
 
   &::after {
-    left: var(--gin-spacing-xs);
-    max-width: calc(100% - var(--gin-spacing-m));
+    left: var(--tonic-spacing-xs);
+    max-width: calc(100% - var(--tonic-spacing-m));
   }
 }
 
@@ -190,7 +190,7 @@
     &::after {
       border-bottom: 0 none;
 
-      .gin--high-contrast-mode & {
+      .tonic--high-contrast-mode & {
         border-bottom: 1px solid;
       }
     }
@@ -198,8 +198,8 @@
 
   .tabs__tab {
     @include mq($to: small) {
-      background-color: var(--gin-bg-layer);
-      border-bottom: 1px solid var(--gin-border-color-layer2);
+      background-color: var(--tonic-bg-layer);
+      border-bottom: 1px solid var(--tonic-border-color-layer2);
 
       &[data-original-order="0"] {
         border-bottom: none;
@@ -214,11 +214,11 @@
   }
 
   .tabs__link {
-    min-height: var(--gin-spacing-xxl);
+    min-height: var(--tonic-spacing-xxl);
     height: 100%;
 
     @include mq(small) {
-      padding: var(--gin-spacing-s) var(--gin-spacing-m);
+      padding: var(--tonic-spacing-s) var(--tonic-spacing-m);
       margin-right: 0.25em;
       min-height: 0;
       border-radius: 48px;
@@ -226,8 +226,8 @@
 
     &.is-active {
       @include mq(small) {
-        color: var(--gin-color-primary-active);
-        background: var(--gin-color-primary-light);
+        color: var(--tonic-color-primary-active);
+        background: var(--tonic-color-primary-light);
       }
 
       &::before {
@@ -239,13 +239,13 @@
 
 .tabs__trigger {
   svg {
-    stroke: var(--gin-color-primary);
+    stroke: var(--tonic-color-primary);
   }
 }
 
 .is-horizontal .tabs--secondary {
   @include mq(small) {
-    margin-top: var(--gin-spacing-m);
+    margin-top: var(--tonic-spacing-m);
 
     &::before {
       width: 100%;
@@ -254,9 +254,9 @@
 
   .tabs__link {
     min-height: 2.5rem;
-    padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
-    font-size: var(--gin-font-size-s);
-    border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+    padding: var(--tonic-spacing-xs) var(--tonic-spacing-m) var(--tonic-spacing-m);
+    font-size: var(--tonic-font-size-s);
+    border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
   }
 }
 
@@ -267,7 +267,7 @@
   flex-wrap: wrap;
   width: 100%;
   border: 0 none;
-  margin-top: calc(var(--gin-spacing-m) * -1);
+  margin-top: calc(var(--tonic-spacing-m) * -1);
 
   ul.horizontal-tabs-list {
     background: none;
@@ -277,8 +277,8 @@
 
     &:after {
       @include mq(small) {
-        left: var(--gin-spacing-xs);
-        max-width: calc(100% - var(--gin-spacing-m));
+        left: var(--tonic-spacing-xs);
+        max-width: calc(100% - var(--tonic-spacing-m));
       }
     }
 
@@ -288,9 +288,9 @@
       border-bottom: 0 none;
 
       a {
-        padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
-        font-size: var(--gin-font-size-s);
-        border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+        padding: var(--tonic-spacing-xs) var(--tonic-spacing-m) var(--tonic-spacing-m);
+        font-size: var(--tonic-font-size-s);
+        border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
 
         &::before {
           content: '';
@@ -300,13 +300,13 @@
       }
 
       &.selected a {
-        color: var(--gin-color-primary);
+        color: var(--tonic-color-primary);
 
         &::before {
           z-index: 1;
           border-left: none;
           border-right: none;
-          border-bottom: 3px solid var(--gin-color-primary);
+          border-bottom: 3px solid var(--tonic-color-primary);
           top: auto;
           bottom: 0;
           left: 0;
@@ -320,7 +320,7 @@
 
   // Nested horizontal tabs.
   .horizontal-tabs {
-    margin-top: var(--gin-spacing-m);
+    margin-top: var(--tonic-spacing-m);
   }
 
   .horizontal-tabs-panes,
@@ -337,7 +337,7 @@
       margin: 0;
 
       > .claro-details__description {
-        margin-top: var(--gin-spacing-m);
+        margin-top: var(--tonic-spacing-m);
       }
     }
   }
@@ -347,7 +347,7 @@
 .claro-details__summary::before,
 .claro-details[open] > .claro-details__summary::before {
   left: 1.125rem;
-  background: var(--gin-color-text);
+  background: var(--tonic-color-text);
   mask-image: icon('handle');
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -361,23 +361,23 @@
 .claro-details[open] > .claro-details__summary--accordion::before,
 .claro-details[open] > .claro-details__summary--accordion-item::before,
 .claro-details[open] > .claro-details__summary--vertical-tabs-item::before {
-  background: var(--gin-color-primary);
+  background: var(--tonic-color-primary);
 }
 
 .claro-details {
   &__description {
-    color: var(--gin-color-text-light);
+    color: var(--tonic-color-text-light);
   }
 }
 
 .claro-details__wrapper--accordion,
 .claro-details__wrapper--accordion-item,
 .claro-details__wrapper--vertical-tabs-item {
-  border-top: 1px solid var(--gin-border-color);
-  background: var(--gin-bg-app);
+  border-top: 1px solid var(--tonic-border-color);
+  background: var(--tonic-bg-app);
 }
 
-.gin--dark-mode {
+.tonic--dark-mode {
   .claro-details,
   .claro-details__summary--accordion,
   .claro-details__summary--accordion-item,
@@ -386,7 +386,7 @@
   }
 
   .claro-details {
-    border-color: var(--gin-border-color);
+    border-color: var(--tonic-border-color);
   }
 
   .vertical-tabs {
@@ -396,27 +396,27 @@
     }
 
     &__menu-item.is-selected .vertical-tabs__menu-link {
-      background: var(--gin-bg-app);
+      background: var(--tonic-bg-app);
       border-color: transparent;
     }
 
     &__menu-link {
-      color: var(--gin-color-text);
+      color: var(--tonic-color-text);
     }
 
     &__menu-link-summary {
-      color: var(--gin-color-text-light);
+      color: var(--tonic-color-text-light);
     }
 
     .claro-details__wrapper {
-      background: var(--gin-bg-app);
+      background: var(--tonic-bg-app);
     }
   }
 }
 
 .vertical-tabs {
   &__items {
-    border-radius: var(--gin-border-m);
+    border-radius: var(--tonic-border-m);
 
     @include mq(large) {
       border-top-left-radius: 0;
@@ -426,21 +426,21 @@
       border-radius: 0;
 
       @include mq(1360px) {
-        border-top-right-radius: var(--gin-border-m);
-        border-bottom-right-radius: var(--gin-border-m);
-        border-bottom-left-radius: var(--gin-border-m);
+        border-top-right-radius: var(--tonic-border-m);
+        border-bottom-right-radius: var(--tonic-border-m);
+        border-bottom-left-radius: var(--tonic-border-m);
 
         ~ .vertical-tabs__item {
-          border-top-left-radius: var(--gin-border-m);
+          border-top-left-radius: var(--tonic-border-m);
         }
       }
 
       .claro-details__summary {
         @include mq(large) {
-          padding-left: var(--gin-spacing-xxl);
+          padding-left: var(--tonic-spacing-xxl);
 
           &::before {
-            left: var(--gin-spacing-m);
+            left: var(--tonic-spacing-m);
           }
         }
       }
@@ -455,17 +455,17 @@
   &__menu-item {
     &::before,
     &::after {
-      border-color: var(--gin-border-color);
+      border-color: var(--tonic-border-color);
     }
   }
 
   &__menu-link,
   &__menu-item.is-selected &__menu-link {
     &:hover {
-      color: var(--gin-color-primary);
+      color: var(--tonic-color-primary);
 
       &::before {
-        background: var(--gin-bg-item-hover);
+        background: var(--tonic-bg-item-hover);
       }
     }
   }

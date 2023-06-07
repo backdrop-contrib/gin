@@ -22,11 +22,11 @@
 .toolbar-box .toolbar-handle:focus
 {
   outline: none;
-  box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+  box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
 }
 
 .admin-item__link:focus {
-  border-radius: calc(var(--gin-border-xs) / 2);
+  border-radius: calc(var(--tonic-border-xs) / 2);
 }
 
 .claro-details {
@@ -39,26 +39,26 @@
 
   &__summary {
     &:after {
-      box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
+      box-shadow: inset 0 0 0 1px var(--tonic-color-focus-border), inset 0 0 0 4px var(--tonic-color-focus);
     }
   }
 }
 
 .tabs__link:focus {
   border: 1px solid transparent;
-  box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
+  box-shadow: inset 0 0 0 1px var(--tonic-color-focus-border), inset 0 0 0 4px var(--tonic-color-focus);
 }
 
 .vertical-tabs__menu-link:focus:after,
 .tabs__trigger:focus {
   box-shadow: none;
-  border: var(--gin-border-xs) solid var(--gin-color-focus);
+  border: var(--tonic-border-xs) solid var(--tonic-color-focus);
 }
 
 @include mq(small) {
   .is-horizontal .tabs__link:focus,
   .is-horizontal .tabs--primary .tabs__link:focus {
-    box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+    box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
   }
 }
 

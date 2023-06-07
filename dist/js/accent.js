@@ -1,61 +1,61 @@
 ((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginAccent = {
+  Drupal.behaviors.tonicAccent = {
     attach: function(context) {
       once("ginAccent", "body", context).forEach((() => {
-        Drupal.ginAccent.checkDarkmode(), Drupal.ginAccent.setAccentColor(), Drupal.ginAccent.setFocusColor();
+        Drupal.tonicAccent.checkDarkmode(), Drupal.tonicAccent.setAccentColor(), Drupal.tonicAccent.setFocusColor();
       }));
     }
-  }, Drupal.ginAccent = {
+  }, Drupal.tonicAccent = {
     setAccentColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
-      const accentColorPreset = null != preset ? preset : drupalSettings.gin.preset_accent_color;
+      const accentColorPreset = null != preset ? preset : drupalSettings.tonic.preset_accent_color;
       document.body.setAttribute("data-gin-accent", accentColorPreset), "custom" === accentColorPreset && this.setCustomAccentColor(color);
     },
     setCustomAccentColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
-      const accentColor = null != color ? color : drupalSettings.gin.accent_color;
+      const accentColor = null != color ? color : drupalSettings.tonic.accent_color;
       if (accentColor) {
         this.clearAccentColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65).replace("#", ""), style = document.createElement("style");
-        style.className = "gin-custom-colors", style.innerHTML = `\n          [data-gin-accent="custom"] {\n            --gin-color-primary-rgb: ${this.hexToRgb(accentColor)};\n            --gin-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n            --gin-color-primary-active: ${this.shadeColor(accentColor, -15)};\n            --gin-bg-app-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 97))};\n            --gin-bg-header: ${this.mixColor("ffffff", strippedAccentColor, 85)};\n            --gin-color-sticky-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 92))};\n          }\n          .gin--dark-mode[data-gin-accent="custom"],\n          .gin--dark-mode [data-gin-accent="custom"] {\n            --gin-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n            --gin-color-primary-hover: ${this.mixColor("ffffff", strippedAccentColor, 55)};\n            --gin-color-primary-active: ${this.mixColor("ffffff", strippedAccentColor, 50)};\n            --gin-bg-header: ${this.mixColor("2A2A2D", darkAccentColor, 88)};\n          }\n        `, 
+        style.className = "tonic-custom-colors", style.innerHTML = `\n          [data-gin-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(accentColor)};\n            --tonic-color-primary-hover: ${this.shadeColor(accentColor, -10)};\n            --tonic-color-primary-active: ${this.shadeColor(accentColor, -15)};\n            --tonic-bg-app-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 97))};\n            --tonic-bg-header: ${this.mixColor("ffffff", strippedAccentColor, 85)};\n            --tonic-color-sticky-rgb: ${this.hexToRgb(this.mixColor("ffffff", strippedAccentColor, 92))};\n          }\n          .tonic--dark-mode[data-gin-accent="custom"],\n          .tonic--dark-mode [data-gin-accent="custom"] {\n            --tonic-color-primary-rgb: ${this.hexToRgb(darkAccentColor)};\n            --tonic-color-primary-hover: ${this.mixColor("ffffff", strippedAccentColor, 55)};\n            --tonic-color-primary-active: ${this.mixColor("ffffff", strippedAccentColor, 50)};\n            --tonic-bg-header: ${this.mixColor("2A2A2D", darkAccentColor, 88)};\n          }\n        `,
         element.append(style);
       }
     },
     clearAccentColor: function() {
       let element = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : document.body;
-      if (element.querySelectorAll(".gin-custom-colors").length > 0) {
-        const removeElement = element.querySelector(".gin-custom-colors");
+      if (element.querySelectorAll(".tonic-custom-colors").length > 0) {
+        const removeElement = element.querySelector(".tonic-custom-colors");
         removeElement.parentNode.removeChild(removeElement);
       }
     },
     setFocusColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
-      const focusColorPreset = null != preset ? preset : drupalSettings.gin.preset_focus_color;
+      const focusColorPreset = null != preset ? preset : drupalSettings.tonic.preset_focus_color;
       document.body.setAttribute("data-gin-focus", focusColorPreset), "custom" === focusColorPreset && this.setCustomFocusColor(color);
     },
     setCustomFocusColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
-      const accentColor = null != color ? color : drupalSettings.gin.focus_color;
+      const accentColor = null != color ? color : drupalSettings.tonic.focus_color;
       if (accentColor) {
         this.clearFocusColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65), style = document.createElement("style");
-        style.className = "gin-custom-focus", style.innerHTML = `\n          [data-gin-focus="custom"] {\n            --gin-color-focus: ${accentColor};\n          }\n          .gin--dark-mode[data-gin-focus="custom"],\n          .gin--dark-mode [data-gin-focus="custom"] {\n            --gin-color-focus: ${darkAccentColor};\n          }`, 
+        style.className = "tonic-custom-focus", style.innerHTML = `\n          [data-gin-focus="custom"] {\n            --tonic-color-focus: ${accentColor};\n          }\n          .tonic--dark-mode[data-gin-focus="custom"],\n          .tonic--dark-mode [data-gin-focus="custom"] {\n            --tonic-color-focus: ${darkAccentColor};\n          }`,
         element.append(style);
       }
     },
     clearFocusColor: function() {
       let element = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : document.body;
-      if (element.querySelectorAll(".gin-custom-focus").length > 0) {
-        const removeElement = element.querySelector(".gin-custom-focus");
+      if (element.querySelectorAll(".tonic-custom-focus").length > 0) {
+        const removeElement = element.querySelector(".tonic-custom-focus");
         removeElement.parentNode.removeChild(removeElement);
       }
     },
     checkDarkmode: () => {
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeClass = drupalSettings.tonic.darkmode_class;
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e => {
-        e.matches && "auto" === localStorage.getItem("Drupal.gin.darkmode") && document.querySelector("html").classList.add(darkmodeClass);
+        e.matches && "auto" === localStorage.getItem("Drupal.tonic.darkmode") && document.querySelector("html").classList.add(darkmodeClass);
       })), window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e => {
-        e.matches && "auto" === localStorage.getItem("Drupal.gin.darkmode") && document.querySelector("html").classList.remove(darkmodeClass);
+        e.matches && "auto" === localStorage.getItem("Drupal.tonic.darkmode") && document.querySelector("html").classList.remove(darkmodeClass);
       }));
     },
     hexToRgb: hex => {

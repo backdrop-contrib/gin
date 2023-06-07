@@ -1,30 +1,30 @@
 // Toolbar Variables
 :root {
-  --gin-toolbar-secondary-height: 0px; // Needs px to work in calc() functions.
-  --gin-toolbar-height: 39px;
-  --gin-scroll-offset: 72px;
-  --gin-toolbar-y-offset: var(--gin-toolbar-height);
-  --gin-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
-  --gin-sticky-offset: 0px; // Needs px to work in calc() functions.
+  --tonic-toolbar-secondary-height: 0px; // Needs px to work in calc() functions.
+  --tonic-toolbar-height: 39px;
+  --tonic-scroll-offset: 72px;
+  --tonic-toolbar-y-offset: var(--tonic-toolbar-height);
+  --tonic-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
+  --tonic-sticky-offset: 0px; // Needs px to work in calc() functions.
 
   @include mq(large) {
-    --gin-icon-size-toolbar: 16px;
-    --gin-scroll-offset: 200px;
+    --tonic-icon-size-toolbar: 16px;
+    --tonic-scroll-offset: 200px;
   }
 }
 
 .toolbar-fixed.toolbar-tray-open:not(.toolbar-vertical) {
   @include mq(medium) {
-    --gin-toolbar-y-offset: 78px;
+    --tonic-toolbar-y-offset: 78px;
   }
 }
 
-.gin--edit-form {
-  --ginStickyOffset: var(--ginStickyHeight);
+.tonic--edit-form {
+  --tonicStickyOffset: var(--tonicStickyHeight);
 }
 
 .region-breadcrumb {
-  margin-top: var(--gin-spacing-m);
+  margin-top: var(--tonic-spacing-m);
 }
 
 // Toolbar
@@ -39,11 +39,11 @@
 .toolbar-horizontal .menu-item > .toolbar-menu,
 .toolbar-horizontal .toolbar-tray .menu-item--expanded.menu-item--expanded,
 .toolbar .toolbar-tray {
-  background-color: var(--gin-bg-layer);
+  background-color: var(--tonic-bg-layer);
 }
 
 .toolbar-horizontal .toolbar-tray .toolbar-toggle-orientation {
-  border-left: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--tonic-border-color);
 }
 
 .toolbar-tray-horizontal {
@@ -51,7 +51,7 @@
     li {
       &.menu-item {
         .menu-item {
-          border-bottom: 1px solid var(--gin-border-color);
+          border-bottom: 1px solid var(--tonic-border-color);
         }
       }
     }
@@ -75,10 +75,10 @@
 .toolbar-tray span,
 .toolbar .toolbar-menu .toolbar-menu a,
 .toolbar .toolbar-menu .toolbar-menu span {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
 
   &:hover {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
   }
 }
 
@@ -86,20 +86,20 @@
 .toolbar .toolbar-tray .menu-item > .toolbar-icon.is-active,
 .toolbar .toolbar-tray .menu-item > .toolbar-box > .toolbar-icon.is-active,
 .toolbar .toolbar-tray a.is-active {
-  color: var(--gin-color-primary);
-  font-weight: var(--gin-font-weight-bold);
+  color: var(--tonic-color-primary);
+  font-weight: var(--tonic-font-weight-bold);
 
   &::before {
-    background: var(--gin-color-primary);
+    background: var(--tonic-color-primary);
   }
 }
 
 .toolbar .toolbar-tray .menu-item:hover > .toolbar-icon {
-  color: var(--gin-color-primary-hover);
-  background-color: var(--gin-bg-item-hover);
+  color: var(--tonic-color-primary-hover);
+  background-color: var(--tonic-bg-item-hover);
 
   &::before {
-    background: var(--gin-color-primary);
+    background: var(--tonic-color-primary);
   }
 }
 
@@ -111,12 +111,12 @@
     &,
     &.is-active,
     &:focus {
-      background: var(--gin-color-primary);
+      background: var(--tonic-color-primary);
     }
 
     &:hover,
     &.is-active:hover {
-      background: var(--gin-color-primary-hover);
+      background: var(--tonic-color-primary-hover);
 
       &::before {
         background: #fff;
@@ -128,7 +128,7 @@
 .toolbar-tray-horizontal a:focus,
 .toolbar-box a:focus,
 .toolbar .toolbar-icon.toolbar-handle:focus {
-  background-color: var(--gin-bg-layer2);
+  background-color: var(--tonic-bg-layer2);
 }
 
 .toolbar-tray-horizontal .menu-item:hover {
@@ -141,13 +141,13 @@
   display: none !important;
 }
 
-.gin--dark-mode .toolbar .toolbar-toggle-orientation {
-  background-color: var(--gin-bg-layer2);
+.tonic--dark-mode .toolbar .toolbar-toggle-orientation {
+  background-color: var(--tonic-bg-layer2);
 }
 
-.gin--classic-toolbar {
+.tonic--classic-toolbar {
   .page-wrapper__node-edit-form .layout-region-node-secondary {
-    padding-top: var(--gin-toolbar-y-offset); // 39px;
+    padding-top: var(--tonic-toolbar-y-offset); // 39px;
   }
 
   table.sticky-header {
@@ -173,7 +173,7 @@
 
   @include mq(medium) {
     &:before {
-      left: var(--gin-spacing-m);
+      left: var(--tonic-spacing-m);
     }
   }
 }
@@ -195,8 +195,8 @@
   position: relative;
 
   &:before {
-    top: var(--gin-spacing-s);
-    right: var(--gin-spacing-s);
+    top: var(--tonic-spacing-s);
+    right: var(--tonic-spacing-s);
   }
 }
 
@@ -208,5 +208,5 @@
 }
 
 #admin-toolbar-search-input {
-  padding-left: var(--gin-spacing-xl);
+  padding-left: var(--tonic-spacing-xl);
 }

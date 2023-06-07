@@ -1,13 +1,13 @@
 .node-preview-container {
-  font-size: var(--gin-font-size-xs);
+  font-size: var(--tonic-font-size-xs);
   z-index: 501; /* on top of the Drupal world */
   position: sticky;
   top: 0;
   padding: 0;
   width: 100%;
-  height: var(--gin-toolbar-secondary-height);
+  height: var(--tonic-toolbar-secondary-height);
   background: rgba(#fff, .98);
-  border-bottom: 1px solid var(--gin-border-color-layer);
+  border-bottom: 1px solid var(--tonic-border-color-layer);
 
   @supports (backdrop-filter: blur()) {
     opacity: .999; /* Fix Chrome issue with mask */
@@ -15,7 +15,7 @@
     backdrop-filter: blur(12px);
   }
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     background: rgba($colorDarkAppBackground, .98);
 
     @supports (backdrop-filter: blur()) {
@@ -23,14 +23,14 @@
     }
   }
 
-  .gin--high-contrast-mode & {
-    background: var(--gin-bg-app);
+  .tonic--high-contrast-mode & {
+    background: var(--tonic-bg-app);
     backdrop-filter: none;
   }
 
   .node-preview-backlink,
   .node-preview-form-select label {
-    color: var(--gin-color-text-light);
+    color: var(--tonic-color-text-light);
   }
 
   .node-preview-backlink {
@@ -44,10 +44,10 @@
       position: absolute;
       top: 50%;
       left: 0;
-      width: var(--gin-icon-size-toolbar-secondary);
-      height: var(--gin-icon-size-toolbar-secondary);
+      width: var(--tonic-icon-size-toolbar-secondary);
+      height: var(--tonic-icon-size-toolbar-secondary);
       transform: translateY(-50%);
-      background-color: var(--gin-icon-color);
+      background-color: var(--tonic-icon-color);
       mask-image: icon('backtosite');
       mask-size: 100% 100%;
       mask-position: center center;
@@ -59,16 +59,16 @@
     align-items: center;
     justify-content: space-between;
     width: auto;
-    padding: var(--gin-spacing-m) 0;
-    margin: 0 var(--gin-spacing-m);
+    padding: var(--tonic-spacing-m) 0;
+    margin: 0 var(--tonic-spacing-m);
     height: 100%;
 
     @include mq(small) {
-      margin: 0 var(--gin-spacing-xl);
+      margin: 0 var(--tonic-spacing-xl);
     }
 
     @include mq(medium) {
-      margin: 0 m#{i}n(5vw, var(--gin-spacing-xxl));
+      margin: 0 m#{i}n(5vw, var(--tonic-spacing-xxl));
     }
 
     label {
@@ -81,7 +81,7 @@
   }
 
   // Hide Secondary Toolbar while in Preview mode.
-  ~ .gin-secondary-toolbar--frontend {
+  ~ .tonic-secondary-toolbar--frontend {
     display: none;
   }
 }

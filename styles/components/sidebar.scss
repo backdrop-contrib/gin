@@ -1,5 +1,5 @@
 .layout-region-node-secondary {
-  transition: transform var(--gin-transition-fast);
+  transition: transform var(--tonic-transition-fast);
 
   // Fixes the flickering happinging on smaller devices.
   @include mq($to: large) {
@@ -9,17 +9,17 @@
 }
 
 body[data-meta-sidebar=closed] {
-  --gin-sidebar-offset: 0px;
+  --tonic-sidebar-offset: 0px;
 
   .layout-region-node-secondary {
-    transform: translateX(var(--gin-sidebar-width));
+    transform: translateX(var(--tonic-sidebar-width));
   }
 }
 
 // RTL handling.
 [dir=rtl] body[data-meta-sidebar=closed] .layout-region-node-secondary {
   /*rtl:ignore*/
-  transform: translateX(calc(var(--gin-sidebar-width) * -1));
+  transform: translateX(calc(var(--tonic-sidebar-width) * -1));
 }
 
 body[data-meta-sidebar=open] {
@@ -38,8 +38,8 @@ body[data-meta-sidebar=open] {
     background: transparent;
     height: 32px;
     width: 32px;
-    border-radius: var(--gin-border-m);
-    transition: background var(--gin-transition-fast);
+    border-radius: var(--tonic-border-m);
+    transition: background var(--tonic-transition-fast);
 
     &::before {
       display: inline-block;
@@ -48,32 +48,32 @@ body[data-meta-sidebar=open] {
       content: "";
       mask-repeat: no-repeat;
       mask-position: center center;
-      background-color: var(--gin-icon-color);
+      background-color: var(--tonic-icon-color);
     }
 
     &:hover, &:focus {
-      background-color: var(--gin-color-primary-light);
+      background-color: var(--tonic-color-primary-light);
 
       &::before {
-        background-color: var(--gin-color-primary);
+        background-color: var(--tonic-color-primary);
       }
     }
 
     &.is-active {
-      background-color: var(--gin-color-primary-light-hover);
+      background-color: var(--tonic-color-primary-light-hover);
 
       &::before {
-        background-color: var(--gin-color-primary-active);
+        background-color: var(--tonic-color-primary-active);
       }
     }
   }
 
   &__trigger {
-    margin-left: var(--gin-spacing-xs);
+    margin-left: var(--tonic-spacing-xs);
 
     &::before {
       mask-image: icon('sidebar');
-      mask-size: var(--gin-icon-size-sidebar-toggle) var(--gin-icon-size-sidebar-toggle);
+      mask-size: var(--tonic-icon-size-sidebar-toggle) var(--tonic-icon-size-sidebar-toggle);
       border-radius: 50%;
     }
   }
@@ -82,7 +82,7 @@ body[data-meta-sidebar=open] {
     z-index: 104;
     position: absolute;
     top: 18px;
-    right: var(--gin-spacing-m);
+    right: var(--tonic-spacing-m);
 
     @include mq(large) {
       display: none;
@@ -103,7 +103,7 @@ body[data-meta-sidebar=open] {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    background: var(--gin-bg-layer2);
+    background: var(--tonic-bg-layer2);
 
     body[data-meta-sidebar=open] & {
       opacity: .9;

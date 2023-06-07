@@ -8,13 +8,13 @@
 // Disabled
 .erl-field .erl-disabled-items,
 .erl-field .erl-disabled-items.form-item.form-wrapper {
-  padding: var(--gin-spacing-m);
+  padding: var(--tonic-spacing-m);
   margin-bottom: -6rem;
   background: #f1f1f3;
-  border-radius: var(--gin-border-m);
+  border-radius: var(--tonic-border-m);
 
-  .gin--dark-mode & {
-    background: var(--gin-bg-layer2);
+  .tonic--dark-mode & {
+    background: var(--tonic-bg-layer2);
   }
 
   &, &:hover, &:active {
@@ -22,11 +22,11 @@
   }
 
   .fieldset__label {
-    padding: var(--gin-spacing-m) 0 var(--gin-spacing-l);
+    padding: var(--tonic-spacing-m) 0 var(--tonic-spacing-l);
   }
 
   &__description {
-    font-size: var(--gin-font-size-s);
+    font-size: var(--tonic-font-size-s);
     color: #999;
   }
 }
@@ -60,12 +60,12 @@
   position: static;
   display: block;
   width: 100%;
-  color: var(--gin-color-primary);
+  color: var(--tonic-color-primary);
   line-height: 1.3;
-  background: var(--gin-bg-item-hover);
-  padding: var(--gin-spacing-m) var(--gin-spacing-m) 34px var(--gin-spacing-m);
-  border: 1px dashed var(--gin-color-primary);
-  border-radius: var(--gin-border-m);
+  background: var(--tonic-bg-item-hover);
+  padding: var(--tonic-spacing-m) var(--tonic-spacing-m) 34px var(--tonic-spacing-m);
+  border: 1px dashed var(--tonic-color-primary);
+  border-radius: var(--tonic-border-m);
   transform: none;
 
   &,
@@ -76,8 +76,8 @@
 
   &:hover,
   &:active {
-    color: var(--gin-color-primary-hover);
-    background: var(--gin-color-primary-light);
+    color: var(--tonic-color-primary-hover);
+    background: var(--tonic-color-primary-light);
   }
 }
 
@@ -89,7 +89,7 @@
   .erl-add-content--single {
     button {
       .icon {
-        margin-right: var(--gin-spacing-xs);
+        margin-right: var(--tonic-spacing-xs);
       }
     }
   }
@@ -101,11 +101,11 @@
     }
 
     .form-item {
-      margin-left: var(--gin-spacing-xs);
+      margin-left: var(--tonic-spacing-xs);
     }
 
     &.active {
-      outline: var(--gin-border-xs) solid var(--gin-color-focus);
+      outline: var(--tonic-border-xs) solid var(--tonic-color-focus);
     }
   }
 }
@@ -127,7 +127,7 @@
 .erl-overlay.erl-loading div.loading {
   border-radius: 6px;
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     background: rgba(0, 0, 0, .3);
   }
 }
@@ -137,13 +137,13 @@
   border-color: #fff;
 
   &:not(:last-of-type) {
-    margin-bottom: var(--gin-spacing-m);
+    margin-bottom: var(--tonic-spacing-m);
   }
 }
 
 // Disabled description position
 .erl-disabled-wrapper .erl-disabled-items__description {
-  top: var(--gin-spacing-m);
+  top: var(--tonic-spacing-m);
 }
 
 // Basic item styles
@@ -157,15 +157,15 @@
     transform: translate(-50%);
     border: 0 none;
     font-style: normal;
-    color: var(--gin-color-text-light);
+    color: var(--tonic-color-text-light);
     opacity: .75;
   }
 
   .layout-controls {
     opacity: 1;
     position: absolute;
-    left: var(--gin-spacing-xxs);
-    top: var(--gin-spacing-xs);
+    left: var(--tonic-spacing-xxs);
+    top: var(--tonic-spacing-xs);
   }
 
   .paragraph {
@@ -175,7 +175,7 @@
     }
 
     .field--name-field-title {
-      font-weight: var(--gin-font-weight-heavy);
+      font-weight: var(--tonic-font-weight-heavy);
     }
 
     .field--type-image {
@@ -189,7 +189,7 @@
 
       .field__item {
         flex-basis: 100%;
-        margin-right: var(--gin-spacing-xs);
+        margin-right: var(--tonic-spacing-xs);
       }
     }
   }
@@ -199,8 +199,8 @@
 .erl-item .erl-actions {
   visibility: visible;
   position: absolute;
-  right: var(--gin-spacing-xxs);
-  top: var(--gin-spacing-xs);
+  right: var(--tonic-spacing-xxs);
+  top: var(--tonic-spacing-xs);
 }
 
 // Form wrapper

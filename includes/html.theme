@@ -5,20 +5,20 @@
  * html.theme
  */
 
-use Drupal\gin\GinContentFormHelper;
-use Drupal\gin\GinSettings;
+use Drupal\gin\TonicContentFormHelper;
+use Drupal\gin\TonicSettings;
 
 /**
  * Implements hook_preprocess_HOOK() for html.
  */
-function gin_preprocess_html(&$variables) {
+function tonic_preprocess_html(&$variables) {
   // Are we relevant?
-  $gin_activated = _gin_is_active();
+  $tonic_activated = _tonic_is_active();
 
-  if ($gin_activated) {
+  if ($tonic_activated) {
     // Get theme settings.
-    /** @var \Drupal\gin\GinSettings $settings */
-    $settings = \Drupal::classResolver(GinSettings::class);
+    /** @var \Drupal\gin\TonicSettings $settings */
+    $settings = \Drupal::classResolver(TonicSettings::class);
     $toolbar = $settings->get('classic_toolbar');
 
     // Set accent color.
@@ -29,28 +29,28 @@ function gin_preprocess_html(&$variables) {
 
     // High contrast mode.
     if ($settings->get('high_contrast_mode')) {
-      $variables['attributes']['class'][] = 'gin--high-contrast-mode';
+      $variables['attributes']['class'][] = 'tonic--high-contrast-mode';
     }
 
     // Set layout density.
     $variables['attributes']['data-gin-layout-density'] = $settings->get('layout_density');
 
-    // Edit form? Use the new Gin Edit form layout.
-    if (\Drupal::classResolver(GinContentFormHelper::class)->isContentForm()) {
-      $variables['attributes']['class'][] = 'gin--edit-form';
+    // Edit form? Use the new Tonic Edit form layout.
+    if (\Drupal::classResolver(TonicContentFormHelper::class)->isContentForm()) {
+      $variables['attributes']['class'][] = 'tonic--edit-form';
     }
 
-    // Only add gin--classic-toolbar class if user has permission.
+    // Only add tonic--classic-toolbar class if user has permission.
     if (!\Drupal::currentUser()->hasPermission('access toolbar')) {
       return;
     }
 
     // Set toolbar class.
-    $variables['attributes']['class'][] = 'gin--' . $toolbar . '-toolbar';
+    $variables['attributes']['class'][] = 'tonic--' . $toolbar . '-toolbar';
 
-    // Gin secondary toolbar.
+    // Tonic secondary toolbar.
     if ($toolbar !== 'classic') {
-      $variables['page']['gin_secondary_toolbar'] = [
+      $variables['page']['tonic_secondary_toolbar'] = [
         '#type' => 'toolbar',
         '#access' => \Drupal::currentUser()->hasPermission('access toolbar'),
         '#cache' => [
@@ -68,12 +68,12 @@ function gin_preprocess_html(&$variables) {
 /**
  * Implements hook_preprocess_HOOK() for html__entity_browser__modal.
  */
-function gin_preprocess_html__entity_browser__modal(&$variables) {
-  gin_preprocess_html($variables);
+function tonic_preprocess_html__entity_browser__modal(&$variables) {
+  tonic_preprocess_html($variables);
 
   // Remove toolbar class in entity browser modal.
   if (isset($variables['attributes']['class'])) {
-    $toolbar_class = preg_grep('/gin--(.*)-toolbar/', $variables['attributes']['class']);
+    $toolbar_class = preg_grep('/tonic--(.*)-toolbar/', $variables['attributes']['class']);
     foreach ($toolbar_class as $key => $class) {
       unset($variables['attributes']['class'][$key]);
     }

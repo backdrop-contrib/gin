@@ -1,13 +1,13 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, drupalSettings) => {
-  Drupal.behaviors.ginSettings = {
+  Drupal.behaviors.tonicSettings = {
     attach: function attach(context) {
-      Drupal.ginSettings.init(context);
+      Drupal.tonicSettings.init(context);
     },
   };
 
-  Drupal.ginSettings = {
+  Drupal.tonicSettings = {
     init: function (context) {
       // Watch Darkmode setting has changed.
       context.querySelectorAll('input[name="enable_darkmode"]')
@@ -23,18 +23,18 @@
           if (accentColorPreset === 'custom') {
             const accentColorSetting = document.querySelector('input[name="accent_color"]').value;
 
-            Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+            Drupal.tonicAccent.setCustomAccentColor(accentColorSetting);
           } else {
-            Drupal.ginAccent.setAccentColor(accentColorPreset);
+            Drupal.tonicAccent.setAccentColor(accentColorPreset);
           }
 
           // Toggle Focus color.
           if (focusColorPreset === 'custom') {
             const focusColorSetting = document.querySelector('input[name="focus_color"]').value;
 
-            Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+            Drupal.tonicAccent.setCustomFocusColor(focusColorSetting);
           } else {
-            Drupal.ginAccent.setFocusColor(focusColorPreset);
+            Drupal.tonicAccent.setFocusColor(focusColorPreset);
           }
         }));
 
@@ -44,14 +44,14 @@
           const accentColorPreset = e.currentTarget.value;
 
           // Update.
-          Drupal.ginAccent.clearAccentColor();
-          Drupal.ginAccent.setAccentColor(accentColorPreset);
+          Drupal.tonicAccent.clearAccentColor();
+          Drupal.tonicAccent.setAccentColor(accentColorPreset);
 
           // Set custom color if 'custom' is set.
           if (accentColorPreset === 'custom') {
             const accentColorSetting = document.querySelector('input[name="accent_color"]').value;
 
-            Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+            Drupal.tonicAccent.setCustomAccentColor(accentColorSetting);
           }
         }));
 
@@ -64,7 +64,7 @@
           document.querySelector('input[name="accent_color"]').value = accentColorSetting;
 
           // Update.
-          Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+          Drupal.tonicAccent.setCustomAccentColor(accentColorSetting);
         }));
 
       // Watch Accent color setting has changed.
@@ -76,7 +76,7 @@
           document.querySelector('input[name="accent_picker"]').value = accentColorSetting;
 
           // Update.
-          Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+          Drupal.tonicAccent.setCustomAccentColor(accentColorSetting);
         }));
 
       // Watch Focus color setting has changed.
@@ -84,14 +84,14 @@
         const focusColorPreset = e.currentTarget.value;
 
         // Update.
-        Drupal.ginAccent.clearFocusColor();
-        Drupal.ginAccent.setFocusColor(focusColorPreset);
+        Drupal.tonicAccent.clearFocusColor();
+        Drupal.tonicAccent.setFocusColor(focusColorPreset);
 
         // Set custom color if 'custom' is set.
         if (focusColorPreset === 'custom') {
           const focusColorSetting = document.querySelector('input[name="focus_color"]').value;
 
-          Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+          Drupal.tonicAccent.setCustomFocusColor(focusColorSetting);
         }
       });
 
@@ -103,7 +103,7 @@
         document.querySelector('input[name="focus_color"]').value = focusColorSetting;
 
         // Update.
-        Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+        Drupal.tonicAccent.setCustomFocusColor(focusColorSetting);
       });
 
       // Watch Accent color setting has changed.
@@ -114,7 +114,7 @@
         document.querySelector('input[name="focus_picker"]').value = focusColorSetting;
 
         // Update.
-        Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+        Drupal.tonicAccent.setCustomFocusColor(focusColorSetting);
       });
 
       // Watch Hight contrast mode setting has changed.
@@ -128,13 +128,13 @@
       // Watch save
       document.querySelector('[data-drupal-selector="edit-submit"]').addEventListener('click', () => {
         // Reset darkmode localStorage.
-        localStorage.setItem('Drupal.gin.darkmode', '');
+        localStorage.setItem('Drupal.tonic.darkmode', '');
       });
     },
 
     darkmode: function (darkmodeParam = null) {
-      const darkmodeEnabled = darkmodeParam != null ? darkmodeParam : drupalSettings.gin.darkmode;
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeEnabled = darkmodeParam != null ? darkmodeParam : drupalSettings.tonic.darkmode;
+      const darkmodeClass = drupalSettings.tonic.darkmode_class;
 
       if (
         darkmodeEnabled == 1 ||
@@ -147,7 +147,7 @@
       }
 
       // Reset localStorage.
-      localStorage.setItem('Drupal.gin.darkmode', '');
+      localStorage.setItem('Drupal.tonic.darkmode', '');
 
       // Change to Darkmode.
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -165,8 +165,8 @@
     },
 
     setHighContrastMode: function (param = null) {
-      const enabled = param != null ? param : drupalSettings.gin.highcontrastmode;
-      const className = drupalSettings.gin.highcontrastmode_class;
+      const enabled = param != null ? param : drupalSettings.tonic.highcontrastmode;
+      const className = drupalSettings.tonic.highcontrastmode_class;
 
       // Needs to check for both: backwards compatibility.
       if (enabled === true || enabled === 1) {

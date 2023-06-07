@@ -1,27 +1,27 @@
 .block-system > .node-confirm-form,
 .block-system > .confirmation {
-  padding-top: var(--gin-spacing-l);
+  padding-top: var(--tonic-spacing-l);
 }
 
 .panel__title,
 .system-status-general-info__header,
 .system-status-report__requirements-group > h3,
 .system-themes-list__header {
-  font-size: var(--gin-font-size-l);
-  font-weight: var(--gin-font-weight-bold);
-  color: var(--gin-color-primary-active);
-  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  font-size: var(--tonic-font-size-l);
+  font-weight: var(--tonic-font-weight-bold);
+  color: var(--tonic-color-primary-active);
+  padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
   margin-top: 0;
-  background: var(--gin-bg-header);
+  background: var(--tonic-bg-header);
   border: 0 none;
-  border-radius: var(--gin-border-m);
+  border-radius: var(--tonic-border-m);
 }
 
 .panel {
   padding: 0;
 
   &__title {
-    margin: var(--gin-spacing-s);
+    margin: var(--tonic-spacing-s);
   }
 
   &__content {
@@ -29,6 +29,6 @@
   }
 
   .admin-list {
-    margin: var(--gin-spacing-s) 0;
+    margin: var(--tonic-spacing-s) 0;
   }
 }

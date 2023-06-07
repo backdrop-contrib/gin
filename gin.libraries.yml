@@ -1,33 +1,33 @@
-gin:
+tonic:
   css:
     theme:
-      dist/css/base/gin.css: { minified: false }
+      dist/css/base/tonic.css: { minified: false }
   dependencies:
-    - gin/gin_base
-    - gin/legacy_css
+    - tonic/tonic_base
+    - tonic/legacy_css
 
-gin_base:
+tonic_base:
   css:
     component:
       dist/css/theme/font.css: { minified: false }
       dist/css/theme/variables.css: { minified: false }
   dependencies:
-    - gin/tabs
-    - gin/dialog
+    - tonic/tabs
+    - tonic/dialog
 
 # Legacy
-gin_ckeditor:
+tonic_ckeditor:
   dependencies:
-    - gin/ckeditor
+    - tonic/ckeditor
 
-gin_init:
+tonic_init:
   header: true
   js:
     dist/js/init.js: { minified: false, preprocess: false, weight: -99 }
   dependencies:
     - core/drupalSettings
 
-gin_toolbar:
+tonic_toolbar:
   css:
     component:
       dist/css/components/toolbar.css: { minified: false }
@@ -37,17 +37,17 @@ gin_toolbar:
   js:
     dist/js/toolbar.js: { minified: false }
   dependencies:
-    - gin/coffee
-    - gin/node_preview
-    - gin/responsive_preview
-    - gin/contextual_links
-    - gin/breadcrumb
-    - gin/settings_tray
-    - gin/settings_tray_edit
+    - tonic/coffee
+    - tonic/node_preview
+    - tonic/responsive_preview
+    - tonic/contextual_links
+    - tonic/breadcrumb
+    - tonic/settings_tray
+    - tonic/settings_tray_edit
     - core/drupalSettings
     - core/once
 
-gin_horizontal_toolbar:
+tonic_horizontal_toolbar:
   css:
     component:
       dist/css/components/toolbar.css: { minified: false }
@@ -57,16 +57,16 @@ gin_horizontal_toolbar:
   js:
     dist/js/toolbar.js: { minified: false }
   dependencies:
-    - gin/coffee
-    - gin/node_preview
-    - gin/responsive_preview
-    - gin/contextual_links
-    - gin/breadcrumb
-    - gin/settings_tray
-    - gin/settings_tray_edit
+    - tonic/coffee
+    - tonic/node_preview
+    - tonic/responsive_preview
+    - tonic/contextual_links
+    - tonic/breadcrumb
+    - tonic/settings_tray
+    - tonic/settings_tray_edit
     - core/once
 
-gin_classic_toolbar:
+tonic_classic_toolbar:
   css:
     component:
       dist/css/components/toolbar.css: { minified: false }
@@ -75,14 +75,14 @@ gin_classic_toolbar:
   js:
     dist/js/toolbar.js: { minified: false }
   dependencies:
-    - gin/coffee
-    - gin/node_preview
-    - gin/contextual_links
-    - gin/breadcrumb
-    - gin/settings_tray_edit
+    - tonic/coffee
+    - tonic/node_preview
+    - tonic/contextual_links
+    - tonic/breadcrumb
+    - tonic/settings_tray_edit
     - core/once
 
-gin_accent:
+tonic_accent:
   css:
     theme:
       dist/css/theme/accent.css: { minified: false }
@@ -91,23 +91,23 @@ gin_accent:
   dependencies:
     - core/drupalSettings
 
-gin_dialog:
+tonic_dialog:
   css:
     theme:
       dist/css/theme/dialog.css: { minified: false }
   dependencies:
-    - gin/dialog
-    - gin/gin_base
-    - gin/gin_accent
+    - tonic/dialog
+    - tonic/tonic_base
+    - tonic/tonic_accent
 
-gin_description_toggle:
+tonic_description_toggle:
   css:
     theme:
       dist/css/components/description_toggle.css: { minified: false }
   js:
     dist/js/description_toggle.js: { minified: false }
 
-gin_messages:
+tonic_messages:
   js:
     dist/js/messages.js: { minified: false }
   dependencies:
@@ -115,10 +115,10 @@ gin_messages:
 
 # Custom CSS
 
-gin_custom_css:
+tonic_custom_css:
   css:
     theme:
-      public://gin-custom.css: { preprocess: false, minified: false, weight: 100 }
+      public://tonic-custom.css: { preprocess: false, minified: false, weight: 100 }
 
 # Overrides
 
@@ -126,7 +126,7 @@ once:
   js:
     js/libs/once.js: { minified: false, weight: -1 }
 
-gin_media_embed_ckeditor_theme:
+tonic_media_embed_ckeditor_theme:
   js:
     js/overrides/media_embed_ckeditor.theme.js: {}
 
@@ -185,7 +185,7 @@ dialog:
 
 ckeditor:
   js:
-    dist/js/gin_ckeditor.js: { minified: false }
+    dist/js/tonic_ckeditor.js: { minified: false }
   css:
     theme:
       dist/css/components/ckeditor.css: { minified: false }

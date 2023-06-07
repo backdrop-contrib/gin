@@ -18,7 +18,7 @@
     // Error
     & &-icon {
       padding-left: 0;
-      background-color: var(--gin-color-danger);
+      background-color: var(--tonic-color-danger);
       mask-image: icon('error');
       mask-position: center right;
       mask-repeat: no-repeat;
@@ -26,7 +26,7 @@
     }
 
     &--security-error {
-      color: var(--gin-color-danger);
+      color: var(--tonic-color-danger);
 
       span {
         position: relative;
@@ -36,7 +36,7 @@
 
     // Outdated
     &--not-current &-icon {
-      background-color: var(--gin-color-warning);
+      background-color: var(--tonic-color-warning);
       mask-image: icon('warning');
       mask-position: center right;
       mask-repeat: no-repeat;
@@ -45,7 +45,7 @@
 
     // Current
     &--current &-icon {
-      background-color: var(--gin-color-green);
+      background-color: var(--tonic-color-green);
       mask-image: icon('status');
       mask-position: center right;
       mask-repeat: no-repeat;
@@ -59,11 +59,11 @@ tr.color-success,
 .color-checked,
 .drupal-upgrade-status-summary-form tr.no-known-error
 {
-  border-left: var(--gin-border-m) solid var(--gin-color-green);
+  border-left: var(--tonic-border-m) solid var(--tonic-color-green);
   background-color: transparent;
 
   &:hover, &:active, &:focus {
-    background-color: var(--gin-bg-green-light);
+    background-color: var(--tonic-bg-green-light);
   }
 }
 
@@ -71,14 +71,14 @@ tr.color-success,
 tr.color-warning,
 .upgrade-status-next-step-remove tr,
 .drupal-upgrade-status-summary-form tr.known-warnings {
-  border-left: var(--gin-border-m) solid var(--gin-color-warning);
+  border-left: var(--tonic-border-m) solid var(--tonic-color-warning);
   background-color: transparent;
 
   &:hover, &:active, &:focus {
-    background-color: var(--gin-bg-warning-light);
+    background-color: var(--tonic-bg-warning-light);
 
-    .gin--dark-mode & {
-      color: var(--gin-color-warning);
+    .tonic--dark-mode & {
+      color: var(--tonic-color-warning);
     }
   }
 }
@@ -86,14 +86,14 @@ tr.color-warning,
 .color-error,
 tr.color-error,
 .drupal-upgrade-status-summary-form tr.known-errors {
-  border-left: var(--gin-border-m) solid var(--gin-color-danger);
+  border-left: var(--tonic-border-m) solid var(--tonic-color-danger);
   background-color: transparent;
 
   &:hover, &:active, &:focus {
-    background-color: var(--gin-bg-danger-light);
+    background-color: var(--tonic-bg-danger-light);
 
-    .gin--dark-mode & {
-      color: var(--gin-color-danger);
+    .tonic--dark-mode & {
+      color: var(--tonic-color-danger);
     }
   }
 }
@@ -102,7 +102,7 @@ tr.color-error,
 .color-warning,
 .color-error,
 .color-checked {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
   box-sizing: border-box;
 }
 
@@ -117,13 +117,13 @@ tr.color-error,
   }
 }
 
-.gin-layer-wrapper {
+.tonic-layer-wrapper {
   .responsive-enabled {
     margin-top: 0;
   }
 }
 
-.block-system > form .gin-layer-wrapper,
+.block-system > form .tonic-layer-wrapper,
 .panel .admin-list,
 .block-system > form .dataset-table-wrapper {
   padding: 0;
@@ -132,12 +132,12 @@ tr.color-error,
 }
 
 // fix overflow issue in FF
-.block-system > form .gin-layer-wrapper {
+.block-system > form .tonic-layer-wrapper {
   padding-bottom: 1px;
 }
 
 .compact-link {
-  font-size: var(--gin-font-size-s);
+  font-size: var(--tonic-font-size-s);
   text-align: right;
 }
 
@@ -152,12 +152,12 @@ tr.color-error,
 
   .table-filter-text {
     width: 100%;
-    padding: var(--gin-spacing-m);
+    padding: var(--tonic-spacing-m);
   }
 }
 
 #update-status {
   > p {
-    margin-bottom: var(--gin-spacing-xl);
+    margin-bottom: var(--tonic-spacing-xl);
   }
 }

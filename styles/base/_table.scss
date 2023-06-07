@@ -1,8 +1,8 @@
-.gin-table-scroll-wrapper {
+.tonic-table-scroll-wrapper {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 240px;
-  margin-top: calc(var(--gin-spacing-xs) * -1);
+  margin-top: calc(var(--tonic-spacing-xs) * -1);
   margin-bottom: -240px;
 }
 
@@ -11,7 +11,7 @@ table.sticky-header {
   z-index: 98;
   position: fixed;
   left: auto !important;
-  top: calc(var(--ginHorizontalToolbarOffset) + var(--ginStickyOffset)) !important;
+  top: calc(var(--tonicHorizontalToolbarOffset) + var(--tonicStickyOffset)) !important;
   background: transparent;
 
   &::before,
@@ -24,13 +24,13 @@ table.sticky-header {
   }
 
   &::before {
-    left: calc(var(--gin-spacing-l) * -1);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--gin-bg-layer));
+    left: calc(var(--tonic-spacing-l) * -1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), var(--tonic-bg-layer));
   }
 
   &::after {
-    right: calc(var(--gin-spacing-l) * -1);
-    background: linear-gradient(90deg, var(--gin-bg-layer), rgba(255, 255, 255, 0));
+    right: calc(var(--tonic-spacing-l) * -1);
+    background: linear-gradient(90deg, var(--tonic-bg-layer), rgba(255, 255, 255, 0));
   }
 
   .--is-sticky & {
@@ -45,7 +45,7 @@ table.sticky-header {
     }
 
     th {
-      background: var(--gin-bg-layer);
+      background: var(--tonic-bg-layer);
     }
   }
 }
@@ -53,10 +53,10 @@ table.sticky-header {
 table {
   thead {
     background: transparent;
-    border-radius: var(--gin-border-m);
+    border-radius: var(--tonic-border-m);
 
     tr {
-      border-bottom: 1px solid var(--gin-border-color-table-header);
+      border-bottom: 1px solid var(--tonic-border-color-table-header);
 
       &:hover {
         background: transparent;
@@ -65,39 +65,39 @@ table {
   }
 
   th {
-    font-size: var(--gin-font-size-s);
-    font-weight: var(--gin-font-weight-bold);
-    background: var(--gin-bg-layer);
+    font-size: var(--tonic-font-size-s);
+    font-weight: var(--tonic-font-weight-bold);
+    background: var(--tonic-bg-layer);
 
     &, .form-item__label {
-      color: var(--gin-color-title);
+      color: var(--tonic-color-title);
     }
 
     @include mq(medium) {
       height: auto;
-      padding: var(--gin-spacing-m);
+      padding: var(--tonic-spacing-m);
     }
   }
 
   tbody {
     tr {
-      border-bottom: 1px solid var(--gin-border-color-table);
+      border-bottom: 1px solid var(--tonic-border-color-table);
     }
 
     td {
       height: auto;
-      padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
+      padding: var(--tonic-spacing-density-m) var(--tonic-spacing-m);
     }
   }
 
   tr,
   .draggable-table.tabledrag-disabled tr {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
     background-color: transparent;
 
     &:hover {
-      color: var(--gin-color-text);
-      background: var(--gin-bg-item-hover);
+      color: var(--tonic-color-text);
+      background: var(--tonic-bg-item-hover);
     }
 
     &.selected:hover {
@@ -106,12 +106,12 @@ table {
   }
 
   tr.selected {
-    .gin--dark-mode & {
+    .tonic--dark-mode & {
       border-color: rgba(white, .2);
     }
 
     td {
-      background-color: var(--gin-color-primary-light);
+      background-color: var(--tonic-color-primary-light);
     }
   }
 
@@ -125,20 +125,20 @@ table {
     }
 
     .group-label {
-      color: var(--gin-color-title);
+      color: var(--tonic-color-title);
     }
   }
 }
 
 .sortable-heading {
-  padding: var(--gin-spacing-xs) var(--gin-spacing-m);
+  padding: var(--tonic-spacing-xs) var(--tonic-spacing-m);
 
   > a::before {
     bottom: -1px;
   }
 
   > a::after {
-    background: var(--gin-color-text-light);
+    background: var(--tonic-color-text-light);
     mask-image: icon('sort');
     mask-repeat: no-repeat;
     mask-position: center center;
@@ -146,17 +146,17 @@ table {
 
   &.is-active > a {
     &, &:hover, &:active {
-      color: var(--gin-color-primary-active);
+      color: var(--tonic-color-primary-active);
     }
 
     &::before {
-      border-bottom: .1875rem solid var(--gin-color-primary-active);
+      border-bottom: .1875rem solid var(--tonic-color-primary-active);
     }
   }
 }
 
 .tablesort {
-  background-color: var(--gin-color-primary-active);
+  background-color: var(--tonic-color-primary-active);
   background-image: none;
   mask-image: icon('sort');
   mask-repeat: no-repeat;
@@ -182,7 +182,7 @@ table {
 }
 
 .region-title {
-  border-bottom: 2px solid var(--gin-color-text);
+  border-bottom: 2px solid var(--tonic-color-text);
 }
 
 td.webform-has-field-suffix > .form-item > .form-element {
@@ -192,7 +192,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 .field-multiple-table {
   th {
-    padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-xs) var(--gin-spacing-l);
+    padding: var(--tonic-spacing-xs) var(--tonic-spacing-m) var(--tonic-spacing-xs) var(--tonic-spacing-l);
     border-bottom: 0;
     background: transparent;
 
@@ -212,11 +212,11 @@ td.webform-has-field-suffix > .form-item > .form-element {
       display: block;
       width: 100%;
       height: 100%;
-      background: var(--gin-bg-header);
+      background: var(--tonic-bg-header);
       position: absolute;
       top: 0;
       left: 0;
-      border-radius: var(--gin-border-m);
+      border-radius: var(--tonic-border-m);
     }
 
     tr {
@@ -225,21 +225,21 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
     .label {
       display: inline-block;
-      font-size: var(--gin-font-size-l);
-      font-weight: var(--gin-font-weight-bold);
+      font-size: var(--tonic-font-size-l);
+      font-weight: var(--tonic-font-weight-bold);
       letter-spacing: -0.025em;
       line-height: 1.33333em;
-      color: var(--gin-color-primary-active);
+      color: var(--tonic-color-primary-active);
       padding: 0;
-      margin: var(--gin-spacing-xs) 0;
+      margin: var(--tonic-spacing-xs) 0;
     }
   }
 
   tr .form-item {
-    margin-bottom: var(--gin-spacing-m);
+    margin-bottom: var(--tonic-spacing-m);
   }
 }
 
-.gin-layer-wrapper .views-table {
+.tonic-layer-wrapper .views-table {
   margin-top: 0;
 }

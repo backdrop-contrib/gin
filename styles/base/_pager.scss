@@ -1,17 +1,17 @@
 .pager__link {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
   background-color: transparent;
 }
 
 .pager__link.is-active,
 .pager__item--current {
-  color: var(--gin-bg-app);
+  color: var(--tonic-bg-app);
 }
 
 .pager__link:hover,
 .pager__link.is-active:hover {
-  color: var(--gin-color-button-text);
-  background: var(--gin-color-primary-hover);
+  color: var(--tonic-color-button-text);
+  background: var(--tonic-color-primary-hover);
 }
 
 .pager__item--first .pager__link::before {
@@ -36,16 +36,16 @@
 .pager__item--last .pager__link {
   &::before,
   &::after {
-    background: var(--gin-color-text-light);
+    background: var(--tonic-color-text-light);
   }
 
   &:hover::before,
   &:hover::after {
-    background: var(--gin-bg-app);
+    background: var(--tonic-bg-app);
   }
 }
 
 .pager__link.is-active,
 .pager__item--current {
-  background-color: var(--gin-color-primary);
+  background-color: var(--tonic-color-primary);
 }

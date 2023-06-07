@@ -4,9 +4,9 @@ dependencies:
   module:
     - help
   theme:
-    - gin
-id: gin_help
-theme: gin
+    - tonic
+id: tonic_help
+theme: tonic
 region: help
 weight: 0
 provider: null

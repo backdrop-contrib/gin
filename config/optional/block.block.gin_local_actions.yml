@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - gin
-id: gin_local_actions
-theme: gin
+    - tonic
+id: tonic_local_actions
+theme: tonic
 region: content
 weight: -10
 provider: null

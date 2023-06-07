@@ -1,20 +1,20 @@
 .progress {
   &__bar {
-    border-color: var(--gin-color-primary);
-    background-color: var(--gin-color-primary);
-    box-shadow: 0 .125em .25em var(--gin-color-primary-light),
-                1.25em .9375em 2em var(--gin-color-primary-light);
+    border-color: var(--tonic-color-primary);
+    background-color: var(--tonic-color-primary);
+    box-shadow: 0 .125em .25em var(--tonic-color-primary-light),
+                1.25em .9375em 2em var(--tonic-color-primary-light);
   }
 
   &__track {
-    padding: var(--gin-spacing-xs);
-    border-color: var(--gin-border-color);
-    background-color: var(--gin-bg-layer3);
+    padding: var(--tonic-spacing-xs);
+    border-color: var(--tonic-border-color);
+    background-color: var(--tonic-bg-layer3);
   }
 
   &__description,
   &__percentage {
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 }
 

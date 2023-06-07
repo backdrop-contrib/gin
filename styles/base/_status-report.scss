@@ -2,7 +2,7 @@
 .upgrade-status-counter__status-icon--not-scanned:before,
 .upgrade-status-summary tr.not-scanned > td.status-info:before {
   background-image: none;
-  background-color: var(--gin-color-text);
+  background-color: var(--tonic-color-text);
   mask-image: icon('info');
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -21,7 +21,7 @@
 .upgrade-status-summary tr.no-known-error > td.status-info:before,
 #checked + .claro-details__wrapper--system-status-report .system-status-report__status-title:before {
   background-image: none;
-  background-color: var(--gin-color-green);
+  background-color: var(--tonic-color-green);
   mask-image: icon('status');
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -37,7 +37,7 @@
 .upgrade-status-error-list tr.known-warnings > td.status-info:before,
 .upgrade-status-summary tr.known-warnings > td.status-info:before {
   background-image: none;
-  background-color: var(--gin-color-warning);
+  background-color: var(--tonic-color-warning);
   mask-image: icon('warning');
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -56,7 +56,7 @@
 .upgrade-status-error-list tr.known-errors > td.status-info:before,
 .upgrade-status-summary tr.known-errors > td.status-info:before {
   background-image: none;
-  background-color: var(--gin-color-danger);
+  background-color: var(--tonic-color-danger);
   mask-image: icon('error');
   mask-repeat: no-repeat;
   mask-position: center center;
@@ -66,9 +66,9 @@
 .system-status-counter,
 .upgrade-status-counter {
   height: auto;
-  padding: var(--gin-spacing-m) 0;
-  background: var(--gin-bg-layer);
-  border-radius: var(--gin-border-m);
+  padding: var(--tonic-spacing-m) 0;
+  background: var(--tonic-bg-layer);
+  border-radius: var(--tonic-border-m);
 
   &__status-title {
     padding-left: 0;
@@ -88,15 +88,15 @@
   }
 
   &__title-count {
-    font-weight: var(--gin-font-weight-semibold);
-    color: var(--gin-color-title);
+    font-weight: var(--tonic-font-weight-semibold);
+    color: var(--tonic-color-title);
     text-transform: none;
   }
 }
 
 .system-status-general-info {
   &__header {
-    margin-bottom: var(--gin-spacing-xs);
+    margin-bottom: var(--tonic-spacing-xs);
   }
 
   &__items {
@@ -104,19 +104,19 @@
   }
 
   &__item {
-    padding: var(--gin-spacing-m);
+    padding: var(--tonic-spacing-m);
     background: transparent;
     box-shadow: none;
   }
 
   &__item-title {
-    font-size: var(--gin-font-size);
-    font-weight: var(--gin-font-weight-semibold);
-    color: var(--gin-color-title);
+    font-size: var(--tonic-font-size);
+    font-weight: var(--tonic-font-weight-semibold);
+    color: var(--tonic-color-title);
   }
 
   &__sub-item-title {
-    font-weight: var(--gin-font-weight-bold);
+    font-weight: var(--tonic-font-weight-bold);
 
     &:after {
       content: ":\00a0";
@@ -147,7 +147,7 @@
 
     &:before {
       background-image: none;
-      background-color: var(--gin-color-primary);
+      background-color: var(--tonic-color-primary);
       mask-repeat: no-repeat;
       mask-position: center center;
       mask-size: 32px 32px;
@@ -162,20 +162,20 @@
 }
 
 .cron-description__run-cron {
-  margin-top: var(--gin-spacing-m);
+  margin-top: var(--tonic-spacing-m);
 }
 
 .system-status-report {
-  margin-top: var(--gin-spacing-l);
+  margin-top: var(--tonic-spacing-l);
 
   &-counters &-counters__item {
-    border: 1px solid var(--gin-border-color-layer);
-    box-shadow: var(--gin-shadow-l1);
+    border: 1px solid var(--tonic-border-color-layer);
+    box-shadow: var(--tonic-shadow-l1);
   }
 
   &__status-title {
-    font-weight: var(--gin-font-weight-semibold);
-    color: var(--gin-color-title) !important;
+    font-weight: var(--tonic-font-weight-semibold);
+    color: var(--tonic-color-title) !important;
   }
 }
 

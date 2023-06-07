@@ -5,21 +5,21 @@
  * page.theme
  */
 
-use Drupal\gin\GinContentFormHelper;
+use Drupal\gin\TonicContentFormHelper;
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\gin\GinSettings;
+use Drupal\gin\TonicSettings;
 use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_HOOK() for page.
  */
-function gin_preprocess_page(&$variables) {
-  // Required for allowing subtheming Gin.
+function tonic_preprocess_page(&$variables) {
+  // Required for allowing subtheming Tonic.
   $activeThemeName = \Drupal::theme()->getActiveTheme()->getName();
   $variables['active_admin_theme'] = $activeThemeName;
 
-  /** @var \Drupal\gin\GinSettings $settings */
-  $settings = \Drupal::classResolver(GinSettings::class);
+  /** @var \Drupal\gin\TonicSettings $settings */
+  $settings = \Drupal::classResolver(TonicSettings::class);
 
   // Expose Toolbar variant.
   $variables['toolbar_variant'] = $settings->get('classic_toolbar');
@@ -40,7 +40,7 @@ function gin_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_HOOK() for page_alter.
  */
-function gin_theme_suggestions_page_alter(&$suggestions, $variables) {
+function tonic_theme_suggestions_page_alter(&$suggestions, $variables) {
   $path = \Drupal::requestStack()->getCurrentRequest()->getPathInfo();
 
   if ($path != '/') {
@@ -50,7 +50,7 @@ function gin_theme_suggestions_page_alter(&$suggestions, $variables) {
   }
 
   // The node page template is required to use the node content form.
-  if (\Drupal::classResolver(GinContentFormHelper::class)->isContentForm()
+  if (\Drupal::classResolver(TonicContentFormHelper::class)->isContentForm()
     && !in_array('page__node', $suggestions)) {
     $suggestions[] = 'page__node';
   }
@@ -59,78 +59,78 @@ function gin_theme_suggestions_page_alter(&$suggestions, $variables) {
 /**
  * Implements hook_preprocess_HOOK() for page_attachments.
  */
-function gin_page_attachments_alter(&$page) {
+function tonic_page_attachments_alter(&$page) {
   // Are we relevant?
-  $gin_activated = _gin_is_active();
+  $tonic_activated = _tonic_is_active();
 
-  if ($gin_activated) {
+  if ($tonic_activated) {
     $drupal_version = (float) Drupal::VERSION;
 
     // Get theme settings.
-    $settings = \Drupal::classResolver(GinSettings::class);
+    $settings = \Drupal::classResolver(TonicSettings::class);
     $toolbar = $settings->get('classic_toolbar');
 
     // Attach the init script.
-    $page['#attached']['library'][] = 'gin/gin_init';
+    $page['#attached']['library'][] = 'tonic/tonic_init';
 
     if ($toolbar === 'classic') {
       // Attach the classic toolbar styles.
-      $page['#attached']['library'][] = 'gin/gin_classic_toolbar';
+      $page['#attached']['library'][] = 'tonic/tonic_classic_toolbar';
     }
     elseif ($toolbar === 'horizontal') {
       // Attach the horizontal toolbar styles.
-      $page['#attached']['library'][] = 'gin/gin_horizontal_toolbar';
+      $page['#attached']['library'][] = 'tonic/tonic_horizontal_toolbar';
     }
     else {
       // Attach toolbar styles.
-      $page['#attached']['library'][] = 'gin/gin_toolbar';
+      $page['#attached']['library'][] = 'tonic/tonic_toolbar';
     }
 
     // Attach accent library.
-    $page['#attached']['library'][] = 'gin/gin_accent';
+    $page['#attached']['library'][] = 'tonic/tonic_accent';
 
     // Attach sticky library.
-    $page['#attached']['library'][] = 'gin/sticky';
+    $page['#attached']['library'][] = 'tonic/sticky';
 
     // Attach Drupal.once for older Drupal versions.
     if ($drupal_version < 9.3) {
-      $page['#attached']['library'][] = 'gin/once';
+      $page['#attached']['library'][] = 'tonic/once';
     }
 
     // Custom CSS file.
-    if (file_exists('public://gin-custom.css')) {
-      $page['#attached']['library'][] = 'gin/gin_custom_css';
+    if (file_exists('public://tonic-custom.css')) {
+      $page['#attached']['library'][] = 'tonic/tonic_custom_css';
     }
 
     // Expose settings to JS.
-    $page['#attached']['drupalSettings']['gin']['darkmode'] = $settings->get('enable_darkmode');
-    $page['#attached']['drupalSettings']['gin']['darkmode_class'] = 'gin--dark-mode';
-    $page['#attached']['drupalSettings']['gin']['preset_accent_color'] = $settings->get('preset_accent_color');
-    $page['#attached']['drupalSettings']['gin']['accent_color'] = $settings->get('accent_color');
-    $page['#attached']['drupalSettings']['gin']['preset_focus_color'] = $settings->get('preset_focus_color');
-    $page['#attached']['drupalSettings']['gin']['focus_color'] = $settings->get('focus_color');
-    $page['#attached']['drupalSettings']['gin']['highcontrastmode'] = $settings->get('high_contrast_mode');
-    $page['#attached']['drupalSettings']['gin']['highcontrastmode_class'] = 'gin--high-contrast-mode';
-    $page['#attached']['drupalSettings']['gin']['toolbar_variant'] = $settings->get('classic_toolbar');
+    $page['#attached']['drupalSettings']['tonic']['darkmode'] = $settings->get('enable_darkmode');
+    $page['#attached']['drupalSettings']['tonic']['darkmode_class'] = 'tonic--dark-mode';
+    $page['#attached']['drupalSettings']['tonic']['preset_accent_color'] = $settings->get('preset_accent_color');
+    $page['#attached']['drupalSettings']['tonic']['accent_color'] = $settings->get('accent_color');
+    $page['#attached']['drupalSettings']['tonic']['preset_focus_color'] = $settings->get('preset_focus_color');
+    $page['#attached']['drupalSettings']['tonic']['focus_color'] = $settings->get('focus_color');
+    $page['#attached']['drupalSettings']['tonic']['highcontrastmode'] = $settings->get('high_contrast_mode');
+    $page['#attached']['drupalSettings']['tonic']['highcontrastmode_class'] = 'tonic--high-contrast-mode';
+    $page['#attached']['drupalSettings']['tonic']['toolbar_variant'] = $settings->get('classic_toolbar');
 
     // Expose stylesheets to JS.
-    $basethemeurl = '/' . \Drupal::service('extension.list.theme')->getPath('gin');
-    $page['#attached']['drupalSettings']['gin']['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
-    $page['#attached']['drupalSettings']['gin']['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
-    $page['#attached']['drupalSettings']['gin']['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
+    $basethemeurl = '/' . \Drupal::service('extension.list.theme')->getPath('tonic');
+    $page['#attached']['drupalSettings']['tonic']['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
+    $page['#attached']['drupalSettings']['tonic']['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
+    $page['#attached']['drupalSettings']['tonic']['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
 
     // Expose default settings to JS.
-    $page['#attached']['drupalSettings']['gin']['default_darkmode'] = $settings->getDefault('enable_darkmode');
-    $page['#attached']['drupalSettings']['gin']['default_accent_color'] = $settings->getDefault('accent_color');
-    $page['#attached']['drupalSettings']['gin']['default_preset_accent_color'] = $settings->getDefault('preset_accent_color');
-    $page['#attached']['drupalSettings']['gin']['default_high_contrast_mode'] = $settings->getDefault('high_contrast_mode');
+    $page['#attached']['drupalSettings']['tonic']['default_darkmode'] = $settings->getDefault('enable_darkmode');
+    $page['#attached']['drupalSettings']['tonic']['default_accent_color'] = $settings->getDefault('accent_color');
+    $page['#attached']['drupalSettings']['tonic']['default_preset_accent_color'] = $settings->getDefault('preset_accent_color');
+    $page['#attached']['drupalSettings']['tonic']['default_high_contrast_mode'] = $settings->getDefault('high_contrast_mode');
   }
 }
 
 /**
  * Page title.
  */
-function gin_preprocess_page_title(&$variables) {
+function tonic_preprocess_page_title(&$variables) {
   if (preg_match('/entity\.node\..*/', \Drupal::routeMatch()->getRouteName(), $matches)) {
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof Node) {
@@ -155,7 +155,7 @@ function gin_preprocess_page_title(&$variables) {
 /**
  * Node revisions.
  */
-function gin_preprocess_page__node__revisions(&$page) {
+function tonic_preprocess_page__node__revisions(&$page) {
   // Attach the init script.
-  $page['#attached']['library'][] = 'gin/revisions';
+  $page['#attached']['library'][] = 'tonic/revisions';
 }

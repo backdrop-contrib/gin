@@ -1,23 +1,23 @@
 // Toolbar Variables
 :root {
-  --gin-toolbar-secondary-height: 48px;
-  --gin-toolbar-height: 39px;
-  --gin-scroll-offset: 72px;
-  --gin-toolbar-y-offset: var(--gin-toolbar-height);
-  --gin-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
-  --gin-sticky-offset: 0px; // Needs px to work in calc() functions.
+  --tonic-toolbar-secondary-height: 48px;
+  --tonic-toolbar-height: 39px;
+  --tonic-scroll-offset: 72px;
+  --tonic-toolbar-y-offset: var(--tonic-toolbar-height);
+  --tonic-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
+  --tonic-sticky-offset: 0px; // Needs px to work in calc() functions.
 
   @include mq(medium) {
-    --gin-toolbar-secondary-height: 60px;
-    --gin-toolbar-height: 53px;
-    --gin-scroll-offset: 180px;
-    --gin-icon-size-toolbar: 18px;
-    --gin-sticky-offset: var(--gin-height-sticky);
+    --tonic-toolbar-secondary-height: 60px;
+    --tonic-toolbar-height: 53px;
+    --tonic-scroll-offset: 180px;
+    --tonic-icon-size-toolbar: 18px;
+    --tonic-sticky-offset: var(--tonic-height-sticky);
   }
 }
 
-.gin-secondary-toolbar--frontend {
-  top: calc(var(--gin-toolbar-secondary-height) * -1);
+.tonic-secondary-toolbar--frontend {
+  top: calc(var(--tonic-toolbar-secondary-height) * -1);
 }
 
 // Toolbar
@@ -48,7 +48,7 @@
           }
 
           > .toolbar-box > .toolbar-icon:not(.toolbar-handle)::before {
-            left: var(--gin-spacing-s);
+            left: var(--tonic-spacing-s);
           }
         }
       }
@@ -64,7 +64,7 @@
   width: 3rem;
 
   &:before {
-    left: var(--gin-spacing-m);
+    left: var(--tonic-spacing-m);
   }
 }
 
@@ -80,21 +80,21 @@
 .toolbar-horizontal .menu-item > .toolbar-menu,
 .toolbar-horizontal .toolbar-tray .menu-item--expanded.menu-item--expanded,
 .toolbar .toolbar-tray {
-  background-color: var(--gin-bg-layer);
+  background-color: var(--tonic-bg-layer);
 }
 
 .toolbar-horizontal .toolbar-tray .toolbar-toggle-orientation {
-  border-left: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--tonic-border-color);
 }
 
 .toolbar-tray a,
 .toolbar-tray span,
 .toolbar .toolbar-menu .toolbar-menu a,
 .toolbar .toolbar-menu .toolbar-menu span {
-  color: var(--gin-color-text);
+  color: var(--tonic-color-text);
 
   &:hover {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
   }
 }
 
@@ -102,29 +102,29 @@
 .toolbar .toolbar-tray .menu-item > .toolbar-icon.is-active,
 .toolbar .toolbar-tray .menu-item > .toolbar-box > .toolbar-icon.is-active,
 .toolbar .toolbar-tray a.is-active {
-  color: var(--gin-color-primary);
-  font-weight: var(--gin-font-weight-bold);
+  color: var(--tonic-color-primary);
+  font-weight: var(--tonic-font-weight-bold);
 
   &::before {
-    background: var(--gin-color-primary);
+    background: var(--tonic-color-primary);
   }
 }
 
 .toolbar .toolbar-tray .hover-intent > .toolbar-icon,
 .toolbar .toolbar-tray .hover-intent > .toolbar-box > .toolbar-icon:not(.toolbar-handle) {
-  color: var(--gin-color-primary-hover);
-  background-color: var(--gin-bg-item-hover);
+  color: var(--tonic-color-primary-hover);
+  background-color: var(--tonic-bg-item-hover);
 
   &::before,
   + .toolbar-handle::before {
-    background-color: var(--gin-color-primary);
+    background-color: var(--tonic-color-primary);
   }
 }
 
 .toolbar-tray-horizontal a:focus,
 .toolbar-box a:focus,
 .toolbar .toolbar-icon.toolbar-handle:focus {
-  background-color: var(--gin-bg-layer2);
+  background-color: var(--tonic-bg-layer2);
 }
 
 .toolbar-menu__trigger,
@@ -133,11 +133,11 @@
   display: none !important;
 }
 
-.gin--dark-mode .toolbar .toolbar-toggle-orientation {
-  background-color: var(--gin-bg-layer2);
+.tonic--dark-mode .toolbar .toolbar-toggle-orientation {
+  background-color: var(--tonic-bg-layer2);
 }
 
-.gin--classic-toolbar {
+.tonic--classic-toolbar {
   table.sticky-header {
     @include mq(large) {
       margin-top: 0;
@@ -149,7 +149,7 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, .1),
               0 2px 6px 2px rgba(0, 0, 0, .03);
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     box-shadow: 0 0 4px rgba(0, 0, 0, .3);
   }
 
@@ -173,15 +173,15 @@
   background-color: transparent;
 }
 
-.gin--horizontal-toolbar.gin--edit-form .page-wrapper__node-edit-form .layout-region-node-secondary {
+.tonic--horizontal-toolbar.tonic--edit-form .page-wrapper__node-edit-form .layout-region-node-secondary {
   @include mq(large) {
-    top: var(--gin-toolbar-height);
-    height: calc(100% - var(--gin-toolbar-height));
+    top: var(--tonic-toolbar-height);
+    height: calc(100% - var(--tonic-toolbar-height));
   }
 }
 
 // Main horizontal nav
-.gin--horizontal-toolbar #toolbar-administration {
+.tonic--horizontal-toolbar #toolbar-administration {
   @include mq(medium) {
     z-index: 502;
     position: fixed;
@@ -190,8 +190,8 @@
 
     &,
     .toolbar-bar {
-      height: var(--gin-toolbar-height);
-      background: var(--gin-bg-layer);
+      height: var(--tonic-toolbar-height);
+      background: var(--tonic-bg-layer);
     }
   }
 
@@ -208,7 +208,7 @@
   .menu-item__tools,
   .menu-item__admin_toolbar_tools-help {
     @include mq(medium) {
-      margin-left: calc(var(--gin-spacing-m) * -1);
+      margin-left: calc(var(--tonic-spacing-m) * -1);
     }
   }
 
@@ -234,7 +234,7 @@
 
       // Default
       &.toolbar-icon-default {
-        margin-right: var(--gin-spacing-xs);
+        margin-right: var(--tonic-spacing-xs);
       }
     }
   }
@@ -242,8 +242,8 @@
   // target fist level only
   .toolbar-menu-administration {
     @include mq(medium) {
-      margin-left: m#{i}n(5vw, var(--gin-spacing-xxl));
-      margin-right: m#{i}n(5vw, var(--gin-spacing-xxl));
+      margin-left: m#{i}n(5vw, var(--tonic-spacing-xxl));
+      margin-right: m#{i}n(5vw, var(--tonic-spacing-xxl));
 
       > .toolbar-menu {
         display: flex;
@@ -253,8 +253,8 @@
     }
 
     .menu-item .menu-item:hover > .toolbar-icon {
-      color: var(--gin-color-primary-hover);
-      background: var(--gin-color-primary-light);
+      color: var(--tonic-color-primary-hover);
+      background: var(--tonic-color-primary-light);
     }
   }
 }

@@ -1,6 +1,6 @@
 .block-page-title-block {
   @include mq($to: medium) {
-    .gin--edit-form .region-sticky--is-sticky & {
+    .tonic--edit-form .region-sticky--is-sticky & {
       visibility: hidden;
     }
   }
@@ -11,11 +11,11 @@
 }
 
 .page-title {
-  font-size: var(--gin-font-size-h1);
-  font-weight: var(--gin-font-weight-semibold);
+  font-size: var(--tonic-font-size-h1);
+  font-weight: var(--tonic-font-weight-semibold);
   line-height: normal;
   letter-spacing: -.05em;
-  color: var(--gin-color-title);
+  color: var(--tonic-color-title);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -25,16 +25,16 @@
 
   @include mq(ultra) {
     .region-sticky--is-sticky & {
-      font-size: var(--gin-font-size-h3);
+      font-size: var(--tonic-font-size-h3);
     }
   }
 
   &__language {
     display: block;
-    font-size: var(--gin-font-size-xs);
-    font-weight: var(--gin-font-weight-normal);;
+    font-size: var(--tonic-font-size-xs);
+    font-weight: var(--tonic-font-weight-normal);;
     letter-spacing: normal;
-    color: var(--gin-color-text);
+    color: var(--tonic-color-text);
   }
 
   &--is-translation + .shortcut-action .shortcut-action__icon {
@@ -46,41 +46,41 @@
   position: relative;
   align-self: center;
   margin-left: 0;
-  border-radius: var(--gin-border-m);
+  border-radius: var(--tonic-border-m);
 
   &__icon {
     position: relative;
     top: 3px;
-    background: var(--gin-icon-color);
+    background: var(--tonic-icon-color);
     mask-image: icon('shortcut');
     mask-size: 75% 75%;
     mask-position: center center;
     mask-repeat: no-repeat;
 
     @include mq(large) {
-      top: var(--gin-spacing-xxs);
+      top: var(--tonic-spacing-xxs);
       mask-size: 85% 85%;
     }
 
-    .gin--edit-form & {
+    .tonic--edit-form & {
       top: 3px;
     }
   }
 
   &:hover &__icon {
     opacity: 1;
-    background: var(--gin-color-primary);
+    background: var(--tonic-color-primary);
   }
 
   &--remove {
     .shortcut-action__icon {
       mask-image: icon('shortcut-filled');
-      background: var(--gin-color-primary);
+      background: var(--tonic-color-primary);
     }
 
     &:hover .shortcut-action__icon {
       opacity: 1;
-      background: var(--gin-color-disabled);
+      background: var(--tonic-color-disabled);
     }
   }
 
@@ -92,10 +92,10 @@
     min-width: 120px;
     pointer-events: none;
     white-space: nowrap;
-    padding: var(--gin-spacing-xs);
-    margin-top: calc(var(--gin-spacing-xxs) * -1);
-    color: var(--gin-color-contextual-text);
-    background: var(--gin-color-contextual);
-    border-radius: var(--gin-border-xs);
+    padding: var(--tonic-spacing-xs);
+    margin-top: calc(var(--tonic-spacing-xxs) * -1);
+    color: var(--tonic-color-contextual-text);
+    background: var(--tonic-color-contextual);
+    border-radius: var(--tonic-border-xs);
   }
 }

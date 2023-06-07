@@ -1,14 +1,14 @@
 .admin-list {
-  padding: var(--gin-spacing-s) 0;
+  padding: var(--tonic-spacing-s) 0;
 }
 
 .admin-item {
   position: relative;
-  padding: var(--gin-spacing-s) calc(var(--gin-spacing-xs) + var(--gin-spacing-xl)) var(--gin-spacing-s) var(--gin-spacing-l);
-  margin: var(--gin-spacing-l) var(--gin-spacing-s);
+  padding: var(--tonic-spacing-s) calc(var(--tonic-spacing-xs) + var(--tonic-spacing-xl)) var(--tonic-spacing-s) var(--tonic-spacing-l);
+  margin: var(--tonic-spacing-l) var(--tonic-spacing-s);
 
   &--panel {
-    margin: 0 calc(var(--gin-spacing-l) * -1);
+    margin: 0 calc(var(--tonic-spacing-l) * -1);
   }
 
   &:not(:last-child) {
@@ -19,11 +19,11 @@
       opacity: .75;
       display: block;
       position: absolute;
-      left: calc(var(--gin-spacing-s) * -1);
-      bottom: calc(var(--gin-spacing-s) * -1);
-      width: calc(100% + var(--gin-spacing-l));
+      left: calc(var(--tonic-spacing-s) * -1);
+      bottom: calc(var(--tonic-spacing-s) * -1);
+      width: calc(100% + var(--tonic-spacing-l));
       height: 1px;
-      border-bottom: 1px solid var(--gin-border-color-table);
+      border-bottom: 1px solid var(--tonic-border-color-table);
     }
   }
 
@@ -36,13 +36,13 @@
   }
 
   &__title {
-    font-size: var(--gin-font-size);
-    font-weight: var(--gin-font-weight-semibold);
+    font-size: var(--tonic-font-size);
+    font-weight: var(--tonic-font-weight-semibold);
   }
 
   &__description {
-    font-size: var(--gin-font-size-s);
-    color: var(--gin-color-text-light);
+    font-size: var(--tonic-font-size-s);
+    color: var(--tonic-color-text-light);
   }
 
   & &__link {
@@ -56,12 +56,12 @@
     text-indent: -999em;
 
     &::before {
-      right: var(--gin-spacing-m);
+      right: var(--tonic-spacing-m);
       left: auto;
       top: 50%;
       transform: translateY(-50%) unquote("/*! rtl:append scaleX(-1) */");
       background-image: none;
-      background-color: var(--gin-color-primary);
+      background-color: var(--tonic-color-primary);
       mask-image: icon('handle');
       mask-size: 1em 1em;
       mask-repeat: no-repeat;
@@ -70,17 +70,17 @@
 
     &:hover,
     &:focus {
-      background: var(--gin-color-primary-light);
-      border-radius: var(--gin-border-m);
+      background: var(--tonic-color-primary-light);
+      border-radius: var(--tonic-border-m);
 
       ~ .admin-item__title,
       ~ .admin-item__description {
-        color: var(--gin-color-primary);
+        color: var(--tonic-color-primary);
       }
     }
 
     &:focus {
-      box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
+      box-shadow: inset 0 0 0 1px var(--tonic-color-focus-border), inset 0 0 0 4px var(--tonic-color-focus);
     }
   }
 }

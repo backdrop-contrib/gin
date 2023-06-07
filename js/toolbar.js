@@ -1,9 +1,9 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginToolbar = {
+  Drupal.behaviors.tonicToolbar = {
     attach: (context) => {
-      Drupal.ginToolbar.init(context);
+      Drupal.tonicToolbar.init(context);
     },
 
   };
@@ -14,7 +14,7 @@
    * Back to site link points to the last non-administrative page the user
    * visited within the same browser tab.
    */
-  Drupal.behaviors.ginEscapeAdmin = {
+  Drupal.behaviors.tonicEscapeAdmin = {
     attach: (context) => {
       once('ginEscapeAdmin', '[data-gin-toolbar-escape-admin]', context).forEach(el => {
         const escapeAdminPath = sessionStorage.getItem('escapeAdminPath');
@@ -26,18 +26,18 @@
     },
   };
 
-  Drupal.ginToolbar = {
+  Drupal.tonicToolbar = {
     init: function (context) {
       once('ginToolbarInit', '#gin-toolbar-bar', context).forEach(() => {
         const toolbarTrigger = document.querySelector('.toolbar-menu__trigger');
 
         // Check for Drupal trayVerticalLocked and remove it.
-        if (drupalSettings.gin.toolbar_variant != 'classic' && localStorage.getItem('Drupal.toolbar.trayVerticalLocked')) {
+        if (drupalSettings.tonic.toolbar_variant != 'classic' && localStorage.getItem('Drupal.toolbar.trayVerticalLocked')) {
           localStorage.removeItem('Drupal.toolbar.trayVerticalLocked');
         }
 
         // Set sidebarState.
-        if (localStorage.getItem('Drupal.gin.toolbarExpanded') === 'true') {
+        if (localStorage.getItem('Drupal.tonic.toolbarExpanded') === 'true') {
           document.body.setAttribute('data-toolbar-menu', 'open');
           toolbarTrigger.classList.add('is-active');
         }
@@ -76,14 +76,14 @@
       else {
         document.body.setAttribute('data-toolbar-menu', '');
         active = 'false';
-        const elementToRemove = document.querySelector('.gin-toolbar-inline-styles');
+        const elementToRemove = document.querySelector('.tonic-toolbar-inline-styles');
         if (elementToRemove) {
           elementToRemove.parentNode.removeChild(elementToRemove);
         }
       }
 
       // Write state to localStorage.
-      localStorage.setItem('Drupal.gin.toolbarExpanded', active);
+      localStorage.setItem('Drupal.tonic.toolbarExpanded', active);
 
       // Dispatch event.
       const event = new CustomEvent('toolbar-toggle', { detail: active === 'true'})

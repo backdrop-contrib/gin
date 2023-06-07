@@ -15,7 +15,7 @@ module.exports = {
     'accent': ['./js/accent.js'],
     'description_toggle': ['./js/description_toggle.js'],
     'edit_form': ['./js/edit_form.js'],
-    'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
+    'tonic_ckeditor': ['./js/tonic_ckeditor.js'], // Can't rename as we would be in trouble
     'init': ['./js/init.js'],
     'messages': ['./js/messages.js'],
     'settings': ['./js/settings.js'],
@@ -26,7 +26,7 @@ module.exports = {
     // CSS
     // ################################################
     // Base
-    'base/gin': ['./styles/gin.scss'],
+    'base/tonic': ['./styles/tonic.scss'],
     // Components
     'components/ajax': ['./styles/components/ajax.scss'],
     'components/autocomplete': ['./styles/components/autocomplete.scss'],
@@ -123,7 +123,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlutonic.loader,
             options: {
               name: '[name].[ext]?[hash]',
             }

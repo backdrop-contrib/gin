@@ -22,15 +22,15 @@ services:
         # We configure the Drupal project to use the checkout of the module as a
         # Composer package repository.
         composer config repositories.tugboat vcs $TUGBOAT_ROOT
-        # Require Gin Toolbar
-        composer require 'drupal/gin_toolbar:^1.0@beta'
-        # Require Gin Login
-        composer require 'drupal/gin_login:^1.0@RC'
+        # Require Tonic Toolbar
+        composer require 'drupal/tonic_toolbar:^1.0@beta'
+        # Require Tonic Login
+        composer require 'drupal/tonic_login:^1.0@RC'
         # Require Admin Toolbar
         composer require 'drupal/admin_toolbar:^3.0'
-        # Now we can require Gin, specifing the branch name we created
+        # Now we can require Tonic, specifing the branch name we created
         # above that uses the $TUGBOAT_REPO_ID environment variable.
-        composer require drupal/gin:dev-$TUGBOAT_REPO_ID
+        composer require drupal/tonic:dev-$TUGBOAT_REPO_ID
         # Install Drupal on the site.
         # Use --db-url=mysql://tugboat:tugboat@mysql:3306/tugboat for mysql connection.
         vendor/bin/drush \
@@ -45,14 +45,14 @@ services:
         chmod 2775 $DRUPAL_DOCROOT/sites/default/files
         chmod -R g+w $DRUPAL_DOCROOT/sites/default/files
         # Enable the theme.
-        vendor/bin/drush --yes theme:enable gin
-        vendor/bin/drush --yes config:set system.theme admin gin
+        vendor/bin/drush --yes theme:enable tonic
+        vendor/bin/drush --yes config:set system.theme admin tonic
         # Enable admin_toolbar Module.
         vendor/bin/drush --yes en admin_toolbar
-        # Enable gin_toolbar Module.
-        vendor/bin/drush --yes en gin_toolbar
-        # Enable gin_login Module.
-        vendor/bin/drush --yes en gin_login
+        # Enable tonic_toolbar Module.
+        vendor/bin/drush --yes en tonic_toolbar
+        # Enable tonic_login Module.
+        vendor/bin/drush --yes en tonic_login
       build: |
         set -eux
         # Delete and re-check out this branch in case this is built from a Base Preview.
@@ -62,9 +62,9 @@ services:
         composer install --optimize-autoloader
         # Update installed modules
         composer update drupal/admin_toolbar
-        composer update drupal/gin_toolbar
-        composer update drupal/gin_login
-        composer update drupal/gin
+        composer update drupal/tonic_toolbar
+        composer update drupal/tonic_login
+        composer update drupal/tonic
         vendor/bin/drush --yes updb
         vendor/bin/drush cache:rebuild
   mysql:

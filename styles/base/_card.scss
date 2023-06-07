@@ -1,43 +1,43 @@
 .card {
   padding: 0;
   background: transparent;
-  border: 1px solid var(--gin-border-color-layer2);
-  border-radius: var(--gin-border-m);
+  border: 1px solid var(--tonic-border-color-layer2);
+  border-radius: var(--tonic-border-m);
   box-shadow: none;
   overflow: hidden;
 
-  .gin--dark-mode & {
+  .tonic--dark-mode & {
     box-shadow: none;
   }
 
   &-list {
-    margin-bottom: var(--gin-spacing-xl);
+    margin-bottom: var(--tonic-spacing-xl);
   }
 
   &__image {
     img {
-      border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+      border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
 
       @include mq(xsmall) {
-        border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
+        border-radius: var(--tonic-border-m) 0 0 var(--tonic-border-m);
       }
     }
   }
 
   &__content-wrapper {
-    background-color: var(--gin-bg-layer);
-    border-radius: 0 0 var(--gin-border-xs) var(--gin-border-xs);
+    background-color: var(--tonic-bg-layer);
+    border-radius: 0 0 var(--tonic-border-xs) var(--tonic-border-xs);
 
     @include mq(xsmall) {
-      border-radius: 0 var(--gin-border-xs) var(--gin-border-xs) 0;
+      border-radius: 0 var(--tonic-border-xs) var(--tonic-border-xs) 0;
     }
 
-    .gin--dark-mode & {
-      background-color: var(--gin-bg-layer2);
+    .tonic--dark-mode & {
+      background-color: var(--tonic-bg-layer2);
     }
   }
 
   .heading-f {
-    color: var(--gin-color-title);
+    color: var(--tonic-color-title);
   }
 }
