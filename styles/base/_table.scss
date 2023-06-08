@@ -91,6 +91,8 @@ table {
   }
 
   tr,
+  tr.even,
+  tr.odd,
   .draggable-table.tabledrag-disabled tr {
     color: var(--tonic-color-text);
     background-color: transparent;

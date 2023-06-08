@@ -1,8 +1,8 @@
-.page-content {
+.l-wrapper-inner {
   margin-top: 0;
 
   > .help,
-  > .region-content,
+  > .l-content,
   > .region-highlighted {
     @include mq(small) {
       margin-top: var(--tonic-spacing-l);
@@ -13,7 +13,8 @@
 .tonic-layer-wrapper,
 .tonic-layer-wrapper-shadow,
 .block-system > form,
-.views-exposed-form.views-exposed-form,
+form.views-exposed-form,
+.view > .view-content,
 .views-edit-view,
 .views-preview-wrapper,
 .modules-tabs,
@@ -36,7 +37,8 @@
 
 .tonic-layer-wrapper,
 .block-system-main-block > form,
-.views-exposed-form.views-exposed-form,
+form.views-exposed-form,
+.view > .view-content,
 .views-edit-view,
 .views-preview-wrapper,
 #views-entity-list,

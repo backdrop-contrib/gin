@@ -1,0 +1,113 @@
+/* System overrides, Claro insertions, etc. */
+
+// Default variables (may need adjustment later).
+:root {
+  --line-height: 1.5;
+
+  // Default accents
+  --tonic-color-primary-rgb: 5, 80, 230;
+  --tonic-color-primary-hover: #0444c4;
+  --tonic-color-primary-active: #043cad;
+  --tonic-bg-header: #e1eafc;
+  --tonic-color-primary: rgb(var(--tonic-color-primary-rgb));
+  --tonic-color-primary-light: rgba(var(--tonic-color-primary-rgb), .15);
+  --tonic-bg-app-rgb: 248, 250, 254;
+  --tonic-bg-app: rgb(var(--tonic-bg-app-rgb));
+  --tonic-color-sticky-rgb: 235, 241, 253;
+  --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .1);
+  --tonic-color-primary-light-hover: rgba(var(--tonic-color-primary-rgb), .2);
+  --tonic-color-primary-light-active: rgba(var(--tonic-color-primary-rgb), .3);
+  --tonic-shadow-primary-light: rgba(var(--tonic-color-primary-rgb), .45);
+}
+
+ul {
+  list-style-type: disc;
+  list-style-image: none;
+}
+
+ul.primary {
+  li {
+    a {
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+
+  li.active {
+    a {
+      border-color: transparent;
+    }
+  }
+}
+
+.container-fluid {
+  margin-left: min(5vw, var(--tonic-spacing-xxl));
+  margin-right: min(5vw, var(--tonic-spacing-xxl));
+}
+
+html {
+  font-family: var(--tonic-font);
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  line-height: var(--line-height);
+}
+
+table {
+  width: 100%;
+  margin-top: var(--tonic-spacing-l);
+  margin-bottom: var(--tonic-spacing-l);
+  border-collapse: collapse;
+}
+
+table.sticky-enabled {
+  margin-top: 0;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1rem;
+  appearance: none;
+}
+
+.button--action::before {
+  margin-left: -0.25em;
+  padding-right: 0.25em;
+  content: "+";
+  font-weight: 900;
+}
+
+.tabs {
+  display: flex;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  flex-direction: row;
+}
+
+.tabs__link {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-grow: 1;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.2rem;
+}
+
+.admin-item__description {
+  margin: 0.5em 0 0.25em;
+}

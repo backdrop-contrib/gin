@@ -1,56 +1,43 @@
 :root {
-  // Colors
   --tonic-color-title: #222330;
   --tonic-color-text: #222330;
   --tonic-color-text-light: #545560;
-
-  --tonic-color-focus: rgba(0, 125, 250, .6); // #059fad; //#00a590; //#0ba77d; //#2297c7;
-  --tonic-color-focus-border: rgba(0, 0, 0, .2); //rgb(0, 125, 250);
+  --tonic-color-focus: rgba(0, 125, 250, .6);
+  --tonic-color-focus-border: rgba(0, 0, 0, .2);
   --tonic-color-focus-neutral-rgb: rgba(0, 0, 0, .4);
-
   --tonic-color-disabled: #8d8d8d;
   --tonic-color-disabled-bg: #eaeaea;
   --tonic-color-disabled-border: #c2c2c2;
-
   --tonic-color-warning: #d8b234;
   --tonic-color-warning-light: #efcf64;
-  --tonic-bg-warning: #{mix(black, #efcf64, 60%)};
+  --tonic-bg-warning: #605328;
   --tonic-bg-warning-light: rgba(226, 151, 0, .08);
   --tonic-color-danger: #cc3d3d;
   --tonic-color-danger-lightest: #fdd9d9;
   --tonic-color-danger-light: #f39b9d;
-  --tonic-bg-danger: #{mix(black, #dc7f7f, 60%)};
+  --tonic-bg-danger: #583333;
   --tonic-bg-danger-light: rgba(222, 117, 96, .1);
   --tonic-color-green: #058260;
   --tonic-color-green-light: #32cea4;
-  --tonic-color-green-lightest:  #{mix(white, #32cea4, 60%)};
-  --tonic-bg-green: #{mix(black, #32cea4, 60%)};
+  --tonic-color-green-lightest: #adebdb;
+  --tonic-bg-green: #145242;
   --tonic-bg-green-light: rgba(72, 171, 123, .1);
   --tonic-color-info: #082538;
   --tonic-color-info-light: #589ac5;
-  --tonic-bg-info: #{mix(black, #2d6c96, 60%)};
-
+  --tonic-bg-info: #122b3c;
   --tonic-color-contextual: var(--tonic-color-text);
   --tonic-color-contextual-text: #eee;
-
-  // Background
   --tonic-bg-input: #fff;
   --tonic-bg-layer: #fff;
   --tonic-bg-layer2: #edeff5;
   --tonic-bg-layer3: #fff;
   --tonic-bg-layer4: #e2e5ec;
   --tonic-bg-secondary: var(--tonic-bg-layer);
-  --tonic-bg-header: #eeeff3; //#e6e8ef;
-
-  // Color pattern
+  --tonic-bg-header: #eeeff3;
   --tonic-pattern: var(--tonic-border-color);
   --tonic-pattern-fallback: var(--tonic-bg-layer2);
   --tonic-pattern-square: .5rem;
-
-  // Font
-  --tonic-font: 'Archivo', 'Helvetica Neue', BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-
-  // Font sizes
+  --tonic-font: "Archivo", "Helvetica Neue", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
   --tonic-font-size-xxs: .75rem;
   --tonic-font-size-xs: small;
   --tonic-font-size-s: .875rem;
@@ -62,183 +49,150 @@
   --tonic-font-size-h2: 1.75rem;
   --tonic-font-size-h1: 1.6rem;
   --tonic-font-size-quote: 1.1em;
-
-  // Font weights
   --tonic-font-weight-normal: 400;
   --tonic-font-weight-semibold: 525;
   --tonic-font-weight-bold: 575;
   --tonic-font-weight-heavy: 625;
-
-  @include mq(medium) {
-    --tonic-font-size-h1: 1.8125rem;
-    --tonic-font-size-quote: 1.2em;
-  }
-
-  @include mq(ultra) {
-    --tonic-font-size-h1: 2.125rem;
-  }
-
-  // Spacings
-  @each $name, $size in $tonicSpacings {
-    --tonic-spacing-#{$name}: #{rem($size)};
-  }
-
-  // Icons
+  --tonic-spacing-xxs: .25rem;
+  --tonic-spacing-xs: .5rem;
+  --tonic-spacing-s: .75rem;
+  --tonic-spacing-m: 1rem;
+  --tonic-spacing-l: 1.5rem;
+  --tonic-spacing-xl: 2rem;
+  --tonic-spacing-xxl: 3rem;
+  --tonic-spacing-xxxl: 4rem;
   --tonic-icon-color: #414247;
   --tonic-icon-size-close: 20px;
   --tonic-icon-size-toolbar-secondary: 17px;
   --tonic-icon-size-toolbar: 17px;
   --tonic-icon-size-sidebar-toggle: 21px;
-
-  @include mq(medium) {
-    --tonic-icon-size-toolbar: 20px;
-  }
-
-  // Border
-  --tonic-border-xxs: #{rem(2px)};
-  --tonic-border-xs: #{rem(4px)};
-  --tonic-border-s: #{rem(6px)};
-  --tonic-border-m: #{rem(8px)};
-  --tonic-border-l: #{rem(12px)};
-  --tonic-border-xl: #{rem(16px)};
-
+  --tonic-border-xxs: .125rem;
+  --tonic-border-xs: .25rem;
+  --tonic-border-s: .375rem;
+  --tonic-border-m: .5rem;
+  --tonic-border-l: .75rem;
+  --tonic-border-xl: 1rem;
   --tonic-border-color: #d4d4d8;
   --tonic-border-color-secondary: rgba(0, 0, 0, .08);
   --tonic-border-color-layer: rgba(0, 0, 0, .08);
   --tonic-border-color-layer2: #d4d4d8;
   --tonic-border-color-table: rgba(0, 0, 0, .1);
   --tonic-border-color-table-header: rgba(0, 0, 0, .2);
-  --tonic-border-color-form-element: #8E929C;
-
-  // Transitions / Animations
+  --tonic-border-color-form-element: #8e929c;
   --tonic-easing: cubic-bezier(.19, 1, .22, 1);
   --tonic-transition: .15s var(--tonic-easing);
   --tonic-transition-fast: .3s var(--tonic-easing);
-
-  // Shadows
-  --tonic-shadow-l1: 0 1px 2px rgb(20 45 82 / 2%),
-               0 3px 4px rgb(20 45 82 / 3%),
-               0 5px 8px rgb(20 45 82 / 4%);
-  --tonic-shadow-l2: 0 1px 2px rgb(20 45 82 / 2%),
-                0 3px 4px rgb(20 45 82 / 3%),
-                0 5px 8px rgb(20 45 82 / 4%),
-                0 20px 24px rgb(20 45 82 / 12%);
-
-  // Sticky bar
+  --tonic-shadow-l1: 0 1px 2px rgb(20 45 82 / 2%), 0 3px 4px rgb(20 45 82 / 3%), 0 5px 8px rgb(20 45 82 / 4%);
+  --tonic-shadow-l2: 0 1px 2px rgb(20 45 82 / 2%), 0 3px 4px rgb(20 45 82 / 3%), 0 5px 8px rgb(20 45 82 / 4%), 0 20px 24px rgb(20 45 82 / 12%);
   --tonic-height-sticky: 72px;
-
-  // Toolbar
   --tonic-toolbar-width-collapsed: 66px;
   --tonic-toolbar-width: 256px;
   --tonic-toolbar-bg-level2: #edeff5;
-  --tonic-toolbar-bg-level3: #{rgba(#2c2d2f, .05)};
-
-  // Sidebar
+  --tonic-toolbar-bg-level3: rgba(44, 45, 47, .05);
   --tonic-sidebar-width: 320px;
   --tonic-sidebar-offset: var(--tonic-sidebar-width);
-  @include mq(wide) {
-    --tonic-sidebar-width: 360px;
-  }
-
-  // Switch
-  --tonic-switch: #26a769; //#0e9888;
-
-  // Buttons
+  --tonic-switch: #26a769;
   --tonic-shadow-button: #00000033;
   --tonic-color-button-text: #fff;
 }
 
-// Density spacings
-@each $name, $density in $tonicLayoutDensity {
-  @if $name == 'default' {
-    :root {
-      @each $name, $size in $tonicSpacings {
-        --tonic-spacing-density-#{$name}: #{rem($size * $density)};
-      }
-    }
-  } @else {
-    [data-tonic-layout-density=#{$name}] {
-      @each $name, $size in $tonicSpacings {
-        --tonic-spacing-density-#{$name}: #{rem($size * $density)};
-      }
-    }
+@media (min-width: 61em) {
+  :root {
+    --tonic-font-size-h1: 1.8125rem;
+    --tonic-font-size-quote: 1.2em;
   }
 }
 
-.tonic--dark-mode {
-   // Text
-   --tonic-color-title: #fff;
-   --tonic-color-text: #d2d3d3;
-   --tonic-color-text-light: #9e9fa0;
+@media (min-width: 90em) {
+  :root {
+    --tonic-font-size-h1: 2.125rem;
+  }
+}
 
-  // Buttons
+@media (min-width: 61em) {
+  :root {
+    --tonic-icon-size-toolbar: 20px;
+  }
+}
+
+@media (min-width: 80em) {
+  :root {
+    --tonic-sidebar-width: 360px;
+  }
+}
+
+[data-tonic-layout-density=small] {
+  --tonic-spacing-density-xxs: .15625rem;
+  --tonic-spacing-density-xs: .3125rem;
+  --tonic-spacing-density-s: .46875rem;
+  --tonic-spacing-density-m: .625rem;
+  --tonic-spacing-density-l: .9375rem;
+  --tonic-spacing-density-xl: 1.25rem;
+  --tonic-spacing-density-xxl: 1.875rem;
+  --tonic-spacing-density-xxxl: 2.5rem;
+}
+
+[data-tonic-layout-density=medium] {
+  --tonic-spacing-density-xxs: .1875rem;
+  --tonic-spacing-density-xs: .375rem;
+  --tonic-spacing-density-s: .5625rem;
+  --tonic-spacing-density-m: .75rem;
+  --tonic-spacing-density-l: 1.125rem;
+  --tonic-spacing-density-xl: 1.5rem;
+  --tonic-spacing-density-xxl: 2.25rem;
+  --tonic-spacing-density-xxxl: 3rem;
+}
+
+:root {
+  --tonic-spacing-density-xxs: .25rem;
+  --tonic-spacing-density-xs: .5rem;
+  --tonic-spacing-density-s: .75rem;
+  --tonic-spacing-density-m: 1rem;
+  --tonic-spacing-density-l: 1.5rem;
+  --tonic-spacing-density-xl: 2rem;
+  --tonic-spacing-density-xxl: 3rem;
+  --tonic-spacing-density-xxxl: 4rem;
+}
+
+.tonic--dark-mode {
+  --tonic-color-title: #fff;
+  --tonic-color-text: #d2d3d3;
+  --tonic-color-text-light: #9e9fa0;
   --tonic-shadow-button: rgba(#111, .9);
   --tonic-color-button-text: #111;
-
-  // Focus
   --tonic-color-focus: rgb(81, 168, 255);
   --tonic-color-focus-border: rgba(0, 0, 0, .8);
   --tonic-color-focus-neutral-rgb: rgba(255, 255, 255, .8);
-
-  // Disabled
   --tonic-color-disabled: #646464;
   --tonic-color-disabled-border: #646464;
   --tonic-color-disabled-bg: #47474c;
-
-  // Messages
   --tonic-color-warning: #dec15f;
   --tonic-bg-warning-light: rgba(222, 193, 95, .1);
   --tonic-color-danger: #ce6060;
   --tonic-color-danger-lightest: #483439;
   --tonic-color-green: #32cea4;
   --tonic-color-info: #559bca;
-
-  // Input
   --tonic-bg-input: var(--tonic-bg-layer2);
-
-  // Layers
-  --tonic-bg-app: #{$colorDarkAppBackground};
-  --tonic-bg-layer: #2A2A2D;
-  --tonic-bg-layer2: #3B3B3F;
+  --tonic-bg-app: #1b1b1d;
+  --tonic-bg-layer: #2a2a2d;
+  --tonic-bg-layer2: #3b3b3f;
   --tonic-bg-layer3: #47474c;
   --tonic-bg-layer4: #19191b;
   --tonic-bg-secondary: var(--tonic-bg-app);
-
-  // Context
   --tonic-color-contextual: var(--tonic-bg-layer3);
-
-  // Borders
   --tonic-border-color: #43454a;
   --tonic-border-color-secondary: rgba(255, 255, 255, .075);
   --tonic-border-color-layer: rgba(0, 0, 0, .05);
-  --tonic-border-color-layer2: #76777B;
+  --tonic-border-color-layer2: #76777b;
   --tonic-border-color-table: #43454a;
-
-  // Tabs
   --tonic-border-color-table-header: rgba(255, 255, 255, .12);
-
-  // Form element
   --tonic-border-color-form-element: var(--tonic-border-color-layer2);
-
-  // Table
-  --tonic-bg-header: #{$colorDarkAppBackground};
-
-  // Toggle
+  --tonic-bg-header: #1b1b1d;
   --tonic-switch: var(--tonic-color-primary);
-
-  // Shadows
-  --tonic-shadow-l1: 0 1px 2px rgb(0 0 0 / 2%),
-               0 3px 4px rgb(0 0 0 / 3%),
-               0 5px 8px rgb(0 0 0 / 4%);
-  --tonic-shadow-l2: 0 1px 2px rgb(0 0 0 / 2%),
-                0 3px 4px rgb(0 0 0 / 3%),
-                0 5px 8px rgb(0 0 0 / 4%),
-                0 20px 24px rgb(0 0 0 / 12%);
-
-  // Icons
+  --tonic-shadow-l1: 0 1px 2px rgb(0 0 0 / 2%), 0 3px 4px rgb(0 0 0 / 3%), 0 5px 8px rgb(0 0 0 / 4%);
+  --tonic-shadow-l2: 0 1px 2px rgb(0 0 0 / 2%), 0 3px 4px rgb(0 0 0 / 3%), 0 5px 8px rgb(0 0 0 / 4%), 0 20px 24px rgb(0 0 0 / 12%);
   --tonic-icon-color: #888;
-
-  // Color pattern
   --tonic-pattern-fallback: var(--tonic-bg-layer2);
   --tonic-pattern: var(--tonic-border-color);
 }
+

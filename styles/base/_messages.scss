@@ -1,6 +1,7 @@
 .messages {
   position: relative;
-  padding: var(--tonic-spacing-m);
+  padding-top: var(--tonic-spacing-m);
+  padding-bottom: var(--tonic-spacing-m);
   border: 2px solid transparent;
   border-radius: var(--tonic-border-l);
   transition: opacity var(--tonic-transition-fast);

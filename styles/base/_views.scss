@@ -104,8 +104,11 @@
   }
 }
 
-.views-exposed-form.views-exposed-form {
+.views-exposed-form {
   padding-top: var(--tonic-spacing-xs);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: var(--tonic-spacing-l);
 
   .form-element--type-select {
     max-width: 240px;

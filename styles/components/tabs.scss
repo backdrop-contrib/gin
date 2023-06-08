@@ -63,6 +63,7 @@
   }
 }
 
+.tabs__link.active,
 .tabs__link.is-active,
 .claro-details__summary[aria-expanded=true],
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button.selected a {
@@ -197,6 +198,8 @@
   }
 
   .tabs__tab {
+    list-style-type: none;
+
     @include mq($to: small) {
       background-color: var(--tonic-bg-layer);
       border-bottom: 1px solid var(--tonic-border-color-layer2);
@@ -224,7 +227,8 @@
       border-radius: 48px;
     }
 
-    &.is-active {
+    &.is-active,
+    &.active {
       @include mq(small) {
         color: var(--tonic-color-primary-active);
         background: var(--tonic-color-primary-light);

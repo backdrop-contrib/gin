@@ -1,0 +1,170 @@
+.tonic--dark-mode .cke.cke .cke_inner,
+.tonic--dark-mode .cke.cke .cke_wysiwyg_frame,
+.tonic--dark-mode .cke.cke .cke_wysiwyg_div {
+  background: var(--tonic-bg-layer2);
+}
+
+.cke.cke.cke_chrome {
+  width: 100% !important;
+  border-color: var(--tonic-border-color-form-element);
+  border-radius: var(--tonic-border-m);
+}
+
+.cke.cke .cke_inner {
+  border-radius: var(--tonic-border-m);
+}
+
+.cke.cke .cke_top {
+  background: var(--tonic-bg-layer);
+  border-bottom: 1px solid var(--tonic-border-color);
+  border-radius: calc(var(--tonic-border-m) - 1px) calc(var(--tonic-border-m) - 1px) 0 0;
+}
+
+.tonic--dark-mode .cke.cke .cke_top {
+  background: var(--tonic-bg-layer2);
+}
+
+.cke.cke .cke_bottom {
+  background: var(--tonic-bg-layer3);
+  border-radius: 0 0 calc(var(--tonic-border-m) - 1px) calc(var(--tonic-border-m) - 1px);
+}
+
+.cke.cke .cke_contents {
+  padding-left: var(--tonic-spacing-xs);
+  padding-right: var(--tonic-spacing-xs);
+}
+
+.cke.cke .cke_path_empty:only-child::after {
+  background: transparent;
+}
+
+[dir="ltr"] .cke.cke .cke_combo::after {
+  border-right: 1px solid var(--tonic-border-color);
+}
+
+[dir="rtl"] .cke.cke .cke_combo::after {
+  border-left: 1px solid var(--tonic-border-color);
+}
+
+.cke.cke .cke_combo_text {
+  color: var(--tonic-color-text);
+}
+
+.cke.cke .cke_combo_on a.cke_combo_button,
+.cke.cke .cke_combo_off a.cke_combo_button:hover,
+.cke.cke .cke_combo_off a.cke_combo_button:focus,
+.cke.cke .cke_combo_off a.cke_combo_button:active {
+  background: var(--tonic-bg-app);
+  border: 1px solid var(--tonic-bg-layer2);
+}
+
+.cke.cke a.cke_path_item,
+.cke.cke span.cke_path_empty {
+  color: var(--tonic-color-text-light);
+}
+
+.cke.cke a.cke_button {
+  border-radius: 3px;
+}
+
+.cke.cke a.cke_button_on {
+  background: none;
+}
+
+.cke.cke a.cke_button_off:hover, .cke.cke a.cke_button_off:focus, .cke.cke a.cke_button_off:active {
+  background: var(--tonic-bg-item-hover);
+  border: 1px solid var(--tonic-border-color-layer2);
+}
+
+.tonic--dark-mode .cke.cke .cke_button span {
+  filter: invert(1);
+}
+
+.cke.cke.cke_panel {
+  background-color: var(--tonic-bg-app);
+  border: 0 none;
+}
+
+.cke.cke_chrome.cke_focus,
+.cke.cke_chrome:hover,
+.cke:hover .cke_contents,
+.cke:hover .cke_top,
+.cke:hover .cke_bottom {
+  border-color: var(--tonic-color-text);
+}
+
+.tonic--dark-mode .cke.cke_chrome.cke_focus,
+.tonic--dark-mode .cke.cke_chrome:hover,
+.tonic--dark-mode .cke:hover .cke_contents,
+.tonic--dark-mode .cke:hover .cke_top,
+.tonic--dark-mode .cke:hover .cke_bottom {
+  border-color: var(--tonic-border-color-layer2);
+}
+
+.cke:hover .cke_top, .tonic--dark-mode .cke:hover .cke_top {
+  border-bottom-color: var(--tonic-border-color);
+}
+
+.cke.cke_chrome.cke_focus:hover,
+.cke.cke_focus .cke_contents,
+.cke.cke_focus .cke_top,
+.cke.cke_focus .cke_bottom,
+.error + .cke.cke_chrome.cke_focus:hover,
+.error + .cke.cke_focus .cke_contents,
+.error + .cke.cke_focus .cke_top,
+.error + .cke.cke_focus .cke_bottom {
+  border-color: var(--tonic-color-text);
+}
+
+.cke_top,
+.cke.cke_chrome.cke_focus:hover .cke_top,
+.cke.cke_focus .cke_top,
+.error + .cke.cke_focus .cke_top,
+.error + .cke.cke_chrome.cke_focus:hover .cke_top {
+  border-bottom: 1px solid var(--tonic-border-color);
+}
+
+.cke textarea.cke_source {
+  padding: var(--tonic-spacing-s) var(--tonic-spacing-xs);
+  color: var(--tonic-color-text);
+  background-color: transparent;
+}
+
+body .cke_notification_info {
+  opacity: 1;
+  padding: var(--tonic-spacing-xs);
+  background: var(--tonic-bg-layer4);
+  border: 0 none;
+  border-radius: var(--tonic-border-m);
+  box-shadow: var(--tonic-shadow-l1);
+}
+
+body .cke_notification_info .cke_notification_message {
+  color: var(--tonic-color-text);
+}
+
+body .cke_notification_info .cke_notification_close {
+  top: var(--tonic-spacing-xxs);
+  background: var(--tonic-color-text);
+  -webkit-mask-image: url("../../media/sprite.svg#close-view");
+          mask-image: url("../../media/sprite.svg#close-view");
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 12px 12px;
+          mask-size: 12px 12px;
+}
+
+[dir="ltr"] body .cke_notification_info .cke_notification_close {
+  right: var(--tonic-spacing-xxs);
+}
+
+[dir="rtl"] body .cke_notification_info .cke_notification_close {
+  left: var(--tonic-spacing-xxs);
+}
+
+.filter-tips {
+  color: var(--tonic-color-text-light);
+}
+

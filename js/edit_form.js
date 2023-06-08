@@ -5,7 +5,7 @@
 ((Drupal) => {
   Drupal.behaviors.tonicEditForm = {
     attach: (context) => {
-      once('tonicEditForm', '.region-content form.tonic-node-edit-form', context).forEach(form => {
+      once('tonicEditForm', '.l-content form.tonic-node-edit-form', context).forEach(form => {
         const sticky = context.querySelector('.tonic-sticky');
         const newParent = context.querySelector('.region-sticky__items__inner');
 

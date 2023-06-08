@@ -1,0 +1,311 @@
+[data-tonic-accent] {
+  --tonic-color-primary: rgb(var(--tonic-color-primary-rgb));
+  --tonic-color-primary-light: rgba(var(--tonic-color-primary-rgb), .15);
+  --tonic-bg-app: rgb(var(--tonic-bg-app-rgb));
+  --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .1);
+  --tonic-color-primary-light-hover: rgba(var(--tonic-color-primary-rgb), .2);
+  --tonic-color-primary-light-active: rgba(var(--tonic-color-primary-rgb), .3);
+  --tonic-shadow-primary-light: rgba(var(--tonic-color-primary-rgb), .45);
+}
+
+.tonic--dark-mode[data-tonic-accent],
+.tonic--dark-mode [data-tonic-accent] {
+  --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .08);
+  --tonic-bg-app-rgb: 27, 27, 29;
+}
+
+[data-tonic-accent=blue] {
+  --tonic-color-primary-rgb: 5, 80, 230;
+  --tonic-color-primary-light-rgb: 205, 220, 250;
+  --tonic-color-primary-hover: #0444c4;
+  --tonic-color-primary-active: #043cad;
+  --tonic-bg-app-rgb: 248, 250, 254;
+  --tonic-bg-header: #e1eafc;
+  --tonic-color-sticky-rgb: 235, 241, 253;
+}
+
+[data-tonic-accent=light_blue] {
+  --tonic-color-primary-rgb: 50, 117, 224;
+  --tonic-color-primary-light-rgb: 214, 227, 249;
+  --tonic-color-primary-hover: #2b63be;
+  --tonic-color-primary-active: #2658a8;
+  --tonic-bg-app-rgb: 249, 251, 254;
+  --tonic-bg-header: #e6eefb;
+  --tonic-color-sticky-rgb: 239, 244, 253;
+}
+
+[data-tonic-accent=dark_purple] {
+  --tonic-color-primary-rgb: 67, 0, 191;
+  --tonic-color-primary-light-rgb: 217, 204, 242;
+  --tonic-color-primary-hover: #3900a2;
+  --tonic-color-primary-active: #32008f;
+  --tonic-bg-app-rgb: 249, 247, 253;
+  --tonic-bg-header: #e8e0f7;
+  --tonic-color-sticky-rgb: 240, 235, 250;
+  --tonic-color-primary-light-hover: rgba(var(--tonic-color-primary-rgb), .2);
+  --tonic-color-primary-light-active: rgba(var(--tonic-color-primary-rgb), .25);
+  --tonic-shadow-primary-light: rgba(var(--tonic-color-primary-rgb), .4);
+  --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .08);
+}
+
+[data-tonic-accent=purple] {
+  --tonic-color-primary-rgb: 91, 0, 255;
+  --tonic-color-primary-light-rgb: 222, 204, 255;
+  --tonic-color-primary-hover: #4d00d9;
+  --tonic-color-primary-active: #4400bf;
+  --tonic-bg-app-rgb: 250, 247, 255;
+  --tonic-bg-header: #ebe0ff;
+  --tonic-color-sticky-rgb: 242, 235, 255;
+  --tonic-color-primary-light-hover: rgba(var(--tonic-color-primary-rgb), .2);
+  --tonic-color-primary-light-active: rgba(var(--tonic-color-primary-rgb), .25);
+  --tonic-shadow-primary-light: rgba(var(--tonic-color-primary-rgb), .4);
+  --tonic-bg-item-hover: rgba(var(--tonic-color-primary-rgb), .08);
+}
+
+[data-tonic-accent=teal] {
+  --tonic-color-primary-rgb: 16, 133, 127;
+  --tonic-color-primary-light-rgb: 207, 231, 229;
+  --tonic-color-primary-hover: #0e716c;
+  --tonic-color-primary-active: #0c645f;
+  --tonic-bg-app-rgb: 248, 251, 251;
+  --tonic-bg-header: #e2f0f0;
+  --tonic-color-sticky-rgb: 236, 245, 245;
+}
+
+[data-tonic-accent=green] {
+  --tonic-color-primary-rgb: 0, 135, 95;
+  --tonic-color-primary-light-rgb: 204, 231, 223;
+  --tonic-color-primary-hover: #007351;
+  --tonic-color-primary-active: #006547;
+  --tonic-bg-app-rgb: 247, 251, 250;
+  --tonic-bg-header: #e0f1ec;
+  --tonic-color-sticky-rgb: 235, 245, 242;
+}
+
+[data-tonic-accent=red] {
+  --tonic-color-primary-rgb: 216, 0, 47;
+  --tonic-color-primary-light-rgb: 247, 204, 213;
+  --tonic-color-primary-hover: #b80028;
+  --tonic-color-primary-active: #a20023;
+  --tonic-bg-app-rgb: 254, 247, 249;
+  --tonic-bg-header: #fae0e6;
+  --tonic-color-sticky-rgb: 252, 235, 238;
+}
+
+[data-tonic-accent=orange] {
+  --tonic-color-primary-rgb: 239, 92, 32;
+  --tonic-color-primary-light-rgb: 252, 222, 210;
+  --tonic-color-primary-hover: #cb4e1b;
+  --tonic-color-primary-active: #b34518;
+  --tonic-bg-app-rgb: 255, 250, 248;
+  --tonic-bg-header: #fdebe4;
+  --tonic-color-sticky-rgb: 254, 242, 237;
+}
+
+[data-tonic-accent=yellow] {
+  --tonic-color-primary-rgb: 197, 137, 0;
+  --tonic-color-primary-light-rgb: 243, 231, 204;
+  --tonic-color-primary-hover: #a77400;
+  --tonic-color-primary-active: #946700;
+  --tonic-bg-app-rgb: 253, 251, 247;
+  --tonic-bg-header: #f8f1e0;
+  --tonic-color-sticky-rgb: 250, 246, 235;
+}
+
+[data-tonic-accent=pink] {
+  --tonic-color-primary-rgb: 226, 49, 119;
+  --tonic-color-primary-light-rgb: 249, 214, 228;
+  --tonic-color-primary-hover: #c02a65;
+  --tonic-color-primary-active: #aa2559;
+  --tonic-bg-app-rgb: 254, 249, 251;
+  --tonic-bg-header: #fce6ef;
+  --tonic-color-sticky-rgb: 253, 239, 244;
+}
+
+[data-tonic-accent=neutral] {
+  --tonic-color-primary-rgb: 17, 17, 17;
+  --tonic-color-primary-light-rgb: 207, 207, 207;
+  --tonic-color-primary-hover: #0e0e0e;
+  --tonic-color-primary-active: #0d0d0d;
+  --tonic-bg-app-rgb: 248, 248, 248;
+  --tonic-bg-header: #e2e2e2;
+  --tonic-color-sticky-rgb: 236, 236, 236;
+}
+
+[data-tonic-accent=custom] {
+  --tonic-color-primary-rgb: 17, 17, 17;
+  --tonic-color-primary-light-rgb: 207, 207, 207;
+  --tonic-color-primary-hover: #0e0e0e;
+  --tonic-color-primary-active: #0d0d0d;
+  --tonic-bg-app-rgb: 248, 248, 248;
+  --tonic-bg-header: #e2e2e2;
+  --tonic-color-sticky-rgb: 236, 236, 236;
+}
+
+.tonic--dark-mode[data-tonic-accent=blue],
+.tonic--dark-mode [data-tonic-accent=blue] {
+  --tonic-color-primary-rgb: 144, 174, 239;
+  --tonic-color-primary-light-rgb: 62, 68, 84;
+  --tonic-color-primary-hover: #9bb6f1;
+  --tonic-color-primary-active: #a1baf1;
+  --tonic-bg-header: #373b45;
+}
+
+.tonic--dark-mode[data-tonic-accent=claro_blue],
+.tonic--dark-mode [data-tonic-accent=claro_blue] {
+  --tonic-color-primary-rgb: 115, 145, 216;
+  --tonic-color-primary-light-rgb: 57, 63, 79;
+  --tonic-color-primary-hover: #819cdc;
+  --tonic-color-primary-active: #88a2de;
+  --tonic-bg-header: #333742;
+}
+
+.tonic--dark-mode[data-tonic-accent=light_blue],
+.tonic--dark-mode [data-tonic-accent=light_blue] {
+  --tonic-color-primary-rgb: 130, 191, 232;
+  --tonic-color-primary-light-rgb: 60, 72, 82;
+  --tonic-color-primary-hover: #8fc5ea;
+  --tonic-color-primary-active: #95c9eb;
+  --tonic-bg-header: #353d44;
+}
+
+.tonic--dark-mode[data-tonic-accent=dark_purple],
+.tonic--dark-mode [data-tonic-accent=dark_purple] {
+  --tonic-color-primary-rgb: 173, 143, 232;
+  --tonic-color-primary-light-rgb: 68, 62, 82;
+  --tonic-color-primary-hover: #b59aea;
+  --tonic-color-primary-active: #b9a0eb;
+  --tonic-bg-header: #3a3744;
+}
+
+.tonic--dark-mode[data-tonic-accent=purple],
+.tonic--dark-mode [data-tonic-accent=purple] {
+  --tonic-color-primary-rgb: 219, 165, 239;
+  --tonic-color-primary-light-rgb: 77, 67, 84;
+  --tonic-color-primary-hover: #dfaef1;
+  --tonic-color-primary-active: #e0b3f1;
+  --tonic-bg-header: #403945;
+}
+
+.tonic--dark-mode[data-tonic-accent=teal],
+.tonic--dark-mode [data-tonic-accent=teal] {
+  --tonic-color-primary-rgb: 0, 234, 208;
+  --tonic-color-primary-light-rgb: 34, 80, 78;
+  --tonic-color-primary-hover: #1aecd5;
+  --tonic-color-primary-active: #26edd7;
+  --tonic-bg-header: #254241;
+}
+
+.tonic--dark-mode[data-tonic-accent=green],
+.tonic--dark-mode [data-tonic-accent=green] {
+  --tonic-color-primary-rgb: 107, 212, 161;
+  --tonic-color-primary-light-rgb: 55, 76, 68;
+  --tonic-color-primary-hover: #7ad8aa;
+  --tonic-color-primary-active: #81daaf;
+  --tonic-bg-header: #323f3c;
+}
+
+.tonic--dark-mode[data-tonic-accent=red],
+.tonic--dark-mode [data-tonic-accent=red] {
+  --tonic-color-primary-rgb: 236, 137, 137;
+  --tonic-color-primary-light-rgb: 81, 61, 63;
+  --tonic-color-primary-hover: #ee9595;
+  --tonic-color-primary-active: #ef9b9b;
+  --tonic-bg-header: #423639;
+}
+
+.tonic--dark-mode[data-tonic-accent=orange],
+.tonic--dark-mode [data-tonic-accent=orange] {
+  --tonic-color-primary-rgb: 247, 149, 118;
+  --tonic-color-primary-light-rgb: 83, 63, 60;
+  --tonic-color-primary-hover: #f8a084;
+  --tonic-color-primary-active: #f8a58b;
+  --tonic-bg-header: #443736;
+}
+
+.tonic--dark-mode[data-tonic-accent=yellow],
+.tonic--dark-mode [data-tonic-accent=yellow] {
+  --tonic-color-primary-rgb: 241, 201, 112;
+  --tonic-color-primary-light-rgb: 82, 74, 58;
+  --tonic-color-primary-hover: #f2ce7e;
+  --tonic-color-primary-active: #f3d185;
+  --tonic-bg-header: #433e35;
+}
+
+.tonic--dark-mode[data-tonic-accent=pink],
+.tonic--dark-mode [data-tonic-accent=pink] {
+  --tonic-color-primary-rgb: 231, 157, 163;
+  --tonic-color-primary-light-rgb: 80, 65, 69;
+  --tonic-color-primary-hover: #e9a7ac;
+  --tonic-color-primary-active: #ebacb1;
+  --tonic-bg-header: #42383c;
+}
+
+.tonic--dark-mode[data-tonic-accent=neutral],
+.tonic--dark-mode [data-tonic-accent=neutral] {
+  --tonic-color-primary-rgb: 255, 255, 255;
+  --tonic-color-primary-light-rgb: 85, 85, 87;
+  --tonic-color-primary-hover: white;
+  --tonic-color-primary-active: white;
+  --tonic-bg-header: #454547;
+}
+
+.tonic--dark-mode[data-tonic-accent=custom],
+.tonic--dark-mode [data-tonic-accent=custom] {
+  --tonic-color-primary-rgb: 255, 255, 255;
+  --tonic-color-primary-light-rgb: 85, 85, 87;
+  --tonic-color-primary-hover: white;
+  --tonic-color-primary-active: white;
+  --tonic-bg-header: #454547;
+}
+
+.tonic--high-contrast-mode {
+  --tonic-bg-app: #d9dbde;
+  --tonic-color-text: rgba(0, 0, 0, .8);
+  --tonic-color-text-light: rgba(0, 0, 0, .8);
+  --tonic-icon-color: rgba(0, 0, 0, .8);
+  --tonic-color-focus: rgba(0, 0, 0, .8);
+  --tonic-border-color: rgba(0, 0, 0, .8);
+  --tonic-border-color-secondary: rgba(0, 0, 0, .6);
+  --tonic-border-color-layer: rgba(0, 0, 0, .6);
+  --tonic-border-color-layer2: rgba(0, 0, 0, .8);
+  --tonic-border-color-table: rgba(0, 0, 0, .8);
+  --tonic-border-color-table-header: rgba(0, 0, 0, .8);
+  --tonic-border-color-form-element: rgba(0, 0, 0, .8);
+}
+
+.tonic--dark-mode .tonic--high-contrast-mode {
+  --tonic-bg-app: #000;
+  --tonic-color-text: rgba(255, 255, 255, .8);
+  --tonic-color-text-light: rgba(255, 255, 255, .8);
+  --tonic-icon-color: rgba(255, 255, 255, .8);
+  --tonic-color-focus: rgba(255, 255, 255, .8);
+  --tonic-border-color: rgba(255, 255, 255, .8);
+  --tonic-border-color-secondary: rgba(255, 255, 255, .6);
+  --tonic-border-color-layer: rgba(255, 255, 255, .6);
+  --tonic-border-color-layer2: rgba(255, 255, 255, .8);
+  --tonic-border-color-table: rgba(255, 255, 255, .8);
+  --tonic-border-color-table-header: rgba(255, 255, 255, .8);
+  --tonic-border-color-form-element: rgba(255, 255, 255, .8);
+}
+
+[data-tonic-focus=green] {
+  --tonic-color-focus: rgba(8, 163, 144, .6);
+}
+
+[data-tonic-focus=claro] {
+  --tonic-color-focus: rgba(38, 167, 105, .6);
+}
+
+[data-tonic-focus=orange] {
+  --tonic-color-focus: rgba(236, 124, 87, .6);
+}
+
+[data-tonic-focus=dark] {
+  --tonic-color-focus: var(--tonic-color-focus-neutral-rgb);
+}
+
+[data-tonic-focus=accent] {
+  --tonic-color-focus: rgba(var(--tonic-color-primary-rgb), .6);
+}
+
