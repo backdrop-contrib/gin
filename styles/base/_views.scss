@@ -31,7 +31,8 @@
 
 .block-system > .views-form,
 .view-content .views-form {
-  .claro-details {
+  .claro-details,
+  fieldset.form-wrapper {
     box-shadow: none;
   }
 
@@ -83,7 +84,7 @@
       }
     }
 
-    .form-item__label:not([for='edit-select-all']) {
+    label:not([for='edit-select-all']) {
       display: block;
       float: left;
       top: 2px;
@@ -110,7 +111,11 @@
   flex-wrap: wrap;
   margin-bottom: var(--tonic-spacing-l);
 
-  .form-element--type-select {
+  label {
+    font-weight: var(--gin-font-weight-semibold);
+  }
+
+  .form-select {
     max-width: 240px;
   }
 
@@ -124,7 +129,7 @@
     margin-top: auto;
     margin-bottom: var(--tonic-spacing-s);
 
-    .form-item__label {
+    label {
       margin-bottom: 0;
     }
   }

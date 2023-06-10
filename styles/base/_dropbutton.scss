@@ -2,9 +2,13 @@
   border: 2px solid var(--tonic-color-primary);
   border-radius: var(--tonic-border-m);
   box-shadow: 0 1px 2px var(--tonic-color-primary-light);
+  display: block;
+  overflow: visible;
+  margin: 0;
+  list-style: none;
 
   // Offset for select button on first item
-  &--multiple > .dropbutton__item:first-of-type {
+  &-multiple > li {
     height: 100%;
     margin-right: var(--tonic-spacing-xxl);
     border-right: 1px solid var(--tonic-color-primary-light-active);
@@ -16,6 +20,17 @@
       border: 0 none !important;
       border-radius: 0 !important;
     }
+
+    a {
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--tonic-color-button-text);
+        background: var(--tonic-color-primary);
+        border-radius: var(--tonic-border-s);
+      }
+    }
   }
 
   .tonic--dark-mode & {
@@ -26,25 +41,30 @@
     border-color: var(--tonic-color-primary);
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: var(--tonic-color-primary-active);
   }
 
   &-wrapper {
     box-shadow: none;
+    display: inline-flex;
+    border-radius: var(--tonic-border-m);
+
   }
 
-  &__item:first-of-type > *,
-  &__toggle {
+     .dropbutton-toggle {
+  > li:first-of-type > *,
+  > button {
     background: none;
     white-space: nowrap;
   }
 
-  &__item:first-of-type > * {
+  >li:first-of-type > * {
     padding: calc(.875rem - 1px) calc(var(--tonic-spacing-l) - 1px);
   }
 
-  &__toggle {
+   > button {
     top: 2px;
     right: 2px;
     width: calc(var(--tonic-spacing-xxl) + 1px);
@@ -68,7 +88,7 @@
     &:focus::before {
       background-color: var(--tonic-color-button-text);
     }
-  }
+  }}
 
   & &__items {
     position: absolute;
@@ -87,7 +107,8 @@
     }
   }
 
-  & > &__items > .dropbutton__item:first-of-type {
+  & > &__items > li {
+
     > a,
     > input,
     > .button {
@@ -96,9 +117,9 @@
   }
 
   // The ugly part: make it work for all different dropbutton versions out there
-  &:not(.dropbutton--tonic) > .dropbutton__item ~ .dropbutton__item,
-  & &__items > .dropbutton__item,
-  & &__items > .dropbutton__item ~ .dropbutton__item {
+  &:not(.dropbutton--tonic) > .dropbutton-action ~ .dropbutton-action,
+  & &__items > .dropbutton-action,
+  & &__items > .dropbutton-action ~ .dropbutton-action {
     background-color: var(--tonic-bg-app);
     border: 0 none;
     box-shadow: none;
@@ -133,7 +154,9 @@
       box-shadow: none;
       box-sizing: border-box;
 
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         color: var(--tonic-color-button-text);
         background: var(--tonic-color-primary);
         border-radius: var(--tonic-border-s);
@@ -141,24 +164,29 @@
     }
   }
 
-  & > .dropbutton__item:first-of-type {
+  & > li {
+
     > a,
     > input,
     > .button {
-      &:hover, &:active, &:focus {
+
+      &:hover,
+      &:active,
+      &:focus {
         color: var(--tonic-color-button-text);
         background: var(--tonic-color-primary);
       }
     }
   }
 
-  & &__items > .dropbutton__item {
+  & &__items > .dropbutton-action {
     border-radius: var(--tonic-border-s);
   }
 
-  &:not(.dropbutton--tonic) > .dropbutton__item:not(:first-of-type),
-  & &__items > .dropbutton__item,
-  & > &__items > .dropbutton__item ~ .dropbutton__item {
+  &:not(.dropbutton--tonic) > .dropbutton-action:not(:first-of-type),
+  & &__items > .dropbutton-action,
+  & > &__items > .dropbutton-action ~ .dropbutton-action {
+
     > a,
     > input,
     > .button {
@@ -167,14 +195,14 @@
     }
   }
 
-  &__item:first-of-type ~ .dropbutton__item {
+  &__item:first-of-type ~ .dropbutton-action {
     max-width: unset;
 
     & > *:hover {
       background-color: var(--tonic-bg-layer3);
     }
 
-    &__item ~ .dropbutton__item:last-child {
+    &__item ~ .dropbutton-action:last-child {
       border-color: var(--tonic-color-primary);
     }
   }
@@ -182,34 +210,35 @@
 
 html.js {
   .dropbutton {
-    height: 3rem;
-    min-height: 3rem;
     box-sizing: border-box;
   }
 
-  .dropbutton-wrapper:not(.open) .dropbutton__item:first-of-type ~ .dropbutton__items {
+  .dropbutton-wrapper:not(.open) .dropbutton-action:first-of-type ~ .dropbutton-actions {
     display: none;
   }
 
-  .dropbutton-wrapper:not(.open) .dropbutton__items .dropbutton__item:first-of-type ~ .dropbutton__item {
+  .dropbutton-wrapper:not(.open) .dropbutton-actions .dropbutton-action:first-of-type ~ .dropbutton-action {
     display: block;
   }
 
   .dropbutton-widget {
     background-color: transparent;
+    border-radius: var(--tonic-border-m);
+    position: relative;
+    flex: 1 1 auto;
   }
 }
 
 html.js.no-touchevents {
-  .dropbutton--multiple.dropbutton--small .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--small .dropbutton-action:first-of-type {
     margin-right: 0;
   }
 
-  .dropbutton--multiple.dropbutton--small > .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--small > li {
     margin-right: var(--tonic-spacing-xl);
   }
 
-  .dropbutton--multiple.dropbutton--extrasmall > .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--extrasmall > li {
     margin-right: var(--tonic-spacing-l);
   }
 
@@ -227,13 +256,13 @@ html.js.no-touchevents {
     border-radius: var(--tonic-border-s);
   }
 
-  .dropbutton--multiple.dropbutton--extrasmall .dropbutton__items .dropbutton__item {
+  .dropbutton--multiple.dropbutton--extrasmall .dropbutton-actions .dropbutton-action {
     margin-right: 0;
   }
 }
 
 // Last item in table
-table tr:not(:first-of-type):nth-last-child(2) td .dropbutton__items,
-table tr:not(:first-of-type):last-of-type td .dropbutton__items {
+table tr:not(:first-of-type):nth-last-child(2) td .dropbutton-actions,
+table tr:not(:first-of-type):last-of-type td .dropbutton-actions {
   bottom: 100%;
 }

@@ -69,7 +69,8 @@
   background: var(--tonic-bg-item-hover);
 }
 
-.claro-details {
+.claro-details,
+fieldset.form-wrapper {
   color: var(--tonic-color-text);
   border: 1px solid var(--tonic-border-color);
   border-radius: var(--tonic-border-m);
@@ -454,7 +455,8 @@
   background: var(--tonic-color-primary);
 }
 
-.claro-details__description {
+.claro-details__description,
+fieldset.form-wrapper__description {
   color: var(--tonic-color-text-light);
 }
 
@@ -466,13 +468,15 @@
 }
 
 .tonic--dark-mode .claro-details,
+.tonic--dark-mode fieldset.form-wrapper,
 .tonic--dark-mode .claro-details__summary--accordion,
 .tonic--dark-mode .claro-details__summary--accordion-item,
 .tonic--dark-mode .claro-details__summary--vertical-tabs-item {
   background-color: transparent;
 }
 
-.tonic--dark-mode .claro-details {
+.tonic--dark-mode .claro-details,
+.tonic--dark-mode fieldset.form-wrapper {
   border-color: var(--tonic-border-color);
 }
 
@@ -494,6 +498,7 @@
   color: var(--tonic-color-text-light);
 }
 
+.tonic--dark-mode .vertical-tabs .fieldset-wrapper,
 .tonic--dark-mode .vertical-tabs .claro-details__wrapper {
   background: var(--tonic-bg-app);
 }
@@ -557,6 +562,7 @@
   }
 }
 
+.vertical-tabs__items .vertical-tabs__item > .fieldset-wrapper,
 .vertical-tabs__items .vertical-tabs__item > .claro-details__wrapper {
   display: inline-block;
   width: 100%;

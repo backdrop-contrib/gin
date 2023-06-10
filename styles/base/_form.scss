@@ -1,12 +1,17 @@
 $maxWidth: 520px;
 
-.form-element {
+.form-item > input,
+.form-item > select {
   color: var(--tonic-color-text);
   background-color: var(--tonic-bg-input);
   border: 1px solid var(--tonic-border-color-form-element);
   border-radius: var(--tonic-border-m);
   box-sizing: border-box;
   transition: var(--tonic-transition);
+  max-width: 100%;
+  line-height: 1.5rem;
+  min-height: calc(((var(--tonic-spacing-density-s) + 1px) * 2) + 1.5rem);
+  padding: var(--tonic-spacing-density-s) var(--tonic-spacing-density-s);
 
   &:hover {
     border-color: var(--tonic-color-text);
@@ -47,7 +52,7 @@ $maxWidth: 520px;
 .form-element--editor-format {
   width: auto;
 
-  .form-item__label {
+  label {
     top: 3px;
     padding-bottom: 0;
   }
@@ -80,7 +85,7 @@ $maxWidth: 520px;
 }
 
 // Select
-.form-element--type-select {
+.form-select {
   padding-right: calc(var(--tonic-spacing-xs) + var(--tonic-spacing-xl) - 1px);
 
   .tonic--dark-mode & {
@@ -363,7 +368,7 @@ $maxWidth: 520px;
 // Fieldgroup
 fieldset:not(.fieldgroup) {
   color: var(--tonic-color-text-light);
-  padding-top: var(--tonic-spacing-xs);
+  padding-top: 0;
   padding-left: 0;
   padding-right: 0;
   background: transparent;
@@ -386,7 +391,7 @@ fieldset:not(.fieldgroup) {
 
 .fieldset__label,
 .fieldset__label--group,
-.form-item__label {
+.form-item label {
   font-size: var(--tonic-font-size-s);
   font-weight: var(--tonic-font-weight-semibold);
   color: var(--tonic-color-title);
@@ -394,7 +399,7 @@ fieldset:not(.fieldgroup) {
   margin-bottom: var(--tonic-spacing-xs);
 }
 
-.form-item__label.has-error,
+.form-item label.has-error,
 .form-item__error-message {
   color: var(--tonic-color-danger);
 }
@@ -405,7 +410,7 @@ fieldset:not(.fieldgroup) {
   color: var(--tonic-color-text-light);
 }
 
-.form-item__label.form-required::after,
+.form-item label.form-required::after,
 .fieldset__label.form-required::after,
 .form-required > .fieldset__label::after,
 .horizontal-tab-button .form-required::after,
@@ -456,7 +461,7 @@ html.js .form-autocomplete {
 
 .form-wrapper,
 .form-composite {
-  .form-item__label {
+  .form-item label {
     position: relative;
   }
 }

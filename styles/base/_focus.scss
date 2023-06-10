@@ -1,14 +1,16 @@
 .page-wrapper *:focus,
 .ui-dialog *:focus,
-.dropbutton .dropbutton__item > *:focus,
-.dropbutton .dropbutton__item > *:focus:hover,
-.dropbutton__items > .dropbutton__item:first-of-type > *:focus,
-.dropbutton__items > .dropbutton__item:first-of-type ~ .dropbutton__item > *:focus,
-.dropbutton__items > .dropbutton__item:first-of-type ~ .dropbutton__item > *:focus:hover,
+.dropbutton .dropbutton-action > *:focus,
+.dropbutton .dropbutton-action > *:focus:hover,
+.dropbutton-actions > li > *:focus,
+.dropbutton-actions > li ~ .dropbutton-action > *:focus,
+.dropbutton-actions > li ~ .dropbutton-action > *:focus:hover,
 .form-boolean:focus:active,
 .form-boolean:focus:hover,
 .cke.cke_chrome.cke_focus,
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a:focus,
+input:focus,
+input:hover:focus,
 .form-element:focus,
 .form-element:hover:focus,
 .form-element.error:hover:focus,
@@ -19,7 +21,8 @@
 .ck .ck.ck-button:active,
 .ck .ck.ck-button:focus,
 .ck .ck.ck-button:active:focus,
-.toolbar-box .toolbar-handle:focus
+.toolbar-box .toolbar-handle:focus,
+.fieldset-title:focus
 {
   outline: none;
   box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
@@ -29,7 +32,8 @@
   border-radius: calc(var(--tonic-border-xs) / 2);
 }
 
-.claro-details {
+.claro-details,
+fieldset.form-wrapper {
   &:focus,
   &:focus:hover,
   &__summary:focus,

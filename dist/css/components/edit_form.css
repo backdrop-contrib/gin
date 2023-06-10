@@ -314,7 +314,7 @@
   background-color: var(--tonic-color-primary-light-active);
 }
 
-.tonic--edit-form .field--name-title .form-element {
+.tonic--edit-form .form-item-title .form-text {
   font-size: var(--tonic-font-size-h3);
   font-weight: var(--tonic-font-weight-semibold);
   line-height: normal;

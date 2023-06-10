@@ -4,7 +4,8 @@
     color: var(--tonic-color-title);
   }
 
-  details {
+  details,
+  fieldset {
     color: var(--tonic-color-text);
   }
 }

@@ -1,6 +1,8 @@
 .button,
-.dropbutton__item:first-of-type > *,
-.dropbutton__toggle {
+.dropbutton-widget > li:first-of-type > *,
+.dropbutton-toggle > button,
+[type="reset"],
+[type="submit"] {
   font-size: var(--tonic-font-size-s);
   font-weight: var(--tonic-font-weight-semibold);
   color: var(--tonic-color-primary);
@@ -28,7 +30,9 @@
 .button,
 .button:not(:focus),
 .form-actions .button,
-.action-link--icon-trash.action-link {
+.action-link--icon-trash.action-link,
+[type="reset"],
+[type="submit"] {
   padding: calc(var(--tonic-spacing-m) - 2px) calc(var(--tonic-spacing-l) - 2px);
   border: 2px solid var(--tonic-color-primary) !important;
   border-radius: var(--tonic-border-m);

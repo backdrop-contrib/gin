@@ -85,8 +85,10 @@
 }
 
 .ui-dialog .button,
-.ui-dialog .dropbutton__item:first-of-type > *,
-.ui-dialog .dropbutton__toggle {
+.ui-dialog .dropbutton-widget > li:first-of-type > *,
+.ui-dialog .dropbutton-toggle > button,
+.ui-dialog [type=reset],
+.ui-dialog [type=submit] {
   font-size: var(--tonic-font-size-s);
   font-weight: var(--tonic-font-weight-semibold);
   color: var(--tonic-color-primary);
@@ -97,40 +99,56 @@
 
 @media (min-width: 80em) {
   .ui-dialog .button,
-  .ui-dialog .dropbutton__item:first-of-type > *,
-  .ui-dialog .dropbutton__toggle {
+  .ui-dialog .dropbutton-widget > li:first-of-type > *,
+  .ui-dialog .dropbutton-toggle > button,
+  .ui-dialog [type=reset],
+  .ui-dialog [type=submit] {
     font-size: var(--tonic-font-size);
   }
 }
 
 .ui-dialog .button:hover,
-.ui-dialog .dropbutton__item:first-of-type > *:hover,
-.ui-dialog .dropbutton__toggle:hover {
+.ui-dialog .dropbutton-widget > li:first-of-type > *:hover,
+.ui-dialog .dropbutton-toggle > button:hover,
+.ui-dialog [type=reset]:hover,
+.ui-dialog [type=submit]:hover {
   background-color: var(--tonic-color-primary-hover);
 }
 
 .ui-dialog .button:active, .ui-dialog .button:focus,
-.ui-dialog .dropbutton__item:first-of-type > *:active,
-.ui-dialog .dropbutton__item:first-of-type > *:focus,
-.ui-dialog .dropbutton__toggle:active,
-.ui-dialog .dropbutton__toggle:focus {
+.ui-dialog .dropbutton-widget > li:first-of-type > *:active,
+.ui-dialog .dropbutton-widget > li:first-of-type > *:focus,
+.ui-dialog .dropbutton-toggle > button:active,
+.ui-dialog .dropbutton-toggle > button:focus,
+.ui-dialog [type=reset]:active,
+.ui-dialog [type=reset]:focus,
+.ui-dialog [type=submit]:active,
+.ui-dialog [type=submit]:focus {
   background-color: var(--tonic-color-primary-active);
 }
 
 .ui-dialog .button:hover, .ui-dialog .button:active, .ui-dialog .button:focus,
-.ui-dialog .dropbutton__item:first-of-type > *:hover,
-.ui-dialog .dropbutton__item:first-of-type > *:active,
-.ui-dialog .dropbutton__item:first-of-type > *:focus,
-.ui-dialog .dropbutton__toggle:hover,
-.ui-dialog .dropbutton__toggle:active,
-.ui-dialog .dropbutton__toggle:focus {
+.ui-dialog .dropbutton-widget > li:first-of-type > *:hover,
+.ui-dialog .dropbutton-widget > li:first-of-type > *:active,
+.ui-dialog .dropbutton-widget > li:first-of-type > *:focus,
+.ui-dialog .dropbutton-toggle > button:hover,
+.ui-dialog .dropbutton-toggle > button:active,
+.ui-dialog .dropbutton-toggle > button:focus,
+.ui-dialog [type=reset]:hover,
+.ui-dialog [type=reset]:active,
+.ui-dialog [type=reset]:focus,
+.ui-dialog [type=submit]:hover,
+.ui-dialog [type=submit]:active,
+.ui-dialog [type=submit]:focus {
   color: var(--tonic-color-button-text);
 }
 
 .ui-dialog .button,
 .ui-dialog .button:not(:focus),
 .ui-dialog .form-actions .button,
-.ui-dialog .action-link--icon-trash.action-link {
+.ui-dialog .action-link--icon-trash.action-link,
+.ui-dialog [type=reset],
+.ui-dialog [type=submit] {
   padding: calc(var(--tonic-spacing-m) - 2px) calc(var(--tonic-spacing-l) - 2px);
   border: 2px solid var(--tonic-color-primary) !important;
   border-radius: var(--tonic-border-m);
@@ -141,7 +159,9 @@
 .ui-dialog .button:hover,
 .ui-dialog .button:not(:focus):hover,
 .ui-dialog .form-actions .button:hover,
-.ui-dialog .action-link--icon-trash.action-link:hover {
+.ui-dialog .action-link--icon-trash.action-link:hover,
+.ui-dialog [type=reset]:hover,
+.ui-dialog [type=submit]:hover {
   background-color: var(--tonic-color-primary-hover);
   border-color: var(--tonic-color-primary-hover) !important;
 }
@@ -152,7 +172,11 @@
 .ui-dialog .form-actions .button:active,
 .ui-dialog .form-actions .button:focus,
 .ui-dialog .action-link--icon-trash.action-link:active,
-.ui-dialog .action-link--icon-trash.action-link:focus {
+.ui-dialog .action-link--icon-trash.action-link:focus,
+.ui-dialog [type=reset]:active,
+.ui-dialog [type=reset]:focus,
+.ui-dialog [type=submit]:active,
+.ui-dialog [type=submit]:focus {
   border-color: var(--tonic-color-primary-active) !important;
 }
 
@@ -168,7 +192,15 @@
 .ui-dialog .action-link--icon-trash.action-link:hover,
 .ui-dialog .action-link--icon-trash.action-link:active,
 .ui-dialog .action-link--icon-trash.action-link:focus,
-.ui-dialog .action-link--icon-trash.action-link:hover:focus {
+.ui-dialog .action-link--icon-trash.action-link:hover:focus,
+.ui-dialog [type=reset]:hover,
+.ui-dialog [type=reset]:active,
+.ui-dialog [type=reset]:focus,
+.ui-dialog [type=reset]:hover:focus,
+.ui-dialog [type=submit]:hover,
+.ui-dialog [type=submit]:active,
+.ui-dialog [type=submit]:focus,
+.ui-dialog [type=submit]:hover:focus {
   color: var(--tonic-color-button-text);
 }
 
@@ -280,27 +312,37 @@
           mask-position: center center;
 }
 
-.ui-dialog .form-element {
+.ui-dialog .form-item > input,
+.ui-dialog .form-item > select {
   color: var(--tonic-color-text);
   background-color: var(--tonic-bg-input);
   border: 1px solid var(--tonic-border-color-form-element);
   border-radius: var(--tonic-border-m);
   box-sizing: border-box;
   transition: var(--tonic-transition);
+  max-width: 100%;
+  line-height: 1.5rem;
+  min-height: calc((var(--tonic-spacing-density-s) + 1px) * 2 + 1.5rem);
+  padding: var(--tonic-spacing-density-s) var(--tonic-spacing-density-s);
 }
 
-.ui-dialog .form-element:hover {
+.ui-dialog .form-item > input:hover,
+.ui-dialog .form-item > select:hover {
   border-color: var(--tonic-color-text);
   box-shadow: inset 0 0 0 1px var(--tonic-color-text);
 }
 
-.ui-dialog .form-element--small, .ui-dialog .form-element--extrasmall {
+.ui-dialog .form-item > input--small, .ui-dialog .form-item > input--extrasmall,
+.ui-dialog .form-item > select--small,
+.ui-dialog .form-item > select--extrasmall {
   font-size: var(--tonic-font-size-s);
   line-height: 1.5;
   border-radius: var(--tonic-border-s);
 }
 
-.ui-dialog .form-element[disabled], .ui-dialog .form-element[disabled]:hover {
+.ui-dialog .form-item > input[disabled], .ui-dialog .form-item > input[disabled]:hover,
+.ui-dialog .form-item > select[disabled],
+.ui-dialog .form-item > select[disabled]:hover {
   cursor: not-allowed;
   color: var(--tonic-color-disabled);
   background-color: var(--tonic-color-disabled-bg) !important;
@@ -308,7 +350,8 @@
   box-shadow: none;
 }
 
-.tonic--dark-mode .ui-dialog .form-element {
+.tonic--dark-mode .ui-dialog .form-item > input,
+.tonic--dark-mode .ui-dialog .form-item > select {
   color-scheme: dark;
 }
 
@@ -325,8 +368,8 @@
   width: auto;
 }
 
-.ui-dialog .form-item--editor-format .form-item__label,
-.ui-dialog .form-element--editor-format .form-item__label {
+.ui-dialog .form-item--editor-format label,
+.ui-dialog .form-element--editor-format label {
   top: 3px;
   padding-bottom: 0;
 }
@@ -354,15 +397,15 @@
   background-color: transparent;
 }
 
-[dir="ltr"] .ui-dialog .form-element--type-select {
+[dir="ltr"] .ui-dialog .form-select {
   padding-right: calc(var(--tonic-spacing-xs) + var(--tonic-spacing-xl) - 1px);
 }
 
-[dir="rtl"] .ui-dialog .form-element--type-select {
+[dir="rtl"] .ui-dialog .form-select {
   padding-left: calc(var(--tonic-spacing-xs) + var(--tonic-spacing-xl) - 1px);
 }
 
-.tonic--dark-mode .ui-dialog .form-element--type-select {
+.tonic--dark-mode .ui-dialog .form-select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23ffffff'/%3E%3C/svg%3E%0A");
 }
 
@@ -650,7 +693,7 @@
 
 .ui-dialog fieldset:not(.fieldgroup) {
   color: var(--tonic-color-text-light);
-  padding-top: var(--tonic-spacing-xs);
+  padding-top: 0;
   padding-left: 0;
   padding-right: 0;
   background: transparent;
@@ -673,7 +716,7 @@
 
 .ui-dialog .fieldset__label,
 .ui-dialog .fieldset__label--group,
-.ui-dialog .form-item__label {
+.ui-dialog .form-item label {
   font-size: var(--tonic-font-size-s);
   font-weight: var(--tonic-font-weight-semibold);
   color: var(--tonic-color-title);
@@ -681,7 +724,7 @@
   margin-bottom: var(--tonic-spacing-xs);
 }
 
-.ui-dialog .form-item__label.has-error,
+.ui-dialog .form-item label.has-error,
 .ui-dialog .form-item__error-message {
   color: var(--tonic-color-danger);
 }
@@ -692,7 +735,7 @@
   color: var(--tonic-color-text-light);
 }
 
-.ui-dialog .form-item__label.form-required::after,
+.ui-dialog .form-item label.form-required::after,
 .ui-dialog .fieldset__label.form-required::after,
 .ui-dialog .form-required > .fieldset__label::after,
 .ui-dialog .horizontal-tab-button .form-required::after,
@@ -742,8 +785,8 @@
           mask-size: 100% 100%;
 }
 
-.ui-dialog .form-wrapper .form-item__label,
-.ui-dialog .form-composite .form-item__label {
+.ui-dialog .form-wrapper .form-item label,
+.ui-dialog .form-composite .form-item label {
   position: relative;
 }
 
