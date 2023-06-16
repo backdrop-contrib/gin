@@ -640,6 +640,10 @@ fieldset.form-wrapper.collapsed > legend {
   }
 }
 
+.l-content {
+  margin-bottom: 5rem;
+}
+
 .l-wrapper-inner {
   margin-top: 0;
 }
@@ -2790,31 +2794,32 @@ a.button:active {
           mask-position: center center;
 }
 
-.dropbutton {
+.dropbutton-wrapper {
   border: 2px solid var(--tonic-color-primary);
   border-radius: var(--tonic-border-m);
   box-shadow: 0 1px 2px var(--tonic-color-primary-light);
+}
+
+.dropbutton {
   display: block;
   overflow: visible;
   margin: 0;
   list-style: none;
 }
 
-.dropbutton-multiple > li {
+.dropbutton-multiple li.dropbutton-action {
   height: 100%;
 }
 
-[dir="ltr"] .dropbutton-multiple > li {
-  margin-right: var(--tonic-spacing-xxl);
+[dir="ltr"] .dropbutton-multiple li.dropbutton-action {
   border-right: 1px solid var(--tonic-color-primary-light-active);
 }
 
-[dir="rtl"] .dropbutton-multiple > li {
-  margin-left: var(--tonic-spacing-xxl);
+[dir="rtl"] .dropbutton-multiple li.dropbutton-action {
   border-left: 1px solid var(--tonic-color-primary-light-active);
 }
 
-.dropbutton-multiple > li input {
+.dropbutton-multiple li.dropbutton-action input {
   color: var(--tonic-color-primary);
   height: 100%;
   background-color: transparent;
@@ -2822,7 +2827,7 @@ a.button:active {
   border-radius: 0 !important;
 }
 
-.dropbutton-multiple > li a:hover, .dropbutton-multiple > li a:active, .dropbutton-multiple > li a:focus {
+.dropbutton-multiple li.dropbutton-action a:hover, .dropbutton-multiple li.dropbutton-action a:active, .dropbutton-multiple li.dropbutton-action a:focus {
   color: var(--tonic-color-button-text);
   background: var(--tonic-color-primary);
   border-radius: var(--tonic-border-s);
@@ -2858,8 +2863,7 @@ a.button:active {
 
 .dropbutton .dropbutton-toggle > button {
   top: 2px;
-  width: calc(var(--tonic-spacing-xxl) + 1px);
-  height: 2.75rem;
+  width: 100%;
 }
 
 [dir="ltr"] .dropbutton .dropbutton-toggle > button {
@@ -3850,7 +3854,9 @@ fieldset.form-wrapper__summary:after {
 }
 
 .system-modules details,
-.system-modules-uninstall details {
+.system-modules fieldset,
+.system-modules-uninstall details,
+.system-modules-uninstall fieldset {
   color: var(--tonic-color-text);
 }
 

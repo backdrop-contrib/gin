@@ -1,16 +1,17 @@
-.dropbutton {
+.dropbutton-wrapper {
   border: 2px solid var(--tonic-color-primary);
   border-radius: var(--tonic-border-m);
   box-shadow: 0 1px 2px var(--tonic-color-primary-light);
+}
+.dropbutton {
   display: block;
   overflow: visible;
   margin: 0;
   list-style: none;
 
   // Offset for select button on first item
-  &-multiple > li {
+  &-multiple li.dropbutton-action {
     height: 100%;
-    margin-right: var(--tonic-spacing-xxl);
     border-right: 1px solid var(--tonic-color-primary-light-active);
 
     input {
@@ -67,8 +68,7 @@
    > button {
     top: 2px;
     right: 2px;
-    width: calc(var(--tonic-spacing-xxl) + 1px);
-    height: 2.75rem;
+    width: 100%;
 
     &:hover {
       background-color: var(--tonic-color-primary);
