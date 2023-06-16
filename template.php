@@ -100,8 +100,8 @@ function tonic_menu_local_action($variables) {
   $link = $variables['element']['#link'];
   $classes = array(
     'button',
-    'button--action',
-    'button--primary',
+    'button-action',
+    'button-primary',
   );
   if (!empty($link['localized_options']['attributes']['class']) && is_array($link['localized_options']['attributes']['class'])) {
     $link['localized_options']['attributes']['class'][] += $classes;

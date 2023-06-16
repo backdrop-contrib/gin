@@ -4,9 +4,15 @@
   > .help,
   > .l-top,
   > .l-content,
-  > .region-highlighted {
+  > .region-highlighted  {
     @include mq(small) {
       margin-top: var(--tonic-spacing-l);
+    }
+  }
+
+  .admin-panel {
+    @include mq(small) {
+      margin-bottom: var(--tonic-spacing-l);
     }
   }
 
@@ -18,6 +24,7 @@
 }
 
 .tonic-layer-wrapper,
+.admin-panel,
 .tonic-layer-wrapper-shadow,
 .region .block,
 .block-system > form,
@@ -43,6 +50,7 @@ form.views-exposed-form,
 }
 
 .tonic-layer-wrapper,
+.admin-panel,
 .region .block,
 .block-system-main-block > form,
 form.views-exposed-form,
@@ -66,5 +74,25 @@ form.views-exposed-form,
   > .form-wrapper:first-of-type .form-item,
   .layout-region-node-main > .form-wrapper:first-of-type .form-item {
     margin-top: 0;
+  }
+}
+
+// Account for unwanted postentially nested layers.
+.admin-panel {
+  .tonic-layer-wrapper {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  > .body {
+    padding: 0;
+
+    .admin-item {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 }

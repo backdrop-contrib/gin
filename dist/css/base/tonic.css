@@ -658,12 +658,19 @@ fieldset.form-wrapper.collapsed > legend {
 }
 
 @media (min-width: 48em) {
+  .l-wrapper-inner .admin-panel {
+    margin-bottom: var(--tonic-spacing-l);
+  }
+}
+
+@media (min-width: 48em) {
   .l-wrapper-inner .region .block {
     margin-top: var(--tonic-spacing-s);
   }
 }
 
 .tonic-layer-wrapper,
+.admin-panel,
 .tonic-layer-wrapper-shadow,
 .region .block,
 .block-system > form,
@@ -681,6 +688,7 @@ form.views-exposed-form,
 }
 
 .tonic--dark-mode .tonic-layer-wrapper,
+.tonic--dark-mode .admin-panel,
 .tonic--dark-mode .tonic-layer-wrapper-shadow,
 .tonic--dark-mode .region .block,
 .tonic--dark-mode .block-system > form,
@@ -696,6 +704,7 @@ form.views-exposed-form,
 }
 
 .tonic--high-contrast-mode .tonic-layer-wrapper,
+.tonic--high-contrast-mode .admin-panel,
 .tonic--high-contrast-mode .tonic-layer-wrapper-shadow,
 .tonic--high-contrast-mode .region .block,
 .tonic--high-contrast-mode .block-system > form,
@@ -711,6 +720,7 @@ form.views-exposed-form,
 }
 
 .tonic-layer-wrapper,
+.admin-panel,
 .region .block,
 .block-system-main-block > form,
 form.views-exposed-form,
@@ -729,6 +739,7 @@ form.views-exposed-form,
 
 @media (min-width: 48em) {
   .tonic-layer-wrapper,
+  .admin-panel,
   .region .block,
   .block-system-main-block > form,
   form.views-exposed-form,
@@ -744,6 +755,8 @@ form.views-exposed-form,
 
 .tonic-layer-wrapper > .form-wrapper:first-of-type .form-item,
 .tonic-layer-wrapper .layout-region-node-main > .form-wrapper:first-of-type .form-item,
+.admin-panel > .form-wrapper:first-of-type .form-item,
+.admin-panel .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .region .block > .form-wrapper:first-of-type .form-item,
 .region .block .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .block-system-main-block > form > .form-wrapper:first-of-type .form-item,
@@ -763,6 +776,23 @@ form.views-exposed-form .layout-region-node-main > .form-wrapper:first-of-type .
 .admin.my-workbench > .form-wrapper:first-of-type .form-item,
 .admin.my-workbench .layout-region-node-main > .form-wrapper:first-of-type .form-item {
   margin-top: 0;
+}
+
+.admin-panel .tonic-layer-wrapper {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.admin-panel > .body {
+  padding: 0;
+}
+
+.admin-panel > .body .admin-item {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (max-width: 60.99em) {
@@ -2080,6 +2110,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 .form-item .form-type-radio > input {
   padding-top: 0;
   padding-bottom: 0;
+  min-height: 1.1rem;
 }
 
 .form-item .form-type-radio > label {
@@ -4491,7 +4522,7 @@ tr.color-error:focus,
   padding-top: var(--tonic-spacing-l);
 }
 
-.panel__title,
+.admin-panel > h3,
 .system-status-general-info__header,
 .system-status-report__requirements-group > h3,
 .system-themes-list__header {
