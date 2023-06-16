@@ -1617,7 +1617,7 @@ table.sticky-header {
   visibility: hidden;
   z-index: 98;
   position: fixed;
-  top: calc(var(--tonicHorizontalToolbarOffset) + var(--tonicStickyOffset)) !important;
+  top: calc(var(--tonic-toolbar-y-offset) + var(--tonicStickyOffset)) !important;
   background: transparent;
 }
 
@@ -3763,6 +3763,11 @@ hr {
           mask-repeat: no-repeat;
   -webkit-mask-position: center center;
           mask-position: center center;
+  position: absolute;
+  display: block;
+  width: 1em;
+  height: 1.5em;
+  content: "";
 }
 
 [dir="ltr"] .admin-item .admin-item__link::before {

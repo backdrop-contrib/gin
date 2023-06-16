@@ -66,6 +66,11 @@
       mask-size: 1em 1em;
       mask-repeat: no-repeat;
       mask-position: center center;
+      position: absolute;
+      display: block;
+      width: 1em;
+      height: 1.5em;
+      content: "";
     }
 
     &:hover,

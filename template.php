@@ -207,6 +207,31 @@ function tonic_admin_bar_output_build(&$content) {
  */
 function tonic_admin_block_content($variables) {
   $content = $variables['content'];
+
+  return _tonic_admin_list($content, '');
+}
+
+/**
+ * Returns HTML for a list of available node types for node creation.
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - content: An array of content types.
+ *
+ * @see node_add_page()
+ * @ingroup themeable
+ */
+function tonic_node_add_list($variables) {
+  $content = $variables['content'];
+  $empty_message = t('You have not created any content types yet. Go to the <a href="@create-content">content type creation page</a> to add a new content type.', array('@create-content' => url('admin/structure/types/add')));
+  return _tonic_admin_list($content, $empty_message);
+}
+
+/**
+ * Helper function to generate an admin list.
+ * @todo This could be moved into a theme hook and tpl file.
+ */
+function _tonic_admin_list($content, $empty_message = '') {
   $output = '';
 
   if (!empty($content)) {
@@ -224,6 +249,9 @@ function tonic_admin_block_content($variables) {
       $output .= '</div>';
     }
     $output .= '</dl>';
+  }
+  elseif (!empty($empty_message)) {
+    $output = '<p>' . filter_xss_admin($empty_message) . '</p>';
   }
   return $output;
 }
