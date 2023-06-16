@@ -67,8 +67,8 @@
   border-radius: var(--tonic-border-s);
 }
 
-.button--primary,
-.button--primary:not(:focus),
+.button-primary,
+.button-primary:not(:focus),
 .ief-entity-submit {
   background: var(--tonic-color-primary);
   box-shadow: .1em .25em .5em var(--tonic-color-primary-light);
@@ -91,10 +91,10 @@ a.button:active {
   color: var(--tonic-color-button-text);
 }
 
-a.button--primary:hover,
-a.button--primary:active,
-a.button--primary:focus,
-a.button--primary:focus:hover {
+a.button-primary:hover,
+a.button-primary:active,
+a.button-primary:focus,
+a.button-primary:focus:hover {
   .tonic--dark-mode & {
     color: var(--tonic-bg-app);
   }
@@ -109,7 +109,7 @@ a.button--primary:focus:hover {
   }
 }
 
-.button.button--primary:disabled, .button.button--primary.is-disabled {
+.button.button-primary:disabled, .button.button-primary.is-disabled {
   &, &:hover, &:active, &:focus {
     color: var(--tonic-color-disabled);
     background-color: var(--tonic-color-disabled-bg);

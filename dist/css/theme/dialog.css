@@ -222,43 +222,43 @@
   border-radius: var(--tonic-border-s);
 }
 
-.ui-dialog .button--primary,
-.ui-dialog .button--primary:not(:focus),
+.ui-dialog .button-primary,
+.ui-dialog .button-primary:not(:focus),
 .ui-dialog .ief-entity-submit {
   background: var(--tonic-color-primary);
 }
 
-[dir="ltr"] .ui-dialog .button--primary,
-[dir="ltr"] .ui-dialog .button--primary:not(:focus),
+[dir="ltr"] .ui-dialog .button-primary,
+[dir="ltr"] .ui-dialog .button-primary:not(:focus),
 [dir="ltr"] .ui-dialog .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--tonic-color-primary-light);
 }
 
-[dir="rtl"] .ui-dialog .button--primary,
-[dir="rtl"] .ui-dialog .button--primary:not(:focus),
+[dir="rtl"] .ui-dialog .button-primary,
+[dir="rtl"] .ui-dialog .button-primary:not(:focus),
 [dir="rtl"] .ui-dialog .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--tonic-color-primary-light);
 }
 
-.ui-dialog .button--primary:hover,
-.ui-dialog .button--primary:not(:focus):hover,
+.ui-dialog .button-primary:hover,
+.ui-dialog .button-primary:not(:focus):hover,
 .ui-dialog .ief-entity-submit:hover {
   background-color: var(--tonic-color-primary-hover);
 }
 
-.ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .button--primary:not(:focus):active,
-.ui-dialog .button--primary:not(:focus):focus,
+.ui-dialog .button-primary:active, .ui-dialog .button-primary:focus,
+.ui-dialog .button-primary:not(:focus):active,
+.ui-dialog .button-primary:not(:focus):focus,
 .ui-dialog .ief-entity-submit:active,
 .ui-dialog .ief-entity-submit:focus {
   background-color: var(--tonic-color-primary-active);
 }
 
-.ui-dialog .button--primary, .ui-dialog .button--primary:hover, .ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .button--primary:not(:focus),
-.ui-dialog .button--primary:not(:focus):hover,
-.ui-dialog .button--primary:not(:focus):active,
-.ui-dialog .button--primary:not(:focus):focus,
+.ui-dialog .button-primary, .ui-dialog .button-primary:hover, .ui-dialog .button-primary:active, .ui-dialog .button-primary:focus,
+.ui-dialog .button-primary:not(:focus),
+.ui-dialog .button-primary:not(:focus):hover,
+.ui-dialog .button-primary:not(:focus):active,
+.ui-dialog .button-primary:not(:focus):focus,
 .ui-dialog .ief-entity-submit,
 .ui-dialog .ief-entity-submit:hover,
 .ui-dialog .ief-entity-submit:active,
@@ -271,10 +271,10 @@
   color: var(--tonic-color-button-text);
 }
 
-.tonic--dark-mode .ui-dialog a.button--primary:hover,
-.tonic--dark-mode .ui-dialog a.button--primary:active,
-.tonic--dark-mode .ui-dialog a.button--primary:focus,
-.tonic--dark-mode .ui-dialog a.button--primary:focus:hover {
+.tonic--dark-mode .ui-dialog a.button-primary:hover,
+.tonic--dark-mode .ui-dialog a.button-primary:active,
+.tonic--dark-mode .ui-dialog a.button-primary:focus,
+.tonic--dark-mode .ui-dialog a.button-primary:focus:hover {
   color: var(--tonic-bg-app);
 }
 
@@ -285,7 +285,7 @@
   box-shadow: none;
 }
 
-.ui-dialog .button.button--primary:disabled, .ui-dialog .button.button--primary:disabled:hover, .ui-dialog .button.button--primary:disabled:active, .ui-dialog .button.button--primary:disabled:focus, .ui-dialog .button.button--primary.is-disabled, .ui-dialog .button.button--primary.is-disabled:hover, .ui-dialog .button.button--primary.is-disabled:active, .ui-dialog .button.button--primary.is-disabled:focus {
+.ui-dialog .button.button-primary:disabled, .ui-dialog .button.button-primary:disabled:hover, .ui-dialog .button.button-primary:disabled:active, .ui-dialog .button.button-primary:disabled:focus, .ui-dialog .button.button-primary.is-disabled, .ui-dialog .button.button-primary.is-disabled:hover, .ui-dialog .button.button-primary.is-disabled:active, .ui-dialog .button.button-primary.is-disabled:focus {
   color: var(--tonic-color-disabled);
   background-color: var(--tonic-color-disabled-bg);
 }
@@ -353,6 +353,19 @@
 .tonic--dark-mode .ui-dialog .form-item > input,
 .tonic--dark-mode .ui-dialog .form-item > select {
   color-scheme: dark;
+}
+
+.ui-dialog .form-item .form-type-radio {
+  margin: 0;
+}
+
+.ui-dialog .form-item .form-type-radio > input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ui-dialog .form-item .form-type-radio > label {
+  font-weight: var(--tonic-font-weight-normal);
 }
 
 .ui-dialog .form-textarea-wrapper {

@@ -2073,6 +2073,18 @@ td.webform-has-field-suffix > .form-item > .form-element {
   color-scheme: dark;
 }
 
+.form-item .form-type-radio {
+  margin: 0;
+}
+
+.form-item .form-type-radio > input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.form-item .form-type-radio > label {
+  font-weight: var(--tonic-font-weight-normal);
+}
 
 .form-textarea-wrapper {
   border-radius: var(--tonic-border-m);
@@ -2719,43 +2731,43 @@ tr .form-item {
   border-radius: var(--tonic-border-s);
 }
 
-.button--primary,
-.button--primary:not(:focus),
+.button-primary,
+.button-primary:not(:focus),
 .ief-entity-submit {
   background: var(--tonic-color-primary);
 }
 
-[dir="ltr"] .button--primary,
-[dir="ltr"] .button--primary:not(:focus),
+[dir="ltr"] .button-primary,
+[dir="ltr"] .button-primary:not(:focus),
 [dir="ltr"] .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--tonic-color-primary-light);
 }
 
-[dir="rtl"] .button--primary,
-[dir="rtl"] .button--primary:not(:focus),
+[dir="rtl"] .button-primary,
+[dir="rtl"] .button-primary:not(:focus),
 [dir="rtl"] .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--tonic-color-primary-light);
 }
 
-.button--primary:hover,
-.button--primary:not(:focus):hover,
+.button-primary:hover,
+.button-primary:not(:focus):hover,
 .ief-entity-submit:hover {
   background-color: var(--tonic-color-primary-hover);
 }
 
-.button--primary:active, .button--primary:focus,
-.button--primary:not(:focus):active,
-.button--primary:not(:focus):focus,
+.button-primary:active, .button-primary:focus,
+.button-primary:not(:focus):active,
+.button-primary:not(:focus):focus,
 .ief-entity-submit:active,
 .ief-entity-submit:focus {
   background-color: var(--tonic-color-primary-active);
 }
 
-.button--primary, .button--primary:hover, .button--primary:active, .button--primary:focus,
-.button--primary:not(:focus),
-.button--primary:not(:focus):hover,
-.button--primary:not(:focus):active,
-.button--primary:not(:focus):focus,
+.button-primary, .button-primary:hover, .button-primary:active, .button-primary:focus,
+.button-primary:not(:focus),
+.button-primary:not(:focus):hover,
+.button-primary:not(:focus):active,
+.button-primary:not(:focus):focus,
 .ief-entity-submit,
 .ief-entity-submit:hover,
 .ief-entity-submit:active,
@@ -2768,10 +2780,10 @@ a.button:active {
   color: var(--tonic-color-button-text);
 }
 
-.tonic--dark-mode a.button--primary:hover,
-.tonic--dark-mode a.button--primary:active,
-.tonic--dark-mode a.button--primary:focus,
-.tonic--dark-mode a.button--primary:focus:hover {
+.tonic--dark-mode a.button-primary:hover,
+.tonic--dark-mode a.button-primary:active,
+.tonic--dark-mode a.button-primary:focus,
+.tonic--dark-mode a.button-primary:focus:hover {
   color: var(--tonic-bg-app);
 }
 
@@ -2782,7 +2794,7 @@ a.button:active {
   box-shadow: none;
 }
 
-.button.button--primary:disabled, .button.button--primary:disabled:hover, .button.button--primary:disabled:active, .button.button--primary:disabled:focus, .button.button--primary.is-disabled, .button.button--primary.is-disabled:hover, .button.button--primary.is-disabled:active, .button.button--primary.is-disabled:focus {
+.button.button-primary:disabled, .button.button-primary:disabled:hover, .button.button-primary:disabled:active, .button.button-primary:disabled:focus, .button.button-primary.is-disabled, .button.button-primary.is-disabled:hover, .button.button-primary.is-disabled:active, .button.button-primary.is-disabled:focus {
   color: var(--tonic-color-disabled);
   background-color: var(--tonic-color-disabled-bg);
 }
@@ -3268,7 +3280,7 @@ a.button.button--danger:active:before {
   background-color: var(--tonic-bg-layer);
 }
 
-.button--primary.button--danger {
+.button-primary.button--danger {
   color: var(--tonic-bg-layer);
   background-color: var(--tonic-color-danger);
 }
