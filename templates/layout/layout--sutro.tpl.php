@@ -74,28 +74,28 @@
       <?php print $action_links; ?>
 
       <?php if (!empty($content['top'])): ?>
-        <div class="l-top">
+        <div class="l-top region">
           <?php print $content['top']; ?>
         </div>
       <?php endif; ?>
 
       <?php if (!empty($content['content'])): ?>
-        <div class="l-content" role="main" aria-label="<?php print t('Main content'); ?>">
+        <div class="l-content region" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
         </div>
       <?php endif; ?>
 
       <div class="l-middle l-halves row">
-        <div class="l-halves-region col-md-6">
+        <div class="l-halves-region col-md-6 region">
           <?php print $content['half1']; ?>
         </div>
-        <div class="l-halves-region col-md-6">
+        <div class="l-halves-region col-md-6 region">
           <?php print $content['half2']; ?>
         </div>
       </div><!-- /.l-middle -->
 
       <?php if (!empty($content['bottom'])): ?>
-        <div class="l-bottom">
+        <div class="l-bottom region">
           <?php print $content['bottom']; ?>
         </div>
       <?php endif; ?>
@@ -104,7 +104,7 @@
   </div><!-- /.l-wrapper -->
 
   <?php if ($content['footer']): ?>
-    <footer class="l-footer">
+    <footer class="l-footer region">
       <div class="l-footer-inner container-fluid">
         <?php print $content['footer']; ?>
       </div>

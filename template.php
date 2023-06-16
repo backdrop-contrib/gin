@@ -53,18 +53,15 @@ function tonic_preprocess_page(&$variables) {
 function tonic_preprocess_layout(&$variables) {
   // Some pages need a flag added so we can wrap the main content visually.
   $pages_to_wrap = array(
-    'admin/structure/types',
-    'admin/structure/types/*',
-    'admin/structure/layouts',
-    'admin/structure/layouts/*',
-    'admin/structure/taxonomy',
-    'admin/structure/taxonomy/*',
-    'admin/appearance',
-    'admin/modules',
-    'admin/structure/block',
-    'admin/structure/file-types',
+    'admin/dashboard/settings',
     'admin/content/comment',
-    'admin/dashboard',
+    'admin/people/create',
+    'admin/appearance',
+    'admin/appearance/*',
+    'admin/modules',
+    'admin/modules/*',
+    'admin/structure/*',
+    'admin/config/*',
   );
   $current_path = request_path();
   if (backdrop_match_path($current_path, implode("\n", $pages_to_wrap))) {

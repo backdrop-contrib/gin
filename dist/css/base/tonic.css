@@ -650,14 +650,22 @@ fieldset.form-wrapper.collapsed > legend {
 
 @media (min-width: 48em) {
   .l-wrapper-inner > .help,
+  .l-wrapper-inner > .l-top,
   .l-wrapper-inner > .l-content,
   .l-wrapper-inner > .region-highlighted {
     margin-top: var(--tonic-spacing-l);
   }
 }
 
+@media (min-width: 48em) {
+  .l-wrapper-inner .region .block {
+    margin-top: var(--tonic-spacing-s);
+  }
+}
+
 .tonic-layer-wrapper,
 .tonic-layer-wrapper-shadow,
+.region .block,
 .block-system > form,
 form.views-exposed-form,
 .view > .view-content,
@@ -674,6 +682,7 @@ form.views-exposed-form,
 
 .tonic--dark-mode .tonic-layer-wrapper,
 .tonic--dark-mode .tonic-layer-wrapper-shadow,
+.tonic--dark-mode .region .block,
 .tonic--dark-mode .block-system > form,
 .tonic--dark-mode form.views-exposed-form,
 .tonic--dark-mode .view > .view-content,
@@ -688,6 +697,7 @@ form.views-exposed-form,
 
 .tonic--high-contrast-mode .tonic-layer-wrapper,
 .tonic--high-contrast-mode .tonic-layer-wrapper-shadow,
+.tonic--high-contrast-mode .region .block,
 .tonic--high-contrast-mode .block-system > form,
 .tonic--high-contrast-mode form.views-exposed-form,
 .tonic--high-contrast-mode .view > .view-content,
@@ -701,6 +711,7 @@ form.views-exposed-form,
 }
 
 .tonic-layer-wrapper,
+.region .block,
 .block-system-main-block > form,
 form.views-exposed-form,
 .view > .view-content,
@@ -718,6 +729,7 @@ form.views-exposed-form,
 
 @media (min-width: 48em) {
   .tonic-layer-wrapper,
+  .region .block,
   .block-system-main-block > form,
   form.views-exposed-form,
   .view > .view-content,
@@ -732,6 +744,8 @@ form.views-exposed-form,
 
 .tonic-layer-wrapper > .form-wrapper:first-of-type .form-item,
 .tonic-layer-wrapper .layout-region-node-main > .form-wrapper:first-of-type .form-item,
+.region .block > .form-wrapper:first-of-type .form-item,
+.region .block .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .block-system-main-block > form > .form-wrapper:first-of-type .form-item,
 .block-system-main-block > form .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 form.views-exposed-form > .form-wrapper:first-of-type .form-item,

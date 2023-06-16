@@ -2,16 +2,24 @@
   margin-top: 0;
 
   > .help,
+  > .l-top,
   > .l-content,
   > .region-highlighted {
     @include mq(small) {
       margin-top: var(--tonic-spacing-l);
     }
   }
+
+  .region .block {
+    @include mq(small) {
+      margin-top: var(--tonic-spacing-s);
+    }
+  }
 }
 
 .tonic-layer-wrapper,
 .tonic-layer-wrapper-shadow,
+.region .block,
 .block-system > form,
 form.views-exposed-form,
 .view > .view-content,
@@ -20,8 +28,7 @@ form.views-exposed-form,
 .modules-tabs,
 .module-filter-update-status-form .table-filter,
 #views-entity-list,
-.admin.my-workbench
-{
+.admin.my-workbench {
   margin-top: 0;
   box-shadow: var(--tonic-shadow-l1);
   border-radius: var(--tonic-border-l);
@@ -36,6 +43,7 @@ form.views-exposed-form,
 }
 
 .tonic-layer-wrapper,
+.region .block,
 .block-system-main-block > form,
 form.views-exposed-form,
 .view > .view-content,
@@ -43,8 +51,7 @@ form.views-exposed-form,
 .views-preview-wrapper,
 #views-entity-list,
 .module-filter-update-status-form .table-filter,
-.admin.my-workbench
-{
+.admin.my-workbench {
   width: 100%;
   padding: var(--tonic-spacing-s);
   background: var(--tonic-bg-layer);
