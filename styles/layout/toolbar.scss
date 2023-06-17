@@ -24,33 +24,20 @@
 }
 
 // Toolbar
-#toolbar-item-administration-tray {
+#admin-bar {
   @include mq(medium) {
     border: 0 none;
   }
 }
 
-.toolbar {
-  .toolbar-bar {
+#admin-bar {
     box-shadow: none;
     // Reset `box-shadow` style from the `.toolbar-bar` class if we use RTL mode.
     [dir="rtl"] & {
       box-shadow: none;
     }
 
-    @include mq(xsmall) {
-      display: flex;
-    }
-
-    @include mq(large) {
-      height: 0;
-    }
-
-    .toolbar-tab > .toolbar-item {
-      font-weight: var(--tonic-font-weight-normal);;
-    }
-
-    #toolbar-item-administration-tray .toolbar-icon,
+    #admin-bar .toolbar-icon,
     .toolbar-tab > .toolbar-icon-edit.toolbar-item {
       &::before {
         @include mq(medium) {
@@ -88,7 +75,7 @@
         margin: var(--tonic-spacing-xs) 0;
       }
 
-      #toolbar-item-administration-tray a.toolbar-icon.override-icon {
+      a.toolbar-icon.override-icon {
         &:before {
           left: 0;
           width: 0;
@@ -98,7 +85,7 @@
     }
 
     // Custom logo
-    #toolbar-item-administration-tray .toolbar-logo {
+    .toolbar-logo {
       display: block;
       padding: var(--tonic-spacing-xs) 0;
 
@@ -108,7 +95,7 @@
       }
     }
 
-    #toolbar-item-administration-tray a.toolbar-icon-admin-toolbar-tools-help.toolbar-icon-default {
+    a.toolbar-icon-admin-toolbar-tools-help.toolbar-icon-default {
       @include mq(medium) {
         height: 74px;
         margin-bottom: 6px;
@@ -145,7 +132,6 @@
       }
     }
   }
-}
 
 .toolbar-tray a,
 .toolbar-tray a:visited,
@@ -153,11 +139,7 @@
   color: var(--tonic-color-text);
 }
 
-#gin-toolbar-bar.js-settings-tray-edit-mode {
-  justify-content: flex-end;
-}
-
-#toolbar-item-administration-tray a.toolbar-icon.override-icon {
+#admin-bar a.toolbar-icon.override-icon {
   &:before {
     @include mq(medium) {
       left: 0;
@@ -204,7 +186,7 @@ a.toolbar-menu__trigger,
 
 // New Desktop Toolbar
 @include mq(medium) {
-  #toolbar-item-administration-tray {
+  #admin-bar {
     display: block;
   }
 

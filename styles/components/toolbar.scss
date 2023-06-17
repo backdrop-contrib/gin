@@ -1,17 +1,13 @@
 // Offset
-body.tonic--vertical-toolbar,
-body.tonic--horizontal-toolbar,
-body.tonic--classic-toolbar {
+html.admin-bar {
   padding-top: var(--tonic-toolbar-y-offset) !important;
   padding-left: var(--tonic-toolbar-x-offset, 256px);
   margin-left: 0; // Fix for Drupal 9.3+
 }
 
-.toolbar {
+#admin-bar {
   font-family: var(--tonic-font);
-
-  .toolbar-bar {
-    box-shadow: none;
+  box-shadow: none;
 
     @include mq(xsmall) {
       .user-menu {
@@ -25,19 +21,12 @@ body.tonic--classic-toolbar {
       }
     }
 
-    .toolbar-tab > .toolbar-item {
+    #admin-bar-wrapper > ul > li {
       white-space: nowrap;
-    }
-
-    .contextual-toolbar-tab.toolbar-tab {
-      float: right; // Set contextual to right
-    }
-
-    .toolbar-tab > .toolbar-item {
       font-weight: var(--tonic-font-weight-normal);;
     }
 
-    .toolbar-tab > .toolbar-icon {
+    a {
       &:hover {
         background: rgba(255, 255, 255, .1);
 
@@ -46,7 +35,7 @@ body.tonic--classic-toolbar {
         }
       }
 
-      &.is-active {
+      &.active {
         color: var(--tonic-color-button-text);
         background-image: none;
         background-color: var(--tonic-color-primary);
@@ -88,7 +77,7 @@ body.tonic--classic-toolbar {
 
     // Inline Edit toggle
     .toolbar-tab > .toolbar-icon.toolbar-icon-edit.toolbar-item,
-    .toolbar-tab > .toolbar-icon.toolbar-icon-edit.toolbar-item.is-active,
+    .toolbar-tab > .toolbar-icon.toolbar-icon-edit.toolbar-item.active,
     .toolbar-tab > .toolbar-icon.toolbar-icon-edit.toolbar-item:focus {
       color: var(--tonic-bg-app);
       background: var(--tonic-color-primary);
@@ -121,14 +110,14 @@ body.tonic--classic-toolbar {
         }
       }
 
-      &.is-active:hover::before {
+      &.active:hover::before {
         @include mq(medium) {
           background: var(--tonic-color-primary);
         }
       }
     }
 
-    #toolbar-item-administration-tray .toolbar-icon-admin-toolbar-tools-help.toolbar-icon-default {
+    .toolbar-icon-admin-toolbar-tools-help.toolbar-icon-default {
       &:before {
         $logoSize: 28px;
         $iconFill: 333333;
@@ -141,7 +130,7 @@ body.tonic--classic-toolbar {
         mask-position: center center;
       }
 
-      &.is-active {
+      &.active {
         background-color: transparent;
 
         &::after {
@@ -355,7 +344,6 @@ body.tonic--classic-toolbar {
       }
     }
   }
-}
 
 .toolbar-horizontal .toolbar-tray {
   border-bottom: 1px solid var(--tonic-border-color);
@@ -370,7 +358,7 @@ body.tonic--classic-toolbar {
     color: var(--tonic-color-text);
     font-weight: var(--tonic-font-weight-normal);;
 
-    &:hover, &:active, &:focus, &.is-active {
+    &:hover, &:active, &:focus, &.active {
       text-decoration: none;
     }
   }
@@ -384,7 +372,7 @@ body.tonic--classic-toolbar {
         background-color: var(--tonic-color-title);
       }
 
-      .toolbar-icon.is-active::before {
+      .toolbar-icon.active::before {
         background-color: var(--tonic-color-primary);
       }
     }
@@ -582,7 +570,7 @@ body.tonic--classic-toolbar {
     background: var(--tonic-color-primary-light);
   }
 
-  &.is-active {
+  &.active {
     &::before {
       background-color: var(--tonic-color-primary);
     }
@@ -598,8 +586,8 @@ body.tonic--classic-toolbar {
     mask-size: var(--tonic-icon-size-toolbar-secondary) var(--tonic-icon-size-toolbar-secondary);
   }
 
-  &.is-active:before,
-  &.is-active:hover:before {
+  &.active:before,
+  &.active:hover:before {
     @include mq(medium) {
       background-color: var(--tonic-color-button-text);
     }
@@ -613,7 +601,7 @@ body.tonic--classic-toolbar {
 #toolbar-item-administration-search,
 .toolbar-tab > .toolbar-icon-edit.toolbar-item {
   &:hover:before,
-  &.is-active:before {
+  &.active:before {
     @include mq($to: medium) {
       background: #fff;
     }
@@ -629,7 +617,7 @@ body.tonic--classic-toolbar {
 }
 
 // Custom logo
-#toolbar-item-administration-tray .toolbar-logo {
+#admin-bar .toolbar-logo {
   padding-top: var(--tonic-spacing-xs);
   padding-bottom: var(--tonic-spacing-xs);
 

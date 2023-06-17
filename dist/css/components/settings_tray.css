@@ -1,21 +1,13 @@
-#gin-toolbar-bar.js-settings-tray-edit-mode button.toolbar-icon.toolbar-icon-edit.toolbar-item.is-active {
+#admin-bar-wrapper ul li a.active-trail {
   color: var(--tonic-bg-app);
 }
 
-#gin-toolbar-bar.js-settings-tray-edit-mode {
+#admin-bar-wrapper ul li a {
   background: var(--tonic-color-primary);
 }
 
-#gin-toolbar-bar.js-settings-tray-edit-mode button.toolbar-icon.toolbar-icon-edit.toolbar-item.is-active:hover {
+#admin-bar-wrapper ul li a.active-trail:hover {
   background: var(--tonic-color-primary-hover);
-}
-
-#gin-toolbar-bar {
-  position: fixed;
-}
-
-#gin-toolbar-bar .contextual-toolbar-tab {
-  order: 100;
 }
 
 #toolbar-bar.toolbar-bar.js-settings-tray-edit-mode {

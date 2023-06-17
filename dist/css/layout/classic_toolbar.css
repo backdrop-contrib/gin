@@ -181,12 +181,12 @@
   }
 }
 
-#toolbar-item-administration-tray {
+#admin-bar {
   box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 }
 
 @media (min-width: 64em) {
-  #toolbar-item-administration-tray .toolbar-logo img {
+  #admin-bar .toolbar-logo img {
     max-height: 21px;
   }
 }
