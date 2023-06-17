@@ -63,6 +63,8 @@ html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a::before {
           mask-position: center center;
   -webkit-mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
           mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+  -webkit-mask-image: url("../../media/sprite.svg#drop-view");
+          mask-image: url("../../media/sprite.svg#drop-view");
   position: absolute;
   top: 0;
   display: block;
