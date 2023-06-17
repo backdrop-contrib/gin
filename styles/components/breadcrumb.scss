@@ -1,6 +1,6 @@
 .tonic-breadcrumb {
   color: var(--tonic-color-text);
-  padding: 0;
+  padding: var(--tonic-spacing-m) 0;
 
   &-wrapper {
     min-width: 1px; // Fixes ellipsis with flex overfloating issue.
