@@ -32,8 +32,6 @@ tonic_toolbar:
     component:
       dist/css/components/toolbar.css: { minified: false }
       dist/css/components/toolbar_secondary.css: { minified: false }
-    theme:
-      dist/css/layout/toolbar.css: { minified: false }
   js:
     dist/js/toolbar.js: { minified: false }
   dependencies:
@@ -45,41 +43,6 @@ tonic_toolbar:
     - tonic/settings_tray
     - tonic/settings_tray_edit
     - core/drupalSettings
-    - core/once
-
-tonic_horizontal_toolbar:
-  css:
-    component:
-      dist/css/components/toolbar.css: { minified: false }
-      dist/css/components/toolbar_secondary.css: { minified: false }
-    theme:
-      dist/css/layout/horizontal_toolbar.css: { minified: false }
-  js:
-    dist/js/toolbar.js: { minified: false }
-  dependencies:
-    - tonic/coffee
-    - tonic/node_preview
-    - tonic/responsive_preview
-    - tonic/contextual_links
-    - tonic/breadcrumb
-    - tonic/settings_tray
-    - tonic/settings_tray_edit
-    - core/once
-
-tonic_classic_toolbar:
-  css:
-    component:
-      dist/css/components/toolbar.css: { minified: false }
-    theme:
-      dist/css/layout/classic_toolbar.css: { minified: false }
-  js:
-    dist/js/toolbar.js: { minified: false }
-  dependencies:
-    - tonic/coffee
-    - tonic/node_preview
-    - tonic/contextual_links
-    - tonic/breadcrumb
-    - tonic/settings_tray_edit
     - core/once
 
 tonic_accent:

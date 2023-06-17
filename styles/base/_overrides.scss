@@ -240,29 +240,3 @@ fieldset.form-wrapper.collapsed {
 .l-content {
   margin-bottom: 5rem;
 }
-
-/* Toolbar overrides */
-.admin-bar body {
-  border-top: none !important;
-  padding-top: 1.5rem;
-
-}
-#admin-bar {
-  background: var(--tonic-bg-layer);
-  color: #ddd;
-
-  #admin-bar-menu {
-    > li {
-      .dropdown {
-        > li {
-          a {
-            color: var(--tonic-color-text);
-            font-weight: var(--tonic-font-weight-normal);
-            font-size: small;
-            padding: 20px 2.25rem 20px 3rem;
-          }
-        }
-      }
-    }
-  }
-}
