@@ -101,8 +101,8 @@ html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-appearance
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-modules:before {
-  -webkit-mask-image: url("../../media/sprite.svg#extend-view");
-          mask-image: url("../../media/sprite.svg#extend-view");
+  -webkit-mask-image: url("../../media/sprite.svg#functionality-view");
+          mask-image: url("../../media/sprite.svg#functionality-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-config:before {
@@ -111,8 +111,8 @@ html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-config:bef
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-people:before {
-  -webkit-mask-image: url("../../media/sprite.svg#people-view");
-          mask-image: url("../../media/sprite.svg#people-view");
+  -webkit-mask-image: url("../../media/sprite.svg#useraccount-view");
+          mask-image: url("../../media/sprite.svg#useraccount-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-reports:before {
@@ -121,23 +121,23 @@ html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-reports:be
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-dashboard:before {
-  -webkit-mask-image: url("../../media/sprite.svg#grid-view");
-          mask-image: url("../../media/sprite.svg#grid-view");
+  -webkit-mask-image: url("../../media/sprite.svg#dashboard-view");
+          mask-image: url("../../media/sprite.svg#dashboard-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.user-counter:before {
-  -webkit-mask-image: url("../../media/sprite.svg#show-view");
-          mask-image: url("../../media/sprite.svg#show-view");
+  -webkit-mask-image: url("../../media/sprite.svg#people-view");
+          mask-image: url("../../media/sprite.svg#people-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.account:before {
-  -webkit-mask-image: url("../../media/sprite.svg#user-view");
-          mask-image: url("../../media/sprite.svg#user-view");
+  -webkit-mask-image: url("../../media/sprite.svg#person-view");
+          mask-image: url("../../media/sprite.svg#person-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.logout:before {
-  -webkit-mask-image: url("../../media/sprite.svg#close-view");
-          mask-image: url("../../media/sprite.svg#close-view");
+  -webkit-mask-image: url("../../media/sprite.svg#logout-view");
+          mask-image: url("../../media/sprite.svg#logout-view");
 }
 
 html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.icon.escape:before {

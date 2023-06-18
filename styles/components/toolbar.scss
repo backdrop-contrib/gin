@@ -91,7 +91,7 @@ html.admin-bar {
 
           a.admin-modules {
             &:before {
-              mask-image: icon('extend');
+              mask-image: icon('functionality');
             }
           }
 
@@ -103,7 +103,7 @@ html.admin-bar {
 
           a.admin-people {
             &:before {
-              mask-image: icon('people');
+              mask-image: icon('useraccount');
             }
           }
 
@@ -115,25 +115,25 @@ html.admin-bar {
 
           a.admin-dashboard {
             &:before {
-              mask-image: icon('grid');
+              mask-image: icon('dashboard');
             }
           }
 
           a.user-counter {
             &:before {
-              mask-image: icon('show');
+              mask-image: icon('people');
             }
           }
 
           a.account {
             &:before {
-              mask-image: icon('user');
+              mask-image: icon('person');
             }
           }
 
           a.logout {
             &:before {
-              mask-image: icon('close');
+              mask-image: icon('logout');
             }
           }
 
