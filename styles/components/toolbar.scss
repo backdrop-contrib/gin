@@ -13,68 +13,102 @@ html.admin-bar {
     box-shadow: 0 0 4px rgba(0, 0, 0, .1),
       0 2px 6px 2px rgba(0, 0, 0, .03);
 
-    #admin-bar-wrapper {
-      ul.dropdown {
-        background-color: var(--tonic-bg-layer);
+    > div {
 
-        ul.dropdown {
-          width: var(--tonic-toolbar-width);
+      // #admin-bar-wrapper.
+      > ul {
+        > li {
+          // #admin-bar-icon, #admin-bar-menu, #admin-bar-extra.
+          color: #ddd;
 
-          li,
-          li.expandable {
+
+          > ul.dropdown {
+            // main admin menu in dropdown mode.
+            background-color: var(--tonic-bg-layer);
+
+
             a {
               border-top: none;
-              padding: 1em 1.3333em;
               background-image: none;
               background-color: var(--tonic-bg-layer);
             }
 
-            a::before {
-              display: none;
-            }
-          }
-
-          li.expandable {
-            a::after {
-              background: var(--tonic-icon-color);
-              mask-repeat: no-repeat;
-              mask-position: center center;
-              mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
-              mask-image: icon('open-right');
-              position: absolute;
-              top: 0;
-              right: 0.6667em;
-              display: block;
-              width: 1.25rem;
-              height: 100%;
-              content: "";
-            }
-
-            a:hover {
-              color: var(--tonic-color-primary-hover);
-              background: var(--tonic-color-primary-light-hover);
-            }
-
-            a.active:hover,
-            a.active-trail:hover {
-              background: var(--tonic-color-primary-light-hover);
-            }
-
             ul {
-              margin: -32px 0 0 var(--tonic-toolbar-width);
-              background-color: var(--tonic-toolbar-bg-level2);
+
+              @include mq(medium) {
+                padding: 0;
+
+                a::before {
+                  display: none;
+                }
+                a,
+                span {
+                  padding: 20px 2.75em 20px 1.25em;
+                }
+              }
+            }
+
+
+          }
+
+          ul.dropdown {
+
+
+            li,
+            li.expandable {
+              // padding: 1em 1.3333em;
+              float: left;
+
+            }
+
+            li.expandable {
+              li.expandable {
+                > a::after {
+                  background: var(--tonic-icon-color);
+                  mask-repeat: no-repeat;
+                  mask-position: center center;
+                  mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+                  mask-image: icon('open-right');
+                  position: absolute;
+                  top: 0;
+                  right: 0.6667em;
+                  display: block;
+                  width: 1.25rem;
+                  height: 100%;
+                  content: "";
+                }
+              }
+
+              a:hover,
+              a.expanded-trail {
+                color: var(--tonic-color-primary-hover);
+                background: var(--tonic-bg-item-hover);
+              }
+
+              a.active:hover,
+              a.active-trail:hover {
+                background: var(--tonic-bg-item-hover);
+              }
+
+              ul ul {
+                width: var(--tonic-toolbar-width);
+                margin: -32px 0 0 var(--tonic-toolbar-width);
+                background-color: var(--tonic-toolbar-bg-level2);
+              }
             }
           }
-        }
 
-        ul.dropdown.expanded {
-          box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
-        }
-
-        li {
+          ul.dropdown.expanded {
+            box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
+          }
 
           li {
-            width: var(--tonic-toolbar-width);
+
+            ul,
+            li {
+              width: var(--tonic-toolbar-width);
+            }
+
           }
 
           a,
@@ -103,16 +137,16 @@ html.admin-bar {
 
           a:hover {
             color: var(--tonic-color-primary-hover);
-            background: var(--tonic-color-primary-light-hover);
+            background: var(--tonic-bg-item-hover);
           }
 
           a.active:hover,
           a.active-trail:hover {
-            background: var(--tonic-color-primary-light-hover);
+            background: var(--tonic-bg-item-hover);
           }
 
           a::before,
-          > span::before {
+          span::before {
             background: var(--tonic-icon-color);
             mask-repeat: no-repeat;
             mask-position: center center;
@@ -210,29 +244,68 @@ html.admin-bar {
           }
         }
       }
-    }
 
-    // Admin Toolbar QuickSearch
-    .admin-bar-search {
-      #admin-bar-search-items {
-        color: var(--tonic-color-text);
-        width: 245px;
-        padding-left: calc(var(--tonic-spacing-xl) + var(--tonic-spacing-xs));
-        background-color: #fff;
-        border: 1px solid var(--tonic-border-color);
-        border-radius: 25px;
-        box-sizing: border-box;
+      #admin-bar-icon.dropdown,
+      #admin-bar-extra.dropdown {
+        ul.dropdown {
+          width: var(--tonic-toolbar-width);
+          li {
+            width: var(--tonic-toolbar-width);
+            ul {
+              margin: -32px 0 0 var(--tonic-toolbar-width);
+            }
+          }
+          a::before {
+            display: none;
+          }
+        }
+      }
 
-        &:not(:hover):not(:focus) {
-          box-shadow: none;
+      // Admin Toolbar QuickSearch
+      .admin-bar-search {
+        .form-type-search {
+          padding: .75em 0;
+          position: relative;
         }
 
-        .tonic--dark-mode & {
-          background-color: rgba(255, 255, 255, .075);
-          border: 1px solid transparent;
+        .form-type-search::before {
+          left: var(--tonic-spacing-m);
+          content: "";
+          opacity: .75;
+          display: block;
+          width: var(--tonic-icon-size-toolbar-secondary);
+          height: var(--tonic-icon-size-toolbar-secondary);
+          position: absolute;
+          top: calc(50% - var(--tonic-icon-size-toolbar-secondary) / 2);
+          background-color: var(--tonic-icon-color);
+          mask-image: icon('search');
+          mask-size: 100% 100%;
+          mask-position: center center;
 
-          &:hover {
-            border-color: var(--tonic-border-color-form-element);
+        }
+
+        #admin-bar-search-items {
+          background-image: none;
+          color: var(--tonic-color-text);
+          width: 245px;
+          padding-left: calc(var(--tonic-spacing-xl) + var(--tonic-spacing-xs));
+          background-color: #fff;
+          border: 1px solid var(--tonic-border-color);
+          border-radius: 25px;
+          box-sizing: border-box;
+          min-height: auto;
+
+          &:not(:hover):not(:focus) {
+            box-shadow: none;
+          }
+
+          .tonic--dark-mode & {
+            background-color: rgba(255, 255, 255, .075);
+            border: 1px solid transparent;
+
+            &:hover {
+              border-color: var(--tonic-border-color-form-element);
+            }
           }
         }
       }
