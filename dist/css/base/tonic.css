@@ -982,7 +982,7 @@ details summary {
 }
 
 .form--inline,
-[data-drupal-selector*=-bulk-form],
+.views-bulk-form,
 .layout-region-node-footer__content {
   display: flex;
   align-items: flex-start;
@@ -992,8 +992,8 @@ details summary {
 
 .form--inline .form-item,
 .form--inline .form-actions,
-[data-drupal-selector*=-bulk-form] .form-item,
-[data-drupal-selector*=-bulk-form] .form-actions,
+.views-bulk-form .form-item,
+.views-bulk-form .form-actions,
 .layout-region-node-footer__content .form-item,
 .layout-region-node-footer__content .form-actions {
   align-self: flex-start;
@@ -1001,8 +1001,8 @@ details summary {
 
 [dir="ltr"] .form--inline .form-item,
 [dir="ltr"] .form--inline .form-actions,
-[dir="ltr"] [data-drupal-selector*=-bulk-form] .form-item,
-[dir="ltr"] [data-drupal-selector*=-bulk-form] .form-actions,
+[dir="ltr"] .views-bulk-form .form-item,
+[dir="ltr"] .views-bulk-form .form-actions,
 [dir="ltr"] .layout-region-node-footer__content .form-item,
 [dir="ltr"] .layout-region-node-footer__content .form-actions {
   margin: var(--tonic-spacing-xs) var(--tonic-spacing-xs) var(--tonic-spacing-xs) 0;
@@ -1010,8 +1010,8 @@ details summary {
 
 [dir="rtl"] .form--inline .form-item,
 [dir="rtl"] .form--inline .form-actions,
-[dir="rtl"] [data-drupal-selector*=-bulk-form] .form-item,
-[dir="rtl"] [data-drupal-selector*=-bulk-form] .form-actions,
+[dir="rtl"] .views-bulk-form .form-item,
+[dir="rtl"] .views-bulk-form .form-actions,
 [dir="rtl"] .layout-region-node-footer__content .form-item,
 [dir="rtl"] .layout-region-node-footer__content .form-actions {
   margin: var(--tonic-spacing-xs) 0 var(--tonic-spacing-xs) var(--tonic-spacing-xs);
@@ -1019,8 +1019,8 @@ details summary {
 
 .form--inline .button,
 .form--inline .action-link,
-[data-drupal-selector*=-bulk-form] .button,
-[data-drupal-selector*=-bulk-form] .action-link,
+.views-bulk-form .button,
+.views-bulk-form .action-link,
 .layout-region-node-footer__content .button,
 .layout-region-node-footer__content .action-link {
   margin-top: 0;
@@ -1028,7 +1028,7 @@ details summary {
 }
 
 .form--inline .field-add-more-submit,
-[data-drupal-selector*=-bulk-form] .field-add-more-submit,
+.views-bulk-form .field-add-more-submit,
 .layout-region-node-footer__content .field-add-more-submit {
   margin-top: var(--tonic-spacing-s);
 }
@@ -1082,8 +1082,8 @@ details summary {
   box-shadow: none;
 }
 
-.block-system > .views-form form,
-.view-content .views-form form {
+.block-system > .views-form form > div,
+.view-content .views-form form > div {
   display: flex;
   flex-direction: column;
 }
@@ -1094,90 +1094,97 @@ details summary {
   margin-top: 0;
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header],
-.view-content .views-form [data-drupal-selector*=edit-header] {
+.block-system > .views-form .views-bulk-form,
+.view-content .views-form .views-bulk-form {
   order: 99;
   position: relative;
-  padding: 0 var(--tonic-spacing-m) var(--tonic-spacing-m) var(--tonic-spacing-m);
+  padding: var(--tonic-spacing-m);
   border-radius: var(--tonic-border-m);
   background: rgba(var(--tonic-color-sticky-rgb), .95);
 }
 
-[dir="ltr"] .block-system > .views-form [data-drupal-selector*=edit-header],
-[dir="ltr"] .view-content .views-form [data-drupal-selector*=edit-header] {
+[dir="ltr"] .block-system > .views-form .views-bulk-form,
+[dir="ltr"] .view-content .views-form .views-bulk-form {
   left: 0;
 }
 
-[dir="rtl"] .block-system > .views-form [data-drupal-selector*=edit-header],
-[dir="rtl"] .view-content .views-form [data-drupal-selector*=edit-header] {
+[dir="rtl"] .block-system > .views-form .views-bulk-form,
+[dir="rtl"] .view-content .views-form .views-bulk-form {
   right: 0;
 }
 
+.block-system > .views-form .views-bulk-form .form-item,
+.view-content .views-form .views-bulk-form .form-item {
+  padding-top: 0;
+  margin: 0;
+}
+
 @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
-  .block-system > .views-form [data-drupal-selector*=edit-header],
-  .view-content .views-form [data-drupal-selector*=edit-header] {
-    opacity: .999; /* Fix Chrome issue with mask */
+  .block-system > .views-form .views-bulk-form,
+  .view-content .views-form .views-bulk-form {
+    opacity: .999;
+    /* Fix Chrome issue with mask */
     background: rgba(var(--tonic-color-sticky-rgb), .9);
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
   }
 
-  .tonic--dark-mode .block-system > .views-form [data-drupal-selector*=edit-header],
-  .tonic--dark-mode .view-content .views-form [data-drupal-selector*=edit-header] {
+  .tonic--dark-mode .block-system > .views-form .views-bulk-form,
+  .tonic--dark-mode .view-content .views-form .views-bulk-form {
     background: rgba(27, 27, 29, .8);
   }
 }
 
-[dir="ltr"] .block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > *,
-[dir="ltr"] .view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > * {
+[dir="ltr"] .block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > *,
+[dir="ltr"] .view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > * {
   margin-right: var(--tonic-spacing-xs);
 }
 
-[dir="rtl"] .block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > *,
-[dir="rtl"] .view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > * {
+[dir="rtl"] .block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > *,
+[dir="rtl"] .view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] > * {
   margin-left: var(--tonic-spacing-xs);
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--select,
-.block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions,
-.view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--select,
-.view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions {
+.block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--select,
+.block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions,
+.view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--select,
+.view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions {
   flex: 0 0 100%;
   max-width: 100%;
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions,
-.view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions {
+.block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions,
+.view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-actions {
   justify-content: flex-end;
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--checkbox,
-.view-content .views-form [data-drupal-selector*=edit-header] [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--checkbox {
+.block-system > .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--checkbox,
+.view-content .views-form .views-bulk-form [data-drupal-selector*=edit-views-bulk-operations-bulk-form] .form-type--checkbox {
   align-self: center;
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]),
-.view-content .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]) {
+.block-system > .views-form .views-bulk-form label:not([for=edit-select-all]),
+.view-content .views-form .views-bulk-form label:not([for=edit-select-all]) {
   display: block;
   top: 2px;
   margin-top: var(--tonic-spacing-xxs);
   line-height: 1.75;
 }
 
-[dir="ltr"] .block-system > .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]),
-[dir="ltr"] .view-content .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]) {
+[dir="ltr"] .block-system > .views-form .views-bulk-form label:not([for=edit-select-all]),
+[dir="ltr"] .view-content .views-form .views-bulk-form label:not([for=edit-select-all]) {
   float: left;
   margin-right: var(--tonic-spacing-m);
 }
 
-[dir="rtl"] .block-system > .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]),
-[dir="rtl"] .view-content .views-form [data-drupal-selector*=edit-header] label:not([for=edit-select-all]) {
+[dir="rtl"] .block-system > .views-form .views-bulk-form label:not([for=edit-select-all]),
+[dir="rtl"] .view-content .views-form .views-bulk-form label:not([for=edit-select-all]) {
   float: right;
   margin-left: var(--tonic-spacing-m);
 }
 
-.block-system > .views-form [data-drupal-selector*=edit-header].is-sticky,
-.view-content .views-form [data-drupal-selector*=edit-header].is-sticky {
+.block-system > .views-form .views-bulk-form.is-sticky,
+.view-content .views-form .views-bulk-form.is-sticky {
   z-index: 4;
   opacity: 1;
   position: sticky;
@@ -1186,13 +1193,13 @@ details summary {
   animation: fadeInBottom 320ms 1 forwards;
 }
 
-[dir="ltr"] .block-system > .views-form [data-drupal-selector*=edit-header].is-sticky,
-[dir="ltr"] .view-content .views-form [data-drupal-selector*=edit-header].is-sticky {
+[dir="ltr"] .block-system > .views-form .views-bulk-form.is-sticky,
+[dir="ltr"] .view-content .views-form .views-bulk-form.is-sticky {
   left: 0;
 }
 
-[dir="rtl"] .block-system > .views-form [data-drupal-selector*=edit-header].is-sticky,
-[dir="rtl"] .view-content .views-form [data-drupal-selector*=edit-header].is-sticky {
+[dir="rtl"] .block-system > .views-form .views-bulk-form.is-sticky,
+[dir="rtl"] .view-content .views-form .views-bulk-form.is-sticky {
   right: 0;
 }
 

@@ -2,6 +2,7 @@
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -31,14 +32,17 @@
 
 .block-system > .views-form,
 .view-content .views-form {
+
   .claro-details,
   fieldset.form-wrapper {
     box-shadow: none;
   }
 
   form {
-    display: flex;
-    flex-direction: column;
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .views-table {
@@ -46,16 +50,22 @@
     margin-top: 0;
   }
 
-  [data-drupal-selector*=edit-header] {
+  .views-bulk-form {
     order: 99;
     position: relative;
     left: 0;
-    padding: 0 var(--tonic-spacing-m) var(--tonic-spacing-m) var(--tonic-spacing-m);
+    padding: var(--tonic-spacing-m);
     border-radius: var(--tonic-border-m);
     background: rgba(var(--tonic-color-sticky-rgb), .95);
 
+    .form-item {
+      padding-top: 0;
+      margin: 0;
+    }
+
     @supports (backdrop-filter: blur()) {
-      opacity: .999; /* Fix Chrome issue with mask */
+      opacity: .999;
+      /* Fix Chrome issue with mask */
       background: rgba(var(--tonic-color-sticky-rgb), .9);
       backdrop-filter: blur(12px);
 
@@ -322,7 +332,9 @@
       a {
         background: var(--tonic-bg-layer2);
 
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
           color: var(--tonic-color-primary);
         }
       }
@@ -346,7 +358,10 @@
         border: none !important;
       }
 
-      &:hover, &:focus, &:active {
+      &:hover,
+      &:focus,
+      &:active {
+
         &,
         input.button {
           color: var(--tonic-color-button-text);
@@ -358,6 +373,7 @@
 }
 
 .views-ui-display-tab-bucket {
+
   // #3186729: Drupal 9.1 fix
   &__header {
     padding: 0;
@@ -429,6 +445,7 @@
 
 .system-modules,
 .locale-translation-status-form {
+
   tr.even,
   tr.odd {
     background: none;
