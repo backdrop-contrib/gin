@@ -60,11 +60,11 @@ $sprites: (
     'group': "../../media/sprite.svg#group-view",
     'hamburger': "../../media/sprite.svg#hamburger-view",
     'help': "../../media/sprite.svg#help-view",
-    'info': "../../media/sprite.svg#info-view",
     'local-tasks': "../../media/sprite.svg#local-tasks-view",
     'logout': "../../media/sprite.svg#logout-view",
     'nav-toggle-toleft': "../../media/sprite.svg#nav-toggle-toleft-view",
     'nav-toggle-totop': "../../media/sprite.svg#nav-toggle-totop-view",
+    'open-right': "../../media/sprite.svg#open-right-view",
     'people': "../../media/sprite.svg#people-view",
     'person': "../../media/sprite.svg#person-view",
     'reports': "../../media/sprite.svg#reports-view",
@@ -320,10 +320,6 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
-    'info': (
-        'width': 24px,
-        'height': 24px
-    ),
     'local-tasks': (
         'width': 24px,
         'height': 24px
@@ -337,6 +333,10 @@ $sizes: (
         'height': 24px
     ),
     'nav-toggle-totop': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'open-right': (
         'width': 24px,
         'height': 24px
     ),

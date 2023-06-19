@@ -12,50 +12,128 @@ html.admin-bar #admin-bar {
   box-shadow: 0 0 4px rgba(0, 0, 0, .1), 0 2px 6px 2px rgba(0, 0, 0, .03);
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li span {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown {
+  background-color: var(--tonic-bg-layer);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown {
+  width: var(--tonic-toolbar-width);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li a,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a {
+  border-top: none;
+  padding: 1em 1.3333em;
+  background-image: none;
+  background-color: var(--tonic-bg-layer);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li a::before,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a::before {
+  display: none;
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a::after {
+  background: var(--tonic-icon-color);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+          mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+  -webkit-mask-image: url("../../media/sprite.svg#open-right-view");
+          mask-image: url("../../media/sprite.svg#open-right-view");
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 1.25rem;
+  height: 100%;
+  content: "";
+}
+
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a::after {
+  right: .6667em;
+}
+
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a::after {
+  left: .6667em;
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a:hover {
+  color: var(--tonic-color-primary-hover);
+  background: var(--tonic-color-primary-light-hover);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a.active:hover,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable a.active-trail:hover {
+  background: var(--tonic-color-primary-light-hover);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable ul {
+  background-color: var(--tonic-toolbar-bg-level2);
+}
+
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable ul {
+  margin: -32px 0 0 var(--tonic-toolbar-width);
+}
+
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown li.expandable ul {
+  margin: -32px var(--tonic-toolbar-width) 0 0;
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown ul.dropdown.expanded {
+  box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li li {
+  width: var(--tonic-toolbar-width);
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li span {
   color: var(--tonic-color-text);
   font-weight: var(--tonic-font-weight-normal);
   text-decoration: none;
   position: relative;
 }
 
-html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a,
-html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li span {
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a,
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li span {
   padding: 20px 1.25em 20px 2.75em;
 }
 
-html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a,
-html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li span {
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a,
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li span {
   padding: 20px 2.75em 20px 1.25em;
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active-trail,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.expanded-trail,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active:hover,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active-trail:hover {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active-trail,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.expanded-trail,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active:hover,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active-trail:hover {
   color: var(--tonic-color-primary);
   text-decoration: none;
   text-shadow: none;
   background: transparent;
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active::before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active::before {
   background: var(--tonic-color-primary);
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a:hover {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a:hover {
   color: var(--tonic-color-primary-hover);
   background: var(--tonic-color-primary-light-hover);
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active:hover,
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.active-trail:hover {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active:hover,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.active-trail:hover {
   background: var(--tonic-color-primary-light-hover);
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a::before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a::before,
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li > span::before {
   background: var(--tonic-icon-color);
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
@@ -73,75 +151,112 @@ html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a::before {
   content: "";
 }
 
-html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a::before {
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a::before,
+html[dir="ltr"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li > span::before {
   left: .6667em;
 }
 
-html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a::before {
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a::before,
+html[dir="rtl"].admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li > span::before {
   right: .6667em;
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a:hover::before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a:hover::before {
   background: var(--tonic-color-primary-hover);
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-content:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-content:before {
   -webkit-mask-image: url("../../media/sprite.svg#content-view");
           mask-image: url("../../media/sprite.svg#content-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-structure:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-structure:before {
   -webkit-mask-image: url("../../media/sprite.svg#structure-view");
           mask-image: url("../../media/sprite.svg#structure-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-appearance:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-appearance:before {
   -webkit-mask-image: url("../../media/sprite.svg#appearance-view");
           mask-image: url("../../media/sprite.svg#appearance-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-modules:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-modules:before {
   -webkit-mask-image: url("../../media/sprite.svg#functionality-view");
           mask-image: url("../../media/sprite.svg#functionality-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-config:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-config:before {
   -webkit-mask-image: url("../../media/sprite.svg#config-view");
           mask-image: url("../../media/sprite.svg#config-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-people:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-people:before {
   -webkit-mask-image: url("../../media/sprite.svg#useraccount-view");
           mask-image: url("../../media/sprite.svg#useraccount-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-reports:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-reports:before {
   -webkit-mask-image: url("../../media/sprite.svg#reports-view");
           mask-image: url("../../media/sprite.svg#reports-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.admin-dashboard:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.admin-dashboard:before {
   -webkit-mask-image: url("../../media/sprite.svg#dashboard-view");
           mask-image: url("../../media/sprite.svg#dashboard-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.user-counter:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.user-counter:before {
   -webkit-mask-image: url("../../media/sprite.svg#people-view");
           mask-image: url("../../media/sprite.svg#people-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.account:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.account:before {
   -webkit-mask-image: url("../../media/sprite.svg#person-view");
           mask-image: url("../../media/sprite.svg#person-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.logout:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.logout:before {
   -webkit-mask-image: url("../../media/sprite.svg#logout-view");
           mask-image: url("../../media/sprite.svg#logout-view");
 }
 
-html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown > li a.icon.escape:before {
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li a.icon.escape:before {
   -webkit-mask-image: url("../../media/sprite.svg#backtosite-view");
           mask-image: url("../../media/sprite.svg#backtosite-view");
+}
+
+html.admin-bar #admin-bar #admin-bar-wrapper ul.dropdown li span.page:before {
+  -webkit-mask-image: url("../../media/sprite.svg#info-view");
+          mask-image: url("../../media/sprite.svg#info-view");
+}
+
+html.admin-bar #admin-bar .admin-bar-search #admin-bar-search-items {
+  color: var(--tonic-color-text);
+  width: 245px;
+  background-color: #fff;
+  border: 1px solid var(--tonic-border-color);
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+html[dir="ltr"].admin-bar #admin-bar .admin-bar-search #admin-bar-search-items {
+  padding-left: calc(var(--tonic-spacing-xl) + var(--tonic-spacing-xs));
+}
+
+html[dir="rtl"].admin-bar #admin-bar .admin-bar-search #admin-bar-search-items {
+  padding-right: calc(var(--tonic-spacing-xl) + var(--tonic-spacing-xs));
+}
+
+html.admin-bar #admin-bar .admin-bar-search #admin-bar-search-items:not(:hover):not(:focus) {
+  box-shadow: none;
+}
+
+.tonic--dark-mode html.admin-bar #admin-bar .admin-bar-search #admin-bar-search-items {
+  background-color: rgba(255, 255, 255, .075);
+  border: 1px solid transparent;
+}
+
+.tonic--dark-mode html.admin-bar #admin-bar .admin-bar-search #admin-bar-search-items:hover {
+  border-color: var(--tonic-border-color-form-element);
 }
 

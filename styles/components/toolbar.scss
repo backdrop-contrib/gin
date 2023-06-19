@@ -15,7 +15,67 @@ html.admin-bar {
 
     #admin-bar-wrapper {
       ul.dropdown {
-        > li {
+        background-color: var(--tonic-bg-layer);
+
+        ul.dropdown {
+          width: var(--tonic-toolbar-width);
+
+          li,
+          li.expandable {
+            a {
+              border-top: none;
+              padding: 1em 1.3333em;
+              background-image: none;
+              background-color: var(--tonic-bg-layer);
+            }
+
+            a::before {
+              display: none;
+            }
+          }
+
+          li.expandable {
+            a::after {
+              background: var(--tonic-icon-color);
+              mask-repeat: no-repeat;
+              mask-position: center center;
+              mask-size: var(--tonic-icon-size-toolbar) var(--tonic-icon-size-toolbar);
+              mask-image: icon('open-right');
+              position: absolute;
+              top: 0;
+              right: 0.6667em;
+              display: block;
+              width: 1.25rem;
+              height: 100%;
+              content: "";
+            }
+
+            a:hover {
+              color: var(--tonic-color-primary-hover);
+              background: var(--tonic-color-primary-light-hover);
+            }
+
+            a.active:hover,
+            a.active-trail:hover {
+              background: var(--tonic-color-primary-light-hover);
+            }
+
+            ul {
+              margin: -32px 0 0 var(--tonic-toolbar-width);
+              background-color: var(--tonic-toolbar-bg-level2);
+            }
+          }
+        }
+
+        ul.dropdown.expanded {
+          box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
+        }
+
+        li {
+
+          li {
+            width: var(--tonic-toolbar-width);
+          }
 
           a,
           span {
@@ -51,7 +111,8 @@ html.admin-bar {
             background: var(--tonic-color-primary-light-hover);
           }
 
-          a::before {
+          a::before,
+          > span::before {
             background: var(--tonic-icon-color);
             mask-repeat: no-repeat;
             mask-position: center center;
@@ -64,7 +125,6 @@ html.admin-bar {
             width: 1.25rem;
             height: 100%;
             content: "";
-
           }
 
           a:hover::before {
@@ -143,6 +203,37 @@ html.admin-bar {
             }
           }
 
+          span.page {
+            &:before {
+              mask-image: icon('info');
+            }
+          }
+        }
+      }
+    }
+
+    // Admin Toolbar QuickSearch
+    .admin-bar-search {
+      #admin-bar-search-items {
+        color: var(--tonic-color-text);
+        width: 245px;
+        padding-left: calc(var(--tonic-spacing-xl) + var(--tonic-spacing-xs));
+        background-color: #fff;
+        border: 1px solid var(--tonic-border-color);
+        border-radius: 25px;
+        box-sizing: border-box;
+
+        &:not(:hover):not(:focus) {
+          box-shadow: none;
+        }
+
+        .tonic--dark-mode & {
+          background-color: rgba(255, 255, 255, .075);
+          border: 1px solid transparent;
+
+          &:hover {
+            border-color: var(--tonic-border-color-form-element);
+          }
         }
       }
     }
