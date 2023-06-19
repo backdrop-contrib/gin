@@ -181,7 +181,7 @@
     display: none;
   }
 
-  #toolbar-item-administration-tray {
+  #admin-bar {
     display: block;
     position: absolute;
     top: 0;

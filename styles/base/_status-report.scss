@@ -3,7 +3,6 @@
 .upgrade-status-summary tr.not-scanned > td.status-info:before {
   background-image: none;
   background-color: var(--tonic-color-text);
-  mask-image: icon('info');
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: 20px 20px;

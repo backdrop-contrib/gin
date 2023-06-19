@@ -21,7 +21,7 @@ stylesheets[all][] = dist/css/components/tabs.css
 ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
 
 ; Remove unwanted core CSS files.
-; stylesheets[all][] = system.theme.css
+stylesheets[all][] = styles/theme/admin_bar.css
 
 ; Add custom JavaScript files.
 ; scripts[] = js/tonic.js

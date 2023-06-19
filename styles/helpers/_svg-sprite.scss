@@ -52,19 +52,26 @@ $sprites: (
     'commerce': "../../media/sprite.svg#commerce-view",
     'config': "../../media/sprite.svg#config-view",
     'content': "../../media/sprite.svg#content-view",
+    'dashboard': "../../media/sprite.svg#dashboard-view",
     'edit': "../../media/sprite.svg#edit-view",
     'extend': "../../media/sprite.svg#extend-view",
     'fallback': "../../media/sprite.svg#fallback-view",
+    'functionality': "../../media/sprite.svg#functionality-view",
     'group': "../../media/sprite.svg#group-view",
     'hamburger': "../../media/sprite.svg#hamburger-view",
     'help': "../../media/sprite.svg#help-view",
     'local-tasks': "../../media/sprite.svg#local-tasks-view",
+    'logout': "../../media/sprite.svg#logout-view",
     'nav-toggle-toleft': "../../media/sprite.svg#nav-toggle-toleft-view",
     'nav-toggle-totop': "../../media/sprite.svg#nav-toggle-totop-view",
+    'open-right': "../../media/sprite.svg#open-right-view",
     'people': "../../media/sprite.svg#people-view",
+    'person': "../../media/sprite.svg#person-view",
     'reports': "../../media/sprite.svg#reports-view",
+    'settings': "../../media/sprite.svg#settings-view",
     'structure': "../../media/sprite.svg#structure-view",
     'tmgmt': "../../media/sprite.svg#tmgmt-view",
+    'useraccount': "../../media/sprite.svg#useraccount-view",
     'webform': "../../media/sprite.svg#webform-view"
 );
 
@@ -281,6 +288,10 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
+    'dashboard': (
+        'width': 24px,
+        'height': 24px
+    ),
     'edit': (
         'width': 24px,
         'height': 24px
@@ -290,6 +301,10 @@ $sizes: (
         'height': 24px
     ),
     'fallback': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'functionality': (
         'width': 24px,
         'height': 24px
     ),
@@ -309,6 +324,10 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
+    'logout': (
+        'width': 24px,
+        'height': 24px
+    ),
     'nav-toggle-toleft': (
         'width': 24px,
         'height': 24px
@@ -317,11 +336,23 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
+    'open-right': (
+        'width': 24px,
+        'height': 24px
+    ),
     'people': (
         'width': 24px,
         'height': 24px
     ),
+    'person': (
+        'width': 24px,
+        'height': 24px
+    ),
     'reports': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'settings': (
         'width': 24px,
         'height': 24px
     ),
@@ -330,6 +361,10 @@ $sizes: (
         'height': 24px
     ),
     'tmgmt': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'useraccount': (
         'width': 24px,
         'height': 24px
     ),

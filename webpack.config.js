@@ -63,10 +63,6 @@ module.exports = {
     'components/upgrade_status': ['./styles/components/upgrade_status.scss'],
     'components/webform': ['./styles/components/webform.scss'],
     'components/workbench': ['./styles/components/workbench.scss'],
-    // Layout
-    'layout/toolbar': ['./styles/layout/toolbar.scss'],
-    'layout/horizontal_toolbar': ['./styles/layout/horizontal_toolbar.scss'],
-    'layout/classic_toolbar': ['./styles/layout/classic_toolbar.scss'],
     // Theme
     'theme/accent': ['./styles/theme/accent.scss'],
     'theme/ckeditor': ['./styles/theme/ckeditor.scss'],
