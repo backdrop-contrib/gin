@@ -34,6 +34,8 @@
   --tonic-bg-layer4: #e2e5ec;
   --tonic-bg-secondary: var(--tonic-bg-layer);
   --tonic-bg-header: #eeeff3;
+  --tonic-input--label-spacing: 1.6875rem;
+  --tonic-space-l: 1.5rem;
   --tonic-pattern: var(--tonic-border-color);
   --tonic-pattern-fallback: var(--tonic-bg-layer2);
   --tonic-pattern-square: .5rem;

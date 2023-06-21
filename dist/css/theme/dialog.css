@@ -42,8 +42,8 @@
   color: var(--tonic-color-primary-active);
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked,
-.ui-dialog .form-boolean--type-radio:checked:not(:disabled),
+.ui-dialog .form-checkbox:checked,
+.ui-dialog .form-radio:checked:not(:disabled),
 .ui-dialog .is-horizontal .tabs__link.is-active::before,
 .ui-dialog .tabs__tab.is-active::before,
 .ui-dialog [open] > .claro-details__summary--accordion:not(:focus):not(:active)::after,
@@ -56,8 +56,8 @@
   border-color: var(--tonic-color-primary);
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked:hover,
-.ui-dialog .form-boolean--type-radio:checked:not(:disabled):hover,
+.ui-dialog .form-checkbox:checked:hover,
+.ui-dialog .form-radio:checked:not(:disabled):hover,
 .ui-dialog .is-horizontal .tabs__link.is-active::before:hover,
 .ui-dialog .tabs__tab.is-active::before:hover,
 .ui-dialog [open] > .claro-details__summary--accordion:not(:focus):not(:active)::after:hover,
@@ -70,8 +70,8 @@
   border-color: var(--tonic-color-primary-hover);
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked:active,
-.ui-dialog .form-boolean--type-radio:checked:not(:disabled):active,
+.ui-dialog .form-checkbox:checked:active,
+.ui-dialog .form-radio:checked:not(:disabled):active,
 .ui-dialog .is-horizontal .tabs__link.is-active::before:active,
 .ui-dialog .tabs__tab.is-active::before:active,
 .ui-dialog [open] > .claro-details__summary--accordion:not(:focus):not(:active)::after:active,
@@ -312,6 +312,202 @@
           mask-position: center center;
 }
 
+.ui-dialog .form-type-radio,
+.ui-dialog .form-type-checkbox {
+  -webkit-margin-start: var(--tonic-input--label-spacing);
+          margin-inline-start: var(--tonic-input--label-spacing);
+  line-height: var(--tonic-space-l);
+}
+
+.ui-dialog .form-type-radio .description,
+.ui-dialog .form-type-checkbox .description {
+  margin: 0;
+}
+
+.ui-dialog .form-type-radio .form-radio,
+.ui-dialog .form-type-radio .form-checkbox,
+.ui-dialog .form-type-checkbox .form-radio,
+.ui-dialog .form-type-checkbox .form-checkbox {
+  position: relative;
+  top: calc(var(--tonic-space-l) / 2);
+  float: inline-start;
+  -webkit-margin-start: calc(var(--tonic-input--label-spacing) * -1);
+          margin-inline-start: calc(var(--tonic-input--label-spacing) * -1);
+  transform: translateY(-50%);
+}
+
+.ui-dialog .form-type-radio.form-item--no-label,
+.ui-dialog .form-type-checkbox.form-item--no-label {
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+}
+
+.ui-dialog .form-type-radio.form-item--no-label .form-radio,
+.ui-dialog .form-type-radio.form-item--no-label .form-checkbox,
+.ui-dialog .form-type-checkbox.form-item--no-label .form-radio,
+.ui-dialog .form-type-checkbox.form-item--no-label .form-checkbox {
+  position: static;
+  float: none;
+  margin-right: 0;
+  margin-left: 0;
+  transform: none;
+}
+
+.ui-dialog .form-item .form-type-radio,
+.ui-dialog .form-item .form-type-checkbox {
+  margin-top: .4em;
+  margin-bottom: .4em;
+}
+
+.ui-dialog .form-radio,
+.ui-dialog .form-checkbox {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1.125rem;
+  height: 1.125rem;
+  vertical-align: text-bottom;
+  border: 1px solid var(--tonic-border-color-form-element);
+  border-radius: 2px;
+  background: var(--tonic-bg-input) no-repeat 50% 50%;
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 4px transparent;
+  -webkit-appearance: none;
+          appearance: none;
+  padding: 0;
+}
+
+@media (forced-colors: active) {
+  .ui-dialog .form-radio,
+  .ui-dialog .form-checkbox {
+    -webkit-appearance: auto;
+            appearance: auto;
+  }
+}
+
+.ui-dialog .form-radio {
+  width: 1.1875rem;
+  height: 1.1875rem;
+  border-radius: 1.1875rem;
+}
+
+.ui-dialog .form-radio:active,
+.ui-dialog .form-checkbox:active,
+.ui-dialog .form-radio:hover,
+.ui-dialog .form-checkbox:hover {
+  border-color: var(--tonic-color-text);
+  box-shadow: inset 0 0 0 1px var(--tonic-color-text);
+}
+
+.ui-dialog .form-radio:focus:active,
+.ui-dialog .form-checkbox:focus:active,
+.ui-dialog .form-radio:focus:hover,
+.ui-dialog .form-checkbox:focus:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--tonic-color-focus), inset 0 0 0 1px var(--tonic-color-text);
+}
+
+.ui-dialog .form-checkbox:checked {
+  border-color: var(--tonic-color-focus-border);
+  background-color: var(--tonic-color-focus-border);
+  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.ui-dialog .form-checkbox:checked:active,
+.ui-dialog .form-checkbox:checked:hover {
+  border-color: var(--tonic-color-text);
+  background-color: var(--tonic-color-text);
+}
+
+.ui-dialog .form-radio:checked {
+  border-color: var(--tonic-color-focus-border);
+  background-image: url("data:image/svg+xml,%3csvg width='17' height='17' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle r='4.5' cx='8.5' cy='8.5' fill='%23003ecc'/%3e%3c/svg%3e");
+  box-shadow: inset 0 0 0 1px var(--tonic-color-focus-border);
+}
+
+.ui-dialog .form-radio:checked:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--tonic-color-focus), inset 0 0 0 1px var(--tonic-color-focus-border);
+}
+
+.ui-dialog .form-radio:checked:active,
+.ui-dialog .form-radio:checked:hover {
+  border-color: var(--tonic-color-text);
+  background-image: url("data:image/svg+xml,%3csvg width='17' height='17' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle r='4.5' cx='8.5' cy='8.5' fill='%23000f33'/%3e%3c/svg%3e");
+  box-shadow: inset 0 0 0 1px var(--tonic-color-text);
+}
+
+.ui-dialog .form-radio:checked:focus:active,
+.ui-dialog .form-radio:checked:focus:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--tonic-color-focus), inset 0 0 0 1px var(--tonic-color-text);
+}
+
+.ui-dialog .form-radio.error,
+.ui-dialog .form-checkbox.error {
+  border-color: var(--tonic-color-danger);
+  background-color: var(--tonic-bg-input);
+  box-shadow: inset 0 0 0 1px var(--tonic-color-danger);
+}
+
+.ui-dialog .form-radio.error:active, .ui-dialog .form-radio.error:hover,
+.ui-dialog .form-checkbox.error:active,
+.ui-dialog .form-checkbox.error:hover {
+  box-shadow: inset 0 0 0 1px var(--tonic-color-danger);
+}
+
+.ui-dialog .form-radio.error:focus, .ui-dialog .form-radio.error:focus:active, .ui-dialog .form-radio.error:focus:hover,
+.ui-dialog .form-checkbox.error:focus,
+.ui-dialog .form-checkbox.error:focus:active,
+.ui-dialog .form-checkbox.error:focus:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--tonic-color-focus), inset 0 0 0 1px var(--tonic-color-danger);
+}
+
+.ui-dialog .form-radio.error:checked:active, .ui-dialog .form-radio.error:checked:hover,
+.ui-dialog .form-checkbox.error:checked:active,
+.ui-dialog .form-checkbox.error:checked:hover {
+  border-color: var(--tonic-color-danger);
+  background-color: var(--tonic-bg-input);
+}
+
+.ui-dialog .form-checkbox.error:checked,
+.ui-dialog .form-checkbox.error:checked:active,
+.ui-dialog .form-checkbox.error:checked:hover {
+  background-color: var(--tonic-color-danger);
+}
+
+.ui-dialog .form-radio.error:checked,
+.ui-dialog .form-radio.error:checked:active,
+.ui-dialog .form-radio.error:checked:hover {
+  background-image: url("data:image/svg+xml,%3csvg width='17' height='17' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle r='4.5' cx='8.5' cy='8.5' fill='%23d72222'/%3e%3c/svg%3e");
+}
+
+.ui-dialog .form-radio.error:checked:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--tonic-color-focus), inset 0 0 0 1px var(--tonic-color-danger);
+}
+
+.ui-dialog .form-radio[disabled],
+.ui-dialog .form-checkbox[disabled],
+.ui-dialog .form-radio[disabled]:hover,
+.ui-dialog .form-checkbox[disabled]:hover,
+.ui-dialog .form-radio[disabled].error,
+.ui-dialog .form-checkbox[disabled].error,
+.ui-dialog .form-radio[disabled].error:hover,
+.ui-dialog .form-checkbox[disabled].error:hover,
+.ui-dialog .form-radio[disabled]:focus:active,
+.ui-dialog .form-radio[disabled]:active:hover,
+.ui-dialog .form-radio[disabled].error:active:hover {
+  border-color: var(--tonic-color-disabled-border);
+  background-color: var(--tonic-color-disabled-bg);
+  background-image: none;
+  box-shadow: none;
+}
+
+.ui-dialog .form-checkbox[disabled]:checked {
+  background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%2382828c'/%3e%3c/svg%3e");
+}
+
+.ui-dialog .form-radio[disabled]:checked,
+.ui-dialog .form-radio[disabled].error:checked {
+  background-image: url("data:image/svg+xml,%3csvg width='17' height='17' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle r='4.5' cx='8.5' cy='8.5' fill='%2382828c'/%3e%3c/svg%3e");
+}
+
 .ui-dialog .form-item > input,
 .ui-dialog .form-item > select {
   color: var(--tonic-color-text);
@@ -355,13 +551,15 @@
   color-scheme: dark;
 }
 
-.ui-dialog .form-item .form-type-radio {
-  margin: 0;
+.ui-dialog .form-item {
+  -webkit-margin-before: var(--tonic-space-l);
+          margin-block-start: var(--tonic-space-l);
+  -webkit-margin-after: var(--tonic-space-l);
+          margin-block-end: var(--tonic-space-l);
 }
 
 .ui-dialog .form-item .form-type-radio > input {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
   min-height: 1.1rem;
 }
 
@@ -439,30 +637,31 @@
   background-position: 0% 52%;
 }
 
-.ui-dialog .form-boolean {
+.ui-dialog .form-radio,
+.ui-dialog .form-checkbox {
   width: 21px;
   height: 21px;
   border-color: var(--tonic-border-color-form-element);
   border-radius: var(--tonic-border-xs);
 }
 
-.tonic--dark-mode .ui-dialog .form-boolean--type-checkbox:not(:checked) {
+.tonic--dark-mode .ui-dialog .form-checkbox:not(:checked) {
   background: var(--tonic-bg-input);
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked {
+.ui-dialog .form-checkbox:checked {
   background-color: var(--tonic-color-primary);
 }
 
-.tonic--dark-mode .ui-dialog .form-boolean--type-checkbox:checked:not(:disabled) {
+.tonic--dark-mode .ui-dialog .form-checkbox:checked:not(:disabled) {
   background-image: url("../../media/sprite.svg#checked-view");
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked:hover {
+.ui-dialog .form-checkbox:checked:hover {
   background-color: var(--tonic-color-primary-hover);
 }
 
-.ui-dialog .form-boolean--type-checkbox:checked:active {
+.ui-dialog .form-checkbox:checked:active {
   background-color: var(--tonic-color-primary-active);
 }
 
@@ -630,68 +829,64 @@
   padding-right: var(--tonic-spacing-xxs);
 }
 
-.tonic--dark-mode .ui-dialog .form-boolean:hover, .tonic--dark-mode .ui-dialog .form-boolean:active {
+.tonic--dark-mode .ui-dialog .form-item > .form-radio:hover, .tonic--dark-mode .ui-dialog .form-item > .form-radio:active,
+.tonic--dark-mode .ui-dialog .form-item > .form-checkbox:hover,
+.tonic--dark-mode .ui-dialog .form-item > .form-checkbox:active {
   box-shadow: none;
   border-color: var(--tonic-color-text);
 }
 
-.ui-dialog .form-boolean--type-radio, .ui-dialog .form-boolean--type-radio:hover, .ui-dialog .form-boolean--type-radio:active, .ui-dialog .form-boolean--type-radio:focus, .ui-dialog .form-boolean--type-radio:hover:focus {
+.ui-dialog .form-item > .form-radio, .ui-dialog .form-item > .form-radio:hover, .ui-dialog .form-item > .form-radio:active, .ui-dialog .form-item > .form-radio:focus, .ui-dialog .form-item > .form-radio:hover:focus {
   background-image: none;
   background-color: var(--tonic-bg-input);
   border-color: var(--tonic-border-color-form-element);
   border-radius: 50%;
 }
 
-.ui-dialog .form-boolean--type-radio:hover {
+.ui-dialog .form-item > .form-radio:hover {
   box-shadow: inset 0 0 0 1px var(--tonic-border-color-layer2);
 }
 
-.ui-dialog .form-boolean--type-radio:hover, .tonic--dark-mode .ui-dialog .form-boolean--type-radio:hover {
+.ui-dialog .form-item > .form-radio:hover, .tonic--dark-mode .ui-dialog .form-item > .form-radio:hover {
   border-color: var(--tonic-color-text);
 }
 
-.ui-dialog .form-boolean--type-radio:active, .ui-dialog .form-boolean--type-radio:focus {
+.ui-dialog .form-item > .form-radio:active, .ui-dialog .form-item > .form-radio:focus {
   box-shadow: inset 0 0 0 1px var(--tonic-border-color-layer2), 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
 }
 
-.ui-dialog .form-boolean--type-radio:checked:not(:disabled), .ui-dialog .form-boolean--type-radio:checked:not(:disabled):hover {
+.ui-dialog .form-item > .form-radio:checked:not(:disabled), .ui-dialog .form-item > .form-radio:checked:not(:disabled):hover {
   background-image: none;
   background-color: var(--tonic-bg-layer);
   box-shadow: inset 0 0 0 5px var(--tonic-color-primary);
 }
 
-.ui-dialog .form-boolean--type-radio:checked:not(:disabled):active, .ui-dialog .form-boolean--type-radio:checked:not(:disabled):focus, .ui-dialog .form-boolean--type-radio:checked:not(:disabled):hover:focus {
+.ui-dialog .form-item > .form-radio:checked:not(:disabled):active, .ui-dialog .form-item > .form-radio:checked:not(:disabled):focus, .ui-dialog .form-item > .form-radio:checked:not(:disabled):hover:focus {
   box-shadow: inset 0 0 0 5px var(--tonic-color-primary), 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
   border-color: var(--tonic-color-focus-border);
 }
 
-.ui-dialog .form-boolean--type-radio:disabled, .ui-dialog .form-boolean--type-radio:disabled:hover {
+.ui-dialog .form-item > .form-radio:disabled, .ui-dialog .form-item > .form-radio:disabled:hover {
   cursor: not-allowed;
   background: var(--tonic-color-disabled-bg);
   border-color: var(--tonic-color-disabled-border);
 }
 
-.ui-dialog .form-boolean--type-radio:checked:disabled, .ui-dialog .form-boolean--type-radio:checked:disabled:hover {
+.ui-dialog .form-item > .form-radio:checked:disabled, .ui-dialog .form-item > .form-radio:checked:disabled:hover {
   background: var(--tonic-color-disabled);
   box-shadow: inset 0 0 0 5px var(--tonic-color-disabled-bg);
 }
 
-.ui-dialog .form-boolean--type-checkbox[disabled], .ui-dialog .form-boolean--type-checkbox[disabled]:hover {
+.ui-dialog .form-item > .form-checkbox[disabled], .ui-dialog .form-item > .form-checkbox[disabled]:hover {
   cursor: not-allowed;
   background-color: var(--tonic-color-disabled-bg);
   border-color: var(--tonic-color-disabled-border);
 }
 
-.ui-dialog .form-boolean--type-checkbox[disabled]:checked, .ui-dialog .form-boolean--type-checkbox[disabled]:hover:checked {
+.ui-dialog .form-item > .form-checkbox[disabled]:checked, .ui-dialog .form-item > .form-checkbox[disabled]:hover:checked {
   border-color: var(--tonic-color-disabled-border);
   background-color: var(--tonic-color-disabled-bg);
   box-shadow: none;
-}
-
-.ui-dialog .form-radios .form-type--boolean,
-.ui-dialog .form-checkboxes .form-type--boolean {
-  margin-top: var(--tonic-spacing-xs);
-  margin-bottom: var(--tonic-spacing-xs);
 }
 
 .ui-dialog .form-actions {
@@ -743,7 +938,7 @@
   color: var(--tonic-color-danger);
 }
 
-.ui-dialog .form-item__description,
+.ui-dialog .form-item .description,
 .ui-dialog .fieldset__description {
   max-width: 520px;
   color: var(--tonic-color-text-light);
@@ -871,8 +1066,14 @@
   margin-bottom: var(--tonic-spacing-m);
 }
 
-.ui-dialog .field-plugin-settings-edit-form .form-boolean-group .form-item {
+.ui-dialog .field-plugin-settings-edit-form .form-type-radios .form-item,
+.ui-dialog .field-plugin-settings-edit-form .form-type-checkboxes .form-item {
   margin-top: var(--tonic-spacing-xs);
   margin-bottom: var(--tonic-spacing-xs);
+}
+
+.ui-dialog .form-type-checkbox > input {
+  min-height: 21px;
+  padding: 0;
 }
 

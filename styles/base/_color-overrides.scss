@@ -39,8 +39,8 @@ button.link,
 }
 
 // Border color
-.form-boolean--type-checkbox:checked,
-.form-boolean--type-radio:checked:not(:disabled),
+.form-checkbox:checked,
+.form-radio:checked:not(:disabled),
 .is-horizontal .tabs__link.is-active::before,
 .tabs__tab.is-active::before,
 [open] > .claro-details__summary--accordion:not(:focus):not(:active)::after,

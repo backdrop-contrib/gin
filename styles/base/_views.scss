@@ -122,20 +122,23 @@
   margin-bottom: var(--tonic-spacing-l);
 
   label {
-    font-weight: var(--gin-font-weight-semibold);
+    font-weight: var(--tonic-font-weight-semibold);
   }
 
   .form-select {
     max-width: 240px;
   }
 
-  .form-type--boolean .form-boolean {
-    margin-left: 0;
-    margin-right: var(--tonic-spacing-xs);
+  .form-type-radio,
+  .form-type-checkbox {
+    .form-boolean {
+      margin-inline-start: 0;
+      margin-inline-end: var(--tonic-spacing-xs);
+    }
   }
 
   // Single on/off checkbox (through Better Exposed Filters)
-  .form-type--boolean.form-type--checkbox {
+  .form-type-checkbox {
     margin-top: auto;
     margin-bottom: var(--tonic-spacing-s);
 

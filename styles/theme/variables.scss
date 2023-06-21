@@ -23,7 +23,7 @@
   --tonic-bg-danger-light: rgba(222, 117, 96, .1);
   --tonic-color-green: #058260;
   --tonic-color-green-light: #32cea4;
-  --tonic-color-green-lightest:  #{mix(white, #32cea4, 60%)};
+  --tonic-color-green-lightest: #{mix(white, #32cea4, 60%)};
   --tonic-bg-green: #{mix(black, #32cea4, 60%)};
   --tonic-bg-green-light: rgba(72, 171, 123, .1);
   --tonic-color-info: #082538;
@@ -41,6 +41,10 @@
   --tonic-bg-layer4: #e2e5ec;
   --tonic-bg-secondary: var(--tonic-bg-layer);
   --tonic-bg-header: #eeeff3; //#e6e8ef;
+
+  // Input
+  --tonic-input--label-spacing: 1.6875rem;
+  --tonic-space-l: 1.5rem;
 
   // Color pattern
   --tonic-pattern: var(--tonic-border-color);
@@ -79,7 +83,8 @@
   }
 
   // Spacings
-  @each $name, $size in $tonicSpacings {
+  @each $name,
+  $size in $tonicSpacings {
     --tonic-spacing-#{$name}: #{rem($size)};
   }
 
@@ -117,12 +122,12 @@
 
   // Shadows
   --tonic-shadow-l1: 0 1px 2px rgb(20 45 82 / 2%),
-               0 3px 4px rgb(20 45 82 / 3%),
-               0 5px 8px rgb(20 45 82 / 4%);
+  0 3px 4px rgb(20 45 82 / 3%),
+  0 5px 8px rgb(20 45 82 / 4%);
   --tonic-shadow-l2: 0 1px 2px rgb(20 45 82 / 2%),
-                0 3px 4px rgb(20 45 82 / 3%),
-                0 5px 8px rgb(20 45 82 / 4%),
-                0 20px 24px rgb(20 45 82 / 12%);
+  0 3px 4px rgb(20 45 82 / 3%),
+  0 5px 8px rgb(20 45 82 / 4%),
+  0 20px 24px rgb(20 45 82 / 12%);
 
   // Sticky bar
   --tonic-height-sticky: 72px;
@@ -136,6 +141,7 @@
   // Sidebar
   --tonic-sidebar-width: 320px;
   --tonic-sidebar-offset: var(--tonic-sidebar-width);
+
   @include mq(wide) {
     --tonic-sidebar-width: 360px;
   }
@@ -149,16 +155,23 @@
 }
 
 // Density spacings
-@each $name, $density in $tonicLayoutDensity {
-  @if $name == 'default' {
+@each $name,
+$density in $tonicLayoutDensity {
+  @if $name =='default' {
     :root {
-      @each $name, $size in $tonicSpacings {
+
+      @each $name,
+      $size in $tonicSpacings {
         --tonic-spacing-density-#{$name}: #{rem($size * $density)};
       }
     }
-  } @else {
+  }
+
+  @else {
     [data-tonic-layout-density=#{$name}] {
-      @each $name, $size in $tonicSpacings {
+
+      @each $name,
+      $size in $tonicSpacings {
         --tonic-spacing-density-#{$name}: #{rem($size * $density)};
       }
     }
@@ -166,10 +179,10 @@
 }
 
 .tonic--dark-mode {
-   // Text
-   --tonic-color-title: #fff;
-   --tonic-color-text: #d2d3d3;
-   --tonic-color-text-light: #9e9fa0;
+  // Text
+  --tonic-color-title: #fff;
+  --tonic-color-text: #d2d3d3;
+  --tonic-color-text-light: #9e9fa0;
 
   // Buttons
   --tonic-shadow-button: rgba(#111, .9);
@@ -228,12 +241,12 @@
 
   // Shadows
   --tonic-shadow-l1: 0 1px 2px rgb(0 0 0 / 2%),
-               0 3px 4px rgb(0 0 0 / 3%),
-               0 5px 8px rgb(0 0 0 / 4%);
+    0 3px 4px rgb(0 0 0 / 3%),
+    0 5px 8px rgb(0 0 0 / 4%);
   --tonic-shadow-l2: 0 1px 2px rgb(0 0 0 / 2%),
-                0 3px 4px rgb(0 0 0 / 3%),
-                0 5px 8px rgb(0 0 0 / 4%),
-                0 20px 24px rgb(0 0 0 / 12%);
+    0 3px 4px rgb(0 0 0 / 3%),
+    0 5px 8px rgb(0 0 0 / 4%),
+    0 20px 24px rgb(0 0 0 / 12%);
 
   // Icons
   --tonic-icon-color: #888;
