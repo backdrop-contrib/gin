@@ -139,10 +139,12 @@ fieldset.form-wrapper {
     .fieldset-legend {
       display: block;
       width: 100%;
-      padding: 0;
+      padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
       margin: 0;
       background: transparent;
-      border-radius: var(--tonic-border-m);
+      border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
+      color: var(--tonic-color-text);
+      font-weight: var(--tonic-font-weight-bold);
 
       span.summary:empty {
         display: none;
@@ -150,10 +152,8 @@ fieldset.form-wrapper {
 
       .fieldset-title {
         display: block;
-        color: var(--tonic-color-text);
-        font-weight: var(--tonic-font-weight-bold);
-        width: 100%;
         padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
+        width: 100%;
         margin: 0;
         background: transparent;
         border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
@@ -186,7 +186,12 @@ fieldset.form-wrapper {
       }
     }
 
+    .fieldset-legend:has(.fieldset-title) {
+      padding: 0;
+    }
+
     .fieldset-legend:hover {
+      background: var(--tonic-bg-layer2);
 
       .fieldset-title {
         background: var(--tonic-bg-item-hover);

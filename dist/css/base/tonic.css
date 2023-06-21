@@ -534,10 +534,12 @@ fieldset.form-wrapper > legend {
 fieldset.form-wrapper > legend .fieldset-legend {
   display: block;
   width: 100%;
-  padding: 0;
+  padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
   margin: 0;
   background: transparent;
-  border-radius: var(--tonic-border-m);
+  border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
+  color: var(--tonic-color-text);
+  font-weight: var(--tonic-font-weight-bold);
 }
 
 fieldset.form-wrapper > legend .fieldset-legend span.summary:empty {
@@ -546,10 +548,8 @@ fieldset.form-wrapper > legend .fieldset-legend span.summary:empty {
 
 fieldset.form-wrapper > legend .fieldset-legend .fieldset-title {
   display: block;
-  color: var(--tonic-color-text);
-  font-weight: var(--tonic-font-weight-bold);
-  width: 100%;
   padding: var(--tonic-spacing-m) var(--tonic-spacing-l);
+  width: 100%;
   margin: 0;
   background: transparent;
   border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
@@ -592,6 +592,14 @@ fieldset.form-wrapper > legend .fieldset-legend .fieldset-title::before {
 fieldset.form-wrapper > legend .fieldset-legend .fieldset-title:focus {
   background: var(--tonic-bg-item-hover);
   box-shadow: 0 0 0 1px var(--tonic-color-focus-border), 0 0 0 4px var(--tonic-color-focus);
+}
+
+fieldset.form-wrapper > legend .fieldset-legend:has(.fieldset-title) {
+  padding: 0;
+}
+
+fieldset.form-wrapper > legend .fieldset-legend:hover {
+  background: var(--tonic-bg-layer2);
 }
 
 fieldset.form-wrapper > legend .fieldset-legend:hover .fieldset-title {
