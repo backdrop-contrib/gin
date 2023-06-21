@@ -6,8 +6,7 @@
   margin-bottom: -240px;
 }
 
-table.sticky-header {
-  visibility: hidden;
+table.sticky-header > thead {
   z-index: 98;
   position: fixed;
   left: auto !important;
@@ -55,8 +54,70 @@ table {
     background: transparent;
     border-radius: var(--tonic-border-m);
 
+    th {
+      border-bottom: none;
+      padding: var(--tonic-spacing-xs) var(--tonic-spacing-m);
+      position: relative;
+
+      &.active img {
+        display: none;
+      }
+
+      > a {
+        display: block;
+        padding: var(--tonic-spacing-xs) 1.5rem var(--tonic-spacing-xs) 0;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      > a::before {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        right: 1rem;
+        left: 1rem;
+        display: block;
+        content: "";
+        border-bottom: 0.125rem solid transparent;
+      }
+
+      > a::after {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        width: 0.875rem;
+        height: 1rem;
+        margin-top: -0.5rem;
+        content: "";
+        opacity: 0.5;
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-image: icon('sort');
+        background: var(--tonic-color-text-light);
+      }
+
+      > a {
+
+        border-bottom: .175rem solid transparent;
+
+        &,
+        &:hover,
+        &:active {
+          color: var(--tonic-color-primary-active);
+        }
+
+        &:hover,
+        &:active {
+          &::before {
+            border-bottom-color: var(--tonic-color-primary-active);
+          }
+        }
+      }
+    }
+
     tr {
-      border-bottom: 1px solid var(--tonic-border-color-table-header);
+      border-bottom: none;
 
       &:hover {
         background: transparent;
@@ -68,8 +129,10 @@ table {
     font-size: var(--tonic-font-size-s);
     font-weight: var(--tonic-font-weight-bold);
     background: var(--tonic-bg-layer);
+    padding: var(--tonic-spacing-xs) var(--tonic-spacing-m);
 
-    &, label {
+    &,
+    label {
       color: var(--tonic-color-title);
     }
 
@@ -128,31 +191,6 @@ table {
 
     .group-label {
       color: var(--tonic-color-title);
-    }
-  }
-}
-
-.sortable-heading {
-  padding: var(--tonic-spacing-xs) var(--tonic-spacing-m);
-
-  > a::before {
-    bottom: -1px;
-  }
-
-  > a::after {
-    background: var(--tonic-color-text-light);
-    mask-image: icon('sort');
-    mask-repeat: no-repeat;
-    mask-position: center center;
-  }
-
-  &.is-active > a {
-    &, &:hover, &:active {
-      color: var(--tonic-color-primary-active);
-    }
-
-    &::before {
-      border-bottom: .1875rem solid var(--tonic-color-primary-active);
     }
   }
 }

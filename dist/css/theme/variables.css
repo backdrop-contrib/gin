@@ -89,6 +89,9 @@
   --tonic-height-sticky: 72px;
   --tonic-toolbar-width-collapsed: 66px;
   --tonic-toolbar-width: 256px;
+  --tonic-toolbar-height: 53px;
+  --tonic-toolbar-y-offset: var(--tonic-toolbar-height);
+  --tonic-toolbar-x-offset: 0px;
   --tonic-toolbar-bg-level2: #edeff5;
   --tonic-toolbar-bg-level3: rgba(44, 45, 47, .05);
   --tonic-sidebar-width: 320px;

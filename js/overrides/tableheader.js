@@ -59,7 +59,7 @@
       this.handleResize(table);
     },
     syncSelectAll: () => {
-      document.querySelectorAll('table.sticky-header th.select-all').forEach(tableHeaderSticky => {
+      document.querySelectorAll('table.sticky-header > thead th.select-all').forEach(tableHeaderSticky => {
         const table = tableHeaderSticky.closest('table');
         table.querySelectorAll(':scope th.select-all').forEach(tableHeader => {
           tableHeader.addEventListener('click', event => {
@@ -75,8 +75,8 @@
     handleResize: (table) => {
       const header = table.querySelector(':scope > thead');
       header.querySelectorAll('th').forEach((el, i) => {
-        table.querySelector(`table.sticky-header > thead th:nth-of-type(${i+1})`).style.width = `${el.offsetWidth}px`;
-        table.querySelector(`table.sticky-header`).style.width = `${el.parentNode.offsetWidth}px`;
+        table.querySelector(`table.sticky-header > thead thead th:nth-of-type(${i+1})`).style.width = `${el.offsetWidth}px`;
+        table.querySelector(`table.sticky-header > thead`).style.width = `${el.parentNode.offsetWidth}px`;
       });
     },
 
