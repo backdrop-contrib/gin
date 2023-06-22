@@ -5204,6 +5204,10 @@ html.admin-bar #admin-bar > div > ul > li span.page:before {
           mask-image: url("../../media/sprite.svg#info-view");
 }
 
+html.admin-bar #admin-bar > div > ul#admin-bar-icon > li ul.dropdown.expanded {
+  box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
+}
+
 html.admin-bar #admin-bar > div #admin-bar-icon.dropdown ul.dropdown,
 html.admin-bar #admin-bar > div #admin-bar-extra.dropdown ul.dropdown {
   width: var(--tonic-toolbar-width);

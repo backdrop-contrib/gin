@@ -41,6 +41,7 @@ html.admin-bar {
                 a::before {
                   display: none;
                 }
+
                 a,
                 span {
                   padding: 20px 2.75em 20px 1.25em;
@@ -245,16 +246,27 @@ html.admin-bar {
         }
       }
 
+      > ul#admin-bar-icon {
+        > li {
+          ul.dropdown.expanded {
+            box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
+          }
+        }
+      }
+
       #admin-bar-icon.dropdown,
       #admin-bar-extra.dropdown {
         ul.dropdown {
           width: var(--tonic-toolbar-width);
+
           li {
             width: var(--tonic-toolbar-width);
+
             ul {
               margin: -32px 0 0 var(--tonic-toolbar-width);
             }
           }
+
           a::before {
             display: none;
           }
@@ -307,10 +319,11 @@ html.admin-bar {
               border-color: var(--tonic-border-color-form-element);
             }
           }
-                        &:hover {
-                          border-color: var(--tonic-color-text);
-                          box-shadow: inset 0 0 0 1px var(--tonic-color-text);
-                        }
+
+          &:hover {
+            border-color: var(--tonic-color-text);
+            box-shadow: inset 0 0 0 1px var(--tonic-color-text);
+          }
 
 
         }
