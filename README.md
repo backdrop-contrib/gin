@@ -36,8 +36,9 @@ Tonic is a work in progress and may have dramatic changes before the first offic
 ## Credits
 - Inspired by and largely forked from [Gin](https://www.drupal.org/project/gin) which is "built on the foundation of Claro".
 - Tonic is supported by [Aten Design Group](https://atendesigngroup.com).
-- Ported to Backdrop Laryn Kragt Bakker ([@laryn](https://github.com/laryn)).
+- Ported to Backdrop by Laryn Kragt Bakker ([@laryn](https://github.com/laryn)).
 - Maintained for Drupal by Sascha Eggenberger ([@saschaeggi](https://www.drupal.org/u/saschaeggi)).
+- Icons from Gin may still be used in places, and others have been replaced with icons from Google Material icons, which are licensed under the Apache License Version 2.0.
 
 ## License
 
