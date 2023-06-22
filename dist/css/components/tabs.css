@@ -163,6 +163,7 @@ fieldset.form-wrapper {
 .horizontal-tabs ul.horizontal-tabs-list .tabs__tab,
 .horizontal-tabs ul.horizontal-tabs-list .horizontal-tab-button {
   position: relative;
+  list-style: none;
 }
 
 .is-horizontal .tabs--primary .tabs__tab:focus-within::after,
@@ -318,6 +319,12 @@ fieldset.form-wrapper {
   padding: var(--tonic-spacing-xs) var(--tonic-spacing-m) var(--tonic-spacing-m);
   font-size: var(--tonic-font-size-s);
   border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
+  border-bottom: .1875rem solid transparent;
+}
+
+.is-horizontal .tabs--secondary .tabs__link.active {
+  color: var(--tonic-color-primary);
+  border-bottom-color: var(--tonic-color-primary);
 }
 
 .horizontal-tabs {

@@ -50,8 +50,7 @@
 
 .tabs__link,
 .claro-details__summary,
-.horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a
-{
+.horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a {
   color: var(--tonic-color-text);
   font-size: var(--tonic-font-size);
   font-weight: var(--tonic-font-weight-bold);
@@ -72,6 +71,7 @@
 
 .is-horizontal .tabs__link,
 .horizontal-tabs ul.horizontal-tabs-list li.horizontal-tab-button a {
+
   &:hover,
   &:focus {
     color: var(--tonic-color-primary);
@@ -136,6 +136,7 @@ fieldset.form-wrapper {
   .tabs__tab,
   .horizontal-tab-button {
     position: relative;
+    list-style: none;
 
     &:focus-within {
       &::after {
@@ -262,6 +263,12 @@ fieldset.form-wrapper {
     padding: var(--tonic-spacing-xs) var(--tonic-spacing-m) var(--tonic-spacing-m);
     font-size: var(--tonic-font-size-s);
     border-radius: var(--tonic-border-m) var(--tonic-border-m) 0 0;
+    border-bottom: .1875rem solid transparent;
+
+    &.active {
+      color: var(--tonic-color-primary);
+      border-bottom-color: var(--tonic-color-primary);
+    }
   }
 }
 
@@ -384,6 +391,7 @@ fieldset.form-wrapper {
 }
 
 .tonic--dark-mode {
+
   .claro-details,
   fieldset.form-wrapper,
   .claro-details__summary--accordion,
@@ -463,6 +471,7 @@ fieldset.form-wrapper {
   }
 
   &__menu-item {
+
     &::before,
     &::after {
       border-color: var(--tonic-border-color);
