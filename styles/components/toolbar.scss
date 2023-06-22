@@ -98,7 +98,7 @@ html.admin-bar {
             }
           }
 
-          ul.dropdown.expanded {
+          ul ul.dropdown.expanded {
             box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
           }
 
@@ -307,6 +307,12 @@ html.admin-bar {
               border-color: var(--tonic-border-color-form-element);
             }
           }
+                        &:hover {
+                          border-color: var(--tonic-color-text);
+                          box-shadow: inset 0 0 0 1px var(--tonic-color-text);
+                        }
+
+
         }
       }
     }

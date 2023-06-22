@@ -106,7 +106,7 @@ html[dir="rtl"].admin-bar #admin-bar > div > ul > li ul.dropdown li.expandable u
   margin: -32px var(--tonic-toolbar-width) 0 0;
 }
 
-html.admin-bar #admin-bar > div > ul > li ul.dropdown.expanded {
+html.admin-bar #admin-bar > div > ul > li ul ul.dropdown.expanded {
   box-shadow: 0 8px 14px rgba(0, 0, 0, .15);
 }
 
@@ -341,5 +341,10 @@ html.admin-bar #admin-bar > div .admin-bar-search #admin-bar-search-items:not(:h
 
 .tonic--dark-mode html.admin-bar #admin-bar > div .admin-bar-search #admin-bar-search-items:hover {
   border-color: var(--tonic-border-color-form-element);
+}
+
+html.admin-bar #admin-bar > div .admin-bar-search #admin-bar-search-items:hover {
+  border-color: var(--tonic-color-text);
+  box-shadow: inset 0 0 0 1px var(--tonic-color-text);
 }
 

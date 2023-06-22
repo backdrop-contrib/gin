@@ -3,13 +3,6 @@
     attach: context => {
       Drupal.tonicToolbar.init(context);
     }
-  }, Drupal.behaviors.tonicEscapeAdmin = {
-    attach: context => {
-      once("tonicEscapeAdmin", "[data-tonic-toolbar-escape-admin]", context).forEach((el => {
-        const escapeAdminPath = sessionStorage.getItem("escapeAdminPath");
-        drupalSettings.path.currentPathIsAdmin && null !== escapeAdminPath && el.setAttribute("href", escapeAdminPath);
-      }));
-    }
   }, Drupal.tonicToolbar = {
     init: function(context) {
       once("tonicToolbarInit", "#gin-toolbar-bar", context).forEach((() => {

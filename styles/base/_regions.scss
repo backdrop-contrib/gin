@@ -1,3 +1,7 @@
+.l-header-inner {
+  border-bottom: 1px solid var(--tonic-border-color-secondary);
+}
+
 .region-sticky {
   position: sticky;
   top: var(--tonic-toolbar-y-offset);
