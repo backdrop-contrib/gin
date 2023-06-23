@@ -62,6 +62,9 @@ function tonic_preprocess_layout(&$variables) {
     'admin/modules/*',
     'admin/structure/*',
     'admin/config/*',
+    'node/*/edit',
+    'node/add/*',
+    'admin/reports/*',
   );
   $current_path = request_path();
   if (backdrop_match_path($current_path, implode("\n", $pages_to_wrap))) {
