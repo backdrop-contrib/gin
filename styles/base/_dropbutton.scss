@@ -2,34 +2,41 @@
   border: 2px solid var(--tonic-color-primary);
   border-radius: var(--tonic-border-m);
   box-shadow: 0 1px 2px var(--tonic-color-primary-light);
+  box-shadow: none;
+  display: inline-flex;
 }
+
+// Offset for select button on first item
+.dropbutton-multiple li.dropbutton-action {
+  height: 100%;
+  border-right: 1px solid var(--tonic-color-primary-light-active);
+
+  input {
+    color: var(--tonic-color-primary);
+    height: 100%;
+    background-color: transparent;
+    border: 0 none !important;
+    border-radius: 0 !important;
+  }
+
+}
+
 .dropbutton {
   display: block;
   overflow: visible;
   margin: 0;
   list-style: none;
 
-  // Offset for select button on first item
-  &-multiple li.dropbutton-action {
-    height: 100%;
-    border-right: 1px solid var(--tonic-color-primary-light-active);
-
-    input {
-      color: var(--tonic-color-primary);
-      height: 100%;
-      background-color: transparent;
-      border: 0 none !important;
-      border-radius: 0 !important;
-    }
-
-    a {
+  .dropbutton-action {
+    > a {
+      padding-top: .15rem;
+      padding-bottom: .15rem;
 
       &:hover,
       &:active,
       &:focus {
         color: var(--tonic-color-button-text);
         background: var(--tonic-color-primary);
-        border-radius: var(--tonic-border-s);
       }
     }
   }
@@ -47,48 +54,43 @@
     border-color: var(--tonic-color-primary-active);
   }
 
-  &-wrapper {
-    box-shadow: none;
-    display: inline-flex;
-    border-radius: var(--tonic-border-m);
+  .dropbutton-toggle {
 
-  }
-
-     .dropbutton-toggle {
-  > li:first-of-type > *,
-  > button {
-    background: none;
-    white-space: nowrap;
-  }
-
-  >li:first-of-type > * {
-    padding: calc(.875rem - 1px) calc(var(--tonic-spacing-l) - 1px);
-  }
-
-   > button {
-    top: 2px;
-    right: 2px;
-    width: 100%;
-
-    &:hover {
-      background-color: var(--tonic-color-primary);
+    > li:first-of-type > *,
+    > button {
+      background: none;
+      white-space: nowrap;
     }
 
-    &::before {
-      background-image: none;
-      background-color: var(--tonic-color-primary);
-      mask-image: icon('drop');
-      mask-repeat: no-repeat;
-      mask-position: center center;
-      mask-size: 12px 12px;
+    > li:first-of-type > * {
+      padding: calc(.875rem - 1px) calc(var(--tonic-spacing-l) - 1px);
     }
 
-    &:hover::before,
-    &:active::before,
-    &:focus::before {
-      background-color: var(--tonic-color-button-text);
+    > button {
+      top: 2px;
+      right: 2px;
+      width: 100%;
+
+      &:hover {
+        background-color: var(--tonic-color-primary);
+      }
+
+      &::before {
+        background-image: none;
+        background-color: var(--tonic-color-primary);
+        mask-image: icon('drop');
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        mask-size: 12px 12px;
+      }
+
+      &:hover::before,
+      &:active::before,
+      &:focus::before {
+        background-color: var(--tonic-color-button-text);
+      }
     }
-  }}
+  }
 
   & &__items {
     position: absolute;
@@ -164,7 +166,7 @@
     }
   }
 
-  & > li {
+  > li {
 
     > a,
     > input,
@@ -223,6 +225,8 @@ html.js {
 
   .dropbutton-widget {
     background-color: transparent;
+    border: none;
+    margin: 0;
     border-radius: var(--tonic-border-m);
     position: relative;
     flex: 1 1 auto;

@@ -3157,13 +3157,8 @@ a.button:active {
   border: 2px solid var(--tonic-color-primary);
   border-radius: var(--tonic-border-m);
   box-shadow: 0 1px 2px var(--tonic-color-primary-light);
-}
-
-.dropbutton {
-  display: block;
-  overflow: visible;
-  margin: 0;
-  list-style: none;
+  box-shadow: none;
+  display: inline-flex;
 }
 
 .dropbutton-multiple li.dropbutton-action {
@@ -3186,10 +3181,21 @@ a.button:active {
   border-radius: 0 !important;
 }
 
-.dropbutton-multiple li.dropbutton-action a:hover, .dropbutton-multiple li.dropbutton-action a:active, .dropbutton-multiple li.dropbutton-action a:focus {
+.dropbutton {
+  display: block;
+  overflow: visible;
+  margin: 0;
+  list-style: none;
+}
+
+.dropbutton .dropbutton-action > a {
+  padding-top: .15rem;
+  padding-bottom: .15rem;
+}
+
+.dropbutton .dropbutton-action > a:hover, .dropbutton .dropbutton-action > a:active, .dropbutton .dropbutton-action > a:focus {
   color: var(--tonic-color-button-text);
   background: var(--tonic-color-primary);
-  border-radius: var(--tonic-border-s);
 }
 
 .tonic--dark-mode .dropbutton {
@@ -3202,12 +3208,6 @@ a.button:active {
 
 .dropbutton:active, .dropbutton:focus {
   border-color: var(--tonic-color-primary-active);
-}
-
-.dropbutton-wrapper {
-  box-shadow: none;
-  display: inline-flex;
-  border-radius: var(--tonic-border-m);
 }
 
 .dropbutton .dropbutton-toggle > li:first-of-type > *,
@@ -3430,6 +3430,8 @@ html.js .dropbutton-wrapper:not(.open) .dropbutton-actions .dropbutton-action:fi
 
 html.js .dropbutton-widget {
   background-color: transparent;
+  border: none;
+  margin: 0;
   border-radius: var(--tonic-border-m);
   position: relative;
   flex: 1 1 auto;
