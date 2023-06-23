@@ -2921,6 +2921,7 @@ tr .form-item {
 
 .form-type-checkbox > input {
   min-height: 21px;
+  min-width: 21px;
   padding: 0;
 }
 
