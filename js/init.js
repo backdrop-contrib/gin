@@ -2,21 +2,6 @@
  * we use native JS instead of Drupal's behaviors.
 */
 
-// Legacy Check: Transform old localStorage items to newer ones.
-function checkLegacy() {
-  if (localStorage.getItem('TonicDarkMode')) {
-    localStorage.setItem('Drupal.tonic.darkmode', localStorage.getItem('TonicDarkMode'));
-    localStorage.removeItem('TonicDarkMode');
-  }
-
-  if (localStorage.getItem('TonicSidebarOpen')) {
-    localStorage.setItem('Drupal.tonic.toolbarExpanded', localStorage.getItem('TonicSidebarOpen'));
-    localStorage.removeItem('TonicSidebarOpen');
-  }
-}
-
-checkLegacy();
-
 // Darkmode Check.
 function tonicInitDarkmode() {
   const darkModeClass = 'tonic--dark-mode';
@@ -30,7 +15,7 @@ function tonicInitDarkmode() {
   }
 }
 
-ginInitDarkmode();
+tonicInitDarkmode();
 
 // TonicDarkMode is not set yet.
 window.addEventListener('DOMContentLoaded', () => {
