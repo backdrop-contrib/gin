@@ -4,7 +4,6 @@ tonic:
       dist/css/base/tonic.css: { minified: false }
   dependencies:
     - tonic/tonic_base
-    - tonic/legacy_css
 
 tonic_base:
   css:
@@ -14,11 +13,6 @@ tonic_base:
   dependencies:
     - tonic/tabs
     - tonic/dialog
-
-# Legacy
-tonic_ckeditor:
-  dependencies:
-    - tonic/ckeditor
 
 tonic_init:
   header: true
@@ -277,10 +271,3 @@ linkit:
   css:
     component:
       dist/css/components/linkit.css: { minified: false }
-
-# Legacy
-
-legacy_css:
-  css:
-    theme:
-      dist/css/theme/legacy.css: { minified: false }
