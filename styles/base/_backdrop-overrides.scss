@@ -1,0 +1,231 @@
+/* Backdrop system overrides, Claro insertions, etc. */
+
+// Default variables (may need adjustment later).
+:root {
+  --line-height: 1.5;
+
+  // Default accents
+  --gin-color-primary-rgb: 5, 80, 230;
+  --gin-color-primary-hover: #0444c4;
+  --gin-color-primary-active: #043cad;
+  --gin-bg-header: #e1eafc;
+  --gin-color-primary: rgb(var(--gin-color-primary-rgb));
+  --gin-color-primary-light: rgba(var(--gin-color-primary-rgb), .15);
+  --gin-bg-app-rgb: 248, 250, 254;
+  --gin-bg-app: rgb(var(--gin-bg-app-rgb));
+  --gin-color-sticky-rgb: 235, 241, 253;
+  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .1);
+  --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);
+  --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .3);
+  --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .45);
+}
+
+ul {
+  list-style-type: disc;
+  list-style-image: none;
+}
+
+ul.primary {
+  li {
+    a {
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+
+  li.active {
+    a {
+      border-color: transparent;
+    }
+  }
+}
+
+.tabs__tab {
+  list-style-type: none;
+}
+
+.container-fluid {
+  margin-left: min(5vw, var(--gin-spacing-xxl));
+  margin-right: min(5vw, var(--gin-spacing-xxl));
+}
+
+html {
+  font-family: var(--gin-font);
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  line-height: var(--line-height);
+}
+
+.l-top,
+.l-middle {
+  margin-top: var(--gin-spacing-l);
+}
+
+table {
+  width: 100%;
+  margin-top: var(--gin-spacing-l);
+  margin-bottom: var(--gin-spacing-l);
+  border-collapse: collapse;
+}
+
+tr.even,
+tr.odd {
+  background-color: transparent;
+}
+
+table.sticky-enabled {
+  margin-top: 0;
+}
+
+#system-modules {
+  .table-filter {
+    padding: 0;
+    margin: 0;
+    border: 0 none;
+    box-shadow: none;
+    display: flex;
+    align-items: flex-end;
+    line-height: var(--gin-spacing-l);
+  }
+
+  .form-item-search {
+    flex-grow: 1;
+    line-height: var(--gin-spacing-l);
+  }
+
+  .search-reset {
+    flex-grow: 0;
+    line-height: var(--gin-spacing-l);
+    margin: var(--gin-spacing-l) auto;
+  }
+}
+
+#system-modules,
+#system-modules-uninstall {
+  .table-filter-text {
+    width: calc(100% - var(--gin-spacing-l));
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1rem;
+  appearance: none;
+}
+
+.button-action::before {
+  margin-left: -0.25em;
+  padding-right: 0.25em;
+  content: "+";
+  font-weight: 900;
+}
+
+.button-primary,
+.button-primary:not(:focus) {
+  background: var(--gin-color-primary);
+  box-shadow: .1em .25em .5em var(--gin-color-primary-light);
+
+  &:hover {
+    background-color: var(--gin-color-primary-hover);
+  }
+
+  &:active,
+  &:focus {
+    background-color: var(--gin-color-primary-active);
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--gin-color-button-text);
+  }
+}
+a.button-primary:hover,
+a.button-primary:active,
+a.button-primary:focus,
+a.button-primary:focus:hover {
+  .gin--dark-mode & {
+    color: var(--gin-bg-app);
+  }
+}
+.button.button-primary:disabled,
+.button.button-primary.is-disabled {
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--gin-color-disabled);
+    background-color: var(--gin-color-disabled-bg);
+  }
+}
+
+.form-item,
+.form-actions {
+  margin-top: 0;
+  margin-bottom: var(--gin-spacing-l);
+}
+
+.tabs {
+  display: flex;
+  border: 0;
+  box-shadow: none;
+  margin: 0;
+  flex-direction: row;
+}
+
+.tabs__link {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-grow: 1;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.2rem;
+}
+
+.admin-item__description {
+  margin: 0.5em 0 0.25em;
+}
+
+.views-exposed-form {
+  margin-bottom: var(--gin-spacing-l);
+
+  .views-exposed-form {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.panel__content {
+  &.body {
+    padding: 0;
+  }
+
+  &.block-content {
+    padding: 0 calc(var(--gin-spacing-xs) + var(--gin-spacing-xl)) 0 var(--gin-spacing-l);
+    margin: 0 var(--gin-spacing-s);
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}

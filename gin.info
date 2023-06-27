@@ -1,0 +1,33 @@
+name = Gin
+type = theme
+description = Admin theme with a strong focus on improving the Editorial Experience.
+backdrop = 1.x
+
+; Add custom CSS files.
+stylesheets[all][] = dist/css/theme/variables.css
+stylesheets[all][] = dist/css/theme/accent.css
+stylesheets[all][] = dist/css/theme/ckeditor.css
+stylesheets[all][] = dist/css/theme/dialog.css
+stylesheets[all][] = dist/css/theme/font.css
+stylesheets[all][] = dist/css/theme/legacy.css
+stylesheets[all][] = dist/css/base/gin.css
+stylesheets[all][] = dist/css/components/breadcrumb.css
+stylesheets[all][] = dist/css/components/tabs.css
+
+; Add print-specific CSS files.
+; stylesheets[print][] = css/gin_print.css
+
+; Add CKEditor-specific CSS files.
+ckeditor_stylesheets[] = dist/css/theme/accent.css
+ckeditor_stylesheets[] = dist/css/theme/variables.css
+ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
+
+; Remove unwanted core CSS files.
+; stylesheets[all][] = system.theme.css
+
+; Add custom JavaScript files.
+; scripts[] = js/gin.js
+
+; Indicate that this theme has color support.
+settings[color] = true
+settings[dark_mode] = true

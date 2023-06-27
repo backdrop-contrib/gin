@@ -37,7 +37,7 @@
   --gin-pattern: var(--gin-border-color);
   --gin-pattern-fallback: var(--gin-bg-layer2);
   --gin-pattern-square: .5rem;
-  --gin-font: Ginter, Inter, "Helvetica Neue", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  --gin-font: Ginter, Inter, "Archivo", "Helvetica Neue", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
   --gin-font-size-xxs: .75rem;
   --gin-font-size-xs: small;
   --gin-font-size-s: .875rem;
