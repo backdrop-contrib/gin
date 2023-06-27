@@ -1,39 +1,24 @@
 # Gin Admin Theme
 
-## Contents of this file
-
- - Introduction
- - Requirements
- - Installation
- - Configuration
- - Troubleshooting
- - Maintainers
 ## Introduction
 
-A radically new UI layout paired with goodies like a Darkmode will give your Drupal's Admin interface a facelift. The Gin theme also includes things which are currently out of scope for Claro and/or some customisations we're experimenting with for the future. Built on the foundation of Claro from one of the lead designers of Claro & Drupal Design System.
-
-Gin can be used in a headless environment, as it provides a nice [login screen](https://drupal.org/project/gin_login) which is missing in the default Drupal admin themes.
-
-- For a full description of the module, visit the [project page](https://www.drupal.org/project/gin).
-- Use the [Issue queue](https://www.drupal.org/project/issues/gin) to submit bug reports and feature suggestions, or track changes.
-- Documentation can be found [here](https://www.drupal.org/docs/contributed-themes/gin-admin-theme).
-## Requirements
-
-This theme requires Drupal core >= 9.0.
-
-**Note**: For all functions to work properly, it is recommended that you also install [Gin Toolbar](https://drupal.org/project/gin_toolbar).
+Gin is a work in progress and may have dramatic changes before the first official release. Although it is a fork of Gin for Drupal, the end result may not necessarily be a one-to-one replica of all styles and functionality.
 
 ## Installation
 
-Install as you would normally install a contributed Drupal theme. See [Gin documentation](https://www.drupal.org/drupalorg/docs/content/gin-admin-theme/installation-and-configuration) or visit https://www.drupal.org/node/1897420 for further information.
+ - Install and enable this theme using the official [Backdrop CMS instructions](https://backdropcms.org/guide/themes).
 
-### Set Gin as default admin theme
+ ### Set Gin as default admin theme
 
  - Navigate to Admin > Appearance
- - On the same page, click "Install" under Gin
+ - On the same page, click "Enable" under Gin
  - At the bottom of the page, switch the Administration theme to Gin
 
-## Troubleshooting
+ ## Issues
+
+  - Bugs and Feature requests should be reported in the [Issue Queue](https://github.com/backdrop-contrib/gin/issues).
+
+## Troubleshooting and Local Development
 
 - Setup Gin locally that you can compile CSS & JS files.\
 `nvm use && npm i`
@@ -46,5 +31,15 @@ Install as you would normally install a contributed Drupal theme. See [Gin docum
 
 ## Maintainers
 
-Current maintainers:
-- Sascha Eggenberger ([@saschaeggi](https://www.drupal.org/u/saschaeggi))
+ - Laryn Kragt Bakker ([@laryn](https://github.com/laryn))
+ - Sascha Eggenberger ([@saschaeggi](https://www.drupal.org/u/saschaeggi))
+
+## Credits
+- Ported to Backdrop by Laryn Kragt Bakker ([@laryn](https://github.com/laryn)).
+- Created and maintained for Drupal by Sascha Eggenberger ([@saschaeggi](https://www.drupal.org/u/saschaeggi)).
+- Forked from [Gin](https://www.drupal.org/project/gin) which is "built on the foundation of Claro".
+- Gin for Backdrop is supported by [Aten Design Group](https://atendesigngroup.com).
+
+## License
+
+This project is GPL v2 software. See the LICENSE.txt file in this directory for complete text.
