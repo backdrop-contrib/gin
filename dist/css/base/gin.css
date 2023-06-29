@@ -4512,3 +4512,143 @@ table.sticky-enabled {
   margin-top: 0;
 }
 
+fieldset {
+  border-radius: var(--gin-border-m);
+  border: 1px solid var(--gin-border-color);
+}
+
+fieldset legend {
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+  border-top: 1px solid var(--gin-border-color);
+  border-left: 1px solid var(--gin-border-color);
+  border-right: 1px solid var(--gin-border-color);
+}
+
+fieldset .fieldset-legend {
+  background: var(--gin-bg-layer2);
+}
+
+fieldset .fieldset-legend .fieldset-title::before {
+  transition: transform var(--gin-transition) ease-in 0s;
+}
+
+fieldset.collapsible .fieldset-legend {
+  background: transparent;
+}
+
+fieldset.collapsible .fieldset-legend a.fieldset-title {
+  background: transparent;
+  max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl));
+}
+
+[dir="ltr"] fieldset.collapsible .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-m) var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-xxl);
+}
+
+[dir="rtl"] fieldset.collapsible .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-m) var(--gin-spacing-xxl) var(--gin-spacing-m) var(--gin-spacing-l);
+}
+
+fieldset.collapsible .fieldset-legend .fieldset-title::before {
+  top: 50%;
+  background: var(--gin-color-text);
+  -webkit-mask-image: url("../../media/sprite.svg#handle-view");
+          mask-image: url("../../media/sprite.svg#handle-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: 100% 100%;
+          mask-size: 100% 100%;
+  display: inline-block;
+  width: var(--gin-spacing-m);
+  height: var(--gin-spacing-m);
+  margin-top: calc(var(--gin-spacing-m) / -2);
+  content: "";
+  position: absolute;
+  text-align: center;
+}
+
+[dir="ltr"] fieldset.collapsible .fieldset-legend .fieldset-title::before {
+  left: 1.125rem;
+  transform: rotate(90deg);
+}
+
+[dir="rtl"] fieldset.collapsible .fieldset-legend .fieldset-title::before {
+  right: 1.125rem;
+  transform: rotate(-90deg);
+}
+
+fieldset.collapsible .fieldset-legend .fieldset-title:hover::before,
+fieldset.collapsible .fieldset-legend .fieldset-title:hover:focus::before {
+  background-color: var(--gin-color-primary-hover);
+}
+
+fieldset.collapsible > legend {
+  padding: 0;
+  background: transparent;
+}
+
+fieldset.collapsed {
+  border: none;
+}
+
+fieldset.collapsed > legend {
+  border: none;
+}
+
+fieldset.collapsed .fieldset-legend .fieldset-title {
+  border: 1px solid var(--gin-border-color);
+}
+
+[dir="ltr"] fieldset.collapsed .fieldset-legend .fieldset-title::before {
+  transform: rotate(-90deg);
+}
+
+[dir="rtl"] fieldset.collapsed .fieldset-legend .fieldset-title::before {
+  transform: rotate(90deg);
+}
+
+fieldset.form-wrapper {
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  color: var(--gin-color-text);
+  font-weight: var(--gin-font-weight-bold);
+}
+
+fieldset.form-wrapper .summary:empty {
+  display: none;
+}
+
+fieldset:not(.fieldgroup) {
+  padding: 0;
+}
+
+fieldset:not(.fieldgroup) > legend {
+  position: relative;
+  width: calc(100% + 2px);
+  min-width: calc(100% + 2px);
+  margin: 0 -1px;
+}
+
+fieldset:not(.fieldgroup) > legend .fieldset-legend {
+  border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+}
+
+fieldset:not(.fieldgroup) > legend .fieldset-legend a {
+  color: var(--gin-color-text);
+  font-weight: var(--gin-font-weight-bold);
+  display: block;
+  width: calc(100% - 2 * var(--gin-spacing-m) + 2px);
+  border-radius: var(--gin-border-m);
+  margin: 0;
+}
+
+fieldset:not(.fieldgroup) > legend .fieldset-legend a:hover {
+  background: var(--gin-color-primary-light-hover);
+}
+
+fieldset:not(.fieldgroup) > .fieldset-wrapper {
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+}
+
