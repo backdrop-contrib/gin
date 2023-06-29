@@ -4453,6 +4453,29 @@ table.sticky-enabled {
   line-height: 1.2rem;
 }
 
+.tabs__link.is-active {
+  z-index: 1;
+}
+
+.tabs__tab::before,
+.tabs__link::before {
+  position: absolute;
+  display: block;
+  content: "";
+}
+
+@media (min-width: 48em) {
+  .is-horizontal .tabs__link.is-active::before {
+    border-bottom: .1875rem solid var(--gin-color-primary);
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: .1875rem;
+  }
+}
+
 .admin-item__description {
   margin: .5em 0 .25em;
 }
