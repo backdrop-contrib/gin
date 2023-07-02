@@ -5,46 +5,10 @@
  */
 
 /**
- * Prepares variables for node templates.
- *
- * @see node.tpl.php
+ * Load include files which contain additional theming logic.
  */
-function gin_preprocess_node(&$variables) {
-  $variables['classes'][] = 'content';
-}
-
-/**
- * Implements hook_preprocess_page().
- */
-function gin_preprocess_page(&$variables) {
-  $data = array(
-    '#tag' => 'link',
-    '#value' => '',
-    '#attributes' => array(
-      'href' => url('https://fonts.gstatic.com'),
-      'rel' => 'preconnect',
-      'crossorigin' => 'anonymous',
-    ),
-  );
-  backdrop_add_html_head($data, 'gin_gstatic');
-  $data = array(
-    '#tag' => 'link',
-    '#value' => '',
-    '#attributes' => array(
-      'href' => url('https://fonts.googleapis.com'),
-      'rel' => 'preconnect',
-    ),
-  );
-  backdrop_add_html_head($data, 'gin_googlefont_preconnect');
-  $data = array(
-    '#tag' => 'link',
-    '#value' => '',
-    '#attributes' => array(
-      'href' => url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,400;0,500;0,600;0,700;1,400&display=swap'),
-      'rel' => 'stylesheet',
-    ),
-  );
-  backdrop_add_html_head($data, 'gin_googlefont');
+foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
+  include $file;
 }
 
 /**
@@ -257,85 +221,6 @@ function gin_admin_block($variables) {
   $output .= '</div>';
 
   return $output;
-}
-
-
-/**
- * Returns HTML for a textfield form element.
- *
- * @param $variables
- *   An associative array containing:
- *   - element: An associative array containing the properties of the element.
- *     Properties used: #title, #value, #description, #size, #maxlength,
- *     #placeholder, #required, #attributes, #autocomplete_path.
- *
- * @ingroup themeable
- */
-function gin_textfield($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'text';
-  element_set_attributes($element, array('id', 'name', 'value', 'size', 'maxlength', 'placeholder'));
-  _form_set_class($element, array(
-    'form-text',
-    'form-element',
-  ));
-
-  $extra = '';
-  if ($element['#autocomplete_path'] && !empty($element['#autocomplete_input'])) {
-    backdrop_add_library('system', 'backdrop.autocomplete');
-    $element['#attributes']['class'][] = 'form-autocomplete';
-
-    $attributes = array();
-    $attributes['type'] = 'hidden';
-    $attributes['id'] = $element['#autocomplete_input']['#id'];
-    $attributes['value'] = $element['#autocomplete_input']['#url_value'];
-    $attributes['disabled'] = 'disabled';
-    $attributes['class'][] = 'autocomplete';
-    $extra = '<input' . backdrop_attributes($attributes) . ' />';
-  }
-
-  $output = '<input' . backdrop_attributes($element['#attributes']) . ' />';
-
-  return $output . $extra;
-}
-
-/**
- * Returns HTML for an email form element.
- *
- * @param $variables
- *   An associative array containing:
- *   - element: An associative array containing the properties of the element.
- *     Properties used: #title, #value, #description, #size, #maxlength,
- *     #placeholder, #required, #attributes, #autocomplete_path.
- *
- * @ingroup themeable
- */
-function gin_email($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'email';
-  element_set_attributes($element, array('id', 'name', 'value', 'size', 'maxlength', 'placeholder'));
-  _form_set_class($element, array(
-    'form-email',
-    'form-element',
-  ));
-
-  $extra = '';
-  if ($element['#autocomplete_path'] && backdrop_valid_path($element['#autocomplete_path'])) {
-    backdrop_add_library('system', 'backdrop.autocomplete');
-    $element['#attributes']['class'][] = 'form-autocomplete';
-
-    $attributes = array();
-    $attributes['type'] = 'hidden';
-    $attributes['id'] = $element['#attributes']['id'] . '-autocomplete';
-    $attributes['value'] = url($element['#autocomplete_path'], array('absolute' => TRUE));
-    $attributes['disabled'] = 'disabled';
-    $attributes['class'][] = 'autocomplete';
-    $extra = '<input' . backdrop_attributes($attributes) . ' />';
-  }
-
-  $output = '<input' . backdrop_attributes($element['#attributes']) . ' />';
-
-  return $output . $extra;
 }
 
 /**

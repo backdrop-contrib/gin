@@ -369,7 +369,9 @@
   .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .toolbar-id--toolbar-icon-user:hover .icon-user {
     box-shadow: 0 0 0 2px var(--gin-bg-app), 0 0 0 5px var(--gin-bg-layer3);
   }
+}
 
+@media (min-width: 61em) {
   .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .toolbar-id--toolbar-icon-user .icon-user {
     border: 1px solid var(--gin-border-color);
     overflow: hidden;

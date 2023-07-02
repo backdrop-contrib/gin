@@ -1,12 +1,10 @@
-(Drupal => {
-  Drupal.behaviors.ginSticky = {
+(Backdrop => {
+  Backdrop.behaviors.ginSticky = {
     attach: context => {
       once("ginSticky", document.querySelectorAll(".region-sticky-watcher")).forEach((() => {
         const observer = new IntersectionObserver((_ref => {
           let [e] = _ref;
-          const regionSticky = context.querySelector(".region-sticky");
-          regionSticky.classList.toggle("region-sticky--is-sticky", e.intersectionRatio < 1), 
-          regionSticky.toggleAttribute("data-offset-top", e.intersectionRatio < 1), Drupal.displace(!0);
+          context.querySelector(".region-sticky").classList.toggle("region-sticky--is-sticky", e.intersectionRatio < 1);
         }), {
           threshold: [ 1 ]
         }), element = context.querySelector(".region-sticky-watcher");
@@ -14,4 +12,4 @@
       }));
     }
   };
-})(Drupal);
+})(Backdrop);

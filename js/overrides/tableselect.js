@@ -1,15 +1,15 @@
-((Drupal, once) => {
-  Drupal.behaviors.tableSelect = {
+((Backdrop, once) => {
+  Backdrop.behaviors.tableSelect = {
     attach: (context) => {
       once('tableSelect', 'th.select-all', context).forEach((el) => {
         if (el.closest('table')) {
-          Drupal.tableSelect(el.closest('table'));
+          Backdrop.tableSelect(el.closest('table'));
         }
       });
     },
   };
 
-  Drupal.tableSelect = (table) => {
+  Backdrop.tableSelect = (table) => {
     if (table.querySelector('td input[type="checkbox"]') === null) {
       return;
     }
@@ -17,8 +17,8 @@
     let checkboxes = 0;
     let lastChecked = 0;
     const strings = {
-      selectAll: Drupal.t('Select all rows in this table'),
-      selectNone: Drupal.t('Deselect all rows in this table')
+      selectAll: Backdrop.t('Select all rows in this table'),
+      selectNone: Backdrop.t('Deselect all rows in this table')
     };
     const updateSelectAll = (state) => {
       table
@@ -40,7 +40,7 @@
     const setClass = 'is-sticky';
     const stickyHeader = table
       .closest('form')
-      .querySelector('[data-drupal-selector*="edit-header"]');
+      .querySelector('.views-bulk-form');
 
     const updateSticky = (state) => {
       if (stickyHeader) {
@@ -60,7 +60,7 @@
     };
 
     table.querySelectorAll('th.select-all').forEach(el => {
-      el.innerHTML = Drupal.theme('checkbox') + el.innerHTML;
+      el.innerHTML = Backdrop.theme('checkbox') + el.innerHTML;
       el.querySelector('.form-checkbox').setAttribute('title', strings.selectAll);
       el.addEventListener('click', event => {
         if (event.target.matches('input[type="checkbox"]')) {
@@ -89,7 +89,7 @@
           .classList.toggle('selected', this.checked);
 
         if (e.shiftKey && lastChecked && lastChecked !== e.target) {
-          Drupal.tableSelectRange(
+          Backdrop.tableSelectRange(
             e.target.closest('tr'),
             lastChecked.closest('tr'),
             e.target.checked
@@ -104,7 +104,7 @@
     checkedCheckboxes(checkboxes);
   };
 
-  Drupal.tableSelectRange = function (from, to, state) {
+  Backdrop.tableSelectRange = function (from, to, state) {
     const mode = from.rowIndex > to.rowIndex ? 'previousSibling' : 'nextSibling';
 
     for (let i = from[mode]; i; i = i[mode]) {
@@ -125,4 +125,4 @@
     }
   };
 
-})(Drupal, once);
+})(Backdrop, once);

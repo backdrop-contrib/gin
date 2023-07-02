@@ -1,24 +1,24 @@
 /* eslint-disable no-bitwise, no-nested-ternary, no-mutable-exports, comma-dangle, strict */
 
-((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginAccent = {
+((Backdrop, once) => {
+  Backdrop.behaviors.ginAccent = {
     attach: function attach(context) {
       once('ginAccent', 'body', context).forEach(() => {
         // Check Darkmode.
-        Drupal.ginAccent.checkDarkmode();
+        Backdrop.ginAccent.checkDarkmode();
 
         // Set accent color.
-        Drupal.ginAccent.setAccentColor();
+        Backdrop.ginAccent.setAccentColor();
 
         // Set focus color.
-        Drupal.ginAccent.setFocusColor();
+        Backdrop.ginAccent.setFocusColor();
       });
     },
   };
 
-  Drupal.ginAccent = {
+  Backdrop.ginAccent = {
     setAccentColor: function setAccentColor(preset = null, color = null) {
-      const accentColorPreset = preset != null ? preset : drupalSettings.gin.preset_accent_color;
+      const accentColorPreset = preset != null ? preset : Backdrop.settings.gin.preset_accent_color;
       document.body.setAttribute('data-gin-accent', accentColorPreset);
 
       if (accentColorPreset === 'custom') {
@@ -28,7 +28,7 @@
 
     setCustomAccentColor: function setCustomAccentColor(color = null, element = document.body) {
       // If custom color is set, generate colors through JS.
-      const accentColor = color != null ? color : drupalSettings.gin.accent_color;
+      const accentColor = color != null ? color : Backdrop.settings.gin.accent_color;
       if (accentColor) {
         this.clearAccentColor(element);
 
@@ -66,7 +66,7 @@
     },
 
     setFocusColor: function setFocusColor(preset = null, color = null) {
-      const focusColorPreset = preset != null ? preset : drupalSettings.gin.preset_focus_color;
+      const focusColorPreset = preset != null ? preset : Backdrop.settings.gin.preset_focus_color;
       document.body.setAttribute('data-gin-focus', focusColorPreset);
 
       if (focusColorPreset === 'custom') {
@@ -75,7 +75,7 @@
     },
 
     setCustomFocusColor: function setCustomFocusColor(color = null, element = document.body) {
-      const accentColor = color != null ? color : drupalSettings.gin.focus_color;
+      const accentColor = color != null ? color : Backdrop.settings.gin.focus_color;
 
       // Set preset color.
       if (accentColor) {
@@ -106,18 +106,18 @@
     },
 
     checkDarkmode: () => {
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeClass = Backdrop.settings.gin.darkmode_class;
 
       // Change to Darkmode.
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-        if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+        if (e.matches && localStorage.getItem('Backdrop.gin.darkmode') === 'auto') {
           document.querySelector('html').classList.add(darkmodeClass);
         }
       });
 
       // Change to Lightmode.
       window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', e => {
-        if (e.matches && localStorage.getItem('Drupal.gin.darkmode') === 'auto') {
+        if (e.matches && localStorage.getItem('Backdrop.gin.darkmode') === 'auto') {
           document.querySelector('html').classList.remove(darkmodeClass);
         }
       });
@@ -173,4 +173,4 @@
     },
 
   };
-})(Drupal, drupalSettings, once);
+})(Backdrop, once);

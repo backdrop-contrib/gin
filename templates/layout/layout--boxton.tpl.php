@@ -50,6 +50,7 @@
       </div>
     </div>
   </header>
+  <div class="sticky-shadow"></div>
   <?php if ($tabs): ?>
     <div class="content-header clearfix">
       <div class="layout-container">

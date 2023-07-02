@@ -38,7 +38,7 @@
   .messages__header {
     position: relative;
     background-image: none;
-    margin-bottom: var(--gin-spacing-xs);
+    margin-bottom: var(--gin-spacing-xxs);
     margin-right: 1.5em;
 
     &:before {
@@ -78,6 +78,11 @@
       .icon-close {
         background-color: var(--gin-bg-app);
       }
+    }
+
+    &::before,
+    &::after {
+      display: none;
     }
 
     .icon-close {

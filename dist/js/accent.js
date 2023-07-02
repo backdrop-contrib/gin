@@ -1,19 +1,19 @@
-((Drupal, drupalSettings, once) => {
-  Drupal.behaviors.ginAccent = {
+((Backdrop, once) => {
+  Backdrop.behaviors.ginAccent = {
     attach: function(context) {
       once("ginAccent", "body", context).forEach((() => {
-        Drupal.ginAccent.checkDarkmode(), Drupal.ginAccent.setAccentColor(), Drupal.ginAccent.setFocusColor();
+        Backdrop.ginAccent.checkDarkmode(), Backdrop.ginAccent.setAccentColor(), Backdrop.ginAccent.setFocusColor();
       }));
     }
-  }, Drupal.ginAccent = {
+  }, Backdrop.ginAccent = {
     setAccentColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
-      const accentColorPreset = null != preset ? preset : drupalSettings.gin.preset_accent_color;
+      const accentColorPreset = null != preset ? preset : Backdrop.settings.gin.preset_accent_color;
       document.body.setAttribute("data-gin-accent", accentColorPreset), "custom" === accentColorPreset && this.setCustomAccentColor(color);
     },
     setCustomAccentColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
-      const accentColor = null != color ? color : drupalSettings.gin.accent_color;
+      const accentColor = null != color ? color : Backdrop.settings.gin.accent_color;
       if (accentColor) {
         this.clearAccentColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65).replace("#", ""), style = document.createElement("style");
@@ -30,12 +30,12 @@
     },
     setFocusColor: function() {
       let preset = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, color = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
-      const focusColorPreset = null != preset ? preset : drupalSettings.gin.preset_focus_color;
+      const focusColorPreset = null != preset ? preset : Backdrop.settings.gin.preset_focus_color;
       document.body.setAttribute("data-gin-focus", focusColorPreset), "custom" === focusColorPreset && this.setCustomFocusColor(color);
     },
     setCustomFocusColor: function() {
       let color = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null, element = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : document.body;
-      const accentColor = null != color ? color : drupalSettings.gin.focus_color;
+      const accentColor = null != color ? color : Backdrop.settings.gin.focus_color;
       if (accentColor) {
         this.clearFocusColor(element);
         const strippedAccentColor = accentColor.replace("#", ""), darkAccentColor = this.mixColor("ffffff", strippedAccentColor, 65), style = document.createElement("style");
@@ -51,11 +51,11 @@
       }
     },
     checkDarkmode: () => {
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeClass = Backdrop.settings.gin.darkmode_class;
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e => {
-        e.matches && "auto" === localStorage.getItem("Drupal.gin.darkmode") && document.querySelector("html").classList.add(darkmodeClass);
+        e.matches && "auto" === localStorage.getItem("Backdrop.gin.darkmode") && document.querySelector("html").classList.add(darkmodeClass);
       })), window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", (e => {
-        e.matches && "auto" === localStorage.getItem("Drupal.gin.darkmode") && document.querySelector("html").classList.remove(darkmodeClass);
+        e.matches && "auto" === localStorage.getItem("Backdrop.gin.darkmode") && document.querySelector("html").classList.remove(darkmodeClass);
       }));
     },
     hexToRgb: hex => {
@@ -81,4 +81,4 @@
       return `#${(16777216 + 65536 * (R < 255 ? R < 1 ? 0 : R : 255) + 256 * (B < 255 ? B < 1 ? 0 : B : 255) + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1)}`;
     }
   };
-})(Drupal, drupalSettings, once);
+})(Backdrop, once);

@@ -1,19 +1,19 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
-((Drupal, drupalSettings) => {
-  Drupal.behaviors.ginSettings = {
+((Backdrop) => {
+  Backdrop.behaviors.ginSettings = {
     attach: function attach(context) {
-      Drupal.ginSettings.init(context);
+      Backdrop.ginSettings.init(context);
     },
   };
 
-  Drupal.ginSettings = {
+  Backdrop.ginSettings = {
     init: function (context) {
       // Watch Darkmode setting has changed.
       context.querySelectorAll('input[name="enable_darkmode"]')
         .forEach(el => el.addEventListener('change', e => {
           const darkmode = e.currentTarget.value;
-          const accentColorPreset = document.querySelector('[data-drupal-selector="edit-preset-accent-color"] input:checked').value;
+          const accentColorPreset = document.querySelector('#edit-preset-accent-color input:checked').value;
           const focusColorPreset = document.querySelector('select[name="preset_focus_color"]').value;
 
           // Toggle Darkmode.
@@ -23,35 +23,35 @@
           if (accentColorPreset === 'custom') {
             const accentColorSetting = document.querySelector('input[name="accent_color"]').value;
 
-            Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+            Backdrop.ginAccent.setCustomAccentColor(accentColorSetting);
           } else {
-            Drupal.ginAccent.setAccentColor(accentColorPreset);
+            Backdrop.ginAccent.setAccentColor(accentColorPreset);
           }
 
           // Toggle Focus color.
           if (focusColorPreset === 'custom') {
             const focusColorSetting = document.querySelector('input[name="focus_color"]').value;
 
-            Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+            Backdrop.ginAccent.setCustomFocusColor(focusColorSetting);
           } else {
-            Drupal.ginAccent.setFocusColor(focusColorPreset);
+            Backdrop.ginAccent.setFocusColor(focusColorPreset);
           }
         }));
 
       // Watch Accent color setting has changed.
-      context.querySelectorAll('[data-drupal-selector="edit-preset-accent-color"] input')
+      context.querySelectorAll('#edit-preset-accent-color input')
         .forEach(el => el.addEventListener('change', e => {
           const accentColorPreset = e.currentTarget.value;
 
           // Update.
-          Drupal.ginAccent.clearAccentColor();
-          Drupal.ginAccent.setAccentColor(accentColorPreset);
+          Backdrop.ginAccent.clearAccentColor();
+          Backdrop.ginAccent.setAccentColor(accentColorPreset);
 
           // Set custom color if 'custom' is set.
           if (accentColorPreset === 'custom') {
             const accentColorSetting = document.querySelector('input[name="accent_color"]').value;
 
-            Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+            Backdrop.ginAccent.setCustomAccentColor(accentColorSetting);
           }
         }));
 
@@ -64,7 +64,7 @@
           document.querySelector('input[name="accent_color"]').value = accentColorSetting;
 
           // Update.
-          Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+          Backdrop.ginAccent.setCustomAccentColor(accentColorSetting);
         }));
 
       // Watch Accent color setting has changed.
@@ -76,7 +76,7 @@
           document.querySelector('input[name="accent_picker"]').value = accentColorSetting;
 
           // Update.
-          Drupal.ginAccent.setCustomAccentColor(accentColorSetting);
+          Backdrop.ginAccent.setCustomAccentColor(accentColorSetting);
         }));
 
       // Watch Focus color setting has changed.
@@ -84,14 +84,14 @@
         const focusColorPreset = e.currentTarget.value;
 
         // Update.
-        Drupal.ginAccent.clearFocusColor();
-        Drupal.ginAccent.setFocusColor(focusColorPreset);
+        Backdrop.ginAccent.clearFocusColor();
+        Backdrop.ginAccent.setFocusColor(focusColorPreset);
 
         // Set custom color if 'custom' is set.
         if (focusColorPreset === 'custom') {
           const focusColorSetting = document.querySelector('input[name="focus_color"]').value;
 
-          Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+          Backdrop.ginAccent.setCustomFocusColor(focusColorSetting);
         }
       });
 
@@ -103,7 +103,7 @@
         document.querySelector('input[name="focus_color"]').value = focusColorSetting;
 
         // Update.
-        Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+        Backdrop.ginAccent.setCustomFocusColor(focusColorSetting);
       });
 
       // Watch Accent color setting has changed.
@@ -114,7 +114,7 @@
         document.querySelector('input[name="focus_picker"]').value = focusColorSetting;
 
         // Update.
-        Drupal.ginAccent.setCustomFocusColor(focusColorSetting);
+        Backdrop.ginAccent.setCustomFocusColor(focusColorSetting);
       });
 
       // Watch Hight contrast mode setting has changed.
@@ -126,15 +126,15 @@
       });
 
       // Watch save
-      document.querySelector('[data-drupal-selector="edit-submit"]').addEventListener('click', () => {
+      document.querySelector('#edit-submit').addEventListener('click', () => {
         // Reset darkmode localStorage.
-        localStorage.setItem('Drupal.gin.darkmode', '');
+        localStorage.setItem('Backdrop.gin.darkmode', '');
       });
     },
 
     darkmode: function (darkmodeParam = null) {
-      const darkmodeEnabled = darkmodeParam != null ? darkmodeParam : drupalSettings.gin.darkmode;
-      const darkmodeClass = drupalSettings.gin.darkmode_class;
+      const darkmodeEnabled = darkmodeParam != null ? darkmodeParam : Backdrop.settings.gin.darkmode;
+      const darkmodeClass = Backdrop.settings.gin.darkmode_class;
 
       if (
         darkmodeEnabled == 1 ||
@@ -147,7 +147,7 @@
       }
 
       // Reset localStorage.
-      localStorage.setItem('Drupal.gin.darkmode', '');
+      localStorage.setItem('Backdrop.gin.darkmode', '');
 
       // Change to Darkmode.
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -165,8 +165,8 @@
     },
 
     setHighContrastMode: function (param = null) {
-      const enabled = param != null ? param : drupalSettings.gin.highcontrastmode;
-      const className = drupalSettings.gin.highcontrastmode_class;
+      const enabled = param != null ? param : Backdrop.settings.gin.highcontrastmode;
+      const className = Backdrop.settings.gin.highcontrastmode_class;
 
       // Needs to check for both: backwards compatibility.
       if (enabled === true || enabled === 1) {
@@ -178,4 +178,4 @@
     },
 
   };
-})(Drupal, drupalSettings);
+})(Backdrop);

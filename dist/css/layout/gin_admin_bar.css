@@ -1,0 +1,17 @@
+:root {
+  --gin-toolbar-secondary-height: 48px;
+  --gin-toolbar-height: 33px;
+  --gin-scroll-offset: 72px;
+  --gin-toolbar-y-offset: var(--gin-toolbar-height);
+  --gin-toolbar-x-offset: 0px;
+  --gin-sticky-offset: 0px;
+}
+
+@media (min-width: 61em) {
+  :root {
+    --gin-scroll-offset: 180px;
+    --gin-icon-size-toolbar: 18px;
+    --gin-sticky-offset: var(--gin-height-sticky);
+  }
+}
+
