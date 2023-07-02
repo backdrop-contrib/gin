@@ -1222,7 +1222,7 @@ table.sticky-header {
   visibility: hidden;
   z-index: 98;
   position: fixed;
-  top: calc(var(--ginHorizontalToolbarOffset) + var(--ginStickyOffset)) !important;
+  top: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset)) !important;
   background: transparent;
 }
 
@@ -1293,6 +1293,10 @@ table thead tr:hover {
   background: transparent;
 }
 
+table thead tr th {
+  border-bottom: none;
+}
+
 table th {
   font-size: var(--gin-font-size-s);
   font-weight: var(--gin-font-weight-bold);
@@ -1310,7 +1314,9 @@ table th, table th .form-item__label {
   }
 }
 
-table tbody tr {
+table tbody tr,
+table tbody tr.odd,
+table tbody tr.even {
   border-bottom: 1px solid var(--gin-border-color-table);
 }
 
@@ -1494,6 +1500,18 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 .gin-layer-wrapper .views-table {
   margin-top: 0;
+}
+
+.tableresponsive-toggle {
+  font-size: var(--gin-font-size-xs);
+}
+
+[dir="ltr"] .tableresponsive-toggle {
+  float: right;
+}
+
+[dir="rtl"] .tableresponsive-toggle {
+  float: left;
 }
 
 .draggable a.tabledrag-handle {
@@ -2308,7 +2326,7 @@ tr .form-item {
 .button:not(:focus),
 .form-actions .button,
 .action-link--icon-trash.action-link {
-  padding: calc(var(--gin-spacing-m) - 2px) calc(var(--gin-spacing-l) - 2px);
+  padding: var(--gin-spacing-s) var(--gin-spacing-m);
   border: 2px solid var(--gin-color-primary) !important;
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
@@ -3807,8 +3825,8 @@ tr.color-error:focus,
   margin-bottom: var(--gin-spacing-xl);
 }
 
-.upgrade-status-counter__status-icon--not-scanned:before,
-.upgrade-status-summary tr.not-scanned > td.status-info:before {
+.report-info .report-icon div::before,
+.admin-dblog .icon::before {
   background-image: none;
   background-color: var(--gin-color-text);
   -webkit-mask-image: url("../../media/sprite.svg#info-view");
@@ -3821,16 +3839,8 @@ tr.color-error:focus,
           mask-size: 20px 20px;
 }
 
-.system-status-counter__status-icon--checked:before,
-.admin-dblog .dblog-info .icon,
-.admin-dblog .dblog-notice .icon,
-.system-status-report__status-icon--checked .details-title:before,
-.details .system-status-report__status-icon--checked:before,
-.color-checked .system-status-report__status-title:before,
-.upgrade-status-counter__status-icon--checked:before,
-.upgrade-status-error-list tr.no-known-error > td.status-info:before,
-.upgrade-status-summary tr.no-known-error > td.status-info:before,
-#checked + .claro-details__wrapper--system-status-report .system-status-report__status-title:before {
+.report-status .report-icon div::before,
+.admin-dblog .dblog-status .icon::before {
   background-image: none;
   background-color: var(--gin-color-green);
   -webkit-mask-image: url("../../media/sprite.svg#status-view");
@@ -3843,13 +3853,9 @@ tr.color-error:focus,
           mask-size: 20px 20px;
 }
 
-.system-status-counter__status-icon--warning:before,
-.admin-dblog .dblog-warning .icon,
-.system-status-report__status-icon--warning .details-title:before,
-.details .system-status-report__status-icon--warning:before,
-.upgrade-status-counter__status-icon--warning:before,
-.upgrade-status-error-list tr.known-warnings > td.status-info:before,
-.upgrade-status-summary tr.known-warnings > td.status-info:before {
+.report-warning .report-icon div::before,
+.admin-dblog .dblog-debug .icon::before,
+.admin-dblog .dblog-warning .icon::before {
   background-image: none;
   background-color: var(--gin-color-warning);
   -webkit-mask-image: url("../../media/sprite.svg#warning-view");
@@ -3862,16 +3868,8 @@ tr.color-error:focus,
           mask-size: 20px 20px;
 }
 
-.system-status-counter__status-icon--error:before,
-.admin-dblog .dblog-error .icon,
-.admin-dblog .dblog-critical .icon,
-.admin-dblog .dblog-alert .icon,
-.admin-dblog .dblog-emergency .icon,
-.system-status-report__status-icon--error .details-title:before,
-.details .system-status-report__status-icon--error:before,
-.upgrade-status-counter__status-icon--error:before,
-.upgrade-status-error-list tr.known-errors > td.status-info:before,
-.upgrade-status-summary tr.known-errors > td.status-info:before {
+.report-error .report-icon div::before,
+.admin-dblog .dblog-error .icon::before {
   background-image: none;
   background-color: var(--gin-color-danger);
   -webkit-mask-image: url("../../media/sprite.svg#error-view");
@@ -4266,6 +4264,13 @@ ul.primary li.active a {
 .container-fluid {
   margin-left: min(5vw, var(--gin-spacing-xxl));
   margin-right: min(5vw, var(--gin-spacing-xxl));
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.layout.dashboard .region-sticky .container-fluid {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 html {

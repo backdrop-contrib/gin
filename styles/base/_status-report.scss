@@ -1,6 +1,6 @@
 // Unknown
-.upgrade-status-counter__status-icon--not-scanned:before,
-.upgrade-status-summary tr.not-scanned > td.status-info:before {
+.report-info .report-icon div::before,
+.admin-dblog .icon::before {
   background-image: none;
   background-color: var(--gin-color-text);
   mask-image: icon('info');
@@ -10,16 +10,8 @@
 }
 
 // Checked
-.system-status-counter__status-icon--checked:before,
-.admin-dblog .dblog-info .icon,
-.admin-dblog .dblog-notice .icon,
-.system-status-report__status-icon--checked .details-title:before,
-.details .system-status-report__status-icon--checked:before,
-.color-checked .system-status-report__status-title:before,
-.upgrade-status-counter__status-icon--checked:before,
-.upgrade-status-error-list tr.no-known-error > td.status-info:before,
-.upgrade-status-summary tr.no-known-error > td.status-info:before,
-#checked + .claro-details__wrapper--system-status-report .system-status-report__status-title:before {
+.report-status .report-icon div::before,
+.admin-dblog .dblog-status .icon::before {
   background-image: none;
   background-color: var(--gin-color-green);
   mask-image: icon('status');
@@ -29,13 +21,9 @@
 }
 
 // Warning
-.system-status-counter__status-icon--warning:before,
-.admin-dblog .dblog-warning .icon,
-.system-status-report__status-icon--warning .details-title:before,
-.details .system-status-report__status-icon--warning:before,
-.upgrade-status-counter__status-icon--warning:before,
-.upgrade-status-error-list tr.known-warnings > td.status-info:before,
-.upgrade-status-summary tr.known-warnings > td.status-info:before {
+.report-warning .report-icon div::before,
+.admin-dblog .dblog-debug .icon::before,
+.admin-dblog .dblog-warning .icon::before {
   background-image: none;
   background-color: var(--gin-color-warning);
   mask-image: icon('warning');
@@ -45,16 +33,8 @@
 }
 
 // Error
-.system-status-counter__status-icon--error:before,
-.admin-dblog .dblog-error .icon,
-.admin-dblog .dblog-critical .icon,
-.admin-dblog .dblog-alert .icon,
-.admin-dblog .dblog-emergency .icon,
-.system-status-report__status-icon--error .details-title:before,
-.details .system-status-report__status-icon--error:before,
-.upgrade-status-counter__status-icon--error:before,
-.upgrade-status-error-list tr.known-errors > td.status-info:before,
-.upgrade-status-summary tr.known-errors > td.status-info:before {
+.report-error .report-icon div::before,
+.admin-dblog .dblog-error .icon::before {
   background-image: none;
   background-color: var(--gin-color-danger);
   mask-image: icon('error');

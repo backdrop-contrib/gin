@@ -7,6 +7,7 @@ $sprites: (
     'asterisk': "../../media/sprite.svg#asterisk-view",
     'checked': "../../media/sprite.svg#checked-view",
     'add': "../../media/sprite.svg#add-view",
+    'backdrop': "../../media/sprite.svg#backdrop-view",
     'calendar': "../../media/sprite.svg#calendar-view",
     'circle': "../../media/sprite.svg#circle-view",
     'close': "../../media/sprite.svg#close-view",
@@ -14,9 +15,11 @@ $sprites: (
     'drupal': "../../media/sprite.svg#drupal-view",
     'gin': "../../media/sprite.svg#gin-view",
     'handle': "../../media/sprite.svg#handle-view",
+    'logout': "../../media/sprite.svg#logout-view",
     'more': "../../media/sprite.svg#more-view",
     'sidebar': "../../media/sprite.svg#sidebar-view",
     'tool': "../../media/sprite.svg#tool-view",
+    'users': "../../media/sprite.svg#users-view",
     'grid': "../../media/sprite.svg#grid-view",
     'list': "../../media/sprite.svg#list-view",
     'media-edit': "../../media/sprite.svg#media-edit-view",
@@ -101,6 +104,10 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
+    'backdrop': (
+        'width': 24px,
+        'height': 24px
+    ),
     'calendar': (
         'width': 24px,
         'height': 24px
@@ -129,6 +136,10 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
+    'logout': (
+        'width': 24px,
+        'height': 24px
+    ),
     'more': (
         'width': 24px,
         'height': 24px
@@ -138,6 +149,10 @@ $sizes: (
         'height': 24px
     ),
     'tool': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'users': (
         'width': 24px,
         'height': 24px
     ),

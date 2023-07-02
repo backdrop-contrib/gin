@@ -29,8 +29,8 @@
       }
     }
 
-    > .form-wrapper {
-      padding: var(--gin-spacing-m);
+    &.form-wrapper {
+      padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
     }
 
     &.is-sticky {

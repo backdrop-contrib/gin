@@ -47,6 +47,13 @@ ul.primary {
 .container-fluid {
   margin-left: min(5vw, var(--gin-spacing-xxl));
   margin-right: min(5vw, var(--gin-spacing-xxl));
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.layout.dashboard .region-sticky .container-fluid {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 html {

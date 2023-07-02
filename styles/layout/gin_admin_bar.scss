@@ -1,15 +1,181 @@
 // Toolbar Variables
 :root {
   --gin-toolbar-secondary-height: 48px;
-  --gin-toolbar-height: 33px;
+  --gin-toolbar-height: 32px;
   --gin-scroll-offset: 72px;
   --gin-toolbar-y-offset: var(--gin-toolbar-height);
   --gin-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
   --gin-sticky-offset: 0px; // Needs px to work in calc() functions.
 
   @include mq(medium) {
+    --gin-toolbar-height: 48px;
     --gin-scroll-offset: 180px;
     --gin-icon-size-toolbar: 18px;
     --gin-sticky-offset: var(--gin-height-sticky);
+  }
+}
+
+.admin-bar body {
+  border-top: 0 !important;
+  padding-top: var(--gin-toolbar-height);
+}
+
+// Toolbar
+#admin-bar {
+  font-family: var(--gin-font);
+  background: var(--gin-color-contextual);
+  box-shadow: none;
+
+  .gin--dark-mode & {
+    background: var(--gin-bg-layer);
+  }
+
+  @include mq(large) {
+    #admin-bar-menu > li > .dropdown > li > a {
+      background: none !important;
+      text-shadow: none;
+    }
+
+    > .dropdown {
+      li > a,
+      li > span {
+        font-size: var(--gin-font-size-xxs);
+        font-weight: var(--gin-font-weight-normal);
+      }
+    }
+  }
+
+  // Icons
+  #admin-bar-icon .icon,
+  #admin-bar-extra .extra,
+  #admin-bar-extra .page,
+  #admin-bar-extra .user-counter,
+  #admin-bar-extra .account,
+  #admin-bar-extra .logout,
+  #admin-bar-menu > li > .dropdown > li > a {
+    padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
+    background: none;
+
+    &::before {
+      content: '';
+      float: left;
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin-right: var(--gin-spacing-xs);
+      background-color: var(--gin-color-disabled);
+      mask-position: center center;
+    }
+
+    &.active-trail {
+      color: #fff;
+      font-weight: var(--gin-font-weight-bold);
+      background: rgba(255, 255, 255, .1) !important;
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+  }
+
+  // Home
+  #admin-bar-icon .icon {
+    &:before {
+      mask-image: icon('backdrop');
+    }
+  }
+  // Dashboard
+  .admin-dashboard {
+    &:before {
+      mask-image: icon('sidebar');
+    }
+  }
+  // Content
+  .admin-content {
+    &:before {
+      mask-image: icon('content');
+    }
+  }
+  // User
+  .admin-people {
+    &:before {
+      mask-image: icon('users');
+    }
+  }
+  // Appearance
+  .admin-appearance {
+    &:before {
+      mask-image: icon('appearance');
+    }
+  }
+  // Functionality
+  .admin-modules {
+    &:before {
+      mask-image: icon('extend');
+    }
+  }
+  // Structure
+  .admin-structure {
+    &:before {
+      mask-image: icon('structure');
+    }
+  }
+  // Configuration
+  .admin-config {
+    &:before {
+      mask-image: icon('config');
+    }
+  }
+  // Reports
+  .admin-reports {
+    &:before {
+      mask-image: icon('reports');
+    }
+  }
+  // More
+  .extra {
+    &:before {
+      mask-image: icon('more');
+    }
+  }
+  // Page
+  .page {
+    &:before {
+      mask-image: icon('content');
+    }
+  }
+  // User counter
+  .user-counter {
+    &:before {
+      mask-image: icon('users');
+    }
+  }
+  // Account
+  .account {
+    &:before {
+      mask-image: icon('user');
+    }
+  }
+  // Logout
+  .logout {
+    &:before {
+      mask-image: icon('logout');
+    }
+  }
+
+  .top-level .admin-bar-search .form-item {
+    padding-top: 9px;
+  }
+
+  // Search
+  #admin-bar-search-items {
+    appearance: none;
+    font-size: var(--gin-font-size-xxs);
+    line-height: 1;
+    padding: var(--gin-spacing-xs) var(--gin-spacing-xl) var(--gin-spacing-xs) var(--gin-spacing-m);
+    background: #fff icon('search') no-repeat center right var(--gin-spacing-s);
+    background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
+
+    border-radius: var(--gin-border-xl);
   }
 }

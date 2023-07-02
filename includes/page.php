@@ -22,6 +22,8 @@ function gin_preprocess_page(&$variables) {
   }
 
   $variables['html_classes'] = [];
+  $config = config('gin.settings');
+  $basethemeurl = backdrop_get_path('theme', 'gin');
 
   // Darkmode
   if (theme_get_setting('enable_darkmode')) {
@@ -54,24 +56,35 @@ function gin_preprocess_page(&$variables) {
   backdrop_add_library('gin', 'sticky');
   // backdrop_add_library('gin', 'messages');
   backdrop_add_library('gin', 'tableselect');
-  backdrop_add_library('gin', 'gin_admin_bar');
 
-  // // Get theme settings.
-  $config = config('gin.settings');
-  // $toolbar = $settings->get('classic_toolbar');
+  // Modules
+  if (module_exists('dashboard')) {
+    backdrop_add_library('gin', 'dashboard');
+  }
+  if (module_exists('paragraphs')) {
+    backdrop_add_library('gin', 'paragraphs');
+  }
+  if (module_exists('coffee')) {
+    backdrop_add_library('gin', 'coffee');
+  }
+  if (module_exists('node_preview')) {
+    backdrop_add_library('gin', 'node_preview');
+  }
+  if (module_exists('webform')) {
+    backdrop_add_library('gin', 'webform');
+  }
+  if (module_exists('module_filter')) {
+    backdrop_add_library('gin', 'module_filter');
+  }
+  if (module_exists('chosen')) {
+    backdrop_add_library('gin', 'chosen');
+  }
+  if (module_exists('inline_entity_form')) {
+    backdrop_add_library('gin', 'inline_entity_form');
+  }
 
-  // if ($toolbar === 'classic') {
-  //   // Attach the classic toolbar styles.
-  //   $page['#attached']['library'][] = 'gin/gin_classic_toolbar';
-  // }
-  // elseif ($toolbar === 'horizontal') {
-  //   // Attach the horizontal toolbar styles.
-  //   $page['#attached']['library'][] = 'gin/gin_horizontal_toolbar';
-  // }
-  // else {
-  //   // Attach toolbar styles.
-  //   $page['#attached']['library'][] = 'gin/gin_toolbar';
-  // }
+  $options = array('every_page' => TRUE);
+  backdrop_add_css($basethemeurl . '/dist/css/layout/gin_admin_bar.css', $options);
 
   // Custom CSS file.
   // if (file_exists('public://gin-custom.css')) {
@@ -90,7 +103,6 @@ function gin_preprocess_page(&$variables) {
   $settings['toolbar_variant'] = $config->get('classic_toolbar');
 
   // Expose stylesheets to JS.
-  $basethemeurl = backdrop_get_path('theme', 'gin');
   $settings['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
   $settings['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
   $settings['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';

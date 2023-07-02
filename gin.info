@@ -13,6 +13,7 @@ stylesheets[all][] = dist/css/base/gin.css
 stylesheets[all][] = dist/css/components/breadcrumb.css
 stylesheets[all][] = dist/css/components/tabs.css
 stylesheets[all][] = dist/css/components/toolbar_secondary.css
+stylesheets[all][] = dist/css/components/dashboard.css
 
 ; Add print-specific CSS files.
 ; stylesheets[print][] = css/gin_print.css

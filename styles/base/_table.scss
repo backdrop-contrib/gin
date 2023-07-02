@@ -11,7 +11,7 @@ table.sticky-header {
   z-index: 98;
   position: fixed;
   left: auto !important;
-  top: calc(var(--ginHorizontalToolbarOffset) + var(--ginStickyOffset)) !important;
+  top: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset)) !important;
   background: transparent;
 
   &::before,
@@ -61,6 +61,10 @@ table {
       &:hover {
         background: transparent;
       }
+
+      th {
+        border-bottom: none;
+      }
     }
   }
 
@@ -80,7 +84,9 @@ table {
   }
 
   tbody {
-    tr {
+    tr,
+    tr.odd,
+    tr.even {
       border-bottom: 1px solid var(--gin-border-color-table);
     }
 
@@ -242,4 +248,9 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 .gin-layer-wrapper .views-table {
   margin-top: 0;
+}
+
+.tableresponsive-toggle {
+  float: right;
+  font-size: var(--gin-font-size-xs);
 }

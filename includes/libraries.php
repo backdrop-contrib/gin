@@ -117,14 +117,6 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['gin_admin_bar'] = array(
-    'title' => 'Admin bar',
-    'version' => BACKDROP_VERSION,
-    'css' => array(
-      $basethemeurl . '/dist/css/layout/gin_admin_bar.css' => array(),
-    ),
-  );
-
   $libraries['sidebar'] = array(
     'title' => 'Sidebar',
     'version' => BACKDROP_VERSION,
@@ -154,6 +146,14 @@ function gin_library_info() {
   );
 
   # Components
+
+  $libraries['dashboard'] = array(
+    'title' => 'Dashboard',
+    'version' => BACKDROP_VERSION,
+    'css' => array(
+      $basethemeurl . '/dist/css/components/gin_dashboard.css' => array(),
+    ),
+  );
 
   $libraries['tabs'] = array(
     'title' => 'Tabs',
@@ -255,30 +255,6 @@ function gin_library_info() {
     'version' => BACKDROP_VERSION,
     'css' => array(
       $basethemeurl . '/dist/css/components/node_preview.css' => array(),
-    ),
-  );
-
-  $libraries['settings_tray'] = array(
-    'title' => 'Settings tray',
-    'version' => BACKDROP_VERSION,
-    'css' => array(
-      $basethemeurl . '/dist/css/components/settings_tray.css' => array(),
-    ),
-  );
-
-  $libraries['settings_tray_edit'] = array(
-    'title' => 'Settings tray edit',
-    'version' => BACKDROP_VERSION,
-    'css' => array(
-      $basethemeurl . '/dist/css/components/settings_tray_edit.css' => array(),
-    ),
-  );
-
-  $libraries['settings_tray_edit'] = array(
-    'title' => 'Settings tray edit',
-    'version' => BACKDROP_VERSION,
-    'css' => array(
-      $basethemeurl . '/dist/css/components/settings_tray_edit.css' => array(),
     ),
   );
 
