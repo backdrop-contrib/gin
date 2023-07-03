@@ -49,38 +49,37 @@ function gin_preprocess_page(&$variables) {
   // $variables['classes'][] = 'gin--' . $toolbar . '-toolbar';
   $variables['classes'][] = 'gin--horizontal-toolbar';
 
-  // $drupal_version = (float) Drupal::VERSION;
-
-  backdrop_add_library('gin', 'init');
-  backdrop_add_library('gin', 'accent');
-  backdrop_add_library('gin', 'sticky');
-  // backdrop_add_library('gin', 'messages');
-  backdrop_add_library('gin', 'tableselect');
+  backdrop_add_library('gin', 'gin_init');
+  backdrop_add_library('gin', 'gin_accent');
+  backdrop_add_library('gin', 'gin_sticky');
+  backdrop_add_library('gin', 'gin_tableselect');
+  backdrop_add_library('gin', 'gin_ckeditor');
+  backdrop_add_library('gin', 'gin_dialog');
 
   // Modules
   if (module_exists('dashboard')) {
-    backdrop_add_library('gin', 'dashboard');
+    backdrop_add_library('gin', 'gin_dashboard');
   }
   if (module_exists('paragraphs')) {
-    backdrop_add_library('gin', 'paragraphs');
+    backdrop_add_library('gin', 'gin_paragraphs');
   }
   if (module_exists('coffee')) {
-    backdrop_add_library('gin', 'coffee');
+    backdrop_add_library('gin', 'gin_coffee');
   }
   if (module_exists('node_preview')) {
-    backdrop_add_library('gin', 'node_preview');
+    backdrop_add_library('gin', 'gin_node_preview');
   }
   if (module_exists('webform')) {
-    backdrop_add_library('gin', 'webform');
+    backdrop_add_library('gin', 'gin_webform');
   }
   if (module_exists('module_filter')) {
-    backdrop_add_library('gin', 'module_filter');
+    backdrop_add_library('gin', 'gin_module_filter');
   }
   if (module_exists('chosen')) {
-    backdrop_add_library('gin', 'chosen');
+    backdrop_add_library('gin', 'gin_chosen');
   }
   if (module_exists('inline_entity_form')) {
-    backdrop_add_library('gin', 'inline_entity_form');
+    backdrop_add_library('gin', 'gin_inline_entity_form');
   }
 
   $options = array('every_page' => TRUE);
@@ -102,7 +101,8 @@ function gin_preprocess_page(&$variables) {
   $settings['highcontrastmode_class'] = 'gin--high-contrast-mode';
   $settings['toolbar_variant'] = $config->get('classic_toolbar');
 
-  // Expose stylesheets to JS.
+  // Expose paths to JS.
+  $settings['current_path'] = current_path();
   $settings['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
   $settings['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
   $settings['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';

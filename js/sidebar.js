@@ -1,17 +1,17 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
-((Drupal, once) => {
+((Backdrop, once) => {
   const breakpoint = 1024;
-  const storageMobile = 'Drupal.gin.sidebarExpanded.mobile';
-  const storageDesktop = 'Drupal.gin.sidebarExpanded.desktop';
+  const storageMobile = 'Backdrop.gin.sidebarExpanded.mobile';
+  const storageDesktop = 'Backdrop.gin.sidebarExpanded.desktop';
 
-  Drupal.behaviors.ginSidebar = {
+  Backdrop.behaviors.ginSidebar = {
     attach: function attach(context) {
-      Drupal.ginSidebar.init(context);
+      Backdrop.ginSidebar.init(context);
     },
   };
 
-  Drupal.ginSidebar = {
+  Backdrop.ginSidebar = {
     init: function (context) {
       once('ginSidebarInit', '#gin_sidebar', context).forEach(() => {
         // If variable does not exist, create it, default being to show sidebar.
@@ -37,7 +37,7 @@
           }
         });
 
-        window.onresize = Drupal.debounce(this.handleResize, 150);
+        window.onresize = Backdrop.debounce(this.handleResize, 150);
       });
 
       // Toolbar toggle
@@ -58,16 +58,16 @@
     toggleSidebar: () => {
       // Set active state.
       if (document.querySelector('.meta-sidebar__trigger').classList.contains('is-active')) {
-        Drupal.ginSidebar.collapseSidebar();
+        Backdrop.ginSidebar.collapseSidebar();
       }
       else {
-        Drupal.ginSidebar.showSidebar();
+        Backdrop.ginSidebar.showSidebar();
       }
     },
 
     showSidebar: () => {
       const chooseStorage = window.innerWidth < breakpoint ? storageMobile : storageDesktop;
-      const showLabel = Drupal.t('Hide sidebar panel');
+      const showLabel = Backdrop.t('Hide sidebar panel');
       const sidebarTrigger = document.querySelector('.meta-sidebar__trigger');
 
       sidebarTrigger.setAttribute('title', showLabel);
@@ -83,7 +83,7 @@
 
     collapseSidebar: () => {
       const chooseStorage = window.innerWidth < breakpoint ? storageMobile : storageDesktop;
-      const hideLabel = Drupal.t('Show sidebar panel');
+      const hideLabel = Backdrop.t('Show sidebar panel');
       const sidebarTrigger = document.querySelector('.meta-sidebar__trigger');
 
       sidebarTrigger.setAttribute('title', hideLabel);
@@ -98,17 +98,17 @@
     },
 
     handleResize: () => {
-      Drupal.ginSidebar.removeInlineStyles();
+      Backdrop.ginSidebar.removeInlineStyles();
 
       // If small viewport, always collapse sidebar.
       if (window.innerWidth < breakpoint) {
-        Drupal.ginSidebar.collapseSidebar();
+        Backdrop.ginSidebar.collapseSidebar();
       } else {
         // If large viewport, show sidebar if it was open before.
         if (localStorage.getItem(storageDesktop) === 'true') {
-          Drupal.ginSidebar.showSidebar();
+          Backdrop.ginSidebar.showSidebar();
         } else {
-          Drupal.ginSidebar.collapseSidebar();
+          Backdrop.ginSidebar.collapseSidebar();
         }
       }
     },
@@ -122,4 +122,4 @@
     },
 
   };
-})(Drupal, once);
+})(Backdrop, once);

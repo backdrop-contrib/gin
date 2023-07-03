@@ -15,12 +15,11 @@ module.exports = {
     'accent': ['./js/accent.js'],
     'description_toggle': ['./js/description_toggle.js'],
     'edit_form': ['./js/edit_form.js'],
-    'gin_ckeditor': ['./js/gin_ckeditor.js'], // Can't rename as we would be in trouble
+    'ckeditor': ['./js/ckeditor.js'],
     'init': ['./js/init.js'],
     'settings': ['./js/settings.js'],
     'sidebar': ['./js/sidebar.js'],
     'sticky': ['./js/sticky.js'],
-    'toolbar': ['./js/toolbar.js'],
     // ################################################
     // CSS
     // ################################################
@@ -32,7 +31,6 @@ module.exports = {
     'components/breadcrumb': ['./styles/components/breadcrumb.scss'],
     'components/chosen': ['./styles/components/chosen.scss'],
     'components/ckeditor': ['./styles/components/ckeditor.scss'],
-    'components/ckeditor5': ['./styles/components/ckeditor5.scss'],
     'components/coffee': ['./styles/components/coffee.scss'],
     'components/contextual_links': ['./styles/components/contextual_links.scss'],
     'components/description_toggle': ['./styles/components/description_toggle.scss'],
@@ -48,14 +46,10 @@ module.exports = {
     'components/sidebar': ['./styles/components/sidebar.scss'],
     'components/tabs': ['./styles/components/tabs.scss'],
     'components/tableselect': ['./styles/components/tableselect.scss'],
-    'components/toolbar': ['./styles/components/toolbar.scss'],
     'components/toolbar_secondary': ['./styles/components/toolbar_secondary.scss'],
     'components/webform': ['./styles/components/webform.scss'],
     // Layout
     'layout/gin_admin_bar': ['./styles/layout/gin_admin_bar.scss'],
-    'layout/toolbar': ['./styles/layout/toolbar.scss'],
-    'layout/horizontal_toolbar': ['./styles/layout/horizontal_toolbar.scss'],
-    'layout/classic_toolbar': ['./styles/layout/classic_toolbar.scss'],
     // Theme
     'theme/accent': ['./styles/theme/accent.scss'],
     'theme/ckeditor': ['./styles/theme/ckeditor.scss'],

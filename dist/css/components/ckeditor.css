@@ -1,86 +1,87 @@
-.gin--dark-mode .cke.cke .cke_inner,
-.gin--dark-mode .cke.cke .cke_wysiwyg_frame,
-.gin--dark-mode .cke.cke .cke_wysiwyg_div {
+.gin--dark-mode .cke .cke_inner,
+.gin--dark-mode .cke .cke_wysiwyg_frame,
+.gin--dark-mode .cke .cke_wysiwyg_div {
   background: var(--gin-bg-layer2);
 }
 
-.cke.cke.cke_chrome {
+.cke.cke_chrome {
   width: 100% !important;
   border-color: var(--gin-border-color-form-element);
   border-radius: var(--gin-border-m);
 }
 
-.cke.cke .cke_inner {
+.cke .cke_inner {
   border-radius: var(--gin-border-m);
 }
 
-.cke.cke .cke_top {
+.cke .cke_top {
   background: var(--gin-bg-layer);
-  border-bottom: 1px solid var(--gin-border-color);
+  border-bottom: 1px solid var(--gin-border-color-form-element);
   border-radius: calc(var(--gin-border-m) - 1px) calc(var(--gin-border-m) - 1px) 0 0;
 }
 
-.gin--dark-mode .cke.cke .cke_top {
+.gin--dark-mode .cke .cke_top {
   background: var(--gin-bg-layer2);
 }
 
-.cke.cke .cke_bottom {
+.cke .cke_bottom {
+  border-color: var(--gin-border-color-form-element);
   background: var(--gin-bg-layer3);
   border-radius: 0 0 calc(var(--gin-border-m) - 1px) calc(var(--gin-border-m) - 1px);
 }
 
-.cke.cke .cke_contents {
+.cke .cke_contents {
   padding-left: var(--gin-spacing-xs);
   padding-right: var(--gin-spacing-xs);
 }
 
-.cke.cke .cke_path_empty:only-child::after {
+.cke .cke_path_empty:only-child::after {
   background: transparent;
 }
 
-[dir="ltr"] .cke.cke .cke_combo::after {
+[dir="ltr"] .cke .cke_combo::after {
   border-right: 1px solid var(--gin-border-color);
 }
 
-[dir="rtl"] .cke.cke .cke_combo::after {
+[dir="rtl"] .cke .cke_combo::after {
   border-left: 1px solid var(--gin-border-color);
 }
 
-.cke.cke .cke_combo_text {
+.cke .cke_combo_text {
   color: var(--gin-color-text);
 }
 
-.cke.cke .cke_combo_on a.cke_combo_button,
-.cke.cke .cke_combo_off a.cke_combo_button:hover,
-.cke.cke .cke_combo_off a.cke_combo_button:focus,
-.cke.cke .cke_combo_off a.cke_combo_button:active {
+.cke .cke_combo_on a.cke_combo_button,
+.cke .cke_combo_off a.cke_combo_button:hover,
+.cke .cke_combo_off a.cke_combo_button:focus,
+.cke .cke_combo_off a.cke_combo_button:active {
   background: var(--gin-bg-app);
   border: 1px solid var(--gin-bg-layer2);
 }
 
-.cke.cke a.cke_path_item,
-.cke.cke span.cke_path_empty {
+.cke a.cke_path_item,
+.cke span.cke_path_empty {
   color: var(--gin-color-text-light);
 }
 
-.cke.cke a.cke_button {
+.cke a.cke_button {
   border-radius: 3px;
 }
 
-.cke.cke a.cke_button_on {
+.cke a.cke_button_on {
   background: none;
 }
 
-.cke.cke a.cke_button_off:hover, .cke.cke a.cke_button_off:focus, .cke.cke a.cke_button_off:active {
+.cke a.cke_button_off:hover, .cke a.cke_button_off:focus, .cke a.cke_button_off:active {
   background: var(--gin-bg-item-hover);
   border: 1px solid var(--gin-border-color-layer2);
 }
 
-.gin--dark-mode .cke.cke .cke_button span {
+.gin--dark-mode .cke .cke_button span {
   filter: invert(1);
 }
 
-.cke.cke.cke_panel {
+.cke.cke_panel {
   background-color: var(--gin-bg-app);
   border: 0 none;
 }
@@ -93,18 +94,6 @@
   border-color: var(--gin-color-text);
 }
 
-.gin--dark-mode .cke.cke_chrome.cke_focus,
-.gin--dark-mode .cke.cke_chrome:hover,
-.gin--dark-mode .cke:hover .cke_contents,
-.gin--dark-mode .cke:hover .cke_top,
-.gin--dark-mode .cke:hover .cke_bottom {
-  border-color: var(--gin-border-color-layer2);
-}
-
-.cke:hover .cke_top, .gin--dark-mode .cke:hover .cke_top {
-  border-bottom-color: var(--gin-border-color);
-}
-
 .cke.cke_chrome.cke_focus:hover,
 .cke.cke_focus .cke_contents,
 .cke.cke_focus .cke_top,
@@ -114,14 +103,6 @@
 .error + .cke.cke_focus .cke_top,
 .error + .cke.cke_focus .cke_bottom {
   border-color: var(--gin-color-text);
-}
-
-.cke_top,
-.cke.cke_chrome.cke_focus:hover .cke_top,
-.cke.cke_focus .cke_top,
-.error + .cke.cke_focus .cke_top,
-.error + .cke.cke_chrome.cke_focus:hover .cke_top {
-  border-bottom: 1px solid var(--gin-border-color);
 }
 
 .cke textarea.cke_source {

@@ -1,5 +1,5 @@
-(Drupal => {
-  Drupal.behaviors.ginEditForm = {
+((Backdrop, once) => {
+  Backdrop.behaviors.ginEditForm = {
     attach: context => {
       once("ginEditForm", ".region-content form.gin-node-edit-form", context).forEach((form => {
         const sticky = context.querySelector(".gin-sticky"), newParent = context.querySelector(".region-sticky__items__inner");
@@ -13,4 +13,4 @@
       }));
     }
   };
-})(Drupal);
+})(Backdrop, once);

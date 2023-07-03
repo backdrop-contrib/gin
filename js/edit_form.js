@@ -2,8 +2,8 @@
 
 'use strict';
 
-((Drupal) => {
-  Drupal.behaviors.ginEditForm = {
+((Backdrop, once) => {
+  Backdrop.behaviors.ginEditForm = {
     attach: (context) => {
       once('ginEditForm', '.region-content form.gin-node-edit-form', context).forEach(form => {
         const sticky = context.querySelector('.gin-sticky');
@@ -25,4 +25,4 @@
       });
     }
   };
-})(Drupal);
+})(Backdrop, once);

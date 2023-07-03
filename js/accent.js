@@ -2,8 +2,8 @@
 
 ((Backdrop, once) => {
   Backdrop.behaviors.ginAccent = {
-    attach: function attach(context) {
-      once('ginAccent', 'body', context).forEach(() => {
+    attach: function attach() {
+      once('ginAccent', 'body').forEach(() => {
         // Check Darkmode.
         Backdrop.ginAccent.checkDarkmode();
 

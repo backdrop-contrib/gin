@@ -5,7 +5,7 @@
  */
 
 // Attach custom library.
-backdrop_add_library('gin', 'settings');
+backdrop_add_library('gin', 'gin_settings');
 
 $experimental_label = ' (EXPERIMENTAL)';
 $beta_label = ' (BETA)';

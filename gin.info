@@ -6,14 +6,12 @@ backdrop = 1.x
 ; Add custom CSS files.
 stylesheets[all][] = dist/css/theme/variables.css
 ; stylesheets[all][] = dist/css/theme/accent.css
-stylesheets[all][] = dist/css/theme/ckeditor.css
-stylesheets[all][] = dist/css/theme/dialog.css
 stylesheets[all][] = dist/css/theme/font.css
 stylesheets[all][] = dist/css/base/gin.css
+; stylesheets[all][] = dist/css/component/ckeditor.css
 stylesheets[all][] = dist/css/components/breadcrumb.css
 stylesheets[all][] = dist/css/components/tabs.css
 stylesheets[all][] = dist/css/components/toolbar_secondary.css
-stylesheets[all][] = dist/css/components/dashboard.css
 
 ; Add print-specific CSS files.
 ; stylesheets[print][] = css/gin_print.css
@@ -27,9 +25,7 @@ ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
 ; stylesheets[all][] = system.theme.css
 
 ; Add custom JavaScript files.
-; scripts[] = dist/js/init.js
-; scripts[] = dist/js/accent.js
-; scripts[] = dist/js/sticky.js
+; scripts[] = js/libs/once.js
 
 ; Indicate that this theme has color support.
 settings[color] = true

@@ -19,11 +19,11 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/base/gin.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'base'),
+      array('gin', 'gin_base'),
     ),
   );
 
-  $libraries['base'] = array(
+  $libraries['gin_base'] = array(
     'title' => 'Base',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -31,12 +31,12 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/theme/variables.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'tabs'),
-      array('gin', 'dialog'),
+      array('gin', 'gin_tabs'),
+      array('gin', 'gin_dialog'),
     ),
   );
 
-  $libraries['init'] = array(
+  $libraries['gin_init'] = array(
     'title' => 'Init',
     'version' => BACKDROP_VERSION,
     'header' => TRUE,
@@ -52,7 +52,7 @@ function gin_library_info() {
   //
   // #########################
 
-  $libraries['accent'] = array(
+  $libraries['gin_accent'] = array(
     'title' => 'Accent',
     'version' => BACKDROP_VERSION,
     'js' => array(
@@ -62,24 +62,19 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/theme/accent.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'once'),
+      array('gin', 'gin_once'),
     ),
   );
 
-  $libraries['dialog'] = array(
+  $libraries['gin_dialog'] = array(
     'title' => 'Dialog',
     'version' => BACKDROP_VERSION,
     'css' => array(
-      $basethemeurl . '/dist/css/theme/dialog.css' => array(),
       $basethemeurl . '/dist/css/components/dialog.css' => array(),
-    ),
-    'dependencies' => array(
-      array('gin', 'base'),
-      array('gin', 'accent'),
     ),
   );
 
-  $libraries['description_toggle'] = array(
+  $libraries['gin_description_toggle'] = array(
     'title' => 'Description Toggle',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -89,8 +84,8 @@ function gin_library_info() {
       $basethemeurl . '/dist/js/description_toggle.js' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'base'),
-      array('gin', 'accent'),
+      array('gin', 'gin_base'),
+      array('gin', 'gin_accent'),
     ),
   );
 
@@ -101,23 +96,26 @@ function gin_library_info() {
   //
   // #########################
 
-  $libraries['once'] = array(
+  $libraries['gin_once'] = array(
     'title' => 'Once',
     'version' => BACKDROP_VERSION,
     'js' => array(
-      $basethemeurl . '/js/libs/once.js' => array(),
+      $basethemeurl . '/js/libs/once.js' => array('weight' => -1),
     ),
   );
 
-  $libraries['sticky'] = array(
+  $libraries['gin_sticky'] = array(
     'title' => 'Sticky',
     'version' => BACKDROP_VERSION,
     'js' => array(
       $basethemeurl . '/dist/js/sticky.js' => array(),
     ),
+    'dependencies' => array(
+      array('gin', 'gin_once'),
+    ),
   );
 
-  $libraries['sidebar'] = array(
+  $libraries['gin_sidebar'] = array(
     'title' => 'Sidebar',
     'version' => BACKDROP_VERSION,
     'js' => array(
@@ -127,11 +125,11 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/components/sidebar.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'once'),
+      array('gin', 'gin_once'),
     ),
   );
 
-  $libraries['settings'] = array(
+  $libraries['gin_settings'] = array(
     'title' => 'Settings',
     'version' => BACKDROP_VERSION,
     'js' => array(
@@ -141,13 +139,13 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/components/settings.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'once'),
+      array('gin', 'gin_once'),
     ),
   );
 
   # Components
 
-  $libraries['dashboard'] = array(
+  $libraries['gin_dashboard'] = array(
     'title' => 'Dashboard',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -155,7 +153,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['tabs'] = array(
+  $libraries['gin_tabs'] = array(
     'title' => 'Tabs',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -163,7 +161,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['tableselect'] = array(
+  $libraries['gin_tableselect'] = array(
     'title' => 'Tableselect',
     'version' => BACKDROP_VERSION,
     'js' => array(
@@ -173,11 +171,11 @@ function gin_library_info() {
       $basethemeurl . '/dist/css/components/tableselect.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'once'),
+      array('gin', 'gin_once'),
     ),
   );
 
-  $libraries['edit_form'] = array(
+  $libraries['gin_edit_form'] = array(
     'title' => 'Edit form',
     'version' => BACKDROP_VERSION,
     'js' => array(
@@ -186,9 +184,12 @@ function gin_library_info() {
     'css' => array(
       $basethemeurl . '/dist/css/components/edit_form.css' => array(),
     ),
+    'dependencies' => array(
+      array('gin', 'gin_once'),
+    ),
   );
 
-  $libraries['contextual_links'] = array(
+  $libraries['gin_contextual_links'] = array(
     'title' => 'Contextual links',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -196,21 +197,21 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['ckeditor'] = array(
+  $libraries['gin_ckeditor'] = array(
     'title' => 'CKEditor',
     'version' => BACKDROP_VERSION,
     'js' => array(
-      $basethemeurl . '/dist/js/gin_ckeditor.js' => array(),
+      $basethemeurl . '/dist/js/ckeditor.js' => array('weight' => 0),
     ),
     'css' => array(
       $basethemeurl . '/dist/css/components/ckeditor.css' => array(),
     ),
     'dependencies' => array(
-      array('gin', 'once'),
+      array('gin', 'gin_once'),
     ),
   );
 
-  $libraries['ajax'] = array(
+  $libraries['gin_ajax'] = array(
     'title' => 'Ajax',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -218,7 +219,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['revisions'] = array(
+  $libraries['gin_revisions'] = array(
     'title' => 'Revisions',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -226,7 +227,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['autocomplete'] = array(
+  $libraries['gin_autocomplete'] = array(
     'title' => 'Autocomplete',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -234,7 +235,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['breadcrumb'] = array(
+  $libraries['gin_breadcrumb'] = array(
     'title' => 'Breadcrumb',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -242,7 +243,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['coffee'] = array(
+  $libraries['gin_coffee'] = array(
     'title' => 'Coffee',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -250,7 +251,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['node_preview'] = array(
+  $libraries['gin_node_preview'] = array(
     'title' => 'Node preview',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -260,7 +261,7 @@ function gin_library_info() {
 
   # Modules
 
-  $libraries['paragraphs'] = array(
+  $libraries['gin_paragraphs'] = array(
     'title' => 'Paragraphs',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -268,7 +269,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['webform'] = array(
+  $libraries['gin_webform'] = array(
     'title' => 'Webform',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -276,7 +277,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['module_filter'] = array(
+  $libraries['gin_module_filter'] = array(
     'title' => 'Module filter',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -284,7 +285,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['chosen'] = array(
+  $libraries['gin_chosen'] = array(
     'title' => 'Chosen',
     'version' => BACKDROP_VERSION,
     'css' => array(
@@ -292,7 +293,7 @@ function gin_library_info() {
     ),
   );
 
-  $libraries['inline_entity_form'] = array(
+  $libraries['gin_inline_entity_form'] = array(
     'title' => 'Inline entity form',
     'version' => BACKDROP_VERSION,
     'css' => array(

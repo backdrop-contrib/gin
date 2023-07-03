@@ -1,5 +1,5 @@
-(Drupal => {
-  Drupal.behaviors.formDescriptionToggle = {
+(Backdrop => {
+  Backdrop.behaviors.formDescriptionToggle = {
     attach: context => {
       context.querySelectorAll(".help-icon__description-toggle").forEach(((elem, index) => {
         if (elem.dataset.formDescriptionToggleAttached) return;
@@ -20,4 +20,4 @@
       }));
     }
   };
-})(Drupal);
+})(Backdrop);

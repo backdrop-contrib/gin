@@ -1,7 +1,7 @@
 ((Backdrop, once) => {
   Backdrop.behaviors.ginTableSelect = {
-    attach: (context) => {
-      once('tableSelect', 'th.select-all', context).forEach((el) => {
+    attach: () => {
+      once('tableSelect', 'th.select-all').forEach((el) => {
         if (el.closest('table')) {
           Backdrop.ginTableSelect(el);
         }
