@@ -4637,3 +4637,20 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
+/* Layout admin pages */
+
+.layout-content-form .page-title {
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+.layout-content-form .container-fluid {
+  margin-left: 0;
+  margin-right: 0;
+  flex-grow: 1;
+}
+
+.layout-content-form .gin-secondary-toolbar {
+  height: auto;
+}
+

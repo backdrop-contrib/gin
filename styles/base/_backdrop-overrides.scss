@@ -384,3 +384,21 @@ fieldset:not(.fieldgroup) {
     padding: var(--gin-spacing-m) var(--gin-spacing-l);
   }
 }
+
+/* Layout admin pages */
+.layout-content-form {
+  .page-title {
+    max-width: 100%;
+    flex-grow: 1;
+  }
+
+  .container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    flex-grow: 1;
+  }
+
+  .gin-secondary-toolbar {
+    height: auto;
+  }
+}
