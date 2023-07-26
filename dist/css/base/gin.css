@@ -4465,6 +4465,14 @@ table.sticky-enabled {
   margin: .5em 0 .25em;
 }
 
+.admin-item__link::before {
+  position: absolute;
+  display: block;
+  width: 1em;
+  height: 1.5em;
+  content: "";
+}
+
 .views-exposed-form {
   margin-bottom: var(--gin-spacing-l);
 }
