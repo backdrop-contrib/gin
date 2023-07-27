@@ -2,9 +2,13 @@
   border: 2px solid var(--gin-color-primary);
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
+  display: block;
+  overflow: visible;
+  margin: 0;
+  list-style: none;
 
   // Offset for select button on first item
-  &--multiple > .dropbutton__item:first-of-type {
+  &-multiple .dropbutton > .dropbutton-action {
     height: 100%;
     margin-right: var(--gin-spacing-xxl);
     border-right: 1px solid var(--gin-color-primary-light-active);
@@ -26,60 +30,93 @@
     border-color: var(--gin-color-primary);
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: var(--gin-color-primary-active);
   }
 
   &-wrapper {
     box-shadow: none;
+    display: inline-flex;
   }
 
-  &__item:first-of-type > *,
-  &__toggle {
+  &-action > *,
+  &-toggle > button {
     background: none;
     white-space: nowrap;
   }
 
-  &__item:first-of-type > * {
+  &-action > * {
     padding: calc(.875rem - 1px) calc(var(--gin-spacing-l) - 1px);
   }
 
-  &__toggle {
-    top: 2px;
-    right: 2px;
+  &-toggle,
+  &-toggle > button {
     width: calc(var(--gin-spacing-xxl) + 1px);
-    height: 2.75rem;
-
-    &:hover {
-      background-color: var(--gin-color-primary);
-    }
-
-    &::before {
-      background-image: none;
-      background-color: var(--gin-color-primary);
-      mask-image: icon('drop');
-      mask-repeat: no-repeat;
-      mask-position: center center;
-      mask-size: 12px 12px;
-    }
-
-    &:hover::before,
-    &:active::before,
-    &:focus::before {
-      background-color: var(--gin-color-button-text);
-    }
   }
 
-  & &__items {
+  & &-toggle {
+    > button {
+      top: 2px;
+      right: 2px;
+      height: calc(var(--gin-spacing-xxl) - 6px);
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      appearance: none;
+
+
+      &:hover {
+        background-color: var(--gin-color-primary);
+      }
+
+      &::before {
+        background-image: none;
+        background-color: var(--gin-color-primary);
+        mask-image: icon('drop');
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        mask-size: 12px 12px;
+        width: 0.75rem;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        height: 0.5625rem;
+        content: "";
+        transform: translate(50%, -50%) rotate(0);
+        background-size: contain;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--gin-color-primary-hover);
+      }
+
+      &:hover::before,
+      &:active::before,
+      &:focus::before {
+        background-color: #fff;
+      }
+    }
+
+    .dropbutton-arrow {
+      display: none;
+    }
+  }
+}
+
+.dropbutton-wrapper.open {
+  .dropbutton {
     position: absolute;
-    right: 0;
     list-style: none;
-    padding: .5em;
-    margin: 0;
-    min-width: 120px;
     background: var(--gin-bg-layer3);
     border-radius: var(--gin-border-l);
     box-shadow: var(--gin-shadow-l2);
+    overflow: visible;
+    z-index: 5;
+    height: auto;
+    top: calc(-1 * (var(--gin-spacing-xxl) + 2px) / 2);
 
     .node-form & {
       left: 0;
@@ -87,129 +124,95 @@
     }
   }
 
-  & > &__items > .dropbutton__item:first-of-type {
-    > a,
-    > input,
-    > .button {
-      border-radius: var(--gin-border-s) var(--gin-border-s) 0 0;
-    }
-  }
+  &-toggle {
+    > button {
+      border-radius: var(--gin-border-l);
 
-  // The ugly part: make it work for all different dropbutton versions out there
-  &:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item,
-  & &__items > .dropbutton__item,
-  & &__items > .dropbutton__item ~ .dropbutton__item {
-    background-color: var(--gin-bg-app);
-    border: 0 none;
-    box-shadow: none;
-
-    &:first-of-type {
-      margin-right: 0;
-    }
-
-    // Mutiple Dropbutton only has one item
-    &:first-of-type:last-of-type > * {
-      .js .dropbutton--multiple & {
-        border-radius: var(--gin-border-s);
-      }
-    }
-
-    > a,
-    > input,
-    > .button {
-      font-weight: var(--gin-font-weight-heavy);
-      text-align: left;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      color: var(--gin-color-primary);
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      margin: 0;
-      border: 0 none !important;
-      border-radius: 0;
-      background: var(--gin-bg-layer3);
-      box-shadow: none;
-      box-sizing: border-box;
-
-      &:hover, &:active, &:focus {
-        color: var(--gin-color-button-text);
-        background: var(--gin-color-primary);
-        border-radius: var(--gin-border-s);
+      &::before {
+        mask-image: icon('drop');
       }
     }
   }
 
-  & > .dropbutton__item:first-of-type {
-    > a,
-    > input,
-    > .button {
-      &:hover, &:active, &:focus {
-        color: var(--gin-color-button-text);
-        background: var(--gin-color-primary);
-      }
-    }
-  }
-
-  & &__items > .dropbutton__item {
-    border-radius: var(--gin-border-s);
-  }
-
-  &:not(.dropbutton--gin) > .dropbutton__item:not(:first-of-type),
-  & &__items > .dropbutton__item,
-  & > &__items > .dropbutton__item ~ .dropbutton__item {
-    > a,
-    > input,
-    > .button {
-      font-size: var(--gin-font-size-s) !important;
-      padding: .75em 1em !important;
-    }
-  }
-
-  &__item:first-of-type ~ .dropbutton__item {
-    max-width: unset;
-
-    & > *:hover {
-      background-color: var(--gin-bg-layer3);
-    }
-
-    &__item ~ .dropbutton__item:last-child {
-      border-color: var(--gin-color-primary);
-    }
-  }
 }
 
 html.js {
   .dropbutton {
-    height: 3rem;
-    min-height: 3rem;
+    height: calc(var(--gin-spacing-xxl) - 4px);
+    min-height: calc(var(--gin-spacing-xxl) - 4px);
     box-sizing: border-box;
+    border-color: var(--gin-color-primary);
+    border-width: 2px;
+
+    .dropbutton-action {
+      display: flex;
+
+      > a {
+        align-self: center;
+        border-radius: 0;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        height: calc(var(--gin-spacing-xxl) - 4px);
+        line-height: calc(var(--gin-spacing-xxl) - 4px);
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: var(--gin-color-button-text);
+          background: var(--gin-color-primary);
+        }
+
+      }
+
+    }
+
+    .dropbutton-action.first {
+      > a {
+        border-radius: var(--gin-border-m) 0 0 0;
+      }
+    }
+
+    .dropbutton-action.last {
+      > a {
+        border-radius: 0 0 0 var(--gin-border-m);
+      }
+    }
   }
 
-  .dropbutton-wrapper:not(.open) .dropbutton__item:first-of-type ~ .dropbutton__items {
+  .dropbutton-wrapper {
+    min-height: inherit;
+  }
+
+  .dropbutton-wrapper:not(.open) .dropbutton-action:first-of-type ~ .dropbutton-actions {
     display: none;
   }
 
-  .dropbutton-wrapper:not(.open) .dropbutton__items .dropbutton__item:first-of-type ~ .dropbutton__item {
+  .dropbutton-wrapper:not(.open) .dropbutton-actions .dropbutton-action:first-of-type ~ .dropbutton-action {
     display: block;
   }
 
   .dropbutton-widget {
     background-color: transparent;
+    position: relative;
+    flex: 1 1 auto;
+    padding-right: 0;
+    border: none;
   }
 }
 
 html.js.no-touchevents {
-  .dropbutton--multiple.dropbutton--small .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--small .dropbutton-action:first-of-type {
     margin-right: 0;
   }
 
-  .dropbutton--multiple.dropbutton--small > .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--small > .dropbutton-action:first-of-type {
     margin-right: var(--gin-spacing-xl);
   }
 
-  .dropbutton--multiple.dropbutton--extrasmall > .dropbutton__item:first-of-type {
+  .dropbutton--multiple.dropbutton--extrasmall > .dropbutton-action:first-of-type {
     margin-right: var(--gin-spacing-l);
   }
 
@@ -227,7 +230,7 @@ html.js.no-touchevents {
     border-radius: var(--gin-border-s);
   }
 
-  .dropbutton--multiple.dropbutton--extrasmall .dropbutton__items .dropbutton__item {
+  .dropbutton--multiple.dropbutton--extrasmall .dropbutton-actions .dropbutton-action {
     margin-right: 0;
   }
 }

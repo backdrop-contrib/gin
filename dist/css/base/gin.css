@@ -2479,23 +2479,27 @@ a.button:active {
   border: 2px solid var(--gin-color-primary);
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
+  display: block;
+  overflow: visible;
+  margin: 0;
+  list-style: none;
 }
 
-.dropbutton--multiple > .dropbutton__item:first-of-type {
+.dropbutton-multiple .dropbutton > .dropbutton-action {
   height: 100%;
 }
 
-[dir="ltr"] .dropbutton--multiple > .dropbutton__item:first-of-type {
+[dir="ltr"] .dropbutton-multiple .dropbutton > .dropbutton-action {
   margin-right: var(--gin-spacing-xxl);
   border-right: 1px solid var(--gin-color-primary-light-active);
 }
 
-[dir="rtl"] .dropbutton--multiple > .dropbutton__item:first-of-type {
+[dir="rtl"] .dropbutton-multiple .dropbutton > .dropbutton-action {
   margin-left: var(--gin-spacing-xxl);
   border-left: 1px solid var(--gin-color-primary-light-active);
 }
 
-.dropbutton--multiple > .dropbutton__item:first-of-type input {
+.dropbutton-multiple .dropbutton > .dropbutton-action input {
   color: var(--gin-color-primary);
   height: 100%;
   background-color: transparent;
@@ -2517,36 +2521,46 @@ a.button:active {
 
 .dropbutton-wrapper {
   box-shadow: none;
+  display: inline-flex;
 }
 
-.dropbutton__item:first-of-type > *, .dropbutton__toggle {
+.dropbutton-action > *, .dropbutton-toggle > button {
   background: none;
   white-space: nowrap;
 }
 
-.dropbutton__item:first-of-type > * {
+.dropbutton-action > * {
   padding: calc(.875rem - 1px) calc(var(--gin-spacing-l) - 1px);
 }
 
-.dropbutton__toggle {
-  top: 2px;
+.dropbutton-toggle, .dropbutton-toggle > button {
   width: calc(var(--gin-spacing-xxl) + 1px);
-  height: 2.75rem;
 }
 
-[dir="ltr"] .dropbutton__toggle {
+.dropbutton .dropbutton-toggle > button {
+  top: 2px;
+  height: calc(var(--gin-spacing-xxl) - 6px);
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+[dir="ltr"] .dropbutton .dropbutton-toggle > button {
   right: 2px;
 }
 
-[dir="rtl"] .dropbutton__toggle {
+[dir="rtl"] .dropbutton .dropbutton-toggle > button {
   left: 2px;
 }
 
-.dropbutton__toggle:hover {
+.dropbutton .dropbutton-toggle > button:hover {
   background-color: var(--gin-color-primary);
 }
 
-.dropbutton__toggle::before {
+.dropbutton .dropbutton-toggle > button::before {
   background-image: none;
   background-color: var(--gin-color-primary);
   -webkit-mask-image: url("../../media/sprite.svg#drop-view");
@@ -2557,213 +2571,167 @@ a.button:active {
           mask-position: center center;
   -webkit-mask-size: 12px 12px;
           mask-size: 12px 12px;
+  width: .75rem;
+  position: absolute;
+  top: 50%;
+  height: .5625rem;
+  content: "";
+  background-size: contain;
 }
 
-.dropbutton__toggle:hover::before, .dropbutton__toggle:active::before, .dropbutton__toggle:focus::before {
-  background-color: var(--gin-color-button-text);
+[dir="ltr"] .dropbutton .dropbutton-toggle > button::before {
+  right: 50%;
+  transform: translate(50%, -50%) rotate(0);
 }
 
-.dropbutton .dropbutton__items {
+[dir="rtl"] .dropbutton .dropbutton-toggle > button::before {
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.dropbutton .dropbutton-toggle > button:hover, .dropbutton .dropbutton-toggle > button:active, .dropbutton .dropbutton-toggle > button:focus {
+  background-color: var(--gin-color-primary-hover);
+}
+
+.dropbutton .dropbutton-toggle > button:hover::before, .dropbutton .dropbutton-toggle > button:active::before, .dropbutton .dropbutton-toggle > button:focus::before {
+  background-color: #fff;
+}
+
+.dropbutton .dropbutton-toggle .dropbutton-arrow {
+  display: none;
+}
+
+.dropbutton-wrapper.open .dropbutton {
   position: absolute;
   list-style: none;
-  padding: .5em;
-  margin: 0;
-  min-width: 120px;
   background: var(--gin-bg-layer3);
   border-radius: var(--gin-border-l);
   box-shadow: var(--gin-shadow-l2);
+  overflow: visible;
+  z-index: 5;
+  height: auto;
+  top: calc(-1 * (var(--gin-spacing-xxl) + 2px) / 2);
 }
 
-[dir="ltr"] .dropbutton .dropbutton__items {
-  right: 0;
-}
-
-[dir="rtl"] .dropbutton .dropbutton__items {
-  left: 0;
-}
-
-[dir="ltr"] .node-form .dropbutton .dropbutton__items {
+[dir="ltr"] .node-form .dropbutton-wrapper.open .dropbutton {
   left: 0;
   right: auto;
 }
 
-[dir="rtl"] .node-form .dropbutton .dropbutton__items {
+[dir="rtl"] .node-form .dropbutton-wrapper.open .dropbutton {
   right: 0;
   left: auto;
 }
 
-.dropbutton > .dropbutton__items > .dropbutton__item:first-of-type > a,
-.dropbutton > .dropbutton__items > .dropbutton__item:first-of-type > input,
-.dropbutton > .dropbutton__items > .dropbutton__item:first-of-type > .button {
-  border-radius: var(--gin-border-s) var(--gin-border-s) 0 0;
+.dropbutton-wrapper.open-toggle > button {
+  border-radius: var(--gin-border-l);
 }
 
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item, .dropbutton .dropbutton__items > .dropbutton__item, .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item {
-  background-color: var(--gin-bg-app);
-  border: 0 none;
-  box-shadow: none;
-}
-
-[dir="ltr"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item:first-of-type, [dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item:first-of-type, [dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item:first-of-type {
-  margin-right: 0;
-}
-
-[dir="rtl"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item:first-of-type, [dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item:first-of-type, [dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item:first-of-type {
-  margin-left: 0;
-}
-
-.js .dropbutton--multiple .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item:first-of-type:last-of-type > *, .js .dropbutton--multiple .dropbutton .dropbutton__items > .dropbutton__item:first-of-type:last-of-type > *, .js .dropbutton--multiple .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item:first-of-type:last-of-type > * {
-  border-radius: var(--gin-border-s);
-}
-
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button, .dropbutton .dropbutton__items > .dropbutton__item > a,
-.dropbutton .dropbutton__items > .dropbutton__item > input,
-.dropbutton .dropbutton__items > .dropbutton__item > .button, .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button {
-  font-weight: var(--gin-font-weight-heavy);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  color: var(--gin-color-primary);
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  margin: 0;
-  border: 0 none !important;
-  border-radius: 0;
-  background: var(--gin-bg-layer3);
-  box-shadow: none;
-  box-sizing: border-box;
-}
-
-[dir="ltr"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a,
-[dir="ltr"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input,
-[dir="ltr"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item > a,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item > input,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item > .button,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input,
-[dir="ltr"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button {
-  text-align: left;
-}
-
-[dir="rtl"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a,
-[dir="rtl"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input,
-[dir="rtl"] .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item > a,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item > input,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item > .button,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input,
-[dir="rtl"] .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button {
-  text-align: right;
-}
-
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a:hover, .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a:active, .dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > a:focus,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input:hover,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input:active,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > input:focus,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button:hover,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button:active,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item ~ .dropbutton__item > .button:focus, .dropbutton .dropbutton__items > .dropbutton__item > a:hover, .dropbutton .dropbutton__items > .dropbutton__item > a:active, .dropbutton .dropbutton__items > .dropbutton__item > a:focus,
-.dropbutton .dropbutton__items > .dropbutton__item > input:hover,
-.dropbutton .dropbutton__items > .dropbutton__item > input:active,
-.dropbutton .dropbutton__items > .dropbutton__item > input:focus,
-.dropbutton .dropbutton__items > .dropbutton__item > .button:hover,
-.dropbutton .dropbutton__items > .dropbutton__item > .button:active,
-.dropbutton .dropbutton__items > .dropbutton__item > .button:focus, .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a:hover, .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a:active, .dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a:focus,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input:hover,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input:active,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input:focus,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button:hover,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button:active,
-.dropbutton .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button:focus {
-  color: var(--gin-color-button-text);
-  background: var(--gin-color-primary);
-  border-radius: var(--gin-border-s);
-}
-
-.dropbutton > .dropbutton__item:first-of-type > a:hover, .dropbutton > .dropbutton__item:first-of-type > a:active, .dropbutton > .dropbutton__item:first-of-type > a:focus,
-.dropbutton > .dropbutton__item:first-of-type > input:hover,
-.dropbutton > .dropbutton__item:first-of-type > input:active,
-.dropbutton > .dropbutton__item:first-of-type > input:focus,
-.dropbutton > .dropbutton__item:first-of-type > .button:hover,
-.dropbutton > .dropbutton__item:first-of-type > .button:active,
-.dropbutton > .dropbutton__item:first-of-type > .button:focus {
-  color: var(--gin-color-button-text);
-  background: var(--gin-color-primary);
-}
-
-.dropbutton .dropbutton__items > .dropbutton__item {
-  border-radius: var(--gin-border-s);
-}
-
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item:not(:first-of-type) > a,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item:not(:first-of-type) > input,
-.dropbutton:not(.dropbutton--gin) > .dropbutton__item:not(:first-of-type) > .button, .dropbutton .dropbutton__items > .dropbutton__item > a,
-.dropbutton .dropbutton__items > .dropbutton__item > input,
-.dropbutton .dropbutton__items > .dropbutton__item > .button, .dropbutton > .dropbutton__items > .dropbutton__item ~ .dropbutton__item > a,
-.dropbutton > .dropbutton__items > .dropbutton__item ~ .dropbutton__item > input,
-.dropbutton > .dropbutton__items > .dropbutton__item ~ .dropbutton__item > .button {
-  font-size: var(--gin-font-size-s) !important;
-  padding: .75em 1em !important;
-}
-
-.dropbutton__item:first-of-type ~ .dropbutton__item {
-  max-width: unset;
-}
-
-.dropbutton__item:first-of-type ~ .dropbutton__item > *:hover {
-  background-color: var(--gin-bg-layer3);
-}
-
-.dropbutton__item:first-of-type ~ .dropbutton__item__item ~ .dropbutton__item:last-child {
-  border-color: var(--gin-color-primary);
+.dropbutton-wrapper.open-toggle > button::before {
+  -webkit-mask-image: url("../../media/sprite.svg#drop-view");
+          mask-image: url("../../media/sprite.svg#drop-view");
 }
 
 html.js .dropbutton {
-  height: 3rem;
-  min-height: 3rem;
+  height: calc(var(--gin-spacing-xxl) - 4px);
+  min-height: calc(var(--gin-spacing-xxl) - 4px);
   box-sizing: border-box;
+  border-color: var(--gin-color-primary);
+  border-width: 2px;
 }
 
-html.js .dropbutton-wrapper:not(.open) .dropbutton__item:first-of-type ~ .dropbutton__items {
+html.js .dropbutton .dropbutton-action {
+  display: flex;
+}
+
+html.js .dropbutton .dropbutton-action > a {
+  align-self: center;
+  border-radius: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  height: calc(var(--gin-spacing-xxl) - 4px);
+  line-height: calc(var(--gin-spacing-xxl) - 4px);
+}
+
+html[dir="ltr"].js .dropbutton .dropbutton-action > a {
+  text-align: left;
+}
+
+html[dir="rtl"].js .dropbutton .dropbutton-action > a {
+  text-align: right;
+}
+
+html.js .dropbutton .dropbutton-action > a:hover, html.js .dropbutton .dropbutton-action > a:active, html.js .dropbutton .dropbutton-action > a:focus {
+  color: var(--gin-color-button-text);
+  background: var(--gin-color-primary);
+}
+
+html[dir="ltr"].js .dropbutton .dropbutton-action.first > a {
+  border-radius: var(--gin-border-m) 0 0 0;
+}
+
+html[dir="rtl"].js .dropbutton .dropbutton-action.first > a {
+  border-radius: 0 var(--gin-border-m) 0 0;
+}
+
+html[dir="ltr"].js .dropbutton .dropbutton-action.last > a {
+  border-radius: 0 0 0 var(--gin-border-m);
+}
+
+html[dir="rtl"].js .dropbutton .dropbutton-action.last > a {
+  border-radius: 0 0 var(--gin-border-m) 0;
+}
+
+html.js .dropbutton-wrapper {
+  min-height: inherit;
+}
+
+html.js .dropbutton-wrapper:not(.open) .dropbutton-action:first-of-type ~ .dropbutton-actions {
   display: none;
 }
 
-html.js .dropbutton-wrapper:not(.open) .dropbutton__items .dropbutton__item:first-of-type ~ .dropbutton__item {
+html.js .dropbutton-wrapper:not(.open) .dropbutton-actions .dropbutton-action:first-of-type ~ .dropbutton-action {
   display: block;
 }
 
 html.js .dropbutton-widget {
   background-color: transparent;
+  position: relative;
+  flex: 1 1 auto;
+  border: none;
 }
 
-html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--small .dropbutton__item:first-of-type {
+html[dir="ltr"].js .dropbutton-widget {
+  padding-right: 0;
+}
+
+html[dir="rtl"].js .dropbutton-widget {
+  padding-left: 0;
+}
+
+html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--small .dropbutton-action:first-of-type {
   margin-right: 0;
 }
 
-html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--small .dropbutton__item:first-of-type {
+html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--small .dropbutton-action:first-of-type {
   margin-left: 0;
 }
 
-html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--small > .dropbutton__item:first-of-type {
+html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--small > .dropbutton-action:first-of-type {
   margin-right: var(--gin-spacing-xl);
 }
 
-html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--small > .dropbutton__item:first-of-type {
+html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--small > .dropbutton-action:first-of-type {
   margin-left: var(--gin-spacing-xl);
 }
 
-html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall > .dropbutton__item:first-of-type {
+html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall > .dropbutton-action:first-of-type {
   margin-right: var(--gin-spacing-l);
 }
 
-html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall > .dropbutton__item:first-of-type {
+html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall > .dropbutton-action:first-of-type {
   margin-left: var(--gin-spacing-l);
 }
 
@@ -2781,11 +2749,11 @@ html.js.no-touchevents .dropbutton--extrasmall {
   border-radius: var(--gin-border-s);
 }
 
-html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall .dropbutton__items .dropbutton__item {
+html[dir="ltr"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall .dropbutton-actions .dropbutton-action {
   margin-right: 0;
 }
 
-html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall .dropbutton__items .dropbutton__item {
+html[dir="rtl"].js.no-touchevents .dropbutton--multiple.dropbutton--extrasmall .dropbutton-actions .dropbutton-action {
   margin-left: 0;
 }
 
@@ -4660,5 +4628,31 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
 
 .layout-content-form .gin-secondary-toolbar {
   height: auto;
+}
+
+.layout-content-form .dropbutton-wrapper {
+  background-color: var(--gin-bg-app);
+  border-radius: var(--gin-border-m);
+}
+
+.layout-content-form .layout-editor-block-title .buttons {
+  width: max-content;
+}
+
+.layout-content-form .layout-editor-block-title .buttons .dropbutton-multiple.open .dropbutton {
+  top: 0;
+}
+
+[dir="ltr"] .layout-content-form .layout-editor-block-title .buttons .dropbutton-multiple.open .dropbutton {
+  right: 0;
+}
+
+[dir="rtl"] .layout-content-form .layout-editor-block-title .buttons .dropbutton-multiple.open .dropbutton {
+  left: 0;
+}
+
+.layout-editor-region .dropbutton-wrapper {
+  width: auto;
+  min-width: 140px;
 }
 
