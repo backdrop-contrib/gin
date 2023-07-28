@@ -398,6 +398,9 @@ fieldset:not(.fieldgroup) {
   .page-title {
     max-width: 100%;
     flex-grow: 1;
+    line-height: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
   }
 
   .container-fluid {
@@ -408,15 +411,10 @@ fieldset:not(.fieldgroup) {
 
   .gin-secondary-toolbar {
     height: auto;
-  }
-
-  .dropbutton-wrapper {
-    background-color: var(--gin-bg-app);
-    border-radius: var(--gin-border-m);
+    z-index: 0;
   }
 
   .layout-editor-block-title .buttons {
-    width: max-content;
 
     .dropbutton-multiple.open {
       .dropbutton {
@@ -431,5 +429,10 @@ fieldset:not(.fieldgroup) {
   .dropbutton-wrapper {
     width: auto;
     min-width: 140px;
+  }
+}
+.layout-editor-region-title {
+  .label {
+  text-transform: none;
   }
 }

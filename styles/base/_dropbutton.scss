@@ -1,103 +1,82 @@
-.dropbutton {
-  border: 2px solid var(--gin-color-primary);
-  border-radius: var(--gin-border-m);
-  box-shadow: 0 1px 2px var(--gin-color-primary-light);
-  display: block;
-  overflow: visible;
-  margin: 0;
-  list-style: none;
+.js {
+  .dropbutton-widget {
+    border-color: var(--gin-color-primary);
+    border-width: 2px;
+    border-radius: var(--gin-border-m);
+  }
 
-  // Offset for select button on first item
-  &-multiple .dropbutton > .dropbutton-action {
-    height: 100%;
-    margin-right: var(--gin-spacing-xxl);
-    border-right: 1px solid var(--gin-color-primary-light-active);
+  .dropbutton-widget:hover {
+    border-color: var(--gin-color-primary-hover);
+  }
 
-    input {
-      color: var(--gin-color-primary);
-      height: 100%;
-      background-color: transparent;
-      border: 0 none !important;
-      border-radius: 0 !important;
+  .dropbutton {
+    a {
+      font-weight: var(--gin-font-weight-semibold);
+      border-radius: var(--gin-border-m);
+    }
+
+    button:hover,
+    a:hover,
+    button:focus,
+    a:focus {
+      background-color: var(--gin-color-primary-hover);
+      color: #fff;
     }
   }
 
-  .gin--dark-mode & {
-    box-shadow: 0 4px 18px var(--gin-shadow-button);
-  }
+  .dropbutton-multiple {
+    .dropbutton {
 
-  &:hover {
-    border-color: var(--gin-color-primary);
-  }
+      a,
+      a:hover,
+      a:focus {
+        border-radius: 0;
+      }
 
-  &:active,
-  &:focus {
-    border-color: var(--gin-color-primary-active);
-  }
+      li.first {
+        a {
+          border-top-left-radius: var(--gin-border-m);
+        }
+      }
 
-  &-wrapper {
-    box-shadow: none;
-    display: inline-flex;
+      li.last {
+        a {
+          border-bottom-left-radius: var(--gin-border-m);
+        }
+      }
+    }
   }
+}
 
-  &-action > *,
-  &-toggle > button {
-    background: none;
-    white-space: nowrap;
-  }
-
-  &-action > * {
-    padding: calc(.875rem - 1px) calc(var(--gin-spacing-l) - 1px);
-  }
-
-  &-toggle,
-  &-toggle > button {
-    width: calc(var(--gin-spacing-xxl) + 1px);
-  }
-
-  & &-toggle {
-    > button {
-      top: 2px;
-      right: 2px;
-      height: calc(var(--gin-spacing-xxl) - 6px);
+.dropbutton-toggle {
+  button {
+    &::before {
+      background-image: none;
+      background-color: var(--gin-color-primary);
+      mask-image: icon('drop');
+      mask-repeat: no-repeat;
+      mask-position: center center;
+      mask-size: 12px 12px;
+      width: 0.75rem;
       position: absolute;
-      z-index: 3;
-      bottom: 0;
-      appearance: none;
+      top: 50%;
+      right: 50%;
+      height: 0.5625rem;
+      content: "";
+      transform: translate(50%, -50%) rotate(0);
+      background-size: contain;
+    }
 
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: var(--gin-color-primary-hover);
+    }
 
-      &:hover {
-        background-color: var(--gin-color-primary);
-      }
-
-      &::before {
-        background-image: none;
-        background-color: var(--gin-color-primary);
-        mask-image: icon('drop');
-        mask-repeat: no-repeat;
-        mask-position: center center;
-        mask-size: 12px 12px;
-        width: 0.75rem;
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        height: 0.5625rem;
-        content: "";
-        transform: translate(50%, -50%) rotate(0);
-        background-size: contain;
-      }
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: var(--gin-color-primary-hover);
-      }
-
-      &:hover::before,
-      &:active::before,
-      &:focus::before {
-        background-color: #fff;
-      }
+    &:hover::before,
+    &:active::before,
+    &:focus::before {
+      background-color: #fff;
     }
 
     .dropbutton-arrow {
@@ -107,136 +86,11 @@
 }
 
 .dropbutton-wrapper.open {
-  .dropbutton {
-    position: absolute;
-    list-style: none;
-    background: var(--gin-bg-layer3);
-    border-radius: var(--gin-border-l);
-    box-shadow: var(--gin-shadow-l2);
-    overflow: visible;
-    z-index: 5;
-    height: auto;
-    top: calc(-1 * (var(--gin-spacing-xxl) + 2px) / 2);
-
-    .node-form & {
-      left: 0;
-      right: auto;
-    }
-  }
-
-  &-toggle {
-    > button {
-      border-radius: var(--gin-border-l);
-
+  .dropbutton-toggle {
+    button {
       &::before {
-        mask-image: icon('drop');
+        transform: translate(50%, -50%) rotate(180deg);
       }
     }
   }
-
-}
-
-html.js {
-  .dropbutton {
-    height: calc(var(--gin-spacing-xxl) - 4px);
-    min-height: calc(var(--gin-spacing-xxl) - 4px);
-    box-sizing: border-box;
-    border-color: var(--gin-color-primary);
-    border-width: 2px;
-
-    .dropbutton-action {
-      display: flex;
-
-      > a {
-        align-self: center;
-        border-radius: 0;
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        margin: 0;
-        text-align: left;
-        height: calc(var(--gin-spacing-xxl) - 4px);
-        line-height: calc(var(--gin-spacing-xxl) - 4px);
-
-        &:hover,
-        &:active,
-        &:focus {
-          color: var(--gin-color-button-text);
-          background: var(--gin-color-primary);
-        }
-
-      }
-
-    }
-
-    .dropbutton-action.first {
-      > a {
-        border-radius: var(--gin-border-m) 0 0 0;
-      }
-    }
-
-    .dropbutton-action.last {
-      > a {
-        border-radius: 0 0 0 var(--gin-border-m);
-      }
-    }
-  }
-
-  .dropbutton-wrapper {
-    min-height: inherit;
-  }
-
-  .dropbutton-wrapper:not(.open) .dropbutton-action:first-of-type ~ .dropbutton-actions {
-    display: none;
-  }
-
-  .dropbutton-wrapper:not(.open) .dropbutton-actions .dropbutton-action:first-of-type ~ .dropbutton-action {
-    display: block;
-  }
-
-  .dropbutton-widget {
-    background-color: transparent;
-    position: relative;
-    flex: 1 1 auto;
-    padding-right: 0;
-    border: none;
-  }
-}
-
-html.js.no-touchevents {
-  .dropbutton--multiple.dropbutton--small .dropbutton-action:first-of-type {
-    margin-right: 0;
-  }
-
-  .dropbutton--multiple.dropbutton--small > .dropbutton-action:first-of-type {
-    margin-right: var(--gin-spacing-xl);
-  }
-
-  .dropbutton--multiple.dropbutton--extrasmall > .dropbutton-action:first-of-type {
-    margin-right: var(--gin-spacing-l);
-  }
-
-  .dropbutton--small {
-    min-width: 0;
-    height: 2.25rem;
-    min-height: 2.25rem;
-    border-radius: var(--gin-border-s);
-  }
-
-  .dropbutton--extrasmall {
-    min-width: 0;
-    height: 1.75rem;
-    min-height: 1.75rem;
-    border-radius: var(--gin-border-s);
-  }
-
-  .dropbutton--multiple.dropbutton--extrasmall .dropbutton-actions .dropbutton-action {
-    margin-right: 0;
-  }
-}
-
-// Last item in table
-table tr:not(:first-of-type):nth-last-child(2) td .dropbutton__items,
-table tr:not(:first-of-type):last-of-type td .dropbutton__items {
-  bottom: 100%;
 }
