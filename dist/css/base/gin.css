@@ -2496,6 +2496,7 @@ a.button:active {
 .js .dropbutton a:focus {
   background-color: var(--gin-color-primary-hover);
   color: #fff;
+  text-decoration: none;
 }
 
 .js .dropbutton-multiple .dropbutton a,
