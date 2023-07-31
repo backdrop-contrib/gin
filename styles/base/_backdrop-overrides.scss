@@ -283,7 +283,6 @@ fieldset {
   }
 
   .fieldset-legend {
-    background: var(--gin-bg-layer2);
 
     .fieldset-title::before {
       transition: transform var(--gin-transition) ease-in 0s;
@@ -292,6 +291,7 @@ fieldset {
 }
 
 fieldset.collapsible {
+  background: transparent;
   .fieldset-legend {
     background: transparent;
 
@@ -356,6 +356,10 @@ fieldset.form-wrapper {
 
   .summary:empty {
     display: none;
+  }
+
+  .description {
+    font-weight: normal;
   }
 }
 

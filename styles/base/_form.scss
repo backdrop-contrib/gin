@@ -116,6 +116,7 @@ $maxWidth: 520px;
   border: 1px solid var(--gin-border-color-form-element);
   border-radius: var(--gin-border-xs);
   box-sizing: border-box;
+  margin-right: var(--gin-spacing-xs);
 }
 
 // Darkmode Checkbox
@@ -292,7 +293,9 @@ $maxWidth: 520px;
 
 .form-radio,
 .form-checkbox {
-  &:hover, &:active {
+
+  &:hover,
+  &:active {
     .gin--dark-mode & {
       box-shadow: none;
       border: 1px solid var(--gin-color-text);
@@ -302,7 +305,12 @@ $maxWidth: 520px;
 
 .form-radio,
 .form-boolean--type-radio {
-  &, &:hover, &:active, &:focus, &:hover:focus {
+
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:focus {
     background-image: none;
     background-color: var(--gin-bg-input);
     border: 1px solid var(--gin-border-color-form-element);
@@ -312,34 +320,42 @@ $maxWidth: 520px;
   &:hover {
     box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2);
 
-    &, .gin--dark-mode & {
+    &,
+    .gin--dark-mode & {
       border-color: var(--gin-color-text);
     }
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2),
-                0 0 0 1px var(--gin-color-focus-border),
-                0 0 0 4px var(--gin-color-focus);
+      0 0 0 1px var(--gin-color-focus-border),
+      0 0 0 4px var(--gin-color-focus);
   }
 
   &:checked:not(:disabled) {
-    &, &:hover {
+
+    &,
+    &:hover {
       background-image: none;
       background-color: var(--gin-bg-layer);
       box-shadow: inset 0 0 0 5px var(--gin-color-primary);
     }
 
-    &:active, &:focus, &:hover:focus {
+    &:active,
+    &:focus,
+    &:hover:focus {
       box-shadow: inset 0 0 0 5px var(--gin-color-primary),
-                  0 0 0 1px var(--gin-color-focus-border),
-                  0 0 0 4px var(--gin-color-focus);
+        0 0 0 1px var(--gin-color-focus-border),
+        0 0 0 4px var(--gin-color-focus);
       border-color: var(--gin-color-focus-border);
     }
   }
 
   &:disabled {
-    &, &:hover {
+
+    &,
+    &:hover {
       cursor: not-allowed;
       background: var(--gin-color-disabled-bg);
       border-color: var(--gin-color-disabled-border);
@@ -347,7 +363,9 @@ $maxWidth: 520px;
   }
 
   &:checked:disabled {
-    &, &:hover {
+
+    &,
+    &:hover {
       background: var(--gin-color-disabled);
       box-shadow: inset 0 0 0 5px var(--gin-color-disabled-bg);
     }
@@ -356,7 +374,9 @@ $maxWidth: 520px;
 
 .form-checkbox[disabled],
 .form-boolean--type-checkbox[disabled] {
-  &, &:hover {
+
+  &,
+  &:hover {
     cursor: not-allowed;
     background-color: var(--gin-color-disabled-bg);
     border-color: var(--gin-color-disabled-border);
@@ -415,7 +435,8 @@ fieldset:not(.fieldgroup) {
 label.option,
 .fieldset__label,
 .fieldset__label--group,
-.form-item__label {
+.form-item__label,
+.form-item label {
   font-size: var(--gin-font-size-s);
   font-weight: var(--gin-font-weight-semibold);
   line-height: calc(18rem / 16);
@@ -433,6 +454,10 @@ label.option,
   max-width: $maxWidth;
   color: var(--gin-color-text-light);
   margin-left: 0;
+  margin-top: calc(6rem / 16);
+  margin-bottom: calc(6rem / 16);
+  font-size: var(--gin-font-size-xs);
+  line-height: calc(17rem / 16);
 }
 
 .form-item__label.form-required::after,

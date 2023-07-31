@@ -1791,12 +1791,14 @@ td.webform-has-field-suffix > .form-item > .form-element {
 [dir="ltr"] .form-checkbox,
 [dir="ltr"] .form-radio {
   float: left;
+  margin-right: var(--gin-spacing-xs);
 }
 
 [dir="rtl"] .form-boolean,
 [dir="rtl"] .form-checkbox,
 [dir="rtl"] .form-radio {
   float: right;
+  margin-left: var(--gin-spacing-xs);
 }
 
 .gin--dark-mode .form-checkbox:not(:checked),
@@ -2124,7 +2126,8 @@ fieldset:not(.fieldgroup).error {
 label.option,
 .fieldset__label,
 .fieldset__label--group,
-.form-item__label {
+.form-item__label,
+.form-item label {
   font-size: var(--gin-font-size-s);
   font-weight: var(--gin-font-weight-semibold);
   line-height: 1.125rem;
@@ -2141,6 +2144,10 @@ label.option,
 .description {
   max-width: 520px;
   color: var(--gin-color-text-light);
+  margin-top: .375rem;
+  margin-bottom: .375rem;
+  font-size: var(--gin-font-size-xs);
+  line-height: 1.0625rem;
 }
 
 [dir="ltr"] .description {
@@ -4293,12 +4300,12 @@ fieldset legend {
   border-right: 1px solid var(--gin-border-color);
 }
 
-fieldset .fieldset-legend {
-  background: var(--gin-bg-layer2);
-}
-
 fieldset .fieldset-legend .fieldset-title::before {
   transition: transform var(--gin-transition) ease-in 0s;
+}
+
+fieldset.collapsible {
+  background: transparent;
 }
 
 fieldset.collapsible .fieldset-legend {
@@ -4386,6 +4393,10 @@ fieldset.form-wrapper {
 
 fieldset.form-wrapper .summary:empty {
   display: none;
+}
+
+fieldset.form-wrapper .description {
+  font-weight: normal;
 }
 
 fieldset:not(.fieldgroup) {
