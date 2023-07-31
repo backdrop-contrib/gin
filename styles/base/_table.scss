@@ -56,7 +56,7 @@ table {
     border-radius: var(--gin-border-m);
 
     tr {
-      border-bottom: 1px solid var(--gin-border-color-table-header);
+      border-bottom: 2px solid var(--gin-border-color-table-header);
 
       &:hover {
         background: transparent;
@@ -72,8 +72,10 @@ table {
     font-size: var(--gin-font-size-s);
     font-weight: var(--gin-font-weight-bold);
     background: var(--gin-bg-layer);
+    position: relative;
 
-    &, .form-item__label {
+    &,
+    .form-item__label {
       color: var(--gin-color-title);
     }
 
@@ -84,6 +86,7 @@ table {
   }
 
   tbody {
+
     tr,
     tr.odd,
     tr.even {
@@ -134,13 +137,43 @@ table {
       color: var(--gin-color-title);
     }
   }
+
+  td.active {
+    background-color: transparent;
+  }
 }
 
+table.views-table th,
 .sortable-heading {
   padding: var(--gin-spacing-xs) var(--gin-spacing-m);
 
+  > a {
+    display: block;
+    padding: var(--space-xs) 1.5rem var(--space-xs) 0;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover,
+    &:active {
+      color: var(--gin-color-primary-active);
+    }
+
+    &:hover::before,
+    &:active::before {
+      border-bottom: .1875rem solid var(--gin-color-primary-active);
+    }
+  }
+
   > a::before {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 1rem;
     bottom: -1px;
+    left: 1rem;
+    display: block;
+    content: "";
+    border-bottom: 0.125rem solid transparent;
   }
 
   > a::after {
@@ -148,15 +181,30 @@ table {
     mask-image: icon('sort');
     mask-repeat: no-repeat;
     mask-position: center center;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 0.875rem;
+    height: 1rem;
+    margin-top: -0.5rem;
+    content: "";
+    opacity: 0.5;
   }
 
-  &.is-active > a {
-    &, &:hover, &:active {
+  &.active > a {
+
+    &,
+    &:hover,
+    &:active {
       color: var(--gin-color-primary-active);
     }
 
     &::before {
       border-bottom: .1875rem solid var(--gin-color-primary-active);
+    }
+
+    &::after {
+      display: none;
     }
   }
 }
@@ -167,6 +215,14 @@ table {
   mask-image: icon('sort');
   mask-repeat: no-repeat;
   mask-position: 0 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  width: 0.875rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  display: inline-block;
 }
 
 .tablesort--asc,

@@ -61,6 +61,23 @@ function gin_breadcrumb($variables) {
 }
 
 /**
+ * Overrides theme_tablesort_indicator().
+ *
+ * @param $variables
+ *   An associative array containing:
+ *   - style: Set to either 'asc' or 'desc', this determines which icon to
+ *     show.
+ */
+function gin_tablesort_indicator($variables) {
+  return '<span class="tablesort tablesort--' . $variables['style'] . '">
+    <span class="visually-hidden">
+      Sort ' . $variables['style'] . 'ending
+        </span>
+    </span>';
+}
+
+
+/**
  * Overrides theme_menu_local_action().
  */
 function gin_menu_local_action($variables) {

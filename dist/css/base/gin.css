@@ -1301,9 +1301,11 @@ table th {
   font-size: var(--gin-font-size-s);
   font-weight: var(--gin-font-weight-bold);
   background: var(--gin-bg-layer);
+  position: relative;
 }
 
-table th, table th .form-item__label {
+table th,
+table th .form-item__label {
   color: var(--gin-color-title);
 }
 
@@ -1362,14 +1364,58 @@ table td .group-label {
   color: var(--gin-color-title);
 }
 
+table td.active {
+  background-color: transparent;
+}
+
+table.views-table th,
 .sortable-heading {
   padding: var(--gin-spacing-xs) var(--gin-spacing-m);
 }
 
-.sortable-heading > a::before {
-  bottom: -1px;
+table.views-table th > a,
+.sortable-heading > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
+[dir="ltr"] table.views-table th > a,
+[dir="ltr"] .sortable-heading > a {
+  padding: var(--space-xs) 1.5rem var(--space-xs) 0;
+}
+
+[dir="rtl"] table.views-table th > a,
+[dir="rtl"] .sortable-heading > a {
+  padding: var(--space-xs) 0 var(--space-xs) 1.5rem;
+}
+
+table.views-table th > a:hover, table.views-table th > a:active,
+.sortable-heading > a:hover,
+.sortable-heading > a:active {
+  color: var(--gin-color-primary-active);
+}
+
+table.views-table th > a:hover::before, table.views-table th > a:active::before,
+.sortable-heading > a:hover::before,
+.sortable-heading > a:active::before {
+  border-bottom: .1875rem solid var(--gin-color-primary-active);
+}
+
+table.views-table th > a::before,
+.sortable-heading > a::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 1rem;
+  bottom: -1px;
+  left: 1rem;
+  display: block;
+  content: "";
+  border-bottom: .125rem solid transparent;
+}
+
+table.views-table th > a::after,
 .sortable-heading > a::after {
   background: var(--gin-color-text-light);
   -webkit-mask-image: url("../../media/sprite.svg#sort-view");
@@ -1378,14 +1424,40 @@ table td .group-label {
           mask-repeat: no-repeat;
   -webkit-mask-position: center center;
           mask-position: center center;
+  position: absolute;
+  top: 50%;
+  width: .875rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  content: "";
+  opacity: .5;
 }
 
-.sortable-heading.is-active > a, .sortable-heading.is-active > a:hover, .sortable-heading.is-active > a:active {
+[dir="ltr"] table.views-table th > a::after,
+[dir="ltr"] .sortable-heading > a::after {
+  right: 1rem;
+}
+
+[dir="rtl"] table.views-table th > a::after,
+[dir="rtl"] .sortable-heading > a::after {
+  left: 1rem;
+}
+
+table.views-table th.active > a, table.views-table th.active > a:hover, table.views-table th.active > a:active,
+.sortable-heading.active > a,
+.sortable-heading.active > a:hover,
+.sortable-heading.active > a:active {
   color: var(--gin-color-primary-active);
 }
 
-.sortable-heading.is-active > a::before {
+table.views-table th.active > a::before,
+.sortable-heading.active > a::before {
   border-bottom: .1875rem solid var(--gin-color-primary-active);
+}
+
+table.views-table th.active > a::after,
+.sortable-heading.active > a::after {
+  display: none;
 }
 
 .tablesort {
@@ -1397,6 +1469,21 @@ table td .group-label {
           mask-repeat: no-repeat;
   -webkit-mask-position: 0 50%;
           mask-position: 0 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  width: .875rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  display: inline-block;
+}
+
+[dir="ltr"] .tablesort {
+  right: 1rem;
+}
+
+[dir="rtl"] .tablesort {
+  left: 1rem;
 }
 
 .tablesort--asc,
