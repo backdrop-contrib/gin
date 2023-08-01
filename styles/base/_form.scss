@@ -419,14 +419,6 @@ fieldset:not(.fieldgroup) {
   border-radius: var(--gin-border-m);
   box-shadow: none;
 
-  > legend {
-    top: 20px;
-  }
-
-  > .fieldset-wrapper {
-    margin-top: 20px;
-  }
-
   &.error {
     border: 2px solid var(--gin-color-danger);
   }

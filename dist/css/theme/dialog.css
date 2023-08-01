@@ -745,14 +745,6 @@
   box-shadow: none;
 }
 
-.ui-dialog fieldset:not(.fieldgroup) > legend {
-  top: 20px;
-}
-
-.ui-dialog fieldset:not(.fieldgroup) > .fieldset-wrapper {
-  margin-top: 20px;
-}
-
 .ui-dialog fieldset:not(.fieldgroup).error {
   border: 2px solid var(--gin-color-danger);
 }

@@ -1286,7 +1286,7 @@ table thead {
 }
 
 table thead tr {
-  border-bottom: 1px solid var(--gin-border-color-table-header);
+  border-bottom: 2px solid var(--gin-border-color-table-header);
 }
 
 table thead tr:hover {
@@ -2196,14 +2196,6 @@ fieldset:not(.fieldgroup) {
   border-color: var(--gin-border-color);
   border-radius: var(--gin-border-m);
   box-shadow: none;
-}
-
-fieldset:not(.fieldgroup) > legend {
-  top: 20px;
-}
-
-fieldset:not(.fieldgroup) > .fieldset-wrapper {
-  margin-top: 20px;
 }
 
 fieldset:not(.fieldgroup).error {
@@ -4391,6 +4383,21 @@ fieldset .fieldset-legend .fieldset-title::before {
   transition: transform var(--gin-transition) ease-in 0s;
 }
 
+fieldset .fieldset-legend span.summary {
+  position: absolute;
+  top: var(--gin-spacing-m);
+}
+
+[dir="ltr"] fieldset .fieldset-legend span.summary {
+  margin-left: 0;
+  right: var(--gin-spacing-l);
+}
+
+[dir="rtl"] fieldset .fieldset-legend span.summary {
+  margin-right: 0;
+  left: var(--gin-spacing-l);
+}
+
 fieldset.collapsible {
   background: transparent;
 }
@@ -4475,7 +4482,6 @@ fieldset.collapsed .fieldset-legend .fieldset-title {
 fieldset.form-wrapper {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
   color: var(--gin-color-text);
-  font-weight: var(--gin-font-weight-bold);
 }
 
 fieldset.form-wrapper .summary:empty {
@@ -4494,7 +4500,14 @@ fieldset:not(.fieldgroup) > legend {
   position: relative;
   width: calc(100% + 2px);
   min-width: calc(100% + 2px);
-  margin: 0 -1px;
+}
+
+[dir="ltr"] fieldset:not(.fieldgroup) > legend {
+  margin: 20px 0 20px -1px;
+}
+
+[dir="rtl"] fieldset:not(.fieldgroup) > legend {
+  margin: 20px -1px 20px 0;
 }
 
 fieldset:not(.fieldgroup) > legend .fieldset-legend {
@@ -4515,7 +4528,7 @@ fieldset:not(.fieldgroup) > legend .fieldset-legend a:hover {
 }
 
 fieldset:not(.fieldgroup) > .fieldset-wrapper {
-  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  padding: 0 var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
 /* Layout admin pages */

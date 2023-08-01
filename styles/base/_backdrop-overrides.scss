@@ -287,11 +287,19 @@ fieldset {
     .fieldset-title::before {
       transition: transform var(--gin-transition) ease-in 0s;
     }
+
+    span.summary {
+      margin-left: 0;
+      position: absolute;
+      top: var(--gin-spacing-m);
+      right: var(--gin-spacing-l);
+    }
   }
 }
 
 fieldset.collapsible {
   background: transparent;
+
   .fieldset-legend {
     background: transparent;
 
@@ -352,7 +360,6 @@ fieldset.collapsed {
 fieldset.form-wrapper {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
   color: var(--gin-color-text);
-  font-weight: var(--gin-font-weight-bold);
 
   .summary:empty {
     display: none;
@@ -370,13 +377,12 @@ fieldset:not(.fieldgroup) {
     position: relative;
     width: calc(100% + 2px);
     min-width: calc(100% + 2px);
-    margin: 0 -1px;
+    margin: 20px 0 20px -1px;
 
     .fieldset-legend {
       border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
 
       a {
-
         color: var(--gin-color-text);
         font-weight: var(--gin-font-weight-bold);
         display: block;
@@ -393,7 +399,7 @@ fieldset:not(.fieldgroup) {
   }
 
   > .fieldset-wrapper {
-    padding: var(--gin-spacing-m) var(--gin-spacing-l);
+    padding: 0 var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-l);
   }
 }
 
@@ -435,8 +441,9 @@ fieldset:not(.fieldgroup) {
     min-width: 140px;
   }
 }
+
 .layout-editor-region-title {
   .label {
-  text-transform: none;
+    text-transform: none;
   }
 }
