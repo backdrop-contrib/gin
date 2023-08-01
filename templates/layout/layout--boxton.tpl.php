@@ -92,7 +92,7 @@
     <footer class="l-footer">
       <div class="l-footer-inner container-fluid">
         <?php print $content['footer']; ?>
-      </div><!-- /.-->
+      </div>
     </footer>
   <?php endif; ?>
 </div><!-- /.layout--boxton -->

@@ -31,54 +31,64 @@
  *   - $content['footer']
  */
 ?>
-<div class="layout--simmons <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
+<div class="layout--simmons gin page-wrapper <?php print implode(' ', $classes); ?>"<?php print backdrop_attributes($attributes); ?>>
   <div id="skip-link">
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
-
+  <div class="region-sticky-watcher"></div>
   <?php if ($content['header']): ?>
-    <header class="l-header" role="banner" aria-label="<?php print t('Site header'); ?>">
-      <div class="l-header-inner container container-fluid">
+    <header class="l-header gin-secondary-toolbar" role="banner" aria-label="<?php print t('Site header'); ?>">
+      <div class="l-header-inner container-fluid">
         <?php print $content['header']; ?>
       </div>
     </header>
   <?php endif; ?>
 
-  <div class="l-wrapper">
-    <div class="l-wrapper-inner container container-fluid">
-
-      <?php if ($messages): ?>
-        <div class="l-messages" role="status" aria-label="<?php print t('Status messages'); ?>">
-          <?php print $messages; ?>
+  <header class="region region-sticky">
+    <div class="region-sticky__items l-page-title container-fluid">
+      <div class="region-sticky__items__inner">
+        <div class="block-page-title-block">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h1 class="page-title"><?php print $title; ?></h1>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
         </div>
-      <?php endif; ?>
-
-      <div class="l-page-title">
-        <a id="main-content"></a>
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?>
-          <h1 class="page-title"><?php print $title; ?></h1>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
-      </div>
-
-      <?php if ($tabs): ?>
-        <nav class="tabs" role="tablist" aria-label="<?php print t('Admin content navigation tabs.'); ?>">
+        <div class="block-gin-local-actions">
+          <?php print render($action_links); ?>
+        </div>
+    </div>
+  </header>
+  <div class="sticky-shadow"></div>
+  <?php if ($tabs): ?>
+    <div class="content-header clearfix">
+      <div class="layout-container">
+        <nav class="tabs-wrapper is-horizontal is-collapsible position-container is-horizontal-enabled" role="navigation" aria-labelled-by="primary-tabs-title">
           <?php print $tabs; ?>
         </nav>
-      <?php endif; ?>
-
-      <?php print $action_links; ?>
+      </div>
+    </div>
+  <?php endif; ?>
+  <div class="layout-container">
+    <main class="page-content clearfix" role="main">
+      <div class="visually-hidden">
+        <a id="main-content" tabindex="-1"></a>
+      </div>
+      <?php if ($messages): ?>
+        <div class="l-messages help" role="status" aria-label="<?php print t('Status messages'); ?>">
+          <?php print $messages; ?>
+        </div>
+        <?php endif; ?>
 
       <?php if (!empty($content['top'])): ?>
-        <div class="l-top">
+        <div class="l-top region-highlighted">
           <?php print $content['top']; ?>
         </div>
       <?php endif; ?>
 
       <div class="l-middle row">
-        <main class="l-content col-md-6 col-md-push-3" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $content['content']; ?>
+        <main class="l-content region-content col-md-6 col-md-push-3" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
         </main>
         <div class="l-sidebar l-sidebar-first col-md-3 col-md-pull-6">
           <?php print $content['sidebar']; ?>
@@ -125,12 +135,12 @@
         </div>
       <?php endif; ?>
 
-    </div><!-- /.l-wrapper-inner -->
-  </div><!-- /.l-wrapper -->
+    </main><!-- /.page-content -->
+  </div><!-- /.layout-container -->
 
   <?php if ($content['footer']): ?>
     <footer class="l-footer">
-      <div class="l-footer-inner container container-fluid">
+      <div class="l-footer-inner container-fluid">
         <?php print $content['footer']; ?>
       </div>
     </footer>
