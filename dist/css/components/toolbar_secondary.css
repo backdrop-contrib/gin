@@ -4,7 +4,7 @@
 }
 
 .gin-secondary-toolbar {
-  z-index: 102;
+  z-index: 100;
   position: relative;
   display: flex;
   align-items: center;
@@ -208,7 +208,7 @@
 
   .gin-secondary-toolbar .toolbar-secondary .toolbar-bar {
     height: var(--gin-toolbar-height);
-    z-index: 102;
+    z-index: 100;
   }
 
   .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .toolbar-tab {

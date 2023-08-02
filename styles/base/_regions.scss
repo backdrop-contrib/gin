@@ -1,7 +1,7 @@
 .region-sticky {
   position: sticky;
   top: var(--gin-toolbar-y-offset);
-  z-index: 101;
+  z-index: 99;
   padding: 0;
   width: 100%;
   background: var(--gin-bg-app);

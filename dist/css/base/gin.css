@@ -132,7 +132,7 @@ button.link:active,
 .region-sticky {
   position: sticky;
   top: var(--gin-toolbar-y-offset);
-  z-index: 101;
+  z-index: 99;
   padding: 0;
   width: 100%;
   background: var(--gin-bg-app);
@@ -4459,26 +4459,6 @@ fieldset.collapsible > legend {
   background: transparent;
 }
 
-fieldset.collapsed {
-  border: none;
-}
-
-fieldset.collapsed > legend {
-  border: none;
-}
-
-fieldset.collapsed .fieldset-legend .fieldset-title {
-  border: 1px solid var(--gin-border-color);
-}
-
-[dir="ltr"] fieldset.collapsed .fieldset-legend .fieldset-title::before {
-  transform: rotate(-90deg);
-}
-
-[dir="rtl"] fieldset.collapsed .fieldset-legend .fieldset-title::before {
-  transform: rotate(90deg);
-}
-
 fieldset.form-wrapper {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
   color: var(--gin-color-text);
@@ -4531,6 +4511,27 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
   padding: 0 var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
+fieldset.collapsible.collapsed {
+  border: none;
+}
+
+fieldset.collapsible.collapsed > legend {
+  border: none;
+  margin: 0 auto;
+}
+
+fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
+  border: 1px solid var(--gin-border-color);
+}
+
+[dir="ltr"] fieldset.collapsible.collapsed .fieldset-legend .fieldset-title::before {
+  transform: rotate(-90deg);
+}
+
+[dir="rtl"] fieldset.collapsible.collapsed .fieldset-legend .fieldset-title::before {
+  transform: rotate(90deg);
+}
+
 /* Layout admin pages */
 
 .layout-content-form .page-title {
@@ -4549,6 +4550,10 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
 
 .layout-content-form .gin-secondary-toolbar {
   height: auto;
+  z-index: 0;
+}
+
+.layout-content-form .region-sticky {
   z-index: 0;
 }
 
@@ -4571,5 +4576,9 @@ fieldset:not(.fieldgroup) > .fieldset-wrapper {
 
 .layout-editor-region-title .label {
   text-transform: none;
+}
+
+.layout-block-configure-form .form-actions {
+  display: none;
 }
 
