@@ -4548,6 +4548,10 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   flex-grow: 1;
 }
 
+.layout-content-form .container {
+  margin: 0 auto;
+}
+
 .layout-content-form .gin-secondary-toolbar {
   height: auto;
   z-index: 0;
@@ -4567,6 +4571,20 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 [dir="rtl"] .layout-content-form .layout-editor-block-title .buttons .dropbutton-multiple.open .dropbutton {
   left: 0;
+}
+
+.layout-content-form .edit-layout-top {
+  font-size: var(--gin-font-size-l);
+  font-weight: var(--gin-font-weight-bold);
+  color: var(--gin-color-primary-active);
+  padding: var(--gin-spacing-xs) var(--gin-spacing-xs);
+  margin-top: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+  margin-right: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+  margin-left: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+  margin-bottom: var(--gin-spacing-s);
+  background: var(--gin-bg-header);
+  border: 0 none;
+  border-radius: var(--gin-border-m);
 }
 
 .layout-editor-region .dropbutton-wrapper {

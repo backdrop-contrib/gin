@@ -25,7 +25,7 @@ function gin_preprocess_layout(&$variables) {
     'admin/modules',
     'admin/modules/*',
     'admin/structure/*',
-    'admin/config/*',
+    'admin/config/*/*',
     'node/*/edit',
     'node/add/*',
     'admin/reports/*',

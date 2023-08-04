@@ -420,6 +420,10 @@ fieldset.collapsible.collapsed {
     flex-grow: 1;
   }
 
+  .container {
+    margin: 0 auto;
+  }
+
   .gin-secondary-toolbar {
     height: auto;
     z-index: 0;
@@ -438,9 +442,24 @@ fieldset.collapsible.collapsed {
       }
     }
   }
+
+  .edit-layout-top {
+    font-size: var(--gin-font-size-l);
+    font-weight: var(--gin-font-weight-bold);
+    color: var(--gin-color-primary-active);
+    padding: var(--gin-spacing-xs) var(--gin-spacing-xs);
+    margin-top: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+    margin-right: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+    margin-left: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+    margin-bottom: var(--gin-spacing-s);
+    background: var(--gin-bg-header);
+    border: 0 none;
+    border-radius: var(--gin-border-m);
+  }
 }
 
 .layout-editor-region {
+
   .dropbutton-wrapper {
     width: auto;
     min-width: 140px;
