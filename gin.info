@@ -27,6 +27,8 @@ ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
 ; Add custom JavaScript files.
 ; scripts[] = js/libs/once.js
 
-; Indicate that this theme has color support.
-settings[color] = true
-settings[dark_mode] = true
+; Default settings.
+settings[enable_darkmode] = true
+settings[preset_accent_color] = blue
+settings[preset_focus_color] = gin
+settings[layout_density] = default
