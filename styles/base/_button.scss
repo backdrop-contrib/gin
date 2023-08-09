@@ -49,7 +49,8 @@
   }
 }
 
-.form-actions .button {
+.form-actions .button,
+input.button {
   margin-right: var(--gin-spacing-xs);
 }
 

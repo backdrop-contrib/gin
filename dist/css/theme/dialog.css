@@ -172,11 +172,13 @@
   color: var(--gin-color-button-text);
 }
 
-[dir="ltr"] .ui-dialog .form-actions .button {
+[dir="ltr"] .ui-dialog .form-actions .button,
+[dir="ltr"] .ui-dialog input.button {
   margin-right: var(--gin-spacing-xs);
 }
 
-[dir="rtl"] .ui-dialog .form-actions .button {
+[dir="rtl"] .ui-dialog .form-actions .button,
+[dir="rtl"] .ui-dialog input.button {
   margin-left: var(--gin-spacing-xs);
 }
 

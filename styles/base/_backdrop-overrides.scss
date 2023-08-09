@@ -115,6 +115,61 @@ table.sticky-enabled {
   }
 }
 
+.form-item.installer-browser-sort {
+  margin-bottom: 0;
+
+  .installer-browser-sort-list {
+    li.first {
+      margin: 0 .5rem 0 1rem;
+    }
+
+    li {
+      position: relative;
+
+      a {
+        color: var(--gin-text-color);
+        padding: var(--gin-spacing-xs) var(--gin-spacing-s);
+        background-image: none;
+      }
+
+      a::after {
+        content: "";
+        mask-image: icon('sort');
+        mask-repeat: no-repeat;
+        mask-position: 0 50%;
+        opacity: 1;
+        position: relative;
+        top: 50%;
+        width: .875rem;
+        height: 1rem;
+        margin-top: -0.5rem;
+        margin-left: var(--gin-spacing-xs);
+        display: inline-block;
+        background: var(--gin-color-text-light);
+      }
+
+      &.sort-active a,
+      & a:hover {
+        color: var(--gin-color-primary-active);
+        border-bottom: .1875rem solid var(--gin-color-primary-active);
+      }
+
+      &.sort-desc {
+        a::after {
+          mask-image: icon('sort-desc');
+        }
+      }
+
+      &.sort-asc {
+        a::after {
+          mask-image: icon('sort-asc');
+        }
+      }
+    }
+
+  }
+}
+
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -359,7 +414,7 @@ fieldset:not(.fieldgroup) {
     position: relative;
     width: calc(100% + 2px);
     min-width: calc(100% + 2px);
-    margin: 20px 0 20px -1px;
+    margin: 0 0 20px -1px;
 
     .fieldset-legend {
       border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
