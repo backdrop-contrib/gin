@@ -172,6 +172,14 @@
   margin-bottom: var(--gin-spacing-l);
 }
 
+.ui-dialog input,
+.ui-dialog select,
+.ui-dialog textarea,
+.ui-dialog button {
+  max-width: 100%;
+  font-family: inherit;
+}
+
 .erl-overlay,
 .layout-paragraphs-dialog {
   position: fixed !important;

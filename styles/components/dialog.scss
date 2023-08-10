@@ -143,6 +143,14 @@
   .gin-layer-wrapper {
     margin-bottom: var(--gin-spacing-l);
   }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+    font-family: inherit;
+  }
 }
 
 .erl-overlay,
