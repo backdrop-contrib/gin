@@ -513,7 +513,12 @@ fieldset.collapsible.collapsed {
   }
 }
 
-.layout-editor-region {
+.layout-editor-region,
+.layout-flexible-editor {
+
+  .container {
+    margin: 0 auto;
+  }
 
   .dropbutton-wrapper {
     width: auto;

@@ -2574,7 +2574,6 @@ a.button:active {
 
 .js .dropbutton a {
   font-weight: var(--gin-font-weight-semibold);
-  border-radius: var(--gin-border-m);
 }
 
 .js .dropbutton button:hover,
@@ -4652,7 +4651,13 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   border-radius: var(--gin-border-m);
 }
 
-.layout-editor-region .dropbutton-wrapper {
+.layout-editor-region .container,
+.layout-flexible-editor .container {
+  margin: 0 auto;
+}
+
+.layout-editor-region .dropbutton-wrapper,
+.layout-flexible-editor .dropbutton-wrapper {
   width: auto;
   min-width: 140px;
 }
@@ -4663,5 +4668,50 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 .layout-block-configure-form .form-actions {
   display: none;
+}
+
+.layout-editor-block {
+  box-shadow: var(--gin-shadow-l1);
+  border-radius: var(--gin-border-l);
+  border: 1px solid var(--gin-border-color);
+}
+
+.layout-editor-block-title {
+  background-color: var(--gin-bg-header);
+  border-start-end-radius: var(--gin-border-l);
+  border-start-start-radius: var(--gin-border-l);
+}
+
+.layout-editor-block-title .buttons {
+  width: inherit;
+  min-width: 120px;
+}
+
+.block-page-title-block .layout-editor-block-title {
+  border-radius: var(--gin-border-l);
+}
+
+.layout-editor-block-content {
+  background-color: #fff;
+  border-end-end-radius: var(--gin-border-l);
+  border-end-start-radius: var(--gin-border-l);
+}
+
+.layout-editor-region {
+  border: 2px dashed var(--gin-border-color-form-element);
+  background-color: var(--gin-bg-app);
+  border-radius: var(--gin-border-l);
+}
+
+.layout-content-form .region-sticky {
+  background: transparent;
+}
+
+.layout-content-form .page-title .layout-editor-block {
+  background-color: var(--gin-bg-header);
+}
+
+.layout-container .sticky-shadow {
+  box-shadow: none;
 }
 
