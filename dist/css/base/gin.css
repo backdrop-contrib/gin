@@ -2364,6 +2364,10 @@ tr .form-item {
   margin-bottom: var(--gin-spacing-xs);
 }
 
+.confirmation .form-actions {
+  margin-top: var(--gin-spacing-l);
+}
+
 .button,
 .dropbutton__item:first-of-type > *,
 .dropbutton__toggle {

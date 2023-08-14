@@ -913,3 +913,7 @@
   margin-bottom: var(--gin-spacing-xs);
 }
 
+.ui-dialog .confirmation .form-actions {
+  margin-top: var(--gin-spacing-l);
+}
+

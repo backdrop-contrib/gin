@@ -130,3 +130,11 @@
   color: var(--gin-color-primary-hover);
 }
 
+[dir="ltr"] .block-system-breadcrumb {
+  padding-right: 3rem;
+}
+
+[dir="rtl"] .block-system-breadcrumb {
+  padding-left: 3rem;
+}
+

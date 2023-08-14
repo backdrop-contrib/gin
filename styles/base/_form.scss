@@ -575,3 +575,10 @@ tr .form-item {
     margin-bottom: var(--gin-spacing-xs);
   }
 }
+
+// Confirmation form
+.confirmation {
+  .form-actions {
+    margin-top: var(--gin-spacing-l);
+  }
+}
