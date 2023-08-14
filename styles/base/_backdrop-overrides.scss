@@ -92,8 +92,13 @@ table.sticky-enabled {
     border: 0 none;
     box-shadow: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     line-height: var(--gin-spacing-l);
+
+    .filter-empty {
+      width: 100%;
+    }
   }
 
   .form-item-search {

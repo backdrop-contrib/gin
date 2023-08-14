@@ -4174,8 +4174,13 @@ table.sticky-enabled {
   border: 0 none;
   box-shadow: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   line-height: var(--gin-spacing-l);
+}
+
+#system-modules .table-filter .filter-empty {
+  width: 100%;
 }
 
 #system-modules .form-item-search {
