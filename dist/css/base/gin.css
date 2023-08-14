@@ -4674,6 +4674,7 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-l);
   border: 1px solid var(--gin-border-color);
+  margin: .5rem .5rem .75rem .5rem;
 }
 
 .layout-editor-block-title {
@@ -4713,5 +4714,10 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 .layout-container .sticky-shadow {
   box-shadow: none;
+}
+
+.layout-editor-placeholder {
+  border-radius: var(--gin-border-l);
+  background-color: var(--gin-color-primary);
 }
 
