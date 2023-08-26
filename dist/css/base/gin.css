@@ -1734,7 +1734,9 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element,
-.form-select {
+.form-select,
+.form-textarea,
+.form-number {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);
@@ -1745,14 +1747,20 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element:hover,
-.form-select:hover {
+.form-select:hover,
+.form-textarea:hover,
+.form-number:hover {
   border-color: var(--gin-color-text);
   box-shadow: inset 0 0 0 1px var(--gin-color-text);
 }
 
 .form-element--small, .form-element--extrasmall,
 .form-select--small,
-.form-select--extrasmall {
+.form-select--extrasmall,
+.form-textarea--small,
+.form-textarea--extrasmall,
+.form-number--small,
+.form-number--extrasmall {
   font-size: var(--gin-font-size-s);
   line-height: 1.5;
   border-radius: var(--gin-border-s);
@@ -1760,7 +1768,11 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 .form-element[disabled], .form-element[disabled]:hover,
 .form-select[disabled],
-.form-select[disabled]:hover {
+.form-select[disabled]:hover,
+.form-textarea[disabled],
+.form-textarea[disabled]:hover,
+.form-number[disabled],
+.form-number[disabled]:hover {
   cursor: not-allowed;
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg) !important;
@@ -1769,7 +1781,9 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .gin--dark-mode .form-element,
-.gin--dark-mode .form-select {
+.gin--dark-mode .form-select,
+.gin--dark-mode .form-textarea,
+.gin--dark-mode .form-number {
   color-scheme: dark;
 }
 
@@ -1777,8 +1791,45 @@ td.webform-has-field-suffix > .form-item > .form-element {
   border-radius: var(--gin-border-m);
 }
 
+.form-textarea-wrapper:has(.grippie) .form-textarea {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-textarea-wrapper .grippie {
+  border-bottom-left-radius: var(--gin-border-m);
+  border-bottom-right-radius: var(--gin-border-m);
+}
+
 .form-textarea-wrapper textarea {
   max-width: 100%;
+}
+
+.text-format-wrapper .form-type-textarea .form-textarea-wrapper,
+.text-format-wrapper .form-type-textarea .cke.cke_chrome {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.text-format-wrapper fieldset.filter-wrapper {
+  font-size: .85em;
+}
+
+.text-format-wrapper fieldset.filter-wrapper, .text-format-wrapper fieldset.filter-wrapper a, .text-format-wrapper fieldset.filter-wrapper .fieldset-legend, .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a, .text-format-wrapper fieldset.filter-wrapper > legend, .text-format-wrapper fieldset.filter-wrapper > legend a, .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend, .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+[dir="ltr"] .text-format-wrapper fieldset.filter-wrapper a.fieldset-title, [dir="ltr"] .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a.fieldset-title, [dir="ltr"] .text-format-wrapper fieldset.filter-wrapper > legend a.fieldset-title, [dir="ltr"] .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-l) var(--gin-spacing-xs) var(--gin-spacing-xxl);
+}
+
+[dir="rtl"] .text-format-wrapper fieldset.filter-wrapper a.fieldset-title, [dir="rtl"] .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a.fieldset-title, [dir="rtl"] .text-format-wrapper fieldset.filter-wrapper > legend a.fieldset-title, [dir="rtl"] .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-xxl) var(--gin-spacing-xs) var(--gin-spacing-l);
+}
+
+.text-format-wrapper fieldset.filter-wrapper span.summary, .text-format-wrapper fieldset.filter-wrapper .fieldset-legend span.summary, .text-format-wrapper fieldset.filter-wrapper > legend span.summary, .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend span.summary {
+  top: var(--gin-spacing-xs);
 }
 
 .form-item--editor-format,

@@ -283,7 +283,9 @@
 }
 
 .ui-dialog .form-element,
-.ui-dialog .form-select {
+.ui-dialog .form-select,
+.ui-dialog .form-textarea,
+.ui-dialog .form-number {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);
@@ -294,14 +296,20 @@
 }
 
 .ui-dialog .form-element:hover,
-.ui-dialog .form-select:hover {
+.ui-dialog .form-select:hover,
+.ui-dialog .form-textarea:hover,
+.ui-dialog .form-number:hover {
   border-color: var(--gin-color-text);
   box-shadow: inset 0 0 0 1px var(--gin-color-text);
 }
 
 .ui-dialog .form-element--small, .ui-dialog .form-element--extrasmall,
 .ui-dialog .form-select--small,
-.ui-dialog .form-select--extrasmall {
+.ui-dialog .form-select--extrasmall,
+.ui-dialog .form-textarea--small,
+.ui-dialog .form-textarea--extrasmall,
+.ui-dialog .form-number--small,
+.ui-dialog .form-number--extrasmall {
   font-size: var(--gin-font-size-s);
   line-height: 1.5;
   border-radius: var(--gin-border-s);
@@ -309,7 +317,11 @@
 
 .ui-dialog .form-element[disabled], .ui-dialog .form-element[disabled]:hover,
 .ui-dialog .form-select[disabled],
-.ui-dialog .form-select[disabled]:hover {
+.ui-dialog .form-select[disabled]:hover,
+.ui-dialog .form-textarea[disabled],
+.ui-dialog .form-textarea[disabled]:hover,
+.ui-dialog .form-number[disabled],
+.ui-dialog .form-number[disabled]:hover {
   cursor: not-allowed;
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg) !important;
@@ -318,7 +330,9 @@
 }
 
 .gin--dark-mode .ui-dialog .form-element,
-.gin--dark-mode .ui-dialog .form-select {
+.gin--dark-mode .ui-dialog .form-select,
+.gin--dark-mode .ui-dialog .form-textarea,
+.gin--dark-mode .ui-dialog .form-number {
   color-scheme: dark;
 }
 
@@ -326,8 +340,45 @@
   border-radius: var(--gin-border-m);
 }
 
+.ui-dialog .form-textarea-wrapper:has(.grippie) .form-textarea {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ui-dialog .form-textarea-wrapper .grippie {
+  border-bottom-left-radius: var(--gin-border-m);
+  border-bottom-right-radius: var(--gin-border-m);
+}
+
 .ui-dialog .form-textarea-wrapper textarea {
   max-width: 100%;
+}
+
+.ui-dialog .text-format-wrapper .form-type-textarea .form-textarea-wrapper,
+.ui-dialog .text-format-wrapper .form-type-textarea .cke.cke_chrome {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper {
+  font-size: .85em;
+}
+
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper, .ui-dialog .text-format-wrapper fieldset.filter-wrapper a, .ui-dialog .text-format-wrapper fieldset.filter-wrapper .fieldset-legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend a, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+[dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper a.fieldset-title, [dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a.fieldset-title, [dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend a.fieldset-title, [dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-l) var(--gin-spacing-xs) var(--gin-spacing-xxl);
+}
+
+[dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper a.fieldset-title, [dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper .fieldset-legend a.fieldset-title, [dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend a.fieldset-title, [dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a.fieldset-title {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-xxl) var(--gin-spacing-xs) var(--gin-spacing-l);
+}
+
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper span.summary, .ui-dialog .text-format-wrapper fieldset.filter-wrapper .fieldset-legend span.summary, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend span.summary, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend span.summary {
+  top: var(--gin-spacing-xs);
 }
 
 .ui-dialog .form-item--editor-format,
