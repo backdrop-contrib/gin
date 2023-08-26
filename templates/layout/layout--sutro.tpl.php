@@ -67,7 +67,7 @@
     <?php endif; ?>
   </div><!-- /.layout-container -->
   <?php if ($messages): ?>
-    <div class="l-messages help" role="status" aria-label="<?php print t('Status messages'); ?>">
+    <div class="l-messages help layout-container" role="status" aria-label="<?php print t('Status messages'); ?>">
       <?php print $messages; ?>
     </div>
   <?php endif; ?>
