@@ -1872,24 +1872,24 @@ td.webform-has-field-suffix > .form-item > .form-element {
   border-bottom-right-radius: 0;
 }
 
-.text-format-wrapper fieldset.filter-wrapper {
+.text-format-wrapper fieldset.filter-wrapper.collapsible {
   font-size: .85em;
 }
 
-.text-format-wrapper fieldset.filter-wrapper, .text-format-wrapper fieldset.filter-wrapper > legend, .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend, .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a {
+.text-format-wrapper fieldset.filter-wrapper.collapsible, .text-format-wrapper fieldset.filter-wrapper.collapsible > legend, .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend, .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-[dir="ltr"] .text-format-wrapper fieldset.filter-wrapper a.fieldset-title {
+[dir="ltr"] .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
   padding: var(--gin-spacing-xs) var(--gin-spacing-l) var(--gin-spacing-xs) var(--gin-spacing-xxl);
 }
 
-[dir="rtl"] .text-format-wrapper fieldset.filter-wrapper a.fieldset-title {
+[dir="rtl"] .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
   padding: var(--gin-spacing-xs) var(--gin-spacing-xxl) var(--gin-spacing-xs) var(--gin-spacing-l);
 }
 
-.text-format-wrapper fieldset.filter-wrapper span.summary {
+.text-format-wrapper fieldset.filter-wrapper.collapsible span.summary {
   top: var(--gin-spacing-xs);
 }
 

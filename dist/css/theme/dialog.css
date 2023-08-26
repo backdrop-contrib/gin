@@ -360,24 +360,24 @@
   border-bottom-right-radius: 0;
 }
 
-.ui-dialog .text-format-wrapper fieldset.filter-wrapper {
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible {
   font-size: .85em;
 }
 
-.ui-dialog .text-format-wrapper fieldset.filter-wrapper, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper > legend .fieldset-legend a {
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend a {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-[dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper a.fieldset-title {
+[dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
   padding: var(--gin-spacing-xs) var(--gin-spacing-l) var(--gin-spacing-xs) var(--gin-spacing-xxl);
 }
 
-[dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper a.fieldset-title {
+[dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
   padding: var(--gin-spacing-xs) var(--gin-spacing-xxl) var(--gin-spacing-xs) var(--gin-spacing-l);
 }
 
-.ui-dialog .text-format-wrapper fieldset.filter-wrapper span.summary {
+.ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible span.summary {
   top: var(--gin-spacing-xs);
 }
 
