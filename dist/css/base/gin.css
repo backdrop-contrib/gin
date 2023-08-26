@@ -3238,6 +3238,231 @@ a.button.button--danger:active:before {
   background-color: var(--gin-color-danger-light);
 }
 
+/* Account for Backdrop structures and classes */
+
+.messages.status,
+.messages.info,
+.messages.warning,
+.messages.error {
+  position: relative;
+  background-image: none;
+  margin-bottom: var(--gin-spacing-xxs);
+}
+
+[dir="ltr"] .messages.status,
+[dir="ltr"] .messages.info,
+[dir="ltr"] .messages.warning,
+[dir="ltr"] .messages.error {
+  padding-left: calc(2.125rem + var(--gin-spacing-m));
+}
+
+[dir="rtl"] .messages.status,
+[dir="rtl"] .messages.info,
+[dir="rtl"] .messages.warning,
+[dir="rtl"] .messages.error {
+  padding-right: calc(2.125rem + var(--gin-spacing-m));
+}
+
+.messages.status:before,
+.messages.info:before,
+.messages.warning:before,
+.messages.error:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  width: calc(1.5rem + var(--gin-spacing-m));
+  height: 1.5rem;
+}
+
+[dir="ltr"] .messages.status:before,
+[dir="ltr"] .messages.info:before,
+[dir="ltr"] .messages.warning:before,
+[dir="ltr"] .messages.error:before {
+  left: 0;
+  margin: var(--gin-spacing-m) 0 var(--gin-spacing-m) var(--gin-spacing-m);
+}
+
+[dir="rtl"] .messages.status:before,
+[dir="rtl"] .messages.info:before,
+[dir="rtl"] .messages.warning:before,
+[dir="rtl"] .messages.error:before {
+  right: 0;
+  margin: var(--gin-spacing-m) var(--gin-spacing-m) var(--gin-spacing-m) 0;
+}
+
+.messages.status .button--dismiss,
+.messages.info .button--dismiss,
+.messages.warning .button--dismiss,
+.messages.error .button--dismiss {
+  position: absolute;
+  top: 0;
+  margin: var(--gin-spacing-s);
+  padding: 0;
+  height: 29px;
+  width: 29px;
+  color: transparent;
+  text-indent: -99999px;
+  border-radius: var(--gin-border-m);
+  border-color: transparent !important;
+  transition: var(--gin-transition);
+  box-shadow: none;
+}
+
+[dir="ltr"] .messages.status .button--dismiss,
+[dir="ltr"] .messages.info .button--dismiss,
+[dir="ltr"] .messages.warning .button--dismiss,
+[dir="ltr"] .messages.error .button--dismiss {
+  right: 0;
+}
+
+[dir="rtl"] .messages.status .button--dismiss,
+[dir="rtl"] .messages.info .button--dismiss,
+[dir="rtl"] .messages.warning .button--dismiss,
+[dir="rtl"] .messages.error .button--dismiss {
+  left: 0;
+}
+
+.messages.status .button--dismiss:hover:not(:focus),
+.messages.info .button--dismiss:hover:not(:focus),
+.messages.warning .button--dismiss:hover:not(:focus),
+.messages.error .button--dismiss:hover:not(:focus) {
+  color: transparent;
+  background-color: transparent;
+  border-color: #fff !important;
+}
+
+.messages.status .button--dismiss:focus .icon-close, .messages.status .button--dismiss:hover:focus .icon-close,
+.messages.info .button--dismiss:focus .icon-close,
+.messages.info .button--dismiss:hover:focus .icon-close,
+.messages.warning .button--dismiss:focus .icon-close,
+.messages.warning .button--dismiss:hover:focus .icon-close,
+.messages.error .button--dismiss:focus .icon-close,
+.messages.error .button--dismiss:hover:focus .icon-close {
+  background-color: var(--gin-bg-app);
+}
+
+.messages.status .button--dismiss::before, .messages.status .button--dismiss::after,
+.messages.info .button--dismiss::before,
+.messages.info .button--dismiss::after,
+.messages.warning .button--dismiss::before,
+.messages.warning .button--dismiss::after,
+.messages.error .button--dismiss::before,
+.messages.error .button--dismiss::after {
+  display: none;
+}
+
+.messages.status .button--dismiss .icon-close,
+.messages.info .button--dismiss .icon-close,
+.messages.warning .button--dismiss .icon-close,
+.messages.error .button--dismiss .icon-close {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-mask-image: url("../../media/sprite.svg#close-view");
+          mask-image: url("../../media/sprite.svg#close-view");
+  -webkit-mask-size: 16px 16px;
+          mask-size: 16px 16px;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #fff;
+}
+
+[dir="ltr"] .messages.status .button--dismiss .icon-close,
+[dir="ltr"] .messages.info .button--dismiss .icon-close,
+[dir="ltr"] .messages.warning .button--dismiss .icon-close,
+[dir="ltr"] .messages.error .button--dismiss .icon-close {
+  left: 0;
+}
+
+[dir="rtl"] .messages.status .button--dismiss .icon-close,
+[dir="rtl"] .messages.info .button--dismiss .icon-close,
+[dir="rtl"] .messages.warning .button--dismiss .icon-close,
+[dir="rtl"] .messages.error .button--dismiss .icon-close {
+  right: 0;
+}
+
+.messages.info {
+  color: var(--gin-color-info-light);
+  background-color: var(--gin-bg-info);
+  border-color: var(--gin-bg-info);
+  background: none;
+}
+
+.messages.info:before {
+  background-color: var(--gin-color-info-light);
+  -webkit-mask-image: url("../../media/sprite.svg#info-view");
+          mask-image: url("../../media/sprite.svg#info-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+}
+
+.messages.info .button--dismiss .icon-close:link {
+  background-color: var(--gin-color-info-light);
+}
+
+.messages.status {
+  color: var(--gin-color-green-light);
+  background-color: var(--gin-bg-green);
+}
+
+.messages.status:before {
+  background-color: var(--gin-color-green-light);
+  -webkit-mask-image: url("../../media/sprite.svg#status-view");
+          mask-image: url("../../media/sprite.svg#status-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+}
+
+.messages.status .button--dismiss .icon-close:link {
+  background-color: var(--gin-color-green-light);
+}
+
+.messages.warning {
+  color: var(--gin-color-warning-light);
+  background-color: var(--gin-bg-warning);
+}
+
+.messages.warning:before {
+  background-color: var(--gin-color-warning-light);
+  -webkit-mask-image: url("../../media/sprite.svg#warning-view");
+          mask-image: url("../../media/sprite.svg#warning-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+}
+
+.messages.warning .button--dismiss .icon-close:link {
+  background-color: var(--gin-color-warning-light);
+}
+
+.messages.error {
+  color: var(--gin-color-danger-light);
+  background-color: var(--gin-bg-danger);
+}
+
+.messages.error:before {
+  background-color: var(--gin-color-danger-light);
+  -webkit-mask-image: url("../../media/sprite.svg#error-view");
+          mask-image: url("../../media/sprite.svg#error-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+}
+
+.messages.error .button--dismiss .icon-close:link {
+  background-color: var(--gin-color-danger-light);
+}
+
 .draggable.field-plugin-settings-editing, .draggable.drag-previous.field-plugin-settings-editing {
   background: var(--gin-bg-app);
 }

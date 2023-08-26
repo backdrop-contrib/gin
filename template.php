@@ -317,3 +317,10 @@ function _gin_admin_list($content, $empty_message = '') {
   }
   return $output;
 }
+
+/**
+ * Implements hook_css_alter().
+ */
+function gin_css_alter(&$css) {
+    unset($css[backdrop_get_path('module','system').'/css/messages.theme.css']);
+}
