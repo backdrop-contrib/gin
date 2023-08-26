@@ -2663,14 +2663,22 @@ a.button:active {
   color: var(--gin-bg-app);
 }
 
-.button.button:disabled, .button.button:disabled:hover, .button.button:disabled:active, .button.button:disabled:focus, .button.button.is-disabled, .button.button.is-disabled:hover, .button.button.is-disabled:active, .button.button.is-disabled:focus {
+.button.button:disabled, .button.button:disabled:hover, .button.button:disabled:active, .button.button:disabled:focus,
+.button.button.is-disabled,
+.button.button.is-disabled:hover,
+.button.button.is-disabled:active,
+.button.button.is-disabled:focus {
   color: var(--gin-color-disabled);
   background: transparent;
   border: 2px solid var(--gin-color-disabled-border) !important;
   box-shadow: none;
 }
 
-.button.button--primary:disabled, .button.button--primary:disabled:hover, .button.button--primary:disabled:active, .button.button--primary:disabled:focus, .button.button--primary.is-disabled, .button.button--primary.is-disabled:hover, .button.button--primary.is-disabled:active, .button.button--primary.is-disabled:focus {
+.button.button--primary:disabled, .button.button--primary:disabled:hover, .button.button--primary:disabled:active, .button.button--primary:disabled:focus,
+.button.button--primary.is-disabled,
+.button.button--primary.is-disabled:hover,
+.button.button--primary.is-disabled:active,
+.button.button--primary.is-disabled:focus {
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg);
 }
@@ -2695,6 +2703,29 @@ a.button:active {
           mask-repeat: no-repeat;
   -webkit-mask-position: center center;
           mask-position: center center;
+}
+
+.form-actions .button-danger,
+.form-actions .form-delete {
+  border: 2px solid var(--gin-color-danger) !important;
+  color: var(--gin-color-danger);
+}
+
+.form-actions .button-danger:hover,
+.form-actions .form-delete:hover {
+  background-color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  color: #fff;
+}
+
+.form-actions .button-secondary {
+  font-weight: var(--gin-font-weight-normal);
+}
+
+.confirmation .button-danger, .confirmation .button-danger:not(:focus), .confirmation .button-danger:not(:focus):hover, .confirmation .button-danger:hover {
+  background-color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  color: #fff;
 }
 
 .js .dropbutton-widget {

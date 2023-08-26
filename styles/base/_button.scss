@@ -16,11 +16,14 @@
     background-color: var(--gin-color-primary-hover);
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     background-color: var(--gin-color-primary-active);
   }
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--gin-color-button-text);
   }
 }
@@ -40,11 +43,15 @@
     border-color: var(--gin-color-primary-hover) !important;
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: var(--gin-color-primary-active) !important;
   }
 
-  &:hover, &:active, &:focus, &:hover:focus {
+  &:hover,
+  &:active,
+  &:focus,
+  &:hover:focus {
     color: var(--gin-color-button-text);
   }
 }
@@ -74,11 +81,15 @@ input.button {
     background-color: var(--gin-color-primary-hover);
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     background-color: var(--gin-color-primary-active);
   }
 
-  &, &:hover, &:active, &:focus {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--gin-color-button-text);
   }
 }
@@ -97,8 +108,13 @@ a.button--primary:focus:hover {
   }
 }
 
-.button.button:disabled, .button.button.is-disabled {
-  &, &:hover, &:active, &:focus {
+.button.button:disabled,
+.button.button.is-disabled {
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--gin-color-disabled);
     background: transparent;
     border: 2px solid var(--gin-color-disabled-border) !important;
@@ -106,8 +122,13 @@ a.button--primary:focus:hover {
   }
 }
 
-.button.button--primary:disabled, .button.button--primary.is-disabled {
-  &, &:hover, &:active, &:focus {
+.button.button--primary:disabled,
+.button.button--primary.is-disabled {
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--gin-color-disabled);
     background-color: var(--gin-color-disabled-bg);
   }
@@ -118,7 +139,11 @@ a.button--primary:focus:hover {
   padding: calc(var(--gin-spacing-s) - 1px) calc(var(--gin-spacing-l) - 2px);
   box-sizing: border-box;
 
-  &, &:hover, &:active, &:focus, &:focus:hover {
+  &,
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus:hover {
     border: 2px solid var(--gin-color-danger) !important;
     // border: 2px solid transparent !important;
   }
@@ -131,4 +156,34 @@ a.button--primary:focus:hover {
   mask-size: 16px 16px;
   mask-repeat: no-repeat;
   mask-position: center center;
+}
+
+.form-actions {
+  .button-danger,
+  .form-delete {
+    border: 2px solid var(--gin-color-danger) !important;
+    color: var(--gin-color-danger);
+
+    &:hover {
+      background-color: var(--gin-color-danger);
+      border: 2px solid var(--gin-color-danger) !important;
+      color: #fff;
+    }
+  }
+
+  .button-secondary {
+    font-weight: var(--gin-font-weight-normal);
+  }
+}
+.confirmation {
+  .button-danger {
+    &,
+    &:not(:focus),
+    &:not(:focus):hover,
+    &:hover {
+      background-color: var(--gin-color-danger);
+      border: 2px solid var(--gin-color-danger) !important;
+      color: #fff;
+    }
+  }
 }

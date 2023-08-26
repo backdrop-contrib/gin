@@ -248,14 +248,22 @@
   color: var(--gin-bg-app);
 }
 
-.ui-dialog .button.button:disabled, .ui-dialog .button.button:disabled:hover, .ui-dialog .button.button:disabled:active, .ui-dialog .button.button:disabled:focus, .ui-dialog .button.button.is-disabled, .ui-dialog .button.button.is-disabled:hover, .ui-dialog .button.button.is-disabled:active, .ui-dialog .button.button.is-disabled:focus {
+.ui-dialog .button.button:disabled, .ui-dialog .button.button:disabled:hover, .ui-dialog .button.button:disabled:active, .ui-dialog .button.button:disabled:focus,
+.ui-dialog .button.button.is-disabled,
+.ui-dialog .button.button.is-disabled:hover,
+.ui-dialog .button.button.is-disabled:active,
+.ui-dialog .button.button.is-disabled:focus {
   color: var(--gin-color-disabled);
   background: transparent;
   border: 2px solid var(--gin-color-disabled-border) !important;
   box-shadow: none;
 }
 
-.ui-dialog .button.button--primary:disabled, .ui-dialog .button.button--primary:disabled:hover, .ui-dialog .button.button--primary:disabled:active, .ui-dialog .button.button--primary:disabled:focus, .ui-dialog .button.button--primary.is-disabled, .ui-dialog .button.button--primary.is-disabled:hover, .ui-dialog .button.button--primary.is-disabled:active, .ui-dialog .button.button--primary.is-disabled:focus {
+.ui-dialog .button.button--primary:disabled, .ui-dialog .button.button--primary:disabled:hover, .ui-dialog .button.button--primary:disabled:active, .ui-dialog .button.button--primary:disabled:focus,
+.ui-dialog .button.button--primary.is-disabled,
+.ui-dialog .button.button--primary.is-disabled:hover,
+.ui-dialog .button.button--primary.is-disabled:active,
+.ui-dialog .button.button--primary.is-disabled:focus {
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg);
 }
@@ -280,6 +288,29 @@
           mask-repeat: no-repeat;
   -webkit-mask-position: center center;
           mask-position: center center;
+}
+
+.ui-dialog .form-actions .button-danger,
+.ui-dialog .form-actions .form-delete {
+  border: 2px solid var(--gin-color-danger) !important;
+  color: var(--gin-color-danger);
+}
+
+.ui-dialog .form-actions .button-danger:hover,
+.ui-dialog .form-actions .form-delete:hover {
+  background-color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  color: #fff;
+}
+
+.ui-dialog .form-actions .button-secondary {
+  font-weight: var(--gin-font-weight-normal);
+}
+
+.ui-dialog .confirmation .button-danger, .ui-dialog .confirmation .button-danger:not(:focus), .ui-dialog .confirmation .button-danger:not(:focus):hover, .ui-dialog .confirmation .button-danger:hover {
+  background-color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  color: #fff;
 }
 
 .ui-dialog .form-actions {
