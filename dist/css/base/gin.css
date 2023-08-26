@@ -4944,6 +4944,17 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 /* Layout admin pages */
 
+.layout-content-form {
+  border: 1px solid var(--gin-border-color);
+  border-radius: var(--gin-border-l);
+  padding: var(--gin-spacing-l);
+}
+
+.layout-content-form .layout-settings {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .layout-content-form .page-title {
   max-width: 100%;
   flex-grow: 1;
@@ -4965,6 +4976,8 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 .layout-content-form .gin-secondary-toolbar {
   height: auto;
   z-index: 0;
+  border: none;
+  padding-bottom: 0;
 }
 
 .layout-content-form .region-sticky {
@@ -4988,13 +5001,13 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   font-weight: var(--gin-font-weight-bold);
   color: var(--gin-color-primary-active);
   padding: var(--gin-spacing-xs) var(--gin-spacing-xs);
-  margin-top: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
-  margin-right: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
-  margin-left: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+  margin-top: calc(-1 * var(--gin-spacing-l));
+  margin-left: calc(-1 * var(--gin-spacing-l));
+  margin-right: calc(-1 * var(--gin-spacing-l));
   margin-bottom: var(--gin-spacing-s);
   background: var(--gin-bg-header);
   border: 0 none;
-  border-radius: var(--gin-border-m);
+  border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
 }
 
 .layout-editor-region .container,
@@ -5056,6 +5069,7 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 .layout-content-form .page-title .layout-editor-block {
   background-color: var(--gin-bg-header);
+  margin: 0;
 }
 
 .layout-container .sticky-shadow {
@@ -5065,5 +5079,30 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 .layout-editor-placeholder {
   border-radius: var(--gin-border-l);
   background-color: var(--gin-color-primary);
+}
+
+.layout-flexible-editor .layout-editor-block-title {
+  margin-bottom: 0;
+}
+
+.layout-flexible-editor .flexible-row {
+  border: none;
+  box-shadow: none;
+}
+
+.layout-flexible-editor .flexible-row > div:first-child {
+  border: 1px solid var(--gin-border-color-form-element);
+  border-radius: var(--gin-border-l);
+}
+
+.layout-flexible-editor .flexible-row .l-flexible-row {
+  margin: 0;
+  padding: var(--gin-spacing-m);
+  background: #fff;
+  border-radius: 0 0 var(--gin-border-l) var(--gin-border-l);
+}
+
+.layout-flexible-editor .flexible-row:hover {
+  background-color: transparent;
 }
 

@@ -9,6 +9,7 @@
   background-color: var(--gin-bg-header);
   border-start-end-radius: var(--gin-border-l);
   border-start-start-radius: var(--gin-border-l);
+
   .buttons {
     width: inherit;
     min-width: 120px;
@@ -20,6 +21,7 @@
     border-radius: var(--gin-border-l);
   }
 }
+
 .layout-editor-block-content {
   background-color: #fff;
   border-end-end-radius: var(--gin-border-l);
@@ -36,9 +38,11 @@
   .region-sticky {
     background: transparent;
   }
+
   .page-title {
     .layout-editor-block {
       background-color: var(--gin-bg-header);
+      margin: 0;
     }
   }
 }
@@ -52,4 +56,31 @@
 .layout-editor-placeholder {
   border-radius: var(--gin-border-l);
   background-color: var(--gin-color-primary);
+}
+
+.layout-flexible-editor {
+  .layout-editor-block-title {
+    margin-bottom: 0;
+  }
+
+  .flexible-row {
+    border: none;
+    box-shadow: none;
+
+    > div:first-child {
+      border: 1px solid var(--gin-border-color-form-element);
+      border-radius: var(--gin-border-l);
+    }
+
+    .l-flexible-row {
+      margin: 0;
+      padding: var(--gin-spacing-m);
+      background: #fff;
+      border-radius: 0 0 var(--gin-border-l) var(--gin-border-l);
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }

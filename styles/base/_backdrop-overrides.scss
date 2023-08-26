@@ -466,6 +466,15 @@ fieldset.collapsible.collapsed {
 
 /* Layout admin pages */
 .layout-content-form {
+  border: 1px solid var(--gin-border-color);
+  border-radius: var(--gin-border-l);
+  padding: var(--gin-spacing-l);
+
+  .layout-settings {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .page-title {
     max-width: 100%;
     flex-grow: 1;
@@ -487,6 +496,8 @@ fieldset.collapsible.collapsed {
   .gin-secondary-toolbar {
     height: auto;
     z-index: 0;
+    border: none;
+    padding-bottom: 0;
   }
 
   .region-sticky {
@@ -508,13 +519,13 @@ fieldset.collapsible.collapsed {
     font-weight: var(--gin-font-weight-bold);
     color: var(--gin-color-primary-active);
     padding: var(--gin-spacing-xs) var(--gin-spacing-xs);
-    margin-top: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
-    margin-right: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
-    margin-left: calc(-1 * var(--gin-spacing-l) + var(--gin-spacing-s));
+    margin-top: calc(-1 * var(--gin-spacing-l));
+    margin-left: calc(-1 * var(--gin-spacing-l));
+    margin-right: calc(-1 * var(--gin-spacing-l));
     margin-bottom: var(--gin-spacing-s);
     background: var(--gin-bg-header);
     border: 0 none;
-    border-radius: var(--gin-border-m);
+    border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
   }
 }
 

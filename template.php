@@ -28,6 +28,8 @@ function gin_preprocess_layout(&$variables) {
     'admin/structure/block',
     'admin/structure/file-types',
     'admin/structure/layouts',
+    'admin/structure/layouts/manage/*',
+    'admin/structure/layouts/settings/flexible-template/*',
     'admin/structure/menu',
     'admin/structure/paragraphs',
     'admin/structure/taxonomy',
