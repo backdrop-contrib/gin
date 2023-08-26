@@ -4626,12 +4626,12 @@ fieldset.collapsible .fieldset-legend .fieldset-title::before {
 
 [dir="ltr"] fieldset.collapsible .fieldset-legend .fieldset-title::before {
   left: 1.125rem;
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 [dir="rtl"] fieldset.collapsible .fieldset-legend .fieldset-title::before {
   right: 1.125rem;
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 fieldset.collapsible .fieldset-legend .fieldset-title:hover::before,
@@ -4710,11 +4710,11 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 }
 
 [dir="ltr"] fieldset.collapsible.collapsed .fieldset-legend .fieldset-title::before {
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
 }
 
 [dir="rtl"] fieldset.collapsible.collapsed .fieldset-legend .fieldset-title::before {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 /* Layout admin pages */

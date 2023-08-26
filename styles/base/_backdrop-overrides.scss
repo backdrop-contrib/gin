@@ -382,7 +382,7 @@ fieldset.collapsible {
       height: var(--gin-spacing-m);
       margin-top: calc(var(--gin-spacing-m) / -2);
       content: "";
-      transform: rotate(90deg);
+      transform: rotate(-90deg);
       position: absolute;
       text-align: center;
     }
@@ -459,7 +459,7 @@ fieldset.collapsible.collapsed {
     }
 
     .fieldset-title::before {
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     }
   }
 }
