@@ -52,7 +52,7 @@
   .gin--edit-form & {
     @include mq(ultra) {
       position: relative;
-      left: calc(50% - var(--gin-spacing-xxl));
+      left: 50%;
       transform: translateX(-50%);
     }
   }

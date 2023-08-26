@@ -64,12 +64,12 @@
   }
 
   [dir="ltr"] .gin--edit-form .gin-secondary-toolbar {
-    left: calc(50% - var(--gin-spacing-xxl));
+    left: 50%;
     transform: translateX(-50%);
   }
 
   [dir="rtl"] .gin--edit-form .gin-secondary-toolbar {
-    right: calc(50% - var(--gin-spacing-xxl));
+    right: 50%;
     transform: translateX(50%);
   }
 }

@@ -1,28 +1,13 @@
-/* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
+(function ($) {
 
-'use strict';
+  /**
+   * Move action buttons to the sticky area.
+   */
 
-((Backdrop, once) => {
   Backdrop.behaviors.ginEditForm = {
-    attach: (context) => {
-      once('ginEditForm', '.region-content form.gin-node-edit-form', context).forEach(form => {
-        const sticky = context.querySelector('.gin-sticky');
-        const newParent = context.querySelector('.region-sticky__items__inner');
-
-        if (newParent && newParent.querySelectorAll('.gin-sticky').length === 0) {
-          newParent.appendChild(sticky);
-
-          // Attach form elements to main form
-          const actionButtons = newParent.querySelectorAll('button, input, select, textarea');
-
-          if (actionButtons.length > 0) {
-            actionButtons.forEach((el) => {
-              el.setAttribute('form', form.getAttribute('id'));
-              el.setAttribute('id', el.getAttribute('id') + '--gin-edit-form');
-            });
-          }
-        }
-      });
+    attach: function (context, settings) {
+      $('.block-page-title-block').append($('.form-actions'));
     }
   };
-})(Backdrop, once);
+
+})(jQuery);

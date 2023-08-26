@@ -345,7 +345,7 @@ fieldset {
   .fieldset-legend {
 
     .fieldset-title::before {
-      transition: transform var(--gin-transition) ease-in 0s;
+      transition: transform var(--gin-transition);
     }
 
     span.summary {

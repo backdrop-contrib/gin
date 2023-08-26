@@ -1794,6 +1794,24 @@ td.webform-has-field-suffix > .form-item > .form-element {
   margin-top: var(--gin-spacing-s);
 }
 
+.form-actions {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0;
+}
+
+[dir="ltr"] .form-actions input,
+[dir="ltr"] .form-actions a {
+  margin-left: var(--gin-spacing-xs);
+}
+
+[dir="rtl"] .form-actions input,
+[dir="rtl"] .form-actions a {
+  margin-right: var(--gin-spacing-xs);
+}
+
 .form-element,
 .form-select,
 .form-textarea,
@@ -1805,6 +1823,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
+  max-width: 100%;
 }
 
 .form-element:hover,
@@ -4790,7 +4809,7 @@ fieldset legend {
 }
 
 fieldset .fieldset-legend .fieldset-title::before {
-  transition: transform var(--gin-transition) ease-in 0s;
+  transition: transform var(--gin-transition);
 }
 
 fieldset .fieldset-legend span.summary {

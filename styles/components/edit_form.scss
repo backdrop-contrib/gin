@@ -1,5 +1,6 @@
 // Node layout
 .gin--edit-form {
+
   // Has sidebar, save the space
   @include mq(large) {
     padding-right: var(--gin-sidebar-offset);
@@ -30,14 +31,13 @@
     display: none;
   }
 
-  .layout-node-form {
+  .node-form > div {
     overflow: inherit;
     display: block;
   }
 
   .layout-region-node-main,
-  .layout-region-node-secondary
-  .layout-region-node-footer {
+  .layout-region-node-secondary .layout-region-node-footer {
     float: none;
   }
 
@@ -54,7 +54,7 @@
     }
   }
 
-  .page-wrapper__node-edit-form {
+  .page-wrapper {
     .block-page-title-block {
       @include mq(1730px) {
         width: 100%;
@@ -94,7 +94,7 @@
       overflow-x: hidden;
       overflow-y: auto;
       -webkit-overflow-scrolling: touch;
-      background:var(--gin-bg-layer);
+      background: var(--gin-bg-layer);
       border-left: 1px solid var(--gin-border-color-layer);
       transition: all var(--gin-transition-fast);
 
@@ -122,6 +122,85 @@
         background: none;
         border: 0 none;
         box-shadow: none;
+      }
+
+      fieldset.form-wrapper {
+        border-radius: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid var(--gin-border-color-layer);
+
+        > legend {
+          border: none;
+          margin: 0;
+
+          .fieldset-legend {
+            position: relative;
+
+            span.summary {
+              left: var(--gin-spacing-xxl);
+              bottom: var(--gin-spacing-m);
+              top: unset;
+              right: unset;
+              z-index: 0;
+            }
+
+            &,
+            & a.fieldset-title {
+              border-radius: 0;
+              border: none;
+              z-index: 1;
+              position: relative;
+            }
+
+            a.fieldset-title {
+              padding-bottom: var(--gin-spacing-xl);
+              background-color: transparent;
+
+              &:before {
+                top: var(--gin-spacing-xl);
+              }
+
+              &:hover {
+                background-color: var(--gin-bg-item-hover);
+                color: var(--gin-color-primary);
+              }
+            }
+          }
+
+          .fieldset-wrapper {
+            border-top: 1px solid var(--gin-border-color);
+            background: var(--gin-bg-app);
+            padding: var(--gin-spacing-l);
+          }
+        }
+      }
+
+      fieldset.collapsible:not(.collapsed) {
+
+        .fieldset-wrapper {
+          padding: var(--gin-spacing-m) var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-xxl);
+          background: var(--gin-bg-app);
+        }
+
+        span.summary {
+          display: none;
+        }
+
+        > legend {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border-left: 3px solid var(--gin-color-primary);
+
+          a.fieldset-title {
+            padding-bottom: var(--gin-spacing-m);
+            color: var(--gin-color-primary);
+
+            &:before {
+              top: 50%;
+              background-color: var(--gin-color-primary);
+            }
+          }
+        }
       }
 
       .entity-meta {
@@ -256,5 +335,11 @@
     line-height: normal;
     letter-spacing: -0.025em;
     width: 100%;
+  }
+}
+
+.region-sticky__items {
+  .form-actions {
+    margin: 0;
   }
 }

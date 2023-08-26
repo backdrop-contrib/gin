@@ -1,5 +1,18 @@
 $maxWidth: 520px;
 
+.form-actions {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0;
+
+  input,
+  a {
+    margin-left: var(--gin-spacing-xs);
+  }
+}
+
 .form-element,
 .form-select,
 .form-textarea,
@@ -11,6 +24,7 @@ $maxWidth: 520px;
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
+  max-width: 100%;
 
   &:hover {
     border-color: var(--gin-color-text);

@@ -282,6 +282,24 @@
           mask-position: center center;
 }
 
+.ui-dialog .form-actions {
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0;
+}
+
+[dir="ltr"] .ui-dialog .form-actions input,
+[dir="ltr"] .ui-dialog .form-actions a {
+  margin-left: var(--gin-spacing-xs);
+}
+
+[dir="rtl"] .ui-dialog .form-actions input,
+[dir="rtl"] .ui-dialog .form-actions a {
+  margin-right: var(--gin-spacing-xs);
+}
+
 .ui-dialog .form-element,
 .ui-dialog .form-select,
 .ui-dialog .form-textarea,
@@ -293,6 +311,7 @@
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
+  max-width: 100%;
 }
 
 .ui-dialog .form-element:hover,

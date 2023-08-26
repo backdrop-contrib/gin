@@ -49,6 +49,11 @@ function gin_preprocess_page(&$variables) {
   // $variables['classes'][] = 'gin--' . $toolbar . '-toolbar';
   $variables['classes'][] = 'gin--horizontal-toolbar';
 
+  // Node add or edit.
+  if (arg(0) == 'node' && (arg(1) == 'add' || arg(2) == 'edit')) {
+    $variables['classes'][] = 'gin--edit-form';
+  }
+
   backdrop_add_library('gin', 'gin_init');
   backdrop_add_library('gin', 'gin_accent');
   backdrop_add_library('gin', 'gin_sticky');
