@@ -2,6 +2,7 @@
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -100,7 +101,7 @@
 }
 
 .views-edit-view {
-  .unit-title {
+  h1.unit-title {
     margin-top: 0;
     margin-bottom: var(--gin-spacing-m);
     @extend h2;
@@ -164,11 +165,16 @@
   }
 }
 
+#edit-display-settings-top {
+  background: transparent;
+}
+
 .views-display-top {
+  margin: 0;
   padding: var(--gin-spacing-m);
   background-color: var(--gin-bg-header);
   border: 0 none;
-  border-radius: var(--gin-border-l);
+  border-radius: var(--gin-border-l) var(--gin-border-l) 0 0;
 
   // #3186729: Drupal 9.1 fix
   &__extra-actions-wrapper {
@@ -176,8 +182,8 @@
   }
 
   .dropbutton-wrapper {
-    top: 20px;
-    right: 2var(--gin-spacing-l);
+    top: 10px;
+    right: var(--gin-spacing-2);
   }
 }
 
@@ -193,9 +199,13 @@
   margin: 0;
 }
 
-.views-tabs {
+#views-display-menu-tabs {
   a {
     padding: var(--gin-spacing-xs) var(--gin-spacing-m);
+  }
+
+  li {
+    margin: 0 0.3125rem 0.3125rem 0.375rem;
   }
 
   .add a,
@@ -207,6 +217,7 @@
     background: transparent;
     border: 2px solid var(--gin-color-primary);
     border-radius: var(--gin-border-xs);
+    display: inline-block;
 
     &::before {
       display: none;
@@ -234,12 +245,16 @@
     box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
   }
 
-  .add {
+  li.add {
+    border: none;
+
     &.open {
       a {
         background: var(--gin-bg-layer2);
 
-        &:hover, &:focus, &:active {
+        &:hover,
+        &:focus,
+        &:active {
           color: var(--gin-color-primary);
         }
       }
@@ -263,7 +278,10 @@
         border: none !important;
       }
 
-      &:hover, &:focus, &:active {
+      &:hover,
+      &:focus,
+      &:active {
+
         &,
         input.button {
           color: var(--gin-color-button-text);
@@ -272,9 +290,14 @@
       }
     }
   }
+
+  span.icon {
+    float: left;
+  }
 }
 
 .views-ui-display-tab-bucket {
+
   // #3186729: Drupal 9.1 fix
   &__header {
     padding: 0;
@@ -286,6 +309,10 @@
     color: var(--gin-color-title);
     text-transform: none;
     padding: var(--gin-spacing-m);
+  }
+
+  h3 {
+    background-color: transparent;
   }
 
   // #3186729: Drupal 9.1 fix
@@ -327,7 +354,7 @@
 .views-ui-display-tab-bucket.views-ui-display-tab-bucket {
   padding-top: 0;
   margin-bottom: 0;
-  border-bottom-color: var(--gin-border-color);
+  border-bottom: 1px solid var(--gin-border-color);
 }
 
 .views-ui-display-tab-actions {
@@ -346,6 +373,7 @@
 
 .system-modules,
 .locale-translation-status-form {
+
   tr.even,
   tr.odd {
     background: none;
@@ -363,12 +391,21 @@
   }
 }
 
+#edit-display-settings-main {
+  padding: var(--gin-spacing-l);
+}
+
 .views-display-column,
 .edit-display-settings-top.views-ui-display-tab-bucket {
   margin-bottom: var(--gin-spacing-m);
-  border-color: var(--gin-border-color);
+  border: 1px solid var(--gin-border-color);
   border-radius: var(--gin-border-m);
   box-shadow: none;
+}
+
+.views-display-column {
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .views-ui-dialog {
@@ -402,6 +439,20 @@ a.views-field-excluded {
 .views-display-columns {
   .details-wrapper {
     margin: 0;
+  }
+
+  > * {
+    float: left;
+    width: 32%;
+    margin-block-end: 0;
+    margin-block: 0 var(--gin-spacing-l);
+    margin-inline: 0;
+    margin-inline-start: 2%;  }
+
+  @media screen and (min-width: 60rem) {
+    > :first-child {
+      margin-inline-start: 0;
+    }
   }
 }
 
