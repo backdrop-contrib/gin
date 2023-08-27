@@ -225,6 +225,7 @@
 
 .gin--edit-form .page-wrapper .layout-region-node-secondary fieldset.collapsible:not(.collapsed) > legend {
   box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+  border-radius: 0;
 }
 
 [dir="ltr"] .gin--edit-form .page-wrapper .layout-region-node-secondary fieldset.collapsible:not(.collapsed) > legend {

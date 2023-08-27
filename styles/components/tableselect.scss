@@ -31,6 +31,10 @@
 
     &.form-wrapper {
       padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
+      font-size: var(--gin-font-size-xs);
+      .button {
+        font-size: var(--gin-font-size-xs);
+      }
     }
 
     &.is-sticky {
@@ -40,7 +44,8 @@
       left: 0;
       bottom: var(--gin-spacing-xs);
       box-shadow: 0 2px 6px 2px rgba(0, 0, 0, .03);
-      animation: fadeInBottom 320ms 1 forwards;
+      // Temporarily remove below; causes a jump when first selecting content.
+      // animation: fadeInBottom 320ms 1 forwards;
     }
   }
 }

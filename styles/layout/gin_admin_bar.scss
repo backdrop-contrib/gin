@@ -88,6 +88,13 @@
     }
   }
 
+  // Default
+  a {
+    &:before {
+      mask-image: icon('drop');
+    }
+  }
+
   // Dashboard
   .admin-dashboard {
     &:before {

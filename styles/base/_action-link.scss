@@ -1,59 +1,22 @@
-.action-link {
-  color: var(--gin-color-primary);
-  background-color: transparent;
-  border-radius: var(--gin-border-s);
+.action-link,
+.operations > li {
+  float: none;
 
-  &:hover {
-    color: var(--gin-color-primary-hover);
-    background-color: var(--gin-bg-item-hover);
-  }
-
-  &:focus {
-    color: var(--gin-color-primary-active);
-    background-color: var(--gin-color-primary-light-hover);
-  }
-
-  &.action-link--extrasmall {
-    font-size: var(--gin-font-size-xxs);
-  }
-
-  &:before {
-    background-image: none;
-    background-color: var(--gin-color-primary);
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-  }
-
-  &--icon-ex:hover::before,
-  &--icon-checkmark:hover:before,
-  &--icon-show:hover::before,
-  &--icon-cog:hover::before,
-  &--icon-hide:hover::before,
-  &--icon-show:before,
-  &--icon-hide:before {
-    background-image: none;
-    background-color: var(--gin-color-primary);
-  }
-
-  &--icon-checkmark:before {
+  &.default a:before,
+  &.enable-default a:before {
     mask-image: icon('checkmark');
   }
 
-  &--icon-show:before {
-    mask-image: icon('show');
-  }
-
-  &--icon-hide:before {
-    mask-image: icon('hide');
-  }
-
-  &--icon-cog::before {
+  &.settings a:before {
     mask-image: icon('config');
   }
 
-  &--icon-ex::before {
+  &.disable a:before {
     mask-image: icon('remove');
+  }
+
+  &.enable a:before {
+    mask-image: icon('add');
   }
 
   &--icon-key::before {
@@ -62,6 +25,43 @@
 
   &--icon-questionmark::before {
     mask-image: icon('help');
+  }
+
+  > a {
+    color: var(--gin-color-primary);
+    background-color: transparent;
+    border-radius: var(--gin-border-s);
+    padding: calc(var(--gin-spacing-s) - ((var(--gin-spacing-l) - var(--gin-spacing-s)) / 2)) var(--gin-spacing-s);
+    margin-inline-start: var(--gin-spacing-xs);
+
+    &:hover {
+      color: var(--gin-color-primary-hover);
+      background-color: var(--gin-bg-item-hover);
+    }
+
+    &:focus {
+      color: var(--gin-color-primary-active);
+      background-color: var(--gin-color-primary-light-hover);
+    }
+
+    &.action-link--extrasmall {
+      font-size: var(--gin-font-size-xxs);
+    }
+
+    &:before {
+      background-image: none;
+      background-color: var(--gin-color-primary);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      content: "";
+      position: relative;
+      display: inline-block;
+      inset-block-start: 0.0625rem;
+      width: var(--gin-spacing-s);
+      height: var(--gin-spacing-s);
+      margin-inline: -0.125rem 0.4em;
+    }
   }
 }
 
@@ -101,4 +101,10 @@ a.button.button--danger {
 .button--primary.button--danger {
   color: var(--gin-bg-layer);
   background-color: var(--gin-color-danger);
+}
+
+.theme-selector .operations li.first,
+.theme-selector .operations li.last,
+.theme-selector .operations li {
+  padding: 0;
 }

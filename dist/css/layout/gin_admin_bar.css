@@ -148,6 +148,11 @@
           mask-image: url("../../media/sprite.svg#backdrop-view");
 }
 
+#admin-bar a:before {
+  -webkit-mask-image: url("../../media/sprite.svg#drop-view");
+          mask-image: url("../../media/sprite.svg#drop-view");
+}
+
 #admin-bar .admin-dashboard:before {
   -webkit-mask-image: url("../../media/sprite.svg#sidebar-view");
           mask-image: url("../../media/sprite.svg#sidebar-view");

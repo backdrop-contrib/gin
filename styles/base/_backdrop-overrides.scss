@@ -423,6 +423,7 @@ fieldset:not(.fieldgroup) {
 
     .fieldset-legend {
       border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
+      font-weight: var(--gin-font-weight-bold);
 
       a {
         color: var(--gin-color-text);

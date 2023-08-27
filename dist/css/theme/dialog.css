@@ -132,7 +132,7 @@
 .ui-dialog .form-actions .button,
 .ui-dialog .action-link--icon-trash.action-link {
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
-  border: 2px solid var(--gin-color-primary) !important;
+  border: 2px solid var(--gin-color-primary);
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
   transition: var(--gin-transition);
@@ -342,7 +342,7 @@
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
-  max-width: calc(100% - 2 * var(--gin-spacing-m));
+  max-width: 100%;
 }
 
 .ui-dialog .form-element:hover,

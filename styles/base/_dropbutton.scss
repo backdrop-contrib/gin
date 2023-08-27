@@ -10,8 +10,17 @@
   }
 
   .dropbutton {
+
+    a,
+    li {
+      text-align: start;
+    }
+
     a {
       font-weight: var(--gin-font-weight-semibold);
+      font-size: var(--gin-font-size-xs);
+      float: none;
+      margin: 0;
     }
 
     button:hover,
@@ -21,6 +30,14 @@
       background-color: var(--gin-color-primary-hover);
       color: #fff;
       text-decoration: none;
+    }
+
+    .dropbutton-action {
+      > * {
+        padding-block-start: var(--gin-spacing-xxs);
+        padding-block-end: var(--gin-spacing-xxs);
+        padding-inline-start: var(--gin-spacing-s);
+        padding-inline-end: var(--gin-spacing-xxs);      }
     }
   }
 
