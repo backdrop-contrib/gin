@@ -280,3 +280,7 @@
   flex-basis: 40%;
 }
 
+#admin-bar #admin-bar-menu > li > .dropdown > li > a {
+  background: none !important;
+}
+
