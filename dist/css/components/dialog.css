@@ -82,6 +82,10 @@
   color: var(--gin-color-text);
 }
 
+.ui-dialog .ui-dialog-content .form-actions input.ajax-processed {
+  display: none;
+}
+
 .ui-dialog .ui-widget-content.ui-dialog-buttonpane {
   padding: var(--gin-spacing-s) var(--gin-spacing-l);
   border-top: 1px solid var(--gin-border-color-layer);
@@ -94,6 +98,14 @@
   font-weight: var(--gin-font-weight-heavy);
   margin-top: 0;
   margin-bottom: 0;
+}
+
+[dir="ltr"] .ui-dialog .ui-widget-content.ui-dialog-buttonpane .button {
+  margin-left: var(--gin-spacing-s);
+}
+
+[dir="rtl"] .ui-dialog .ui-widget-content.ui-dialog-buttonpane .button {
+  margin-right: var(--gin-spacing-s);
 }
 
 [dir="ltr"] .ui-dialog .ui-widget-content.ui-dialog-buttonpane .button:last-of-type {

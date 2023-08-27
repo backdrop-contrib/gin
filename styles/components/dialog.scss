@@ -73,6 +73,11 @@
 
   .ui-dialog-content {
     color: var(--gin-color-text);
+    .form-actions {
+      input.ajax-processed {
+        display: none;
+      }
+    }
   }
 
   .ui-widget-content.ui-dialog-buttonpane {
@@ -86,6 +91,7 @@
       font-weight: var(--gin-font-weight-heavy);
       margin-top: 0;
       margin-bottom: 0;
+      margin-left: var(--gin-spacing-s);
 
       &:last-of-type {
         margin-right: 0;
