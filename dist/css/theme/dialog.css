@@ -315,7 +315,7 @@
 
 .ui-dialog .form-actions {
   display: flex;
-  flex-flow: row-reverse;
+  flex-flow: row;
   align-items: center;
   flex-grow: 1;
   margin: 0;
@@ -329,6 +329,10 @@
 [dir="rtl"] .ui-dialog .form-actions input,
 [dir="rtl"] .ui-dialog .form-actions a {
   margin-right: var(--gin-spacing-xs);
+}
+
+.ui-dialog .l-page-title .form-actions {
+  flex-flow: row-reverse;
 }
 
 .ui-dialog .form-element,
