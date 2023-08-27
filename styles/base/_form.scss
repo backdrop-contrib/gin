@@ -24,7 +24,7 @@ $maxWidth: 520px;
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
-  max-width: 100%;
+  max-width: calc(100% - 2* var(--gin-spacing-m));
 
   &:hover {
     border-color: var(--gin-color-text);

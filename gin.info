@@ -26,6 +26,7 @@ ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
 
 ; Add custom JavaScript files.
 ; scripts[] = js/libs/once.js
+scripts[] = dist/js/tabs.js
 
 ; Default settings.
 settings[enable_darkmode] = true

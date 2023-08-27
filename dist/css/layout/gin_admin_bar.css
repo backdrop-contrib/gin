@@ -1,6 +1,6 @@
 :root {
   --gin-toolbar-secondary-height: 48px;
-  --gin-toolbar-height: 32px;
+  --gin-toolbar-height: 48px;
   --gin-scroll-offset: 72px;
   --gin-toolbar-y-offset: var(--gin-toolbar-height);
   --gin-toolbar-x-offset: 0px;
@@ -51,7 +51,8 @@
 #admin-bar #admin-bar-extra .user-counter,
 #admin-bar #admin-bar-extra .account,
 #admin-bar #admin-bar-extra .logout,
-#admin-bar #admin-bar-menu > li > .dropdown > li > a {
+#admin-bar #admin-bar-menu > li > .dropdown > li > a,
+#admin-bar #admin-bar-menu.dropdown li > span.menu {
   background: none;
 }
 
@@ -61,7 +62,8 @@
 [dir="ltr"] #admin-bar #admin-bar-extra .user-counter,
 [dir="ltr"] #admin-bar #admin-bar-extra .account,
 [dir="ltr"] #admin-bar #admin-bar-extra .logout,
-[dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a {
+[dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a,
+[dir="ltr"] #admin-bar #admin-bar-menu.dropdown li > span.menu {
   padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
 }
 
@@ -71,7 +73,8 @@
 [dir="rtl"] #admin-bar #admin-bar-extra .user-counter,
 [dir="rtl"] #admin-bar #admin-bar-extra .account,
 [dir="rtl"] #admin-bar #admin-bar-extra .logout,
-[dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a {
+[dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a,
+[dir="rtl"] #admin-bar #admin-bar-menu.dropdown li > span.menu {
   padding: var(--gin-spacing-m) var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-s);
 }
 
@@ -81,7 +84,8 @@
 #admin-bar #admin-bar-extra .user-counter::before,
 #admin-bar #admin-bar-extra .account::before,
 #admin-bar #admin-bar-extra .logout::before,
-#admin-bar #admin-bar-menu > li > .dropdown > li > a::before {
+#admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
+#admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   content: "";
   display: block;
   width: 16px;
@@ -97,7 +101,8 @@
 [dir="ltr"] #admin-bar #admin-bar-extra .user-counter::before,
 [dir="ltr"] #admin-bar #admin-bar-extra .account::before,
 [dir="ltr"] #admin-bar #admin-bar-extra .logout::before,
-[dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before {
+[dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
+[dir="ltr"] #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   float: left;
   margin-right: var(--gin-spacing-xs);
 }
@@ -108,7 +113,8 @@
 [dir="rtl"] #admin-bar #admin-bar-extra .user-counter::before,
 [dir="rtl"] #admin-bar #admin-bar-extra .account::before,
 [dir="rtl"] #admin-bar #admin-bar-extra .logout::before,
-[dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before {
+[dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
+[dir="rtl"] #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   float: right;
   margin-left: var(--gin-spacing-xs);
 }
@@ -119,7 +125,8 @@
 #admin-bar #admin-bar-extra .user-counter.active-trail,
 #admin-bar #admin-bar-extra .account.active-trail,
 #admin-bar #admin-bar-extra .logout.active-trail,
-#admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail {
+#admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail,
+#admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail {
   color: #fff;
   font-weight: var(--gin-font-weight-bold);
   background: rgba(255, 255, 255, .1) !important;
@@ -131,7 +138,8 @@
 #admin-bar #admin-bar-extra .user-counter.active-trail::before,
 #admin-bar #admin-bar-extra .account.active-trail::before,
 #admin-bar #admin-bar-extra .logout.active-trail::before,
-#admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail::before {
+#admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail::before,
+#admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail::before {
   background-color: #fff;
 }
 
@@ -205,6 +213,11 @@
           mask-image: url("../../media/sprite.svg#logout-view");
 }
 
+#admin-bar #admin-bar-menu.dropdown li > span.menu:before {
+  -webkit-mask-image: url("../../media/sprite.svg#hamburger-view");
+          mask-image: url("../../media/sprite.svg#hamburger-view");
+}
+
 #admin-bar .top-level .admin-bar-search .form-item {
   padding-top: 9px;
 }
@@ -230,5 +243,35 @@
 
 [dir] #admin-bar #admin-bar-search-items {
   background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
+}
+
+#admin-bar-icon.dropdown {
+  display: none;
+}
+
+@media (min-width: 64em) {
+  #admin-bar-icon.dropdown {
+    display: inline-block;
+  }
+}
+
+#admin-bar-wrapper {
+  display: flex;
+}
+
+@media (min-width: 64em) {
+  #admin-bar-wrapper {
+    display: block;
+  }
+}
+
+#admin-bar-wrapper #admin-bar-menu {
+  flex-grow: 1;
+  flex-basis: 60%;
+}
+
+#admin-bar-wrapper #admin-bar-extra {
+  flex-grow: 1;
+  flex-basis: 40%;
 }
 

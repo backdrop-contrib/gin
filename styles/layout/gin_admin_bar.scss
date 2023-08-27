@@ -1,7 +1,7 @@
 // Toolbar Variables
 :root {
   --gin-toolbar-secondary-height: 48px;
-  --gin-toolbar-height: 32px;
+  --gin-toolbar-height: 48px;
   --gin-scroll-offset: 72px;
   --gin-toolbar-y-offset: var(--gin-toolbar-height);
   --gin-toolbar-x-offset: 0px; // Needs px to work in calc() functions.
@@ -38,6 +38,7 @@
     }
 
     > .dropdown {
+
       li > a,
       li > span {
         font-size: var(--gin-font-size-xxs);
@@ -53,7 +54,8 @@
   #admin-bar-extra .user-counter,
   #admin-bar-extra .account,
   #admin-bar-extra .logout,
-  #admin-bar-menu > li > .dropdown > li > a {
+  #admin-bar-menu > li > .dropdown > li > a,
+  #admin-bar-menu.dropdown li > span.menu {
     padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
     background: none;
 
@@ -85,82 +87,102 @@
       mask-image: icon('backdrop');
     }
   }
+
   // Dashboard
   .admin-dashboard {
     &:before {
       mask-image: icon('sidebar');
     }
   }
+
   // Content
   .admin-content {
     &:before {
       mask-image: icon('content');
     }
   }
+
   // User
   .admin-people {
     &:before {
       mask-image: icon('users');
     }
   }
+
   // Appearance
   .admin-appearance {
     &:before {
       mask-image: icon('appearance');
     }
   }
+
   // Functionality
   .admin-modules {
     &:before {
       mask-image: icon('extend');
     }
   }
+
   // Structure
   .admin-structure {
     &:before {
       mask-image: icon('structure');
     }
   }
+
   // Configuration
   .admin-config {
     &:before {
       mask-image: icon('config');
     }
   }
+
   // Reports
   .admin-reports {
     &:before {
       mask-image: icon('reports');
     }
   }
+
   // More
   .extra {
     &:before {
       mask-image: icon('more');
     }
   }
+
   // Page
   .page {
     &:before {
       mask-image: icon('content');
     }
   }
+
   // User counter
   .user-counter {
     &:before {
       mask-image: icon('users');
     }
   }
+
   // Account
   .account {
     &:before {
       mask-image: icon('user');
     }
   }
+
   // Logout
   .logout {
     &:before {
       mask-image: icon('logout');
+    }
+  }
+
+  // Mobile hamburger
+  #admin-bar-menu.dropdown li > span.menu {
+    &:before {
+      mask-image: icon('hamburger');
     }
   }
 
@@ -178,5 +200,31 @@
     background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
 
     border-radius: var(--gin-border-xl);
+  }
+}
+
+#admin-bar-icon.dropdown {
+  display: none;
+
+  @include mq(large) {
+    display: inline-block;
+  }
+}
+
+#admin-bar-wrapper {
+  display: flex;
+
+  @include mq(large) {
+    display: block;
+  }
+
+  #admin-bar-menu {
+    flex-grow: 1;
+    flex-basis: 60%;
+  }
+
+  #admin-bar-extra {
+    flex-grow: 1;
+    flex-basis: 40%;
   }
 }

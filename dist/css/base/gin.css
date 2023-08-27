@@ -1271,6 +1271,11 @@ a.views-field-excluded {
   background: none;
 }
 
+.views-exposed-form .form-item,
+.views-exposed-form .form-select {
+  max-width: 100%;
+}
+
 .gin-table-scroll-wrapper {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -1443,12 +1448,12 @@ table.views-table th > a,
 
 [dir="ltr"] table.views-table th > a,
 [dir="ltr"] .sortable-heading > a {
-  padding: var(--space-xs) 1.5rem var(--space-xs) 0;
+  padding: var(--gin-spacing-xs) 1.5rem var(--gin-spacing-xs) 0;
 }
 
 [dir="rtl"] table.views-table th > a,
 [dir="rtl"] .sortable-heading > a {
-  padding: var(--space-xs) 0 var(--space-xs) 1.5rem;
+  padding: var(--gin-spacing-xs) 0 var(--gin-spacing-xs) 1.5rem;
 }
 
 table.views-table th > a:hover, table.views-table th > a:active,
@@ -1823,7 +1828,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
   border-radius: var(--gin-border-m);
   box-sizing: border-box;
   transition: var(--gin-transition);
-  max-width: 100%;
+  max-width: calc(100% - 2 * var(--gin-spacing-m));
 }
 
 .form-element:hover,

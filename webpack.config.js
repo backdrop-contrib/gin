@@ -20,6 +20,7 @@ module.exports = {
     'settings': ['./js/settings.js'],
     'sidebar': ['./js/sidebar.js'],
     'sticky': ['./js/sticky.js'],
+    'tabs': ['./js/tabs.js'],
     // ################################################
     // CSS
     // ################################################
