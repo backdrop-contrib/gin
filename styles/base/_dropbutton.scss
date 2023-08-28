@@ -34,10 +34,8 @@
 
     .dropbutton-action {
       > * {
-        padding-block-start: var(--gin-spacing-xxs);
-        padding-block-end: var(--gin-spacing-xxs);
-        padding-inline-start: var(--gin-spacing-s);
-        padding-inline-end: var(--gin-spacing-xxs);      }
+        padding: var(--gin-spacing-xxs) var(--gin-spacing-s);
+      }
     }
   }
 
