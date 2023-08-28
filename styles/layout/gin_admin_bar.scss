@@ -66,7 +66,7 @@
       width: 16px;
       height: 16px;
       margin-right: var(--gin-spacing-xs);
-      background-color: var(--gin-color-disabled);
+      background-color: rgba(255, 255, 255, .6);
       mask-position: center center;
     }
 
@@ -92,6 +92,7 @@
   a {
     &:before {
       mask-image: icon('drop');
+      mask-repeat: no-repeat;
     }
   }
 
