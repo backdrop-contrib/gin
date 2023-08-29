@@ -1,5 +1,4 @@
-(function ($) {
-
+((Backdrop) => {
   /**
    * Move action buttons to the sticky area.
    */
@@ -11,4 +10,4 @@
     }
   };
 
-})(jQuery);
+})(Backdrop);

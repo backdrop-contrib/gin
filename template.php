@@ -333,38 +333,40 @@ function gin_css_alter(&$css) {
  * Changes vertical tabs to container.
  */
 function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
-  $form['layout_region_node_main'] = array(
-    '#type' => 'container',
-    '#attributes' => array(
-      'class' => array('layout-region-node-main'),
-    ),
-  );
-  $form['layout_region_node_secondary'] = array(
-    '#type' => 'container',
-    '#attributes' => array(
-      'class' => array('layout-region-node-secondary'),
-    ),
-  );
-  foreach (element_children($form) as $key) {
-    $skips = array(
-      'layout_region_node_main',
-      'layout_region_node_secondary',
+  if (theme_get_setting('edit_form_sidebar', 'gin')) {
+    $form['layout_region_node_main'] = array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => array('layout-region-node-main'),
+      ),
     );
-    $form['layout_region_node_secondary']['additional_settings'] = $form['additional_settings'];
-    unset($form['additional_settings']);
-    if (!in_array($key, $skips)) {
-      if ((empty($form[$key]['#group']) || $form[$key]['#group'] != 'additional_settings')) {
-        $form['layout_region_node_main'][$key] = $form[$key];
-        unset($form[$key]);
-      }
-      elseif (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
-        $form[$key]['#collapsed'] = TRUE;
-        $form['layout_region_node_secondary'][$key] = $form[$key];
-        unset($form[$key]);
+    $form['layout_region_node_secondary'] = array(
+      '#type' => 'container',
+      '#attributes' => array(
+        'class' => array('layout-region-node-secondary'),
+      ),
+    );
+    foreach (element_children($form) as $key) {
+      $skips = array(
+        'layout_region_node_main',
+        'layout_region_node_secondary',
+      );
+      $form['layout_region_node_secondary']['additional_settings'] = $form['additional_settings'];
+      unset($form['additional_settings']);
+      if (!in_array($key, $skips)) {
+        if ((empty($form[$key]['#group']) || $form[$key]['#group'] != 'additional_settings')) {
+          $form['layout_region_node_main'][$key] = $form[$key];
+          unset($form[$key]);
+        }
+        elseif (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
+          $form[$key]['#collapsed'] = TRUE;
+          $form['layout_region_node_secondary'][$key] = $form[$key];
+          unset($form[$key]);
+        }
       }
     }
+    $form['layout_region_node_secondary']['options']['#collapsed'] = FALSE;
+    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
+    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
   }
-  $form['layout_region_node_secondary']['options']['#collapsed'] = FALSE;
-  $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
-  $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
 }

@@ -139,6 +139,14 @@ $form['high_contrast_mode'] = [
   '#default_value' => theme_get_setting('high_contrast_mode'),
 ];
 
+// Edit form sidebar.
+$form['edit_form_sidebar'] = [
+  '#type' => 'checkbox',
+  '#title' => t('Sidebar on edit form') . $experimental_label,
+  '#description' => t('Move the vertical tabs to the sidebar on edit forms.'),
+  '#default_value' => theme_get_setting('edit_form_sidebar'),
+];
+
 // Toolbar setting.
 // $form['classic_toolbar'] = [
 //   '#type' => 'radios',
