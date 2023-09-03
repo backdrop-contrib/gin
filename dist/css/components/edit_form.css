@@ -124,6 +124,10 @@
   border-right: 1px solid var(--gin-border-color-layer);
 }
 
+.gin--edit-form .page-wrapper .layout-region-node-secondary > .node-edit-settings > .fieldset-wrapper {
+  padding: 0;
+}
+
 .gin--dark-mode .gin--edit-form .page-wrapper .layout-region-node-secondary {
   box-shadow: 0 0 4px rgba(0, 0, 0, .1);
 }

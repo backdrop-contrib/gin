@@ -98,6 +98,12 @@
       border-left: 1px solid var(--gin-border-color-layer);
       transition: all var(--gin-transition-fast);
 
+      > .node-edit-settings {
+        > .fieldset-wrapper {
+          padding: 0;
+        }
+      }
+
       .gin--dark-mode & {
         box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
       }
