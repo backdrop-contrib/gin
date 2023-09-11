@@ -47,6 +47,13 @@ function gin_preprocess_layout(&$variables) {
     $variables['wrap_prefix'] = '';
     $variables['wrap_suffix'] = '';
   }
+  $node_edit_pages = array(
+    'node/*/edit',
+    'node/add/*',
+  );
+  if (backdrop_match_path($current_path, implode("\n", $node_edit_pages)) && (theme_get_setting('edit_form_sidebar', 'gin'))) {
+    $variables['classes'][] = 'edit-form--sidebar';
+  }
 }
 
 /**
@@ -342,7 +349,7 @@ function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['options']['#collapsed'] = FALSE;
     $form['additional_settings']['#type'] = 'fieldset';
     $form['additional_settings']['#attributes']['class'][] = 'node-edit-settings';
-    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
     $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
   }
+  $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
 }
