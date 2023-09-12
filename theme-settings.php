@@ -142,8 +142,8 @@ $form['high_contrast_mode'] = [
 // Edit form sidebar.
 $form['edit_form_sidebar'] = [
   '#type' => 'checkbox',
-  '#title' => t('Sidebar on edit form') . $experimental_label,
-  '#description' => t('Move the vertical tabs to the sidebar on edit forms.'),
+  '#title' => t('Sidebar on edit form') . $beta_label,
+  '#description' => t('Move the vertical tabs to the sidebar panel on content edit forms.'),
   '#default_value' => theme_get_setting('edit_form_sidebar'),
 ];
 

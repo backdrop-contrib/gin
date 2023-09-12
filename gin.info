@@ -29,7 +29,8 @@ ckeditor_stylesheets[] = dist/css/theme/ckeditor.css
 scripts[] = dist/js/tabs.js
 
 ; Default settings.
-settings[enable_darkmode] = true
+settings[enable_darkmode] = auto
+settings[edit_form_sidebar] = true
 settings[preset_accent_color] = blue
 settings[preset_focus_color] = gin
 settings[layout_density] = default
