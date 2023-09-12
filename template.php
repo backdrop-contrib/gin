@@ -25,6 +25,7 @@ function gin_preprocess_layout(&$variables) {
     'admin/modules',
     'admin/modules/*',
     'admin/structure/types',
+    'admin/structure/types/manage/*',
     'admin/structure/block',
     'admin/structure/file-types',
     'admin/structure/layouts',
