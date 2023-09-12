@@ -146,11 +146,12 @@
 
               span.summary {
                 left: var(--gin-spacing-xxl);
-                bottom: var(--gin-spacing-m);
-                top: unset;
+                bottom: unset;
+                top: 2.5rem;
                 right: unset;
                 z-index: 0;
                 font-weight: 400;
+                font-size: .8rem;
               }
 
               &,
@@ -328,6 +329,18 @@
                   width: 100%;
                 }
               }
+            }
+          }
+        }
+
+        fieldset:not(.fieldgroup) > legend {
+          overflow: hidden;
+          border-radius: 0;
+
+          a.fieldset-title {
+            background: linear-gradient(transparent 80%, #fff 100%);
+            &:hover {
+              background: linear-gradient(transparent 80%, var(--gin-bg-item-hover) 100%);
             }
           }
         }

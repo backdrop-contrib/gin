@@ -15,13 +15,15 @@
 }
 
 // Vertical tabs
-.tabs-wrapper:not(.is-horizontal) {
-  .tabs {
+.vertical-tabs {
+  & &-list {
+    z-index: inherit;
+
     .gin--dark-mode & {
       border-color: #8E929C;
     }
 
-    &__tab {
+    .vertical-tab-item {
       .gin--dark-mode & {
         background-color: var(--gin-bg-item-hover);
         border-color: #8E929C;
@@ -29,10 +31,10 @@
     }
   }
 }
-
-.vertical-tabs {
-  &__items {
-    z-index: inherit;
+.vertical-tab-link {
+  color: var(--gin-color-primary);
+  .summary {
+    color: var(--gin-color-text);
   }
 }
 

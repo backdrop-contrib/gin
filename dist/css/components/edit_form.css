@@ -169,10 +169,11 @@
 }
 
 .gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset.form-wrapper > legend .fieldset-legend span.summary {
-  bottom: var(--gin-spacing-m);
-  top: unset;
+  bottom: unset;
+  top: 2.5rem;
   z-index: 0;
   font-weight: 400;
+  font-size: .8rem;
 }
 
 [dir="ltr"] .gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset.form-wrapper > legend .fieldset-legend span.summary {
@@ -411,6 +412,19 @@
 .gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary .entity-meta > .accordion__item .form-datetime-wrapper .form-type--date .form-element {
   min-width: 0;
   width: 100%;
+}
+
+.gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend {
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title {
+  background: linear-gradient(transparent 80%, #fff 100%);
+}
+
+.gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title:hover {
+  background: linear-gradient(transparent 80%, var(--gin-bg-item-hover) 100%);
 }
 
 .gin--edit-form .edit-form--sidebar .revision-current {
