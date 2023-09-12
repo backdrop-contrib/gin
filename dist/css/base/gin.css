@@ -3364,6 +3364,10 @@ a.button.button--danger:active:before {
   background-color: var(--gin-color-danger-light);
 }
 
+.messages + .messages {
+  margin-top: var(--gin-spacing-m);
+}
+
 /* Account for Backdrop structures and classes */
 
 .messages.status,
