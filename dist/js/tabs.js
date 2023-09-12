@@ -4,7 +4,7 @@ $ = jQuery, Backdrop.behaviors.responsivePrimaryTabs = {
   attach: function(context, settings) {
     var $primaryTabs = $(context).find("ul.tabs--primary").once("responsive-tabs");
     if (0 !== $primaryTabs.length) {
-      var previousWindowWidth, tabHeight, expandControlWidth, allTabsWidth, activeTabAndBeforeWidth, activeTabAndAfterWidth, $tabsWrapper = $primaryTabs.parent(), $tabs = $("li", $primaryTabs), responsiveTabs = !1, tabWidths = [], widestTabWidth = 0, activeTabNth = $("li.active", $primaryTabs).index(), expandedTabsHeaderPadding = 0, defaultHeaderPadding = "20px", $mobileHeaderPadder = $('<div class="responsive-tabs-mobile-header-padder" style="height: ' + expandedTabsHeaderPadding + 'px"></div>'), $body = $("body"), tabsWrapperPadding = {
+      var previousWindowWidth, tabHeight, expandControlWidth, allTabsWidth, activeTabAndBeforeWidth, activeTabAndAfterWidth, $tabsWrapper = $primaryTabs.parent(), $tabs = $("li", $primaryTabs), responsiveTabs = !1, tabWidths = [], widestTabWidth = 0, activeTabNth = $("li.active", $primaryTabs).index(), expandedTabsHeaderPadding = 0, $mobileHeaderPadder = $('<div class="responsive-tabs-mobile-header-padder" style="height: ' + expandedTabsHeaderPadding + 'px"></div>'), $body = $("body"), tabsWrapperPadding = {
         top: parseInt($tabsWrapper.css("padding-top").replace("px", "")),
         right: parseInt($tabsWrapper.css("padding-right").replace("px", "")),
         left: parseInt($tabsWrapper.css("padding-left").replace("px", ""))
@@ -78,7 +78,7 @@ $ = jQuery, Backdrop.behaviors.responsivePrimaryTabs = {
             responsiveTabsType = "mobile", $primaryTabs.find(".duplicated-tab").removeClass("duplicated-tab"), 
             $tabsWrapper.addClass("responsive-tabs-mobile").removeClass("responsive-tabs-before responsive-tabs-after desktop-primary-tabs");
             var tabsOffset = activeTabNth * (tabHeight + 2), tabsTopDistance = $tabsWrapper.position().top;
-            $primaryTabs.css("top", "-" + tabsOffset + "px"), tabsOffset > tabsTopDistance && (expandedTabsHeaderPadding = tabsOffset - tabsTopDistance + defaultHeaderPadding);
+            $primaryTabs.css("top", "-" + tabsOffset + "px"), tabsOffset > tabsTopDistance && (expandedTabsHeaderPadding = tabsOffset - tabsTopDistance + "20px");
             var $activeTabText = $('<span class="expand-dropdown-tabs-label">' + $primaryTabs.find("li.active a").html() + "</span>");
             $activeTabText.find(".element-invisible").remove(), $tabsWrapper.find(".expand-dropdown-tabs-label").replaceWith($activeTabText), 
             $tabsWrapper.find(".expand-dropdown-tabs-control").css("left", "auto"), $tabsWrapper.find(".responsive-tabs-dropdown").remove(), 
