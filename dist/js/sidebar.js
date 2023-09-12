@@ -6,9 +6,8 @@
     }
   }, Backdrop.ginSidebar = {
     init: function(context) {
-      console.log("ginSidebarInit"), $("#gin_sidebar").once("ginSidebarInit", context).each((() => {
+      $("#gin_sidebar").once("ginSidebarInit", context).each((() => {
         localStorage.getItem(storageDesktop) || localStorage.setItem(storageDesktop, "true"), 
-        console.log("ginSidebarInit2"), console.log(localStorage.getItem(storageDesktop)), 
         window.innerWidth >= 1024 && ("true" === localStorage.getItem(storageDesktop) ? this.showSidebar() : this.collapseSidebar()), 
         document.addEventListener("keydown", (e => {
           !0 === e.altKey && "KeyS" === e.code && this.toggleSidebar();
