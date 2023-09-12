@@ -351,6 +351,8 @@ function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['additional_settings']['#type'] = 'fieldset';
     $form['additional_settings']['#attributes']['class'][] = 'node-edit-settings';
     $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
+    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
+    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
   }
   $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
 }

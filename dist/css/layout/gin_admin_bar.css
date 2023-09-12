@@ -143,6 +143,12 @@
   background-color: #fff;
 }
 
+#admin-bar #admin-bar-alert li > a,
+#admin-bar #admin-bar-alert li > span {
+  padding: var(--gin-spacing-m) var(--gin-spacing-s);
+  background: none;
+}
+
 #admin-bar #admin-bar-icon .icon:before {
   -webkit-mask-image: url("../../media/sprite.svg#backdrop-view");
           mask-image: url("../../media/sprite.svg#backdrop-view");

@@ -81,6 +81,15 @@
     }
   }
 
+  #admin-bar-alert {
+
+    li > a,
+    li > span {
+      padding: var(--gin-spacing-m) var(--gin-spacing-s);
+      background: none;
+    }
+  }
+
   // Home
   #admin-bar-icon .icon {
     &:before {
