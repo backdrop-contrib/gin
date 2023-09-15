@@ -339,6 +339,7 @@
 
           a.fieldset-title {
             background: linear-gradient(transparent 80%, #fff 100%);
+
             &:hover {
               background: linear-gradient(transparent 80%, var(--gin-bg-item-hover) 100%);
             }
@@ -400,5 +401,27 @@
 
   .summary {
     color: var(--gin-color-text);
+  }
+}
+
+.gin--dark-mode {
+  .gin--edit-form {
+    .edit-form--sidebar {
+
+      .layout-region-node-main,
+
+      &.page-wrapper {
+
+        .layout-region-node-secondary {
+
+          fieldset:not(.fieldgroup) > legend {
+
+            a.fieldset-title {
+              background: linear-gradient(transparent 80%, #1B1B1D 100%);
+            }
+          }
+        }
+      }
+    }
   }
 }

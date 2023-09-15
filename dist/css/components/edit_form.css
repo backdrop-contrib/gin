@@ -472,3 +472,7 @@
   color: var(--gin-color-text);
 }
 
+.gin--dark-mode .gin--edit-form .edit-form--sidebar .layout-region-node-main .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title, .gin--dark-mode .gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title {
+  background: linear-gradient(transparent 80%, #1b1b1d 100%);
+}
+

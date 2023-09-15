@@ -3365,7 +3365,7 @@ a.button.button--danger:active:before {
 }
 
 .messages + .messages {
-  margin-top: var(--gin-spacing-m);
+  margin-top: var(--gin-spacing-xxs);
 }
 
 /* Account for Backdrop structures and classes */
