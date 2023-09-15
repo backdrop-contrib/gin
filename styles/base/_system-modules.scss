@@ -18,4 +18,14 @@
   #system-modules .table-filter {
     background-color: transparent;
   }
+
+  .system-status-report {
+    .status-title {
+      color: #fff;
+    }
+
+    .status-description {
+      color: var(--gin-color-text-light);
+    }
+  }
 }

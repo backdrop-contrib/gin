@@ -22,7 +22,9 @@ $maxWidth: 520px;
 .form-element,
 .form-select,
 .form-textarea,
-.form-number {
+.form-number,
+.form-date,
+.form-time {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);
@@ -31,6 +33,7 @@ $maxWidth: 520px;
   box-sizing: border-box;
   transition: var(--gin-transition);
   max-width: 100%;
+  margin-top: var(--gin-spacing-xxs);
 
   &:hover {
     border-color: var(--gin-color-text);
