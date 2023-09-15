@@ -2875,6 +2875,10 @@ a.button:active {
   transform: translate(-50%, -50%) rotate(-180deg);
 }
 
+.gin--dark-mode.js .dropbutton-widget {
+  background-color: var(--gin-bg-input);
+}
+
 .action-link,
 .operations > li {
   float: none;
@@ -3856,6 +3860,10 @@ hr {
 .admin-requirements,
 .admin-required {
   color: var(--gin-color-text-light);
+}
+
+.gin--dark-mode #system-modules .table-filter {
+  background-color: transparent;
 }
 
 table.diff .diffchange {

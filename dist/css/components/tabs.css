@@ -504,6 +504,10 @@
   background: var(--gin-bg-app);
 }
 
+.vertical-tabs-panes {
+  padding-top: var(--gin-spacing-l);
+}
+
 .vertical-tabs__items {
   border-radius: var(--gin-border-m);
 }
@@ -578,6 +582,10 @@
 
 .vertical-tabs__menu-link:hover::before, .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link:hover::before {
   background: var(--gin-bg-item-hover);
+}
+
+.gin--dark-mode .vertical-tab-selected strong {
+  color: #fff;
 }
 
 [dir="ltr"] [open] > .claro-details__summary--vertical-tabs-item:not(:focus):not(:active)::after,

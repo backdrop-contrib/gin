@@ -419,6 +419,10 @@
 }
 
 .vertical-tabs {
+  &-panes {
+    padding-top: var(--gin-spacing-l);
+  }
+
   &__items {
     border-radius: var(--gin-border-m);
 
@@ -472,6 +476,14 @@
       &::before {
         background: var(--gin-bg-item-hover);
       }
+    }
+  }
+}
+
+.gin--dark-mode {
+  .vertical-tab-selected {
+    strong {
+      color: #fff;
     }
   }
 }

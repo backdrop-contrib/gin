@@ -109,3 +109,9 @@
     }
   }
 }
+
+.gin--dark-mode.js {
+  .dropbutton-widget {
+    background-color: var(--gin-bg-input);
+  }
+}

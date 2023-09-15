@@ -13,3 +13,9 @@
 .admin-required {
   color: var(--gin-color-text-light);
 }
+
+.gin--dark-mode {
+  #system-modules .table-filter {
+    background-color: transparent;
+  }
+}
