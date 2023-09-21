@@ -4748,6 +4748,7 @@ ul.primary li.active a {
 
 .tabs__tab {
   list-style-type: none;
+  padding: 4px;
 }
 
 .container-fluid {
