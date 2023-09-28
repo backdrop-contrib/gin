@@ -336,6 +336,7 @@
 }
 
 .ui-dialog .form-element,
+.ui-dialog .form-text,
 .ui-dialog .form-select,
 .ui-dialog .form-textarea,
 .ui-dialog .form-number,
@@ -353,6 +354,7 @@
 }
 
 .ui-dialog .form-element:hover,
+.ui-dialog .form-text:hover,
 .ui-dialog .form-select:hover,
 .ui-dialog .form-textarea:hover,
 .ui-dialog .form-number:hover,
@@ -363,6 +365,8 @@
 }
 
 .ui-dialog .form-element--small, .ui-dialog .form-element--extrasmall,
+.ui-dialog .form-text--small,
+.ui-dialog .form-text--extrasmall,
 .ui-dialog .form-select--small,
 .ui-dialog .form-select--extrasmall,
 .ui-dialog .form-textarea--small,
@@ -379,6 +383,8 @@
 }
 
 .ui-dialog .form-element[disabled], .ui-dialog .form-element[disabled]:hover,
+.ui-dialog .form-text[disabled],
+.ui-dialog .form-text[disabled]:hover,
 .ui-dialog .form-select[disabled],
 .ui-dialog .form-select[disabled]:hover,
 .ui-dialog .form-textarea[disabled],
@@ -397,6 +403,7 @@
 }
 
 .gin--dark-mode .ui-dialog .form-element,
+.gin--dark-mode .ui-dialog .form-text,
 .gin--dark-mode .ui-dialog .form-select,
 .gin--dark-mode .ui-dialog .form-textarea,
 .gin--dark-mode .ui-dialog .form-number,

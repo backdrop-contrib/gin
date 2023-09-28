@@ -1854,6 +1854,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element,
+.form-text,
 .form-select,
 .form-textarea,
 .form-number,
@@ -1871,6 +1872,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element:hover,
+.form-text:hover,
 .form-select:hover,
 .form-textarea:hover,
 .form-number:hover,
@@ -1881,6 +1883,8 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element--small, .form-element--extrasmall,
+.form-text--small,
+.form-text--extrasmall,
 .form-select--small,
 .form-select--extrasmall,
 .form-textarea--small,
@@ -1897,6 +1901,8 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .form-element[disabled], .form-element[disabled]:hover,
+.form-text[disabled],
+.form-text[disabled]:hover,
 .form-select[disabled],
 .form-select[disabled]:hover,
 .form-textarea[disabled],
@@ -1915,6 +1921,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .gin--dark-mode .form-element,
+.gin--dark-mode .form-text,
 .gin--dark-mode .form-select,
 .gin--dark-mode .form-textarea,
 .gin--dark-mode .form-number,
