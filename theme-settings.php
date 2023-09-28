@@ -15,7 +15,7 @@ $form['enable_darkmode'] = array(
   '#type' => 'radios',
   '#title' => t('Appearance'),
   '#description' => t('Enables Darkmode for the admin interface.'),
-  '#default_value' => theme_get_setting('enable_darkmode'),
+  '#default_value' => theme_get_setting('enable_darkmode', 'gin'),
   '#options' => [
     0 => t('Light'),
     1 => t('Dark'),
@@ -27,7 +27,7 @@ $form['enable_darkmode'] = array(
 $form['preset_accent_color'] = [
   '#type' => 'radios',
   '#title' => t('Accent color'),
-  '#default_value' => theme_get_setting('preset_accent_color'),
+  '#default_value' => theme_get_setting('preset_accent_color', 'gin'),
   '#options' => [
     'blue' => t('Gin Blue (Default)'),
     'light_blue' => t('Light Blue'),
@@ -42,10 +42,10 @@ $form['preset_accent_color'] = [
     'neutral' => t('Neutral'),
     'custom' => t('Custom'),
   ],
-  '#after_build' => [
-    '_gin_accent_radios',
-  ],
 ];
+if (config_get('system.core', 'admin_theme') == 'gin') {
+  $form['preset_accent_color']['#after_build'] = ['_gin_accent_radios'];
+}
 
 // Accent color group.
 $form['accent_group'] = [
@@ -68,7 +68,7 @@ $form['accent_group']['accent_color'] = [
   '#size' => 7,
   '#title' => t('Custom Accent color'),
   '#title_display' => 'invisible',
-  '#default_value' => theme_get_setting('accent_color'),
+  '#default_value' => theme_get_setting('accent_color', 'gin'),
   '#attributes' => [
     'pattern' => '^#[a-fA-F0-9]{6}',
   ],
@@ -78,14 +78,14 @@ $form['accent_group']['accent_color'] = [
 $form['accent_group']['accent_picker'] = [
   '#type' => 'color',
   '#placeholder' => '#777777',
-  '#default_value' => theme_get_setting('accent_color'),
+  '#default_value' => theme_get_setting('accent_color', 'gin'),
 ];
 
 // Focus color setting.
 $form['preset_focus_color'] = [
   '#type' => 'select',
   '#title' => t('Focus color'),
-  '#default_value' => theme_get_setting('preset_focus_color'),
+  '#default_value' => theme_get_setting('preset_focus_color', 'gin'),
   '#options' => [
     'gin' => t('Gin Focus color (Default)'),
     'green' => t('Green'),
@@ -114,7 +114,7 @@ $form['focus_group'] = [
 $form['focus_group']['focus_picker'] = [
   '#type' => 'color',
   '#placeholder' => '#777777',
-  '#default_value' => theme_get_setting('focus_color'),
+  '#default_value' => theme_get_setting('focus_color', 'gin'),
 ];
 
 // Custom Focus color setting.
@@ -125,7 +125,7 @@ $form['focus_group']['focus_color'] = [
   '#placeholder' => '#777777',
   '#maxlength' => 7,
   '#size' => 7,
-  '#default_value' => theme_get_setting('focus_color'),
+  '#default_value' => theme_get_setting('focus_color', 'gin'),
   '#attributes' => [
     'pattern' => '^#[a-fA-F0-9]{6}',
   ],
@@ -136,7 +136,7 @@ $form['high_contrast_mode'] = [
   '#type' => 'checkbox',
   '#title' => t('Increase contrast') . $experimental_label,
   '#description' => t('Enables high contrast mode.'),
-  '#default_value' => theme_get_setting('high_contrast_mode'),
+  '#default_value' => theme_get_setting('high_contrast_mode', 'gin'),
 ];
 
 // Edit form sidebar.
@@ -144,14 +144,14 @@ $form['edit_form_sidebar'] = [
   '#type' => 'checkbox',
   '#title' => t('Sidebar on edit form') . $beta_label,
   '#description' => t('Move the vertical tabs to the sidebar panel on content edit forms.'),
-  '#default_value' => theme_get_setting('edit_form_sidebar'),
+  '#default_value' => theme_get_setting('edit_form_sidebar', 'gin'),
 ];
 
 // Toolbar setting.
 // $form['classic_toolbar'] = [
 //   '#type' => 'radios',
 //   '#title' => t('Navigation (Drupal Toolbar)'),
-//   '#default_value' => theme_get_setting('classic_toolbar'),
+//   '#default_value' => theme_get_setting('classic_toolbar', 'gin'),
 //   '#options' => [
 //     'vertical' => t('Sidebar, Vertical Toolbar (Default)'),
 //     'horizontal' => t('Horizontal, Modern Toolbar'),
@@ -167,7 +167,7 @@ $form['layout_density'] = [
   '#type' => 'radios',
   '#title' => t('Layout density') . $beta_label,
   '#description' => t('Changes the layout density for tables in the admin interface.'),
-  '#default_value' => theme_get_setting('layout_density'),
+  '#default_value' => theme_get_setting('layout_density', 'gin'),
   '#options' => [
     'default' => t('Default'),
     'medium' => t('Compact'),
@@ -180,5 +180,5 @@ $form['layout_density'] = [
 //   '#type' => 'checkbox',
 //   '#title' => t('Enable form description toggle'),
 //   '#description' => t('Show a help icon to show/hide form descriptions on content forms.'),
-//   '#default_value' => theme_get_setting('show_description_toggle'),
+//   '#default_value' => theme_get_setting('show_description_toggle', 'gin'),
 // ];
