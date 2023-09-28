@@ -309,13 +309,13 @@ function _gin_admin_list($content, $empty_message = '') {
   if (!empty($content)) {
     $output .= '<dl class="admin-list gin-layer-wrapper">';
     foreach ($content as $item) {
-      $desc = filter_xss_admin($item['description']);
       $item['localized_options']['attributes']['class'][] = 'admin-item__link';
-      $item['localized_options']['attributes']['title'] = $desc;
       $output .= '<div class="admin-item">';
       $output .= l($item['title'], $item['href'], $item['localized_options']);
       $output .= '<dt class="admin-item__title">' . $item['title'] . '</dt>';
       if (isset($item['description'])) {
+        $desc = filter_xss_admin($item['description']);
+        $item['localized_options']['attributes']['title'] = $desc;
         $output .= '<dd class="admin-item__description">' . $desc . '</dd>';
       }
       $output .= '</div>';
