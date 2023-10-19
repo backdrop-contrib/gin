@@ -38,6 +38,8 @@ function gin_preprocess_layout(&$variables) {
     'admin/config/*/*',
     'node/*/edit',
     'node/add/*',
+    'taxonomy/term/*/edit',
+    'taxonomy/term/add',
     'admin/reports/*',
   );
   $current_path = request_path();

@@ -178,7 +178,6 @@ $maxWidth: 520px;
 .form-checkbox,
 .form-radio {
   appearance: none;
-  float: left;
   width: 21px;
   height: 21px;
   border: 1px solid var(--gin-border-color-form-element);
@@ -648,5 +647,16 @@ tr .form-item {
 .confirmation {
   .form-actions {
     margin-top: var(--gin-spacing-l);
+  }
+}
+
+.form-managed-file {
+  .form-file {
+    padding: var(--gin-spacing-s) var(--gin-spacing-m);
+    background-color: var(--gin-bg-layer2);
+    border-radius: var(--gin-border-m);
+    &:hover {
+      background-color: var(--gin-bg-item-hover);
+    }
   }
 }

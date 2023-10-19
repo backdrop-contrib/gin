@@ -1,9 +1,9 @@
-.form-element.chosen-container-single {
+.form-select.chosen-container-single {
   width: auto !important;
   padding: 0;
 }
 
-.form-element.chosen-container-single .chosen-single {
+.form-select.chosen-container-single .chosen-single {
   min-width: 160px;
   background: none;
   border: none;
@@ -15,15 +15,15 @@
   padding: calc(var(--gin-spacing-s) - 1px) calc(var(--gin-spacing-m) - 1px);
 }
 
-.form-element.chosen-container-single .chosen-single b {
+.form-select.chosen-container-single .chosen-single b {
   background: none !important;
 }
 
-.form-element.chosen-container-multi {
+.form-select.chosen-container-multi {
   width: auto !important;
 }
 
-.form-element.chosen-container-multi .chosen-choices {
+.form-select.chosen-container-multi .chosen-choices {
   min-width: 160px;
   border: 0 none;
   background: none;

@@ -40,6 +40,7 @@
     }
 
     &.is-selected {
+
       a,
       a:hover,
       a:focus,
@@ -98,4 +99,10 @@
 
 .system-modules td details a {
   color: var(--gin-color-primary);
+}
+
+#module-filter-show-wrapper {
+  .form-item {
+    display: inline-block;
+  }
 }

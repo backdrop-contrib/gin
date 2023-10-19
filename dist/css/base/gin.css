@@ -2071,14 +2071,12 @@ td.webform-has-field-suffix > .form-item > .form-element {
 [dir="ltr"] .form-boolean,
 [dir="ltr"] .form-checkbox,
 [dir="ltr"] .form-radio {
-  float: left;
   margin-right: var(--gin-spacing-xs);
 }
 
 [dir="rtl"] .form-boolean,
 [dir="rtl"] .form-checkbox,
 [dir="rtl"] .form-radio {
-  float: right;
   margin-left: var(--gin-spacing-xs);
 }
 
@@ -2562,6 +2560,16 @@ tr .form-item {
   margin-top: var(--gin-spacing-l);
 }
 
+.form-managed-file .form-file {
+  padding: var(--gin-spacing-s) var(--gin-spacing-m);
+  background-color: var(--gin-bg-layer2);
+  border-radius: var(--gin-border-m);
+}
+
+.form-managed-file .form-file:hover {
+  background-color: var(--gin-bg-item-hover);
+}
+
 .button,
 .dropbutton__item:first-of-type > *,
 .dropbutton__toggle {
@@ -2606,7 +2614,6 @@ tr .form-item {
 }
 
 .button,
-.button:not(:focus),
 .form-actions .button,
 .action-link--icon-trash.action-link {
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
@@ -2617,28 +2624,21 @@ tr .form-item {
 }
 
 .button:hover,
-.button:not(:focus):hover,
 .form-actions .button:hover,
 .action-link--icon-trash.action-link:hover {
   background-color: var(--gin-color-primary-hover);
-  border-color: var(--gin-color-primary-hover) !important;
+  border-color: var(--gin-color-primary-hover);
 }
 
 .button:active, .button:focus,
-.button:not(:focus):active,
-.button:not(:focus):focus,
 .form-actions .button:active,
 .form-actions .button:focus,
 .action-link--icon-trash.action-link:active,
 .action-link--icon-trash.action-link:focus {
-  border-color: var(--gin-color-primary-active) !important;
+  border-color: var(--gin-color-primary-active);
 }
 
 .button:hover, .button:active, .button:focus, .button:hover:focus,
-.button:not(:focus):hover,
-.button:not(:focus):active,
-.button:not(:focus):focus,
-.button:not(:focus):hover:focus,
 .form-actions .button:hover,
 .form-actions .button:active,
 .form-actions .button:focus,
@@ -2650,14 +2650,9 @@ tr .form-item {
   color: var(--gin-color-button-text);
 }
 
-[dir="ltr"] .form-actions .button,
-[dir="ltr"] input.button {
-  margin-right: var(--gin-spacing-xs);
-}
-
-[dir="rtl"] .form-actions .button,
-[dir="rtl"] input.button {
-  margin-left: var(--gin-spacing-xs);
+.form-actions .button,
+input.button {
+  margin: var(--gin-spacing-xxs);
 }
 
 .button.button--small {
@@ -2671,42 +2666,33 @@ tr .form-item {
 }
 
 .button--primary,
-.button--primary:not(:focus),
 .ief-entity-submit {
   background: var(--gin-color-primary);
 }
 
 [dir="ltr"] .button--primary,
-[dir="ltr"] .button--primary:not(:focus),
 [dir="ltr"] .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 }
 
 [dir="rtl"] .button--primary,
-[dir="rtl"] .button--primary:not(:focus),
 [dir="rtl"] .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
-.button--primary:hover,
-.button--primary:not(:focus):hover,
-.ief-entity-submit:hover {
+.button--primary:hover, .button--primary:focus,
+.ief-entity-submit:hover,
+.ief-entity-submit:focus {
   background-color: var(--gin-color-primary-hover);
 }
 
 .button--primary:active, .button--primary:focus,
-.button--primary:not(:focus):active,
-.button--primary:not(:focus):focus,
 .ief-entity-submit:active,
 .ief-entity-submit:focus {
   background-color: var(--gin-color-primary-active);
 }
 
 .button--primary, .button--primary:hover, .button--primary:active, .button--primary:focus,
-.button--primary:not(:focus),
-.button--primary:not(:focus):hover,
-.button--primary:not(:focus):active,
-.button--primary:not(:focus):focus,
 .ief-entity-submit,
 .ief-entity-submit:hover,
 .ief-entity-submit:active,
@@ -2714,8 +2700,11 @@ tr .form-item {
   color: var(--gin-color-button-text);
 }
 
-a.button:hover,
-a.button:active {
+a.button {
+  color: var(--gin-color-primary);
+}
+
+a.button:hover, a.button:active, a.button:focus {
   color: var(--gin-color-button-text);
 }
 
@@ -2733,7 +2722,7 @@ a.button:active {
 .button.button.is-disabled:focus {
   color: var(--gin-color-disabled);
   background: transparent;
-  border: 2px solid var(--gin-color-disabled-border) !important;
+  border: 2px solid var(--gin-color-disabled-border);
   box-shadow: none;
 }
 
@@ -2753,7 +2742,7 @@ a.button:active {
 }
 
 .action-link.action-link--icon-trash, .action-link.action-link--icon-trash:hover, .action-link.action-link--icon-trash:active, .action-link.action-link--icon-trash:focus, .action-link.action-link--icon-trash:focus:hover {
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger-light);
 }
 
 .multiple-fields-remove-button.button {
@@ -2768,27 +2757,60 @@ a.button:active {
           mask-position: center center;
 }
 
-.form-actions .button-danger,
-.form-actions .form-delete {
-  border: 2px solid var(--gin-color-danger) !important;
+.button-danger,
+.button-primary.button-danger,
+.form-delete,
+.file-remove-button {
+  border: 2px solid var(--gin-color-danger-light);
   color: var(--gin-color-danger);
 }
 
-.form-actions .button-danger:hover,
-.form-actions .form-delete:hover {
+[dir="ltr"] .button-danger,
+[dir="ltr"] .button-primary.button-danger,
+[dir="ltr"] .form-delete,
+[dir="ltr"] .file-remove-button {
+  box-shadow: .1em .25em .5em var(--gin-color-danger-lightest);
+}
+
+[dir="rtl"] .button-danger,
+[dir="rtl"] .button-primary.button-danger,
+[dir="rtl"] .form-delete,
+[dir="rtl"] .file-remove-button {
+  box-shadow: -0.1em .25em .5em var(--gin-color-danger-lightest);
+}
+
+.button-danger:focus, .button-danger:hover,
+.button-primary.button-danger:focus,
+.button-primary.button-danger:hover,
+.form-delete:focus,
+.form-delete:hover,
+.file-remove-button:focus,
+.file-remove-button:hover {
   background-color: var(--gin-color-danger);
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger);
   color: #fff;
 }
 
-.form-actions .button-secondary {
+.button-secondary {
   font-weight: var(--gin-font-weight-normal);
 }
 
-.confirmation .button-danger, .confirmation .button-danger:not(:focus), .confirmation .button-danger:not(:focus):hover, .confirmation .button-danger:hover {
+.confirmation .button-danger, .confirmation .button-danger:focus, .confirmation .button-danger:hover {
   background-color: var(--gin-color-danger);
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger-light);
   color: #fff;
+}
+
+.confirmation .button-danger:focus, .confirmation .button-danger:hover {
+  border: 2px solid var(--gin-color-danger);
+}
+
+[dir="ltr"] .confirmation .button-danger:focus, [dir="ltr"] .confirmation .button-danger:hover {
+  box-shadow: .1em .25em .5em var(--gin-color-danger-light);
+}
+
+[dir="rtl"] .confirmation .button-danger:focus, [dir="rtl"] .confirmation .button-danger:hover {
+  box-shadow: -0.1em .25em .5em var(--gin-color-danger-light);
 }
 
 .js .dropbutton-widget {
@@ -3179,6 +3201,7 @@ a.button.button--danger:active:before {
 .messages {
   position: relative;
   padding: var(--gin-spacing-m);
+  margin: var(--gin-spacing-s) 0;
   border: 2px solid transparent;
   border-radius: var(--gin-border-l);
   transition: opacity var(--gin-transition-fast);
@@ -4422,26 +4445,27 @@ tr.color-error:focus,
   background-color: var(--gin-border-color);
 }
 
-.progress__bar {
+.progress > .bar {
   border-color: var(--gin-color-primary);
   background-color: var(--gin-color-primary);
 }
 
-[dir="ltr"] .progress__bar {
+[dir="ltr"] .progress > .bar {
   box-shadow: 0 .125em .25em var(--gin-color-primary-light), 1.25em .9375em 2em var(--gin-color-primary-light);
 }
 
-[dir="rtl"] .progress__bar {
+[dir="rtl"] .progress > .bar {
   box-shadow: 0 .125em .25em var(--gin-color-primary-light), -1.25em .9375em 2em var(--gin-color-primary-light);
 }
 
-.progress__track {
+.progress .filled {
   padding: var(--gin-spacing-xs);
   border-color: var(--gin-border-color);
   background-color: var(--gin-bg-layer3);
 }
 
-.progress__description, .progress__percentage {
+.progress > .message,
+.progress > .percentage {
   color: var(--gin-color-text);
 }
 
@@ -4928,37 +4952,27 @@ table.sticky-enabled {
   padding-left: .25em;
 }
 
-.button-primary,
-.button-primary:not(:focus) {
+.button-primary {
   background: var(--gin-color-primary);
 }
 
-[dir="ltr"] .button-primary,
-[dir="ltr"] .button-primary:not(:focus) {
+[dir="ltr"] .button-primary {
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 }
 
-[dir="rtl"] .button-primary,
-[dir="rtl"] .button-primary:not(:focus) {
+[dir="rtl"] .button-primary {
   box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
-.button-primary:hover,
-.button-primary:not(:focus):hover {
+.button-primary:hover {
   background-color: var(--gin-color-primary-hover);
 }
 
-.button-primary:active, .button-primary:focus,
-.button-primary:not(:focus):active,
-.button-primary:not(:focus):focus {
+.button-primary:active, .button-primary:focus {
   background-color: var(--gin-color-primary-active);
 }
 
-.button-primary, .button-primary:hover, .button-primary:active, .button-primary:focus,
-.button-primary:not(:focus),
-.button-primary:not(:focus):hover,
-.button-primary:not(:focus):active,
-.button-primary:not(:focus):focus {
+.button-primary, .button-primary:hover, .button-primary:active, .button-primary:focus {
   color: var(--gin-color-button-text);
 }
 
@@ -4982,6 +4996,7 @@ table.sticky-enabled {
 .form-actions {
   margin-top: 0;
   margin-bottom: var(--gin-spacing-l);
+  padding-top: var(--gin-spacing-xs);
 }
 
 .tabs {

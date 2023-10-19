@@ -128,7 +128,6 @@
 }
 
 .ui-dialog .button,
-.ui-dialog .button:not(:focus),
 .ui-dialog .form-actions .button,
 .ui-dialog .action-link--icon-trash.action-link {
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
@@ -139,28 +138,21 @@
 }
 
 .ui-dialog .button:hover,
-.ui-dialog .button:not(:focus):hover,
 .ui-dialog .form-actions .button:hover,
 .ui-dialog .action-link--icon-trash.action-link:hover {
   background-color: var(--gin-color-primary-hover);
-  border-color: var(--gin-color-primary-hover) !important;
+  border-color: var(--gin-color-primary-hover);
 }
 
 .ui-dialog .button:active, .ui-dialog .button:focus,
-.ui-dialog .button:not(:focus):active,
-.ui-dialog .button:not(:focus):focus,
 .ui-dialog .form-actions .button:active,
 .ui-dialog .form-actions .button:focus,
 .ui-dialog .action-link--icon-trash.action-link:active,
 .ui-dialog .action-link--icon-trash.action-link:focus {
-  border-color: var(--gin-color-primary-active) !important;
+  border-color: var(--gin-color-primary-active);
 }
 
 .ui-dialog .button:hover, .ui-dialog .button:active, .ui-dialog .button:focus, .ui-dialog .button:hover:focus,
-.ui-dialog .button:not(:focus):hover,
-.ui-dialog .button:not(:focus):active,
-.ui-dialog .button:not(:focus):focus,
-.ui-dialog .button:not(:focus):hover:focus,
 .ui-dialog .form-actions .button:hover,
 .ui-dialog .form-actions .button:active,
 .ui-dialog .form-actions .button:focus,
@@ -172,14 +164,9 @@
   color: var(--gin-color-button-text);
 }
 
-[dir="ltr"] .ui-dialog .form-actions .button,
-[dir="ltr"] .ui-dialog input.button {
-  margin-right: var(--gin-spacing-xs);
-}
-
-[dir="rtl"] .ui-dialog .form-actions .button,
-[dir="rtl"] .ui-dialog input.button {
-  margin-left: var(--gin-spacing-xs);
+.ui-dialog .form-actions .button,
+.ui-dialog input.button {
+  margin: var(--gin-spacing-xxs);
 }
 
 .ui-dialog .button.button--small {
@@ -193,42 +180,33 @@
 }
 
 .ui-dialog .button--primary,
-.ui-dialog .button--primary:not(:focus),
 .ui-dialog .ief-entity-submit {
   background: var(--gin-color-primary);
 }
 
 [dir="ltr"] .ui-dialog .button--primary,
-[dir="ltr"] .ui-dialog .button--primary:not(:focus),
 [dir="ltr"] .ui-dialog .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 }
 
 [dir="rtl"] .ui-dialog .button--primary,
-[dir="rtl"] .ui-dialog .button--primary:not(:focus),
 [dir="rtl"] .ui-dialog .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
-.ui-dialog .button--primary:hover,
-.ui-dialog .button--primary:not(:focus):hover,
-.ui-dialog .ief-entity-submit:hover {
+.ui-dialog .button--primary:hover, .ui-dialog .button--primary:focus,
+.ui-dialog .ief-entity-submit:hover,
+.ui-dialog .ief-entity-submit:focus {
   background-color: var(--gin-color-primary-hover);
 }
 
 .ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .button--primary:not(:focus):active,
-.ui-dialog .button--primary:not(:focus):focus,
 .ui-dialog .ief-entity-submit:active,
 .ui-dialog .ief-entity-submit:focus {
   background-color: var(--gin-color-primary-active);
 }
 
 .ui-dialog .button--primary, .ui-dialog .button--primary:hover, .ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .button--primary:not(:focus),
-.ui-dialog .button--primary:not(:focus):hover,
-.ui-dialog .button--primary:not(:focus):active,
-.ui-dialog .button--primary:not(:focus):focus,
 .ui-dialog .ief-entity-submit,
 .ui-dialog .ief-entity-submit:hover,
 .ui-dialog .ief-entity-submit:active,
@@ -236,8 +214,11 @@
   color: var(--gin-color-button-text);
 }
 
-.ui-dialog a.button:hover,
-.ui-dialog a.button:active {
+.ui-dialog a.button {
+  color: var(--gin-color-primary);
+}
+
+.ui-dialog a.button:hover, .ui-dialog a.button:active, .ui-dialog a.button:focus {
   color: var(--gin-color-button-text);
 }
 
@@ -255,7 +236,7 @@
 .ui-dialog .button.button.is-disabled:focus {
   color: var(--gin-color-disabled);
   background: transparent;
-  border: 2px solid var(--gin-color-disabled-border) !important;
+  border: 2px solid var(--gin-color-disabled-border);
   box-shadow: none;
 }
 
@@ -275,7 +256,7 @@
 }
 
 .ui-dialog .action-link.action-link--icon-trash, .ui-dialog .action-link.action-link--icon-trash:hover, .ui-dialog .action-link.action-link--icon-trash:active, .ui-dialog .action-link.action-link--icon-trash:focus, .ui-dialog .action-link.action-link--icon-trash:focus:hover {
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger-light);
 }
 
 .ui-dialog .multiple-fields-remove-button.button {
@@ -290,27 +271,60 @@
           mask-position: center center;
 }
 
-.ui-dialog .form-actions .button-danger,
-.ui-dialog .form-actions .form-delete {
-  border: 2px solid var(--gin-color-danger) !important;
+.ui-dialog .button-danger,
+.ui-dialog .button-primary.button-danger,
+.ui-dialog .form-delete,
+.ui-dialog .file-remove-button {
+  border: 2px solid var(--gin-color-danger-light);
   color: var(--gin-color-danger);
 }
 
-.ui-dialog .form-actions .button-danger:hover,
-.ui-dialog .form-actions .form-delete:hover {
+[dir="ltr"] .ui-dialog .button-danger,
+[dir="ltr"] .ui-dialog .button-primary.button-danger,
+[dir="ltr"] .ui-dialog .form-delete,
+[dir="ltr"] .ui-dialog .file-remove-button {
+  box-shadow: .1em .25em .5em var(--gin-color-danger-lightest);
+}
+
+[dir="rtl"] .ui-dialog .button-danger,
+[dir="rtl"] .ui-dialog .button-primary.button-danger,
+[dir="rtl"] .ui-dialog .form-delete,
+[dir="rtl"] .ui-dialog .file-remove-button {
+  box-shadow: -0.1em .25em .5em var(--gin-color-danger-lightest);
+}
+
+.ui-dialog .button-danger:focus, .ui-dialog .button-danger:hover,
+.ui-dialog .button-primary.button-danger:focus,
+.ui-dialog .button-primary.button-danger:hover,
+.ui-dialog .form-delete:focus,
+.ui-dialog .form-delete:hover,
+.ui-dialog .file-remove-button:focus,
+.ui-dialog .file-remove-button:hover {
   background-color: var(--gin-color-danger);
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger);
   color: #fff;
 }
 
-.ui-dialog .form-actions .button-secondary {
+.ui-dialog .button-secondary {
   font-weight: var(--gin-font-weight-normal);
 }
 
-.ui-dialog .confirmation .button-danger, .ui-dialog .confirmation .button-danger:not(:focus), .ui-dialog .confirmation .button-danger:not(:focus):hover, .ui-dialog .confirmation .button-danger:hover {
+.ui-dialog .confirmation .button-danger, .ui-dialog .confirmation .button-danger:focus, .ui-dialog .confirmation .button-danger:hover {
   background-color: var(--gin-color-danger);
-  border: 2px solid var(--gin-color-danger) !important;
+  border: 2px solid var(--gin-color-danger-light);
   color: #fff;
+}
+
+.ui-dialog .confirmation .button-danger:focus, .ui-dialog .confirmation .button-danger:hover {
+  border: 2px solid var(--gin-color-danger);
+}
+
+[dir="ltr"] .ui-dialog .confirmation .button-danger:focus, [dir="ltr"] .ui-dialog .confirmation .button-danger:hover {
+  box-shadow: .1em .25em .5em var(--gin-color-danger-light);
+}
+
+[dir="rtl"] .ui-dialog .confirmation .button-danger:focus, [dir="rtl"] .ui-dialog .confirmation .button-danger:hover {
+  box-shadow: -0.1em .25em .5em var(--gin-color-danger-light);
 }
 
 .ui-dialog .form-actions {
@@ -553,14 +567,12 @@
 [dir="ltr"] .ui-dialog .form-boolean,
 [dir="ltr"] .ui-dialog .form-checkbox,
 [dir="ltr"] .ui-dialog .form-radio {
-  float: left;
   margin-right: var(--gin-spacing-xs);
 }
 
 [dir="rtl"] .ui-dialog .form-boolean,
 [dir="rtl"] .ui-dialog .form-checkbox,
 [dir="rtl"] .ui-dialog .form-radio {
-  float: right;
   margin-left: var(--gin-spacing-xs);
 }
 
@@ -1042,5 +1054,15 @@
 
 .ui-dialog .confirmation .form-actions {
   margin-top: var(--gin-spacing-l);
+}
+
+.ui-dialog .form-managed-file .form-file {
+  padding: var(--gin-spacing-s) var(--gin-spacing-m);
+  background-color: var(--gin-bg-layer2);
+  border-radius: var(--gin-border-m);
+}
+
+.ui-dialog .form-managed-file .form-file:hover {
+  background-color: var(--gin-bg-item-hover);
 }
 

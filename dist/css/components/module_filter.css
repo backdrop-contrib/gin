@@ -121,3 +121,7 @@
   color: var(--gin-color-primary);
 }
 
+#module-filter-show-wrapper .form-item {
+  display: inline-block;
+}
+

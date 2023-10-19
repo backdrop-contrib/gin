@@ -455,3 +455,7 @@ html[dir="rtl"].js .paragraph-type-icon {
   right: 0;
 }
 
+.field-widget-paragraphs-embed input.field-add-more-submit {
+  margin: var(--gin-spacing-xss);
+}
+

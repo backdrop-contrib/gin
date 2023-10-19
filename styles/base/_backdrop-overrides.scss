@@ -201,8 +201,7 @@ table.sticky-enabled {
   font-weight: 900;
 }
 
-.button-primary,
-.button-primary:not(:focus) {
+.button-primary {
   background: var(--gin-color-primary);
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 
@@ -248,6 +247,7 @@ a.button-primary:focus:hover {
 .form-actions {
   margin-top: 0;
   margin-bottom: var(--gin-spacing-l);
+  padding-top: var(--gin-spacing-xs);
 }
 
 .tabs {
