@@ -1703,34 +1703,64 @@ td.webform-has-field-suffix > .form-item > .form-element {
   float: left;
 }
 
-.field-ui-view-modes tr.header {
+table.field-ui-view-modes tr.header,
+table.field-ui-view-modes tr.region-title,
+table.field-ui-overview tr.header,
+table.field-ui-overview tr.region-title {
   border: none;
 }
 
-.field-ui-view-modes tr.header td {
+table.field-ui-view-modes tr.header td,
+table.field-ui-view-modes tr.region-title td,
+table.field-ui-overview tr.header td,
+table.field-ui-overview tr.region-title td {
   background-color: var(--gin-bg-header);
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
-[dir="ltr"] .field-ui-view-modes tr.header td:first-child {
-  border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
+[dir="ltr"] table.field-ui-view-modes tr.header td:first-child,
+[dir="ltr"] table.field-ui-view-modes tr.region-title td:first-child,
+[dir="ltr"] table.field-ui-overview tr.header td:first-child,
+[dir="ltr"] table.field-ui-overview tr.region-title td:first-child {
+  border-top-left-radius: var(--gin-border-m);
+  border-bottom-left-radius: var(--gin-border-m);
 }
 
-[dir="rtl"] .field-ui-view-modes tr.header td:first-child {
-  border-radius: 0 var(--gin-border-m) var(--gin-border-m) 0;
+[dir="rtl"] table.field-ui-view-modes tr.header td:first-child,
+[dir="rtl"] table.field-ui-view-modes tr.region-title td:first-child,
+[dir="rtl"] table.field-ui-overview tr.header td:first-child,
+[dir="rtl"] table.field-ui-overview tr.region-title td:first-child {
+  border-top-right-radius: var(--gin-border-m);
+  border-bottom-right-radius: var(--gin-border-m);
 }
 
-[dir="ltr"] .field-ui-view-modes tr.header td:last-child {
-  border-radius: 0 var(--gin-border-m) var(--gin-border-m) 0;
+[dir="ltr"] table.field-ui-view-modes tr.header td:last-child,
+[dir="ltr"] table.field-ui-view-modes tr.region-title td:last-child,
+[dir="ltr"] table.field-ui-overview tr.header td:last-child,
+[dir="ltr"] table.field-ui-overview tr.region-title td:last-child {
+  border-top-right-radius: var(--gin-border-m);
+  border-bottom-right-radius: var(--gin-border-m);
 }
 
-[dir="rtl"] .field-ui-view-modes tr.header td:last-child {
-  border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
+[dir="rtl"] table.field-ui-view-modes tr.header td:last-child,
+[dir="rtl"] table.field-ui-view-modes tr.region-title td:last-child,
+[dir="rtl"] table.field-ui-overview tr.header td:last-child,
+[dir="rtl"] table.field-ui-overview tr.region-title td:last-child {
+  border-top-left-radius: var(--gin-border-m);
+  border-bottom-left-radius: var(--gin-border-m);
 }
 
-.field-ui-view-modes tbody tr:has(+ tr.header),
-.field-ui-view-modes tbody tr.odd:has(+ tr.header),
-.field-ui-view-modes tbody tr.even:has(+ tr.header) {
+table.field-ui-view-modes tbody tr:has(+ tr.header), table.field-ui-view-modes tbody tr:has(+ tr.region-title),
+table.field-ui-view-modes tbody tr.odd:has(+ tr.header),
+table.field-ui-view-modes tbody tr.odd:has(+ tr.region-title),
+table.field-ui-view-modes tbody tr.even:has(+ tr.header),
+table.field-ui-view-modes tbody tr.even:has(+ tr.region-title),
+table.field-ui-overview tbody tr:has(+ tr.header),
+table.field-ui-overview tbody tr:has(+ tr.region-title),
+table.field-ui-overview tbody tr.odd:has(+ tr.header),
+table.field-ui-overview tbody tr.odd:has(+ tr.region-title),
+table.field-ui-overview tbody tr.even:has(+ tr.header),
+table.field-ui-overview tbody tr.even:has(+ tr.region-title) {
   border-bottom: none;
 }
 

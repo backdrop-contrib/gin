@@ -314,26 +314,37 @@ td.webform-has-field-suffix > .form-item > .form-element {
   font-size: var(--gin-font-size-xs);
 }
 
-.field-ui-view-modes {
-  tr.header {
+table.field-ui-view-modes,
+table.field-ui-overview {
+
+  tr.header,
+  tr.region-title {
     border: none;
+
     td {
       background-color: var(--gin-bg-header);
       padding: var(--gin-spacing-m) var(--gin-spacing-l);
 
       &:first-child {
-        border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
+        border-top-left-radius: var(--gin-border-m);
+        border-bottom-left-radius: var(--gin-border-m);
       }
+
       &:last-child {
-        border-radius: 0 var(--gin-border-m) var(--gin-border-m) 0;
+        border-top-right-radius: var(--gin-border-m);
+        border-bottom-right-radius: var(--gin-border-m);
       }
     }
   }
+
   tbody {
+
     tr,
     tr.odd,
     tr.even {
-      &:has( + tr.header) {
+
+      &:has(+ tr.header),
+      &:has(+ tr.region-title) {
         border-bottom: none;
       }
     }
