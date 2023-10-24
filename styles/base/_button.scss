@@ -70,7 +70,18 @@ input.button {
   border-radius: var(--gin-border-s);
 }
 
-.button--primary,
+a.button {
+  color: var(--gin-color-primary);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--gin-color-button-text);
+  }
+
+}
+
+a.button-primary,
 .ief-entity-submit {
   background: var(--gin-color-primary);
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
@@ -88,28 +99,13 @@ input.button {
   &,
   &:hover,
   &:active,
-  &:focus {
+  &:focus,
+  &:focus:hover {
     color: var(--gin-color-button-text);
-  }
-}
 
-a.button {
-  color: var(--gin-color-primary);
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: var(--gin-color-button-text);
-  }
-
-}
-
-a.button--primary:hover,
-a.button--primary:active,
-a.button--primary:focus,
-a.button--primary:focus:hover {
-  .gin--dark-mode & {
-    color: var(--gin-bg-app);
+    .gin--dark-mode & {
+      color: var(--gin-bg-app);
+    }
   }
 }
 
@@ -127,8 +123,8 @@ a.button--primary:focus:hover {
   }
 }
 
-.button.button--primary:disabled,
-.button.button--primary.is-disabled {
+.button.button-primary:disabled,
+.button.button-primary.is-disabled {
 
   &,
   &:hover,

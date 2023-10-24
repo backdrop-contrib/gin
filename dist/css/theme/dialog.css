@@ -179,41 +179,6 @@
   border-radius: var(--gin-border-s);
 }
 
-.ui-dialog .button--primary,
-.ui-dialog .ief-entity-submit {
-  background: var(--gin-color-primary);
-}
-
-[dir="ltr"] .ui-dialog .button--primary,
-[dir="ltr"] .ui-dialog .ief-entity-submit {
-  box-shadow: .1em .25em .5em var(--gin-color-primary-light);
-}
-
-[dir="rtl"] .ui-dialog .button--primary,
-[dir="rtl"] .ui-dialog .ief-entity-submit {
-  box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
-}
-
-.ui-dialog .button--primary:hover, .ui-dialog .button--primary:focus,
-.ui-dialog .ief-entity-submit:hover,
-.ui-dialog .ief-entity-submit:focus {
-  background-color: var(--gin-color-primary-hover);
-}
-
-.ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .ief-entity-submit:active,
-.ui-dialog .ief-entity-submit:focus {
-  background-color: var(--gin-color-primary-active);
-}
-
-.ui-dialog .button--primary, .ui-dialog .button--primary:hover, .ui-dialog .button--primary:active, .ui-dialog .button--primary:focus,
-.ui-dialog .ief-entity-submit,
-.ui-dialog .ief-entity-submit:hover,
-.ui-dialog .ief-entity-submit:active,
-.ui-dialog .ief-entity-submit:focus {
-  color: var(--gin-color-button-text);
-}
-
 .ui-dialog a.button {
   color: var(--gin-color-primary);
 }
@@ -222,10 +187,48 @@
   color: var(--gin-color-button-text);
 }
 
-.gin--dark-mode .ui-dialog a.button--primary:hover,
-.gin--dark-mode .ui-dialog a.button--primary:active,
-.gin--dark-mode .ui-dialog a.button--primary:focus,
-.gin--dark-mode .ui-dialog a.button--primary:focus:hover {
+.ui-dialog a.button-primary,
+.ui-dialog .ief-entity-submit {
+  background: var(--gin-color-primary);
+}
+
+[dir="ltr"] .ui-dialog a.button-primary,
+[dir="ltr"] .ui-dialog .ief-entity-submit {
+  box-shadow: .1em .25em .5em var(--gin-color-primary-light);
+}
+
+[dir="rtl"] .ui-dialog a.button-primary,
+[dir="rtl"] .ui-dialog .ief-entity-submit {
+  box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
+}
+
+.ui-dialog a.button-primary:hover, .ui-dialog a.button-primary:focus,
+.ui-dialog .ief-entity-submit:hover,
+.ui-dialog .ief-entity-submit:focus {
+  background-color: var(--gin-color-primary-hover);
+}
+
+.ui-dialog a.button-primary:active, .ui-dialog a.button-primary:focus,
+.ui-dialog .ief-entity-submit:active,
+.ui-dialog .ief-entity-submit:focus {
+  background-color: var(--gin-color-primary-active);
+}
+
+.ui-dialog a.button-primary, .ui-dialog a.button-primary:hover, .ui-dialog a.button-primary:active, .ui-dialog a.button-primary:focus, .ui-dialog a.button-primary:focus:hover,
+.ui-dialog .ief-entity-submit,
+.ui-dialog .ief-entity-submit:hover,
+.ui-dialog .ief-entity-submit:active,
+.ui-dialog .ief-entity-submit:focus,
+.ui-dialog .ief-entity-submit:focus:hover {
+  color: var(--gin-color-button-text);
+}
+
+.gin--dark-mode .ui-dialog a.button-primary, .gin--dark-mode .ui-dialog a.button-primary:hover, .gin--dark-mode .ui-dialog a.button-primary:active, .gin--dark-mode .ui-dialog a.button-primary:focus, .gin--dark-mode .ui-dialog a.button-primary:focus:hover,
+.gin--dark-mode .ui-dialog .ief-entity-submit,
+.gin--dark-mode .ui-dialog .ief-entity-submit:hover,
+.gin--dark-mode .ui-dialog .ief-entity-submit:active,
+.gin--dark-mode .ui-dialog .ief-entity-submit:focus,
+.gin--dark-mode .ui-dialog .ief-entity-submit:focus:hover {
   color: var(--gin-bg-app);
 }
 
@@ -240,11 +243,11 @@
   box-shadow: none;
 }
 
-.ui-dialog .button.button--primary:disabled, .ui-dialog .button.button--primary:disabled:hover, .ui-dialog .button.button--primary:disabled:active, .ui-dialog .button.button--primary:disabled:focus,
-.ui-dialog .button.button--primary.is-disabled,
-.ui-dialog .button.button--primary.is-disabled:hover,
-.ui-dialog .button.button--primary.is-disabled:active,
-.ui-dialog .button.button--primary.is-disabled:focus {
+.ui-dialog .button.button-primary:disabled, .ui-dialog .button.button-primary:disabled:hover, .ui-dialog .button.button-primary:disabled:active, .ui-dialog .button.button-primary:disabled:focus,
+.ui-dialog .button.button-primary.is-disabled,
+.ui-dialog .button.button-primary.is-disabled:hover,
+.ui-dialog .button.button-primary.is-disabled:active,
+.ui-dialog .button.button-primary.is-disabled:focus {
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg);
 }

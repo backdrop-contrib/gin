@@ -256,7 +256,7 @@ ul.paragraphs-add-dialog-list {
   color: var(--gin-color-text);
 }
 
-.ui-widget.ui-dialog.ui-dialog-off-canvas #drupal-off-canvas .button--primary[type=submit] {
+.ui-widget.ui-dialog.ui-dialog-off-canvas #drupal-off-canvas .button-primary[type=submit] {
   background: var(--gin-offcanvas-active);
 }
 

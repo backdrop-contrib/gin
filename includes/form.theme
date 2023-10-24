@@ -19,7 +19,7 @@ function gin_form_alter(&$form, $form_state, $form_id) {
 
   // User form (Login, Register or Forgot password).
   if (strpos($form_id, 'user_login') !== FALSE || strpos($form_id, 'user_register') !== FALSE || strpos($form_id, 'user_pass') !== FALSE) {
-    $form['actions']['submit']['#attributes']['class'][] = 'button--primary';
+    $form['actions']['submit']['#attributes']['class'][] = 'button-primary';
   }
 
   // Bulk forms: update action & actions to small variants.
