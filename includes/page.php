@@ -86,6 +86,9 @@ function gin_preprocess_page(&$variables) {
   if (module_exists('inline_entity_form')) {
     backdrop_add_library('gin', 'gin_inline_entity_form');
   }
+  if (module_exists('installer')) {
+    backdrop_add_css($basethemeurl . '/dist/css/components/project_installer.css', 'file');
+  }
 
   $options = array('every_page' => TRUE);
   backdrop_add_css($basethemeurl . '/dist/css/layout/gin_admin_bar.css', $options);

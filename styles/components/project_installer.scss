@@ -1,0 +1,56 @@
+/* Project Installer */
+
+.installer-browser .installer-browser-block h2 {
+  border-radius: var(--gin-border-m);
+  background-color: var(--gin-bg-header);
+}
+
+.installer-browser-install-queue-item {
+  a {
+    background-image: none;
+    padding: var(--gin-spacing-s);
+
+    &::before {
+      mask-image: icon('remove');
+    }
+  }
+}
+
+.project-status {
+  a {
+    color: var(--gin-color-primary);
+    background-color: transparent;
+    border-radius: var(--gin-border-s);
+    padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
+    margin-inline-start: var(--gin-spacing-xs);
+
+    &:hover {
+      color: var(--gin-color-primary-hover);
+      background-color: var(--gin-bg-item-hover);
+    }
+
+    &::before {
+      mask-image: icon('checkmark');
+    }
+  }
+}
+
+.project-status,
+.installer-browser-install-queue-item {
+  a {
+    &::before {
+      background-image: none;
+      background-color: var(--gin-color-primary);
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      content: "";
+      position: relative;
+      display: inline-block;
+      inset-block-start: 0.0625rem;
+      width: var(--gin-spacing-s);
+      height: var(--gin-spacing-s);
+      margin-inline: -0.125rem 0.4em;
+    }
+  }
+}

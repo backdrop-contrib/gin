@@ -1704,63 +1704,53 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 table.field-ui-view-modes tr.header,
-table.field-ui-view-modes tr.region-title,
-table.field-ui-overview tr.header,
-table.field-ui-overview tr.region-title {
+table.field-ui-overview tr.region-title,
+table#permissions tr.module-row {
   border: none;
 }
 
 table.field-ui-view-modes tr.header td,
-table.field-ui-view-modes tr.region-title td,
-table.field-ui-overview tr.header td,
-table.field-ui-overview tr.region-title td {
+table.field-ui-overview tr.region-title td,
+table#permissions tr.module-row td {
   background-color: var(--gin-bg-header);
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
 [dir="ltr"] table.field-ui-view-modes tr.header td:first-child,
-[dir="ltr"] table.field-ui-view-modes tr.region-title td:first-child,
-[dir="ltr"] table.field-ui-overview tr.header td:first-child,
-[dir="ltr"] table.field-ui-overview tr.region-title td:first-child {
+[dir="ltr"] table.field-ui-overview tr.region-title td:first-child,
+[dir="ltr"] table#permissions tr.module-row td:first-child {
   border-top-left-radius: var(--gin-border-m);
   border-bottom-left-radius: var(--gin-border-m);
 }
 
 [dir="rtl"] table.field-ui-view-modes tr.header td:first-child,
-[dir="rtl"] table.field-ui-view-modes tr.region-title td:first-child,
-[dir="rtl"] table.field-ui-overview tr.header td:first-child,
-[dir="rtl"] table.field-ui-overview tr.region-title td:first-child {
+[dir="rtl"] table.field-ui-overview tr.region-title td:first-child,
+[dir="rtl"] table#permissions tr.module-row td:first-child {
   border-top-right-radius: var(--gin-border-m);
   border-bottom-right-radius: var(--gin-border-m);
 }
 
 [dir="ltr"] table.field-ui-view-modes tr.header td:last-child,
-[dir="ltr"] table.field-ui-view-modes tr.region-title td:last-child,
-[dir="ltr"] table.field-ui-overview tr.header td:last-child,
-[dir="ltr"] table.field-ui-overview tr.region-title td:last-child {
+[dir="ltr"] table.field-ui-overview tr.region-title td:last-child,
+[dir="ltr"] table#permissions tr.module-row td:last-child {
   border-top-right-radius: var(--gin-border-m);
   border-bottom-right-radius: var(--gin-border-m);
 }
 
 [dir="rtl"] table.field-ui-view-modes tr.header td:last-child,
-[dir="rtl"] table.field-ui-view-modes tr.region-title td:last-child,
-[dir="rtl"] table.field-ui-overview tr.header td:last-child,
-[dir="rtl"] table.field-ui-overview tr.region-title td:last-child {
+[dir="rtl"] table.field-ui-overview tr.region-title td:last-child,
+[dir="rtl"] table#permissions tr.module-row td:last-child {
   border-top-left-radius: var(--gin-border-m);
   border-bottom-left-radius: var(--gin-border-m);
 }
 
-table.field-ui-view-modes tbody tr:has(+ tr.header), table.field-ui-view-modes tbody tr:has(+ tr.region-title),
-table.field-ui-view-modes tbody tr.odd:has(+ tr.header),
-table.field-ui-view-modes tbody tr.odd:has(+ tr.region-title),
-table.field-ui-view-modes tbody tr.even:has(+ tr.header),
-table.field-ui-view-modes tbody tr.even:has(+ tr.region-title),
-table.field-ui-overview tbody tr:has(+ tr.header),
-table.field-ui-overview tbody tr:has(+ tr.region-title),
-table.field-ui-overview tbody tr.odd:has(+ tr.header),
-table.field-ui-overview tbody tr.odd:has(+ tr.region-title),
-table.field-ui-overview tbody tr.even:has(+ tr.header),
-table.field-ui-overview tbody tr.even:has(+ tr.region-title) {
+table.sticky-enabled tbody tr:has(+ tr.header), table.sticky-enabled tbody tr:has(+ tr.region-title), table.sticky-enabled tbody tr:has(+ tr.module-row),
+table.sticky-enabled tbody tr.odd:has(+ tr.header),
+table.sticky-enabled tbody tr.odd:has(+ tr.region-title),
+table.sticky-enabled tbody tr.odd:has(+ tr.module-row),
+table.sticky-enabled tbody tr.even:has(+ tr.header),
+table.sticky-enabled tbody tr.even:has(+ tr.region-title),
+table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
   border-bottom: none;
 }
 
@@ -5405,6 +5395,10 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 .layout-block-configure-form .form-actions {
   display: none;
+}
+
+#user-admin-permissions .search-reset {
+  line-height: inherit;
 }
 
 .layout-editor-block {

@@ -39,6 +39,7 @@ module.exports = {
     'components/dialog': ['./styles/components/dialog.scss'],
     'components/edit_form': ['./styles/components/edit_form.scss'],
     'components/inline_entity_form': ['./styles/components/inline_entity_form.scss'],
+    'components/project_installer': ['./styles/components/project_installer.scss'],
     'components/module_filter': ['./styles/components/module_filter.scss'],
     'components/node_preview': ['./styles/components/node_preview.scss'],
     'components/paragraphs': ['./styles/components/paragraphs.scss'],

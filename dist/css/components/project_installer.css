@@ -1,0 +1,55 @@
+/* Project Installer */
+
+.installer-browser .installer-browser-block h2 {
+  border-radius: var(--gin-border-m);
+  background-color: var(--gin-bg-header);
+}
+
+.installer-browser-install-queue-item a {
+  background-image: none;
+  padding: var(--gin-spacing-s);
+}
+
+.installer-browser-install-queue-item a::before {
+  -webkit-mask-image: url("../../media/sprite.svg#remove-view");
+          mask-image: url("../../media/sprite.svg#remove-view");
+}
+
+.project-status a {
+  color: var(--gin-color-primary);
+  background-color: transparent;
+  border-radius: var(--gin-border-s);
+  padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
+  -webkit-margin-start: var(--gin-spacing-xs);
+          margin-inline-start: var(--gin-spacing-xs);
+}
+
+.project-status a:hover {
+  color: var(--gin-color-primary-hover);
+  background-color: var(--gin-bg-item-hover);
+}
+
+.project-status a::before {
+  -webkit-mask-image: url("../../media/sprite.svg#checkmark-view");
+          mask-image: url("../../media/sprite.svg#checkmark-view");
+}
+
+.project-status a::before,
+.installer-browser-install-queue-item a::before {
+  background-image: none;
+  background-color: var(--gin-color-primary);
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  content: "";
+  position: relative;
+  display: inline-block;
+  inset-block-start: .0625rem;
+  width: var(--gin-spacing-s);
+  height: var(--gin-spacing-s);
+  margin-inline: -0.125rem .4em;
+}
+
