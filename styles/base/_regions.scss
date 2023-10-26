@@ -1,6 +1,5 @@
 .region-sticky {
   position: sticky;
-  top: var(--gin-toolbar-y-offset);
   z-index: 99;
   padding: 0;
   width: 100%;
@@ -47,7 +46,7 @@
     }
 
     .gin--vertical-toolbar &,
-    .gin--horizontal-toolbar &,
+    .gin--horizontal-toolbar .admin-bar--fixed &,
     .gin--classic-toolbar & {
       top: var(--gin-toolbar-y-offset);
     }

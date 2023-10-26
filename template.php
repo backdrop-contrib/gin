@@ -57,6 +57,9 @@ function gin_preprocess_layout(&$variables) {
   if (backdrop_match_path($current_path, implode("\n", $node_edit_pages)) && (theme_get_setting('edit_form_sidebar', 'gin'))) {
     $variables['classes'][] = 'edit-form--sidebar';
   }
+  if (config_get('admin_bar.settings', 'position_fixed')) {
+    $variables['classes'][] = 'admin-bar--fixed';
+  }
 }
 
 /**
