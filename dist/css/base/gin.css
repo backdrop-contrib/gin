@@ -1704,41 +1704,47 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 table.field-ui-view-modes tr.header,
 table.field-ui-overview tr.region-title,
-table#permissions tr.module-row {
+table#permissions tr.module-row,
+table.layout-list tr.layout-group {
   border: none;
 }
 
 table.field-ui-view-modes tr.header td,
 table.field-ui-overview tr.region-title td,
-table#permissions tr.module-row td {
+table#permissions tr.module-row td,
+table.layout-list tr.layout-group td {
   background-color: var(--gin-bg-header);
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
 [dir="ltr"] table.field-ui-view-modes tr.header td:first-child,
 [dir="ltr"] table.field-ui-overview tr.region-title td:first-child,
-[dir="ltr"] table#permissions tr.module-row td:first-child {
+[dir="ltr"] table#permissions tr.module-row td:first-child,
+[dir="ltr"] table.layout-list tr.layout-group td:first-child {
   border-top-left-radius: var(--gin-border-m);
   border-bottom-left-radius: var(--gin-border-m);
 }
 
 [dir="rtl"] table.field-ui-view-modes tr.header td:first-child,
 [dir="rtl"] table.field-ui-overview tr.region-title td:first-child,
-[dir="rtl"] table#permissions tr.module-row td:first-child {
+[dir="rtl"] table#permissions tr.module-row td:first-child,
+[dir="rtl"] table.layout-list tr.layout-group td:first-child {
   border-top-right-radius: var(--gin-border-m);
   border-bottom-right-radius: var(--gin-border-m);
 }
 
 [dir="ltr"] table.field-ui-view-modes tr.header td:last-child,
 [dir="ltr"] table.field-ui-overview tr.region-title td:last-child,
-[dir="ltr"] table#permissions tr.module-row td:last-child {
+[dir="ltr"] table#permissions tr.module-row td:last-child,
+[dir="ltr"] table.layout-list tr.layout-group td:last-child {
   border-top-right-radius: var(--gin-border-m);
   border-bottom-right-radius: var(--gin-border-m);
 }
 
 [dir="rtl"] table.field-ui-view-modes tr.header td:last-child,
 [dir="rtl"] table.field-ui-overview tr.region-title td:last-child,
-[dir="rtl"] table#permissions tr.module-row td:last-child {
+[dir="rtl"] table#permissions tr.module-row td:last-child,
+[dir="rtl"] table.layout-list tr.layout-group td:last-child {
   border-top-left-radius: var(--gin-border-m);
   border-bottom-left-radius: var(--gin-border-m);
 }
@@ -1996,6 +2002,8 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .form-textarea-wrapper .grippie {
   border-bottom-left-radius: var(--gin-border-m);
   border-bottom-right-radius: var(--gin-border-m);
+  border-color: var(--gin-border-color-form-element);
+  background-color: var(--gin-bg-input);
 }
 
 .form-textarea-wrapper textarea {
@@ -2707,6 +2715,16 @@ tr .form-item {
 .form-actions .button,
 input.button {
   margin: var(--gin-spacing-xxs);
+}
+
+[dir="ltr"] .form-actions .button + a,
+[dir="ltr"] input.button + a {
+  margin-left: var(--gin-spacing-xs);
+}
+
+[dir="rtl"] .form-actions .button + a,
+[dir="rtl"] input.button + a {
+  margin-right: var(--gin-spacing-xs);
 }
 
 .button.button--small {
@@ -5403,14 +5421,15 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-l);
-  border: 1px solid var(--gin-border-color);
+  border: none;
   margin: .5rem .5rem .75rem .5rem;
+  background-color: var(--gin-bg-app);
 }
 
 .layout-editor-block-title {
   background-color: var(--gin-bg-header);
-  border-start-end-radius: var(--gin-border-l);
-  border-start-start-radius: var(--gin-border-l);
+  border-start-end-radius: var(--gin-border-m);
+  border-start-start-radius: var(--gin-border-m);
 }
 
 .layout-editor-block-title .buttons {
@@ -5423,9 +5442,10 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 }
 
 .layout-editor-block-content {
-  background-color: #fff;
-  border-end-end-radius: var(--gin-border-l);
-  border-end-start-radius: var(--gin-border-l);
+  background-color: var(--gin-bg-layer);
+  border-end-end-radius: var(--gin-border-m);
+  border-end-start-radius: var(--gin-border-m);
+  border-color: var(--gin-border-color);
 }
 
 .layout-editor-region {

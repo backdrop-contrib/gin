@@ -1,5 +1,9 @@
 /* Project Installer */
 
+.installer-browser .installer-browser-block {
+  background-color: transparent;
+}
+
 .installer-browser .installer-browser-block h2 {
   border-radius: var(--gin-border-m);
   background-color: var(--gin-bg-header);
@@ -13,6 +17,19 @@
 .installer-browser-install-queue-item a::before {
   -webkit-mask-image: url("../../media/sprite.svg#remove-view");
           mask-image: url("../../media/sprite.svg#remove-view");
+}
+
+.installer-browser-install-button-form input {
+  background-color: var(--gin-color-primary);
+  color: var(--gin-color-button-text);
+}
+
+[dir="ltr"] .installer-browser-install-button-form input {
+  box-shadow: .1em .25em .5em var(--gin-color-primary-light);
+}
+
+[dir="rtl"] .installer-browser-install-button-form input {
+  box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
 .project-status a {

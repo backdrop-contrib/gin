@@ -1,8 +1,11 @@
 /* Project Installer */
 
-.installer-browser .installer-browser-block h2 {
-  border-radius: var(--gin-border-m);
-  background-color: var(--gin-bg-header);
+.installer-browser .installer-browser-block {
+  background-color: transparent;
+  h2 {
+    border-radius: var(--gin-border-m);
+    background-color: var(--gin-bg-header);
+  }
 }
 
 .installer-browser-install-queue-item {
@@ -13,6 +16,14 @@
     &::before {
       mask-image: icon('remove');
     }
+  }
+}
+
+.installer-browser-install-button-form {
+  input {
+    box-shadow: .1em .25em .5em var(--gin-color-primary-light);
+    background-color: var(--gin-color-primary);
+    color: var(--gin-color-button-text);
   }
 }
 

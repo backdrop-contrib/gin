@@ -58,6 +58,10 @@
 .form-actions .button,
 input.button {
   margin: var(--gin-spacing-xxs);
+
+  & + a {
+    margin-left: var(--gin-spacing-xs);
+  }
 }
 
 .button.button--small {

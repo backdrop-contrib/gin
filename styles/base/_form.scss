@@ -74,6 +74,8 @@ $maxWidth: 520px;
   .grippie {
     border-bottom-left-radius: var(--gin-border-m);
     border-bottom-right-radius: var(--gin-border-m);
+    border-color: var(--gin-border-color-form-element);
+    background-color: var(--gin-bg-input);
   }
 
   textarea {

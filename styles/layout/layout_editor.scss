@@ -1,14 +1,15 @@
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-l);
-  border: 1px solid var(--gin-border-color);
+  border: none;
   margin: .5rem .5rem .75rem .5rem;
+  background-color: var(--gin-bg-app);
 }
 
 .layout-editor-block-title {
   background-color: var(--gin-bg-header);
-  border-start-end-radius: var(--gin-border-l);
-  border-start-start-radius: var(--gin-border-l);
+  border-start-end-radius: var(--gin-border-m);
+  border-start-start-radius: var(--gin-border-m);
 
   .buttons {
     width: inherit;
@@ -23,9 +24,10 @@
 }
 
 .layout-editor-block-content {
-  background-color: #fff;
-  border-end-end-radius: var(--gin-border-l);
-  border-end-start-radius: var(--gin-border-l);
+  background-color: var(--gin-bg-layer);
+  border-end-end-radius: var(--gin-border-m);
+  border-end-start-radius: var(--gin-border-m);
+  border-color: var(--gin-border-color);
 }
 
 .layout-editor-region {
