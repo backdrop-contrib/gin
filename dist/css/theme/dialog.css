@@ -286,7 +286,8 @@
 
 .ui-dialog .button-danger,
 .ui-dialog .button-primary.button-danger,
-.ui-dialog .form-delete,
+.ui-dialog a.form-delete,
+.ui-dialog .form-actions a.form-delete,
 .ui-dialog .file-remove-button {
   border: 2px solid var(--gin-color-danger-light);
   color: var(--gin-color-danger);
@@ -294,14 +295,16 @@
 
 [dir="ltr"] .ui-dialog .button-danger,
 [dir="ltr"] .ui-dialog .button-primary.button-danger,
-[dir="ltr"] .ui-dialog .form-delete,
+[dir="ltr"] .ui-dialog a.form-delete,
+[dir="ltr"] .ui-dialog .form-actions a.form-delete,
 [dir="ltr"] .ui-dialog .file-remove-button {
   box-shadow: .1em .25em .5em var(--gin-color-danger-lightest);
 }
 
 [dir="rtl"] .ui-dialog .button-danger,
 [dir="rtl"] .ui-dialog .button-primary.button-danger,
-[dir="rtl"] .ui-dialog .form-delete,
+[dir="rtl"] .ui-dialog a.form-delete,
+[dir="rtl"] .ui-dialog .form-actions a.form-delete,
 [dir="rtl"] .ui-dialog .file-remove-button {
   box-shadow: -0.1em .25em .5em var(--gin-color-danger-lightest);
 }
@@ -309,8 +312,10 @@
 .ui-dialog .button-danger:focus, .ui-dialog .button-danger:hover,
 .ui-dialog .button-primary.button-danger:focus,
 .ui-dialog .button-primary.button-danger:hover,
-.ui-dialog .form-delete:focus,
-.ui-dialog .form-delete:hover,
+.ui-dialog a.form-delete:focus,
+.ui-dialog a.form-delete:hover,
+.ui-dialog .form-actions a.form-delete:focus,
+.ui-dialog .form-actions a.form-delete:hover,
 .ui-dialog .file-remove-button:focus,
 .ui-dialog .file-remove-button:hover {
   background-color: var(--gin-color-danger);

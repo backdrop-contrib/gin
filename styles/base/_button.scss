@@ -164,7 +164,8 @@ a.button-primary,
 
 .button-danger,
 .button-primary.button-danger,
-.form-delete,
+a.form-delete,
+.form-actions a.form-delete,
 .file-remove-button {
 
   border: 2px solid var(--gin-color-danger-light);

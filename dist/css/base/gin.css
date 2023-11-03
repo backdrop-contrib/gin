@@ -2834,7 +2834,8 @@ a.button-primary, a.button-primary:hover, a.button-primary:active, a.button-prim
 
 .button-danger,
 .button-primary.button-danger,
-.form-delete,
+a.form-delete,
+.form-actions a.form-delete,
 .file-remove-button {
   border: 2px solid var(--gin-color-danger-light);
   color: var(--gin-color-danger);
@@ -2842,14 +2843,16 @@ a.button-primary, a.button-primary:hover, a.button-primary:active, a.button-prim
 
 [dir="ltr"] .button-danger,
 [dir="ltr"] .button-primary.button-danger,
-[dir="ltr"] .form-delete,
+[dir="ltr"] a.form-delete,
+[dir="ltr"] .form-actions a.form-delete,
 [dir="ltr"] .file-remove-button {
   box-shadow: .1em .25em .5em var(--gin-color-danger-lightest);
 }
 
 [dir="rtl"] .button-danger,
 [dir="rtl"] .button-primary.button-danger,
-[dir="rtl"] .form-delete,
+[dir="rtl"] a.form-delete,
+[dir="rtl"] .form-actions a.form-delete,
 [dir="rtl"] .file-remove-button {
   box-shadow: -0.1em .25em .5em var(--gin-color-danger-lightest);
 }
@@ -2857,8 +2860,10 @@ a.button-primary, a.button-primary:hover, a.button-primary:active, a.button-prim
 .button-danger:focus, .button-danger:hover,
 .button-primary.button-danger:focus,
 .button-primary.button-danger:hover,
-.form-delete:focus,
-.form-delete:hover,
+a.form-delete:focus,
+a.form-delete:hover,
+.form-actions a.form-delete:focus,
+.form-actions a.form-delete:hover,
 .file-remove-button:focus,
 .file-remove-button:hover {
   background-color: var(--gin-color-danger);
