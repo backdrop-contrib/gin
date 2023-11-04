@@ -19,6 +19,7 @@ function gin_preprocess_layout(&$variables) {
   $pages_to_wrap = array(
     'admin/dashboard/settings',
     'admin/content/comment',
+    'admin/content/comment/approval',
     'admin/people/create',
     'admin/appearance',
     'admin/appearance/*',
@@ -41,6 +42,8 @@ function gin_preprocess_layout(&$variables) {
     'taxonomy/term/*/edit',
     'taxonomy/term/add',
     'admin/reports/*',
+    'file/*/manage',
+    'file/*/usage',
   );
   $current_path = request_path();
   if (backdrop_match_path($current_path, implode("\n", $pages_to_wrap))) {
