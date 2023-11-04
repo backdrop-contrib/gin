@@ -691,6 +691,14 @@
   box-sizing: border-box;
 }
 
+[dir="ltr"] .ui-dialog :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+  text-align: left;
+}
+
+[dir="rtl"] .ui-dialog :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+  text-align: right;
+}
+
 .gin--dark-mode .ui-dialog :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
   background-color: var(--gin-bg-input);
 }

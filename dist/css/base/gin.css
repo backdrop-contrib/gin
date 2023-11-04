@@ -2220,6 +2220,14 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
   box-sizing: border-box;
 }
 
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+  text-align: left;
+}
+
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+  text-align: right;
+}
+
 .gin--dark-mode :not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
   background-color: var(--gin-bg-input);
 }
@@ -5452,6 +5460,12 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 #user-admin-permissions .search-reset {
   line-height: inherit;
+}
+
+/* Views Bulk Operations */
+
+fieldset.vbo-fieldset-select-all > .fieldset-wrapper {
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
 .layout-editor-block {

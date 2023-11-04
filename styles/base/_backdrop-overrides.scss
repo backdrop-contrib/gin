@@ -559,3 +559,10 @@ fieldset.collapsible.collapsed {
 #user-admin-permissions .search-reset {
   line-height: inherit;
 }
+
+/* Views Bulk Operations */
+fieldset.vbo-fieldset-select-all {
+  > .fieldset-wrapper {
+    padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  }
+}
