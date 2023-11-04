@@ -1,6 +1,8 @@
 // Unknown
 .report-info .report-icon div::before,
-.admin-dblog .icon::before {
+.admin-dblog .icon::before,
+.admin-dblog .dblog-info .icon::before,
+.admin-dblog .dblog-notice .icon::before {
   background-image: none;
   background-color: var(--gin-color-text);
   mask-image: icon('info');

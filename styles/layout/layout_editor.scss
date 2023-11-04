@@ -28,6 +28,10 @@
   border-end-end-radius: var(--gin-border-m);
   border-end-start-radius: var(--gin-border-m);
   border-color: var(--gin-border-color);
+
+  .layout-flexible-editor & {
+    border-radius: var(--gin-border-m);
+  }
 }
 
 .layout-editor-region {
@@ -71,7 +75,7 @@
 
     > div:first-child {
       border: 1px solid var(--gin-border-color-form-element);
-      border-radius: var(--gin-border-l);
+      border-radius: var(--gin-border-m);
     }
 
     .l-flexible-row {

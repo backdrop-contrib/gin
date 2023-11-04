@@ -373,7 +373,8 @@
 .ui-dialog .form-textarea,
 .ui-dialog .form-number,
 .ui-dialog .form-date,
-.ui-dialog .form-time {
+.ui-dialog .form-time,
+.ui-dialog .form-search {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);
@@ -391,7 +392,8 @@
 .ui-dialog .form-textarea:hover,
 .ui-dialog .form-number:hover,
 .ui-dialog .form-date:hover,
-.ui-dialog .form-time:hover {
+.ui-dialog .form-time:hover,
+.ui-dialog .form-search:hover {
   border-color: var(--gin-color-text);
   box-shadow: inset 0 0 0 1px var(--gin-color-text);
 }
@@ -408,7 +410,9 @@
 .ui-dialog .form-date--small,
 .ui-dialog .form-date--extrasmall,
 .ui-dialog .form-time--small,
-.ui-dialog .form-time--extrasmall {
+.ui-dialog .form-time--extrasmall,
+.ui-dialog .form-search--small,
+.ui-dialog .form-search--extrasmall {
   font-size: var(--gin-font-size-s);
   line-height: 1.5;
   border-radius: var(--gin-border-s);
@@ -426,7 +430,9 @@
 .ui-dialog .form-date[disabled],
 .ui-dialog .form-date[disabled]:hover,
 .ui-dialog .form-time[disabled],
-.ui-dialog .form-time[disabled]:hover {
+.ui-dialog .form-time[disabled]:hover,
+.ui-dialog .form-search[disabled],
+.ui-dialog .form-search[disabled]:hover {
   cursor: not-allowed;
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg) !important;
@@ -440,7 +446,8 @@
 .gin--dark-mode .ui-dialog .form-textarea,
 .gin--dark-mode .ui-dialog .form-number,
 .gin--dark-mode .ui-dialog .form-date,
-.gin--dark-mode .ui-dialog .form-time {
+.gin--dark-mode .ui-dialog .form-time,
+.gin--dark-mode .ui-dialog .form-search {
   color-scheme: dark;
 }
 

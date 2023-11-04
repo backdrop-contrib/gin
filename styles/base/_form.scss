@@ -25,7 +25,8 @@ $maxWidth: 520px;
 .form-textarea,
 .form-number,
 .form-date,
-.form-time {
+.form-time,
+.form-search {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);

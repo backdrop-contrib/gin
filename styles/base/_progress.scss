@@ -1,15 +1,20 @@
 .progress {
   > .bar {
     border-color: var(--gin-color-primary);
-    background-color: var(--gin-color-primary);
+    background-color: var(--gin-bg-layer3);
+    border-radius: var(--gin-border-l);
     box-shadow: 0 .125em .25em var(--gin-color-primary-light),
                 1.25em .9375em 2em var(--gin-color-primary-light);
+    height: var(--gin-spacing-l);
+    padding: var(--gin-spacing-xxs)
   }
 
   .filled {
     padding: var(--gin-spacing-xs);
     border-color: var(--gin-border-color);
-    background-color: var(--gin-bg-layer3);
+    background-color: var(--gin-color-primary);
+    border-radius: var(--gin-border-m);
+    height: var(--gin-spacing-xs);
   }
 
   > .message,

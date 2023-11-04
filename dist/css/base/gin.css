@@ -1919,7 +1919,8 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .form-textarea,
 .form-number,
 .form-date,
-.form-time {
+.form-time,
+.form-search {
   color: var(--gin-color-text);
   padding: var(--gin-spacing-s) var(--gin-spacing-m);
   background-color: var(--gin-bg-input);
@@ -1937,7 +1938,8 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .form-textarea:hover,
 .form-number:hover,
 .form-date:hover,
-.form-time:hover {
+.form-time:hover,
+.form-search:hover {
   border-color: var(--gin-color-text);
   box-shadow: inset 0 0 0 1px var(--gin-color-text);
 }
@@ -1954,7 +1956,9 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .form-date--small,
 .form-date--extrasmall,
 .form-time--small,
-.form-time--extrasmall {
+.form-time--extrasmall,
+.form-search--small,
+.form-search--extrasmall {
   font-size: var(--gin-font-size-s);
   line-height: 1.5;
   border-radius: var(--gin-border-s);
@@ -1972,7 +1976,9 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .form-date[disabled],
 .form-date[disabled]:hover,
 .form-time[disabled],
-.form-time[disabled]:hover {
+.form-time[disabled]:hover,
+.form-search[disabled],
+.form-search[disabled]:hover {
   cursor: not-allowed;
   color: var(--gin-color-disabled);
   background-color: var(--gin-color-disabled-bg) !important;
@@ -1986,7 +1992,8 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 .gin--dark-mode .form-textarea,
 .gin--dark-mode .form-number,
 .gin--dark-mode .form-date,
-.gin--dark-mode .form-time {
+.gin--dark-mode .form-time,
+.gin--dark-mode .form-search {
   color-scheme: dark;
 }
 
@@ -4300,7 +4307,9 @@ tr.color-error:focus,
 }
 
 .report-info .report-icon div::before,
-.admin-dblog .icon::before {
+.admin-dblog .icon::before,
+.admin-dblog .dblog-info .icon::before,
+.admin-dblog .dblog-notice .icon::before {
   background-image: none;
   background-color: var(--gin-color-text);
   -webkit-mask-image: url("../../media/sprite.svg#info-view");
@@ -4527,7 +4536,10 @@ tr.color-error:focus,
 
 .progress > .bar {
   border-color: var(--gin-color-primary);
-  background-color: var(--gin-color-primary);
+  background-color: var(--gin-bg-layer3);
+  border-radius: var(--gin-border-l);
+  height: var(--gin-spacing-l);
+  padding: var(--gin-spacing-xxs);
 }
 
 [dir="ltr"] .progress > .bar {
@@ -4541,7 +4553,9 @@ tr.color-error:focus,
 .progress .filled {
   padding: var(--gin-spacing-xs);
   border-color: var(--gin-border-color);
-  background-color: var(--gin-bg-layer3);
+  background-color: var(--gin-color-primary);
+  border-radius: var(--gin-border-m);
+  height: var(--gin-spacing-xs);
 }
 
 .progress > .message,
@@ -5453,6 +5467,10 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   border-color: var(--gin-border-color);
 }
 
+.layout-flexible-editor .layout-editor-block-content {
+  border-radius: var(--gin-border-m);
+}
+
 .layout-editor-region {
   border: 2px dashed var(--gin-border-color-form-element);
   background-color: var(--gin-bg-app);
@@ -5488,7 +5506,7 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 .layout-flexible-editor .flexible-row > div:first-child {
   border: 1px solid var(--gin-border-color-form-element);
-  border-radius: var(--gin-border-l);
+  border-radius: var(--gin-border-m);
 }
 
 .layout-flexible-editor .flexible-row .l-flexible-row {
