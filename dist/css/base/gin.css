@@ -2900,6 +2900,23 @@ a.form-delete:hover,
   box-shadow: -0.1em .25em .5em var(--gin-color-danger-light);
 }
 
+ul.layout-action-links {
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+ul.layout-action-links li {
+  display: inline-block;
+}
+
+ul.layout-action-links li a.layout-button-link {
+  margin: 0 var(--gin-spacing-xs);
+  padding: var(--gin-spacing-xs);
+  font-size: var(--gin-font-size-s);
+}
+
 .js .dropbutton-widget {
   border-color: var(--gin-color-primary);
   border-width: 2px;

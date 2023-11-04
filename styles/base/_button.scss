@@ -202,3 +202,20 @@ a.form-delete,
     }
   }
 }
+
+ul.layout-action-links {
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+
+  li {
+    display: inline-block;
+
+    a.layout-button-link {
+      margin: 0 var(--gin-spacing-xs);
+      padding: var(--gin-spacing-xs);
+      font-size: var(--gin-font-size-s);
+    }
+  }
+}

@@ -345,6 +345,23 @@
   box-shadow: -0.1em .25em .5em var(--gin-color-danger-light);
 }
 
+.ui-dialog ul.layout-action-links {
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.ui-dialog ul.layout-action-links li {
+  display: inline-block;
+}
+
+.ui-dialog ul.layout-action-links li a.layout-button-link {
+  margin: 0 var(--gin-spacing-xs);
+  padding: var(--gin-spacing-xs);
+  font-size: var(--gin-font-size-s);
+}
+
 .ui-dialog .form-actions {
   display: flex;
   flex-flow: row;
