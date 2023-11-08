@@ -40,8 +40,10 @@
       height: auto;
       width: 100%;
       float: none;
+      object-fit: contain;
+      background-color: var(--gin-bg-app);
 
-      @include mq(wide) {
+      @include mq(medium) {
         border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
         width: 294px;
         max-width: 35%;
@@ -57,19 +59,32 @@
 
     .theme-info {
       background-color: var(--gin-bg-layer);
-      padding: var(--gin-spacing-m) var(--gin-spacing-m) var(--gin-spacing-xxl) var(--gin-spacing-m);
+      padding: var(--gin-spacing-m);
       border-radius: 0 var(--gin-border-m) var(--gin-border-m) 0;
       position: relative;
       width: calc(100% - 2*var(--gin-spacing-m));
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(1rem, auto);
+      grid-template-areas:
+        "header"
+        "description"
+        "ops";
 
-      .operations {
+      > h3 {
+        grid-area: header;
+      }
+      > .theme-description {
+        grid-area: description;
+      }
+      > .operations {
+        grid-area: ops;
+        padding: var(--gin-spacing-m) 0 0 0;
+        margin: 0;
 
         @include mq(medium) {
-          position: absolute;
           text-align: right;
           width: 100%;
-          bottom: var(--gin-spacing-m);
-          right: var(--gin-spacing-m);
         }
 
         li {

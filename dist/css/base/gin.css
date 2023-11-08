@@ -4701,9 +4701,11 @@ tr.color-error:focus,
   height: auto;
   width: 100%;
   float: none;
+  object-fit: contain;
+  background-color: var(--gin-bg-app);
 }
 
-@media (min-width: 80em) {
+@media (min-width: 61em) {
   .system-themes-list .theme-selector .screenshot,
   .system-themes-list.system-themes-list-disabled .theme-selector .screenshot {
     width: 294px;
@@ -4733,9 +4735,13 @@ tr.color-error:focus,
 .system-themes-list .theme-selector .theme-info,
 .system-themes-list.system-themes-list-disabled .theme-selector .theme-info {
   background-color: var(--gin-bg-layer);
-  padding: var(--gin-spacing-m) var(--gin-spacing-m) var(--gin-spacing-xxl) var(--gin-spacing-m);
+  padding: var(--gin-spacing-m);
   position: relative;
   width: calc(100% - 2 * var(--gin-spacing-m));
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(1rem, auto);
+  grid-template-areas: "header" "description" "ops";
 }
 
 [dir="ltr"] .system-themes-list .theme-selector .theme-info,
@@ -4748,47 +4754,60 @@ tr.color-error:focus,
   border-radius: var(--gin-border-m) 0 0 var(--gin-border-m);
 }
 
+.system-themes-list .theme-selector .theme-info > h3,
+.system-themes-list.system-themes-list-disabled .theme-selector .theme-info > h3 {
+  grid-area: header;
+}
+
+.system-themes-list .theme-selector .theme-info > .theme-description,
+.system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .theme-description {
+  grid-area: description;
+}
+
+.system-themes-list .theme-selector .theme-info > .operations,
+.system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations {
+  grid-area: ops;
+  padding: var(--gin-spacing-m) 0 0 0;
+  margin: 0;
+}
+
 @media (min-width: 61em) {
-  .system-themes-list .theme-selector .theme-info .operations,
-  .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations {
-    position: absolute;
+  .system-themes-list .theme-selector .theme-info > .operations,
+  .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations {
     width: 100%;
-    bottom: var(--gin-spacing-m);
   }
 
-  [dir="ltr"] .system-themes-list .theme-selector .theme-info .operations,
-  [dir="ltr"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations {
+  [dir="ltr"] .system-themes-list .theme-selector .theme-info > .operations,
+  [dir="ltr"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations {
     text-align: right;
-    right: var(--gin-spacing-m);
   }
 
-  [dir="rtl"] .system-themes-list .theme-selector .theme-info .operations,
-  [dir="rtl"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations {
+  [dir="rtl"] .system-themes-list .theme-selector .theme-info > .operations,
+  [dir="rtl"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations {
     text-align: left;
-    left: var(--gin-spacing-m);
   }
 }
 
-.system-themes-list .theme-selector .theme-info .operations li,
-.system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations li {
+.system-themes-list .theme-selector .theme-info > .operations li,
+.system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations li {
   border: none;
   float: none;
   display: block;
 }
 
-[dir="ltr"] .system-themes-list .theme-selector .theme-info .operations li,
-[dir="ltr"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations li {
+[dir="ltr"] .system-themes-list .theme-selector .theme-info > .operations li,
+[dir="ltr"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations li {
   text-align: left;
 }
 
-[dir="rtl"] .system-themes-list .theme-selector .theme-info .operations li,
-[dir="rtl"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations li {
+[dir="rtl"] .system-themes-list .theme-selector .theme-info > .operations li,
+[dir="rtl"] .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations li {
   text-align: right;
 }
 
 @media (min-width: 61em) {
-  .system-themes-list .theme-selector .theme-info .operations li,
-  .system-themes-list.system-themes-list-disabled .theme-selector .theme-info .operations li {
+  .system-themes-list .theme-selector .theme-info > .operations li,
+  .system-themes-list.system-themes-list-disabled .theme-selector .theme-info > .operations li {
     display: inline-block;
     float: none;
   }
