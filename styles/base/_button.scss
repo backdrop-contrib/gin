@@ -219,3 +219,11 @@ ul.layout-action-links {
     }
   }
 }
+
+ul .layout-condition {
+  a.layout-button-link {
+    margin: 0 var(--gin-spacing-xs);
+    padding: var(--gin-spacing-xs);
+    font-size: var(--gin-font-size-s);
+  }
+}

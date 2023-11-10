@@ -362,6 +362,12 @@
   font-size: var(--gin-font-size-s);
 }
 
+.ui-dialog ul .layout-condition a.layout-button-link {
+  margin: 0 var(--gin-spacing-xs);
+  padding: var(--gin-spacing-xs);
+  font-size: var(--gin-font-size-s);
+}
+
 .ui-dialog .form-actions {
   display: flex;
   flex-flow: row;
