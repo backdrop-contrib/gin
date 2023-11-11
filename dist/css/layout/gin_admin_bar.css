@@ -25,7 +25,7 @@
   font-family: var(--gin-font);
   background: var(--gin-color-contextual);
   box-shadow: none;
-  z-index: 100;
+  z-index: 999;
   min-height: var(--gin-toolbar-y-offset);
 }
 

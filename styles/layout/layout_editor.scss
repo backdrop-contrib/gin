@@ -168,3 +168,21 @@
 .layout-button-link {
   margin-bottom: var(--gin-spacing-l);
 }
+
+.layout-access-list {
+  ul {
+    li {
+      background-color: transparent;
+      border: none;
+      .layout-access-remove {
+        border-color: var(--gin-color-danger);
+        color: var(--gin-color-danger);
+        &:hover {
+          background-color: var(--gin-color-danger);
+          color: #fff;
+          border-color: var(--gin-color-danger-light);
+        }
+      }
+    }
+  }
+}

@@ -5727,3 +5727,19 @@ fieldset.vbo-fieldset-select-all > .fieldset-wrapper {
   margin-bottom: var(--gin-spacing-l);
 }
 
+.layout-access-list ul li {
+  background-color: transparent;
+  border: none;
+}
+
+.layout-access-list ul li .layout-access-remove {
+  border-color: var(--gin-color-danger);
+  color: var(--gin-color-danger);
+}
+
+.layout-access-list ul li .layout-access-remove:hover {
+  background-color: var(--gin-color-danger);
+  color: #fff;
+  border-color: var(--gin-color-danger-light);
+}
+
