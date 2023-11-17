@@ -993,12 +993,14 @@ details summary {
   padding: var(--gin-spacing-xs) var(--gin-spacing-m);
 }
 
-#views-display-menu-tabs a.views-display-disabled-link, #views-display-menu-tabs a.views-display-deleted-link {
+#views-display-menu-tabs a.views-display-disabled-link {
   -webkit-padding-start: var(--gin-spacing-l);
           padding-inline-start: var(--gin-spacing-l);
 }
 
-#views-display-menu-tabs a.views-display-disabled-link::before, #views-display-menu-tabs a.views-display-deleted-link::before {
+#views-display-menu-tabs a.views-display-disabled-link::before {
+  -webkit-mask-image: url("../../media/sprite.svg#hide-view");
+          mask-image: url("../../media/sprite.svg#hide-view");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center left;
@@ -1014,16 +1016,6 @@ details summary {
   background-color: currentColor;
   display: inline-block;
   content: "";
-}
-
-#views-display-menu-tabs a.views-display-disabled-link::before {
-  -webkit-mask-image: url("../../media/sprite.svg#hide-view");
-          mask-image: url("../../media/sprite.svg#hide-view");
-}
-
-#views-display-menu-tabs a.views-display-deleted-link::before {
-  -webkit-mask-image: url("../../media/sprite.svg#remove-view");
-          mask-image: url("../../media/sprite.svg#remove-view");
 }
 
 [dir="ltr"] #views-display-menu-tabs li {

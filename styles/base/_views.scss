@@ -229,11 +229,11 @@
   a {
     padding: var(--gin-spacing-xs) var(--gin-spacing-m);
 
-    &.views-display-disabled-link,
-    &.views-display-deleted-link {
+    &.views-display-disabled-link {
       padding-inline-start: var(--gin-spacing-l);
 
       &::before {
+        mask-image: icon('hide');
         mask-repeat: no-repeat;
         mask-position: center left;
         mask-size: contain;
@@ -245,14 +245,6 @@
         display: inline-block;
         content: '';
       }
-    }
-
-    &.views-display-disabled-link::before {
-      mask-image: icon('hide');
-    }
-
-    &.views-display-deleted-link::before {
-      mask-image: icon('remove');
     }
   }
 
