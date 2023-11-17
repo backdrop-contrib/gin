@@ -993,6 +993,31 @@ details summary {
   padding: var(--gin-spacing-xs) var(--gin-spacing-m);
 }
 
+#views-display-menu-tabs a.views-display-disabled-link {
+  -webkit-padding-start: var(--gin-spacing-l);
+          padding-inline-start: var(--gin-spacing-l);
+}
+
+#views-display-menu-tabs a.views-display-disabled-link::before {
+  -webkit-mask-image: url("../../media/sprite.svg#hide-view");
+          mask-image: url("../../media/sprite.svg#hide-view");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+          mask-position: center left;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  width: var(--gin-spacing-s);
+  height: var(--gin-spacing-s);
+  -webkit-margin-start: calc(var(--gin-spacing-m) * -1);
+          margin-inline-start: calc(var(--gin-spacing-m) * -1);
+  -webkit-margin-before: var(--gin-spacing-xxs);
+          margin-block-start: var(--gin-spacing-xxs);
+  background-color: currentColor;
+  display: inline-block;
+  content: "";
+}
+
 [dir="ltr"] #views-display-menu-tabs li {
   margin: 0 .3125rem .3125rem .375rem;
 }

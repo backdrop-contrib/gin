@@ -228,6 +228,24 @@
 #views-display-menu-tabs {
   a {
     padding: var(--gin-spacing-xs) var(--gin-spacing-m);
+
+    &.views-display-disabled-link {
+      padding-inline-start: var(--gin-spacing-l);
+
+      &::before {
+        mask-image: icon('hide');
+        mask-repeat: no-repeat;
+        mask-position: center left;
+        mask-size: contain;
+        width: var(--gin-spacing-s);
+        height: var(--gin-spacing-s);
+        margin-inline-start: calc(var(--gin-spacing-m) * -1);
+        margin-block-start: var(--gin-spacing-xxs);
+        background-color: currentColor;
+        display: inline-block;
+        content: '';
+      }
+    }
   }
 
   li {
@@ -387,6 +405,7 @@
   .views-ui-display-tab-setting {
     padding: var(--gin-spacing-m);
   }
+
   .dropbutton-wrapper input.form-submit:hover {
     background-color: var(--gin-color-primary-hover);
   }
