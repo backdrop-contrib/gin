@@ -2,9 +2,8 @@
 
 ## Introduction
 
-Gin is a work in progress and may have dramatic changes before the first
-official release. Although it is a fork of Gin for Drupal, the end result may
-not necessarily be a one-to-one replica of all styles and functionality.
+A radically new UI layout paired with goodies like a Darkmode will give your
+Backdrop admin interface a facelift.
 
 ## Installation
 

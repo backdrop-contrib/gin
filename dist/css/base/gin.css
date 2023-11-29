@@ -4638,7 +4638,7 @@ tr.color-error:focus,
 .progress > .bar {
   border-color: var(--gin-color-primary);
   background-color: var(--gin-bg-layer3);
-  border-radius: var(--gin-border-l);
+  border-radius: var(--gin-border-xl);
   height: var(--gin-spacing-l);
   padding: var(--gin-spacing-xxs);
 }
@@ -4655,8 +4655,9 @@ tr.color-error:focus,
   padding: var(--gin-spacing-xs);
   border-color: var(--gin-border-color);
   background-color: var(--gin-color-primary);
-  border-radius: var(--gin-border-m);
+  border-radius: var(--gin-border-l);
   height: var(--gin-spacing-xs);
+  min-width: var(--gin-spacing-xs);
 }
 
 .progress > .message,
