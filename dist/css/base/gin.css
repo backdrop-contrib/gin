@@ -4663,6 +4663,7 @@ tr.color-error:focus,
 .progress > .message,
 .progress > .percentage {
   color: var(--gin-color-text);
+  padding-top: var(--gin-spacing-s);
 }
 
 .ui-autocomplete {
