@@ -250,6 +250,10 @@ a.button-primary:focus:hover {
   padding-top: var(--gin-spacing-xs);
 }
 
+.form-item.form-item-enable-darkmode {
+  padding-top: 0;
+}
+
 .tabs {
   display: flex;
   border: 0;

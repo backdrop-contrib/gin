@@ -33,7 +33,7 @@
       &.vertical-tab-selected {
         a.vertical-tab-link {
           color: var(--gin-color-primary-active);
-          background-color: var(--gin-bg-app);
+          background-color: transparent;
         }
         strong {
           color: var(--gin-color-primary-active);
@@ -54,10 +54,6 @@
         .summary {
           font-size: var(--gin-font-size-s);
         }
-      }
-
-      .gin--dark-mode & {
-        background-color: var(--gin-bg-item-hover);
       }
     }
   }

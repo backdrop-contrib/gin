@@ -111,10 +111,10 @@ $maxWidth: 520px;
 
     span.summary {
       top: var(--gin-spacing-xs);
+      color: var(--gin-color-text-light);
     }
   }
 }
-
 
 .form-item--editor-format,
 .form-element--editor-format {
@@ -527,7 +527,8 @@ label.option,
 .fieldset__label.form-required::after,
 .form-required > .fieldset__label::after,
 .horizontal-tab-button .form-required::after,
-.vertical-tabs__menu-link .form-required::after {
+.vertical-tabs__menu-link .form-required::after,
+label .form-required {
   content: "*";
   color: var(--gin-color-danger);
   line-height: 1;
@@ -662,5 +663,12 @@ tr .form-item {
     &:hover {
       background-color: var(--gin-bg-item-hover);
     }
+  }
+}
+
+.layout-region-node-main {
+  .form-wrapper {
+    background-color: transparent;
+    border: none;
   }
 }

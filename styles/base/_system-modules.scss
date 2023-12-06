@@ -9,9 +9,16 @@
   }
 }
 
-.admin-requirements,
-.admin-required {
+div.admin-requirements,
+div.admin-required {
   color: var(--gin-color-text-light);
+  .admin-disabled,
+  .admin-missing {
+    color: var(--gin-color-danger);
+  }
+  .admin-enabled {
+    color: var(--gin-color-text-light);
+  }
 }
 
 .gin--dark-mode {
