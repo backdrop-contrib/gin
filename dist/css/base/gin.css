@@ -1222,6 +1222,7 @@ details summary {
 
 #edit-display-settings-main {
   padding: var(--gin-spacing-l);
+  background-color: transparent;
 }
 
 .views-display-column,
@@ -2071,6 +2072,7 @@ table.sticky-enabled tbody tr.even:has(+ tr.module-row) {
 
 .text-format-wrapper fieldset.filter-wrapper.collapsible span.summary {
   top: var(--gin-spacing-xs);
+  color: var(--gin-color-text-light);
 }
 
 .form-item--editor-format,
@@ -2539,7 +2541,8 @@ label.option,
 .fieldset__label.form-required::after,
 .form-required > .fieldset__label::after,
 .horizontal-tab-button .form-required::after,
-.vertical-tabs__menu-link .form-required::after {
+.vertical-tabs__menu-link .form-required::after,
+label .form-required {
   content: "*";
   color: var(--gin-color-danger);
   line-height: 1;
@@ -2674,6 +2677,11 @@ tr .form-item {
 
 .form-managed-file .form-file:hover {
   background-color: var(--gin-bg-item-hover);
+}
+
+.layout-region-node-main .form-wrapper {
+  background-color: transparent;
+  border: none;
 }
 
 .button,
@@ -4094,8 +4102,20 @@ hr {
   color: var(--gin-color-text);
 }
 
-.admin-requirements,
-.admin-required {
+div.admin-requirements,
+div.admin-required {
+  color: var(--gin-color-text-light);
+}
+
+div.admin-requirements .admin-disabled,
+div.admin-requirements .admin-missing,
+div.admin-required .admin-disabled,
+div.admin-required .admin-missing {
+  color: var(--gin-color-danger);
+}
+
+div.admin-requirements .admin-enabled,
+div.admin-required .admin-enabled {
   color: var(--gin-color-text-light);
 }
 
@@ -5242,6 +5262,10 @@ table.sticky-enabled {
   margin-top: 0;
   margin-bottom: var(--gin-spacing-l);
   padding-top: var(--gin-spacing-xs);
+}
+
+.form-item.form-item-enable-darkmode {
+  padding-top: 0;
 }
 
 .tabs {

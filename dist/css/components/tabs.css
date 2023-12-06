@@ -36,7 +36,7 @@
 
 .vertical-tabs .vertical-tabs-list .vertical-tab-item.vertical-tab-selected a.vertical-tab-link {
   color: var(--gin-color-primary-active);
-  background-color: var(--gin-bg-app);
+  background-color: transparent;
 }
 
 .vertical-tabs .vertical-tabs-list .vertical-tab-item.vertical-tab-selected strong {
@@ -57,10 +57,6 @@
 
 .vertical-tabs .vertical-tabs-list .vertical-tab-item a.vertical-tab-link .summary {
   font-size: var(--gin-font-size-s);
-}
-
-.gin--dark-mode .vertical-tabs .vertical-tabs-list .vertical-tab-item {
-  background-color: var(--gin-bg-item-hover);
 }
 
 .vertical-tab-link {
