@@ -64,7 +64,7 @@
     </div>
   <?php endif; ?>
   <div class="layout-container">
-    <main class="page-content clearfix" role="main">
+    <main class="page-content clearfix gin-layer-wrapper" role="main">
       <div class="visually-hidden">
         <a id="main-content" tabindex="-1"></a>
       </div>
@@ -82,7 +82,7 @@
 
       <div class="l-middle l-quarters row">
         <div class="l-quarters-region col-md-3">
-          <?php print $wrap_prefix . $content['quarter1'] . $wrap_suffix; ?>
+          <?php print $content['quarter1']; ?>
         </div>
         <div class="l-quarters-region col-md-3">
           <?php print $content['quarter2']; ?>

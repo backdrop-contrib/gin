@@ -79,8 +79,8 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <main class="l-content region-content col-md-9" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
+        <main class="l-content region-content col-md-9 gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
         </main>
         <div class="l-sidebar l-sidebar-first col-md-3">
           <?php print $content['sidebar']; ?>

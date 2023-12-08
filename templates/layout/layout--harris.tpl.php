@@ -80,8 +80,8 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <main class="l-content region-content col-md-6 col-md-push-3" role="main" aria-label="<?php print t('Main content'); ?>">
-          <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
+        <main class="l-content region-content col-md-6 col-md-push-3 gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
+          <?php print $content['content']; ?>
         </main>
         <div class="l-sidebar l-sidebar-first col-md-3 col-md-pull-6">
           <?php print $content['sidebar']; ?>

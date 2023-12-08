@@ -77,8 +77,8 @@
         </div>
       <?php endif; ?>
 
-      <div class="l-content region-content" role="main" aria-label="<?php print t('Main content'); ?>">
-        <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
+      <div class="l-content region-content gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
+        <?php print $content['content']; ?>
       </div>
 
       <?php if (!empty($content['bottom'])): ?>
