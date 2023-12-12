@@ -4689,6 +4689,7 @@ tr.color-error:focus,
   border-radius: var(--gin-border-l);
   height: var(--gin-spacing-xs);
   min-width: var(--gin-spacing-xs);
+  max-width: calc(100% - 2 * var(--gin-spacing-xs));
 }
 
 .progress > .message,
