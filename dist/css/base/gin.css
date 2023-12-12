@@ -490,6 +490,13 @@ body:not(.toolbar-tray-open) .layout-container {
   margin-top: 0;
 }
 
+.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> .admin-list) {
+  border: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
 @media (max-width: 60.99em) {
   .gin--edit-form .region-sticky--is-sticky .block-page-title-block {
     visibility: hidden;

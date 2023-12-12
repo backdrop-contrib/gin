@@ -59,3 +59,13 @@
     margin-top: 0;
   }
 }
+
+.gin-layer-wrapper {
+  &:has(> .view),
+  &:has(> .admin-list) {
+    border: none;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+}

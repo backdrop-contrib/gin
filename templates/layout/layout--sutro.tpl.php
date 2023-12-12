@@ -81,8 +81,8 @@
     <?php endif; ?>
 
     <?php if (!empty($content['content'])): ?>
-      <div class="l-content region-content" role="main" aria-label="<?php print t('Main content'); ?>">
-        <?php print $wrap_prefix . $content['content'] . $wrap_suffix; ?>
+      <div class="l-content region-content gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
+        <?php print $content['content']; ?>
       </div>
     <?php endif; ?>
 

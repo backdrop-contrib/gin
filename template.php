@@ -15,44 +15,7 @@ foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
  * Implements hook_preprocess_layout().
  */
 function gin_preprocess_layout(&$variables) {
-  // Some pages need a flag added so we can wrap the main content visually.
-  $pages_to_wrap = array(
-    'admin/dashboard/settings',
-    'admin/content/comment',
-    'admin/content/comment/approval',
-    'admin/people/create',
-    'admin/appearance',
-    'admin/appearance/*',
-    'admin/modules',
-    'admin/modules/*',
-    'admin/structure/types',
-    'admin/structure/types/manage/*',
-    'admin/structure/block',
-    'admin/structure/file-types',
-    'admin/structure/layouts',
-    'admin/structure/layouts/manage/*',
-    'admin/structure/layouts/settings/flexible-template/*',
-    'admin/structure/menu',
-    'admin/structure/paragraphs',
-    'admin/structure/taxonomy',
-    'admin/structure/views',
-    'admin/config/*/*',
-    'node/*/edit',
-    'node/add/*',
-    'taxonomy/term/*/edit',
-    'taxonomy/term/add',
-    'admin/reports/*',
-    'file/*/manage',
-    'file/*/usage',
-  );
   $current_path = request_path();
-  if (backdrop_match_path($current_path, implode("\n", $pages_to_wrap))) {
-    $variables['wrap_prefix'] = '<div class="gin-layer-wrapper">';
-    $variables['wrap_suffix'] = '</div>';
-  } else {
-    $variables['wrap_prefix'] = '';
-    $variables['wrap_suffix'] = '';
-  }
   $node_edit_pages = array(
     'node/*/edit',
     'node/add/*',
