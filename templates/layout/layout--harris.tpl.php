@@ -80,13 +80,13 @@
       <?php endif; ?>
 
       <div class="l-middle row">
-        <main class="l-content region-content col-md-6 col-md-push-3 gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
+        <main class="l-content region-content col-md-8 col-md-push-2 gin-layer-wrapper" role="main" aria-label="<?php print t('Main content'); ?>">
           <?php print $content['content']; ?>
         </main>
-        <div class="l-sidebar l-sidebar-first col-md-3 col-md-pull-6">
+        <div class="l-sidebar l-sidebar-first col-md-2 col-md-pull-8">
           <?php print $content['sidebar']; ?>
         </div>
-        <div class="l-sidebar l-sidebar-second col-md-3">
+        <div class="l-sidebar l-sidebar-second col-md-2">
           <?php print $content['sidebar2']; ?>
         </div>
       </div><!-- /.l-middle -->
