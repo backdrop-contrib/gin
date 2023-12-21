@@ -65,9 +65,6 @@ function gin_preprocess_page(&$variables) {
   if (module_exists('dashboard')) {
     backdrop_add_library('gin', 'gin_dashboard');
   }
-  if (module_exists('paragraphs')) {
-    backdrop_add_library('gin', 'gin_paragraphs');
-  }
   if (module_exists('coffee')) {
     backdrop_add_library('gin', 'gin_coffee');
   }
@@ -92,6 +89,10 @@ function gin_preprocess_page(&$variables) {
 
   $options = array('every_page' => TRUE);
   backdrop_add_css($basethemeurl . '/dist/css/layout/gin_admin_bar.css', $options);
+
+  if (module_exists('paragraphs')) {
+    backdrop_add_css($basethemeurl . '/dist/css/components/paragraphs.css', $options);
+  }
 
   // Custom CSS file.
   // if (file_exists('public://gin-custom.css')) {

@@ -455,7 +455,30 @@ html[dir="rtl"].js .paragraph-type-icon {
   right: 0;
 }
 
+.field-widget-paragraphs-embed input.form-submit {
+  padding: calc(var(--gin-spacing-xxs) + 2px) var(--gin-spacing-m);
+  border-radius: var(--gin-border-s);
+  font-size: var(--gin-font-size-s);
+  border: 1px solid var(--gin-color-primary);
+  box-shadow: 0 1px 2px var(--gin-color-primary-light);
+  transition: var(--gin-transition);
+  font-weight: var(--gin-font-weight-normal);
+}
+
+[dir="ltr"] .field-widget-paragraphs-embed input.form-submit {
+  margin: var(--gin-spacing-xs) var(--gin-spacing-xxs) var(--gin-spacing-xs) 0;
+}
+
+[dir="rtl"] .field-widget-paragraphs-embed input.form-submit {
+  margin: var(--gin-spacing-xs) 0 var(--gin-spacing-xs) var(--gin-spacing-xxs);
+}
+
 .field-widget-paragraphs-embed input.field-add-more-submit {
-  margin: var(--gin-spacing-xss);
+  border-width: 2px;
+  font-weight: var(--gin-font-weight-semibold);
+}
+
+.field-widget-paragraphs-embed input.button-danger {
+  border-color: var(--gin-color-danger);
 }
 
