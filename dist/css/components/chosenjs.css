@@ -16,6 +16,10 @@
   color: inherit;
 }
 
+.form-select.chosen-container-single .chosen-single .chosen-search input[type=text] {
+  border-color: var(--gin-border-color-table);
+}
+
 .form-select.chosen-container-single .chosen-single b {
   background: none !important;
 }
@@ -30,5 +34,19 @@
   background: none;
   box-shadow: none;
   color: inherit;
+}
+
+.chosen-container .chosen-results {
+  color: inherit;
+}
+
+.chosen-container .chosen-results li.highlighted {
+  background: var(--gin-bg-layer);
+}
+
+.chosen-container .chosen-drop {
+  border-color: var(--gin-border-color-table);
+  background-color: var(--gin-bg-input);
+  color: var(--gin-color-text);
 }
 

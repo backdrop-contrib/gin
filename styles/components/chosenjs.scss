@@ -14,6 +14,12 @@
         padding: calc(var(--gin-spacing-s) - 1px) calc(var(--gin-spacing-m) - 1px);
         color: inherit;
 
+        .chosen-search {
+            input[type="text"] {
+                border-color: var(--gin-border-color-table);
+            }
+        }
+
         b {
             background: none !important;
         }
@@ -29,5 +35,19 @@
         background: none;
         box-shadow: none;
         color: inherit;
+    }
+}
+
+.chosen-container {
+    .chosen-results {
+        color: inherit;
+        li.highlighted {
+            background: var(--gin-bg-layer);
+        }
+    }
+    .chosen-drop {
+        border-color: var(--gin-border-color-table);
+        background-color: var(--gin-bg-input);
+        color: var(--gin-color-text);
     }
 }
