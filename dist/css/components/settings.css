@@ -291,3 +291,16 @@
   background-image: url(../../media/settings/layout_density_small_darkmode.png);
 }
 
+input[data-gin-toolbar=new] + label .gin-new-flag {
+  position: absolute;
+  top: -100px;
+}
+
+[dir="ltr"] input[data-gin-toolbar=new] + label .gin-new-flag {
+  right: 8px;
+}
+
+[dir="rtl"] input[data-gin-toolbar=new] + label .gin-new-flag {
+  left: 8px;
+}
+

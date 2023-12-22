@@ -424,4 +424,18 @@
       }
     }
   }
+
+  .revision-current {
+    background-color: var(--gin-color-primary-light-active);
+  }
+
+  .field--name-title .form-element {
+    font-size: var(--gin-font-size-h3);
+    font-weight: var(--gin-font-weight-semibold);
+    line-height: normal;
+    letter-spacing: -0.025em;
+    width: 100%;
+    padding-top: var(--gin-spacing-s);
+    padding-bottom: var(--gin-spacing-s);
+  }
 }

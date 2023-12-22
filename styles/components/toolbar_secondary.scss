@@ -87,7 +87,7 @@
 .gin-back-to-admin {
   font-family: var(--gin-font);
   font-size: var(--gin-font-size-xs);
-  font-weight: var(--gin-font-weight-normal);;
+  font-weight: var(--gin-font-weight-normal);
   line-height: 2;
   color: var(--gin-color-text-light);
   text-decoration: none;
@@ -124,6 +124,7 @@
   // Hide unused tabs
   .toolbar .toolbar-bar {
     background: transparent;
+    box-shadow: none !important; // fixes an RTL issue
 
     .toolbar-tab {
       &, .toolbar-menu__logo {
@@ -249,6 +250,7 @@
             padding: var(--gin-spacing-s) var(--gin-spacing-m);
             border-radius: var(--gin-border-s);
             font-size: var(--gin-font-size-xs);
+            font-weight: normal;
 
             &:hover, &:active {
               color: var(--gin-color-button-text);
@@ -301,7 +303,7 @@
         &:focus,
         &.is-active,
         &.is-active:hover {
-          font-weight: var(--gin-font-weight-normal);;
+          font-weight: var(--gin-font-weight-normal);
           color: var(--gin-color-text-light);
           background-color: transparent;
 
@@ -375,7 +377,7 @@
           &::before {
             width: var(--gin-icon-size-toolbar-secondary);
             height: var(--gin-icon-size-toolbar-secondary);
-            top: 50%;
+            top: calc(50% - 1px);
             left: 12px;
             transform: translateY(-50%);
           }

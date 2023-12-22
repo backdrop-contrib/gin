@@ -1,9 +1,51 @@
 .action-link,
 .operations > li {
   float: none;
+  color: var(--gin-color-primary);
+  background: transparent;
+  border-radius: var(--gin-border-s);
 
-  &.default a:before,
-  &.enable-default a:before {
+  &:hover {
+    color: var(--gin-color-primary-hover);
+    background: var(--gin-bg-item-hover);
+  }
+
+  &:focus {
+    color: var(--gin-color-primary-active);
+    background: var(--gin-color-primary-light-hover);
+  }
+
+  &.action-link--extrasmall {
+    font-size: var(--gin-font-size-xxs);
+  }
+
+  &:before {
+    background-image: none;
+    background: var(--gin-color-primary) !important;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &--icon-plus:hover:before,
+  &--icon-ex:hover::before,
+  &--icon-checkmark:hover:before,
+  &--icon-show:hover::before,
+  &--icon-cog:hover::before,
+  &--icon-hide:hover::before,
+  &--icon-show:before,
+  &--icon-hide:before {
+    background-image: none;
+    background-color: var(--gin-color-primary);
+  }
+
+  &--icon-plus:before {
+    mask-image: icon('add');
+  }
+
+    &.default a:before,
+    &.enable-default a:before,
+    &--icon-checkmark:before {
     mask-image: icon('checkmark');
   }
 
@@ -80,7 +122,7 @@ a.button.button--danger {
 
     &:before {
       background-image: none;
-      background-color: var(--gin-color-danger);
+      background-color: var(--gin-color-danger) !important;
       mask-image: icon('trash');
     }
   }
@@ -92,7 +134,7 @@ a.button.button--danger {
     background-color: var(--gin-color-danger);
 
     &:before {
-      background-color: var(--gin-bg-layer);
+      background-color: var(--gin-bg-layer) !important;
     }
   }
 }

@@ -31,8 +31,9 @@
 .button,
 .form-actions .button,
 .action-link--icon-trash.action-link {
-  padding: var(--gin-spacing-s) var(--gin-spacing-m);
-  border: 2px solid var(--gin-color-primary);
+  font-size: var(--gin-font-size-s);
+  padding: calc(var(--gin-spacing-s) - 2px) var(--gin-spacing-m);
+  border: 2px solid var(--gin-color-primary) !important;
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
   transition: var(--gin-transition);
@@ -65,7 +66,7 @@ input.button {
 }
 
 .button.button--small {
-  padding: var(--gin-spacing-xs) var(--gin-spacing-m);
+  padding: calc(var(--gin-spacing-xxs) + 2px) var(--gin-spacing-m);
   border-radius: var(--gin-border-s);
 }
 
@@ -140,16 +141,12 @@ a.button-primary,
 }
 
 .action-link.action-link--icon-trash {
-  min-height: 48px;
-  padding: calc(var(--gin-spacing-s) - 1px) calc(var(--gin-spacing-l) - 2px);
+  line-height: 1;
+  min-height: 2.5rem;
   box-sizing: border-box;
 
-  &,
-  &:hover,
-  &:active,
-  &:focus,
-  &:focus:hover {
-    border: 2px solid var(--gin-color-danger-light);
+  &, &:hover, &:active, &:focus, &:focus:hover {
+    border: 2px solid var(--gin-color-danger) !important;
   }
 }
 

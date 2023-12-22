@@ -66,7 +66,7 @@ class GinUserPicture implements ContainerInjectionInterface, TrustedCallbackInte
         '#markup' => $user->getDisplayName(),
       ],
       '#attributes' => [
-        'id' => 'toolbar-item-user',
+        'id' => 'toolbar-item-user-secondary',
         'class' => [
           'toolbar-icon',
           'toolbar-icon-user',

@@ -21,6 +21,7 @@ module.exports = {
     'sidebar': ['./js/sidebar.js'],
     'sticky': ['./js/sticky.js'],
     'tabs': ['./js/tabs.js'],
+    'tableheader': ['./js/tableheader.js'],
     // ################################################
     // CSS
     // ################################################
@@ -46,6 +47,7 @@ module.exports = {
     'components/revisions': ['./styles/components/revisions.scss'],
     'components/settings': ['./styles/components/settings.scss'],
     'components/sidebar': ['./styles/components/sidebar.scss'],
+    'components/tableselect': ['./styles/components/tableselect.scss'],
     'components/tabs': ['./styles/components/tabs.scss'],
     'components/tableselect': ['./styles/components/tableselect.scss'],
     'components/toolbar_secondary': ['./styles/components/toolbar_secondary.scss'],

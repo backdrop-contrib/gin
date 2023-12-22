@@ -110,6 +110,8 @@
   --gin-border-color-table-header: rgba(0, 0, 0, .2);
   --gin-border-color-form-element: #8E929C;
 
+  --size-summary-border-radius: calc(var(--gin-border-m) - 1px);
+
   // Transitions / Animations
   --gin-easing: cubic-bezier(.19, 1, .22, 1);
   --gin-transition: .15s var(--gin-easing);
@@ -125,7 +127,7 @@
                 0 20px 24px rgb(20 45 82 / 12%);
 
   // Sticky bar
-  --gin-height-sticky: 72px;
+  --gin-height-sticky: 60px;
 
   // Toolbar
   --gin-toolbar-width-collapsed: 66px;
@@ -150,6 +152,20 @@
   // Drupal
   --gin-offset-x: var(--gin-toolbar-x-offset);
   --gin-offset-y: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset));
+
+  // Links
+  --gin-link-decoration-style: dotted;
+
+  // Max line length
+  --gin-max-line-length: 80ch;
+
+  // Form fields
+  --input-line-height: var(--gin-spacing-l);
+  --input-padding-horizontal: var(--gin-spacing-s);
+  --input-padding-vertical: var(--gin-spacing-xs);
+
+  // Claro
+  --jui-dialog-z-index: 1260;
 }
 
 // Density spacings
@@ -207,6 +223,9 @@
   --gin-bg-layer3: #47474c;
   --gin-bg-layer4: #19191b;
   --gin-bg-secondary: var(--gin-bg-app);
+
+  // Unpublished
+  --gin-bg-unpublished: var(--gin-bg-warning-light);
 
   // Context
   --gin-color-contextual: var(--gin-bg-layer3);

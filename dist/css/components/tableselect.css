@@ -19,6 +19,7 @@
   border: 0 none;
   border-radius: var(--gin-border-m);
   background: rgba(var(--gin-color-sticky-rgb), .95);
+  padding: var(--gin-spacing-m);
 }
 
 [dir="ltr"] .block-system > .views-form .views-bulk-form,
@@ -31,10 +32,17 @@
   right: 0;
 }
 
+.block-system > .views-form .views-bulk-form > .form-item-action,
+.view-content .views-form .views-bulk-form > .form-item-action {
+  -webkit-padding-before: 0;
+          padding-block-start: 0;
+}
+
 @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
   .block-system > .views-form .views-bulk-form,
   .view-content .views-form .views-bulk-form {
-    opacity: .999; /* Fix Chrome issue with mask */
+    opacity: .999;
+    /* Fix Chrome issue with mask */
     background: rgba(var(--gin-color-sticky-rgb), .9);
     -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
@@ -64,6 +72,7 @@
   position: sticky;
   bottom: var(--gin-spacing-xs);
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, .03);
+  animation: fadeInBottom 320ms 1 forwards;
 }
 
 [dir="ltr"] .block-system > .views-form .views-bulk-form.is-sticky,
@@ -74,5 +83,36 @@
 [dir="rtl"] .block-system > .views-form .views-bulk-form.is-sticky,
 [dir="rtl"] .view-content .views-form .views-bulk-form.is-sticky {
   right: 0;
+}
+
+.block-system > .views-form .views-bulk-form > .form-item,
+.view-content .views-form .views-bulk-form > .form-item {
+  color: var(--gin-color-text);
+  font-weight: var(--gin-font-weight-semibold);
+}
+
+[dir="ltr"] .block-system > .views-form .views-bulk-form > .form-item,
+[dir="ltr"] .view-content .views-form .views-bulk-form > .form-item {
+  margin-right: var(--gin-spacing-xs);
+}
+
+[dir="rtl"] .block-system > .views-form .views-bulk-form > .form-item,
+[dir="rtl"] .view-content .views-form .views-bulk-form > .form-item {
+  margin-left: var(--gin-spacing-xs);
+}
+
+.block-system > .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled),
+.view-content .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled) {
+  background-color: var(--gin-color-primary);
+}
+
+.block-system > .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled):hover,
+.view-content .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled):hover {
+  background-color: var(--gin-color-primary-hover);
+}
+
+.block-system > .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled):active,
+.view-content .views-form .views-bulk-form .button-primary:not(:disabled, .is-disabled):active {
+  background-color: var(--gin-color-primary-active);
 }
 

@@ -5,8 +5,8 @@
  * page.theme
  */
 
-use Drupal\gin\GinContentFormHelper;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\gin\GinContentFormHelper;
 use Drupal\gin\GinSettings;
 use Drupal\node\Entity\Node;
 
@@ -81,6 +81,10 @@ function gin_page_attachments_alter(&$page) {
       // Attach the horizontal toolbar styles.
       $page['#attached']['library'][] = 'gin/gin_horizontal_toolbar';
     }
+    elseif ($toolbar === 'new') {
+      // Attach the new drupal navigation styles.
+      $page['#attached']['library'][] = 'gin/navigation';
+    }
     else {
       // Attach toolbar styles.
       $page['#attached']['library'][] = 'gin/gin_toolbar';
@@ -118,12 +122,6 @@ function gin_page_attachments_alter(&$page) {
     $page['#attached']['drupalSettings']['gin']['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
     $page['#attached']['drupalSettings']['gin']['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
     $page['#attached']['drupalSettings']['gin']['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
-
-    // Expose default settings to JS.
-    $page['#attached']['drupalSettings']['gin']['default_darkmode'] = $settings->getDefault('enable_darkmode');
-    $page['#attached']['drupalSettings']['gin']['default_accent_color'] = $settings->getDefault('accent_color');
-    $page['#attached']['drupalSettings']['gin']['default_preset_accent_color'] = $settings->getDefault('preset_accent_color');
-    $page['#attached']['drupalSettings']['gin']['default_high_contrast_mode'] = $settings->getDefault('high_contrast_mode');
   }
 }
 

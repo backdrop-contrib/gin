@@ -7,8 +7,9 @@
 // Attach custom library.
 backdrop_add_library('gin', 'gin_settings');
 
-$experimental_label = ' (EXPERIMENTAL)';
-$beta_label = ' (BETA)';
+$experimental_label = ' <span class="gin-experimental-flag">Experimental</span>';
+$beta_label = ' <span class="gin-beta-flag">Beta</span>';
+$new_label = ' <span class="gin-new-flag">New</span>';
 
 // Darkmode.
 $form['enable_darkmode'] = array(

@@ -20,6 +20,15 @@
  * @see template_preprocess_toolbar()
  */
 #}
+
+{# Prevent duplicate ids by using secondary tabs and trays when provided. #}
+{% if _context['#secondary']['tabs'] %}
+  {% set tabs = _context['#secondary']['tabs'] %}
+{% endif %}
+{% if _context['#secondary']['trays'] %}
+  {% set trays = _context['#secondary']['trays'] %}
+{% endif %}
+
 <div{{ attributes.addClass('toolbar', 'toolbar-secondary').setAttribute('id', 'toolbar-administration-secondary') }}>
   <nav{{ toolbar_attributes.addClass('toolbar-bar', 'clearfix').setAttribute('id', 'toolbar-bar') }}>
     <h2 class="visually-hidden">{{ toolbar_heading }}</h2>
@@ -44,7 +53,7 @@
 
       {# All items except main nav #}
       {% if item_id[0] not in denylist_items %}
-        <div{{ tab.attributes.addClass(tab_classes) }}>
+        <div{{ tab.attributes.addClass(tab_classes) }}{% if 'tour-toolbar-tab' in tab.attributes.class %} id="toolbar-tab-tour"{% endif %}>
           {% if item_id[0] == 'toolbar-id--toolbar-icon-user' %}
             {{ user_picture }}
           {% else %}

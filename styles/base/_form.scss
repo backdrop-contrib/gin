@@ -1,5 +1,3 @@
-$maxWidth: 520px;
-
 .form-actions {
   display: flex;
   flex-flow: row;
@@ -28,7 +26,9 @@ $maxWidth: 520px;
 .form-time,
 .form-search {
   color: var(--gin-color-text);
-  padding: var(--gin-spacing-s) var(--gin-spacing-m);
+  line-height: var(--input-line-height);
+  padding: calc(var(--input-padding-vertical) - 1px) var(--input-padding-horizontal);
+  min-height: calc((var(--input-padding-vertical) * 2) + var(--input-line-height));
   background-color: var(--gin-bg-input);
   border: 1px solid var(--gin-border-color-form-element);
   border-radius: var(--gin-border-m);
@@ -133,7 +133,7 @@ $maxWidth: 520px;
 
 .password-confirm {
   width: 100%;
-  max-width: $maxWidth;
+  max-width: var(--gin-max-line-length);
 }
 
 .password-strength {
@@ -228,7 +228,7 @@ $maxWidth: 520px;
 }
 
 // Single Checkbox: show as toggle
-:not(.form-checkboxes):not(td):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox {
   position: relative;
   margin-left: 0;
 
@@ -360,6 +360,11 @@ $maxWidth: 520px;
     padding-bottom: 0;
     color: var(--gin-color-text);
   }
+}
+
+// Correctly align bulk action checkboxes when used in combination with tabledrag
+table:has(.tabledrag-cell-content__item .form-checkbox) th.select-all .form-checkbox {
+  margin-left: calc(var(--tabledrag-handle-icon-size, calc(17rem / 16)) + var(--gin-spacing-m));
 }
 
 .form-radio,
@@ -514,7 +519,7 @@ label.option,
 }
 
 .description {
-  max-width: $maxWidth;
+  max-width: var(--gin-max-line-length);
   color: var(--gin-color-text-light);
   margin-left: 0;
   margin-top: calc(6rem / 16);
@@ -671,4 +676,9 @@ tr .form-item {
     background-color: transparent;
     border: none;
   }
+}
+
+// Length indicator
+.length-indicator {
+  margin-bottom: var(--gin-spacing-l);
 }

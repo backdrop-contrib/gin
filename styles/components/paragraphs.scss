@@ -1,4 +1,8 @@
 .paragraphs-tabs-wrapper {
+  .gin-table-scroll-wrapper {
+    overflow: initial;
+  }
+
   tr {
 
     &:hover,
@@ -125,6 +129,11 @@
     margin-top: var(--gin-spacing-xs);
     margin-bottom: var(--gin-spacing-xs);
   }
+
+  &.button--small {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .paragraphs-dropdown-toggle {
@@ -158,6 +167,10 @@
       background-color: var(--gin-color-primary);
     }
   }
+}
+
+.field--widget-paragraphs .paragraphs-tabs-wrapper .field-multiple-table tr[class*="paragraph-type--"] {
+  margin-top: var(--gin-spacing-m);
 }
 
 html.js .field--widget-entity-reference-paragraphs,
@@ -216,7 +229,7 @@ html.js .field--widget-paragraphs .paragraphs-dropbutton-wrapper .dropbutton-mul
 
 html.js .field--widget-paragraphs th .paragraphs-actions .paragraphs-dropdown {
   top: 0;
-  right: calc(var(--gin-spacing-xxs) * -1);
+  right: var(--gin-spacing-xxs);
 }
 
 .paragraphs-dropdown-actions {
@@ -295,7 +308,7 @@ html.js .paragraph-type-icon {
   }
 
   &__icon {
-    top: var(--gin-spacing-xs);
+    top: calc(var(--gin-spacing-xxs) / 2);
   }
 }
 

@@ -274,3 +274,9 @@
     }
   }
 }
+
+input[data-gin-toolbar="new"] + label .gin-new-flag {
+  position: absolute;
+  top: -100px;
+  right: 8px;
+}
