@@ -47,6 +47,9 @@
       })), document.querySelector('input[name="high_contrast_mode"]').addEventListener("change", (e => {
         const highContrastMode = e.currentTarget.matches(":checked");
         this.setHighContrastMode(highContrastMode);
+      })), document.querySelector('input[name="max_width_mode"]').addEventListener("change", (e => {
+        const setMaxWidthMode = e.currentTarget.matches(":checked");
+        this.setMaxWidthMode(setMaxWidthMode);
       })), document.querySelector("#edit-submit").addEventListener("click", (() => {
         localStorage.setItem("Backdrop.gin.darkmode", "");
       }));
@@ -65,6 +68,12 @@
       let param = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
       const enabled = null != param ? param : Backdrop.settings.gin.highcontrastmode, className = Backdrop.settings.gin.highcontrastmode_class;
       !0 === enabled || 1 === enabled ? document.body.classList.add(className) : document.body.classList.remove(className);
+    },
+    setMaxWidthMode: function() {
+      let param = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : null;
+      const enabled = null != param ? param : Backdrop.settings.gin.max_width_mode, className = Backdrop.settings.gin.max_width_class;
+      var layoutElement = document.querySelector("div.layout");
+      !0 === enabled || 1 === enabled ? layoutElement.classList.add(className) : layoutElement.classList.remove(className);
     }
   };
 })(Backdrop);

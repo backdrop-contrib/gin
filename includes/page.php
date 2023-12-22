@@ -106,6 +106,8 @@ function gin_preprocess_page(&$variables) {
   $settings['accent_color'] = $config->get('accent_color');
   $settings['preset_focus_color'] = $config->get('preset_focus_color');
   $settings['focus_color'] = $config->get('focus_color');
+  $settings['max_width_mode'] = $config->get('max_width_mode');
+  $settings['max_width_class'] = 'container';
   $settings['highcontrastmode'] = $config->get('high_contrast_mode');
   $settings['highcontrastmode_class'] = 'gin--high-contrast-mode';
   $settings['toolbar_variant'] = $config->get('classic_toolbar');

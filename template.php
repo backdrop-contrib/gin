@@ -26,6 +26,9 @@ function gin_preprocess_layout(&$variables) {
   if (config_get('admin_bar.settings', 'position_fixed')) {
     $variables['classes'][] = 'admin-bar--fixed';
   }
+  if (theme_get_setting('max_width_mode', 'gin')) {
+    $variables['classes'][] = 'container';
+  }
 }
 
 /**

@@ -147,6 +147,14 @@ $form['edit_form_sidebar'] = [
   '#default_value' => theme_get_setting('edit_form_sidebar', 'gin'),
 ];
 
+// Contained width option.
+$form['max_width_mode'] = [
+  '#type' => 'checkbox',
+  '#title' => t('Max width on layout'),
+  '#description' => t('Set the <em>.container</em> class on the main layout element to enforce a max width.'),
+  '#default_value' => theme_get_setting('max_width_mode', 'gin'),
+];
+
 // Toolbar setting.
 // $form['classic_toolbar'] = [
 //   '#type' => 'radios',
