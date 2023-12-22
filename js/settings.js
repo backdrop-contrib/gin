@@ -117,7 +117,7 @@
         Backdrop.ginAccent.setCustomFocusColor(focusColorSetting);
       });
 
-      // Watch Hight contrast mode setting has changed.
+      // Watch High contrast mode setting has changed.
       document.querySelector('input[name="high_contrast_mode"]').addEventListener('change', e => {
         const highContrastMode = e.currentTarget.matches(':checked');
 
@@ -125,7 +125,15 @@
         this.setHighContrastMode(highContrastMode);
       });
 
-      // Watch save
+      // Watch Max width setting has changed.
+      document.querySelector('input[name="max_width_mode"]').addEventListener('change', e => {
+        const setMaxWidthMode = e.currentTarget.matches(':checked');
+
+        // Update.
+        this.setMaxWidthMode(setMaxWidthMode);
+      });
+
+      // Watch save.
       document.querySelector('#edit-submit').addEventListener('click', () => {
         // Reset darkmode localStorage.
         localStorage.setItem('Backdrop.gin.darkmode', '');
@@ -174,6 +182,20 @@
       }
       else {
         document.body.classList.remove(className);
+      }
+    },
+
+    setMaxWidthMode: function (param = null) {
+      const enabled = param != null ? param : Backdrop.settings.gin.max_width_mode;
+      const className = Backdrop.settings.gin.max_width_class;
+
+      var layoutElement = document.querySelector("div.layout");
+
+      if (enabled === true || enabled === 1) {
+        layoutElement.classList.add(className);
+      }
+      else {
+        layoutElement.classList.remove(className);
       }
     },
 
