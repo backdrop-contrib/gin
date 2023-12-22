@@ -285,7 +285,7 @@ function _gin_admin_list($content, $empty_message = '') {
       $output .= l($item['title'], $item['href'], $item['localized_options']);
       $output .= '<dt class="admin-item__title">' . $item['title'] . '</dt>';
       if (isset($item['description'])) {
-        $desc = check_markup($item['description']);
+        $desc = filter_xss_admin($item['description']);
         $item['localized_options']['attributes']['title'] = $desc;
         $output .= '<dd class="admin-item__description">' . $desc . '</dd>';
       }
