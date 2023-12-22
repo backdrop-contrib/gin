@@ -30,7 +30,7 @@ module.exports = {
     'components/ajax': ['./styles/components/ajax.scss'],
     'components/autocomplete': ['./styles/components/autocomplete.scss'],
     'components/breadcrumb': ['./styles/components/breadcrumb.scss'],
-    'components/chosen': ['./styles/components/chosen.scss'],
+    'components/chosenjs': ['./styles/components/chosenjs.scss'],
     'components/ckeditor': ['./styles/components/ckeditor.scss'],
     'components/coffee': ['./styles/components/coffee.scss'],
     'components/contextual_links': ['./styles/components/contextual_links.scss'],

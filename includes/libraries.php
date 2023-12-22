@@ -289,7 +289,7 @@ function gin_library_info() {
     'title' => 'Chosen',
     'version' => BACKDROP_VERSION,
     'css' => array(
-      $basethemeurl . '/dist/css/components/chosen.css' => array(),
+      $basethemeurl . '/dist/css/components/chosenjs.css' => array(),
     ),
   );
 
