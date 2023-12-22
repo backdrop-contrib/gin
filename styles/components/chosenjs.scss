@@ -12,6 +12,7 @@
         display: block;
         line-height: 1.5rem;
         padding: calc(var(--gin-spacing-s) - 1px) calc(var(--gin-spacing-m) - 1px);
+        color: inherit;
 
         b {
             background: none !important;
@@ -27,5 +28,6 @@
         border: 0 none;
         background: none;
         box-shadow: none;
+        color: inherit;
     }
 }
