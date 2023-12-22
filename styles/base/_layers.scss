@@ -62,7 +62,8 @@
 
 .gin-layer-wrapper {
   &:has(> .view),
-  &:has(> .admin-list) {
+  &:has(> .admin-list),
+  &:has(> .admin) {
     border: none;
     padding: 0;
     background: none;

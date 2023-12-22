@@ -490,7 +490,7 @@ body:not(.toolbar-tray-open) .layout-container {
   margin-top: 0;
 }
 
-.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> .admin-list) {
+.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> .admin-list), .gin-layer-wrapper:has(> .admin) {
   border: none;
   padding: 0;
   background: none;
