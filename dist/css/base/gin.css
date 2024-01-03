@@ -564,7 +564,7 @@ body:not(.toolbar-tray-open) .layout-container {
   margin-top: 0;
 }
 
-.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> .admin-list), .gin-layer-wrapper:has(> .admin) {
+.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> .views-admin), .gin-layer-wrapper:has(> .admin-list), .gin-layer-wrapper:has(> .admin) {
   border: none;
   padding: 0;
   background: none;
@@ -949,8 +949,12 @@ details summary {
 }
 
 .views-edit-view h1.unit-title {
-  margin-top: 0;
-  margin-bottom: var(--gin-spacing-m);
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: var(--gin-spacing-m);
+          margin-block-end: var(--gin-spacing-m);
+  -webkit-padding-before: 0;
+          padding-block-start: 0;
 }
 
 #views-ui-preview-form > div > div,
@@ -1342,6 +1346,15 @@ a.views-field-excluded {
 
 .views-filterable-options {
   border-top: none;
+}
+
+.views-filterable-options .form-type-checkbox {
+  border: var(--gin-border-color);
+}
+
+.views-filterable-options .even .form-type-checkbox {
+  background-color: var(--gin-bg-layer2);
+  border: var(--gin-border-color-layer2);
 }
 
 .view-block-content .views-table {

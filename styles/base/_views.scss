@@ -104,8 +104,9 @@
   margin-bottom: 0.9375rem;
 
   h1.unit-title {
-    margin-top: 0;
-    margin-bottom: var(--gin-spacing-m);
+    margin-block-start: 0;
+    margin-block-end: var(--gin-spacing-m);
+    padding-block-start: 0;
     @extend h2;
   }
 }
@@ -478,6 +479,15 @@ a.views-field-excluded {
 
 .views-filterable-options {
   border-top: none;
+
+  .form-type-checkbox {
+    border: var(--gin-border-color);
+  }
+
+  .even .form-type-checkbox {
+    background-color: var(--gin-bg-layer2);
+    border: var(--gin-border-color-layer2);
+  }
 }
 
 .view-block-content .views-table {
