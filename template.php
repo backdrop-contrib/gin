@@ -76,7 +76,7 @@ function gin_menu_local_action($variables) {
     'button-primary',
   );
   if (!empty($link['localized_options']['attributes']['class']) && is_array($link['localized_options']['attributes']['class'])) {
-    $link['localized_options']['attributes']['class'][] += $classes;
+    $link['localized_options']['attributes']['class'] += $classes;
   }
   else {
     $link['localized_options']['attributes']['class'] = $classes;
