@@ -5961,6 +5961,20 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
   display: none;
 }
 
+.layout-block-list-wrapper {
+  border: none;
+}
+
+.layout-block-add-row.form-item {
+  padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
+  border-top: 1px solid var(--gin-border-color);
+  border-bottom: none;
+}
+
+.layout-block-add-row.odd {
+  background-color: transparent;
+}
+
 #user-admin-permissions .search-reset {
   line-height: inherit;
 }
