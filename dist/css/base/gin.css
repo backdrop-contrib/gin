@@ -1340,6 +1340,17 @@ details summary {
   margin-left: var(--gin-spacing-xxs);
 }
 
+.views-ui-dialog .views-add-form-selected {
+  background-color: var(--gin-bg-app);
+  border-bottom: 0 none;
+  font-size: var(--gin-font-size-s);
+  font-weight: var(--gin-font-weight-semibold);
+}
+
+.views-ui-dialog .views-add-form-selected .views-selected-options {
+  font-weight: var(--gin-font-weight-normal);
+}
+
 a.views-field-excluded {
   color: var(--gin-color-disabled);
 }
@@ -1349,12 +1360,20 @@ a.views-field-excluded {
 }
 
 .views-filterable-options .form-type-checkbox {
-  border: var(--gin-border-color);
+  border: none;
 }
 
 .views-filterable-options .even .form-type-checkbox {
-  background-color: var(--gin-bg-layer2);
-  border: var(--gin-border-color-layer2);
+  background-color: transparent;
+}
+
+.views-filterable-options .filterable-option {
+  padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
+  border-top: 1px solid var(--gin-border-color);
+}
+
+.views-filterable-options .filterable-option > .form-item {
+  padding: 0;
 }
 
 .view-block-content .views-table {
@@ -2380,19 +2399,19 @@ table td.field-plugin-summary-cell {
   background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%2382828c'/%3e%3c/svg%3e");
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox {
   position: relative;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox {
   margin-left: 0;
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox {
   margin-right: 0;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle {
   z-index: 0;
   display: inline-block;
   vertical-align: top;
@@ -2402,7 +2421,7 @@ table td.field-plugin-summary-cell {
   box-sizing: border-box;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner {
   position: relative;
   display: block;
   width: 100%;
@@ -2416,19 +2435,19 @@ table td.field-plugin-summary-cell {
   box-sizing: border-box;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner {
   text-align: left;
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner {
   text-align: right;
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner {
   background-color: var(--gin-bg-input);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner:before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -2438,19 +2457,19 @@ table td.field-plugin-summary-cell {
   transition: transform .3s;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner:before {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner:before {
   transform: translateX(-16px);
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner:before {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner:before {
   transform: translateX(16px);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox .checkbox-toggle__inner:before {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox .checkbox-toggle__inner:before {
   background-color: var(--gin-border-color-form-element);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   position: absolute !important;
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
@@ -2465,90 +2484,90 @@ table td.field-plugin-summary-cell {
   z-index: 1;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   margin-left: 0;
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   margin-right: 0;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:hover, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:focus, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:active, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:hover:focus, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:active:focus {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:hover, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:focus, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:active, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:hover:focus, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:active:focus {
   outline: none;
   box-shadow: none;
   border: none;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:hover ~ .checkbox-toggle {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:hover ~ .checkbox-toggle {
   opacity: .9;
   box-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle {
   border-color: var(--gin-color-primary-light-active);
 }
 
-.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle {
+.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle {
   border-color: var(--gin-border-color);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner {
   background-color: var(--gin-switch);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner {
   background-color: var(--gin-color-primary-light-active);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
   background-color: #fff;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
   transform: translateX(16px);
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
   transform: translateX(-16px);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
   background-color: var(--gin-color-primary-hover);
 }
 
-.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
+.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked ~ .checkbox-toggle .checkbox-toggle__inner:before {
   background-color: var(--gin-border-color);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:active ~ .checkbox-toggle .checkbox-toggle__inner, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:focus ~ .checkbox-toggle .checkbox-toggle__inner {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:active ~ .checkbox-toggle .checkbox-toggle__inner, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:focus ~ .checkbox-toggle .checkbox-toggle__inner {
   box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled {
   cursor: not-allowed;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled ~ .checkbox-toggle, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled ~ .checkbox-toggle:hover, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle .checkbox-toggle__inner, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle:hover .checkbox-toggle__inner {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled ~ .checkbox-toggle, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled ~ .checkbox-toggle:hover, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle .checkbox-toggle__inner, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle:hover .checkbox-toggle__inner {
   background-color: var(--gin-color-disabled);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled ~ .checkbox-toggle::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled ~ .checkbox-toggle:hover::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle .checkbox-toggle__inner::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle:hover .checkbox-toggle__inner::before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled ~ .checkbox-toggle::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled ~ .checkbox-toggle:hover::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle .checkbox-toggle__inner::before, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled:checked ~ .checkbox-toggle:hover .checkbox-toggle__inner::before {
   background-color: #fff;
   opacity: .4;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox label {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
   z-index: 1;
   position: relative;
   padding-bottom: 0;
   color: var(--gin-color-text);
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox label {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
   padding-left: var(--gin-spacing-xxs);
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content) > .form-type-checkbox label {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
   padding-right: var(--gin-spacing-xxs);
 }
 
@@ -5944,6 +5963,11 @@ fieldset.collapsible.collapsed .fieldset-legend .fieldset-title {
 
 #user-admin-permissions .search-reset {
   line-height: inherit;
+}
+
+#user-admin-permissions .table-filter {
+  background-color: transparent;
+  border: none;
 }
 
 /* Views Bulk Operations */

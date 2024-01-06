@@ -471,6 +471,16 @@
     display: inline-block;
     margin-right: var(--gin-spacing-xxs);
   }
+
+  .views-add-form-selected {
+    background-color: var(--gin-bg-app);
+    border-bottom: 0 none;
+    font-size: var(--gin-font-size-s);
+    font-weight: var(--gin-font-weight-semibold);
+    .views-selected-options {
+      font-weight: var(--gin-font-weight-normal);
+    }
+  }
 }
 
 a.views-field-excluded {
@@ -481,12 +491,19 @@ a.views-field-excluded {
   border-top: none;
 
   .form-type-checkbox {
-    border: var(--gin-border-color);
+    border: none;
   }
 
   .even .form-type-checkbox {
-    background-color: var(--gin-bg-layer2);
-    border: var(--gin-border-color-layer2);
+    background-color: transparent;
+  }
+
+  .filterable-option {
+    padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
+    border-top: 1px solid var(--gin-border-color);
+    > .form-item {
+      padding: 0;
+    }
   }
 }
 

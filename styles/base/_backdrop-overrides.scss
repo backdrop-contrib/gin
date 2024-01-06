@@ -560,8 +560,14 @@ fieldset.collapsible.collapsed {
   }
 }
 
-#user-admin-permissions .search-reset {
-  line-height: inherit;
+#user-admin-permissions {
+  .search-reset {
+    line-height: inherit;
+  }
+  .table-filter {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 /* Views Bulk Operations */
