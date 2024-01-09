@@ -564,16 +564,15 @@ fieldset.collapsible.collapsed {
   border: none;
 }
 
-.layout-block-add-row {
-  &.form-item {
-    padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
-    border-top: 1px solid var(--gin-border-color);
-    border-bottom: none;
-  }
+.layout-block-add-row.form-item,
+.system-status-report td {
+  padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
+  border-top: 1px solid var(--gin-border-color);
+  border-bottom: none;
+}
 
-  &.odd {
-    background-color: transparent;
-  }
+.layout-block-add-row.odd {
+  background-color: transparent;
 }
 
 #user-admin-permissions {
