@@ -6082,6 +6082,10 @@ fieldset.vbo-fieldset-select-all > .fieldset-wrapper {
   opacity: .5;
 }
 
+.item-list .pager li {
+  display: inline-block;
+}
+
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-m);

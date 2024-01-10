@@ -685,3 +685,11 @@ fieldset.vbo-fieldset-select-all {
     }
   }
 }
+
+.item-list {
+  .pager {
+    li {
+      display: inline-block;
+    }
+  }
+}
