@@ -1,9 +1,13 @@
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
-  border-radius: var(--gin-border-l);
-  border: none;
+  border-radius: var(--gin-border-m);
+  border: 1px dashed var(--gin-border-color-form-element);
   margin: .5rem .5rem .75rem .5rem;
   background-color: var(--gin-bg-app);
+
+  .layout-flexible-editor & {
+    border: 1px solid var(--gin-border-color);
+  }
 }
 
 .layout-editor-block-title {
@@ -25,9 +29,11 @@
 
 .layout-editor-block-content {
   background-color: var(--gin-bg-layer);
-  border-end-end-radius: var(--gin-border-m);
-  border-end-start-radius: var(--gin-border-m);
-  border-color: var(--gin-border-color);
+  border: none;
+
+  p {
+    color: var(--gin-color-text-light);
+  }
 
   .layout-flexible-editor & {
     border-radius: var(--gin-border-m);
@@ -35,9 +41,9 @@
 }
 
 .layout-editor-region {
-  border: 2px dashed var(--gin-border-color-form-element);
+  border: 1px solid var(--gin-border-color);
   background-color: var(--gin-bg-app);
-  border-radius: var(--gin-border-l);
+  border-radius: var(--gin-border-m);
 }
 
 .layout-content-form {
@@ -69,20 +75,26 @@
     margin-bottom: 0;
   }
 
+  .layout-editor-region-title {
+    .label {
+      color: var(--gin-color-text);
+    }
+  }
+
   .flexible-row {
     border: none;
     box-shadow: none;
 
     > div:first-child {
-      border: 1px solid var(--gin-border-color-form-element);
+      border: 1px dashed var(--gin-border-color-form-element);
       border-radius: var(--gin-border-m);
     }
 
     .l-flexible-row {
       margin: 0;
       padding: var(--gin-spacing-m);
-      background: #fff;
-      border-radius: 0 0 var(--gin-border-l) var(--gin-border-l);
+      background: var(--gin-bg-app);
+      border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
     }
 
     &:hover {
