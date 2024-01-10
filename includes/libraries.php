@@ -70,7 +70,8 @@ function gin_library_info() {
     'title' => 'Dialog',
     'version' => BACKDROP_VERSION,
     'css' => array(
-      $basethemeurl . '/dist/css/components/dialog.css' => array(),
+      $basethemeurl . '/dist/css/components/gin_dialog.css' => array(),
+      $basethemeurl . '/dist/css/theme/dialog.css' => array(),
     ),
   );
 

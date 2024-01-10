@@ -13,7 +13,7 @@ gin_base:
       dist/css/theme/variables.css: { minified: false }
   dependencies:
     - gin/tabs
-    - gin/dialog
+    - gin/gin_dialog
 
 # Legacy
 gin_ckeditor:
@@ -182,10 +182,10 @@ contextual_links:
     theme:
       dist/css/components/contextual_links.css: { minified: false, weight: 99 }
 
-dialog:
+gin_dialog:
   css:
     theme:
-      dist/css/components/dialog.css: { minified: false, weight: 99 }
+      dist/css/components/gin_dialog.css: { minified: false, weight: 99 }
 
 ckeditor:
   js:

@@ -8,6 +8,7 @@ stylesheets[all][] = dist/css/theme/variables.css
 ; stylesheets[all][] = dist/css/theme/accent.css
 stylesheets[all][] = dist/css/theme/font.css
 stylesheets[all][] = dist/css/base/gin.css
+stylesheets[all][] = dist/css/components/gin_dialog.css
 ; stylesheets[all][] = dist/css/component/ckeditor.css
 stylesheets[all][] = dist/css/components/breadcrumb.css
 stylesheets[all][] = dist/css/components/tabs.css

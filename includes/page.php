@@ -59,7 +59,6 @@ function gin_preprocess_page(&$variables) {
   backdrop_add_library('gin', 'gin_sticky');
   backdrop_add_library('gin', 'gin_tableselect');
   backdrop_add_library('gin', 'gin_ckeditor');
-  backdrop_add_library('gin', 'gin_dialog');
 
   // Modules
   if (module_exists('dashboard')) {
