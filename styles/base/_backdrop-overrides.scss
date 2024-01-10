@@ -579,6 +579,7 @@ fieldset.collapsible.collapsed {
   .search-reset {
     line-height: inherit;
   }
+
   .table-filter {
     background-color: transparent;
     border: none;
@@ -596,4 +597,91 @@ fieldset.vbo-fieldset-select-all {
 .machine-name {
   color: var(--gin-color-text-light);
   font-size: var(--gin-font-size-s);
+}
+
+/* Image Library */
+.image-library-choose-file {
+  border: none;
+  background: transparent;
+  margin: 5px;
+  padding: 5px;
+  height: auto;
+  border-radius: var(--gin-border-m);
+
+  .image-library-filename {
+    position: relative;
+    color: var(--gin-color-text);
+    word-break: break-all;
+    text-overflow: initial;
+    white-space: initial;
+    overflow: visible;
+    margin: 0;
+    max-width: 100%;
+    max-height: none;
+    font-size: var(--gin-font-size-m);
+    display: block;
+  }
+
+  .image-wrap {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--gin-border-m);
+    border: 3px solid transparent;
+    transition: var(--gin-transition-fast);
+    display: flex;
+
+    img {
+      object-fit: cover;
+      object-position: center center;
+      min-width: calc(100% + 6px);
+      max-width: calc(100% + 6px);
+      max-height: calc(100% + 6px);
+      aspect-ratio: 1;
+      position: inherit;
+      box-shadow: none;
+      background-color: var(--gin-bg-layer);
+      transition: var(--gin-transition-fast);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border: none;
+
+    .image-wrap {
+      border-color: var(--gin-color-primary-hover);
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  &.image-library-image-selected {
+    background: none;
+    border: none;
+    .image-wrap {
+      border-color: var(--gin-color-primary-active);
+      opacity: 1;
+    }
+  }
+}
+
+.view-image-library.view-display-id-default {
+  > .view-filters {
+    .views-exposed-form {
+      margin-bottom: 0;
+    }
+  }
+  > .view-content {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 0;
+
+    &:has(.image-library-image-selected) {
+      .image-library-choose-file:not(.image-library-image-selected) {
+        opacity: .5;
+      }
+    }
+  }
 }
