@@ -706,3 +706,10 @@ table.feeds-admin-importers tr.disabled.odd,
 table.feeds-admin-importers tr.disabled.even {
   border-color: var(--gin-color-disabled-border);
 }
+div.feeds-container.plain {
+  background-color: transparent;
+  border-color: var(--gin-border-color);
+}
+div.left-bar {
+  border-color: var(--gin-border-color);
+}
