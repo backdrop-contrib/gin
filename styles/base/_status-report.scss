@@ -45,6 +45,15 @@
   mask-size: 20px 20px;
 }
 
+.admin-dblog .dblog-error.even:not(:hover),
+.admin-dblog .dblog-error.odd:not(:hover) {
+  background-color: transparent;
+
+  .active {
+    background-color: transparent;
+  }
+}
+
 .system-status-counter,
 .upgrade-status-counter {
   height: auto;

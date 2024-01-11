@@ -4842,6 +4842,16 @@ tr.color-error:focus,
           mask-size: 20px 20px;
 }
 
+.admin-dblog .dblog-error.even:not(:hover),
+.admin-dblog .dblog-error.odd:not(:hover) {
+  background-color: transparent;
+}
+
+.admin-dblog .dblog-error.even:not(:hover) .active,
+.admin-dblog .dblog-error.odd:not(:hover) .active {
+  background-color: transparent;
+}
+
 .system-status-counter,
 .upgrade-status-counter {
   height: auto;
