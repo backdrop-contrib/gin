@@ -33,6 +33,7 @@ module.exports = {
     'components/breadcrumb': ['./styles/components/breadcrumb.scss'],
     'components/chosenjs': ['./styles/components/chosenjs.scss'],
     'components/ckeditor': ['./styles/components/ckeditor.scss'],
+    'components/ckeditor5': ['./styles/components/ckeditor5.scss'],
     'components/coffee': ['./styles/components/coffee.scss'],
     'components/contextual_links': ['./styles/components/contextual_links.scss'],
     'components/description_toggle': ['./styles/components/description_toggle.scss'],

@@ -212,6 +212,14 @@ function gin_library_info() {
     ),
   );
 
+  $libraries['gin_ckeditor5'] = array(
+    'title' => 'CKEditor5',
+    'version' => BACKDROP_VERSION,
+    'css' => array(
+      $basethemeurl . '/dist/css/components/ckeditor5.css' => array(),
+    ),
+  );
+
   $libraries['gin_ajax'] = array(
     'title' => 'Ajax',
     'version' => BACKDROP_VERSION,

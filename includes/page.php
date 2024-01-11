@@ -58,11 +58,16 @@ function gin_preprocess_page(&$variables) {
   backdrop_add_library('gin', 'gin_accent');
   backdrop_add_library('gin', 'gin_sticky');
   backdrop_add_library('gin', 'gin_tableselect');
-  backdrop_add_library('gin', 'gin_ckeditor');
 
   // Modules
   if (module_exists('dashboard')) {
     backdrop_add_library('gin', 'gin_dashboard');
+  }
+  if (module_exists('ckeditor')) {
+    backdrop_add_library('gin', 'gin_ckeditor');
+  }
+  if (module_exists('ckeditor5')) {
+    backdrop_add_library('gin', 'gin_ckeditor5');
   }
   if (module_exists('coffee')) {
     backdrop_add_library('gin', 'gin_coffee');
