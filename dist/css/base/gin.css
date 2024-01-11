@@ -6086,6 +6086,18 @@ fieldset.vbo-fieldset-select-all > .fieldset-wrapper {
   display: inline-block;
 }
 
+/* Feeds UI */
+
+table.feeds-admin-importers tr.disabled.odd,
+table.feeds-admin-importers tr.disabled.even {
+  background-color: var(--gin-color-disabled-bg);
+}
+
+table.feeds-admin-importers tr.disabled.odd,
+table.feeds-admin-importers tr.disabled.even {
+  border-color: var(--gin-color-disabled-border);
+}
+
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-m);

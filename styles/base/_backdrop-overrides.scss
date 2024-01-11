@@ -1,5 +1,8 @@
 /* Backdrop system overrides, Claro insertions, etc. */
 
+// Periodically it may be good to pull out sections that got too large and
+// deserve their own files.
+
 // Default variables (may need adjustment later).
 :root {
   --line-height: 1.5;
@@ -692,4 +695,14 @@ fieldset.vbo-fieldset-select-all {
       display: inline-block;
     }
   }
+}
+
+/* Feeds UI */
+table.feeds-admin-importers tr.disabled.odd,
+table.feeds-admin-importers tr.disabled.even {
+  background-color: var(--gin-color-disabled-bg);
+}
+table.feeds-admin-importers tr.disabled.odd,
+table.feeds-admin-importers tr.disabled.even {
+  border-color: var(--gin-color-disabled-border);
 }
