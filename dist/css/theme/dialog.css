@@ -305,6 +305,7 @@
 .ui-dialog .file-remove-button {
   border: 2px solid var(--gin-color-danger) !important;
   background-color: var(--gin-color-danger-light);
+  color: #000;
 }
 
 [dir="ltr"] .ui-dialog .button-danger,
