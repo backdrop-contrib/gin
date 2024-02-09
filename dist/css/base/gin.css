@@ -3086,8 +3086,8 @@ a.button-primary, a.button-primary:hover, a.button-primary:active, a.button-prim
 a.form-delete,
 .form-actions a.form-delete,
 .file-remove-button {
-  border: 2px solid var(--gin-color-danger-light);
-  color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  background-color: var(--gin-color-danger-light);
 }
 
 [dir="ltr"] .button-danger,
@@ -3116,7 +3116,7 @@ a.form-delete:hover,
 .file-remove-button:focus,
 .file-remove-button:hover {
   background-color: var(--gin-color-danger);
-  border: 2px solid var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger-light);
   color: #fff;
 }
 

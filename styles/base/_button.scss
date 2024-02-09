@@ -165,14 +165,14 @@ a.form-delete,
 .form-actions a.form-delete,
 .file-remove-button {
 
-  border: 2px solid var(--gin-color-danger-light);
-  color: var(--gin-color-danger);
+  border: 2px solid var(--gin-color-danger) !important;
+  background-color: var(--gin-color-danger-light);
   box-shadow: .1em .25em .5em var(--gin-color-danger-lightest);
 
   &:focus,
   &:hover {
     background-color: var(--gin-color-danger);
-    border: 2px solid var(--gin-color-danger);
+    border: 2px solid var(--gin-color-danger-light);
     color: #fff;
   }
 }
