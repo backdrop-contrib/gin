@@ -35,6 +35,7 @@
           color: var(--gin-color-primary-active);
           background-color: transparent;
         }
+
         strong {
           color: var(--gin-color-primary-active);
         }
@@ -58,8 +59,10 @@
     }
   }
 }
+
 .vertical-tab-link {
   color: var(--gin-color-primary);
+
   .summary {
     color: var(--gin-color-text);
   }
@@ -472,7 +475,74 @@
 
 .vertical-tabs {
   &-panes {
-    padding-top: var(--gin-spacing-l);
+    padding-block-start: var(--gin-spacing-l);
+
+    @include mq($to: medium) {
+      border-block-end: 1px solid var(--gin-border-color);
+    }
+
+  }
+
+  &-pane {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-block-end: 1px solid var(--gin-border-color);
+    border-radius: 0;
+
+    @include mq(medium) {
+      position: absolute;
+      left: -9999em;
+      height: 0;
+      border: 0;
+      background: transparent;
+
+      &.vertical-tab-selected {
+        position: static;
+        height: auto;
+        padding: var(--gin-spacing-m) var(--gin-spacing-l);
+        background: transparent;
+      }
+    }
+
+    > .vertical-tab-link {
+      border-radius: 0;
+      background-color: var(--gin-bg-layer);
+
+      .fieldset-legend {
+        color: var(--gin-color-primary);
+      }
+    }
+
+    &.vertical-tab-selected > .vertical-tab-link {
+      background-color: var(--gin-bg-header);
+
+      .fieldset-legend {
+        color: var(--gin-color-primary-active);
+      }
+    }
+
+  }
+
+  @include mq($to: medium) {
+    fieldset.vertical-tabs-pane:not(.fieldgroup) {
+      border-radius: 0;
+      border-inline-start: 1px solid var(--gin-border-color);
+      border-inline-end: 1px solid var(--gin-border-color);
+      border-block-start: 1px solid var(--gin-border-color);
+      border-block-end: none;
+
+      > legend {
+        margin: 0 0 0 -1px;
+        border-block-end: 1px solid var(--gin-border-color);
+
+      }
+
+      > .fieldset-wrapper {
+        background-color: var(--gin-bg-app);
+      }
+    }
   }
 
   &__items {
@@ -671,6 +741,7 @@
         padding: var(--gin-spacing-s);
         border: 1px solid var(--gin-border-color);
         background-color: #fff;
+
         &.is-active {
           border-left: 3px solid var(--gin-color-primary);
         }
