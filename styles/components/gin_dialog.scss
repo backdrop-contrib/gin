@@ -32,6 +32,10 @@
   .views-exposed-form.views-exposed-form,
   .views-displays {
     border: 1px solid var(--gin-border-color-layer);
+    margin-block-end: var(--gin-spacing-density-s);
+    .views-exposed-form {
+      border: none;
+    }
   }
 }
 

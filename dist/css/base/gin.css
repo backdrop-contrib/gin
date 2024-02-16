@@ -4104,7 +4104,8 @@ a.button.button--danger:active:before {
   background-color: var(--gin-color-danger-light);
 }
 
-.draggable.field-plugin-settings-editing, .draggable.drag-previous.field-plugin-settings-editing {
+.draggable.field-plugin-settings-editing,
+.draggable.drag-previous.field-plugin-settings-editing {
   background: var(--gin-bg-app);
 }
 
@@ -4194,6 +4195,17 @@ a.button.button--danger:active:before {
 
 .subfield-option.selected {
   background-color: var(--gin-bg-layer2);
+}
+
+.editor-image-align .form-item input {
+  display: inline-block;
+  -webkit-margin-end: var(--gin-spacing-xxs);
+          margin-inline-end: var(--gin-spacing-xxs);
+}
+
+.editor-image-align label.option {
+  -webkit-margin-end: var(--gin-spacing-xs);
+          margin-inline-end: var(--gin-spacing-xs);
 }
 
 .card {

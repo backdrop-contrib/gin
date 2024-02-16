@@ -1,4 +1,5 @@
-.draggable.field-plugin-settings-editing, .draggable.drag-previous.field-plugin-settings-editing {
+.draggable.field-plugin-settings-editing,
+.draggable.drag-previous.field-plugin-settings-editing {
   background: var(--gin-bg-app);
 }
 
@@ -82,5 +83,16 @@
 
   &.selected {
     background-color: var(--gin-bg-layer2);
+  }
+}
+
+.editor-image-align {
+  .form-item input {
+    display: inline-block;
+    margin-inline-end: var(--gin-spacing-xxs);
+  }
+
+  label.option {
+    margin-inline-end: var(--gin-spacing-xs);
   }
 }
