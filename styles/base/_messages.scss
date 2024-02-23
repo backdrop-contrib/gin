@@ -117,7 +117,7 @@
 
   &.messages--info {
     color: var(--gin-color-info-light);
-    background-color: var(--gin-bg-info);
+    background: var(--gin-bg-info);
     border-color: var(--gin-bg-info);
 
     .messages__header {
@@ -140,7 +140,7 @@
 
   &.messages--status {
     color: var(--gin-color-green-light);
-    background-color: var(--gin-bg-green);
+    background: var(--gin-bg-green);
 
     .messages__header {
       &:before {
@@ -161,7 +161,7 @@
 
   &.messages--warning {
     color: var(--gin-color-warning-light);
-    background-color: var(--gin-bg-warning);
+    background: var(--gin-bg-warning);
 
     .messages__header {
       &:before {
@@ -181,7 +181,7 @@
 
   &--error {
     color: var(--gin-color-danger-light);
-    background-color: var(--gin-bg-danger);
+    background: var(--gin-bg-danger);
 
     .messages__header {
       &:before {

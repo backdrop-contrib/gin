@@ -53,6 +53,8 @@ module.exports = {
     'components/tableselect': ['./styles/components/tableselect.scss'],
     'components/toolbar_secondary': ['./styles/components/toolbar_secondary.scss'],
     'components/webform': ['./styles/components/webform.scss'],
+    'components/workbench': ['./styles/components/workbench.scss'],
+    'components/workspaces': ['./styles/components/workspaces.scss'],
     // Layout
     'layout/gin_admin_bar': ['./styles/layout/gin_admin_bar.scss'],
     // Theme

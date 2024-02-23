@@ -127,9 +127,16 @@ body.gin--navigation {
   }
 
   // Focus
-  .toolbar-menu__item--level-1 > .toolbar-link:focus {
-    outline: none;
-    box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+  .toolbar-menu__item--level-1 {
+    > .toolbar-link {
+      padding-block: calc(var(--gin-spacing-xs) + 1px);
+      margin-bottom: var(--gin-spacing-xxxs);
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+      }
+    }
   }
 
   .navigation-menu-wrapper.menu--logo {
@@ -147,7 +154,8 @@ body.gin--navigation {
   //Active menu item
   .toolbar-menu__item--level-1.menu-item--expanded,
   .toolbar-menu__item--level-1.current,
-  .toolbar-menu__item--level-1.active-path {
+  .toolbar-menu__item--level-1.active-path,
+  .toolbar-menu__item--level-2.active-path {
     background-color: transparent;
 
     > .toolbar-link {

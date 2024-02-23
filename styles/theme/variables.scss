@@ -42,6 +42,9 @@
   --gin-bg-secondary: var(--gin-bg-layer);
   --gin-bg-header: #eeeff3; //#e6e8ef;
 
+  // Unpublished
+  --gin-bg-unpublished: var(--gin-bg-danger-light);
+
   // Color pattern
   --gin-pattern: var(--gin-border-color);
   --gin-pattern-fallback: var(--gin-bg-layer2);
@@ -79,9 +82,15 @@
   }
 
   // Spacings
-  @each $name, $size in $ginSpacings {
-    --gin-spacing-#{$name}: #{rem($size)};
-  }
+  --gin-spacing-xxxs:#{rem(2px)};
+  --gin-spacing-xxs:#{rem(4px)};
+  --gin-spacing-xs: #{rem(8px)};
+  --gin-spacing-s: #{rem(12px)};
+  --gin-spacing-m: #{rem(16px)};
+  --gin-spacing-l: #{rem(24px)};
+  --gin-spacing-xl: #{rem(32px)};
+  --gin-spacing-xxl: #{rem(48px)};
+  --gin-spacing-xxxl: #{rem(64px)};
 
   // Icons
   --gin-icon-color: #414247;
@@ -132,8 +141,20 @@
   // Toolbar
   --gin-toolbar-width-collapsed: 66px;
   --gin-toolbar-width: 256px;
+  --gin-toolbar-height: 0px;
+  --gin-toolbar-secondary-height: 0px;
   --gin-toolbar-bg-level2: #edeff5;
   --gin-toolbar-bg-level3: #{rgba(#2c2d2f, .05)};
+
+  // Offsets
+  --gin-toolbar-y-offset: 0px;
+  --gin-toolbar-x-offset: 0px;
+  --gin-scroll-offset: 0px;
+  --gin-sticky-offset: 0px;
+
+  @include mq(large) {
+    --gin-sticky-offset: var(--gin-height-sticky);
+  }
 
   // Sidebar
   --gin-sidebar-width: 320px;

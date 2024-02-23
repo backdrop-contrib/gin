@@ -34,6 +34,7 @@
   --gin-bg-layer4: #e2e5ec;
   --gin-bg-secondary: var(--gin-bg-layer);
   --gin-bg-header: #eeeff3;
+  --gin-bg-unpublished: var(--gin-bg-danger-light);
   --gin-pattern: var(--gin-border-color);
   --gin-pattern-fallback: var(--gin-bg-layer2);
   --gin-pattern-square: .5rem;
@@ -53,6 +54,7 @@
   --gin-font-weight-semibold: 525;
   --gin-font-weight-bold: 575;
   --gin-font-weight-heavy: 625;
+  --gin-spacing-xxxs: .125rem;
   --gin-spacing-xxs: .25rem;
   --gin-spacing-xs: .5rem;
   --gin-spacing-s: .75rem;
@@ -88,8 +90,14 @@
   --gin-height-sticky: 60px;
   --gin-toolbar-width-collapsed: 66px;
   --gin-toolbar-width: 256px;
+  --gin-toolbar-height: 0px;
+  --gin-toolbar-secondary-height: 0px;
   --gin-toolbar-bg-level2: #edeff5;
   --gin-toolbar-bg-level3: rgba(44, 45, 47, .05);
+  --gin-toolbar-y-offset: 0px;
+  --gin-toolbar-x-offset: 0px;
+  --gin-scroll-offset: 0px;
+  --gin-sticky-offset: 0px;
   --gin-sidebar-width: 320px;
   --gin-sidebar-offset: var(--gin-sidebar-width);
   --gin-switch: #26a769;
@@ -121,6 +129,12 @@
 @media (min-width: 61em) {
   :root {
     --gin-icon-size-toolbar: 20px;
+  }
+}
+
+@media (min-width: 64em) {
+  :root {
+    --gin-sticky-offset: var(--gin-height-sticky);
   }
 }
 
