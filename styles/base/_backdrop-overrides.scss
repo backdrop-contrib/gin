@@ -713,3 +713,33 @@ div.feeds-container.plain {
 div.left-bar {
   border-color: var(--gin-border-color);
 }
+
+/**
+ * Diff display. Used in configuration management sync.
+ */
+ins.diffchange {
+  background-color: var(--gin-bg-green-light);
+  tr:hover & {
+    background-color: var(--gin-bg-green-light);
+    color: var(--gin-color-green);
+  }
+}
+
+del.diffchange {
+  background-color: var(--gin-bg-danger-light);
+  tr:hover & {
+    background-color: var(--gin-bg-danger-light);
+    color: var(--gin-color-danger);
+  }
+}
+
+.diff-addedline,
+tr.odd .diff-addedline,
+tr:hover .diff-addedline {
+  background-color: var(--gin-bg-green-light);
+}
+.diff-deletedline,
+tr.odd .diff-deletedline,
+tr:hover .diff-deletedline {
+  background-color: var(--gin-bg-danger-light);
+}
