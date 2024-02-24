@@ -33,12 +33,6 @@
   color: var(--gin-color-primary-active);
 }
 
-.ui-dialog *|*:-webkit-any-link:not(svg|a) {
-  text-decoration: underline;
-  -webkit-text-decoration-style: var(--gin-link-decoration-style);
-          text-decoration-style: var(--gin-link-decoration-style);
-}
-
 .ui-dialog *|*:any-link:not(svg|a) {
   text-decoration: underline;
   -webkit-text-decoration-style: var(--gin-link-decoration-style);
@@ -576,7 +570,6 @@
 .ui-dialog .form-select,
 .ui-dialog .form-element--type-select {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3e%3cpath fill='none' stroke-width='1.5' d='M1 1l6 6 6-6' stroke='%23545560'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -623,7 +616,6 @@
 .ui-dialog .form-checkbox,
 .ui-dialog .form-radio {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   width: 21px;
   height: 21px;
