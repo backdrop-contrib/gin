@@ -43,6 +43,7 @@
         color: inherit;
         li.highlighted {
             background: var(--gin-bg-layer);
+            color: var(--gin-color-text-light);
         }
     }
     .chosen-drop {

@@ -42,6 +42,7 @@
 
 .chosen-container .chosen-results li.highlighted {
   background: var(--gin-bg-layer);
+  color: var(--gin-color-text-light);
 }
 
 .chosen-container .chosen-drop {
