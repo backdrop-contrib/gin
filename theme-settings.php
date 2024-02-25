@@ -177,9 +177,9 @@ $form['layout_density'] = [
 ];
 
 // Description toggle.
-// $form['show_description_toggle'] = [
-//   '#type' => 'checkbox',
-//   '#title' => t('Enable form description toggle'),
-//   '#description' => t('Show a help icon to show/hide form descriptions on content forms.'),
-//   '#default_value' => theme_get_setting('show_description_toggle', 'gin'),
-// ];
+$form['show_description_toggle'] = [
+  '#type' => 'checkbox',
+  '#title' => t('Enable form description toggle'),
+  '#description' => t('Show a help icon to show/hide form descriptions on content forms.'),
+  '#default_value' => theme_get_setting('show_description_toggle', 'gin'),
+];

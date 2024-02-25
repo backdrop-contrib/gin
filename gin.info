@@ -35,3 +35,4 @@ settings[edit_form_sidebar] = true
 settings[preset_accent_color] = blue
 settings[preset_focus_color] = gin
 settings[layout_density] = default
+settings[show_description_toggle] = false

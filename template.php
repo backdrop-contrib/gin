@@ -537,3 +537,100 @@ function gin_views_pre_render(&$view) {
     $view->field["uri"]->options["thumbnail_style"] = 'medium';
   }
 }
+
+/**
+ * Implements theme_form_element().
+ *
+ * We're overriding/duplicating this function to allow adjustments to the
+ * description and implement Gin's description toggle functionality.
+ */
+function gin_form_element($variables) {
+  $element = &$variables['element'];
+
+  // This function is invoked as theme wrapper, but the rendered form element
+  // may not necessarily have been processed by form_builder().
+  $element += array(
+    '#title_display' => 'before',
+    '#wrapper_attributes' => array(),
+  );
+  $attributes = $element['#wrapper_attributes'];
+
+  // Add element #id for #type 'item'.
+  if (isset($element['#markup']) && !empty($element['#id'])) {
+    $attributes['id'] = $element['#id'];
+  }
+  // Add element's #type and #name as class to aid with JS/CSS selectors.
+  $attributes['class'][] = 'form-item';
+  if (!empty($element['#type'])) {
+    $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
+    if (isset($element['#parents']) && form_get_error($element) !== NULL && !empty($element['#validated'])) {
+      $attributes['class'][] = 'form-error';
+    }
+  }
+  if (!empty($element['#name'])) {
+    $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
+  }
+  // Add a class for disabled elements to facilitate cross-browser styling.
+  if (!empty($element['#attributes']['disabled'])) {
+    $attributes['class'][] = 'form-disabled';
+  }
+  // Add indentation.
+  if (isset($element['#indentation'])) {
+    $attributes['class'][] = 'form-item-indentation';
+    $attributes['class'][] = 'form-item-indentation-' . $element['#indentation'];
+    $attributes['data-indentation-depth'] = $element['#indentation'];
+  }
+  // Add description toggle classes if settings call for them.
+  $show_description_toggle = theme_get_setting('show_description_toggle', 'gin');
+  $description['class'][] = 'description';
+  $help_icon_open = '';
+  $help_icon_close = '';
+  if (!empty($element['#description']) && $show_description_toggle) {
+    backdrop_add_library('gin', 'gin_description_toggle');
+    $attributes['class'][] = 'help-icon__description-container';
+    $description_attributes['class'][] = 'description';
+    $description_attributes['class'][] = 'visually-hidden';
+    $help_icon_open = '<div class="help-icon">';
+    $help_icon_close = '<button class="help-icon__description-toggle"></button></div>';
+  }
+  $output = '<div' . backdrop_attributes($attributes) . '>' . "\n";
+
+  // If #title is not set, we don't display any label or required marker.
+  if (!isset($element['#title'])) {
+    $element['#title_display'] = 'none';
+  }
+  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+
+  switch ($element['#title_display']) {
+    case 'before':
+    case 'invisible':
+      $output .= $help_icon_open;
+      $output .= ' ' . theme('form_element_label', $variables);
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      $output .= $help_icon_close;
+      break;
+
+    case 'after':
+      $output .= $help_icon_open;
+      $output .= ' ' . $prefix . $element['#children'] . $suffix;
+      $output .= ' ' . theme('form_element_label', $variables) . "\n";
+      $output .= $help_icon_close;
+      break;
+
+    case 'none':
+    case 'attribute':
+      // Output no label and no required marker, only the children.
+      $output .= ' ' . $prefix . $element['#children'] . $suffix . "\n";
+      break;
+  }
+
+  if (!empty($element['#description'])) {
+    $show_description_toggle = theme_get_setting('show_description_toggle', 'gin');
+    $output .= '<div' . backdrop_attributes($description_attributes) . '>' . $element['#description'] . "</div>\n";
+  }
+
+  $output .= "</div>\n";
+
+  return $output;
+}
