@@ -15,7 +15,7 @@ foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
  * Implements hook_preprocess_layout().
  */
 function gin_preprocess_layout(&$variables) {
-  $current_path = request_path();
+  $current_path = current_path();
   $node_edit_pages = array(
     'node/*/edit',
     'node/add/*',
