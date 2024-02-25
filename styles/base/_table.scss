@@ -373,9 +373,3 @@ table td.field-plugin-summary-cell {
 table .views-field.views-field-operations {
   text-align: right;
 }
-
-table tr.disabled.odd,
-table tr.disabled.even {
-  background-color: var(--gin-color-disabled-bg);
-  border-color: var(--gin-color-disabled-border);
-}
