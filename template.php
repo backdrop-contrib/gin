@@ -582,16 +582,17 @@ function gin_form_element($variables) {
   }
   // Add description toggle classes if settings call for them.
   $show_description_toggle = theme_get_setting('show_description_toggle', 'gin');
-  $description['class'][] = 'description';
   $help_icon_open = '';
   $help_icon_close = '';
-  if (!empty($element['#description']) && $show_description_toggle) {
-    backdrop_add_library('gin', 'gin_description_toggle');
-    $attributes['class'][] = 'help-icon__description-container';
+  if (!empty($element['#description'])) {
     $description_attributes['class'][] = 'description';
-    $description_attributes['class'][] = 'visually-hidden';
-    $help_icon_open = '<div class="help-icon">';
-    $help_icon_close = '<button class="help-icon__description-toggle"></button></div>';
+    if ($show_description_toggle) {
+      backdrop_add_library('gin', 'gin_description_toggle');
+      $attributes['class'][] = 'help-icon__description-container';
+      $description_attributes['class'][] = 'visually-hidden';
+      $help_icon_open = '<div class="help-icon">';
+      $help_icon_close = '<button class="help-icon__description-toggle"></button></div>';
+    }
   }
   $output = '<div' . backdrop_attributes($attributes) . '>' . "\n";
 
