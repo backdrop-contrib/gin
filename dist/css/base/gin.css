@@ -6142,6 +6142,40 @@ tr:hover .diff-deletedline {
   background-color: var(--gin-bg-danger-light);
 }
 
+/**
+  * Fast Token Browser
+  */
+
+.token-browser-dialog .ui-dialog-content,
+.tree-grid,
+.tree-grid tr {
+  background-color: var(--gin-bg-layer);
+}
+
+.tree-grid td {
+  background-color: var(--gin-bg-layer2);
+  border-color: var(--gin-border-color-layer);
+}
+
+.tree-grid [aria-level="2"] td {
+  background-color: var(--gin-bg-layer3);
+}
+
+.tree-grid [aria-level="3"] td,
+.tree-grid [aria-level="4"] td,
+.tree-grid [aria-level="5"] td,
+.tree-grid [aria-level="6"] td,
+.tree-grid [aria-level="7"] td,
+.tree-grid [aria-level="8"] td,
+.tree-grid [aria-level="9"] td,
+.tree-grid [aria-level="10"] td {
+  background: var(--gin-bg-layer4);
+}
+
+.tree-grid button:focus {
+  background-color: var(--gin-bg-layer3);
+}
+
 .layout-editor-block {
   box-shadow: var(--gin-shadow-l1);
   border-radius: var(--gin-border-m);
