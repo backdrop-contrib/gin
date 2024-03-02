@@ -14,6 +14,7 @@
 #coffee-form #coffee-results a {
   color: var(--gin-color-title);
   border-radius: var(--gin-border-m);
+  padding: var(--gin-spacing-m);
 }
 
 #coffee-form #coffee-results a .description {

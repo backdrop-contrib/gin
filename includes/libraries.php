@@ -256,7 +256,10 @@ function gin_library_info() {
     'title' => 'Coffee',
     'version' => BACKDROP_VERSION,
     'css' => array(
-      $basethemeurl . '/dist/css/components/coffee.css' => array(),
+      $basethemeurl . '/dist/css/components/gin_coffee.css' => array(
+        'type' => 'file',
+        'media' => 'screen',
+      ),
     ),
   );
 
