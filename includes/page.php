@@ -59,43 +59,25 @@ function gin_preprocess_page(&$variables) {
   backdrop_add_library('gin', 'gin_sticky');
   backdrop_add_library('gin', 'gin_tableselect');
 
-  // Modules
-  if (module_exists('dashboard')) {
-    backdrop_add_library('gin', 'gin_dashboard');
-  }
-  if (module_exists('ckeditor')) {
-    backdrop_add_library('gin', 'gin_ckeditor');
-  }
-  if (module_exists('ckeditor5')) {
-    backdrop_add_library('gin', 'gin_ckeditor5');
-  }
-  if (module_exists('coffee')) {
-    backdrop_add_library('gin', 'gin_coffee');
-  }
-  if (module_exists('node_preview')) {
-    backdrop_add_library('gin', 'gin_node_preview');
-  }
-  if (module_exists('webform')) {
-    backdrop_add_library('gin', 'gin_webform');
-  }
-  if (module_exists('module_filter')) {
-    backdrop_add_library('gin', 'gin_module_filter');
-  }
-  if (module_exists('chosen')) {
-    backdrop_add_library('gin', 'gin_chosen');
-  }
-  if (module_exists('inline_entity_form')) {
-    backdrop_add_library('gin', 'gin_inline_entity_form');
-  }
-  if (module_exists('installer')) {
-    backdrop_add_css($basethemeurl . '/dist/css/components/project_installer.css', 'file');
-  }
+  $module_libraries = [
+    'dashboard' => 'gin_dashboard',
+    'ckeditor' => 'gin_ckeditor',
+    'ckeditor5' => 'gin_ckeditor5',
+    'coffee' => 'gin_coffee',
+    'node_preview' => 'gin_node_preview',
+    'webform' => 'gin_webform',
+    'module_filter' => 'gin_module_filter',
+    'chosen' => 'gin_chosen',
+    'inline_entity_form' => 'gin_inline_entity_form',
+    'installer' => 'project_installer',
+    'paragraphs' => 'gin_paragraphs',
+    'admin_bar' => 'gin_admin_bar',
+  ];
 
-  $options = array('every_page' => TRUE);
-  backdrop_add_css($basethemeurl . '/dist/css/layout/gin_admin_bar.css', $options);
-
-  if (module_exists('paragraphs')) {
-    backdrop_add_css($basethemeurl . '/dist/css/components/paragraphs.css', $options);
+  foreach ($module_libraries as $module => $library) {
+    if (module_exists($module)) {
+      backdrop_add_library('gin', $library);
+    }
   }
 
   // Custom CSS file.
