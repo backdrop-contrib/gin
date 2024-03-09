@@ -47,44 +47,32 @@
 }
 
 #admin-bar #admin-bar-icon .icon,
-#admin-bar #admin-bar-extra .extra,
-#admin-bar #admin-bar-extra .page,
-#admin-bar #admin-bar-extra .user-counter,
-#admin-bar #admin-bar-extra .account,
-#admin-bar #admin-bar-extra .logout,
+#admin-bar #admin-bar-extra .dropdown > li > span,
+#admin-bar #admin-bar-extra .dropdown > li > a,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a,
 #admin-bar #admin-bar-menu.dropdown li > span.menu {
   background: none;
 }
 
 [dir="ltr"] #admin-bar #admin-bar-icon .icon,
-[dir="ltr"] #admin-bar #admin-bar-extra .extra,
-[dir="ltr"] #admin-bar #admin-bar-extra .page,
-[dir="ltr"] #admin-bar #admin-bar-extra .user-counter,
-[dir="ltr"] #admin-bar #admin-bar-extra .account,
-[dir="ltr"] #admin-bar #admin-bar-extra .logout,
+[dir="ltr"] #admin-bar #admin-bar-extra .dropdown > li > span,
+[dir="ltr"] #admin-bar #admin-bar-extra .dropdown > li > a,
 [dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a,
 [dir="ltr"] #admin-bar #admin-bar-menu.dropdown li > span.menu {
   padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
 }
 
 [dir="rtl"] #admin-bar #admin-bar-icon .icon,
-[dir="rtl"] #admin-bar #admin-bar-extra .extra,
-[dir="rtl"] #admin-bar #admin-bar-extra .page,
-[dir="rtl"] #admin-bar #admin-bar-extra .user-counter,
-[dir="rtl"] #admin-bar #admin-bar-extra .account,
-[dir="rtl"] #admin-bar #admin-bar-extra .logout,
+[dir="rtl"] #admin-bar #admin-bar-extra .dropdown > li > span,
+[dir="rtl"] #admin-bar #admin-bar-extra .dropdown > li > a,
 [dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a,
 [dir="rtl"] #admin-bar #admin-bar-menu.dropdown li > span.menu {
   padding: var(--gin-spacing-m) var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-s);
 }
 
 #admin-bar #admin-bar-icon .icon::before,
-#admin-bar #admin-bar-extra .extra::before,
-#admin-bar #admin-bar-extra .page::before,
-#admin-bar #admin-bar-extra .user-counter::before,
-#admin-bar #admin-bar-extra .account::before,
-#admin-bar #admin-bar-extra .logout::before,
+#admin-bar #admin-bar-extra .dropdown > li > span::before,
+#admin-bar #admin-bar-extra .dropdown > li > a::before,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
 #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   content: "";
@@ -97,11 +85,8 @@
 }
 
 [dir="ltr"] #admin-bar #admin-bar-icon .icon::before,
-[dir="ltr"] #admin-bar #admin-bar-extra .extra::before,
-[dir="ltr"] #admin-bar #admin-bar-extra .page::before,
-[dir="ltr"] #admin-bar #admin-bar-extra .user-counter::before,
-[dir="ltr"] #admin-bar #admin-bar-extra .account::before,
-[dir="ltr"] #admin-bar #admin-bar-extra .logout::before,
+[dir="ltr"] #admin-bar #admin-bar-extra .dropdown > li > span::before,
+[dir="ltr"] #admin-bar #admin-bar-extra .dropdown > li > a::before,
 [dir="ltr"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
 [dir="ltr"] #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   float: left;
@@ -109,11 +94,8 @@
 }
 
 [dir="rtl"] #admin-bar #admin-bar-icon .icon::before,
-[dir="rtl"] #admin-bar #admin-bar-extra .extra::before,
-[dir="rtl"] #admin-bar #admin-bar-extra .page::before,
-[dir="rtl"] #admin-bar #admin-bar-extra .user-counter::before,
-[dir="rtl"] #admin-bar #admin-bar-extra .account::before,
-[dir="rtl"] #admin-bar #admin-bar-extra .logout::before,
+[dir="rtl"] #admin-bar #admin-bar-extra .dropdown > li > span::before,
+[dir="rtl"] #admin-bar #admin-bar-extra .dropdown > li > a::before,
 [dir="rtl"] #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
 [dir="rtl"] #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   float: right;
@@ -121,11 +103,8 @@
 }
 
 #admin-bar #admin-bar-icon .icon.active-trail,
-#admin-bar #admin-bar-extra .extra.active-trail,
-#admin-bar #admin-bar-extra .page.active-trail,
-#admin-bar #admin-bar-extra .user-counter.active-trail,
-#admin-bar #admin-bar-extra .account.active-trail,
-#admin-bar #admin-bar-extra .logout.active-trail,
+#admin-bar #admin-bar-extra .dropdown > li > span.active-trail,
+#admin-bar #admin-bar-extra .dropdown > li > a.active-trail,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail,
 #admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail {
   color: #fff;
@@ -134,11 +113,8 @@
 }
 
 #admin-bar #admin-bar-icon .icon.active-trail::before,
-#admin-bar #admin-bar-extra .extra.active-trail::before,
-#admin-bar #admin-bar-extra .page.active-trail::before,
-#admin-bar #admin-bar-extra .user-counter.active-trail::before,
-#admin-bar #admin-bar-extra .account.active-trail::before,
-#admin-bar #admin-bar-extra .logout.active-trail::before,
+#admin-bar #admin-bar-extra .dropdown > li > span.active-trail::before,
+#admin-bar #admin-bar-extra .dropdown > li > a.active-trail::before,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail::before,
 #admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail::before {
   background-color: #fff;
@@ -222,6 +198,11 @@
           mask-image: url("../../media/sprite.svg#user-view");
 }
 
+#admin-bar .locale:before {
+  -webkit-mask-image: url("../../media/sprite.svg#translate-view");
+          mask-image: url("../../media/sprite.svg#translate-view");
+}
+
 #admin-bar .logout:before {
   -webkit-mask-image: url("../../media/sprite.svg#logout-view");
           mask-image: url("../../media/sprite.svg#logout-view");
@@ -238,11 +219,13 @@
 
 #admin-bar #admin-bar-search-items {
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
   font-size: var(--gin-font-size-xxs);
   line-height: 1;
   min-height: calc(var(--input-padding-vertical) * 2 + 1);
   border-radius: var(--gin-border-xl);
+  color: var(--gin-color-button-text);
 }
 
 [dir="ltr"] #admin-bar #admin-bar-search-items {

@@ -50,11 +50,8 @@
 
   // Icons
   #admin-bar-icon .icon,
-  #admin-bar-extra .extra,
-  #admin-bar-extra .page,
-  #admin-bar-extra .user-counter,
-  #admin-bar-extra .account,
-  #admin-bar-extra .logout,
+  #admin-bar-extra .dropdown > li > span,
+  #admin-bar-extra .dropdown > li > a,
   #admin-bar-menu > li > .dropdown > li > a,
   #admin-bar-menu.dropdown li > span.menu {
     padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
@@ -190,6 +187,13 @@
     }
   }
 
+  // Locale
+  .locale {
+    &:before {
+      mask-image: icon('translate');
+    }
+  }
+
   // Logout
   .logout {
     &:before {
@@ -218,6 +222,7 @@
     background: #fff icon('search') no-repeat center right var(--gin-spacing-s);
     background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
     border-radius: var(--gin-border-xl);
+    color: var(--gin-color-button-text);
   }
 }
 

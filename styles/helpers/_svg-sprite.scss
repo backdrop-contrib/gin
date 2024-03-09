@@ -19,6 +19,7 @@ $sprites: (
     'more': "../../media/sprite.svg#more-view",
     'sidebar': "../../media/sprite.svg#sidebar-view",
     'tool': "../../media/sprite.svg#tool-view",
+    'translate': "../../media/sprite.svg#translate-view",
     'users': "../../media/sprite.svg#users-view",
     'grid': "../../media/sprite.svg#grid-view",
     'list': "../../media/sprite.svg#list-view",
@@ -161,6 +162,10 @@ $sizes: (
     'tool': (
         'width': 24px,
         'height': 24px
+    ),
+    'translate': (
+        'width': 256px,
+        'height': 256px
     ),
     'users': (
         'width': 24px,
