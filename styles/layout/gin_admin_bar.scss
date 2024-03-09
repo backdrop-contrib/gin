@@ -15,7 +15,7 @@
   }
 }
 
-.admin-bar body {
+.admin-bar body.gin--horizontal-toolbar {
   border-top: 0 !important;
   padding-top: var(--gin-toolbar-height);
 }
