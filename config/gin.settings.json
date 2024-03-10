@@ -1,0 +1,15 @@
+{
+    "_config_name": "gin.settings",
+    "admin_menu": 0,
+    "enable_darkmode": "auto",
+    "preset_accent_color": "blue",
+    "accent_color": "",
+    "accent_picker": "#3275E0",
+    "preset_focus_color": "gin",
+    "focus_picker": "#3275E0",
+    "focus_color": "",
+    "high_contrast_mode": false,
+    "edit_form_sidebar": true,
+    "layout_density": "default",
+    "show_description_toggle": false
+}
