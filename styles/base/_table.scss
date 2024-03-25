@@ -393,7 +393,7 @@ table tr.disabled.even {
   }
 }
 
-@include mq($to: medium) {
+@include mq($to: large) {
 
   th.priority-low,
   td.priority-low {

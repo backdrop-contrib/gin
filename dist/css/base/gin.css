@@ -1943,7 +1943,7 @@ table tr.disabled.even {
   }
 }
 
-@media (max-width: 60.99em) {
+@media (max-width: 63.99em) {
   th.priority-low,
   td.priority-low {
     display: none;
