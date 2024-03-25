@@ -1930,6 +1930,32 @@ table tr.disabled.even {
   border-color: var(--gin-color-disabled-border);
 }
 
+/**
+ * Responsive tables.
+ */
+
+@media (max-width: 47.99em) {
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@media (max-width: 63.99em) {
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .tableresponsive-toggle-columns {
+    display: none;
+  }
+}
+
 .draggable a.tabledrag-handle {
   vertical-align: middle;
 }
