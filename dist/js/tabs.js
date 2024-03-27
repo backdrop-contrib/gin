@@ -4,22 +4,22 @@ $ = jQuery, Backdrop.behaviors.responsivePrimaryTabs = {
   attach: function(context, settings) {
     var $primaryTabs = $(context).find("ul.tabs--primary").once("responsive-tabs");
     if (0 !== $primaryTabs.length) {
-      var previousWindowWidth, tabHeight, expandControlWidth, allTabsWidth, activeTabAndBeforeWidth, activeTabAndAfterWidth, $tabsWrapper = $primaryTabs.parent(), $tabs = $("li", $primaryTabs), responsiveTabs = !1, tabWidths = [], widestTabWidth = 0, activeTabNth = $("li.active", $primaryTabs).index(), expandedTabsHeaderPadding = 0, defaultHeaderPadding = "20px", $mobileHeaderPadder = $('<div class="responsive-tabs-mobile-header-padder" style="height: ' + expandedTabsHeaderPadding + 'px"></div>'), $body = $("body"), tabsWrapperPadding = {
+      var previousWindowWidth, expandControlWidth, allTabsWidth, activeTabAndBeforeWidth, activeTabAndAfterWidth, $tabsWrapper = $primaryTabs.parent(), $tabs = $("li", $primaryTabs), responsiveTabs = !1, tabWidths = [], widestTabWidth = 0, activeTabNth = $("li.active", $primaryTabs).index(), expandedTabsHeaderPadding = 0, $mobileHeaderPadder = $('<div class="responsive-tabs-mobile-header-padder" style="height: ' + expandedTabsHeaderPadding + 'px"></div>'), $body = $("body"), tabsWrapperPadding = {
         top: parseInt($tabsWrapper.css("padding-top").replace("px", "")),
         right: parseInt($tabsWrapper.css("padding-right").replace("px", "")),
         left: parseInt($tabsWrapper.css("padding-left").replace("px", ""))
       };
-      tabHeight = $("li:first-child", $primaryTabs).outerHeight(), $tabsWrapper.once("responsive-tabs", (function() {
-        $primaryTabs.after('<div class="expand-dropdown-tabs-control" aria-hidden="true" style="height: ' + tabHeight + 'px"><span class="expand-dropdown-tabs-label"></span></div>'), 
-        $(".expand-dropdown-tabs-control", $tabsWrapper).click((function() {
-          $tabsWrapper.toggleClass("expand-dropdown-tabs"), $(this).toggleClass("js-active"), 
-          expandedTabsHeaderPadding > 0 && $tabsWrapper.hasClass("expand-dropdown-tabs") ? ($mobileHeaderPadder.css("height", expandedTabsHeaderPadding + "px"), 
+      $tabsWrapper.once("responsive-tabs", (function() {
+        $primaryTabs.after('<div class="expand-dropdown-tabs-control" tabindex="0" aria-hidden="true"><span class="expand-dropdown-tabs-label"></span></div>'), 
+        $(".expand-dropdown-tabs-control", $tabsWrapper).on("keypress click", (function(e) {
+          "click" !== e.type && 13 !== e.which || ($tabsWrapper.toggleClass("expand-dropdown-tabs"), 
+          $(this).toggleClass("js-active"), expandedTabsHeaderPadding > 0 && $tabsWrapper.hasClass("expand-dropdown-tabs") ? ($mobileHeaderPadder.css("height", expandedTabsHeaderPadding + "px"), 
           $body.prepend($mobileHeaderPadder), $body.scrollTop($body.scrollTop() + expandedTabsHeaderPadding)) : ($mobileHeaderPadder.remove(), 
-          $body.scrollTop($body.scrollTop() - expandedTabsHeaderPadding));
+          $body.scrollTop($body.scrollTop() - expandedTabsHeaderPadding)));
         })), expandControlWidth = $(".expand-dropdown-tabs-control", $tabsWrapper).outerWidth(), 
         $tabs.find("a").wrapInner('<span class="responsive-tabs-link-text-wrapper"></span>'), 
         calculateTabWidths(), adjustTabsDisplay();
-      })), $("html").click((function(e) {
+      })), $("html").on("click", (function(e) {
         var $target = $(e.target);
         responsiveTabs && !$target.is(".responsive-tabs-processed") && $target.parents(".responsive-tabs-processed").length < 1 && closeTabsDropdown();
       })), Backdrop.isFontLoaded("Ginter", (function() {
@@ -55,7 +55,7 @@ $ = jQuery, Backdrop.behaviors.responsivePrimaryTabs = {
           top: ""
         }); else {
           responsiveTabs = !0;
-          var $responsiveTabsDropdown = $('<ul class="primary responsive-tabs-dropdown" aria-hidden="true" style="top: ' + (tabHeight + tabsWrapperPadding.top) + "px; width: " + (widestTabWidth + expandControlWidth + 20) + 'px"></ul>');
+          var $responsiveTabsDropdown = $('<ul class="primary responsive-tabs-dropdown" aria-hidden="true" style="top: ' + (void 0 + tabsWrapperPadding.top) + "px; width: " + (widestTabWidth + expandControlWidth + 20) + 'px"></ul>');
           if (tabArea >= activeTabAndBeforeWidth) {
             responsiveTabsType = "andBefore";
             var $lastVisibleTab = null;
@@ -77,8 +77,8 @@ $ = jQuery, Backdrop.behaviors.responsivePrimaryTabs = {
           expandedTabsHeaderPadding = 0; else {
             responsiveTabsType = "mobile", $primaryTabs.find(".duplicated-tab").removeClass("duplicated-tab"), 
             $tabsWrapper.addClass("responsive-tabs-mobile").removeClass("responsive-tabs-before responsive-tabs-after desktop-primary-tabs");
-            var tabsOffset = activeTabNth * (tabHeight + 2), tabsTopDistance = $tabsWrapper.position().top;
-            $primaryTabs.css("top", "-" + tabsOffset + "px"), tabsOffset > tabsTopDistance && (expandedTabsHeaderPadding = tabsOffset - tabsTopDistance + defaultHeaderPadding);
+            var tabsOffset = NaN * activeTabNth, tabsTopDistance = $tabsWrapper.position().top;
+            $primaryTabs.css("top", "-" + tabsOffset + "px"), tabsOffset > tabsTopDistance && (expandedTabsHeaderPadding = tabsOffset - tabsTopDistance + "20px");
             var $activeTabText = $('<span class="expand-dropdown-tabs-label">' + $primaryTabs.find("li.active a").html() + "</span>");
             $activeTabText.find(".element-invisible").remove(), $tabsWrapper.find(".expand-dropdown-tabs-label").replaceWith($activeTabText), 
             $tabsWrapper.find(".expand-dropdown-tabs-control").css("left", "auto"), $tabsWrapper.find(".responsive-tabs-dropdown").remove(), 
