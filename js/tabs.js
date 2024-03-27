@@ -38,24 +38,26 @@
       var activeTabAndAfterWidth;   // Will chop off tabs before active tab.
 
       function initResponsivePrimaryTabs() {
-        tabHeight = $('li:first-child', $primaryTabs).outerHeight();
         $tabsWrapper.once('responsive-tabs', function () {
           $primaryTabs.after(
-            '<div class="expand-dropdown-tabs-control" aria-hidden="true" style="height: ' + tabHeight + 'px">' +
+            '<div class="expand-dropdown-tabs-control" tabindex="0" aria-hidden="true">' +
             '<span class="expand-dropdown-tabs-label"></span>' +
             '</div>'
           );
-          $('.expand-dropdown-tabs-control', $tabsWrapper).click(function () {
-            $tabsWrapper.toggleClass('expand-dropdown-tabs');
-            $(this).toggleClass('js-active');
-            // If there's not enough room for mobile tabs.
-            if (expandedTabsHeaderPadding > 0 && $tabsWrapper.hasClass('expand-dropdown-tabs')) {
-              $mobileHeaderPadder.css('height', expandedTabsHeaderPadding + 'px');
-              $body.prepend($mobileHeaderPadder);
-              $body.scrollTop($body.scrollTop() + expandedTabsHeaderPadding);
-            } else {
-              $mobileHeaderPadder.remove();
-              $body.scrollTop($body.scrollTop() - expandedTabsHeaderPadding);
+
+          $('.expand-dropdown-tabs-control', $tabsWrapper).on('keypress click', function (e) {
+            if (e.type === 'click' || e.which === 13) {
+              $tabsWrapper.toggleClass('expand-dropdown-tabs');
+              $(this).toggleClass('js-active');
+              // If there's not enough room for mobile tabs.
+              if (expandedTabsHeaderPadding > 0 && $tabsWrapper.hasClass('expand-dropdown-tabs')) {
+                $mobileHeaderPadder.css('height', expandedTabsHeaderPadding + 'px');
+                $body.prepend($mobileHeaderPadder);
+                $body.scrollTop($body.scrollTop() + expandedTabsHeaderPadding);
+              } else {
+                $mobileHeaderPadder.remove();
+                $body.scrollTop($body.scrollTop() - expandedTabsHeaderPadding);
+              }
             }
           });
 
@@ -273,7 +275,7 @@
       }
 
       // If they click outside of the responsive tabs, shut them
-      $('html').click(function (e) {
+      $('html').on('click', function (e) {
         var $target = $(e.target);
         if (responsiveTabs && !$target.is('.responsive-tabs-processed') && $target.parents('.responsive-tabs-processed').length < 1) {
           closeTabsDropdown();
