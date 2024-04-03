@@ -1,3 +1,42 @@
+@charset "UTF-8";
+
+#autocomplete {
+  margin-top: var(--gin-spacing-xxs);
+  border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-color: var(--gin-border-color-form-element);
+}
+
+#autocomplete li {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-s);
+  background: var(--gin-bg-input);
+  border-bottom: 1px solid var(--gin-border-color);
+  color: var(--gin-color-text);
+  font-size: var(--gin-font-size-s);
+  font-weight: var(--gin-font-weight-normal);
+  line-height: var(--gin-line-height-s);
+  transition: var(--gin-transition);
+}
+
+[dir="ltr"] #autocomplete li {
+  text-align: left;
+}
+
+[dir="rtl"] #autocomplete li {
+  text-align: right;
+}
+
+#autocomplete li:hover {
+  background: var(--gin-bg-layer);
+  color: var(--gin-color-primary-hover);
+}
+
+#autocomplete li.selected {
+  background: var(--gin-bg-layer);
+  color: var(--gin-color-primary);
+}
+
 .ui-autocomplete,
 .ui-dialog .ui-autocomplete {
   color: var(--gin-color-text);
@@ -43,18 +82,17 @@ a.ui-button:active,
   transition: var(--gin-transition), background-position none;
 }
 
-.js .form-autocomplete.is-autocompleting,
-.js input.form-autocomplete.ui-autocomplete-loading,
+.js input.form-autocomplete.throbbing,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   background-image: none;
 }
 
-.form-autocomplete.is-autocompleting + .claro-autocomplete__message,
+.form-autocomplete.throbbing + .claro-autocomplete__message,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   display: block;
 }
 
-.form-autocomplete.is-autocompleting + .claro-autocomplete__message::after,
+.form-autocomplete.throbbing + .claro-autocomplete__message::after,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
   content: "";
   position: absolute;
@@ -68,13 +106,13 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
   animation: gin-throbber 1s linear infinite;
 }
 
-[dir="ltr"] .form-autocomplete.is-autocompleting + .claro-autocomplete__message::after,
+[dir="ltr"] .form-autocomplete.throbbing + .claro-autocomplete__message::after,
 [dir="ltr"] div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
   right: 12px;
   text-align: right;
 }
 
-[dir="rtl"] .form-autocomplete.is-autocompleting + .claro-autocomplete__message::after,
+[dir="rtl"] .form-autocomplete.throbbing + .claro-autocomplete__message::after,
 [dir="rtl"] div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
   left: 12px;
   text-align: left;
@@ -143,5 +181,92 @@ div.autocomplete-deluxe-multiple {
 .autocomplete-deluxe-item:hover .autocomplete-deluxe-item-delete,
 .autocomplete-deluxe-item .autocomplete-deluxe-item-delete:hover {
   background: var(--gin-color-button-text);
+}
+
+/* Claro additions */
+
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+/**
+ * Since the autocomplete library is attached conditionally and not globally,
+ * we can be 99% sure that the default icon will be used.
+ * With inline SVGs we can prevent a HTTP request and repaint addressing the
+ * autocomplete input's background — until are sure that it will be pushed by
+ * the server with HTTP/2.
+ *
+ * The autocompleting (active) state's background-image is inlined because
+ * non-used CSS selectors are usually ignored; popular browsers don't download
+ * their 'url' references.
+ * If these selectors become active, the browser needs some time for painting
+ * previously ignored remote asset: it should get it from server, parse it and
+ * repaint the background of autocomplete field. With the inlined background we
+ * can prevent an additional timeout caused by a new request/response pair.
+ * Besides this, the autocompleting event itself may easily finish before the
+ * missing asset gets downloaded/parsed/painted, and the missing instant visual
+ * feedback would be a usability/accessibility issue as well.
+ */
+
+.js input.form-autocomplete {
+  background-image: url("../../media/sprite.svg#magnifier-view");
+  background-repeat: no-repeat;
+  background-size: 36px;
+}
+
+[dir="ltr"] .js input.form-autocomplete {
+  background-position: 100% 50%;
+}
+
+[dir="rtl"] .js input.form-autocomplete {
+  background-position: 0% 50%;
+}
+
+.js input.form-autocomplete.throbbing {
+  background-image: url("../../media/sprite.svg#spinner-view");
+}
+
+.js[dir=rtl] input.form-autocomplete {
+  background-image: url("../../media/sprite.svg#magnifier-rtl-view");
+}
+
+[dir="ltr"] .js[dir=rtl] input.form-autocomplete {
+  background-position: 0 50%;
+}
+
+[dir="rtl"] .js[dir=rtl] input.form-autocomplete {
+  background-position: 100% 50%;
+}
+
+.js[dir=rtl] input.form-autocomplete.throbbing {
+  background-image: url("../../media/sprite.svg#spinner-rtl-view");
+}
+
+/**
+ * Autocomplete wrapper for autocompleting message.
+ */
+
+.claro-autocomplete {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.claro-autocomplete__message {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 100%;
+  max-width: 100%;
+  -webkit-margin-after: .15rem;
+          margin-block-end: .15rem;
+  color: var(--color-link);
+  font-size: var(--font-size-xxs);
+  /* ~11px */
+  font-weight: bold;
+  line-height: 1.125rem;
+  /* 18px */
 }
 
