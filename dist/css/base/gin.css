@@ -2021,7 +2021,7 @@ table tr.disabled.even {
   pointer-events: all;
 }
 
-.tabledrag-handle::after {
+a.tabledrag-handle .handle {
   background-image: none;
   -webkit-mask-image: url("../../media/sprite.svg#drag-view");
           mask-image: url("../../media/sprite.svg#drag-view");
@@ -2034,17 +2034,17 @@ table tr.disabled.even {
 }
 
 @media (forced-colors: none) {
-  .tabledrag-handle::after {
+  a.tabledrag-handle .handle {
     background-color: var(--gin-color-text-light);
   }
 }
 
-.tabledrag-handle:hover::after {
+a.tabledrag-handle:hover .handle {
   transform: scale(1);
 }
 
 @media (forced-colors: none) {
-  .tabledrag-handle:hover::after {
+  a.tabledrag-handle:hover .handle {
     background-color: var(--gin-color-primary);
   }
 }
