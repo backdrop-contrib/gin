@@ -379,3 +379,30 @@ table tr.disabled.even {
   background-color: var(--gin-color-disabled-bg);
   border-color: var(--gin-color-disabled-border);
 }
+
+/**
+ * Responsive tables.
+ */
+@include mq($to: small) {
+
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@include mq($to: large) {
+
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}
+
+@include mq(large) {
+  .tableresponsive-toggle-columns {
+    display: none;
+  }
+}

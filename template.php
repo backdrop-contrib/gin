@@ -304,6 +304,7 @@ function _gin_admin_list($content, $empty_message = '') {
  */
 function gin_css_alter(&$css) {
     unset($css[backdrop_get_path('module','system').'/css/messages.theme.css']);
+    unset($css[backdrop_get_path('module','admin_bar').'/css/admin_bar.css']);
 }
 
 /**

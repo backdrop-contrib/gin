@@ -48,8 +48,8 @@
   }
 }
 
-.tabledrag-handle {
-  &::after {
+a.tabledrag-handle {
+  .handle {
     background-image: none;
     mask-image: icon('drag');
     mask-repeat: no-repeat;
@@ -62,7 +62,7 @@
   }
 
   &:hover {
-    &::after {
+    .handle {
       transform: scale(1);
 
       @media (forced-colors: none) {

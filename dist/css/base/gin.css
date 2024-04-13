@@ -1930,6 +1930,32 @@ table tr.disabled.even {
   border-color: var(--gin-color-disabled-border);
 }
 
+/**
+ * Responsive tables.
+ */
+
+@media (max-width: 47.99em) {
+  th.priority-low,
+  td.priority-low,
+  th.priority-medium,
+  td.priority-medium {
+    display: none;
+  }
+}
+
+@media (max-width: 63.99em) {
+  th.priority-low,
+  td.priority-low {
+    display: none;
+  }
+}
+
+@media (min-width: 64em) {
+  .tableresponsive-toggle-columns {
+    display: none;
+  }
+}
+
 .draggable a.tabledrag-handle {
   vertical-align: middle;
 }
@@ -1995,7 +2021,7 @@ table tr.disabled.even {
   pointer-events: all;
 }
 
-.tabledrag-handle::after {
+a.tabledrag-handle .handle {
   background-image: none;
   -webkit-mask-image: url("../../media/sprite.svg#drag-view");
           mask-image: url("../../media/sprite.svg#drag-view");
@@ -2008,17 +2034,17 @@ table tr.disabled.even {
 }
 
 @media (forced-colors: none) {
-  .tabledrag-handle::after {
+  a.tabledrag-handle .handle {
     background-color: var(--gin-color-text-light);
   }
 }
 
-.tabledrag-handle:hover::after {
+a.tabledrag-handle:hover .handle {
   transform: scale(1);
 }
 
 @media (forced-colors: none) {
-  .tabledrag-handle:hover::after {
+  a.tabledrag-handle:hover .handle {
     background-color: var(--gin-color-primary);
   }
 }
@@ -6172,6 +6198,407 @@ tr:hover .diff-deletedline {
 
 .tree-grid button:focus {
   background-color: var(--gin-bg-layer3);
+}
+
+@keyframes gin-throbber {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.ajax-progress__throbber, .ajax-progress__throbber--fullscreen,
+.ui-dialog .ajax-progress__throbber,
+.media-library-item .ajax-progress__throbber {
+  border: 3px solid var(--gin-color-primary);
+}
+
+[dir="ltr"] .ajax-progress__throbber, [dir="ltr"] .ajax-progress__throbber--fullscreen, [dir="ltr"] .ui-dialog .ajax-progress__throbber, [dir="ltr"] .media-library-item .ajax-progress__throbber {
+  border-right: 3px dotted transparent;
+}
+
+[dir="rtl"] .ajax-progress__throbber, [dir="rtl"] .ajax-progress__throbber--fullscreen, [dir="rtl"] .ui-dialog .ajax-progress__throbber, [dir="rtl"] .media-library-item .ajax-progress__throbber {
+  border-left: 3px dotted transparent;
+}
+
+.ajax-progress .ajax-progress__message {
+  color: var(--gin-color-text);
+}
+
+[dir].gin--dark-mode .ajax-progress--fullscreen {
+  background-color: var(--gin-color-primary);
+  border-color: transparent;
+  box-shadow: 0 2px 6px 0 var(--gin-bg-app);
+}
+
+[dir].gin--dark-mode .ajax-progress--fullscreen .ajax-progress__throbber, [dir].gin--dark-mode .ajax-progress--fullscreen .ajax-progress__throbber--fullscreen {
+  border: 3px solid var(--gin-bg-app);
+  border-right: 3px dotted transparent;
+}
+
+.media-library-widget .ajax-progress__throbber, .media-library-widget .ajax-progress__throbber--fullscreen {
+  border: 2px solid var(--gin-color-primary);
+}
+
+[dir="ltr"] .media-library-widget .ajax-progress__throbber, [dir="ltr"] .media-library-widget .ajax-progress__throbber--fullscreen {
+  border-right: 2px dotted transparent;
+}
+
+[dir="rtl"] .media-library-widget .ajax-progress__throbber, [dir="rtl"] .media-library-widget .ajax-progress__throbber--fullscreen {
+  border-left: 2px dotted transparent;
+}
+
+.ui-dialog .ajax-progress-throbber {
+  padding: var(--gin-spacing-xs);
+  background: var(--gin-bg-app);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px 0 rgba(34, 35, 48, .1);
+  border: 1px solid rgba(216, 217, 224, .8);
+}
+
+.gin--dark-mode .ui-dialog .ajax-progress-throbber {
+  background-color: var(--gin-color-primary);
+  border-color: transparent;
+  box-shadow: 0 2px 6px 0 var(--gin-bg-app);
+}
+
+.ui-dialog .ajax-progress-throbber::before,
+.contextual-links .ajax-progress-throbber::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--gin-spacing-xs);
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid var(--gin-color-primary);
+  border-radius: 50%;
+  animation: gin-throbber .75s linear infinite;
+}
+
+[dir="ltr"] .ui-dialog .ajax-progress-throbber::before,
+[dir="ltr"] .contextual-links .ajax-progress-throbber::before {
+  left: var(--gin-spacing-xs);
+  border-right: 2px dotted transparent;
+}
+
+[dir="rtl"] .ui-dialog .ajax-progress-throbber::before,
+[dir="rtl"] .contextual-links .ajax-progress-throbber::before {
+  right: var(--gin-spacing-xs);
+  border-left: 2px dotted transparent;
+}
+
+.gin--dark-mode .ui-dialog .ajax-progress,
+.gin--dark-mode .media-library-item .ajax-progress.ajax-progress.ajax-progress {
+  background-color: var(--gin-bg-app);
+  border-color: var(--gin-bg-app);
+}
+
+.contextual-links li {
+  position: relative;
+}
+
+.contextual-links .ajax-progress-throbber {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 24px;
+}
+
+[dir="ltr"] .contextual-links .ajax-progress-throbber {
+  right: var(--gin-spacing-xxs);
+}
+
+[dir="rtl"] .contextual-links .ajax-progress-throbber {
+  left: var(--gin-spacing-xxs);
+}
+
+.contextual-links .ajax-progress-throbber::before {
+  top: 0;
+}
+
+[dir="ltr"] .contextual-links .ajax-progress-throbber::before {
+  left: .25em;
+}
+
+[dir="rtl"] .contextual-links .ajax-progress-throbber::before {
+  right: .25em;
+}
+
+.claro-autocomplete__message {
+  color: var(--gin-color-primary);
+}
+
+#autocomplete {
+  margin-top: var(--gin-spacing-xxs);
+  border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-color: var(--gin-border-color-form-element);
+}
+
+#autocomplete li {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-s);
+  background: var(--gin-bg-input);
+  border-bottom: 1px solid var(--gin-border-color);
+  color: var(--gin-color-text);
+  font-size: var(--gin-font-size-s);
+  font-weight: var(--gin-font-weight-normal);
+  line-height: var(--gin-line-height-s);
+  transition: var(--gin-transition);
+}
+
+[dir="ltr"] #autocomplete li {
+  text-align: left;
+}
+
+[dir="rtl"] #autocomplete li {
+  text-align: right;
+}
+
+#autocomplete li:hover {
+  background: var(--gin-bg-layer);
+  color: var(--gin-color-primary-hover);
+}
+
+#autocomplete li.selected {
+  background: var(--gin-bg-layer);
+  color: var(--gin-color-primary);
+}
+
+.ui-autocomplete,
+.ui-dialog .ui-autocomplete {
+  color: var(--gin-color-text);
+  background: var(--gin-bg-input);
+  border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
+}
+
+.ui-autocomplete .ui-menu-item-wrapper.ui-state-active,
+.ui-dialog .ui-autocomplete .ui-menu-item-wrapper.ui-state-active {
+  color: var(--gin-color-primary-hover);
+  background-color: var(--gin-bg-item-hover);
+}
+
+.ui-state-active, .ui-dialog .ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-dialog .ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+.ui-dialog .ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-dialog a.ui-button:active,
+.ui-button:active,
+.ui-dialog .ui-button:active,
+.ui-button.ui-state-active:hover,
+.ui-dialog .ui-button.ui-state-active:hover {
+  border: none;
+}
+
+.ui-autocomplete .ui-menu-item a {
+  color: var(--gin-color-text);
+}
+
+.ui-autocomplete .ui-menu-item a:hover {
+  color: var(--gin-color-primary-hover);
+  background-color: var(--gin-bg-item-hover);
+}
+
+.ui-widget.ui-widget-content {
+  padding: 0;
+  border: 1px solid var(--gin-border-color);
+}
+
+.js .form-autocomplete {
+  transition: var(--gin-transition), background-position none;
+}
+
+.js input.form-autocomplete.throbbing,
+div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
+  background-image: none;
+}
+
+.form-autocomplete.throbbing + .claro-autocomplete__message,
+div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
+  display: block;
+}
+
+.form-autocomplete.throbbing + .claro-autocomplete__message::after,
+div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  display: block;
+  border: 2px solid var(--gin-bg-input);
+  border-radius: 50%;
+  border-top: 2px solid var(--gin-color-primary);
+  width: 14px;
+  height: 14px;
+  animation: gin-throbber 1s linear infinite;
+}
+
+[dir="ltr"] .form-autocomplete.throbbing + .claro-autocomplete__message::after,
+[dir="ltr"] div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
+  right: 12px;
+  text-align: right;
+}
+
+[dir="rtl"] .form-autocomplete.throbbing + .claro-autocomplete__message::after,
+[dir="rtl"] div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
+  left: 12px;
+  text-align: left;
+}
+
+div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
+  top: 2px;
+}
+
+div.autocomplete-deluxe-multiple {
+  color: var(--gin-color-text);
+  background: var(--gin-bg-input);
+  border: 1px solid var(--gin-border-color-form-element);
+  border-radius: var(--gin-border-m);
+  box-sizing: border-box;
+  transition: var(--gin-transition);
+}
+
+.autocomplete-deluxe-container input.autocomplete-deluxe-form {
+  min-height: 0;
+  background: none;
+}
+
+.autocomplete-deluxe-item {
+  color: var(--gin-color-primary-hover);
+  background-color: var(--gin-color-primary-light-hover);
+  border-radius: var(--gin-border-l);
+  border: 0 none;
+  box-shadow: none;
+}
+
+[dir="ltr"] .autocomplete-deluxe-item {
+  padding: 6px var(--gin-spacing-l) 6px 12px;
+}
+
+[dir="rtl"] .autocomplete-deluxe-item {
+  padding: 6px 12px 6px var(--gin-spacing-l);
+}
+
+.autocomplete-deluxe-item:hover, .autocomplete-deluxe-item:active {
+  color: var(--gin-color-button-text);
+  background-color: var(--gin-color-primary);
+}
+
+.autocomplete-deluxe-item .autocomplete-deluxe-item-delete {
+  top: 6px;
+  -webkit-mask-image: url("../../media/sprite.svg#close-view");
+          mask-image: url("../../media/sprite.svg#close-view");
+  -webkit-mask-size: 10px 10px;
+          mask-size: 10px 10px;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background: var(--gin-color-primary);
+}
+
+[dir="ltr"] .autocomplete-deluxe-item .autocomplete-deluxe-item-delete {
+  right: 6px;
+}
+
+[dir="rtl"] .autocomplete-deluxe-item .autocomplete-deluxe-item-delete {
+  left: 6px;
+}
+
+.autocomplete-deluxe-item:hover .autocomplete-deluxe-item-delete,
+.autocomplete-deluxe-item .autocomplete-deluxe-item-delete:hover {
+  background: var(--gin-color-button-text);
+}
+
+/* Claro additions */
+
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+/**
+ * Since the autocomplete library is attached conditionally and not globally,
+ * we can be 99% sure that the default icon will be used.
+ * With inline SVGs we can prevent a HTTP request and repaint addressing the
+ * autocomplete input's background — until are sure that it will be pushed by
+ * the server with HTTP/2.
+ *
+ * The autocompleting (active) state's background-image is inlined because
+ * non-used CSS selectors are usually ignored; popular browsers don't download
+ * their 'url' references.
+ * If these selectors become active, the browser needs some time for painting
+ * previously ignored remote asset: it should get it from server, parse it and
+ * repaint the background of autocomplete field. With the inlined background we
+ * can prevent an additional timeout caused by a new request/response pair.
+ * Besides this, the autocompleting event itself may easily finish before the
+ * missing asset gets downloaded/parsed/painted, and the missing instant visual
+ * feedback would be a usability/accessibility issue as well.
+ */
+
+.js input.form-autocomplete {
+  background-image: url("../../media/sprite.svg#magnifier-view");
+  background-repeat: no-repeat;
+  background-size: 36px;
+}
+
+[dir="ltr"] .js input.form-autocomplete {
+  background-position: 100% 50%;
+}
+
+[dir="rtl"] .js input.form-autocomplete {
+  background-position: 0% 50%;
+}
+
+.js input.form-autocomplete.throbbing {
+  background-image: url("../../media/sprite.svg#spinner-view");
+}
+
+.js[dir=rtl] input.form-autocomplete {
+  background-image: url("../../media/sprite.svg#magnifier-rtl-view");
+}
+
+[dir="ltr"] .js[dir=rtl] input.form-autocomplete {
+  background-position: 0 50%;
+}
+
+[dir="rtl"] .js[dir=rtl] input.form-autocomplete {
+  background-position: 100% 50%;
+}
+
+.js[dir=rtl] input.form-autocomplete.throbbing {
+  background-image: url("../../media/sprite.svg#spinner-rtl-view");
+}
+
+/**
+ * Autocomplete wrapper for autocompleting message.
+ */
+
+.claro-autocomplete {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.claro-autocomplete__message {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 100%;
+  max-width: 100%;
+  -webkit-margin-after: .15rem;
+          margin-block-end: .15rem;
+  color: var(--color-link);
+  font-size: var(--font-size-xxs);
+  /* ~11px */
+  font-weight: bold;
+  line-height: 1.125rem;
+  /* 18px */
 }
 
 .layout-editor-block {
