@@ -4188,13 +4188,11 @@ a.button.button--danger:active:before {
 
 .editor-image-align .form-item input {
   display: inline-block;
-  -webkit-margin-end: var(--gin-spacing-xxs);
-          margin-inline-end: var(--gin-spacing-xxs);
+  margin-inline-end: var(--gin-spacing-xxs);
 }
 
 .editor-image-align label.option {
-  -webkit-margin-end: var(--gin-spacing-xs);
-          margin-inline-end: var(--gin-spacing-xs);
+  margin-inline-end: var(--gin-spacing-xs);
 }
 
 .card {

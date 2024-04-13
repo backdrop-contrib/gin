@@ -214,12 +214,11 @@
 }
 
 #admin-bar .top-level .admin-bar-search .form-item {
-  padding-top: 9px;
+  padding: var(--gin-spacing-xs);
 }
 
 #admin-bar #admin-bar-search-items {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   font-size: var(--gin-font-size-xxs);
   line-height: 1;
@@ -240,6 +239,19 @@
 
 [dir] #admin-bar #admin-bar-search-items {
   background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
+}
+
+#admin-bar #admin-bar-search-items::after {
+  margin-top: calc((var(--gin-toolbar-height) - var(--gin-icon-size-toolbar)) / 2);
+  margin-bottom: calc((var(--gin-toolbar-height) - var(--gin-icon-size-toolbar)) / 2);
+}
+
+[dir="ltr"] #admin-bar #admin-bar-search-items::after {
+  margin-right: var(--gin-spacing-m);
+}
+
+[dir="rtl"] #admin-bar #admin-bar-search-items::after {
+  margin-left: var(--gin-spacing-m);
 }
 
 #admin-bar-icon.dropdown {
