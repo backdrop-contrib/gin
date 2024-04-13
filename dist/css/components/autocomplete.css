@@ -260,8 +260,7 @@ div.autocomplete-deluxe-multiple {
   inset-inline-end: 0;
   inset-block-end: 100%;
   max-width: 100%;
-  -webkit-margin-after: .15rem;
-          margin-block-end: .15rem;
+  margin-block-end: .15rem;
   color: var(--color-link);
   font-size: var(--font-size-xxs);
   /* ~11px */
