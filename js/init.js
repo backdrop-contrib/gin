@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
 //       transition: none;
 //     }
 
-//     .layout-region-node-secondary {
+//     .layout-region-content-secondary {
 //       transform: translateX(var(--gin-sidebar-width, 360px));
 //       transition: none;
 //     }

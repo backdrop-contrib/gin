@@ -313,18 +313,36 @@ function gin_css_alter(&$css) {
  */
 function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
   if (theme_get_setting('edit_form_sidebar', 'gin')) {
-    foreach (element_children($form) as $key) {
-      if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
-          $form[$key]['#collapsed'] = TRUE;
-        }
-    }
-    $form['options']['#collapsed'] = FALSE;
-    $form['additional_settings']['#type'] = 'fieldset';
-    $form['additional_settings']['#attributes']['class'][] = 'node-edit-settings';
-    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
-    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
-    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
+    _gin_convert_to_sidebar_edit_form($form);
   }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for taxonomy_form_term.
+ *
+ * Changes vertical tabs to container.
+ */
+function gin_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  if (theme_get_setting('edit_form_sidebar', 'gin')) {
+    _gin_convert_to_sidebar_edit_form($form);
+  }
+}
+
+/**
+ * Helper function to convert an edit form to use the sidebar edit.
+ */
+function _gin_convert_to_sidebar_edit_form(&$form) {
+  foreach (element_children($form) as $key) {
+    if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
+        $form[$key]['#collapsed'] = TRUE;
+      }
+  }
+  $form['options']['#collapsed'] = FALSE;
+  $form['additional_settings']['#type'] = 'fieldset';
+  $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
+  $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
+  $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
+  $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
   $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
 }
 

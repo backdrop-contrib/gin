@@ -15,7 +15,7 @@
         padding-right: 0;
 
         // Hide sidebar when off-canvas is shown
-        .layout-region.layout-region-node-secondary {
+        .layout-region.layout-region-content-secondary {
           visibility: hidden;
           opacity: 0;
         }
@@ -37,12 +37,12 @@
       display: block;
     }
 
-    .layout-region-node-main,
-    .layout-region-node-secondary .layout-region-node-footer {
+    .layout-region-content-main,
+    .layout-region-content-secondary .layout-region-node-footer {
       float: none;
     }
 
-    .layout-region-node-main,
+    .layout-region-content-main,
     .layout-region-node-footer {
       width: 100%;
       padding-right: 0;
@@ -84,7 +84,7 @@
         box-sizing: border-box;
       }
 
-      .layout-region-node-secondary {
+      .layout-region-content-secondary {
         z-index: 99;
         width: var(--gin-sidebar-width);
         height: calc(100% - var(--gin-toolbar-y-offset));
@@ -99,7 +99,7 @@
         border-left: 1px solid var(--gin-border-color-layer);
         transition: all var(--gin-transition-fast);
 
-        > .node-edit-settings {
+        > .content-edit-settings {
           > .fieldset-wrapper {
             padding: 0;
           }
@@ -408,11 +408,11 @@
   .gin--edit-form {
     .edit-form--sidebar {
 
-      .layout-region-node-main,
+      .layout-region-content-main,
 
       &.page-wrapper {
 
-        .layout-region-node-secondary {
+        .layout-region-content-secondary {
 
           fieldset:not(.fieldgroup) > legend {
 

@@ -1143,7 +1143,7 @@
   background-color: var(--gin-bg-item-hover);
 }
 
-.ui-dialog .layout-region-node-main .form-wrapper {
+.ui-dialog .layout-region-content-main .form-wrapper {
   background-color: transparent;
   border: none;
 }

@@ -31,7 +31,7 @@
   left: auto;
 }
 
-.ui-dialog:not(.ui-dialog-off-canvas) .layout-region-node-secondary {
+.ui-dialog:not(.ui-dialog-off-canvas) .layout-region-content-secondary {
   width: 100%;
 }
 

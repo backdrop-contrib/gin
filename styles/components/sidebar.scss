@@ -1,4 +1,4 @@
-.layout-region-node-secondary {
+.layout-region-content-secondary {
   transition: transform var(--gin-transition-fast);
 
   // Fixes the flickering happinging on smaller devices.
@@ -11,20 +11,20 @@
 body[data-meta-sidebar=closed] {
   --gin-sidebar-offset: 0px;
 
-  .layout-region-node-secondary {
+  .layout-region-content-secondary {
     transform: translateX(var(--gin-sidebar-width));
     visibility: hidden;
   }
 }
 
 // RTL handling.
-[dir=rtl] body[data-meta-sidebar=closed] .layout-region-node-secondary {
+[dir=rtl] body[data-meta-sidebar=closed] .layout-region-content-secondary {
   /*rtl:ignore*/
   transform: translateX(calc(var(--gin-sidebar-width) * -1));
 }
 
 body[data-meta-sidebar=open] {
-  .layout-region-node-secondary {
+  .layout-region-content-secondary {
     @include mq($to: large) {
       opacity: 1;
       visibility: visible;
