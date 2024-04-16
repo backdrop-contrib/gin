@@ -16,11 +16,15 @@ foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
  */
 function gin_preprocess_layout(&$variables) {
   $current_path = current_path();
-  $node_edit_pages = array(
+  $sidebar_edit_pages = array(
     'node/*/edit',
     'node/add/*',
+    'taxonomy/term/*/edit',
+    'admin/structure/taxonomy/*/add',
+    'admin/people/create',
+    'user/*/edit',
   );
-  if (backdrop_match_path($current_path, implode("\n", $node_edit_pages)) && (theme_get_setting('edit_form_sidebar', 'gin'))) {
+  if (backdrop_match_path($current_path, implode("\n", $sidebar_edit_pages)) && (theme_get_setting('edit_form_sidebar', 'gin'))) {
     $variables['classes'][] = 'edit-form--sidebar';
   }
   if (config_get('admin_bar.settings', 'position_fixed')) {
@@ -312,9 +316,7 @@ function gin_css_alter(&$css) {
  * Changes vertical tabs to container.
  */
 function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
-  if (theme_get_setting('edit_form_sidebar', 'gin')) {
-    _gin_convert_to_sidebar_edit_form($form);
-  }
+  _gin_convert_to_sidebar_edit_form($form);
 }
 
 /**
@@ -323,27 +325,54 @@ function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
  * Changes vertical tabs to container.
  */
 function gin_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
-  if (theme_get_setting('edit_form_sidebar', 'gin')) {
-    _gin_convert_to_sidebar_edit_form($form);
-  }
+  _gin_convert_to_sidebar_edit_form($form);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for user_profile_form.
+ *
+ * Changes vertical tabs to container.
+ */
+function gin_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+  _gin_convert_to_sidebar_edit_form($form);
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for user_register_form.
+ *
+ * Changes vertical tabs to container.
+ */
+function gin_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  _gin_convert_to_sidebar_edit_form($form);
 }
 
 /**
  * Helper function to convert an edit form to use the sidebar edit.
  */
 function _gin_convert_to_sidebar_edit_form(&$form) {
-  foreach (element_children($form) as $key) {
-    if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
-        $form[$key]['#collapsed'] = TRUE;
-      }
+  if (theme_get_setting('edit_form_sidebar', 'gin')) {
+    $first_key = '';
+    $first_weight = 999;
+    foreach (element_children($form) as $key) {
+      if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
+          $form[$key]['#collapsed'] = TRUE;
+          $form[$key]['#collapsible'] = TRUE;
+          if ($form[$key]['#weight'] < $first_weight) {
+            $first_weight = $form[$key]['#weight'];
+            $first_key = $key;
+          }
+        }
+    }
+    $form[$first_key]['#collapsed'] = FALSE;
+    $form['additional_settings']['#type'] = 'fieldset';
+    $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
+    $form_id = backdrop_html_class($form['#form_id']);
+    backdrop_add_js(array('Gin' => array('sidebar_form_id' => $form_id)), 'setting');
+    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
+    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
+    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
+    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
   }
-  $form['options']['#collapsed'] = FALSE;
-  $form['additional_settings']['#type'] = 'fieldset';
-  $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
-  $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/edit_form.js';
-  $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
-  $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
-  $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
 }
 
 /**
