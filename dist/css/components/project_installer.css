@@ -1,10 +1,10 @@
 /* Project Installer */
 
-.installer-browser .installer-browser-block {
+.installer-browser .installer-browser-region .installer-browser-block {
   background-color: transparent;
 }
 
-.installer-browser .installer-browser-block h2 {
+.installer-browser .installer-browser-region .installer-browser-block h2 {
   border-radius: var(--gin-border-m);
   background-color: var(--gin-bg-header);
 }

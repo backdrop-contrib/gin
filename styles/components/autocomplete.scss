@@ -1,3 +1,33 @@
+
+#autocomplete {
+  margin-top: var(--gin-spacing-xxs);
+  border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  border-color: var(--gin-border-color-form-element);
+  li {
+    padding: var(--gin-spacing-xs) var(--gin-spacing-s);
+    background: var(--gin-bg-input);
+    border-bottom: 1px solid var(--gin-border-color);
+    color: var(--gin-color-text);
+    font-size: var(--gin-font-size-s);
+    font-weight: var(--gin-font-weight-normal);
+    line-height: var(--gin-line-height-s);
+    text-align: left;
+    transition: var(--gin-transition);
+
+    &:hover {
+      background: var(--gin-bg-layer);
+      color: var(--gin-color-primary-hover);
+    }
+
+    &.selected {
+      background: var(--gin-bg-layer);
+      color: var(--gin-color-primary);
+    }
+  }
+}
+
 .ui-autocomplete,
 .ui-dialog .ui-autocomplete {
   color: var(--gin-color-text);
@@ -40,13 +70,12 @@ a.ui-button:active,
   transition: var(--gin-transition), background-position none;
 }
 
-.js .form-autocomplete.is-autocompleting,
-.js input.form-autocomplete.ui-autocomplete-loading,
+.js input.form-autocomplete.throbbing,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   background-image: none;
 }
 
-.form-autocomplete.is-autocompleting + .claro-autocomplete__message,
+.form-autocomplete.throbbing + .claro-autocomplete__message,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   display: block;
 
@@ -117,4 +146,78 @@ div.autocomplete-deluxe-multiple {
   .autocomplete-deluxe-item-delete:hover {
     background: var(--gin-color-button-text);
   }
+}
+
+/* Claro additions */
+/**
+ * @file
+ * Visual styles for animated throbber.
+ *
+ * @see autocomplete.js
+ */
+
+/**
+ * Since the autocomplete library is attached conditionally and not globally,
+ * we can be 99% sure that the default icon will be used.
+ * With inline SVGs we can prevent a HTTP request and repaint addressing the
+ * autocomplete input's background — until are sure that it will be pushed by
+ * the server with HTTP/2.
+ *
+ * The autocompleting (active) state's background-image is inlined because
+ * non-used CSS selectors are usually ignored; popular browsers don't download
+ * their 'url' references.
+ * If these selectors become active, the browser needs some time for painting
+ * previously ignored remote asset: it should get it from server, parse it and
+ * repaint the background of autocomplete field. With the inlined background we
+ * can prevent an additional timeout caused by a new request/response pair.
+ * Besides this, the autocompleting event itself may easily finish before the
+ * missing asset gets downloaded/parsed/painted, and the missing instant visual
+ * feedback would be a usability/accessibility issue as well.
+ */
+
+.js {
+  & input.form-autocomplete {
+    background-image: icon('magnifier');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    background-size: 36px;
+
+    &.throbbing {
+      background-image: icon('spinner');
+    }
+  }
+
+  &[dir="rtl"] {
+    & input.form-autocomplete {
+      background-image: icon('magnifier-rtl');
+      background-position: 0 50%;
+
+      &.throbbing {
+        background-image: icon('spinner-rtl');
+      }
+    }
+  }
+}
+
+/**
+ * Autocomplete wrapper for autocompleting message.
+ */
+.claro-autocomplete {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.claro-autocomplete__message {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 100%;
+  max-width: 100%;
+  margin-block-end: 0.15rem;
+  color: var(--color-link);
+  font-size: var(--font-size-xxs);
+  /* ~11px */
+  font-weight: bold;
+  line-height: calc(18rem / 16);
+  /* 18px */
 }

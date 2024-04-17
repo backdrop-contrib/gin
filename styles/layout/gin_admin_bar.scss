@@ -16,25 +16,50 @@
 }
 
 .admin-bar body.gin--horizontal-toolbar {
-  border-top: 0 !important;
+  border-top: 0;
   padding-top: var(--gin-toolbar-height);
 }
 
 // Toolbar
 #admin-bar {
   font-family: var(--gin-font);
+  font-size: small;
   background: var(--gin-color-contextual);
   box-shadow: none;
   z-index: 999;
   min-height: var(--gin-toolbar-y-offset);
+  left: 0;
+  top: 0;
+  position: absolute;
+  text-align: left;
+  width: 100%;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
 
   .gin--dark-mode & {
     background: var(--gin-bg-layer);
   }
 
+  li {
+
+    a,
+    span {
+      color: var(--gin-color-text);
+
+      &:hover,
+      &:focus,
+      &.expanded-trail {
+        color: var(--gin-color-primary-active);
+        background-color: var(--gin-bg-layer2);
+        text-decoration: none;
+      }
+    }
+  }
+
   @include mq(large) {
     #admin-bar-menu > li > .dropdown > li > a {
-      background: none !important;
       text-shadow: none;
     }
 
@@ -55,7 +80,6 @@
   #admin-bar-menu > li > .dropdown > li > a,
   #admin-bar-menu.dropdown li > span.menu {
     padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
-    background: none;
 
     &::before {
       content: '';
@@ -64,17 +88,21 @@
       width: 16px;
       height: 16px;
       margin-right: var(--gin-spacing-xs);
-      background-color: rgba(255, 255, 255, .6);
+      background-color: var(--gin-color-text);
       mask-position: center center;
     }
 
+    &:hover::before {
+      background-color: var(--gin-color-primary-active);
+    }
+
     &.active-trail {
-      color: #fff;
+      color: var(--gin-color-primary-active);
       font-weight: var(--gin-font-weight-bold);
-      background: rgba(255, 255, 255, .1) !important;
+      background: var(--gin-bg-layer2);
 
       &::before {
-        background-color: #fff;
+        background-color: var(--gin-color-primary-active);
       }
     }
   }
@@ -208,21 +236,38 @@
     }
   }
 
-  .top-level .admin-bar-search .form-item {
-    padding-top: 9px;
-  }
-
-  // Search
+  // Search.
   #admin-bar-search-items {
     appearance: none;
     font-size: var(--gin-font-size-xxs);
     line-height: 1;
     min-height: calc(var(--input-padding-vertical) * 2 + 1);
     padding: var(--gin-spacing-xs) var(--gin-spacing-xl) var(--gin-spacing-xs) var(--gin-spacing-m);
-    background: #fff icon('search') no-repeat center right var(--gin-spacing-s);
+    background: var(--gin-bg-input);
     background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
+    border: 1px solid var(--gin-border-color-form-element);
     border-radius: var(--gin-border-xl);
-    color: var(--gin-color-button-text);
+    color: var(--gin-color-text);
+  }
+
+  .form-type-search {
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: var(--gin-spacing-m);
+      background-color: var(--gin-color-text);
+      mask-image: icon('search');
+      mask-position: center right;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      margin-right: var(--gin-spacing-m);
+    }
   }
 }
 
@@ -236,6 +281,11 @@
 
 #admin-bar-wrapper {
   display: flex;
+  overflow: hidden;
+  padding: 0 5px;
+  background-color: var(--gin-bg-layer);
+  box-shadow: 0 0 4px rgba(0, 0, 0, .1),
+    0 2px 6px 2px rgba(0, 0, 0, .03);
 
   @include mq(large) {
     display: block;
@@ -250,8 +300,247 @@
     flex-grow: 1;
     flex-basis: 40%;
   }
+
+  > .dropdown {
+    background: transparent;
+  }
 }
 
-#admin-bar #admin-bar-menu > li > .dropdown > li > a {
-  background: none !important;
+// Core admin_bar.css is being removed; copy what's needed below.
+
+/* When body is a contextual links region. */
+.contextual-links-region #admin-bar {
+  top: -33px;
+}
+
+.admin-bar body {
+  border-top: 33px solid var(--gin-bg-layer);
+}
+
+/* Top level items. */
+#admin-bar .top-level {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#admin-bar .top-level > li > a,
+#admin-bar .top-level > li > span {
+  display: none;
+}
+
+#admin-bar .top-level > li > ul {
+  display: inline-block;
+  left: auto;
+  width: auto;
+  right: auto;
+  background: transparent;
+}
+
+#admin-bar .top-level > li > ul > li {
+  float: left;
+  width: auto;
+}
+
+#admin-bar-menu.top-level > li > ul > li > a.active-trail {
+  text-shadow: #333 0 1px 0;
+}
+
+/* Admin tasks. */
+#admin-bar li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown lists. */
+#admin-bar .dropdown {
+  line-height: 1.4em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+  display: inline-block;
+  position: static;
+  vertical-align: top;
+}
+
+#admin-bar li > a,
+#admin-bar li > span {
+  background: transparent none;
+  border: none;
+  font-weight: normal;
+  text-align: left;
+  text-decoration: none;
+}
+
+#admin-bar .dropdown li > a,
+#admin-bar .dropdown li > span {
+  display: block;
+  padding: 9px 12px;
+}
+
+/* All dropdown list items. */
+#admin-bar .dropdown li {
+  background-image: none;
+  float: left;
+  height: 100%;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* First level items. */
+#admin-bar .dropdown li li {
+  width: 160px;
+  /* Required for Opera. */
+}
+
+#admin-bar .dropdown li li li {
+  filter: Alpha(opacity=100);
+  opacity: 1;
+}
+
+/* Second-level lists. */
+/* Note: We must hide sub-lists or scrollbars might appear (display: none is not
+   read by screen readers). */
+#admin-bar .dropdown li ul {
+  display: none;
+  left: -999em;
+  line-height: 1.2em;
+  margin: 0;
+  position: absolute;
+  width: 160px;
+  background-color: var(--gin-bg-layer2);
+
+  & a:hover,
+  & li:hover {
+    background-color: var(--gin-bg-layer);
+  }
+}
+
+/* Third-and-above-level lists. */
+#admin-bar .dropdown li li.expandable ul {
+  margin: -32px 0 0 160px;
+}
+
+#admin-bar .dropdown li li.expandable.outside-right ul {
+  margin-left: -160px;
+}
+
+/* Lists nested under hovered list items. */
+#admin-bar .dropdown ul.expanded {
+  display: block;
+  left: auto;
+}
+
+/* Icon menu. */
+#admin-bar-icon.dropdown {
+  display: inline-block;
+  background: transparent;
+}
+
+#admin-bar-icon .admin-bar-icon img {
+  vertical-align: center;
+}
+
+/* Extras menu. */
+#admin-bar-extra {
+  float: right;
+  direction: rtl;
+}
+
+#admin-bar-extra .dropdown li {
+  direction: ltr;
+}
+
+/* Search form. */
+#admin-bar .admin-bar-search {
+  .form-item {
+    margin: 0;
+    padding: 6px;
+  }
+
+  input {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 12px;
+    margin: 0;
+    outline: none;
+    padding: 5px 22px 3px 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+#admin-bar .top-level .admin-bar-search {
+  width: 140px;
+
+  .form-item {
+    padding: var(--gin-spacing-s) var(--gin-spacing-xs);
+  }
+}
+
+#admin-bar .admin-bar-search-results .dropdown {
+  display: block;
+  left: auto;
+  top: 100%;
+}
+
+#admin-bar .admin-bar-search-results .dropdown,
+#admin-bar .admin-bar-search-results .dropdown li {
+  width: 250px;
+}
+
+/* #210615: Mozilla on Mac fix. */
+html.js fieldset.collapsible div.fieldset-wrapper {
+  overflow: visible;
+}
+
+/* Hide the menu on print output. */
+@media print {
+  #admin-bar {
+    display: none;
+  }
+
+  body.admin-bar {
+    margin-top: 0;
+  }
+}
+
+/**
+ * Tweaks permissions, if enabled.
+ */
+tr.admin-bar-tweak-permissions-processed {
+  cursor: pointer;
+  cursor: hand;
+}
+
+tr.admin-bar-tweak-permissions-processed td.module {
+  border-top: 0;
+}
+
+/* Alert colors. */
+#admin-bar .admin-bar-alert .error-count {
+  box-sizing: content-box;
+  padding: 4px 5px 5px 4px;
+  display: inline-block;
+  min-width: 13px;
+  border-radius: 2em;
+  margin: -4px 0 -5px;
+  text-align: center;
+  background-color: var(--gin-error-color);
+  line-height: 1;
+}
+
+#admin-bar .admin-bar-alert .error-count {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#admin-bar .admin-bar-alert .error-label {
+  display: none;
 }
