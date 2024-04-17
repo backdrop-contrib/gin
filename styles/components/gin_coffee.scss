@@ -22,6 +22,7 @@
       }
 
       &:hover,
+      &:focus,
       &.ui-state-active {
         background: var(--gin-color-primary);
 

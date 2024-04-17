@@ -37,7 +37,8 @@
   background-color: transparent;
   border-radius: var(--gin-border-s);
   padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
-  margin-inline-start: var(--gin-spacing-xs);
+  -webkit-margin-start: var(--gin-spacing-xs);
+          margin-inline-start: var(--gin-spacing-xs);
 }
 
 .project-status a:hover {

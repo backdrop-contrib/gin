@@ -22,15 +22,15 @@
   padding-top: var(--gin-spacing-xxs);
 }
 
-#coffee-form #coffee-results a:hover, #coffee-form #coffee-results a.ui-state-active {
+#coffee-form #coffee-results a:hover, #coffee-form #coffee-results a:focus, #coffee-form #coffee-results a.ui-state-active {
   background: var(--gin-color-primary);
 }
 
-#coffee-form #coffee-results a:hover, #coffee-form #coffee-results a:hover .description, #coffee-form #coffee-results a.ui-state-active, #coffee-form #coffee-results a.ui-state-active .description {
+#coffee-form #coffee-results a:hover, #coffee-form #coffee-results a:hover .description, #coffee-form #coffee-results a:focus, #coffee-form #coffee-results a:focus .description, #coffee-form #coffee-results a.ui-state-active, #coffee-form #coffee-results a.ui-state-active .description {
   color: var(--gin-color-button-text);
 }
 
-#coffee-form #coffee-results a:hover .description, #coffee-form #coffee-results a.ui-state-active .description {
+#coffee-form #coffee-results a:hover .description, #coffee-form #coffee-results a:focus .description, #coffee-form #coffee-results a.ui-state-active .description {
   opacity: .9;
 }
 

@@ -11,6 +11,27 @@ $experimental_label = ' <span class="gin-experimental-flag">Experimental</span>'
 $beta_label = ' <span class="gin-beta-flag">Beta</span>';
 $new_label = ' <span class="gin-new-flag">New</span>';
 
+if (module_exists('tonic')) {
+  $form['tonic'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => ['tonic-settings', 'gin-layer-wrapper'],
+    ],
+  ];
+  $form['tonic']['title'] = [
+    '#markup' => '<h2>' . t('Tonic') . '</h2>',
+  ];
+  $form['tonic']['description'] = [
+    '#markup' => '<p class="description">' . t('Tonic allows you to bring some Gin to the front end, such as the admin menu and modal styles.') . '</p>',
+  ];
+  $form['tonic']['admin_menu'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Admin menu'),
+    '#default_value' => config_get('tonic.settings', 'admin_menu'),
+  ];
+
+}
+
 // Darkmode.
 $form['enable_darkmode'] = array(
   '#type' => 'radios',

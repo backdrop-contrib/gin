@@ -9,6 +9,7 @@
 
 #edit-preset-accent-color .form-item-preset-accent-color input {
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
   cursor: pointer;
   width: 32px;
@@ -262,6 +263,7 @@
 
 #edit-layout-density .form-item input {
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
 }
 
