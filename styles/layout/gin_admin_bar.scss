@@ -236,7 +236,14 @@
     }
   }
 
-  // Search.
+  .top-level .admin-bar-search {
+    width: 140px;
+    .form-item {
+      padding: var(--gin-spacing-xs);
+    }
+  }
+
+  // Search
   #admin-bar-search-items {
     appearance: none;
     font-size: var(--gin-font-size-xxs);
@@ -260,15 +267,20 @@
       top: 0;
       right: 0;
       bottom: 0;
-      width: var(--gin-spacing-m);
+      width: var(--gin-icon-size-toolbar);
       background-color: var(--gin-color-text);
       mask-image: icon('search');
       mask-position: center right;
       mask-repeat: no-repeat;
       mask-size: contain;
+      // Manually adjusting this because it doesn't seem to work on input elements
+      // in Chrome. See: https: //github.com/backdrop-contrib/gin/issues/123
+      margin-top: calc((var(--gin-toolbar-height) - var(--gin-icon-size-toolbar))/2 + 1px);
+      margin-bottom: calc((var(--gin-toolbar-height) - var(--gin-icon-size-toolbar))/2 + 1px);
       margin-right: var(--gin-spacing-m);
     }
   }
+
 }
 
 #admin-bar-icon.dropdown {
@@ -473,14 +485,6 @@
     padding: 5px 22px 3px 8px;
     width: 100%;
     box-sizing: border-box;
-  }
-}
-
-#admin-bar .top-level .admin-bar-search {
-  width: 140px;
-
-  .form-item {
-    padding: var(--gin-spacing-s) var(--gin-spacing-xs);
   }
 }
 

@@ -4231,13 +4231,11 @@ a.button.button--danger:active:before {
 
 .editor-image-align .form-item input {
   display: inline-block;
-  -webkit-margin-end: var(--gin-spacing-xxs);
-          margin-inline-end: var(--gin-spacing-xxs);
+  margin-inline-end: var(--gin-spacing-xxs);
 }
 
 .editor-image-align label.option {
-  -webkit-margin-end: var(--gin-spacing-xs);
-          margin-inline-end: var(--gin-spacing-xs);
+  margin-inline-end: var(--gin-spacing-xs);
 }
 
 .card {
@@ -6611,8 +6609,7 @@ div.autocomplete-deluxe-multiple {
   inset-inline-end: 0;
   inset-block-end: 100%;
   max-width: 100%;
-  -webkit-margin-after: .15rem;
-          margin-block-end: .15rem;
+  margin-block-end: .15rem;
   color: var(--color-link);
   font-size: var(--font-size-xxs);
   /* ~11px */

@@ -38,8 +38,7 @@
 .ui-dialog:not(.ui-dialog-off-canvas) .views-exposed-form.views-exposed-form,
 .ui-dialog:not(.ui-dialog-off-canvas) .views-displays {
   border: 1px solid var(--gin-border-color-layer);
-  -webkit-margin-after: var(--gin-spacing-density-s);
-          margin-block-end: var(--gin-spacing-density-s);
+  margin-block-end: var(--gin-spacing-density-s);
 }
 
 .ui-dialog:not(.ui-dialog-off-canvas) .views-exposed-form.views-exposed-form .views-exposed-form,

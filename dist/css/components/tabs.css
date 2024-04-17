@@ -421,14 +421,12 @@
 }
 
 .vertical-tabs-panes {
-  -webkit-padding-before: var(--gin-spacing-l);
-          padding-block-start: var(--gin-spacing-l);
+  padding-block-start: var(--gin-spacing-l);
 }
 
 @media (max-width: 60.99em) {
   .vertical-tabs-panes {
-    -webkit-border-after: 1px solid var(--gin-border-color);
-            border-block-end: 1px solid var(--gin-border-color);
+    border-block-end: 1px solid var(--gin-border-color);
   }
 }
 
@@ -437,8 +435,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-border-after: 1px solid var(--gin-border-color);
-          border-block-end: 1px solid var(--gin-border-color);
+  border-block-end: 1px solid var(--gin-border-color);
   border-radius: 0;
 }
 
@@ -486,19 +483,14 @@
 @media (max-width: 60.99em) {
   .vertical-tabs fieldset.vertical-tabs-pane:not(.fieldgroup) {
     border-radius: 0;
-    -webkit-border-start: 1px solid var(--gin-border-color);
-            border-inline-start: 1px solid var(--gin-border-color);
-    -webkit-border-end: 1px solid var(--gin-border-color);
-            border-inline-end: 1px solid var(--gin-border-color);
-    -webkit-border-before: 1px solid var(--gin-border-color);
-            border-block-start: 1px solid var(--gin-border-color);
-    -webkit-border-after: none;
-            border-block-end: none;
+    border-inline-start: 1px solid var(--gin-border-color);
+    border-inline-end: 1px solid var(--gin-border-color);
+    border-block-start: 1px solid var(--gin-border-color);
+    border-block-end: none;
   }
 
   .vertical-tabs fieldset.vertical-tabs-pane:not(.fieldgroup) > legend {
-    -webkit-border-after: 1px solid var(--gin-border-color);
-            border-block-end: 1px solid var(--gin-border-color);
+    border-block-end: 1px solid var(--gin-border-color);
   }
 
   [dir="ltr"] .vertical-tabs fieldset.vertical-tabs-pane:not(.fieldgroup) > legend {
