@@ -15,16 +15,7 @@ foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
  * Implements hook_preprocess_layout().
  */
 function gin_preprocess_layout(&$variables) {
-  $current_path = current_path();
-  $sidebar_edit_pages = array(
-    'node/*/edit',
-    'node/add/*',
-    'taxonomy/term/*/edit',
-    'admin/structure/taxonomy/*/add',
-    'admin/people/create',
-    'user/*/edit',
-  );
-  if (backdrop_match_path($current_path, implode("\n", $sidebar_edit_pages)) && (theme_get_setting('edit_form_sidebar', 'gin'))) {
+  if (gin_content_form_paths()) {
     $variables['classes'][] = 'edit-form--sidebar';
   }
   if (config_get('admin_bar.settings', 'position_fixed')) {
@@ -682,4 +673,46 @@ function gin_form_element($variables) {
   $output .= "</div>\n";
 
   return $output;
+}
+
+/**
+ * Custom function to determine if we are viewing a content edit form.
+ * Other modules can add or alter the paths that are considered content forms:
+ *  - hook_gin_content_form_paths
+ *  - gin_content_form_paths_alter
+ *
+ * @return bool
+ *  TRUE if we are viewing a content edit form that should use the sidebar.
+ */
+function gin_content_form_paths() {
+  // This is only relevant if the sidebar is turned on.
+  if (!theme_get_setting('edit_form_sidebar', 'gin')) {
+    return FALSE;
+  }
+  else {
+    $is_content_form = FALSE;
+    $current_path = current_path();
+    $sidebar_edit_paths_cached = cache_get('gin_content_form_paths');
+    if (empty($sidebar_edit_paths_cached)) {
+      $sidebar_edit_paths = array(
+        'node/*/edit',
+        'node/add/*',
+        'taxonomy/term/*/edit',
+        'admin/structure/taxonomy/*/add',
+        'admin/people/create',
+        'user/*/edit',
+      );
+      $additional_paths = module_invoke_all('gin_content_form_paths');
+      $sidebar_edit_paths = array_merge($additional_paths, $sidebar_edit_paths);
+
+      // Allow alteration of the paths.
+      backdrop_alter('gin_content_form_paths', $sidebar_edit_paths);
+      cache_set('gin_content_form_paths', $sidebar_edit_paths);
+    }
+    else {
+      $sidebar_edit_paths = $sidebar_edit_paths_cached->data;
+    }
+    $is_content_form = backdrop_match_path($current_path, implode("\n", $sidebar_edit_paths));
+    return $is_content_form;
+  }
 }
