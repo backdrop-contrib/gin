@@ -35,15 +35,12 @@ function _gin_toolbar_radios($element) {
 }
 
 /**
- * Helper function for check if Gin is active.
+ * Helper function for checking if Gin is active. In this case, active means
+ * that Gin is set as the default admin theme or is the currently active theme.
  */
 function _gin_is_active() {
+  // Check if set as admin theme.
   $admin_theme = config_get('system.core', 'admin_theme');
 
-  // Check if set as admin theme.
-  if ($admin_theme === 'gin') {
-    return true;
-  }
-
-  return false;
+  return ($admin_theme === 'gin' || $GLOBALS['theme_key'] === 'gin');
 }
