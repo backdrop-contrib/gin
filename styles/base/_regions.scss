@@ -52,10 +52,10 @@
     height: var(--gin-height-sticky);
     margin-bottom: 0;
 
-    .gin--navigation &,
-    .gin--vertical-toolbar &,
-    .gin--horizontal-toolbar .admin-bar--fixed &,
-    .gin--classic-toolbar & {
+    .admin-bar .gin--navigation &,
+    .admin-bar .gin--vertical-toolbar &,
+    .admin-bar .gin--horizontal-toolbar .admin-bar--fixed &,
+    .admin-bar .gin--classic-toolbar & {
       top: var(--gin-toolbar-y-offset);
     }
   }
@@ -140,8 +140,12 @@
 
   @include mq(large) {
     position: sticky;
-    top: calc(var(--gin-toolbar-y-offset) + (var(--gin-height-sticky) - 40px));
+    top: calc((var(--gin-height-sticky) - 40px));
     width: calc(100% - min(10vw, 96px) + var(--gin-spacing-l));
+
+    .admin-bar & {
+      top: calc((var(--gin-height-sticky) - 40px) + var(--gin-toolbar-y-offset));
+    }
 
     // Classic, legacy toolbar
     .gin--classic-toolbar:not(.gin--edit-form) & {

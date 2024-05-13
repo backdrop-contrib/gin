@@ -254,7 +254,7 @@ button.link:active,
     margin-bottom: 0;
   }
 
-  .gin--navigation .region-sticky, .gin--vertical-toolbar .region-sticky, .gin--horizontal-toolbar .admin-bar--fixed .region-sticky, .gin--classic-toolbar .region-sticky {
+  .admin-bar .gin--navigation .region-sticky, .admin-bar .gin--vertical-toolbar .region-sticky, .admin-bar .gin--horizontal-toolbar .admin-bar--fixed .region-sticky, .admin-bar .gin--classic-toolbar .region-sticky {
     top: var(--gin-toolbar-y-offset);
   }
 }
@@ -347,8 +347,12 @@ button.link:active,
 @media (min-width: 64em) {
   .sticky-shadow {
     position: sticky;
-    top: calc(var(--gin-toolbar-y-offset) + var(--gin-height-sticky) - 40px);
+    top: calc(var(--gin-height-sticky) - 40px);
     width: calc(100% - min(10vw, 96px) + var(--gin-spacing-l));
+  }
+
+  .admin-bar .sticky-shadow {
+    top: calc(var(--gin-height-sticky) - 40px + var(--gin-toolbar-y-offset));
   }
 
   .gin--classic-toolbar:not(.gin--edit-form) .sticky-shadow {
