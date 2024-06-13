@@ -34,8 +34,7 @@
 
 .block-system > .views-form .views-bulk-form > .form-item-action,
 .view-content .views-form .views-bulk-form > .form-item-action {
-  -webkit-padding-before: 0;
-          padding-block-start: 0;
+  padding-block-start: 0;
 }
 
 @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {

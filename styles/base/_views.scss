@@ -202,6 +202,12 @@
   background-color: var(--gin-bg-header);
   border: 0 none;
   border-radius: var(--gin-border-l) var(--gin-border-l) 0 0;
+  display: flex;
+  flex-direction: column;
+
+  > .tabs {
+    flex-flow: row wrap;
+  }
 
   // #3186729: Drupal 9.1 fix
   &__extra-actions-wrapper {
@@ -209,8 +215,18 @@
   }
 
   .dropbutton-wrapper {
-    top: 10px;
+    top: 0;
+    min-height: 3em;
+    padding-bottom: var(--gin-spacing-m);
     right: var(--gin-spacing-l);
+  }
+
+  @include mq(large) {
+    flex-direction: row-reverse;
+
+    .dropbutton-wrapper {
+      top: 10px;
+    }
   }
 }
 
@@ -477,6 +493,7 @@
     border-bottom: 0 none;
     font-size: var(--gin-font-size-s);
     font-weight: var(--gin-font-weight-semibold);
+
     .views-selected-options {
       font-weight: var(--gin-font-weight-normal);
     }
@@ -501,6 +518,7 @@ a.views-field-excluded {
   .filterable-option {
     padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
     border-top: 1px solid var(--gin-border-color);
+
     > .form-item {
       padding: 0;
     }

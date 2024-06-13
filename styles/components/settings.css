@@ -2,84 +2,60 @@
   display: flex;
   flex-wrap: wrap;
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color {
   position: relative;
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input {
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
   cursor: pointer;
   width: 32px;
   height: 32px;
   border-radius: 50%;
   top: var(--gin-spacing-m);
+  margin-right: var(--gin-spacing-xs);
   border: 1px solid transparent;
   border-color: transparent;
 }
-
-[dir="ltr"] #edit-preset-accent-color .form-item-preset-accent-color input {
-  margin-right: var(--gin-spacing-xs);
-}
-
-[dir="rtl"] #edit-preset-accent-color .form-item-preset-accent-color input {
-  margin-left: var(--gin-spacing-xs);
-}
-
 #edit-preset-accent-color .form-item-preset-accent-color input, .gin--dark-mode #edit-preset-accent-color .form-item-preset-accent-color input {
   background-color: var(--gin-color-primary);
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input:hover {
   box-shadow: none;
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input:hover, #edit-preset-accent-color .form-item-preset-accent-color input:focus, #edit-preset-accent-color .form-item-preset-accent-color input:focus:hover, #edit-preset-accent-color .form-item-preset-accent-color input:checked {
   border-color: var(--gin-color-primary);
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input:focus:checked, #edit-preset-accent-color .form-item-preset-accent-color input:focus, #edit-preset-accent-color .form-item-preset-accent-color input:checked {
   background-color: var(--gin-color-primary);
   box-shadow: inset 0 0 0 2px var(--gin-bg-layer), inset 0 0 0 4px var(--gin-color-primary);
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input[data-gin-accent=custom] {
   background-color: #fff;
-  background-image: url(../../media/settings/custom-color.jpg);
+  background-image: url(~settings/custom-color.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
   border-color: var(--gin-border-color);
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color input[data-gin-accent=custom]:checked {
   background-color: #fff;
   border-color: var(--gin-border-color);
   border-width: 1px;
 }
-
 #edit-preset-accent-color .form-item-preset-accent-color label {
   display: none;
   visibility: hidden;
   z-index: 1;
   position: absolute;
   top: 100%;
+  left: -10px;
   padding: var(--gin-spacing-xs);
   color: var(--gin-color-contextual-text);
   background: var(--gin-color-contextual);
   border-radius: var(--gin-border-xs);
-}
-
-[dir="ltr"] #edit-preset-accent-color .form-item-preset-accent-color label {
-  left: -10px;
   transform: translateX(-50%);
 }
-
-[dir="rtl"] #edit-preset-accent-color .form-item-preset-accent-color label {
-  right: -10px;
-  transform: translateX(50%);
-}
-
 #edit-preset-accent-color .form-item-preset-accent-color:hover label.option,
 #edit-preset-accent-color .form-item-preset-accent-color input:active ~ label.option,
 #edit-preset-accent-color .form-item-preset-accent-color input:focus ~ label.option {
@@ -91,33 +67,13 @@
 #edit-accent-group .form-type-textfield,
 #edit-focus-group .form-type-color,
 #edit-focus-group .form-type-textfield {
+  float: left;
   margin: 0 0 0var --gin-spacing-xs 0;
 }
-
-[dir="ltr"] #edit-accent-group .form-type-color,
-[dir="ltr"] #edit-accent-group .form-type-textfield,
-[dir="ltr"] #edit-focus-group .form-type-color,
-[dir="ltr"] #edit-focus-group .form-type-textfield {
-  float: left;
-}
-
-[dir="rtl"] #edit-accent-group .form-type-color,
-[dir="rtl"] #edit-accent-group .form-type-textfield,
-[dir="rtl"] #edit-focus-group .form-type-color,
-[dir="rtl"] #edit-focus-group .form-type-textfield {
-  float: right;
-}
-
-[dir="ltr"] #edit-accent-group .form-type-color,
-[dir="ltr"] #edit-focus-group .form-type-color {
+#edit-accent-group .form-type-color,
+#edit-focus-group .form-type-color {
   margin-right: var(--gin-spacing-xs);
 }
-
-[dir="rtl"] #edit-accent-group .form-type-color,
-[dir="rtl"] #edit-focus-group .form-type-color {
-  margin-left: var(--gin-spacing-xs);
-}
-
 #edit-accent-group .description,
 #edit-focus-group .description {
   clear: both;
@@ -126,42 +82,30 @@
 #edit-enable-darkmode {
   display: inline-flex;
   flex-wrap: wrap;
-  padding: .1875rem var(--gin-spacing-xs);
+  padding: 0.1875rem var(--gin-spacing-xs);
   border: 1px solid var(--gin-border-color-form-element);
   border-radius: var(--gin-spacing-xl);
 }
-
 .gin--dark-mode #edit-enable-darkmode {
   background: var(--gin-bg-layer2);
 }
-
 #edit-enable-darkmode .form-type-radio {
   margin-top: 0;
+  margin-left: 0;
   margin-bottom: 0;
 }
-
-[dir="ltr"] #edit-enable-darkmode .form-type-radio {
-  margin-left: 0;
-}
-
-[dir="rtl"] #edit-enable-darkmode .form-type-radio {
-  margin-right: 0;
-}
-
 #edit-enable-darkmode label.option {
   display: inline-block;
-  padding: .375rem var(--gin-spacing-m);
+  padding: 0.375rem var(--gin-spacing-m);
   margin: var(--gin-spacing-xxs) 0;
   border: 2px solid transparent;
   border-radius: var(--gin-border-xl);
   box-sizing: border-box;
 }
-
 #edit-enable-darkmode label.option:hover {
   color: var(--gin-color-primary);
   background: var(--gin-color-primary-light-hover);
 }
-
 #edit-enable-darkmode input {
   opacity: 0;
   width: 1px;
@@ -170,11 +114,9 @@
   margin: 0;
   border: 0;
 }
-
 #edit-enable-darkmode input:focus + label.option {
   box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
 }
-
 #edit-enable-darkmode input:checked + label.option {
   font-weight: var(--gin-font-weight-bold);
   color: var(--gin-color-primary-active);
@@ -187,47 +129,26 @@
   flex-wrap: wrap;
   margin-top: var(--gin-spacing-xs);
 }
-
 #edit-classic-toolbar .form-item,
 #edit-layout-density .form-item {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 140px;
-}
-
-[dir="ltr"] #edit-classic-toolbar .form-item,
-[dir="ltr"] #edit-layout-density .form-item {
   margin: 0 var(--gin-spacing-s) 0 0;
 }
-
-[dir="rtl"] #edit-classic-toolbar .form-item,
-[dir="rtl"] #edit-layout-density .form-item {
-  margin: 0 0 0 var(--gin-spacing-s);
-}
-
 #edit-classic-toolbar .form-item input,
 #edit-layout-density .form-item input {
   cursor: pointer;
   position: static;
   width: 140px;
   height: 100px;
+  margin-left: 0;
   border-radius: var(--gin-border-l);
   transform: none;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
-[dir="ltr"] #edit-classic-toolbar .form-item input,
-[dir="ltr"] #edit-layout-density .form-item input {
-  margin-left: 0;
-}
-
-[dir="rtl"] #edit-classic-toolbar .form-item input,
-[dir="rtl"] #edit-layout-density .form-item input {
-  margin-right: 0;
-}
-
 #edit-classic-toolbar .form-item input #edit-classic-toolbar .form-item input:focus,
 #edit-classic-toolbar .form-item input #edit-layout-density .form-item input:focus,
 #edit-layout-density .form-item input #edit-classic-toolbar .form-item input:focus,
@@ -235,23 +156,19 @@
   border-color: var(--gin-color-text);
   box-shadow: none;
 }
-
 #edit-classic-toolbar .form-item input:checked,
 #edit-layout-density .form-item input:checked {
   border-color: var(--gin-color-primary);
   box-shadow: inset 0 0 0 1px var(--gin-color-primary);
 }
-
 #edit-classic-toolbar .form-item input:focus,
 #edit-layout-density .form-item input:focus {
   box-shadow: 0 0 0 3px var(--gin-color-focus);
 }
-
 #edit-classic-toolbar .form-item input:checked:focus,
 #edit-layout-density .form-item input:checked:focus {
   box-shadow: inset 0 0 0 1px var(--gin-color-primary), 0 0 0 3px var(--gin-color-focus);
 }
-
 #edit-classic-toolbar .form-item label.option,
 #edit-layout-density .form-item label.option {
   font-size: var(--gin-font-size-xxs);
@@ -262,43 +179,30 @@
 
 #edit-layout-density .form-item input {
   -webkit-appearance: none;
+     -moz-appearance: none;
           appearance: none;
 }
-
 #edit-layout-density .form-item input#edit-layout-density-default {
-  background-image: url(../../media/settings/layout_density_default.png);
+  background-image: url(~settings/layout_density_default.png);
 }
-
 .gin--dark-mode #edit-layout-density .form-item input#edit-layout-density-default {
-  background-image: url(../../media/settings/layout_density_default_darkmode.png);
+  background-image: url(~settings/layout_density_default_darkmode.png);
 }
-
 #edit-layout-density .form-item input#edit-layout-density-medium {
-  background-image: url(../../media/settings/layout_density_medium.png);
+  background-image: url(~settings/layout_density_medium.png);
 }
-
 .gin--dark-mode #edit-layout-density .form-item input#edit-layout-density-medium {
-  background-image: url(../../media/settings/layout_density_default_darkmode.png);
+  background-image: url(~settings/layout_density_default_darkmode.png);
 }
-
 #edit-layout-density .form-item input#edit-layout-density-small {
-  background-image: url(../../media/settings/layout_density_small.png);
+  background-image: url(~settings/layout_density_small.png);
 }
-
 .gin--dark-mode #edit-layout-density .form-item input#edit-layout-density-small {
-  background-image: url(../../media/settings/layout_density_small_darkmode.png);
+  background-image: url(~settings/layout_density_small_darkmode.png);
 }
 
 input[data-gin-toolbar=new] + label .gin-new-flag {
   position: absolute;
   top: -100px;
-}
-
-[dir="ltr"] input[data-gin-toolbar=new] + label .gin-new-flag {
   right: 8px;
-}
-
-[dir="rtl"] input[data-gin-toolbar=new] + label .gin-new-flag {
-  left: 8px;
-}
-
+}/*# sourceMappingURL=settings.css.map */

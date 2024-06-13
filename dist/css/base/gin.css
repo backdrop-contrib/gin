@@ -127,12 +127,6 @@ button.link:active,
   color: var(--gin-color-primary-active);
 }
 
-*|*:-webkit-any-link:not(svg|a) {
-  text-decoration: underline;
-  -webkit-text-decoration-style: var(--gin-link-decoration-style);
-          text-decoration-style: var(--gin-link-decoration-style);
-}
-
 *|*:any-link:not(svg|a) {
   text-decoration: underline;
   -webkit-text-decoration-style: var(--gin-link-decoration-style);
@@ -948,12 +942,9 @@ body:not(.toolbar-tray-open) .layout-container {
 }
 
 .views-edit-view h1.unit-title {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
-  -webkit-margin-after: var(--gin-spacing-m);
-          margin-block-end: var(--gin-spacing-m);
-  -webkit-padding-before: 0;
-          padding-block-start: 0;
+  margin-block-start: 0;
+  margin-block-end: var(--gin-spacing-m);
+  padding-block-start: 0;
 }
 
 #views-ui-preview-form > div > div,
@@ -1043,6 +1034,12 @@ body:not(.toolbar-tray-open) .layout-container {
   background-color: var(--gin-bg-header);
   border: 0 none;
   border-radius: var(--gin-border-l) var(--gin-border-l) 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.views-display-top > .tabs {
+  flex-flow: row wrap;
 }
 
 .views-display-top__extra-actions-wrapper {
@@ -1050,7 +1047,9 @@ body:not(.toolbar-tray-open) .layout-container {
 }
 
 .views-display-top .dropbutton-wrapper {
-  top: 10px;
+  top: 0;
+  min-height: 3em;
+  padding-bottom: var(--gin-spacing-m);
 }
 
 [dir="ltr"] .views-display-top .dropbutton-wrapper {
@@ -1059,6 +1058,16 @@ body:not(.toolbar-tray-open) .layout-container {
 
 [dir="rtl"] .views-display-top .dropbutton-wrapper {
   left: var(--gin-spacing-l);
+}
+
+@media (min-width: 64em) {
+  .views-display-top {
+    flex-direction: row-reverse;
+  }
+
+  .views-display-top .dropbutton-wrapper {
+    top: 10px;
+  }
 }
 
 #edit-displays .views-display-top {
@@ -1076,8 +1085,7 @@ body:not(.toolbar-tray-open) .layout-container {
 }
 
 #views-display-menu-tabs a.views-display-disabled-link {
-  -webkit-padding-start: var(--gin-spacing-l);
-          padding-inline-start: var(--gin-spacing-l);
+  padding-inline-start: var(--gin-spacing-l);
 }
 
 #views-display-menu-tabs a.views-display-disabled-link::before {
@@ -1091,8 +1099,7 @@ body:not(.toolbar-tray-open) .layout-container {
           mask-size: contain;
   width: var(--gin-spacing-l);
   height: var(--gin-spacing-s);
-  -webkit-margin-start: calc(var(--gin-spacing-m) * -1);
-          margin-inline-start: calc(var(--gin-spacing-m) * -1);
+  margin-inline-start: calc(var(--gin-spacing-m) * -1);
   background-color: currentColor;
   display: inline-block;
   content: "";
@@ -1385,12 +1392,10 @@ a.views-field-excluded {
 
 .views-display-columns > * {
   width: 32%;
-  -webkit-margin-after: 0;
-          margin-block-end: 0;
+  margin-block-end: 0;
   margin-block: 0 var(--gin-spacing-l);
   margin-inline: 0;
-  -webkit-margin-start: 2%;
-          margin-inline-start: 2%;
+  margin-inline-start: 2%;
 }
 
 [dir="ltr"] .views-display-columns > * {
@@ -1403,8 +1408,7 @@ a.views-field-excluded {
 
 @media screen and (min-width: 60rem) {
   .views-display-columns > :first-child {
-    -webkit-margin-start: 0;
-            margin-inline-start: 0;
+    margin-inline-start: 0;
   }
 }
 
@@ -2327,7 +2331,6 @@ a.tabledrag-handle:hover .handle {
 .form-select,
 .form-element--type-select {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3e%3cpath fill='none' stroke-width='1.5' d='M1 1l6 6 6-6' stroke='%23545560'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -2374,7 +2377,6 @@ a.tabledrag-handle:hover .handle {
 .form-checkbox,
 .form-radio {
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
   width: 21px;
   height: 21px;
@@ -3407,8 +3409,7 @@ ul .layout-condition a.layout-button-link {
   background-color: transparent;
   border-radius: var(--gin-border-s);
   padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
-  -webkit-margin-start: var(--gin-spacing-xs);
-          margin-inline-start: var(--gin-spacing-xs);
+  margin-inline-start: var(--gin-spacing-xs);
 }
 
 .action-link > a:hover,
@@ -5684,7 +5685,6 @@ table.sticky-enabled {
   text-decoration: none;
   line-height: 1rem;
   -webkit-appearance: none;
-     -moz-appearance: none;
           appearance: none;
 }
 
