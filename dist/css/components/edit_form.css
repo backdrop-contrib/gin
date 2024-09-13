@@ -40,6 +40,7 @@
 .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .node-form > div {
   overflow: inherit;
   display: block;
+  overflow-y: auto;
 }
 
 .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-main,
