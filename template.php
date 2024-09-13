@@ -806,6 +806,7 @@ function gin_ignore_sticky_form_actions() {
     'layout-title-settings-form',
     'layout-configure-region-page',
     'views-ui-preview-form',
+    'file-managed-file-browser-form',
   );
   $exclude_form_ids += module_invoke_all('gin_ignore_sticky_form_actions');
   return $exclude_form_ids;
