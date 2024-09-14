@@ -22,7 +22,8 @@
       const sidebarFormId = settings.Gin.sidebar_form_id;
       const actionsFormId = settings.Gin.actions_form_id;
       const sidebarToggler = '<a href="#toggle-sidebar" class="meta-sidebar__trigger trigger" role="button" title="' + hideLabel + '" aria-controls="gin_sidebar"><span class="visually-hidden">' + hideLabel + '</span></a>';
-      $('div:not(.ui-dialog-content) > #' + sidebarFormId).once('gin-sidebar').each(function () {
+      $('#backdrop-modal form').once('ginEditModalForm').addClass('gin-edit-modal-form');
+      $('#' + sidebarFormId + ':not(.gin-edit-modal-form)').once('gin-sidebar').each(function () {
         $('> div:first-child', this).addClass('layout-region-node-main');
 
         if (actionsFormId) {
