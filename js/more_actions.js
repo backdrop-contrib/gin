@@ -14,7 +14,8 @@
 
     init: function (context, settings) {
       const actionsFormId = settings.Gin.actions_form_id;
-      $('div:not(.ui-dialog-content) > #' + actionsFormId).once('ginEditForm').each(function () {
+      $('#backdrop-modal form').once('ginEditModalForm').addClass('gin-edit-modal-form');
+      $('#' + actionsFormId + ':not(.gin-edit-modal-form)').once('ginEditForm').each(function () {
         // Sync form ID.
         // Backdrop.ginStickyFormActions.updateFormId(newParent, $(this).attr('id'));
         $('.form-actions input', this).attr('form', actionsFormId);

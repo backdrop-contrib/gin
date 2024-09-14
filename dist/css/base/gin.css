@@ -2177,6 +2177,7 @@ a.tabledrag-handle:hover .handle {
   transition: var(--gin-transition);
   max-width: 100%;
   margin-block-start: var(--gin-spacing-xxs);
+  margin-inline-start: var(--gin-spacing-xxs);
 }
 
 .form-element:hover,
@@ -5772,7 +5773,7 @@ fieldset.collapsible .fieldset-legend {
 
 fieldset.collapsible .fieldset-legend a.fieldset-title {
   background: transparent;
-  max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl));
+  max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl) - 4px);
 }
 
 [dir="ltr"] fieldset.collapsible .fieldset-legend a.fieldset-title {

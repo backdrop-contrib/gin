@@ -37,6 +37,7 @@
   transition: var(--gin-transition);
   max-width: 100%;
   margin-block-start: var(--gin-spacing-xxs);
+  margin-inline-start: var(--gin-spacing-xxs);
 
   &:hover {
     border-color: var(--gin-color-text);

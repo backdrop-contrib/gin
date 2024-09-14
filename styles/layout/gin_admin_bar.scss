@@ -26,7 +26,6 @@
   font-size: small;
   background: var(--gin-color-contextual);
   box-shadow: none;
-  z-index: 999;
   min-height: var(--gin-toolbar-y-offset);
   left: 0;
   top: 0;
@@ -36,7 +35,7 @@
   line-height: 1;
   padding: 0;
   margin: 0;
-  z-index: 999;
+  z-index: 99;
 
   li span.admin-bar-link-icon {
     display: none;

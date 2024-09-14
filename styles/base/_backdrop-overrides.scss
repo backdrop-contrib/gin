@@ -374,7 +374,7 @@ fieldset.collapsible {
     a.fieldset-title {
       background: transparent;
       padding: var(--gin-spacing-m) var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-xxl);
-      max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl));
+      max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl) - 4px);
     }
 
     .fieldset-title::before {
