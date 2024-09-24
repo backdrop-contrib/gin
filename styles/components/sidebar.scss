@@ -22,23 +22,26 @@
 .layout-region-node-secondary {
   transition: transform var(--gin-transition-fast);
 
-  @include mq($to: medium) {
-    --gin-sidebar-width: var(--gin-sidebar-small-width);
-  }
+  //@include mq($to: medium) {
+  //  --gin-sidebar-width: var(--gin-sidebar-small-width);
+  //}
 
   // Fixes the flickering happinging on smaller devices.
-  @include mq($to: large) {
-    opacity: 0;
-    visibility: hidden;
-  }
+  //@include mq($to: large) {
+  //  opacity: 0;
+  //  visibility: hidden;
+  //}
 }
 
-body[data-meta-sidebar=closed] {
-  --gin-sidebar-offset: 0px;
+@include mq($from: large) {
+  body[data-meta-sidebar=closed] {
+    --gin-sidebar-offset: 0px;
 
-  .layout-region-node-secondary {
-    transform: translateX(var(--gin-sidebar-width));
-    visibility: hidden;
+    .layout-region-node-secondary {
+      transform: translateX(var(--gin-sidebar-width));
+      // visibility: hidden;
+      display: none;
+    }
   }
 }
 
@@ -76,7 +79,8 @@ body[data-meta-sidebar=open] {
       background-color: var(--gin-icon-color);
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: var(--gin-color-primary-light);
 
       &::before {
@@ -115,7 +119,10 @@ body[data-meta-sidebar=open] {
       border-radius: 50%;
     }
 
-    &:hover, &:focus, &.is-active, &.is-active:hover {
+    &:hover,
+    &:focus,
+    &.is-active,
+    &.is-active:hover {
       background-color: var(--gin-color-primary-light);
 
       &::before {
@@ -162,6 +169,19 @@ body[data-meta-sidebar=open] {
 
     @include mq(large) {
       display: none;
+    }
+  }
+}
+
+// Backdrop-specific styles.
+@include mq($to: large) {
+  #gin_sidebar {
+    #edit-additional-settings {
+      border: none;
+
+      > .fieldset-wrapper {
+        padding: 0;
+      }
     }
   }
 }

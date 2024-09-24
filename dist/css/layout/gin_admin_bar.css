@@ -33,7 +33,7 @@
   line-height: 1;
   padding: 0;
   margin: 0;
-  z-index: 99;
+  z-index: 999;
 }
 
 [dir="ltr"] #admin-bar {
@@ -44,6 +44,10 @@
 [dir="rtl"] #admin-bar {
   right: 0;
   text-align: right;
+}
+
+#admin-bar:has(~ .ui-dialog) {
+  z-index: 99;
 }
 
 #admin-bar li span.admin-bar-link-icon {
@@ -319,30 +323,26 @@
 }
 
 #admin-bar-wrapper {
-  display: flex;
   overflow: hidden;
   padding: 0 5px;
   background-color: var(--gin-bg-layer);
   box-shadow: 0 0 4px rgba(0, 0, 0, .1), 0 2px 6px 2px rgba(0, 0, 0, .03);
 }
 
-@media (min-width: 64em) {
-  #admin-bar-wrapper {
-    display: block;
-  }
+#admin-bar-wrapper #admin-bar-icon {
+  min-width: max-content;
 }
 
-#admin-bar-wrapper #admin-bar-menu {
-  flex-grow: 1;
-  flex-basis: 60%;
+#admin-bar-wrapper #admin-bar-alert {
+  min-width: 50px;
 }
 
 #admin-bar-wrapper #admin-bar-extra {
-  flex-grow: 1;
-  flex-basis: 40%;
+  min-width: 100px;
 }
 
 #admin-bar-wrapper > .dropdown {
+  max-width: max-content;
   background: transparent;
 }
 
@@ -372,7 +372,8 @@
 }
 
 #admin-bar .top-level > li > ul {
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
   left: auto;
   width: auto;
   right: auto;
@@ -383,12 +384,13 @@
   width: auto;
 }
 
-[dir="ltr"] #admin-bar .top-level > li > ul > li {
-  float: left;
+#admin-bar .top-level > li > ul > li a {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-[dir="rtl"] #admin-bar .top-level > li > ul > li {
-  float: right;
+#admin-bar .top-level > li > ul > li a > .admin-bar-link-text {
+  white-space: nowrap;
 }
 
 #admin-bar-menu.top-level > li > ul > li > a.active-trail {
@@ -433,6 +435,11 @@
   text-align: right;
 }
 
+#admin-bar li.highlight > a,
+#admin-bar li.highlight > span {
+  background-color: var(--gin-color-primary-light);
+}
+
 #admin-bar .dropdown li > a,
 #admin-bar .dropdown li > span {
   display: block;
@@ -468,10 +475,6 @@
 #admin-bar .dropdown li li li {
   filter: Alpha(opacity=100);
   opacity: 1;
-}
-
-#admin-bar .dropdown li li li.highlight {
-  background-color: var(--gin-color-primary-light);
 }
 
 /* Second-level lists. */

@@ -38,16 +38,10 @@
     },
     showSidebar: () => {
       const chooseStorage = window.innerWidth < 1024 ? "Backdrop.gin.sidebarExpanded.mobile" : storageDesktop, hideLabel = Backdrop.t("Hide sidebar panel"), sidebarTrigger = document.querySelector(".meta-sidebar__trigger");
-      var _Backdrop$ginCoreNavi;
-      if (sidebarTrigger.querySelector("span").innerHTML = hideLabel, sidebarTrigger.setAttribute("title", hideLabel), 
+      sidebarTrigger.querySelector("span").innerHTML = hideLabel, sidebarTrigger.setAttribute("title", hideLabel), 
       sidebarTrigger.nextSibling && (sidebarTrigger.nextSibling.innerHTML = hideLabel), 
       sidebarTrigger.setAttribute("aria-expanded", "true"), sidebarTrigger.classList.add("is-active"), 
-      $("body").attr("data-meta-sidebar", "open"), localStorage.setItem(chooseStorage, "true"), 
-      window.innerWidth < 1280) if (null === (_Backdrop$ginCoreNavi = Backdrop.ginCoreNavigation) || void 0 === _Backdrop$ginCoreNavi || _Backdrop$ginCoreNavi.collapseToolbar(), 
-      "vertical" === toolbarVariant) Backdrop.ginToolbar.collapseToolbar(); else if ("new" === toolbarVariant) {
-        var _Backdrop$behaviors$g;
-        null === (_Backdrop$behaviors$g = Backdrop.behaviors.ginNavigation) || void 0 === _Backdrop$behaviors$g || _Backdrop$behaviors$g.collapseSidebar();
-      }
+      $("body").attr("data-meta-sidebar", "open"), localStorage.setItem(chooseStorage, "true");
     },
     collapseSidebar: () => {
       const chooseStorage = window.innerWidth < 1024 ? "Backdrop.gin.sidebarExpanded.mobile" : storageDesktop, showLabel = Backdrop.t("Show sidebar panel"), sidebarTrigger = document.querySelector(".meta-sidebar__trigger");

@@ -35,7 +35,14 @@
   line-height: 1;
   padding: 0;
   margin: 0;
-  z-index: 99;
+  // Needs to be higher than core Smart Menus z-index (998), just in case.
+  // e.g. When using Tonic and this admin menu appears on the front end.
+  z-index: 999;
+
+  &:has(~ .ui-dialog) {
+    // Modals appear underneath the toolbar unless we adjust this.
+    z-index: 99;
+  }
 
   li span.admin-bar-link-icon {
     display: none;
@@ -241,6 +248,7 @@
 
   .top-level .admin-bar-search {
     width: 140px;
+
     .form-item {
       padding: var(--gin-spacing-xs);
     }
@@ -295,28 +303,30 @@
 }
 
 #admin-bar-wrapper {
-  display: flex;
   overflow: hidden;
   padding: 0 5px;
   background-color: var(--gin-bg-layer);
   box-shadow: 0 0 4px rgba(0, 0, 0, .1),
     0 2px 6px 2px rgba(0, 0, 0, .03);
 
-  @include mq(large) {
-    display: block;
+  #admin-bar-icon {
+    min-width: max-content;
   }
 
   #admin-bar-menu {
-    flex-grow: 1;
-    flex-basis: 60%;
+    // max-width: unset;
+  }
+
+  #admin-bar-alert {
+    min-width: 50px;
   }
 
   #admin-bar-extra {
-    flex-grow: 1;
-    flex-basis: 40%;
+    min-width: 100px;
   }
 
   > .dropdown {
+    max-width: max-content;
     background: transparent;
   }
 }
@@ -347,7 +357,8 @@
 }
 
 #admin-bar .top-level > li > ul {
-  display: inline-block;
+  display: flex;
+  flex-wrap: nowrap;
   left: auto;
   width: auto;
   right: auto;
@@ -355,8 +366,16 @@
 }
 
 #admin-bar .top-level > li > ul > li {
-  float: left;
   width: auto;
+
+  a {
+    display: flex;
+    flex-wrap: nowrap;
+
+    > .admin-bar-link-text {
+      white-space: nowrap;
+    }
+  }
 }
 
 #admin-bar-menu.top-level > li > ul > li > a.active-trail {
@@ -381,13 +400,23 @@
   vertical-align: top;
 }
 
-#admin-bar li > a,
-#admin-bar li > span {
-  background: transparent none;
-  border: none;
-  font-weight: normal;
-  text-align: left;
-  text-decoration: none;
+#admin-bar li {
+
+  > a,
+  > span {
+    background: transparent none;
+    border: none;
+    font-weight: normal;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  &.highlight {
+    > a,
+    > span {
+      background-color: var(--gin-color-primary-light);
+    }
+  }
 }
 
 #admin-bar .dropdown li > a,
@@ -416,10 +445,6 @@
 #admin-bar .dropdown li li li {
   filter: Alpha(opacity=100);
   opacity: 1;
-
-  &.highlight {
-    background-color: var(--gin-color-primary-light);
-  }
 }
 
 /* Second-level lists. */

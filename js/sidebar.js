@@ -123,6 +123,7 @@
       localStorage.setItem(chooseStorage, 'true');
 
       // Check which toolbar is active.
+      /*
       if (window.innerWidth < breakpointLarge) {
         Backdrop.ginCoreNavigation?.collapseToolbar();
 
@@ -132,6 +133,7 @@
           Backdrop.behaviors.ginNavigation?.collapseSidebar();
         }
       }
+      */
     },
 
     collapseSidebar: () => {
