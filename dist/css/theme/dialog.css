@@ -961,7 +961,7 @@
 }
 
 .ui-dialog fieldset:not(.fieldgroup) > legend {
-  inset-block-start: 20px;
+  inset-block-start: 0px;
 }
 
 .ui-dialog fieldset:not(.fieldgroup) > .fieldset-wrapper {

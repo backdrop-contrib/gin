@@ -1743,6 +1743,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
 }
 
 .field-multiple-table thead .field-label .label,
+.field-multiple-table thead .field-label label,
 .field-multiple-table thead .form-item__label--multiple-value-form {
   display: inline-block;
   font-size: var(--gin-font-size-l);
@@ -2576,7 +2577,7 @@ fieldset:not(.fieldgroup) {
 }
 
 fieldset:not(.fieldgroup) > legend {
-  inset-block-start: 20px;
+  inset-block-start: 0px;
 }
 
 fieldset:not(.fieldgroup) > .fieldset-wrapper {

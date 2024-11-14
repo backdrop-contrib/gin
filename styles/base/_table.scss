@@ -329,6 +329,7 @@ td.webform-has-field-suffix > .form-item > .form-element {
     }
 
     .field-label .label,
+    .field-label label,
     .form-item__label--multiple-value-form {
       display: inline-block;
       font-size: var(--gin-font-size-l);
