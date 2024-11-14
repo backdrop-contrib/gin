@@ -68,7 +68,6 @@
 #admin-bar li span:focus,
 #admin-bar li span.expanded-trail {
   color: var(--gin-color-primary-active);
-  background-color: var(--gin-bg-layer2);
   text-decoration: none;
 }
 
@@ -118,6 +117,15 @@
           mask-position: center center;
 }
 
+#admin-bar #admin-bar-icon .icon:hover,
+#admin-bar #admin-bar-extra .dropdown > li > span:hover,
+#admin-bar #admin-bar-extra .dropdown > li > a:hover,
+#admin-bar #admin-bar-menu > li > .dropdown > li > a:hover,
+#admin-bar #admin-bar-menu.dropdown li > span.menu:hover {
+  color: var(--gin-color-primary);
+  background: var(--gin-bg-layer2);
+}
+
 #admin-bar #admin-bar-icon .icon:hover::before,
 #admin-bar #admin-bar-extra .dropdown > li > span:hover::before,
 #admin-bar #admin-bar-extra .dropdown > li > a:hover::before,
@@ -131,7 +139,7 @@
 #admin-bar #admin-bar-extra .dropdown > li > a.active-trail,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail,
 #admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail {
-  color: var(--gin-color-primary-active);
+  color: var(--gin-color-primary);
   font-weight: var(--gin-font-weight-bold);
   background: var(--gin-bg-layer2);
 }
@@ -373,6 +381,7 @@
 }
 
 #admin-bar .top-level > li > ul > li {
+  float: inline-start;
   width: auto;
 }
 
@@ -425,11 +434,6 @@
 [dir="rtl"] #admin-bar li > a,
 [dir="rtl"] #admin-bar li > span {
   text-align: end;
-}
-
-#admin-bar li.highlight > a,
-#admin-bar li.highlight > span {
-  background-color: var(--gin-color-primary-light);
 }
 
 #admin-bar .dropdown li > a,
@@ -486,8 +490,8 @@
 }
 
 #admin-bar .dropdown li ul a:hover, #admin-bar .dropdown li ul li:hover {
-  background-color: var(--gin-bg-layer);
-  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
+  background-color: var(--gin-color-primary-light);
+  color: var(--gin-color-primary-active);
 }
 
 /* Third-and-above-level lists. */
