@@ -51,7 +51,7 @@ body.gin--core-navigation {
 .gin--core-navigation .top-bar,
 .gin--core-navigation .admin-toolbar-control-bar {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
 }
 
 .gin--core-navigation .gin-secondary-toolbar:not(.gin-secondary-toolbar--frontend) {
@@ -227,7 +227,8 @@ body.gin--core-navigation {
 
 .toolbar-icon-workbench-content-tab::before,
 .toolbar-link--admin-toolbar-tools-help::before,
-.toolbar-button--icon--admin-toolbar-tools-help::before {
+.toolbar-button--icon--admin-toolbar-tools-help::before,
+.toolbar-button--icon--navigation-extra-tools-help::before {
   --icon: url("../../media/sprite.svg#tool-view");
 }
 
@@ -451,7 +452,7 @@ body.gin--core-navigation {
 }
 
 #navigation-block-shortcuts,
-#navigation-link-announcements-feedannouncement,
+#toolbar-item-announcement,
 .toolbar-block:has(.admin-toolbar__item:first-of-type:last-of-type > #menu--shortcuts) {
   display: none;
 }
@@ -472,7 +473,8 @@ body.gin--core-navigation {
   border-inline-start: none;
 }
 
-.toolbar-loading #toolbar-item-shortcuts-tray {
+.toolbar-loading #toolbar-item-shortcuts-tray,
+.toolbar-loading #toolbar-item-shortcuts {
   visibility: hidden;
 }
 

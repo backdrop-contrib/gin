@@ -73,7 +73,6 @@ function gin_tablesort_indicator($variables) {
     </span>';
 }
 
-
 /**
  * Overrides theme_menu_local_action().
  */
@@ -364,6 +363,14 @@ function _gin_admin_list($content, $empty_message = '') {
 function gin_css_alter(&$css) {
     unset($css[backdrop_get_path('module','system').'/css/messages.theme.css']);
     unset($css[backdrop_get_path('module','admin_bar').'/css/admin_bar.css']);
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function gin_js_alter(&$js) {
+  // Remove the default backdrop.js file.
+  unset($js['core/misc/tableselect.js']);
 }
 
 /**

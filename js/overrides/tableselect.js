@@ -37,13 +37,30 @@
     const table = this;
     let checkboxes;
     let lastChecked;
+
+    const setClass = 'is-sticky';
+    const stickyHeader = table
+      .closest('form')
+      .querySelector('.views-bulk-form');
+
+    const updateSticky = (state) => {
+      if (stickyHeader) {
+        if (state === true) {
+          stickyHeader.classList.add(setClass);
+        }
+        else {
+          stickyHeader.classList.remove(setClass);
+        }
+      }
+    };
+
     const $table = $(table);
     const strings = {
       selectAll: Backdrop.t('Select all rows in this table'),
       selectNone: Backdrop.t('Deselect all rows in this table'),
     };
     const updateSelectAll = function (state) {
-      // Update table's select-all checkbox (and sticky header's if available).
+      // Update table's select-all checkbox (and sticky headers if available).
       $table
         .parents('.gin-table-scroll-wrapper')
         .prev('table.sticky-header')
@@ -76,13 +93,12 @@
 
     // Gin: Check if select-all already exists, if not add it.
     if ($table.find('th.select-all').find('input[type="checkbox"]').length === 0) {
-      $table.find('th.select-all').prepend($(Drupal.theme('checkbox')).attr('title', strings.selectAll));
+      $table.find('th.select-all').prepend($('<input type="checkbox" class="form-checkbox" />').attr('title', strings.selectAll));
     }
 
     // Find all <th> with class select-all, and insert the check all checkbox.
     $table
       .find('th.select-all input[type="checkbox"]')
-      .prepend($(Backdrop.theme('checkbox')).attr('title', strings.selectAll))
       .on('click', (event) => {
         if (event.target.matches('input[type="checkbox"]')) {
           // Loop through all checkboxes and set their state to the select all
@@ -108,6 +124,9 @@
           });
           // Update the title and the state of the check all box.
           updateSelectAll(event.target.checked);
+          updateSticky(
+            checkboxes.filter(':checked').length > 0,
+          );
         }
       });
 
@@ -140,6 +159,10 @@
         updateSelectAll(
           checkboxes.length === checkboxes.filter(':checked').length,
         );
+        // Update sticky actions.
+        updateSticky(
+          checkboxes.filter(':checked').length > 0,
+        );
 
         // Keep track of the last checked checkbox.
         lastChecked = e.target;
@@ -148,6 +171,8 @@
     // If all checkboxes are checked on page load, make sure the select-all one
     // is checked too, otherwise keep unchecked.
     updateSelectAll(checkboxes.length === checkboxes.filter(':checked').length);
+    // Update sticky actions.
+    updateSticky(checkboxes.filter(':checked').length > 0);
   };
 
   /**

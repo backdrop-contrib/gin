@@ -7,8 +7,7 @@
 .ui-dialog [open] .claro-details__summary--vertical-tabs-item,
 .ui-dialog .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link {
   color: var(--gin-color-primary);
-  -webkit-text-decoration-style: var(--gin-link-decoration-style);
-          text-decoration-style: var(--gin-link-decoration-style);
+  text-decoration-style: var(--gin-link-decoration-style);
 }
 
 .ui-dialog a:hover,
@@ -35,8 +34,7 @@
 
 .ui-dialog *|*:any-link:not(svg|a) {
   text-decoration: underline;
-  -webkit-text-decoration-style: var(--gin-link-decoration-style);
-          text-decoration-style: var(--gin-link-decoration-style);
+  text-decoration-style: var(--gin-link-decoration-style);
 }
 
 .ui-dialog .is-horizontal .tabs__link:hover,
@@ -147,8 +145,9 @@
 .ui-dialog .project__action_button,
 .ui-dialog .action-link--icon-trash.action-link {
   font-size: var(--gin-font-size-s);
-  padding: calc(var(--gin-spacing-s) - 2px) var(--gin-spacing-m);
-  border: 2px solid var(--gin-color-primary) !important;
+  padding-block: calc(var(--gin-spacing-s) - 2px);
+  padding-inline: var(--gin-spacing-m);
+  border: 2px solid var(--gin-color-primary);
   border-radius: var(--gin-border-m);
   box-shadow: 0 1px 2px var(--gin-color-primary-light);
   transition: var(--gin-transition);
@@ -200,13 +199,15 @@
 
 .ui-dialog .button.button--small {
   font-size: var(--gin-font-size-xxs);
-  padding: calc(var(--gin-spacing-xxs) + 2px) var(--gin-spacing-s);
+  padding-block: calc(var(--gin-spacing-xxs) + 2px);
+  padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
 .ui-dialog .button.button--extrasmall {
   font-size: var(--gin-font-size-xxs);
-  padding: var(--gin-spacing-xxs) var(--gin-spacing-s);
+  padding-block: var(--gin-spacing-xxs);
+  padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
@@ -435,7 +436,8 @@
 .ui-dialog .form-url {
   color: var(--gin-color-text);
   line-height: var(--input-line-height);
-  padding: calc(var(--input-padding-vertical) - 1px) var(--input-padding-horizontal);
+  padding-block: calc(var(--input-padding-vertical) - 1px);
+  padding-inline: var(--input-padding-horizontal);
   min-height: calc(var(--input-padding-vertical) * 2 + var(--input-line-height));
   background-color: var(--gin-bg-input);
   border: 1px solid var(--gin-border-color-form-element);
@@ -523,13 +525,13 @@
 }
 
 .ui-dialog .form-textarea-wrapper:has(.grippie) .form-textarea {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 .ui-dialog .form-textarea-wrapper .grippie {
-  border-bottom-left-radius: var(--gin-border-m);
-  border-bottom-right-radius: var(--gin-border-m);
+  border-end-start-radius: var(--gin-border-m);
+  border-end-end-radius: var(--gin-border-m);
   border-color: var(--gin-border-color-form-element);
   background-color: var(--gin-bg-input);
 }
@@ -540,8 +542,8 @@
 
 .ui-dialog .text-format-wrapper .form-type-textarea .form-textarea-wrapper,
 .ui-dialog .text-format-wrapper .form-type-textarea .cke.cke_chrome {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 
 .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible {
@@ -549,16 +551,18 @@
 }
 
 .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend, .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible > legend .fieldset-legend a {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
 }
 
 [dir="ltr"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
-  padding: var(--gin-spacing-xs) var(--gin-spacing-l) var(--gin-spacing-xs) var(--gin-spacing-xxl);
+  padding-block: var(--gin-spacing-xs);
+  padding-inline: var(--gin-spacing-xxl) var(--gin-spacing-l);
 }
 
 [dir="rtl"] .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible a.fieldset-title {
-  padding: var(--gin-spacing-xs) var(--gin-spacing-xxl) var(--gin-spacing-xs) var(--gin-spacing-l);
+  padding-block: var(--gin-spacing-xs);
+  padding-inline: var(--gin-spacing-l) var(--gin-spacing-xxl);
 }
 
 .ui-dialog .text-format-wrapper fieldset.filter-wrapper.collapsible span.summary {
@@ -573,7 +577,7 @@
 
 .ui-dialog .form-item--editor-format .form-item__label,
 .ui-dialog .form-element--editor-format .form-item__label {
-  top: 3px;
+  inset-block-start: 3px;
   padding-block-end: 0;
 }
 
@@ -602,27 +606,7 @@
 
 .ui-dialog .form-select,
 .ui-dialog .form-element--type-select {
-  -webkit-appearance: none;
-          appearance: none;
   padding-inline-end: calc(var(--gin-spacing-xs) + var(--gin-spacing-xl) - 1px);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3e%3cpath fill='none' stroke-width='1.5' d='M1 1l6 6 6-6' stroke='%23545560'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-size: 2.75rem .5625rem;
-}
-
-[dir="ltr"] .ui-dialog .form-select,
-[dir="ltr"] .ui-dialog .form-element--type-select {
-  background-position: 100% 50%;
-}
-
-[dir="rtl"] .ui-dialog .form-select,
-[dir="rtl"] .ui-dialog .form-element--type-select {
-  background-position: 0% 50%;
-}
-
-.gin--dark-mode .ui-dialog .form-select,
-.gin--dark-mode .ui-dialog .form-element--type-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23ffffff'/%3E%3C/svg%3E%0A");
 }
 
 .ui-dialog .form-select--small,
@@ -630,8 +614,7 @@
   font-size: var(--gin-font-size-xs);
   min-height: 2.25rem;
   line-height: 1.4;
-  padding-block-start: .474rem;
-  padding-block-end: .474rem;
+  padding-block: .474rem;
 }
 
 [dir="ltr"] .ui-dialog .form-select--small,
@@ -647,8 +630,7 @@
 .ui-dialog .form-boolean,
 .ui-dialog .form-checkbox,
 .ui-dialog .form-radio {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 21px;
   height: 21px;
   border: 1px solid var(--gin-border-color-form-element);
@@ -699,8 +681,7 @@
 
 .ui-dialog :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   all: unset;
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   cursor: pointer;
   display: inline-block;
   vertical-align: top;
@@ -708,8 +689,7 @@
   height: 1.5rem;
   position: relative;
   overflow: hidden;
-  -webkit-clip-path: circle(var(--gin-spacing-l) at 50% 50%);
-          clip-path: circle(var(--gin-spacing-l) at 50% 50%);
+  clip-path: circle(var(--gin-spacing-l) at 50% 50%);
   background-color: var(--gin-color-disabled);
   border: 3px solid transparent;
   border-radius: var(--gin-border-l);
@@ -737,12 +717,12 @@
 }
 
 [dir="ltr"] .ui-dialog :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
-  text-align: left;
+  text-align: start;
   transform: translateX(-16px);
 }
 
 [dir="rtl"] .ui-dialog :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
-  text-align: right;
+  text-align: end;
   transform: translateX(16px);
 }
 
@@ -826,7 +806,7 @@
 
 @media (forced-colors: active) {
   .ui-dialog :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
-    padding-inline-start: 8px;
+    padding-inline-start: var(--gin-spacing-xs);
     background-color: LinkText !important;
   }
 }
@@ -956,8 +936,7 @@
 
 .ui-dialog .form-radios .form-type--boolean,
 .ui-dialog .form-checkboxes .form-type--boolean {
-  margin-block-start: var(--gin-spacing-xs);
-  margin-block-end: var(--gin-spacing-xs);
+  margin-block: var(--gin-spacing-xs);
 }
 
 .ui-dialog .form-actions {
@@ -974,12 +953,19 @@
 .ui-dialog fieldset:not(.fieldgroup) {
   color: var(--gin-color-text-light);
   padding-block-start: var(--gin-spacing-xs);
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-inline: 0;
   background: transparent;
   border-color: var(--gin-border-color);
   border-radius: var(--gin-border-m);
   box-shadow: none;
+}
+
+.ui-dialog fieldset:not(.fieldgroup) > legend {
+  inset-block-start: 20px;
+}
+
+.ui-dialog fieldset:not(.fieldgroup) > .fieldset-wrapper {
+  margin-block-start: 20px;
 }
 
 .ui-dialog fieldset:not(.fieldgroup).error {
@@ -1023,8 +1009,7 @@
   content: "*";
   color: var(--gin-color-danger);
   line-height: 1;
-  margin-inline-end: .15em;
-  margin-inline-start: .15em;
+  margin-inline: .15em;
   vertical-align: text-top;
   background: none;
 }
@@ -1047,8 +1032,7 @@
 }
 
 .ui-dialog .entity-form-display-form > .form-actions {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block: 0;
 }
 
 .ui-dialog .required-mark::after {
@@ -1074,8 +1058,7 @@
 .ui-dialog .field--type-text-with-summary .filter-wrapper,
 .ui-dialog .field--widget-text-textarea .filter-wrapper {
   border: 0 none;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-inline: 0;
 }
 
 .ui-dialog html.js input.form-linkit-autocomplete {
@@ -1113,13 +1096,11 @@
 }
 
 .ui-dialog tr .form-item {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block: 0;
 }
 
 .ui-dialog .container-inline .form-item {
-  margin-block-start: var(--gin-spacing-density-s);
-  margin-block-end: var(--gin-spacing-density-s);
+  margin-block: var(--gin-spacing-density-s);
 }
 
 .ui-dialog .field-plugin-settings-edit-form {
@@ -1127,13 +1108,11 @@
 }
 
 .ui-dialog .field-plugin-settings-edit-form .form-item {
-  margin-block-start: var(--gin-spacing-m);
-  margin-block-end: var(--gin-spacing-m);
+  margin-block: var(--gin-spacing-m);
 }
 
 .ui-dialog .field-plugin-settings-edit-form .form-boolean-group .form-item {
-  margin-block-start: var(--gin-spacing-xs);
-  margin-block-end: var(--gin-spacing-xs);
+  margin-block: var(--gin-spacing-xs);
 }
 
 .ui-dialog .confirmation .form-actions {

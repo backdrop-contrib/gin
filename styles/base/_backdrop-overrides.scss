@@ -660,9 +660,11 @@ fieldset.vbo-fieldset-select-all {
       }
     }
   }
+
   &.image-library-image-selected {
     background: none;
     border: none;
+
     .image-wrap {
       border-color: var(--gin-color-primary-active);
       opacity: 1;
@@ -676,6 +678,7 @@ fieldset.vbo-fieldset-select-all {
       margin-block-end: 0;
     }
   }
+
   > .view-content {
     display: flex;
     flex-flow: row wrap;
@@ -702,6 +705,7 @@ div.feeds-container.plain {
   background-color: transparent;
   border-color: var(--gin-border-color);
 }
+
 div.left-bar {
   border-color: var(--gin-border-color);
 }
@@ -711,6 +715,7 @@ div.left-bar {
  */
 ins.diffchange {
   background-color: var(--gin-bg-green-light);
+
   tr:hover & {
     background-color: var(--gin-bg-green-light);
     color: var(--gin-color-green);
@@ -719,6 +724,7 @@ ins.diffchange {
 
 del.diffchange {
   background-color: var(--gin-bg-danger-light);
+
   tr:hover & {
     background-color: var(--gin-bg-danger-light);
     color: var(--gin-color-danger);
@@ -730,6 +736,7 @@ tr.odd .diff-addedline,
 tr:hover .diff-addedline {
   background-color: var(--gin-bg-green-light);
 }
+
 .diff-deletedline,
 tr.odd .diff-deletedline,
 tr:hover .diff-deletedline {
@@ -783,4 +790,22 @@ tr:hover .diff-deletedline {
 
 .preview {
   background-color: transparent;
+}
+
+.layout-access-list {
+  li {
+    display: block;
+    clear: both;
+    padding-block-start: var(--gin-spacing-s);
+  }
+}
+
+/* Feeds UI */
+table.feeds-admin-importers tr.disabled {
+
+  &.even,
+  &.odd {
+    background-color: var(--gin-color-disabled-bg);
+    border-color: var(--gin-color-disabled-border)
+  }
 }

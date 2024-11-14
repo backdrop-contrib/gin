@@ -54,8 +54,8 @@
       content: "";
       display: inline-block;
       position: absolute;
-      top: calc(50% - 1px);
-      left: 0;
+      inset-block-start: calc(50% - 1px);
+      inset-inline-start: 0;
       width: var(--gin-icon-size-toolbar-secondary);
       height: var(--gin-icon-size-toolbar-secondary);
       transform: translateY(-50%);

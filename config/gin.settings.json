@@ -12,5 +12,5 @@
     "edit_form_sidebar": true,
     "layout_density": "default",
     "show_description_toggle": false,
-    "sticky_action_buttons": true
+    "sticky_action_buttons": false
 }

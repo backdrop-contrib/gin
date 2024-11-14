@@ -1,10 +1,18 @@
+// Backdrop news on Dashboard, with or without .marker class.
+.notification-date {
+  font-size: var(--gin-font-size-xxs);
+  font-weight: var(--gin-font-weight-semibold);
+  display: inline-block;
+  vertical-align: .125em;
+}
+
 // Flags.
 .gin-status,
 .views-field .marker,
+.marker,
 .gin-beta-flag,
 .gin-experimental-flag,
-.gin-new-flag
-{
+.gin-new-flag {
   font-size: var(--gin-font-size-xxs);
   font-weight: var(--gin-font-weight-semibold);
   display: inline-block;
@@ -16,6 +24,7 @@
 
 .gin-status,
 .views-field .marker,
+.marker,
 .gin-beta-flag,
 .gin-experimental-flag,
 .pb-project-categories__item,

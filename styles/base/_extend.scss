@@ -29,7 +29,8 @@
 .claro-details__wrapper,
 .claro-details__wrapper.claro-details__wrapper--package-listing,
 .claro-details__wrapper.claro-details__wrapper--system-status-report {
-  margin: var(--gin-spacing-m) calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
+  margin-block: var(--gin-spacing-m);
+  margin-inline: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
 }
 
 .claro-details__wrapper--accordion,

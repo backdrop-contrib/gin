@@ -32,7 +32,7 @@ scripts[] = dist/js/tabs.js
 ; Default settings.
 settings[enable_darkmode] = auto
 settings[edit_form_sidebar] = true
-settings[sticky_action_buttons] = true
+settings[sticky_action_buttons] = false
 settings[preset_accent_color] = blue
 settings[preset_focus_color] = gin
 settings[layout_density] = default

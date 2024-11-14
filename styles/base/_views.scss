@@ -12,7 +12,7 @@
 .show-6 {
   .views-row {
     @include mq(tiny) {
-      float: left;
+      float: inline-start;
       width: 50%;
     }
 
@@ -69,11 +69,13 @@
 
     .fieldset__wrapper {
       display: flex;
-      margin: 0 0 0 var(--gin-spacing-xs);
+      margin: 0;
+      margin-inline-start: var(--gin-spacing-xs);
     }
 
     .form-item {
-      margin: 0 var(--gin-spacing-xs) var(--gin-spacing-xs) 0;
+      margin-block: 0 var(--gin-spacing-xs);
+      margin-inline: 0 var(--gin-spacing-xs);
     }
   }
 }
@@ -231,10 +233,10 @@
   }
 
   .dropbutton-wrapper {
-    top: 0;
+    inset-block-start: 0;
     min-height: 3em;
     padding-block-end: var(--gin-spacing-m);
-    right: var(--gin-spacing-l);
+    inset-inline-end: var(--gin-spacing-l);
   }
 
   @include mq(large) {
@@ -248,8 +250,8 @@
 
 #edit-displays {
   .views-display-top {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
   }
 }
 
@@ -339,7 +341,7 @@
   }
 
   .action-list {
-    top: 36px;
+    inset-block-start: 36px;
     background: var(--gin-bg-layer3);
     box-shadow: 0 1px 2px var(--gin-shadow-button);
 
@@ -349,7 +351,7 @@
 
       input.button {
         width: 100%;
-        text-align: left;
+        text-align: start;
         line-height: 1.2;
         box-shadow: none;
         border: none !important;
@@ -398,7 +400,8 @@
 
   // #3186729: Drupal 9.1 fix
   &__header {
-    padding: var(--gin-spacing-m) 0 var(--gin-spacing-xs);
+    padding-block: var(--gin-spacing-m) var(--gin-spacing-xs);
+    padding-inline: 0;
 
     .views-ui-display-tab-bucket__title {
       padding: 0 var(--gin-spacing-m);
@@ -423,8 +426,8 @@
   }
 
   .dropbutton-wrapper {
-    top: 14px;
-    right: var(--gin-spacing-m);
+    inset-block-start: 14px;
+    inset-inline-end: var(--gin-spacing-m);
   }
 
   &.pager {

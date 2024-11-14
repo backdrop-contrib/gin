@@ -31,10 +31,9 @@
       }));
     },
     toggleSidebar: () => {
-      var _Backdrop$ginStickyFo, _Backdrop$ginStickyFo2;
       $(".meta-sidebar__trigger").hasClass("is-active") ? (Backdrop.ginSidebar.collapseSidebar(), 
-      null === (_Backdrop$ginStickyFo = Backdrop.ginStickyFormActions) || void 0 === _Backdrop$ginStickyFo || _Backdrop$ginStickyFo.hideMoreActions()) : (Backdrop.ginSidebar.showSidebar(), 
-      null === (_Backdrop$ginStickyFo2 = Backdrop.ginStickyFormActions) || void 0 === _Backdrop$ginStickyFo2 || _Backdrop$ginStickyFo2.hideMoreActions());
+      Backdrop.ginStickyFormActions?.hideMoreActions()) : (Backdrop.ginSidebar.showSidebar(), 
+      Backdrop.ginStickyFormActions?.hideMoreActions());
     },
     showSidebar: () => {
       const chooseStorage = window.innerWidth < 1024 ? "Backdrop.gin.sidebarExpanded.mobile" : storageDesktop, hideLabel = Backdrop.t("Hide sidebar panel"), sidebarTrigger = document.querySelector(".meta-sidebar__trigger");

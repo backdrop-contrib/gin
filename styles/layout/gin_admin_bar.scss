@@ -93,7 +93,7 @@
 
     &::before {
       content: '';
-      float: left;
+      float: inline-start;
       display: block;
       width: 16px;
       height: 16px;
@@ -117,6 +117,12 @@
     }
   }
 
+  #admin-bar-extra .dropdown .dropdown > li > a {
+    &::before {
+      display: none;
+    }
+  }
+
   #admin-bar-alert {
 
     li > a,
@@ -135,7 +141,7 @@
 
   // Default
   a {
-    &:before {
+    &::before {
       mask-image: icon('drop');
       mask-repeat: no-repeat;
     }
@@ -143,105 +149,105 @@
 
   // Dashboard
   .admin-dashboard {
-    &:before {
+    &::before {
       mask-image: icon('sidebar');
     }
   }
 
   // Content
   .admin-content {
-    &:before {
+    &::before {
       mask-image: icon('content');
     }
   }
 
   // User
   .admin-people {
-    &:before {
+    &::before {
       mask-image: icon('users');
     }
   }
 
   // Appearance
   .admin-appearance {
-    &:before {
+    &::before {
       mask-image: icon('appearance');
     }
   }
 
   // Functionality
   .admin-modules {
-    &:before {
+    &::before {
       mask-image: icon('extend');
     }
   }
 
   // Structure
   .admin-structure {
-    &:before {
+    &::before {
       mask-image: icon('structure');
     }
   }
 
   // Configuration
   .admin-config {
-    &:before {
+    &::before {
       mask-image: icon('config');
     }
   }
 
   // Reports
   .admin-reports {
-    &:before {
+    &::before {
       mask-image: icon('reports');
     }
   }
 
   // More
   .extra {
-    &:before {
+    &::before {
       mask-image: icon('more');
     }
   }
 
   // Page
   .page {
-    &:before {
+    &::before {
       mask-image: icon('content');
     }
   }
 
   // User counter
   .user-counter {
-    &:before {
+    &::before {
       mask-image: icon('users');
     }
   }
 
   // Account
   .account {
-    &:before {
+    &::before {
       mask-image: icon('user');
     }
   }
 
   // Locale
   .locale {
-    &:before {
+    &::before {
       mask-image: icon('translate');
     }
   }
 
   // Logout
   .logout {
-    &:before {
+    &::before {
       mask-image: icon('logout');
     }
   }
 
   // Mobile hamburger
   #admin-bar-menu.dropdown li > span.menu {
-    &:before {
+    &::before {
       mask-image: icon('hamburger');
     }
   }
@@ -366,6 +372,7 @@
 }
 
 #admin-bar .top-level > li > ul > li {
+  // float: inline-start;
   width: auto;
 
   a {
@@ -428,7 +435,7 @@
 /* All dropdown list items. */
 #admin-bar .dropdown li {
   background-image: none;
-  float: left;
+  float: inline-start;
   height: 100%;
   list-style-image: none;
   list-style-type: none;
@@ -438,7 +445,7 @@
 
 /* First level items. */
 #admin-bar .dropdown li li {
-  width: 160px;
+  width: 180px;
   /* Required for Opera. */
 }
 
@@ -456,22 +463,33 @@
   line-height: 1.2em;
   margin: 0;
   position: absolute;
-  width: 160px;
+  width: 180px;
   background-color: var(--gin-bg-layer2);
+  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
 
   & a:hover,
   & li:hover {
     background-color: var(--gin-bg-layer);
+    border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
   }
 }
 
 /* Third-and-above-level lists. */
 #admin-bar .dropdown li li.expandable ul {
-  margin: -32px 0 0 160px;
+  margin: -32px 0 0 180px;
+  border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
+}
+#admin-bar-extra .dropdown li li.expandable ul {
+  border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
+
+  a:hover,
+  li:hover {
+    border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
+  }
 }
 
 #admin-bar .dropdown li li.expandable.outside-right ul {
-  margin-inline-start: -160px;
+  margin-inline-start: -180px;
 }
 
 /* Lists nested under hovered list items. */
@@ -492,8 +510,7 @@
 
 /* Extras menu. */
 #admin-bar-extra {
-  float: right;
-  direction: rtl;
+  float: inline-end;
 }
 
 #admin-bar-extra .dropdown li {

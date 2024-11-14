@@ -123,7 +123,8 @@
 
   @include mq(small) {
     width: 100%;
-    padding: .3125rem var(--gin-spacing-xs) var(--gin-spacing-l);
+    padding-block: .3125rem var(--gin-spacing-l);
+    padding-inline: var(--gin-spacing-xs);
     margin-block-end: calc(var(--gin-spacing-xl) * -1);
     overflow-x: auto;
 
@@ -136,13 +137,19 @@
     pointer-events: none;
     content: "";
     position: absolute;
-    left: var(--gin-spacing-xs);
-    bottom: var(--gin-spacing-l);
+    inset-block-end: 0;
+    inset-inline-start: 0;
     display: block;
     width: 100%;
-    max-width: calc(100% - var(--gin-spacing-m));
+    max-width: calc(100% + var(--gin-spacing-xs));
     border-block-end: 1px solid var(--gin-border-color);
     transition: var(--gin-transition);
+
+    @include mq(small) {
+      inset-inline-start: var(--gin-spacing-xs);
+      inset-block-end: var(--gin-spacing-l);
+      max-width: calc(100% - var(--gin-spacing-m));
+    }
   }
 
   .tabs__tab,
@@ -157,8 +164,8 @@
         background: var(--gin-bg-app);
         display: block;
         position: absolute;
-        bottom: calc(var(--gin-spacing-xxs) * -1);
-        left: calc(var(--gin-spacing-xxs) * -1);
+        inset-block-end: calc(var(--gin-spacing-xxs) * -1);
+        inset-inline-start: calc(var(--gin-spacing-xxs) * -1);
         z-index: 3;
       }
     }
@@ -180,7 +187,7 @@
   }
 
   &::after {
-    left: var(--gin-spacing-xs);
+    inset-inline-start: var(--gin-spacing-xs);
     max-width: calc(100% - var(--gin-spacing-m));
   }
 }
@@ -188,29 +195,45 @@
 .is-horizontal .tabs--primary,
 .is-horizontal .tabs--secondary,
 .responsive-tabs-dropdown {
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+  @include mq(small) {
+    margin-inline: 0;
+  }
 }
 
 .tabs--primary,
 .responsive-tabs-dropdown {
-  margin-block-end: 0;
+  @include mq(small) {
+    margin-block-end: 0;
+  }
 }
 
 .is-horizontal .tabs--primary,
 .responsive-tabs-dropdown {
-  &::after {
-    border-block-end: 0 none;
+  @include mq(small) {
+    &::after {
+      border-block-end: 0 none;
 
-    .gin--high-contrast-mode & {
-      border-block-end: 1px solid;
+      .gin--high-contrast-mode & {
+        border-block-end: 1px solid;
+      }
     }
   }
 
   .tabs__tab.is-active,
   .tabs__tab.js-active-tab {
-    &:focus-within::after {
-      display: none;
+    @include mq($to: small) {
+      background-color: var(--gin-bg-layer);
+      border-block-end: 1px solid var(--gin-border-color-layer2);
+
+      &[data-original-order="0"] {
+        border-block-end: none;
+      }
+    }
+
+    @include mq(small) {
+      &:focus-within::after {
+        display: none;
+      }
     }
   }
 
@@ -220,7 +243,8 @@
 
     @include mq(small) {
       font-size: var(--gin-font-size);
-      padding: calc(var(--gin-spacing-xs) - 2px) var(--gin-spacing-s);
+      padding-block: calc(var(--gin-spacing-xs) - 2px);
+      padding-inline: var(--gin-spacing-s);
       margin-inline-end: 0.25em;
       min-height: 2rem;
       border-radius: 2rem;
@@ -244,7 +268,9 @@
 }
 
 .is-horizontal .tabs--secondary {
-  margin-block-start: var(--gin-spacing-m);
+  @include mq(small) {
+    margin-block-start: var(--gin-spacing-m);
+  }
 
   &::before {
     width: 100%;
@@ -252,7 +278,8 @@
 
   .tabs__link {
     min-height: 2.5rem;
-    padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
+    padding-block: var(--gin-spacing-xs) var(--gin-spacing-m);
+    padding-inline: var(--gin-spacing-m);
     font-size: var(--gin-font-size-s);
     border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
   }
@@ -274,8 +301,10 @@
     overflow: hidden;
 
     &:after {
-      left: var(--gin-spacing-xs);
-      max-width: calc(100% - var(--gin-spacing-m));
+      @include mq(small) {
+        inset-inline-start: var(--gin-spacing-xs);
+        max-width: calc(100% - var(--gin-spacing-m));
+      }
     }
 
     li.horizontal-tab-button {
@@ -284,7 +313,8 @@
       border-block-end: 0 none;
 
       a {
-        padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-m);
+        padding-block: var(--gin-spacing-xs) var(--gin-spacing-m);
+        padding-inline: var(--gin-spacing-m);
         font-size: var(--gin-font-size-s);
         border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
 
@@ -300,13 +330,12 @@
 
         &::before {
           z-index: 1;
-          border-inline-start: none;
-          border-inline-end: none;
+          border-inline: none;
           border-block-end: 3px solid var(--gin-color-primary);
-          top: auto;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          inset-block-start: auto;
+          inset-block-end: 0;
+          inset-inline-start: 0;
+          inset-inline-end: 0;
           height: 3px;
           width: 100%;
         }
@@ -339,7 +368,6 @@
 }
 
 .gin--dark-mode {
-
   .vertical-tabs {
     &__items {
       background: none;
@@ -437,19 +465,19 @@
     border-radius: var(--gin-border-m);
 
     @include mq(large) {
-      border-top-left-radius: 0;
+      border-start-start-radius: 0;
     }
 
     .vertical-tabs__item {
       border-radius: 0;
 
       @include mq(1360px) {
-        border-top-right-radius: var(--gin-border-m);
-        border-bottom-right-radius: var(--gin-border-m);
-        border-bottom-left-radius: var(--gin-border-m);
+        border-start-end-radius: var(--gin-border-m);
+        border-end-end-radius: var(--gin-border-m);
+        border-end-start-radius: var(--gin-border-m);
 
         ~ .vertical-tabs__item {
-          border-top-left-radius: var(--gin-border-m);
+          border-start-start-radius: var(--gin-border-m);
         }
       }
     }
@@ -482,7 +510,7 @@
 @media screen and (min-width: 85em) {
   html.js .vertical-tabs__item {
     overflow: visible;
-    float: left;
+    float: inline-start;
     width: 100%;
   }
 }

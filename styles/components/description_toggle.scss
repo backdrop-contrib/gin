@@ -7,7 +7,8 @@
 .help-icon__description-toggle {
   all: unset;
   flex-shrink: 0;
-  margin: .1rem var(--gin-spacing-m) 0 .3rem;
+  margin-block: .1rem 0;
+  margin-inline: .3rem var(--gin-spacing-m);
   height: 16px;
   width: 16px;
   border-radius: 50%;
@@ -80,7 +81,7 @@ fieldset.media-library-widget,
 
   .help-icon__description-toggle {
     position: absolute;
-    right: calc(var(--gin-spacing-xs) * -1);
-    top: var(--gin-spacing-m);
+    inset-inline-end: calc(var(--gin-spacing-xs) * -1);
+    inset-block-start: var(--gin-spacing-m);
   }
 }

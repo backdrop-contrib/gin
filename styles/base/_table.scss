@@ -11,9 +11,9 @@ table.gin--sticky-table-header {
   visibility: hidden;
   z-index: 97;
   position: sticky;
-  top: calc(var(--gin-toolbar-y-offset) + var(--gin-height-sticky) - 1px);
+  inset-block-start: calc(var(--gin-toolbar-y-offset) + var(--gin-height-sticky) - 1px);
   width: auto !important;
-  margin-block-start: -8px;
+  margin-block-start: calc(var(--gin-spacing-xs) * -1);
   overflow: hidden;
 
   tr {
@@ -36,7 +36,7 @@ table.gin--sticky-table-header {
 }
 
 table.sticky-header {
-  left: auto !important;
+  inset-inline-start: auto !important;
   min-width: 100%;
   max-width: fit-content;
   background: transparent;
@@ -184,10 +184,10 @@ table.views-table th,
   > a::before {
     position: absolute;
     z-index: 0;
-    top: 0;
-    right: 1rem;
-    bottom: -2px;
-    left: 1rem;
+    inset-block-start: 0;
+    inset-block-end: -2px;
+    inset-inline-start: 1rem;
+    inset-inline-end: 1rem;
     display: block;
     content: "";
     border-block-end: 0.125rem solid transparent;
@@ -212,14 +212,18 @@ table.views-table th,
     }
   }
 
+  > a:has(.tablesort)::after {
+    display: none;
+  }
+
   &.is-active > a::before,
   > a:hover::before {
     width: 100%;
-    left: 0;
+    inset-inline-start: 0;
   }
 
   > a:hover::before {
-    border-bottom-width: 3px;
+    border-block-end-width: 3px;
   }
 
   &.is-active > a {
@@ -229,12 +233,12 @@ table.views-table th,
 
     &::before {
       background-color: var(--gin-bg-item);
-      border-top-left-radius: var(--gin-border-s);
-      border-top-right-radius: var(--gin-border-s);
+      border-start-start-radius: var(--gin-border-s);
+      border-start-end-radius: var(--gin-border-s);
       border-block-end: .1875rem solid var(--gin-color-primary-active);
     }
 
-    &::after {
+  &::after {
       display: none;
     }
   }
@@ -275,10 +279,10 @@ table.views-table th,
 }
 
 .field-plugin-settings-edit-wrapper {
-  float: right;
+  float: inline-end;
 
   + a {
-    float: left;
+    float: inline-start;
   }
 }
 
@@ -293,7 +297,8 @@ td.webform-has-field-suffix > .form-item > .form-element {
 
 .field-multiple-table {
   th {
-    padding: var(--gin-spacing-xs) var(--gin-spacing-m) var(--gin-spacing-xs) var(--gin-spacing-l);
+    padding-block: var(--gin-spacing-xs);
+    padding-inline: var(--gin-spacing-l) var(--gin-spacing-m);
     border-block-end: 0;
     background: transparent;
 
@@ -308,15 +313,15 @@ td.webform-has-field-suffix > .form-item > .form-element {
       background: var(--gin-bg-header);
 
       &:first-of-type {
-        border-top-left-radius: var(--gin-border-m);
-        border-bottom-left-radius: var(--gin-border-m);
+        border-start-start-radius: var(--gin-border-m);
+        border-end-start-radius: var(--gin-border-m);
       }
     }
 
     &:not(:has(th:last-of-type:not([style*="display: none"]))) th:nth-last-of-type(2),
     th:last-of-type:not([style*="display: none"]) {
-      border-top-right-radius: var(--gin-border-m);
-      border-bottom-right-radius: var(--gin-border-m);
+      border-start-end-radius: var(--gin-border-m);
+      border-end-end-radius: var(--gin-border-m);
     }
 
     tr {
@@ -398,7 +403,7 @@ table td.field-plugin-summary-cell {
 }
 
 table .views-field.views-field-operations {
-  text-align: right;
+  text-align: end;
 }
 
 table tr.disabled.odd,

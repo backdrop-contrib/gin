@@ -1,6 +1,4 @@
 .ck {
-  --ck-spacing-small: var(--gin-spacing-xxs);
-
   --ck-color-text: var(--gin-color-text);
 
   --ck-color-toolbar-background: var(--gin-bg-layer3);
@@ -68,11 +66,11 @@
 
   &.ck-sticky-panel .ck-sticky-panel__content.ck-sticky-panel__content_sticky {
     z-index: 2;
-    top: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset)) !important;
+    inset-block-start: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset)) !important;
   }
 
   &[data-fullscreen="fullscreeneditor"] .ck-sticky-panel__content.ck-sticky-panel__content_sticky {
-    top: 0 !important;
+    inset-block-start: 0 !important;
   }
 
   .ck-toolbar__separator {
@@ -86,6 +84,10 @@
 
   .ck.ck-editor__editable_inline {
     padding: 0 var(--gin-spacing-s);
+  }
+
+  .ck.ck-content {
+    padding-bottom: var(--gin-spacing-l);
   }
 
   .ck-button[aria-pressed=true] {

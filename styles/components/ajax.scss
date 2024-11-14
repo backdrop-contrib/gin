@@ -61,8 +61,8 @@
     content: "";
     display: block;
     position: absolute;
-    top: var(--gin-spacing-xs);
-    left: var(--gin-spacing-xs);
+    inset-block-start: var(--gin-spacing-xs);
+    inset-inline-start: var(--gin-spacing-xs);
     width: 1.125rem;
     height: 1.125rem;
     border: 2px solid var(--gin-color-primary);
@@ -94,14 +94,14 @@
 
   .ajax-progress-throbber {
     position: absolute;
-    top: 0;
-    right: var(--gin-spacing-xxs);
+    inset-block-start: 0;
+    inset-inline-end: var(--gin-spacing-xxs);
     width: 24px;
     height: 24px;
 
     &::before {
-      top: 0;
-      left: .25em;
+      inset-block-start: 0;
+      inset-inline-start: .25em;
     }
   }
 }

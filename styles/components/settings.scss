@@ -2,6 +2,7 @@
 #edit-preset-accent-color {
   display: flex;
   flex-wrap: wrap;
+  margin-block-start: var(--gin-spacing-xs);
 
   .form-item-preset-accent-color {
     position: relative;
@@ -12,7 +13,7 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      top: var(--gin-spacing-m);
+      inset-block-start: var(--gin-spacing-m);
       margin-inline-end: var(--gin-spacing-xs);
       border: 1px solid transparent;
       border-color: transparent;
@@ -62,8 +63,8 @@
       visibility: hidden;
       z-index: 1;
       position: absolute;
-      top: 100%;
-      left: -10px;
+      inset-block-start: 100%;
+      inset-inline-start: -10px;
       padding: var(--gin-spacing-xs);
       color: var(--gin-color-contextual-text);
       background: var(--gin-color-contextual);
@@ -85,8 +86,9 @@
 #edit-focus-group {
   .form-type-color,
   .form-type-textfield {
-    float: left;
-    margin: 0 0 0var(--gin-spacing-xs) 0;
+    float: inline-start;
+    margin: 0;
+    margin-block-end: var(--gin-spacing-xs);
   }
 
   .form-type-color {
@@ -163,7 +165,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 140px;
-    margin: 0 var(--gin-spacing-s) 0 0;
+    margin: var(--gin-spacing-xs) var(--gin-spacing-s) 0 0;
 
     input {
       cursor: pointer;
@@ -224,8 +226,8 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 0;
-        left: 0;
+        inset-block-start: 0;
+        inset-inline-start: 0;
         cursor: not-allowed;
       }
     }
@@ -233,8 +235,8 @@
     .fieldset__description {
       pointer-events: none;
       position: absolute;
-      top: 3.5rem;
-      left: 2rem;
+      inset-block-start: 3.5rem;
+      inset-inline-start: 2rem;
       display: flex;
       align-items: center;
       gap: var(--gin-spacing-xs);
@@ -304,6 +306,6 @@
 
 input[data-gin-toolbar="new"] + label .gin-new-flag {
   position: absolute;
-  top: -100px;
-  right: 8px;
+  inset-block-start: -100px;
+  inset-inline-end: var(--gin-spacing-xs);
 }

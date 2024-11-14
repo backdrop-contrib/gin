@@ -2,7 +2,7 @@
   font-size: var(--gin-font-size-xs);
   z-index: 501; /* on top of the Drupal world */
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   padding: 0;
   width: 100%;
   height: var(--gin-toolbar-secondary-height);
@@ -64,8 +64,8 @@
       content: "";
       display: inline-block;
       position: absolute;
-      top: calc(50% - 1px);
-      left: 0;
+      inset-block-start: calc(50% - 1px);
+      inset-inline-start: 0;
       width: var(--gin-icon-size-toolbar-secondary);
       height: var(--gin-icon-size-toolbar-secondary);
       transform: translateY(-50%);

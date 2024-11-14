@@ -82,10 +82,10 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
   &::after {
     content: "";
     position: absolute;
-    top: 35px;
-    right: 12px;
+    inset-block-start: 35px;
+    inset-inline-end: 12px;
     display: block;
-    text-align: right;
+    text-align: end;
     border: 2px solid var(--gin-bg-input);
     border-radius: 50%;
     border-block-start: 2px solid var(--gin-color-primary);
@@ -97,7 +97,7 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
 
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   &::after {
-    top: 2px;
+    inset-block-start: 2px;
   }
 }
 
@@ -120,7 +120,9 @@ div.autocomplete-deluxe-multiple {
 
 .autocomplete-deluxe-item {
   color: var(--gin-color-primary-hover);
-  padding: 6px var(--gin-spacing-l) 6px 12px;
+  padding-block: 6px;
+  padding-inline: 12px var(--gin-spacing-l);
+
   background-color: var(--gin-color-primary-light-hover);
   border-radius: var(--gin-border-l);
   border: 0 none;
@@ -133,8 +135,8 @@ div.autocomplete-deluxe-multiple {
   }
 
   .autocomplete-deluxe-item-delete {
-    top: 6px;
-    right: 6px;
+    inset-block-start: 6px;
+    inset-inline-end: 6px;
     mask-image: icon("close");
     mask-size: 10px 10px;
     mask-repeat: no-repeat;

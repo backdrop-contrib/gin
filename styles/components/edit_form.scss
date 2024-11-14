@@ -134,8 +134,7 @@
     .help {
       width: 100%;
       max-width: $breakpointWide;
-      margin-inline-start: auto;
-      margin-inline-end: auto;
+      margin-inline: auto;
       box-sizing: border-box;
     }
 
@@ -146,8 +145,8 @@
       max-width: var(--gin-sidebar-max-width);
       height: calc(100% - var(--gin-toolbar-y-offset));
       position: fixed;
-      top: var(--gin-toolbar-y-offset);
-      right: 0;
+      inset-block-start: var(--gin-toolbar-y-offset);
+      inset-inline-end: 0;
       margin: 0;
       overflow-x: hidden;
       overflow-y: auto;
@@ -392,11 +391,11 @@
                 flex-wrap: wrap;
 
                 @include mq(tiny) {
-                  flex-wrap: nowrap;
+                  margin-inline-end: var(--gin-spacing-xs);
                 }
 
                 @include mq(large, wide) {
-                  flex-wrap: wrap;
+                  margin-inline-end: 0;
                 }
               }
 
@@ -538,7 +537,6 @@
     line-height: normal;
     letter-spacing: -0.025em;
     width: 100%;
-    padding-block-start: var(--gin-spacing-s);
-    padding-block-end: var(--gin-spacing-s);
+    padding-block: var(--gin-spacing-s);
   }
 }

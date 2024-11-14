@@ -51,7 +51,7 @@ body.gin--navigation {
 // Set transtion to Gin's to avoid different speeds.
 .admin-toolbar ~ .dialog-off-canvas-main-canvas,
 .gin--navigation .gin-secondary-toolbar--frontend {
-  transition: margin-inline-start var(--gin-transition-fast), margin-left var(--gin-transition-fast);
+  transition: margin-inline-start var(--gin-transition-fast), margin-inline-start var(--gin-transition-fast);
 }
 
 // ----------
@@ -62,7 +62,7 @@ body.gin--navigation {
 
   .admin-toolbar {
     font-family: var(--gin-font);
-    top: 0;
+    inset-block-start: 0;
     overflow-y: initial;
     padding-inline: 0;
     padding-block-start: 0;
@@ -335,12 +335,12 @@ button.toolbar-link--sidebar-toggle {
   }
 
   &[aria-expanded=false]::before {
-    left: 1px;
+    inset-inline-start: 1px;
     transform: rotate(-90deg);
   }
 
   &[aria-expanded=true]::before {
-    left: -1px;
+    inset-inline-start: -1px;
     transform: rotate(90deg);
   }
 }
@@ -388,7 +388,8 @@ button.toolbar-link--sidebar-toggle {
     height: 40px;
     max-width: 40px;
     padding: 10px !important;
-    margin: 6px var(--gin-spacing-xxs) 0 !important;
+    margin-block: 6px 0 !important;
+    margin-inline: var(--gin-spacing-xxs) !important;
 
     &, &:hover, &:focus {
       background: var(--gin-color-primary) !important;

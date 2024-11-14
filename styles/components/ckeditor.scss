@@ -19,7 +19,7 @@
 
   .cke_top {
     background: var(--gin-bg-layer);
-    border-block-end: 1px solid var(--gin-border-color-form-element);
+    border-block-end: 1px solid var(--gin-border-color);
     border-radius: calc(var(--gin-border-m) - 1px) calc(var(--gin-border-m) - 1px) 0 0;
 
     .gin--dark-mode & {
@@ -34,8 +34,7 @@
   }
 
   .cke_contents {
-    padding-inline-start: var(--gin-spacing-xs);
-    padding-inline-end: var(--gin-spacing-xs);
+    padding-inline: var(--gin-spacing-xs);
   }
 
   .cke_path_empty:only-child::after {
@@ -102,6 +101,17 @@
 .cke:hover .cke_top,
 .cke:hover .cke_bottom {
   border-color: var(--gin-color-text);
+
+  .gin--dark-mode & {
+    border-color: var(--gin-border-color-layer2);
+  }
+}
+
+.cke:hover .cke_top {
+  &,
+  .gin--dark-mode & {
+    border-block-end-color: var(--gin-border-color);
+  }
 }
 
 .cke.cke_chrome.cke_focus:hover,
@@ -113,6 +123,14 @@
 .error + .cke.cke_focus .cke_top,
 .error + .cke.cke_focus .cke_bottom {
   border-color: var(--gin-color-text);
+}
+
+.cke_top,
+.cke.cke_chrome.cke_focus:hover .cke_top,
+.cke.cke_focus .cke_top,
+.error + .cke.cke_focus .cke_top,
+.error + .cke.cke_chrome.cke_focus:hover .cke_top {
+  border-block-end: 1px solid var(--gin-border-color);
 }
 
 .cke textarea.cke_source {
@@ -134,8 +152,8 @@ body .cke_notification_info {
   }
 
   .cke_notification_close {
-    top: var(--gin-spacing-xxs);
-    right: var(--gin-spacing-xxs);
+    inset-block-start: var(--gin-spacing-xxs);
+    inset-inline-end: var(--gin-spacing-xxs);
     background: var(--gin-color-text);
     mask-image: icon('close');
     mask-position: center center;

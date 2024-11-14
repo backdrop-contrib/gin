@@ -58,8 +58,7 @@
 .webform-ui-elements-table {
   tr.webform-ui-element-type-webform_actions {
     td {
-      border-block-start: none;
-      border-block-end: none;
+      border-block: none;
       background: none;
     }
   }
@@ -88,8 +87,8 @@
 }
 
 .webform-ajax-messages {
-  left: var(--gin-offset-x);
-  bottom: var(--gin-spacing-s);
+  inset-inline-start: var(--gin-offset-x);
+  inset-block-end: var(--gin-spacing-s);
   margin-inline-start: var(--gin-spacing-m);
 
   .messages--info,
@@ -102,7 +101,7 @@
 
 .webform-edit-form {
   .tabledrag-toggle-weight-wrapper {
-    float: right;
+    float: end;
     margin-block-start: calc(var(--gin-spacing-s) * -1);
 
     button {

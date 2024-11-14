@@ -103,25 +103,22 @@ a.tabledrag-handle {
     position: relative;
     &::after {
       border-inline-start: 6px solid linktext;
-      left:0
+      inset-inline-start:0
     }
   }
 }
 
 .tabledrag-cell {
-  padding-block-start: var(--gin-spacing-density-m);
-  padding-block-end: var(--gin-spacing-density-m);
+  padding-block: var(--gin-spacing-density-m);
 
   &-content {
-    margin-block-start: var(--gin-spacing-xs);
-    margin-block-end: var(--gin-spacing-xs);
+    margin-block: var(--gin-spacing-xs);
   }
 }
 
 .field-plugin-settings-edit-wrapper,
 .field-plugin-settings-edit-wrapper + a {
-  margin-block-start: var(--gin-spacing-m);
-  margin-block-end: var(--gin-spacing-m);
+  margin-block: var(--gin-spacing-m);
 }
 
 .field-plugin-settings-edit-wrapper + a {

@@ -54,23 +54,14 @@
   content: "";
   display: block;
   position: absolute;
-  top: var(--gin-spacing-xs);
+  inset-block-start: var(--gin-spacing-xs);
+  inset-inline-start: var(--gin-spacing-xs);
   width: 1.125rem;
   height: 1.125rem;
   border: 2px solid var(--gin-color-primary);
   border-inline-end: 2px dotted transparent;
   border-radius: 50%;
   animation: gin-throbber .75s linear infinite;
-}
-
-[dir="ltr"] .ui-dialog .ajax-progress-throbber::before,
-[dir="ltr"] .contextual-links .ajax-progress-throbber::before {
-  left: var(--gin-spacing-xs);
-}
-
-[dir="rtl"] .ui-dialog .ajax-progress-throbber::before,
-[dir="rtl"] .contextual-links .ajax-progress-throbber::before {
-  right: var(--gin-spacing-xs);
 }
 
 .gin--dark-mode .ui-dialog .ajax-progress,
@@ -85,29 +76,15 @@
 
 .contextual-links .ajax-progress-throbber {
   position: absolute;
-  top: 0;
+  inset-block-start: 0;
+  inset-inline-end: var(--gin-spacing-xxs);
   width: 24px;
   height: 24px;
 }
 
-[dir="ltr"] .contextual-links .ajax-progress-throbber {
-  right: var(--gin-spacing-xxs);
-}
-
-[dir="rtl"] .contextual-links .ajax-progress-throbber {
-  left: var(--gin-spacing-xxs);
-}
-
 .contextual-links .ajax-progress-throbber::before {
-  top: 0;
-}
-
-[dir="ltr"] .contextual-links .ajax-progress-throbber::before {
-  left: .25em;
-}
-
-[dir="rtl"] .contextual-links .ajax-progress-throbber::before {
-  right: .25em;
+  inset-block-start: 0;
+  inset-inline-start: .25em;
 }
 
 .claro-autocomplete__message {

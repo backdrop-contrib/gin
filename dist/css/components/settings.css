@@ -1,6 +1,7 @@
 #edit-preset-accent-color {
   display: flex;
   flex-wrap: wrap;
+  margin-block-start: var(--gin-spacing-xs);
 }
 
 #edit-preset-accent-color .form-item-preset-accent-color {
@@ -8,13 +9,12 @@
 }
 
 #edit-preset-accent-color .form-item-preset-accent-color input {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   cursor: pointer;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  top: var(--gin-spacing-m);
+  inset-block-start: var(--gin-spacing-m);
   margin-inline-end: var(--gin-spacing-xs);
   border: 1px solid transparent;
   border-color: transparent;
@@ -56,7 +56,8 @@
   visibility: hidden;
   z-index: 1;
   position: absolute;
-  top: 100%;
+  inset-block-start: 100%;
+  inset-inline-start: -10px;
   padding: var(--gin-spacing-xs);
   color: var(--gin-color-contextual-text);
   background: var(--gin-color-contextual);
@@ -64,12 +65,10 @@
 }
 
 [dir="ltr"] #edit-preset-accent-color .form-item-preset-accent-color label {
-  left: -10px;
   transform: translateX(-50%);
 }
 
 [dir="rtl"] #edit-preset-accent-color .form-item-preset-accent-color label {
-  right: -10px;
   transform: translateX(50%);
 }
 
@@ -84,21 +83,9 @@
 #edit-accent-group .form-type-textfield,
 #edit-focus-group .form-type-color,
 #edit-focus-group .form-type-textfield {
-  margin: 0 0 0var --gin-spacing-xs 0;
-}
-
-[dir="ltr"] #edit-accent-group .form-type-color,
-[dir="ltr"] #edit-accent-group .form-type-textfield,
-[dir="ltr"] #edit-focus-group .form-type-color,
-[dir="ltr"] #edit-focus-group .form-type-textfield {
-  float: left;
-}
-
-[dir="rtl"] #edit-accent-group .form-type-color,
-[dir="rtl"] #edit-accent-group .form-type-textfield,
-[dir="rtl"] #edit-focus-group .form-type-color,
-[dir="rtl"] #edit-focus-group .form-type-textfield {
-  float: right;
+  float: inline-start;
+  margin: 0;
+  margin-block-end: var(--gin-spacing-xs);
 }
 
 #edit-accent-group .form-type-color,
@@ -178,12 +165,14 @@
 
 [dir="ltr"] #edit-classic-toolbar .form-item,
 [dir="ltr"] #edit-layout-density .form-item {
-  margin: 0 var(--gin-spacing-s) 0 0;
+  margin-block: var(--gin-spacing-xs) 0;
+  margin-inline: 0 var(--gin-spacing-s);
 }
 
 [dir="rtl"] #edit-classic-toolbar .form-item,
 [dir="rtl"] #edit-layout-density .form-item {
-  margin: 0 0 0 var(--gin-spacing-s);
+  margin-block: var(--gin-spacing-xs) 0;
+  margin-inline: var(--gin-spacing-s) 0;
 }
 
 #edit-classic-toolbar .form-item input,
@@ -247,22 +236,16 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   cursor: not-allowed;
-}
-
-[dir="ltr"] [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active #edit-classic-toolbar::before {
-  left: 0;
-}
-
-[dir="rtl"] [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active #edit-classic-toolbar::before {
-  right: 0;
 }
 
 [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active .fieldset__description {
   pointer-events: none;
   position: absolute;
-  top: 3.5rem;
+  inset-block-start: 3.5rem;
+  inset-inline-start: 2rem;
   display: flex;
   align-items: center;
   gap: var(--gin-spacing-xs);
@@ -270,14 +253,6 @@
   background-color: var(--gin-bg-warning);
   padding: var(--gin-spacing-xs) var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
-}
-
-[dir="ltr"] [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active .fieldset__description {
-  left: 2rem;
-}
-
-[dir="rtl"] [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active .fieldset__description {
-  right: 2rem;
 }
 
 [data-drupal-selector=edit-classic-toolbar].gin-core-navigation--is-active .fieldset__description:before {
@@ -303,8 +278,7 @@
 }
 
 #edit-layout-density .form-item input {
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 #edit-layout-density .form-item input#edit-layout-density-default {
@@ -333,14 +307,7 @@
 
 input[data-gin-toolbar=new] + label .gin-new-flag {
   position: absolute;
-  top: -100px;
-}
-
-[dir="ltr"] input[data-gin-toolbar=new] + label .gin-new-flag {
-  right: 8px;
-}
-
-[dir="rtl"] input[data-gin-toolbar=new] + label .gin-new-flag {
-  left: 8px;
+  inset-block-start: -100px;
+  inset-inline-end: var(--gin-spacing-xs);
 }
 

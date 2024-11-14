@@ -57,8 +57,7 @@
 }
 
 .webform-ui-elements-table tr.webform-ui-element-type-webform_actions td {
-  border-block-start: none;
-  border-block-end: none;
+  border-block: none;
   background: none;
 }
 
@@ -81,16 +80,9 @@
 }
 
 .webform-ajax-messages {
-  bottom: var(--gin-spacing-s);
+  inset-inline-start: var(--gin-offset-x);
+  inset-block-end: var(--gin-spacing-s);
   margin-inline-start: var(--gin-spacing-m);
-}
-
-[dir="ltr"] .webform-ajax-messages {
-  left: var(--gin-offset-x);
-}
-
-[dir="rtl"] .webform-ajax-messages {
-  right: var(--gin-offset-x);
 }
 
 .webform-ajax-messages .messages--info,
@@ -101,15 +93,8 @@
 }
 
 .webform-edit-form .tabledrag-toggle-weight-wrapper {
+  float: end;
   margin-block-start: calc(var(--gin-spacing-s) * -1);
-}
-
-[dir="ltr"] .webform-edit-form .tabledrag-toggle-weight-wrapper {
-  float: right;
-}
-
-[dir="rtl"] .webform-edit-form .tabledrag-toggle-weight-wrapper {
-  float: left;
 }
 
 .webform-edit-form .tabledrag-toggle-weight-wrapper button {

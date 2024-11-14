@@ -28,7 +28,8 @@
 .form-url {
   color: var(--gin-color-text);
   line-height: var(--input-line-height);
-  padding: calc(var(--input-padding-vertical) - 1px) var(--input-padding-horizontal);
+  padding-block: calc(var(--input-padding-vertical) - 1px);
+  padding-inline: var(--input-padding-horizontal);
   min-height: calc((var(--input-padding-vertical) * 2) + var(--input-line-height));
   background-color: var(--gin-bg-input);
   border: 1px solid var(--gin-border-color-form-element);
@@ -123,7 +124,7 @@
   width: auto;
 
   .form-item__label {
-    top: 3px;
+    inset-block-start: 3px;
     padding-block-end: 0;
   }
 }
@@ -157,16 +158,7 @@
 // Select
 .form-select,
 .form-element--type-select {
-  appearance: none;
   padding-inline-end: calc(var(--gin-spacing-xs) + var(--gin-spacing-xl) - 1px);
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3e%3cpath fill='none' stroke-width='1.5' d='M1 1l6 6 6-6' stroke='%23545560'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: 100% 50%;
-  background-size: 2.75rem 0.5625rem;
-
-  .gin--dark-mode & {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23ffffff'/%3E%3C/svg%3E%0A");
-  }
 }
 
 .form-select--small,
@@ -174,8 +166,7 @@
   font-size: var(--gin-font-size-xs);
   min-height: 2.25rem;
   line-height: 1.4;
-  padding-block-start: .474rem; // 0.79rem * 1.2 / 2
-  padding-block-end: .474rem; // 0.79rem * 1.2 / 2
+  padding-block: .474rem; // 0.79rem * 1.2 / 2
   background-position: 100% 52%;
 }
 
@@ -332,7 +323,7 @@
         }
 
         @media (forced-colors: active) {
-          padding-inline-start: 8px;
+          padding-inline-start: var(--gin-spacing-xs);
           background-color: LinkText !important;
         }
       }
@@ -474,8 +465,7 @@ table:has(.tabledrag-cell-content__item .form-checkbox) th.select-all .form-chec
 .form-radios,
 .form-checkboxes {
   .form-type--boolean {
-    margin-block-start: var(--gin-spacing-xs);
-    margin-block-end: var(--gin-spacing-xs);
+    margin-block: var(--gin-spacing-xs);
   }
 }
 
@@ -494,12 +484,19 @@ table:has(.tabledrag-cell-content__item .form-checkbox) th.select-all .form-chec
 fieldset:not(.fieldgroup) {
   color: var(--gin-color-text-light);
   padding-block-start: var(--gin-spacing-xs);
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-inline: 0;
   background: transparent;
   border-color: var(--gin-border-color);
   border-radius: var(--gin-border-m);
   box-shadow: none;
+
+  > legend {
+    inset-block-start: 20px;
+  }
+
+  > .fieldset-wrapper {
+    margin-block-start: 20px;
+  }
 
   &.error {
     border: 2px solid var(--gin-color-danger);
@@ -543,8 +540,7 @@ label .form-required {
   content: "*";
   color: var(--gin-color-danger);
   line-height: 1;
-  margin-inline-end: .15em;
-  margin-inline-start: .15em;
+  margin-inline: .15em;
   vertical-align: text-top;
   background: none;
 }
@@ -570,8 +566,7 @@ html.js .form-autocomplete {
 
 .entity-form-display-form {
   > .form-actions {
-    margin-block-start: 0;
-    margin-block-end: 0;
+    margin-block: 0;
   }
 }
 
@@ -599,8 +594,7 @@ html.js .form-autocomplete {
 
   .filter-wrapper {
     border: 0 none;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
+    padding-inline: 0;
   }
 }
 
@@ -624,7 +618,7 @@ html.js input.form-linkit-autocomplete {
   min-height: 1.75rem;
 }
 
-// Special case, form starts with a form item, remove margin-top.
+// Special case, form starts with a form item, remove margin-block-start.
 #block-gin-content > form > .form-item:first-of-type {
   margin-block-start: 0;
 }
@@ -636,26 +630,22 @@ html.js input.form-linkit-autocomplete {
 }
 
 tr .form-item {
-  margin-block-start: 0;
-  margin-block-end: 0;
+  margin-block: 0;
 }
 
 .container-inline .form-item {
-  margin-block-start: var(--gin-spacing-density-s);
-  margin-block-end: var(--gin-spacing-density-s);
+  margin-block: var(--gin-spacing-density-s);
 }
 
 .field-plugin-settings-edit-form {
   margin-block-start: var(--gin-spacing-s);
 
   .form-item {
-    margin-block-start: var(--gin-spacing-m);
-    margin-block-end: var(--gin-spacing-m);
+    margin-block: var(--gin-spacing-m);
   }
 
   .form-boolean-group .form-item {
-    margin-block-start: var(--gin-spacing-xs);
-    margin-block-end: var(--gin-spacing-xs);
+    margin-block: var(--gin-spacing-xs);
   }
 }
 

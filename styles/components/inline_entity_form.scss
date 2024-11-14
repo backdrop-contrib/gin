@@ -11,8 +11,7 @@
     }
 
     .form-item {
-      margin-block-start: var(--gin-spacing-density-s);
-      margin-block-end: var(--gin-spacing-density-s);
+      margin-block: var(--gin-spacing-density-s);
     }
   }
 }
@@ -21,7 +20,8 @@
   > .form-wrapper > .form-wrapper:last-of-type {
     background: var(--gin-bg-layer2);
     padding: 0 var(--gin-spacing-m);
-    margin: 0 calc(var(--gin-spacing-m) * -1);
+    margin-block: 0;
+    margin-inline: calc(var(--gin-spacing-m) * -1);
   }
 }
 
@@ -40,7 +40,7 @@
 
     /* The .draggable padding is not applied because of display: table-row */
     &.drag-previous > .tabledrag-cell::before {
-      left: var(--gin-spacing-xs);
+      inset-inline-start: var(--gin-spacing-xs);
     }
 
     .tabledrag-cell-content__item {

@@ -8,8 +8,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding-block-start: var(--gin-spacing-xs);
-  padding-block-end: var(--gin-spacing-xs);
+  padding-block: var(--gin-spacing-xs);
   margin-block-start: -1px;
   height: var(--gin-toolbar-secondary-height);
   border-block-end: 1px solid var(--gin-border-color-secondary);
@@ -22,7 +21,7 @@
   &--frontend {
     z-index: 501; /* on top of the Drupal world */
     position: sticky;
-    top: 0;
+    inset-block-start: 0;
     margin-block-start: 0;
     height: var(--gin-toolbar-secondary-height);
     background: rgba(#fff, .98);
@@ -52,7 +51,7 @@
   .gin--edit-form & {
     @include mq(ultra) {
       position: relative;
-      left: 50%;
+      inset-inline-start: calc(50% - var(--gin-spacing-xxl));
       transform: translateX(-50%);
     }
   }
@@ -100,8 +99,8 @@
     content: "";
     display: inline-block;
     position: absolute;
-    top: 50%;
-    left: 0;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
     width: var(--gin-icon-size-toolbar-secondary);
     height: var(--gin-icon-size-toolbar-secondary);
     transform: translateY(-50%);
@@ -146,7 +145,7 @@
   #toolbar-item-administration-tray {
     display: block;
     position: absolute;
-    top: 0;
+    inset-block-start: 0;
   }
 }
 
@@ -201,11 +200,11 @@
           border-radius: var(--gin-border-s) var(--gin-border-s) 0 0;
 
           &::before {
-            top: 0;
+            inset-block-start: 0;
             width: 2rem;
 
             @include mq(wide) {
-              left: -8px;
+              inset-inline-start: calc(var(--gin-spacing-xs) * -1);
             }
           }
 
@@ -243,8 +242,8 @@
 
         .toolbar-tray {
           position: absolute;
-          left: auto;
-          right: 0;
+          inset-inline-start: auto;
+          inset-inline-end: 0;
           width: 170px;
           background-color: var(--gin-bg-layer3);
           border-block-end: 0 none;
@@ -380,8 +379,8 @@
           &::before {
             width: var(--gin-icon-size-toolbar-secondary);
             height: var(--gin-icon-size-toolbar-secondary);
-            top: 50%;
-            left: 12px;
+            inset-block-start: 50%;
+            inset-inline-start: 12px;
             transform: translateY(-50%);
           }
 
@@ -403,8 +402,7 @@
 
 #admin-toolbar-search-input {
   line-height: 1; // FF fix
-  padding-block-start: 10px;
-  padding-block-end: 10px;
+  padding-block: 10px;
   margin-inline-end: 12px;
   font-size: var(--gin-font-size-xs);
 
@@ -435,7 +433,7 @@
 .announce-toolbar-tab {
   > .ajax-progress {
     position: absolute;
-    top: 12px;
+    inset-block-start: 12px;
     z-index: 999;
     background-color: var(--gin-bg-layer);
 

@@ -175,8 +175,8 @@
   &:before {
     content: "";
     position: absolute;
-    top: 1em;
-    left: 10px;
+    inset-block-start: 1em;
+    inset-inline-start: 10px;
     display: inline-block;
     width: 24px;
     height: 24px;

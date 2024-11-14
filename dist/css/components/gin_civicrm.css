@@ -18,11 +18,11 @@
 }
 
 [dir="ltr"] .crm-container details.crm-accordion-bold > summary::before {
-  left: unset;
+  inset-inline-start: unset;
 }
 
 [dir="rtl"] .crm-container details.crm-accordion-bold > summary::before {
-  right: unset;
+  inset-inline-end: unset;
 }
 
 .crm-container details.crm-accordion-bold > summary > span:first-child {
