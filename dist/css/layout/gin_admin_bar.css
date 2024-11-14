@@ -152,6 +152,10 @@
   background-color: var(--gin-color-primary-active);
 }
 
+#admin-bar #admin-bar-extra .dropdown .dropdown > li:hover {
+  background-color: transparent;
+}
+
 #admin-bar #admin-bar-extra .dropdown .dropdown > li > a::before {
   display: none;
 }
@@ -390,10 +394,6 @@
   flex-wrap: nowrap;
 }
 
-#admin-bar .top-level > li > ul > li a > .admin-bar-link-text {
-  white-space: nowrap;
-}
-
 #admin-bar-menu.top-level > li > ul > li > a.active-trail {
   text-shadow: #333 0 1px 0;
 }
@@ -492,6 +492,10 @@
 #admin-bar .dropdown li ul a:hover, #admin-bar .dropdown li ul li:hover {
   background-color: var(--gin-color-primary-light);
   color: var(--gin-color-primary-active);
+}
+
+#admin-bar .dropdown li ul li:last-child:hover, #admin-bar .dropdown li ul li:last-child a:hover {
+  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
 }
 
 /* Third-and-above-level lists. */
