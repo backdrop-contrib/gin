@@ -286,6 +286,7 @@
 
 .gin--edit-form[data-meta-sidebar=open] .layout-region-node-secondary fieldset.collapsible:not(.collapsed) .fieldset-wrapper {
   background: var(--gin-bg-app);
+  margin-block-start: 0;
 }
 
 [dir="ltr"] .gin--edit-form[data-meta-sidebar=open] .layout-region-node-secondary fieldset.collapsible:not(.collapsed) .fieldset-wrapper {
