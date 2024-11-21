@@ -4054,6 +4054,12 @@ a.button-primary.button--danger {
   margin-inline-end: var(--gin-spacing-xs);
 }
 
+/* Date Repeat */
+
+.date-float + .form-type-checkbox {
+  float: inline-start;
+}
+
 .card {
   padding: 0;
   background: transparent;

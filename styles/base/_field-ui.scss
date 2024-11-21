@@ -105,3 +105,8 @@
     margin-inline-end: var(--gin-spacing-xs);
   }
 }
+
+/* Date Repeat */
+.date-float + .form-type-checkbox {
+  float: inline-start;
+}
