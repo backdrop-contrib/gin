@@ -16,6 +16,7 @@ $sprites: (
     'drupal': "../../media/sprite.svg#drupal-view",
     'gin': "../../media/sprite.svg#gin-view",
     'handle': "../../media/sprite.svg#handle-view",
+    'line-vertical': "../../media/sprite.svg#line-vertical-view",
     'logout': "../../media/sprite.svg#logout-view",
     'magnifier-rtl': "../../media/sprite.svg#magnifier-rtl-view",
     'magnifier': "../../media/sprite.svg#magnifier-view",
@@ -158,6 +159,10 @@ $sizes: (
     'handle': (
         'width': 24px,
         'height': 24px
+    ),
+    'line-vertical': (
+        'width': 256px,
+        'height': 256px
     ),
     'logout': (
         'width': 24px,

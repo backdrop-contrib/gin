@@ -84,6 +84,7 @@ button.link:hover,
 [open] .claro-details__summary--vertical-tabs-item:hover,
 .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link:hover {
   color: var(--gin-color-primary-hover);
+  text-decoration: none;
 }
 
 a:active,
@@ -410,6 +411,7 @@ body:not(.toolbar-tray-open) .layout-container {
 }
 
 .gin-layer-wrapper,
+.user-simplified-page-wrapper,
 table.update, .gin-layer-wrapper-shadow,
 .block-system > form,
 .views-exposed-form.views-exposed-form,
@@ -427,6 +429,7 @@ table.update, .gin-layer-wrapper-shadow,
 }
 
 .gin--dark-mode .gin-layer-wrapper,
+.gin--dark-mode .user-simplified-page-wrapper,
 .gin--dark-mode table.update, .gin--dark-mode .gin-layer-wrapper-shadow,
 .gin--dark-mode .block-system > form,
 .gin--dark-mode .views-exposed-form.views-exposed-form,
@@ -442,6 +445,7 @@ table.update, .gin-layer-wrapper-shadow,
 }
 
 .gin--high-contrast-mode .gin-layer-wrapper,
+.gin--high-contrast-mode .user-simplified-page-wrapper,
 .gin--high-contrast-mode table.update, .gin--high-contrast-mode .gin-layer-wrapper-shadow,
 .gin--high-contrast-mode .block-system > form,
 .gin--high-contrast-mode .views-exposed-form.views-exposed-form,
@@ -457,6 +461,7 @@ table.update, .gin-layer-wrapper-shadow,
 }
 
 .gin-layer-wrapper,
+.user-simplified-page-wrapper,
 table.update,
 .block-system-main-block > form,
 .views-exposed-form.views-exposed-form,
@@ -476,6 +481,7 @@ table.update,
 
 @media (min-width: 48em) {
   .gin-layer-wrapper,
+  .user-simplified-page-wrapper,
   table.update,
   .block-system-main-block > form,
   .views-exposed-form.views-exposed-form,
@@ -492,6 +498,8 @@ table.update,
 
 .gin-layer-wrapper > .form-wrapper:first-of-type .form-item,
 .gin-layer-wrapper .layout-region-node-main > .form-wrapper:first-of-type .form-item,
+.user-simplified-page-wrapper > .form-wrapper:first-of-type .form-item,
+.user-simplified-page-wrapper .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 table.update > .form-wrapper:first-of-type .form-item,
 table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .block-system-main-block > form > .form-wrapper:first-of-type .form-item,
@@ -2752,6 +2760,40 @@ tr .form-item {
 
 .length-indicator {
   margin-block-end: var(--gin-spacing-l);
+}
+
+.user-simplified-page .site-name {
+  font-size: 1rem;
+  margin-block-end: 3rem;
+}
+
+.user-simplified-page .login-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: .5rem;
+}
+
+.user-simplified-page .login-links li {
+  margin: 0;
+}
+
+.user-simplified-page .login-links li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  -webkit-mask-image: url("../../media/sprite.svg#line-vertical-view");
+          mask-image: url("../../media/sprite.svg#line-vertical-view");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  margin-inline-start: .5rem;
+  background-color: var(--gin-color-disabled);
+  width: 20px;
+  height: 14px;
 }
 
 .button,

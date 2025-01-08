@@ -678,3 +678,36 @@ tr .form-item {
 .length-indicator {
   margin-block-end: var(--gin-spacing-l);
 }
+
+// Simplified login form.
+.user-simplified-page {
+  .site-name {
+    font-size: 1rem;
+    margin-block-end: 3rem;
+  }
+
+  .login-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: .5rem;
+
+    li {
+      margin: 0;
+
+      &:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        mask-image: icon('line-vertical');
+        mask-size: contain;
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        margin-inline-start: .5rem;
+        background-color: var(--gin-color-disabled);
+        width: 20px;
+        height: 14px;
+      }
+    }
+  }
+}
