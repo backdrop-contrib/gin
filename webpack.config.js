@@ -50,6 +50,7 @@ module.exports = {
     'components/edit_form': ['./styles/components/edit_form.scss'],
     'components/inline_entity_form': ['./styles/components/inline_entity_form.scss'],
     'components/gin_paragraphs': ['./styles/components/gin_paragraphs.scss'],
+    'components/gin_layout_paragraphs': ['./styles/components/gin_layout_paragraphs.scss'],
     'components/project_installer': ['./styles/components/project_installer.scss'],
     'components/maintenance_page': ['./styles/components/maintenance_page.scss'],
     'components/module_filter': ['./styles/components/module_filter.scss'],

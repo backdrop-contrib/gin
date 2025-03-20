@@ -73,6 +73,7 @@ function gin_preprocess_page(&$variables) {
     'module_filter' => 'gin_module_filter',
     'node_preview' => 'gin_node_preview',
     'paragraphs' => 'gin_paragraphs',
+    'layout_paragraphs' => 'gin_layout_paragraphs',
     'webform' => 'gin_webform',
   ];
 

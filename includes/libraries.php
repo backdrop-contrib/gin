@@ -313,6 +313,13 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/gin_paragraphs.css' => array(),
       ),
     ),
+    'gin_layout_paragraphs' => array(
+      'title' => 'Layout Paragraphs',
+      'version' => BACKDROP_VERSION,
+      'css' => array(
+        $basethemeurl . '/dist/css/components/gin_layout_paragraphs.css' => array(),
+      ),
+    ),
     'gin_webform' => array(
       'title' => 'Webform',
       'version' => BACKDROP_VERSION,

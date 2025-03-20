@@ -1,6 +1,6 @@
 // Node layout
 .gin--edit-form[data-meta-sidebar=open] {
-  .edit-form--sidebar {
+  .gin.edit-form--sidebar {
 
     // Has sidebar, save the space
     @include mq(large) {
@@ -509,7 +509,7 @@
 
 .gin--dark-mode {
   .gin--edit-form {
-    .edit-form--sidebar {
+    .gin.edit-form--sidebar {
 
       .layout-region-node-main,
 

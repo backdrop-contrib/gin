@@ -1,54 +1,54 @@
 @media (min-width: 64em) {
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar {
     padding-inline-end: var(--gin-sidebar-offset);
   }
 
-  [dir="ltr"] .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .dialog-off-canvas-main-canvas {
+  [dir="ltr"] .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .dialog-off-canvas-main-canvas {
     transition: padding-left var(--gin-transition-fast);
   }
 
-  [dir="rtl"] .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .dialog-off-canvas-main-canvas {
+  [dir="rtl"] .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .dialog-off-canvas-main-canvas {
     transition: padding-right var(--gin-transition-fast);
   }
 
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar.js-off-canvas-dialog-open {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar.js-off-canvas-dialog-open {
     padding-inline-end: 0;
   }
 
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar.js-off-canvas-dialog-open .layout-region.layout-region-node-secondary {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar.js-off-canvas-dialog-open .layout-region.layout-region-node-secondary {
     visibility: hidden;
     opacity: 0;
   }
 }
 
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar [data-drupal-link-system-path*="/delete"] {
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar [data-drupal-link-system-path*="/delete"] {
   display: none;
 }
 
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .contextual-toolbar-tab {
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .contextual-toolbar-tab {
   display: none;
 }
 
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .node-form > div {
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .node-form > div {
   overflow: inherit;
   display: block;
   overflow-y: auto;
 }
 
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-main,
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-secondary .layout-region-node-footer {
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-main,
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-secondary .layout-region-node-footer {
   float: none;
 }
 
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-main,
-.gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-footer {
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-main,
+.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-footer {
   width: 100%;
   padding-inline-end: 0;
 }
 
 @media (min-width: 64em) {
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-main,
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar .layout-region-node-footer {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-main,
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .layout-region-node-footer {
     flex-basis: 40%;
     flex-shrink: 1;
     flex-grow: 1;
@@ -57,13 +57,13 @@
 }
 
 @media (min-width: 108.125em) {
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar.page-wrapper .block-page-title-block {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar.page-wrapper .block-page-title-block {
     width: 100%;
   }
 }
 
 @media (min-width: 64em) {
-  .gin--edit-form[data-meta-sidebar=open] .edit-form--sidebar.page-wrapper .block-page-title-block .page-title {
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar.page-wrapper .block-page-title-block .page-title {
     width: auto;
     margin: 0;
     overflow: hidden;
@@ -510,7 +510,7 @@
   color: var(--gin-color-text);
 }
 
-.gin--dark-mode .gin--edit-form .edit-form--sidebar .layout-region-node-main .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title, .gin--dark-mode .gin--edit-form .edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title {
+.gin--dark-mode .gin--edit-form .gin.edit-form--sidebar .layout-region-node-main .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title, .gin--dark-mode .gin--edit-form .gin.edit-form--sidebar.page-wrapper .layout-region-node-secondary fieldset:not(.fieldgroup) > legend a.fieldset-title {
   background: linear-gradient(transparent 80%, #1b1b1d 100%);
 }
 
