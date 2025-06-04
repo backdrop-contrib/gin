@@ -374,45 +374,12 @@ function gin_js_alter(&$js) {
 }
 
 /**
- * Implements hook_form_BASE_FORM_ID_alter() for node_form.
+ * Implements hook_form_alter().
  *
- * Changes vertical tabs to container.
+ * Changes vertical tabs to container if needed.
  */
-function gin_form_node_form_alter(&$form, &$form_state, $form_id) {
-  if (empty($form_state['input']['dialogOptions'])) {
-    _gin_convert_to_sidebar_edit_form($form);
-  }
-}
-
-/**
- * Implements hook_form_BASE_FORM_ID_alter() for taxonomy_form_term.
- *
- * Changes vertical tabs to container.
- */
-function gin_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
-  if (empty($form_state['input']['dialogOptions'])) {
-    _gin_convert_to_sidebar_edit_form($form);
-  }
-}
-
-/**
- * Implements hook_form_BASE_FORM_ID_alter() for user_profile_form.
- *
- * Changes vertical tabs to container.
- */
-function gin_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
-  if (empty($form_state['input']['dialogOptions'])) {
-    _gin_convert_to_sidebar_edit_form($form);
-  }
-}
-
-/**
- * Implements hook_form_BASE_FORM_ID_alter() for user_register_form.
- *
- * Changes vertical tabs to container.
- */
-function gin_form_user_register_form_alter(&$form, &$form_state, $form_id) {
-  if (empty($form_state['input']['dialogOptions'])) {
+function gin_form_alter(&$form, &$form_state, $form_id) {
+  if (gin_content_form_paths() && empty($form_state['input']['dialogOptions'])) {
     _gin_convert_to_sidebar_edit_form($form);
   }
 }
@@ -421,35 +388,27 @@ function gin_form_user_register_form_alter(&$form, &$form_state, $form_id) {
  * Helper function to convert an edit form to use the sidebar edit.
  */
 function _gin_convert_to_sidebar_edit_form(&$form) {
-  if (gin_content_form_paths()) {
-    $first_key = '';
-    $first_weight = 999;
-    foreach (element_children($form) as $key) {
-      if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
-          $form[$key]['#collapsed'] = TRUE;
-          $form[$key]['#collapsible'] = TRUE;
-          if ($form[$key]['#weight'] < $first_weight) {
-            $first_weight = $form[$key]['#weight'];
-            $first_key = $key;
-          }
+  $first_key = '';
+  $first_weight = 999;
+  foreach (element_children($form) as $key) {
+    if (!empty($form[$key]['#group']) && $form[$key]['#group'] == 'additional_settings') {
+        $form[$key]['#collapsed'] = TRUE;
+        $form[$key]['#collapsible'] = TRUE;
+        if ($form[$key]['#weight'] < $first_weight) {
+          $first_weight = $form[$key]['#weight'];
+          $first_key = $key;
         }
-    }
-    $form[$first_key]['#collapsed'] = FALSE;
-    $form['additional_settings']['#type'] = 'fieldset';
-    $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
-    $form_id = backdrop_html_class($form['#form_id']);
-    backdrop_add_js(array('Gin' => array(
-      'sidebar_form_id' => $form_id,
-      'actions_form_id' => $form_id,
-    )), 'setting');
-    $form['#attached']['library'][] = ['gin', 'gin_edit_form'];
-    /*
-    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/more_actions.js';
-    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/edit_form.css';
-    $form['#attached']['css'][] = backdrop_get_path('theme', 'gin') . '/dist/css/components/sidebar.css';
-    $form['#attached']['js'][] = backdrop_get_path('theme', 'gin') . '/dist/js/sidebar.js';
-    */
+      }
   }
+  $form[$first_key]['#collapsed'] = FALSE;
+  $form['additional_settings']['#type'] = 'fieldset';
+  $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
+  $form_id = backdrop_html_class($form['#form_id']);
+  backdrop_add_js(array('Gin' => array(
+    'sidebar_form_id' => $form_id,
+    'actions_form_id' => $form_id,
+  )), 'setting');
+  $form['#attached']['library'][] = ['gin', 'gin_edit_form'];
 }
 
 /**
