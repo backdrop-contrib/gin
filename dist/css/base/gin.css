@@ -1430,6 +1430,11 @@ table.sticky-header.--is-processed thead tr .sortable-heading.is-active > a::bef
   display: none;
 }
 
+table caption {
+  padding: var(--gin-spacing-m);
+  text-align: start;
+}
+
 table thead {
   background: transparent;
   border-radius: var(--gin-border-m);
