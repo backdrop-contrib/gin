@@ -276,7 +276,6 @@
   color: var(--gin-color-info-light);
   background-color: var(--gin-bg-info);
   border-color: var(--gin-bg-info);
-
   background: none;
 
   &:before {
@@ -346,4 +345,8 @@
       background-color: var(--gin-color-danger-light);
     }
   }
+}
+
+.messages.warning:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
+  color: var(--gin-color-warning-light);
 }
