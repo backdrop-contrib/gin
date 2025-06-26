@@ -30,8 +30,10 @@
  * - $page_bottom: Final closing markup from any modules that have altered the
  *   page. This variable should always be output last, after all other dynamic
  *   content.
- * - $classes Array of classes that can be used to style contextually through
- *   CSS.
+ * - $html_classes: Array of classes that can be used to style contextually
+ *   through CSS. Added to the 'html' element.
+ * - $classes: Array of classes that can be used to style contextually through
+ *   CSS. Added to the 'body' element.
  *
  * @see template_preprocess()
  * @see template_preprocess_page()
