@@ -31,8 +31,13 @@ function gin_preprocess_form(&$variables) {
     $exclude_form_ids = gin_ignore_sticky_form_actions();
     $form_id = backdrop_html_class($variables['element']['#form_id']);
     if (!in_array($form_id, $exclude_form_ids)) {
-      backdrop_add_js(array('Gin' => array('actions_form_id' => $form_id)), 'setting');
-      backdrop_add_library('gin', 'gin_more_actions', TRUE);
+      $variables['element']['#attached']['library'][] = array('gin', 'gin_more_actions');
+      $variables['element']['#attached']['js'][] = array(
+        'type' => 'setting',
+        'data' => array(
+          'Gin' => array('actions_form_id' => $form_id),
+        ),
+      );
     }
   }
 }
@@ -404,11 +409,16 @@ function _gin_convert_to_sidebar_edit_form(&$form) {
   $form['additional_settings']['#type'] = 'fieldset';
   $form['additional_settings']['#attributes']['class'][] = 'content-edit-settings';
   $form_id = backdrop_html_class($form['#form_id']);
-  backdrop_add_js(array('Gin' => array(
-    'sidebar_form_id' => $form_id,
-    'actions_form_id' => $form_id,
-  )), 'setting');
   $form['#attached']['library'][] = ['gin', 'gin_edit_form'];
+  $form['#attached']['js'][] = array(
+    'type' => 'setting',
+    'data' => array(
+      'Gin' => array(
+        'sidebar_form_id' => $form_id,
+        'actions_form_id' => $form_id,
+      ),
+    ),
+  );
 }
 
 /**
@@ -670,7 +680,7 @@ function gin_form_element($variables) {
   if (!empty($element['#description'])) {
     $description_attributes['class'][] = 'description';
     if ($show_description_toggle) {
-      backdrop_add_library('gin', 'gin_description_toggle');
+      $element['#attached']['library'][] = array('gin', 'gin_description_toggle');
       $attributes['class'][] = 'help-icon__description-container';
       $description_attributes['class'][] = 'visually-hidden';
       $help_icon_open = '<div class="help-icon">';

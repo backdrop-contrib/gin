@@ -2,21 +2,6 @@
  * we use native JS instead of Drupal's behaviors.
 */
 
-// Legacy Check: Transform old localStorage items to newer ones.
-function checkLegacy() {
-  if (localStorage.getItem('GinDarkMode')) {
-    localStorage.setItem('Backdrop.gin.darkmode', localStorage.getItem('GinDarkMode'));
-    localStorage.removeItem('GinDarkMode');
-  }
-
-  if (localStorage.getItem('GinSidebarOpen')) {
-    localStorage.setItem('Backdrop.gin.toolbarExpanded', localStorage.getItem('GinSidebarOpen'));
-    localStorage.removeItem('GinSidebarOpen');
-  }
-}
-
-checkLegacy();
-
 // Darkmode Check.
 function ginInitDarkmode() {
   const darkModeClass = 'gin--dark-mode';
@@ -35,8 +20,9 @@ ginInitDarkmode();
 // GinDarkMode is not set yet or config changes detected.
 window.addEventListener('DOMContentLoaded', () => {
   if (
-    !localStorage.getItem('Backdrop.gin.darkmode') ||
-    (Backdrop.settings.gin.darkmode != localStorage.getItem('Backdrop.gin.darkmode'))
+    typeof Backdrop.settings.gin.darkmode === 'undefined' &&
+    (!localStorage.getItem('Backdrop.gin.darkmode') ||
+    (Backdrop.settings.gin.darkmode != localStorage.getItem('Backdrop.gin.darkmode')))
   ) {
     localStorage.setItem('Backdrop.gin.darkmode', Backdrop.settings.gin.darkmode);
     ginInitDarkmode();

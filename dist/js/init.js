@@ -2,10 +2,8 @@
   function ginInitDarkmode() {
     1 == localStorage.getItem("Backdrop.gin.darkmode") || "auto" === localStorage.getItem("Backdrop.gin.darkmode") && window.matchMedia("(prefers-color-scheme: dark)").matches ? document.documentElement.classList.add("gin--dark-mode") : !0 === document.documentElement.classList.contains("gin--dark-mode") && document.documentElement.classList.remove("gin--dark-mode");
   }
-  if (localStorage.getItem("GinDarkMode") && (localStorage.setItem("Backdrop.gin.darkmode", localStorage.getItem("GinDarkMode")), 
-  localStorage.removeItem("GinDarkMode")), localStorage.getItem("GinSidebarOpen") && (localStorage.setItem("Backdrop.gin.toolbarExpanded", localStorage.getItem("GinSidebarOpen")), 
-  localStorage.removeItem("GinSidebarOpen")), ginInitDarkmode(), window.addEventListener("DOMContentLoaded", (() => {
-    localStorage.getItem("Backdrop.gin.darkmode") && Backdrop.settings.gin.darkmode == localStorage.getItem("Backdrop.gin.darkmode") || (localStorage.setItem("Backdrop.gin.darkmode", Backdrop.settings.gin.darkmode), 
+  if (ginInitDarkmode(), window.addEventListener("DOMContentLoaded", (() => {
+    void 0 !== Backdrop.settings.gin.darkmode || localStorage.getItem("Backdrop.gin.darkmode") && Backdrop.settings.gin.darkmode == localStorage.getItem("Backdrop.gin.darkmode") || (localStorage.setItem("Backdrop.gin.darkmode", Backdrop.settings.gin.darkmode), 
     ginInitDarkmode());
   })), localStorage.getItem("Backdrop.gin.sidebarWidth")) {
     const sidebarWidth = localStorage.getItem("Backdrop.gin.sidebarWidth");
