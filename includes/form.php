@@ -27,7 +27,7 @@ function gin_textfield($variables) {
 
   $extra = '';
   if ($element['#autocomplete_path'] && !empty($element['#autocomplete_input'])) {
-    backdrop_add_library('system', 'backdrop.autocomplete');
+    $element['#attached']['library'][] = array('system', 'backdrop.autocomplete');
     $element['#attributes']['class'][] = 'form-autocomplete';
 
     $attributes = array();
@@ -66,7 +66,7 @@ function gin_email($variables) {
 
   $extra = '';
   if ($element['#autocomplete_path'] && backdrop_valid_path($element['#autocomplete_path'])) {
-    backdrop_add_library('system', 'backdrop.autocomplete');
+    $element['#attached']['library'][] = array('system', 'backdrop.autocomplete');
     $element['#attributes']['class'][] = 'form-autocomplete';
 
     $attributes = array();
