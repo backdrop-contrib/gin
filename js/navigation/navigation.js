@@ -110,7 +110,7 @@
 
     // Gin Custom start ---------------------
     if (toState === true && window.innerWidth < breakpointLarge) {
-      Drupal.ginSidebar?.collapseSidebar();
+      Backdrop.ginSidebar?.collapseSidebar();
     }
     // Gin Custom end ------------------------
   }
@@ -643,7 +643,7 @@
     // Gin Custom end ------------------------
   }
 
-  Drupal.behaviors.ginNavigation = {
+  Backdrop.behaviors.ginNavigation = {
     attach(context) {
       once('navigation', '.admin-toolbar', context).forEach(init);
     },

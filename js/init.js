@@ -1,13 +1,18 @@
 /* To inject this as early as possible
- * we use native JS instead of Drupal's behaviors.
+ * we use native JS instead of Backdrop's behaviors.
 */
 
 // Darkmode Check.
 function ginInitDarkmode() {
   const darkModeClass = 'gin--dark-mode';
+
+  const darkmodeSetting = document.getElementById('gin-setting-darkmode')?.textContent;
+  // Set window variable.
+  window.ginDarkmode = darkmodeSetting ? JSON.parse(darkmodeSetting)?.ginDarkmode : 'auto';
+
   if (
-    localStorage.getItem('Backdrop.gin.darkmode') == 1 ||
-    (localStorage.getItem('Backdrop.gin.darkmode') === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    window.ginDarkmode == 1 ||
+    window.ginDarkmode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
   ) {
     document.documentElement.classList.add(darkModeClass);
   } else {
@@ -16,18 +21,6 @@ function ginInitDarkmode() {
 }
 
 ginInitDarkmode();
-
-// GinDarkMode is not set yet or config changes detected.
-window.addEventListener('DOMContentLoaded', () => {
-  if (
-    typeof Backdrop.settings.gin.darkmode === 'undefined' &&
-    (!localStorage.getItem('Backdrop.gin.darkmode') ||
-    (Backdrop.settings.gin.darkmode != localStorage.getItem('Backdrop.gin.darkmode')))
-  ) {
-    localStorage.setItem('Backdrop.gin.darkmode', Backdrop.settings.gin.darkmode);
-    ginInitDarkmode();
-  }
-});
 
 // Toolbar Check.
 // if (localStorage.getItem('Backdrop.gin.toolbarExpanded')) {

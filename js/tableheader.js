@@ -14,7 +14,7 @@
 
         // Resize observer.
         const resizeHandler = new ResizeObserver(() => {
-          Drupal.debounce(this.updateTableHeader(el), 150);
+          Backdrop.debounce(this.updateTableHeader(el), 150);
         });
         resizeHandler.observe(el);
 

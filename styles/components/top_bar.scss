@@ -22,8 +22,9 @@ $topbar: 54px;
   }
 }
 
-.gin--navigation-top-bar:not(:has(.top-bar__burger:only-child)) ~ .dialog-off-canvas-main-canvas {
-  margin-block-start: 0;
+body:has(.gin--navigation-top-bar .gin-sticky-form-actions) :where(#gin_sidebar) {
+  inset-block-start: $topbar !important;
+  height: calc(100% - #{$topbar}) !important;
 }
 
 body:has(.gin--navigation-top-bar .gin-sticky-form-actions) :where(#gin_sidebar) {

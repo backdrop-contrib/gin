@@ -17,6 +17,7 @@ $sprites: (
     'gin': "../../media/sprite.svg#gin-view",
     'handle': "../../media/sprite.svg#handle-view",
     'line-vertical': "../../media/sprite.svg#line-vertical-view",
+    'loader': "../../media/sprite.svg#loader-view",
     'logout': "../../media/sprite.svg#logout-view",
     'magnifier-rtl': "../../media/sprite.svg#magnifier-rtl-view",
     'magnifier': "../../media/sprite.svg#magnifier-view",
@@ -88,6 +89,7 @@ $sprites: (
     'reports': "../../media/sprite.svg#reports-view",
     'structure': "../../media/sprite.svg#structure-view",
     'tmgmt': "../../media/sprite.svg#tmgmt-view",
+    'trash-module': "../../media/sprite.svg#trash-module-view",
     'webform': "../../media/sprite.svg#webform-view"
 );
 
@@ -163,6 +165,10 @@ $sizes: (
     'line-vertical': (
         'width': 256px,
         'height': 256px
+    ),
+    'loader': (
+        'width': 24px,
+        'height': 24px
     ),
     'logout': (
         'width': 24px,
@@ -445,6 +451,10 @@ $sizes: (
         'height': 24px
     ),
     'tmgmt': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'trash-module': (
         'width': 24px,
         'height': 24px
     ),

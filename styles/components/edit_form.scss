@@ -7,7 +7,7 @@
       padding-inline-end: var(--gin-sidebar-offset);
 
       .dialog-off-canvas-main-canvas {
-        transition: padding-left var(--gin-transition-fast);
+        transition: padding-inline-start var(--gin-transition-fast);
       }
 
       // If off-canvas dialog is shown
@@ -20,11 +20,6 @@
           opacity: 0;
         }
       }
-    }
-
-    // Hide delete Tab
-    [data-drupal-link-system-path*="/delete"] {
-      display: none;
     }
 
     // Hide edit secondary toolbar item

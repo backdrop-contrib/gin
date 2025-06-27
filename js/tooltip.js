@@ -14,7 +14,7 @@
    * @return {HTMLElement}
    *   A DOM Node.
    */
-  Drupal.theme.ginTooltipWrapper = (dataset, title) =>
+  Backdrop.theme.ginTooltipWrapper = (dataset, title) =>
     `<div class="gin-tooltip ${dataset.drupalTooltipClass || ''}">
       ${dataset.drupalTooltip || title}
     </div>`;
@@ -28,13 +28,13 @@
    *   Attaches the tooltip behavior.
    */
 
-  Drupal.behaviors.ginTooltip = {
+  Backdrop.behaviors.ginTooltip = {
     attach: (context) => {
-      Drupal.ginTooltip.init(context);
+      Backdrop.ginTooltip.init(context);
     },
   };
 
-  Drupal.ginTooltip = {
+  Backdrop.ginTooltip = {
     init: function (context) {
       once('ginTooltipInit', '[data-gin-tooltip]', context).forEach(
         (trigger) => {
@@ -47,7 +47,7 @@
 
           trigger.insertAdjacentHTML(
             'afterend',
-            Drupal.theme.ginTooltipWrapper(trigger.dataset, title),
+            Backdrop.theme.ginTooltipWrapper(trigger.dataset, title),
           );
           const tooltip = trigger.nextElementSibling;
           const updatePosition = () => {

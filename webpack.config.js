@@ -23,7 +23,6 @@ module.exports = {
     'sidebar': ['./js/sidebar.js'],
     'sticky': ['./js/sticky.js'],
     'tabs': ['./js/tabs.js'],
-    'core_navigation': ['./js/core_navigation.js'],
     'tableheader': ['./js/tableheader.js'],
     'tooltip': ['./js/tooltip.js'],
     // ################################################
@@ -71,14 +70,14 @@ module.exports = {
     'components/workspaces': ['./styles/components/workspaces.scss'],
     // Layout
     'layout/gin_admin_bar': ['./styles/layout/gin_admin_bar.scss'],
-    'layout/core_navigation': ['./styles/layout/core_navigation.scss'],
     // Theme
     'theme/accent': ['./styles/theme/accent.scss'],
     'theme/ckeditor': ['./styles/theme/ckeditor.scss'],
     'theme/dialog': ['./styles/theme/dialog.scss'],
     'theme/font': ['./styles/theme/font.scss'],
     'theme/variables': ['./styles/theme/variables.scss'],
-    'theme/legacy': ['./styles/theme/legacy.scss'],
+    // Deprecated
+    'deprecated/project_browser': ['./styles/deprecated/project_browser.scss'],
   },
   output: {
     filename: 'js/[name].js',

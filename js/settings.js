@@ -125,11 +125,6 @@
         this.setHighContrastMode(highContrastMode);
       });
 
-      // Watch save
-      document.querySelector('#edit-submit').addEventListener('click', () => {
-        // Reset darkmode localStorage.
-        localStorage.setItem('Backdrop.gin.darkmode', '');
-      });
     },
 
     darkmode: function (darkmodeParam = null) {
@@ -144,9 +139,6 @@
       else {
         document.querySelector('html').classList.remove(darkmodeClass);
       }
-
-      // Reset localStorage.
-      localStorage.setItem('Backdrop.gin.darkmode', '');
 
       // Change to Darkmode.
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {

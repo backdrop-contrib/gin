@@ -19,7 +19,7 @@
    * @return {boolean}
    *  True if the element is visible.
    */
-  Drupal.elementIsVisible = function (elem) {
+  Backdrop.elementIsVisible = function (elem) {
     return !!(
       elem.offsetWidth ||
       elem.offsetHeight ||
@@ -36,8 +36,8 @@
    * @return {boolean}
    *  True if the element is hidden.
    */
-  Drupal.elementIsHidden = function (elem) {
-    return !Drupal.elementIsVisible(elem);
+  Backdrop.elementIsHidden = function (elem) {
+    return !Backdrop.elementIsVisible(elem);
   };
 
   /**
@@ -46,7 +46,7 @@
    * Default value is to hide weight columns.
    */
   let showWeight = JSON.parse(
-    localStorage.getItem('Drupal.tableDrag.showWeight'),
+    localStorage.getItem('Backdrop.tableDrag.showWeight'),
   );
 
   /**
@@ -63,13 +63,13 @@
    *
    * @type {Drupal~behavior}
    */
-  Drupal.behaviors.tableDrag = {
+  Backdrop.behaviors.tableDrag = {
     attach(context, settings) {
       function initTableDrag(table, base) {
         if (table.length) {
           // Create the new tableDrag instance. Save in the Drupal variable
           // to allow other scripts access to the object.
-          Drupal.tableDrag[base] = new Drupal.tableDrag(
+          Backdrop.tableDrag[base] = new Backdrop.tableDrag(
             table[0],
             settings.tableDrag[base],
           );
@@ -92,7 +92,7 @@
    * @param {object} tableSettings
    *   Settings for the table added via drupal_add_dragtable().
    */
-  Drupal.tableDrag = function (table, tableSettings) {
+  Backdrop.tableDrag = function (table, tableSettings) {
     const self = this;
     const $table = $(table);
 
@@ -214,8 +214,8 @@
     /**
      * Keeps track of rows that have changed.
      */
-    this.changedRowIds = Drupal.tableDrag[table.id]
-      ? Drupal.tableDrag[table.id].changedRowIds
+    this.changedRowIds = Backdrop.tableDrag[table.id]
+      ? Backdrop.tableDrag[table.id].changedRowIds
       : new Set();
 
     Object.keys(tableSettings || {}).forEach((group) => {
@@ -250,7 +250,7 @@
       // Because the table doesn't need to start with any indentations, we
       // manually append 2 indentations in the first draggable row, measure
       // the offset, then remove.
-      const indent = Drupal.theme('tableDragIndentation');
+      const indent = Backdrop.theme('tableDragIndentation');
       const testRow = $('<tr></tr>').addClass('draggable').appendTo(table);
       const testCell = $('<td></td>')
         .appendTo(testRow)
@@ -272,7 +272,7 @@
       self.makeDraggable(this);
     });
 
-    const $toggleWeightWrapper = $(Drupal.theme('tableDragToggle'));
+    const $toggleWeightWrapper = $(Backdrop.theme('tableDragToggle'));
     this.$toggleWeightButton = $toggleWeightWrapper.find(
       '[data-drupal-selector="tabledrag-toggle-weight"]',
     );
@@ -314,8 +314,8 @@
     $(window).on(
       'storage',
       function (e) {
-        // Only react to 'Drupal.tableDrag.showWeight' value change.
-        if (e.originalEvent.key === 'Drupal.tableDrag.showWeight') {
+        // Only react to 'Backdrop.tableDrag.showWeight' value change.
+        if (e.originalEvent.key === 'Backdrop.tableDrag.showWeight') {
           // This was changed in another window, get the new value for this
           // window.
           showWeight = JSON.parse(e.originalEvent.newValue);
@@ -344,9 +344,9 @@
    *
    * Identify and mark each cell with a CSS class so we can easily toggle
    * show/hide it. Finally, hide columns if user does not have a
-   * 'Drupal.tableDrag.showWeight' localStorage value.
+   * 'Backdrop.tableDrag.showWeight' localStorage value.
    */
-  Drupal.tableDrag.prototype.initColumns = function () {
+  Backdrop.tableDrag.prototype.initColumns = function () {
     const $table = this.$table;
     let hidden;
     let cell;
@@ -390,7 +390,7 @@
    * @return {function}
    *   Function to add colspan class.
    */
-  Drupal.tableDrag.prototype.addColspanClass = function (columnIndex) {
+  Backdrop.tableDrag.prototype.addColspanClass = function (columnIndex) {
     return function () {
       // Get the columnIndex and adjust for any colspans in this row.
       const $row = $(this);
@@ -423,7 +423,7 @@
    * @param {boolean} displayWeight
    *   'true' will show weight columns.
    */
-  Drupal.tableDrag.prototype.displayColumns = function (displayWeight) {
+  Backdrop.tableDrag.prototype.displayColumns = function (displayWeight) {
     if (displayWeight) {
       this.showColumns();
     }
@@ -433,7 +433,7 @@
     }
 
     this.$toggleWeightButton.html(
-      Drupal.theme('toggleButtonContent', displayWeight),
+      Backdrop.theme('toggleButtonContent', displayWeight),
     );
 
     // Trigger an event to allow other scripts to react to this display change.
@@ -449,15 +449,15 @@
    *
    * Store only default override.
    */
-  Drupal.tableDrag.prototype.toggleColumns = function () {
+  Backdrop.tableDrag.prototype.toggleColumns = function () {
     showWeight = !showWeight;
     this.displayColumns(showWeight);
     if (showWeight) {
       // Save default override.
-      localStorage.setItem('Drupal.tableDrag.showWeight', showWeight);
+      localStorage.setItem('Backdrop.tableDrag.showWeight', showWeight);
     } else {
       // Reset the value to its default.
-      localStorage.removeItem('Drupal.tableDrag.showWeight');
+      localStorage.removeItem('Backdrop.tableDrag.showWeight');
     }
   };
 
@@ -466,7 +466,7 @@
    *
    * Undo showColumns().
    */
-  Drupal.tableDrag.prototype.hideColumns = function () {
+  Backdrop.tableDrag.prototype.hideColumns = function () {
     const $tables = $(once.filter('tabledrag', 'table'));
     // Hide weight/parent cells and headers.
     $tables.find('.tabledrag-hide').each(function () {
@@ -487,7 +487,7 @@
    *
    * Undo hideColumns().
    */
-  Drupal.tableDrag.prototype.showColumns = function () {
+  Backdrop.tableDrag.prototype.showColumns = function () {
     const $tables = $(once.filter('tabledrag', 'table'));
     // Show weight/parent cells and headers.
     $tables.find('.tabledrag-hide').each(function () {
@@ -514,7 +514,7 @@
    * @return {object}
    *   The table row settings.
    */
-  Drupal.tableDrag.prototype.rowSettings = function (group, row) {
+  Backdrop.tableDrag.prototype.rowSettings = function (group, row) {
     const field = $(row).find(`.${group}`);
     const tableSettingsGroup = this.tableSettings[group];
     return Object.keys(tableSettingsGroup)
@@ -539,13 +539,13 @@
    * @param {HTMLElement} item
    *   The item to add event handlers to.
    */
-  Drupal.tableDrag.prototype.makeDraggable = function (item) {
+  Backdrop.tableDrag.prototype.makeDraggable = function (item) {
     const self = this;
     const $item = $(item);
     // Add a class to the title link.
     $item.find('td:first-of-type').find('a').addClass('menu-item__link');
     // Create the handle.
-    const $handle = $(Drupal.theme('tableDragHandle', this.dragOrientation));
+    const $handle = $(Backdrop.theme('tableDragHandle', this.dragOrientation));
     if (this.dragOrientation === 'drag-y') {
       $handle.addClass('tabledrag-handle-y');
     }
@@ -624,7 +624,7 @@
         case 63232: {
           let $previousRow = $(self.rowObject.element).prev('tr').eq(0);
           let previousRow = $previousRow.get(0);
-          while (previousRow && Drupal.elementIsHidden(previousRow)) {
+          while (previousRow && Backdrop.elementIsHidden(previousRow)) {
             $previousRow = $(previousRow).prev('tr').eq(0);
             previousRow = $previousRow.get(0);
           }
@@ -643,7 +643,7 @@
               ) {
                 $previousRow = $(previousRow).prev('tr').eq(0);
                 previousRow = $previousRow.get(0);
-                groupHeight += Drupal.elementIsHidden(previousRow)
+                groupHeight += Backdrop.elementIsHidden(previousRow)
                   ? 0
                   : previousRow.offsetHeight;
               }
@@ -682,7 +682,7 @@
         case 63233: {
           let $nextRow = $(self.rowObject.group).eq(-1).next('tr').eq(0);
           let nextRow = $nextRow.get(0);
-          while (nextRow && Drupal.elementIsHidden(nextRow)) {
+          while (nextRow && Backdrop.elementIsHidden(nextRow)) {
             $nextRow = $(nextRow).next('tr').eq(0);
             nextRow = $nextRow.get(0);
           }
@@ -704,7 +704,7 @@
               );
               if (nextGroup) {
                 $(nextGroup.group).each(function () {
-                  groupHeight += Drupal.elementIsHidden(this)
+                  groupHeight += Backdrop.elementIsHidden(this)
                     ? 0
                     : this.offsetHeight;
                 });
@@ -775,12 +775,12 @@
    *
    * @param {jQuery.Event} event
    *   The event object that trigger the drag.
-   * @param {Drupal.tableDrag} self
+   * @param {Backdrop.tableDrag} self
    *   The drag handle.
    * @param {HTMLElement} item
    *   The item that is being dragged.
    */
-  Drupal.tableDrag.prototype.dragStart = function (event, self, item) {
+  Backdrop.tableDrag.prototype.dragStart = function (event, self, item) {
     // Create a new dragObject recording the pointer information.
     self.dragObject = {};
     self.dragObject.initOffset = self.getPointerOffset(item, event);
@@ -826,13 +826,13 @@
    *
    * @param {jQuery.Event} event
    *   The pointer event.
-   * @param {Drupal.tableDrag} self
+   * @param {Backdrop.tableDrag} self
    *   The tableDrag instance.
    *
    * @return {boolean|undefined}
    *   Undefined if no dragObject is defined, false otherwise.
    */
-  Drupal.tableDrag.prototype.dragRow = function (event, self) {
+  Backdrop.tableDrag.prototype.dragRow = function (event, self) {
     if (self.dragObject) {
       self.currentPointerCoords = self.pointerCoords(event);
       const y = self.currentPointerCoords.y - self.dragObject.initOffset.y;
@@ -894,10 +894,10 @@
    *
    * @param {jQuery.Event} event
    *   The pointer event.
-   * @param {Drupal.tableDrag} self
+   * @param {Backdrop.tableDrag} self
    *   The tableDrag instance.
    */
-  Drupal.tableDrag.prototype.dropRow = function (event, self) {
+  Backdrop.tableDrag.prototype.dropRow = function (event, self) {
     let droppedRow;
     let $droppedRow;
 
@@ -957,7 +957,7 @@
    * @return {object}
    *   An object with `x` and `y` keys indicating the position.
    */
-  Drupal.tableDrag.prototype.pointerCoords = function (event) {
+  Backdrop.tableDrag.prototype.pointerCoords = function (event) {
     if (event.pageX || event.pageY) {
       return { x: event.pageX, y: event.pageY };
     }
@@ -981,7 +981,7 @@
    * @return {object}
    *   An object with `x` and `y` keys indicating the position.
    */
-  Drupal.tableDrag.prototype.getPointerOffset = function (target, event) {
+  Backdrop.tableDrag.prototype.getPointerOffset = function (target, event) {
     const docPos = $(target).offset();
     const pointerPos = this.pointerCoords(event);
     return { x: pointerPos.x - docPos.left, y: pointerPos.y - docPos.top };
@@ -1000,7 +1000,7 @@
    * @return {*}
    *   The drop target row, if found.
    */
-  Drupal.tableDrag.prototype.findDropTargetRow = function (x, y) {
+  Backdrop.tableDrag.prototype.findDropTargetRow = function (x, y) {
     const rows = $(this.table.tBodies[0].rows).not(':hidden');
     for (let n = 0; n < rows.length; n++) {
       let row = rows[n];
@@ -1044,8 +1044,8 @@
         // take into account hidden rows. Skip backwards until we find a
         // draggable row.
         while (
-          Drupal.elementIsHidden(row) &&
-          Drupal.elementIsHidden($row.prev('tr')[0])
+          Backdrop.elementIsHidden(row) &&
+          Backdrop.elementIsHidden($row.prev('tr')[0])
         ) {
           $row = $row.prev('tr:first-of-type');
           row = $row.get(0);
@@ -1062,7 +1062,7 @@
    * @param {HTMLElement} changedRow
    *   DOM object for the row that was just dropped.
    */
-  Drupal.tableDrag.prototype.updateFields = function (changedRow) {
+  Backdrop.tableDrag.prototype.updateFields = function (changedRow) {
     Object.keys(this.tableSettings || {}).forEach((group) => {
       // Each group may have a different setting for relationship, so we find
       // the source rows for each separately.
@@ -1078,7 +1078,7 @@
    * @param {string} group
    *   The settings group on which field updates will occur.
    */
-  Drupal.tableDrag.prototype.updateField = function (changedRow, group) {
+  Backdrop.tableDrag.prototype.updateField = function (changedRow, group) {
     let rowSettings = this.rowSettings(group, changedRow);
     const $changedRow = $(changedRow);
     let sourceRow;
@@ -1252,7 +1252,7 @@
    * @param {string} group
    *   The group selector.
    */
-  Drupal.tableDrag.prototype.copyDragClasses = function (
+  Backdrop.tableDrag.prototype.copyDragClasses = function (
     sourceRow,
     targetRow,
     group,
@@ -1273,7 +1273,7 @@
    * @return {number}
    *   The suggested scroll.
    */
-  Drupal.tableDrag.prototype.checkScroll = function (cursorY) {
+  Backdrop.tableDrag.prototype.checkScroll = function (cursorY) {
     const de = document.documentElement;
     const b = document.body;
 
@@ -1312,7 +1312,7 @@
    * @param {number} scrollAmount
    *   The amount of scroll to apply to the window.
    */
-  Drupal.tableDrag.prototype.setScroll = function (scrollAmount) {
+  Backdrop.tableDrag.prototype.setScroll = function (scrollAmount) {
     const self = this;
 
     this.scrollInterval = setInterval(() => {
@@ -1332,7 +1332,7 @@
   /**
    * Command to restripe table properly.
    */
-  Drupal.tableDrag.prototype.restripeTable = function () {
+  Backdrop.tableDrag.prototype.restripeTable = function () {
     // :even and :odd are reversed because jQuery counts from 0 and
     // we count from 1, so we're out of sync.
     // Match immediate children of the parent element to allow nesting.
@@ -1354,7 +1354,7 @@
    * @return {null}
    *   Returns null when the stub function is used.
    */
-  Drupal.tableDrag.prototype.onDrag = function () {
+  Backdrop.tableDrag.prototype.onDrag = function () {
     return null;
   };
 
@@ -1364,7 +1364,7 @@
    * @return {null}
    *   Returns null when the stub function is used.
    */
-  Drupal.tableDrag.prototype.onDrop = function () {
+  Backdrop.tableDrag.prototype.onDrop = function () {
     return null;
   };
 
@@ -1384,7 +1384,7 @@
    *   Whether we want to add classes to this row to indicate child
    *   relationships.
    */
-  Drupal.tableDrag.prototype.row = function (
+  Backdrop.tableDrag.prototype.row = function (
     tableRow,
     method,
     indentEnabled,
@@ -1420,10 +1420,10 @@
   /**
    * Adds a warning above the table informing users they must save changes.
    */
-  Drupal.tableDrag.prototype.row.prototype.addChangedWarning = function () {
+  Backdrop.tableDrag.prototype.row.prototype.addChangedWarning = function () {
     // Do not add the changed warning if one is already present.
     if (!$(this.table.parentNode).find('.tabledrag-changed-warning').length) {
-      const $changedWarning = $(Drupal.theme('tableDragChangedWarning'));
+      const $changedWarning = $(Backdrop.theme('tableDragChangedWarning'));
       const $form = $(this.table).closest('form');
       let $moveTo = this.table;
 
@@ -1460,7 +1460,7 @@
    * @return {Array}
    *   An array of children of the row.
    */
-  Drupal.tableDrag.prototype.row.prototype.findChildren = function (
+  Backdrop.tableDrag.prototype.row.prototype.findChildren = function (
     addClasses,
   ) {
     const parentIndentation = this.indents;
@@ -1510,7 +1510,7 @@
    * @return {boolean}
    *   Whether the swap is a valid swap or not.
    */
-  Drupal.tableDrag.prototype.row.prototype.isValidSwap = function (row) {
+  Backdrop.tableDrag.prototype.row.prototype.isValidSwap = function (row) {
     const $row = $(row);
     if (this.indentEnabled) {
       let prevRow;
@@ -1546,15 +1546,15 @@
    * @param {HTMLElement} row
    *   DOM element what will be swapped with the row group.
    */
-  Drupal.tableDrag.prototype.row.prototype.swap = function (position, row) {
-    // Makes sure only DOM object are passed to Drupal.detachBehaviors().
+  Backdrop.tableDrag.prototype.row.prototype.swap = function (position, row) {
+    // Makes sure only DOM object are passed to Backdrop.detachBehaviors().
     this.group.forEach((row) => {
-      Drupal.detachBehaviors(row, drupalSettings, 'move');
+      Backdrop.detachBehaviors(row, drupalSettings, 'move');
     });
     $(row)[position](this.group);
-    // Makes sure only DOM object are passed to Drupal.attachBehaviors()s.
+    // Makes sure only DOM object are passed to Backdrop.attachBehaviors()s.
     this.group.forEach((row) => {
-      Drupal.attachBehaviors(row, drupalSettings);
+      Backdrop.attachBehaviors(row, drupalSettings);
     });
     this.changed = true;
     this.onSwap(row);
@@ -1574,7 +1574,7 @@
    *   An object with the keys `min` and `max` to indicate the valid indent
    *   interval.
    */
-  Drupal.tableDrag.prototype.row.prototype.validIndentInterval = function (
+  Backdrop.tableDrag.prototype.row.prototype.validIndentInterval = function (
     prevRow,
     nextRow,
   ) {
@@ -1625,7 +1625,7 @@
    * @return {number}
    *   The number of indentations applied.
    */
-  Drupal.tableDrag.prototype.row.prototype.indent = function (indentDiff) {
+  Backdrop.tableDrag.prototype.row.prototype.indent = function (indentDiff) {
     const $group = $(this.group);
     // Determine the valid indentations interval if not available yet.
     if (!this.interval) {
@@ -1648,7 +1648,7 @@
       } else {
         $group
           .find('td:first-of-type')
-          .prepend(Drupal.theme('tableDragIndentation'));
+          .prepend(Backdrop.theme('tableDragIndentation'));
         this.indents++;
       }
     }
@@ -1674,7 +1674,7 @@
    * @return {Array}
    *   An array of siblings.
    */
-  Drupal.tableDrag.prototype.row.prototype.findSiblings = function (
+  Backdrop.tableDrag.prototype.row.prototype.findSiblings = function (
     rowSettings,
   ) {
     const siblings = [];
@@ -1716,7 +1716,7 @@
   /**
    * Remove indentation helper classes from the current row group.
    */
-  Drupal.tableDrag.prototype.row.prototype.removeIndentClasses = function () {
+  Backdrop.tableDrag.prototype.row.prototype.removeIndentClasses = function () {
     Object.keys(this.children || {}).forEach((n) => {
       $(this.children[n])
         .find('.js-indentation')
@@ -1730,13 +1730,13 @@
   /**
    * Add an asterisk or other marker to the changed row.
    */
-  Drupal.tableDrag.prototype.row.prototype.markChanged = function () {
-    const marker = Drupal.theme('tableDragChangedMarker');
+  Backdrop.tableDrag.prototype.row.prototype.markChanged = function () {
+    const marker = Backdrop.theme('tableDragChangedMarker');
     const cell = $(this.element).find('td:first-of-type');
     if (cell.find('abbr.tabledrag-changed').length === 0) {
       cell.append(marker);
     }
-    Drupal.tableDrag[this.table.id].changedRowIds.add(this.element.id);
+    Backdrop.tableDrag[this.table.id].changedRowIds.add(this.element.id);
   };
 
   /**
@@ -1745,7 +1745,7 @@
    * @return {null}
    *   Returns null when the stub function is used.
    */
-  Drupal.tableDrag.prototype.row.prototype.onIndent = function () {
+  Backdrop.tableDrag.prototype.row.prototype.onIndent = function () {
     return null;
   };
 
@@ -1758,19 +1758,19 @@
    * @return {null}
    *   Returns null when the stub function is used.
    */
-  Drupal.tableDrag.prototype.row.prototype.onSwap = function (swappedRow) {
+  Backdrop.tableDrag.prototype.row.prototype.onSwap = function (swappedRow) {
     return null;
   };
 
   $.extend(
-    Drupal.theme,
-    /** @lends Drupal.theme */ {
+    Backdrop.theme,
+    /** @lends Backdrop.theme */ {
       /**
        * @return {string}
        *  Markup for the marker.
        */
       tableDragChangedMarker() {
-        return `<abbr class="warning tabledrag-changed" title="${Drupal.t(
+        return `<abbr class="warning tabledrag-changed" title="${Backdrop.t(
           'Changed',
         )}">*</abbr>`;
       },
@@ -1788,9 +1788,9 @@
        *   Markup for the warning.
        */
       tableDragChangedWarning() {
-        return `<div class="tabledrag-changed-warning messages messages--warning" role="alert">${Drupal.theme(
+        return `<div class="tabledrag-changed-warning messages messages--warning" role="alert">${Backdrop.theme(
           'tableDragChangedMarker',
-        )} ${Drupal.t('You have unsaved changes.')}</div>`;
+        )} ${Backdrop.t('You have unsaved changes.')}</div>`;
       },
 
       /**
@@ -1813,8 +1813,22 @@
        * @return {string}
        *  HTML markup for the weight toggle button content.s
        */
-      toggleButtonContent: (show) =>
-        show ? Drupal.t('Hide row weights') : Drupal.t('Show row weights'),
+      toggleButtonContent: (show) => {
+        const classes = [
+          'action-link',
+          'action-link--extrasmall',
+          'tabledrag-toggle-weight',
+        ];
+        let text = '';
+        if (show) {
+          classes.push('action-link--icon-hide');
+          text = Backdrop.t('Hide row weights');
+        } else {
+          classes.push('action-link--icon-show');
+          text = Backdrop.t('Show row weights');
+        }
+        return `<span class="${classes.join(' ')}">${text}</span>`;
+      },
 
       /**
        * @return {string}
@@ -1823,8 +1837,8 @@
       tableDragHandle(dragOrientation = 'drag') {
         const title =
           dragOrientation === 'drag-y'
-            ? Drupal.t('Change order')
-            : Drupal.t('Move in any direction');
+            ? Backdrop.t('Change order')
+            : Backdrop.t('Move in any direction');
         return `<a href="#" title="${title}"
         class="tabledrag-handle"><div class="handle"></div></a>`;
       },

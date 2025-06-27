@@ -3,12 +3,8 @@
     padding-inline-end: var(--gin-sidebar-offset);
   }
 
-  [dir="ltr"] .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .dialog-off-canvas-main-canvas {
-    transition: padding-left var(--gin-transition-fast);
-  }
-
-  [dir="rtl"] .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .dialog-off-canvas-main-canvas {
-    transition: padding-right var(--gin-transition-fast);
+  .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .dialog-off-canvas-main-canvas {
+    transition: padding-inline-start var(--gin-transition-fast);
   }
 
   .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar.js-off-canvas-dialog-open {
@@ -19,10 +15,6 @@
     visibility: hidden;
     opacity: 0;
   }
-}
-
-.gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar [data-drupal-link-system-path*="/delete"] {
-  display: none;
 }
 
 .gin--edit-form[data-meta-sidebar=open] .gin.edit-form--sidebar .gin-secondary-toolbar .toolbar-secondary .toolbar-bar .contextual-toolbar-tab {

@@ -1,3 +1,3 @@
 ((Drupal) => {
-  Drupal.behaviors.webformUiElementsToggleWeight = {};
+  Backdrop.behaviors.webformUiElementsToggleWeight = {};
 })(Drupal);

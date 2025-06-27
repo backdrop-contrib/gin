@@ -7,7 +7,7 @@
     init: function(context) {
       once("ginTableHeaderSticky", ".sticky-enabled", context).forEach((el => {
         this.updateTableHeader(el), this.showTableHeaderOnInit(), new ResizeObserver((() => {
-          Drupal.debounce(this.updateTableHeader(el), 150);
+          Backdrop.debounce(this.updateTableHeader(el), 150);
         })).observe(el), document.querySelectorAll('.gin--sticky-bulk-select > input[type="checkbox"]').forEach((checkbox => {
           checkbox.addEventListener("click", (event => {
             event.stopImmediatePropagation(), event.checked = !event.checked, document.querySelector(".gin-table-scroll-wrapper table.sticky-enabled thead .select-all > input, .gin-table-scroll-wrapper table.sticky-header thead .select-all > input").click();

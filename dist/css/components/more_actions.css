@@ -76,7 +76,17 @@
 }
 
 .gin-sticky-form-actions .gin-more-actions__menu > * + .ajax-progress--throbber {
-  display: none;
+  z-index: 1;
+  position: absolute;
+  top: var(--gin-spacing-m);
+}
+
+[dir="ltr"] .gin-sticky-form-actions .gin-more-actions__menu > * + .ajax-progress--throbber {
+  inset-inline-end: var(--gin-spacing-xxxs);
+}
+
+[dir="rtl"] .gin-sticky-form-actions .gin-more-actions__menu > * + .ajax-progress--throbber {
+  inset-inline-start: var(--gin-spacing-xxxs);
 }
 
 .gin-sticky-form-actions .gin-more-actions__trigger {

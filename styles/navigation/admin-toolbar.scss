@@ -17,8 +17,8 @@
 
 /**
  * This zero height div has the [data-offset-left] attribute for
- * Drupal.displace() to measure. It purposefully does not have any transitions
- * because we want Drupal.displace() to measure the width immediately
+ * Backdrop.displace() to measure. It purposefully does not have any transitions
+ * because we want Backdrop.displace() to measure the width immediately
  */
  .admin-toolbar__displace-placeholder {
   position: absolute;

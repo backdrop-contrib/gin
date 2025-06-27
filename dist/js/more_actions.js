@@ -19,14 +19,23 @@ $ = jQuery, Backdrop.behaviors.ginFormActions = {
   },
   updateFormId: function(newParent, formId) {
     const actionButtons = newParent.querySelectorAll("button, input, select, textarea");
-    actionButtons.length > 0 && actionButtons.forEach((el => {
-      el.setAttribute("form", formId);
-    }));
+    if (actionButtons.length > 0) {
+      const formId = form.getAttribute("id");
+      once("ginSyncActionButtons", actionButtons).forEach((el => {
+        const formElement = el.dataset.drupalSelector, buttonId = el.id, buttonSelector = newParent.querySelector(`[data-drupal-selector="gin-sticky-${formElement}"]`);
+        buttonSelector && (buttonSelector.setAttribute("form", formId), buttonSelector.setAttribute("data-gin-sticky-form-selector", buttonId), 
+        buttonSelector.addEventListener("click", (e => {
+          const button = document.querySelector(`#${formId} [data-drupal-selector="${buttonId}"]`);
+          null !== button && (e.preventDefault(), once.filter("drupal-ajax", button).length && button.dispatchEvent(new Event("mousedown")), 
+          button.click());
+        })));
+      }));
+    }
   },
   moveFocus: function(newParent, formId) {
     $("#" + formId).once("ginMoveFocusToStickyBar").each((function(el) {
       el.addEventListener("focus", (e => {
-        e.preventDefault(), newParent.querySelector([ "button, input, select, textarea" ]).focus();
+        e.preventDefault(), newParent.querySelector([ "button, input, select, textarea, .action-link" ]).focus();
         let element = document.createElement("div");
         element.style.display = "contents", element.innerHTML = '<a href="#" class="visually-hidden" role="button" gin-move-focus-to-end-of-form>Moves focus back to form</a>', 
         newParent.appendChild(element), document.querySelector("[gin-move-focus-to-end-of-form]").addEventListener("focus", (eof => {
@@ -40,14 +49,15 @@ $ = jQuery, Backdrop.behaviors.ginFormActions = {
   },
   showMoreActions: function() {
     const trigger = document.querySelector(".gin-more-actions__trigger");
-    trigger.setAttribute("aria-expanded", "true"), trigger.classList.add("is-active");
+    null !== trigger && (trigger.setAttribute("aria-expanded", "true"), trigger.classList.add("is-active"));
   },
   hideMoreActions: function() {
     const trigger = document.querySelector(".gin-more-actions__trigger");
-    trigger.setAttribute("aria-expanded", "false"), trigger.classList.remove("is-active"), 
-    document.removeEventListener("click", this.closeMoreActionsOnClickOutside);
+    null !== trigger && (trigger.setAttribute("aria-expanded", "false"), trigger.classList.remove("is-active"), 
+    document.removeEventListener("click", this.closeMoreActionsOnClickOutside));
   },
   closeMoreActionsOnClickOutside: function(e) {
-    "false" !== document.querySelector(".gin-more-actions__trigger").getAttribute("aria-expanded") && (e.target.closest(".gin-more-actions") || Backdrop.ginStickyFormActions.hideMoreActions());
+    const trigger = document.querySelector(".gin-more-actions__trigger");
+    null !== trigger && "false" !== trigger.getAttribute("aria-expanded") && (e.target.closest(".gin-more-actions") || Backdrop.ginStickyFormActions.hideMoreActions());
   }
 };

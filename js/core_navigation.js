@@ -1,13 +1,13 @@
 /* eslint-disable func-names, no-mutable-exports, comma-dangle, strict */
 
 ((Drupal, once) => {
-  Drupal.behaviors.ginCoreNavigation = {
+  Backdrop.behaviors.ginCoreNavigation = {
     attach: (context) => {
-      Drupal.ginCoreNavigation.initKeyboardShortcut(context);
+      Backdrop.ginCoreNavigation.initKeyboardShortcut(context);
     },
   };
 
-  Drupal.ginCoreNavigation = {
+  Backdrop.ginCoreNavigation = {
     initKeyboardShortcut: function (context) {
       once('ginToolbarKeyboardShortcut', '.admin-toolbar__expand-button', context).forEach(() => {
         // Show toolbar navigation with shortcut:
@@ -22,7 +22,7 @@
       once('ginToolbarClickHandler', '.top-bar__burger, .admin-toolbar__expand-button', context).forEach(button => {
         button.addEventListener('click', () => {
           if (window.innerWidth < 1280 && button.getAttribute('aria-expanded', 'false')) {
-            Drupal.ginSidebar?.collapseSidebar();
+            Backdrop.ginSidebar?.collapseSidebar();
           }
         });
       });
@@ -43,7 +43,7 @@
         button.setAttribute('aria-expanded', 'false');
       });
       document.documentElement.setAttribute('data-admin-toolbar', 'collapsed');
-      Drupal.displace(true);
+      Backdrop.displace(true);
     },
 
   };

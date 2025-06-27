@@ -1,10 +1,10 @@
 ((Drupal, once) => {
-  Drupal.behaviors.ginDropbutton = {
+  Backdrop.behaviors.ginDropbutton = {
     attach: function(context) {
       once("ginDropbutton", ".dropbutton-multiple:has(.dropbutton--gin)", context).forEach((el => {
         el.querySelector(".dropbutton__toggle").addEventListener("click", (() => {
-          this.updatePosition(el), window.addEventListener("scroll", (() => Drupal.debounce(this.updatePositionIfOpen(el), 100))), 
-          window.addEventListener("resize", (() => Drupal.debounce(this.updatePositionIfOpen(el), 100)));
+          this.updatePosition(el), window.addEventListener("scroll", (() => Backdrop.debounce(this.updatePositionIfOpen(el), 100))), 
+          window.addEventListener("resize", (() => Backdrop.debounce(this.updatePositionIfOpen(el), 100)));
         }));
       }));
     },
