@@ -70,10 +70,11 @@ function gin_preprocess_page(&$variables) {
     'devel' => 'gin_devel',
     'inline_entity_form' => 'gin_inline_entity_form',
     'installer' => 'project_installer',
+    'layout_paragraphs' => 'gin_layout_paragraphs',
     'module_filter' => 'gin_module_filter',
     'node_preview' => 'gin_node_preview',
     'paragraphs' => 'gin_paragraphs',
-    'layout_paragraphs' => 'gin_layout_paragraphs',
+    'simplei' => 'gin_simplei',
     'webform' => 'gin_webform',
   ];
 
@@ -106,4 +107,16 @@ function gin_preprocess_page(&$variables) {
   $settings['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
 
   backdrop_add_js(array('gin' => $settings), 'setting');
+
+  if (module_exists('simplei')) {
+    // This can be removed if the simplei module ends up implmenting its own
+    // CSS custom property: https://github.com/backdrop-contrib/simplei/issues/7
+    $simplei = settings_get('simple_environment_indicator');
+    if (!empty($simplei)) {
+      $simplei = explode(' ', str_replace('  ', ' ', $simplei), 2);
+      $simplei_color = $simplei[0];
+      // Add a bar across the top for the Simple EI color.
+      backdrop_add_css(":root { --gin-simplei-color: $simplei_color; }", 'inline');
+    }
+  }
 }

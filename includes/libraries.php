@@ -355,6 +355,13 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/inline_entity_form.css' => array(),
       ),
     ),
+    'gin_simplei' => array(
+      'title' => 'Simple Environment Indicator',
+      'version' => BACKDROP_VERSION,
+      'css' => array(
+        $basethemeurl . '/dist/css/components/gin_simplei.css' => array(),
+      ),
+    ),
   );
 
   return $libraries;
