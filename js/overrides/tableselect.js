@@ -93,7 +93,7 @@
 
     // Gin: Check if select-all already exists, if not add it.
     if ($table.find('th.select-all').find('input[type="checkbox"]').length === 0) {
-      $table.find('th.select-all').prepend($(Backdrop.theme('checkbox')).attr('title', strings.selectAll));
+      $table.find('th.select-all').prepend($('<input type="checkbox" class="form-checkbox" />').attr('title', strings.selectAll));
     }
 
     // Find all <th> with class select-all, and insert the check all checkbox.
