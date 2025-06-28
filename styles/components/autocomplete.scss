@@ -75,7 +75,6 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
   background-image: none;
 }
 
-.form-autocomplete.throbbing + .claro-autocomplete__message,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   display: block;
 
@@ -199,27 +198,4 @@ div.autocomplete-deluxe-multiple {
       }
     }
   }
-}
-
-/**
- * Autocomplete wrapper for autocompleting message.
- */
-.claro-autocomplete {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-.claro-autocomplete__message {
-  position: absolute;
-  inset-inline-end: 0;
-  inset-block-end: 100%;
-  max-width: 100%;
-  margin-block-end: 0.15rem;
-  color: var(--color-link);
-  font-size: var(--font-size-xxs);
-  /* ~11px */
-  font-weight: bold;
-  line-height: calc(18rem / 16);
-  /* 18px */
 }

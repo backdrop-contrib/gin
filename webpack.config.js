@@ -76,8 +76,6 @@ module.exports = {
     'theme/dialog': ['./styles/theme/dialog.scss'],
     'theme/font': ['./styles/theme/font.scss'],
     'theme/variables': ['./styles/theme/variables.scss'],
-    // Deprecated
-    'deprecated/project_browser': ['./styles/deprecated/project_browser.scss'],
   },
   output: {
     filename: 'js/[name].js',

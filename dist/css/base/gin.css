@@ -66,11 +66,7 @@ a {
 a,
 .link,
 button.link,
-.tabs__link.is-active,
-[open] .claro-details__summary--accordion,
-[open] .claro-details__summary--accordion-item,
-[open] .claro-details__summary--vertical-tabs-item,
-.vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link {
+.tabs__link.is-active {
   color: var(--gin-color-primary);
   text-decoration-style: var(--gin-link-decoration-style);
 }
@@ -78,11 +74,7 @@ button.link,
 a:hover,
 .link:hover,
 button.link:hover,
-.tabs__link.is-active:hover,
-[open] .claro-details__summary--accordion:hover,
-[open] .claro-details__summary--accordion-item:hover,
-[open] .claro-details__summary--vertical-tabs-item:hover,
-.vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link:hover {
+.tabs__link.is-active:hover {
   color: var(--gin-color-primary-hover);
   text-decoration: none;
 }
@@ -90,11 +82,7 @@ button.link:hover,
 a:active,
 .link:active,
 button.link:active,
-.tabs__link.is-active:active,
-[open] .claro-details__summary--accordion:active,
-[open] .claro-details__summary--accordion-item:active,
-[open] .claro-details__summary--vertical-tabs-item:active,
-.vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link:active {
+.tabs__link.is-active:active {
   color: var(--gin-color-primary-active);
 }
 
@@ -104,25 +92,14 @@ button.link:active,
 }
 
 .is-horizontal .tabs__link:hover,
-.claro-details__summary:hover,
 .action-link:hover {
   color: var(--gin-color-primary-hover);
-}
-
-.claro-details[open] > .claro-details__summary:focus {
-  color: var(--gin-color-primary-active);
 }
 
 .form-boolean--type-checkbox:checked,
 .form-boolean--type-radio:checked:not(:disabled),
 .is-horizontal .tabs__link.is-active::before,
 .tabs__tab.is-active::before,
-[open] > .claro-details__summary--accordion:not(:focus):not(:active)::after,
-[open] > .claro-details__summary--accordion-item:not(:focus):not(:active)::after,
-.collapse-processed[open] > .claro-details__summary--accordion .details-title:not(:focus)::after,
-.collapse-processed[open] > .claro-details__summary--accordion-item .details-title:not(:focus)::after,
-[open] > .claro-details__summary--vertical-tabs-item:not(:focus):not(:active)::after,
-.collapse-processed[open] > .claro-details__summary--vertical-tabs-item .details-title:not(:focus)::after,
 .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link::before {
   border-color: var(--gin-color-primary);
 }
@@ -131,12 +108,6 @@ button.link:active,
 .form-boolean--type-radio:checked:not(:disabled):hover,
 .is-horizontal .tabs__link.is-active::before:hover,
 .tabs__tab.is-active::before:hover,
-[open] > .claro-details__summary--accordion:not(:focus):not(:active)::after:hover,
-[open] > .claro-details__summary--accordion-item:not(:focus):not(:active)::after:hover,
-.collapse-processed[open] > .claro-details__summary--accordion .details-title:not(:focus)::after:hover,
-.collapse-processed[open] > .claro-details__summary--accordion-item .details-title:not(:focus)::after:hover,
-[open] > .claro-details__summary--vertical-tabs-item:not(:focus):not(:active)::after:hover,
-.collapse-processed[open] > .claro-details__summary--vertical-tabs-item .details-title:not(:focus)::after:hover,
 .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link::before:hover {
   border-color: var(--gin-color-primary-hover);
 }
@@ -145,12 +116,6 @@ button.link:active,
 .form-boolean--type-radio:checked:not(:disabled):active,
 .is-horizontal .tabs__link.is-active::before:active,
 .tabs__tab.is-active::before:active,
-[open] > .claro-details__summary--accordion:not(:focus):not(:active)::after:active,
-[open] > .claro-details__summary--accordion-item:not(:focus):not(:active)::after:active,
-.collapse-processed[open] > .claro-details__summary--accordion .details-title:not(:focus)::after:active,
-.collapse-processed[open] > .claro-details__summary--accordion-item .details-title:not(:focus)::after:active,
-[open] > .claro-details__summary--vertical-tabs-item:not(:focus):not(:active)::after:active,
-.collapse-processed[open] > .claro-details__summary--vertical-tabs-item .details-title:not(:focus)::after:active,
 .vertical-tabs__menu-item.is-selected .vertical-tabs__menu-link::before:active {
   border-color: var(--gin-color-primary-active);
 }
@@ -665,91 +630,6 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
   border-radius: var(--gin-border-xs);
 }
 
-.modules-table-filter {
-  padding: 0;
-  border: 0 none;
-  box-shadow: none;
-}
-
-.package-listing {
-  margin-block-start: var(--gin-spacing-m);
-}
-
-.claro-details__summary {
-  padding-inline-start: 2.75rem;
-}
-
-.claro-details.claro-details--package-listing,
-.claro-details.module-list__module-details,
-.system-status-report .claro-details {
-  border: 1px solid var(--gin-border-color);
-  border-radius: var(--gin-border-m);
-}
-
-.claro-details__summary,
-.claro-details__summary.claro-details__summary--package-listing,
-.claro-details__summary.claro-details__summary--system-status-report {
-  color: var(--gin-color-text);
-  background-color: transparent;
-}
-
-.claro-details__wrapper,
-.claro-details__wrapper.claro-details__wrapper--package-listing,
-.claro-details__wrapper.claro-details__wrapper--system-status-report {
-  margin-block: var(--gin-spacing-m);
-  margin-inline: calc(var(--gin-spacing-l) - var(--gin-spacing-xxs));
-}
-
-.claro-details__wrapper--accordion,
-.claro-details__wrapper--accordion-item,
-.claro-details__wrapper--vertical-tabs-item {
-  margin: 0;
-}
-
-.claro-details__summary-summary {
-  color: var(--gin-color-text-light);
-  opacity: .8;
-}
-
-.module-list__module {
-  border-block-end: 1px solid var(--gin-border-color);
-}
-
-.form--inline,
-[data-drupal-selector*=-bulk-form],
-.layout-region-node-footer__content {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding-block-start: var(--gin-spacing-m);
-}
-
-.form--inline .form-item,
-.form--inline .form-actions,
-[data-drupal-selector*=-bulk-form] .form-item,
-[data-drupal-selector*=-bulk-form] .form-actions,
-.layout-region-node-footer__content .form-item,
-.layout-region-node-footer__content .form-actions {
-  margin-block: var(--gin-spacing-xs);
-  margin-inline: 0 var(--gin-spacing-xs);
-  align-self: flex-start;
-}
-
-.form--inline .button,
-.form--inline .action-link,
-[data-drupal-selector*=-bulk-form] .button,
-[data-drupal-selector*=-bulk-form] .action-link,
-.layout-region-node-footer__content .button,
-.layout-region-node-footer__content .action-link {
-  margin-block: 0;
-}
-
-.form--inline .field-add-more-submit,
-[data-drupal-selector*=-bulk-form] .field-add-more-submit,
-.layout-region-node-footer__content .field-add-more-submit {
-  margin-block-start: var(--gin-spacing-s);
-}
-
 @keyframes fadeInBottom {
   0% {
     transform: translateY(100%);
@@ -961,6 +841,7 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .views-display-top {
   margin: 0;
   padding-block: var(--gin-spacing-m) var(--gin-spacing-xs);
+  padding-inline-start: var(--gin-spacing-s);
   background-color: var(--gin-bg-header);
   border: 0 none;
   border-radius: var(--gin-border-l) var(--gin-border-l) 0 0;
@@ -971,10 +852,6 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 .views-display-top > .tabs {
   flex-flow: row wrap;
   flex-grow: 1;
-}
-
-.views-display-top__extra-actions-wrapper {
-  margin-block: 0;
 }
 
 .views-display-top .dropbutton-wrapper {
@@ -1006,7 +883,7 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
 
 #views-display-menu-tabs a {
   padding: var(--gin-spacing-xs) var(--gin-spacing-m);
-  display: flex;
+  display: inline-flex;
 }
 
 #views-display-menu-tabs a.views-display-disabled-link {
@@ -1022,11 +899,11 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
           mask-position: center left;
   -webkit-mask-size: contain;
           mask-size: contain;
-  width: var(--gin-spacing-l);
+  width: var(--gin-spacing-s);
   height: var(--gin-spacing-s);
   margin-inline-start: calc(var(--gin-spacing-m) * -1);
   background-color: currentColor;
-  display: inline-block;
+  display: inline-flex;
   content: "";
 }
 
@@ -1049,11 +926,6 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
   background: transparent;
   border: 2px solid var(--gin-color-primary);
   border-radius: var(--gin-border-xs);
-}
-
-#views-display-menu-tabs .add a::before,
-#views-display-menu-tabs li a::before {
-  display: none !important;
 }
 
 #views-display-menu-tabs .add a .icon.add,
@@ -2647,14 +2519,6 @@ label .form-required {
   background: none;
 }
 
-.claro-details.error {
-  border: 2px solid var(--gin-color-danger);
-}
-
-.claro-details__summary:not(.form-required) .required-mark {
-  display: none;
-}
-
 .form-item__warning {
   display: inline-block;
   margin-block-start: var(--gin-spacing-xs);
@@ -2704,14 +2568,6 @@ html[dir="ltr"].js input.form-linkit-autocomplete {
 
 html[dir="rtl"].js input.form-linkit-autocomplete {
   background-position: left 8px center;
-}
-
-.claro-autocomplete {
-  width: calc(100% - var(--gin-spacing-m));
-}
-
-.claro-autocomplete .form-autocomplete {
-  width: 100%;
 }
 
 .no-touchevents .form-element--type-select.form-element--extrasmall {
@@ -3590,10 +3446,6 @@ a.button-primary.button--danger,
   margin-inline: 0;
 }
 
-.claro-details__summary--system-status-report {
-  background: transparent;
-}
-
 .messages {
   position: relative;
   padding: var(--gin-spacing-m);
@@ -4398,14 +4250,6 @@ details .details-child-wrapper {
   border-radius: calc(var(--gin-border-xs) / 2);
 }
 
-.claro-details:focus, .claro-details:focus:hover, .claro-details__summary:focus, .claro-details__summary:focus:hover {
-  box-shadow: none;
-}
-
-.claro-details__summary:after {
-  box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
-}
-
 .tabs__link:focus {
   border: 1px solid transparent;
   box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
@@ -4908,8 +4752,7 @@ table.update .color-checked {
   color: var(--gin-color-title) !important;
 }
 
-.color-checked .system-status-report__status-title:before,
-#checked + .claro-details__wrapper--system-status-report .system-status-report__status-title:before {
+.color-checked .system-status-report__status-title:before {
   content: "";
   position: absolute;
   inset-block-start: 1em;
@@ -4921,8 +4764,7 @@ table.update .color-checked {
 }
 
 .system-status-report__status-title .details-title:before,
-.details .system-status-report__status-icon:before,
-.claro-details .system-status-report__status-icon:before {
+.details .system-status-report__status-icon:before {
   width: 24px;
   height: 24px;
 }
@@ -5219,15 +5061,6 @@ table.update .color-checked {
   display: inline-block;
   margin-block: 0 var(--gin-spacing-xs);
   margin-inline: var(--gin-spacing-xxs);
-}
-
-.shepherd-element {
-  border-radius: var(--gin-border-m);
-}
-
-.joyride-content-wrapper .button,
-.button:not(:focus).shepherd-button {
-  box-shadow: none;
 }
 
 blockquote {
@@ -6266,10 +6099,6 @@ table.feeds-admin-importers tr.disabled.even, table.feeds-admin-importers tr.dis
   inset-inline-start: .25em;
 }
 
-.claro-autocomplete__message {
-  color: var(--gin-color-primary);
-}
-
 #autocomplete {
   margin-block-start: var(--gin-spacing-xxs);
   border-radius: 0 0 var(--gin-border-m) var(--gin-border-m);
@@ -6357,12 +6186,10 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
   background-image: none;
 }
 
-.form-autocomplete.throbbing + .claro-autocomplete__message,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   display: block;
 }
 
-.form-autocomplete.throbbing + .claro-autocomplete__message::after,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
   content: "";
   position: absolute;
@@ -6490,30 +6317,6 @@ div.autocomplete-deluxe-multiple {
 
 .js[dir=rtl] input.form-autocomplete.throbbing {
   background-image: url("../../media/sprite.svg#spinner-rtl-view");
-}
-
-/**
- * Autocomplete wrapper for autocompleting message.
- */
-
-.claro-autocomplete {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-.claro-autocomplete__message {
-  position: absolute;
-  inset-inline-end: 0;
-  inset-block-end: 100%;
-  max-width: 100%;
-  margin-block-end: .15rem;
-  color: var(--color-link);
-  font-size: var(--font-size-xxs);
-  /* ~11px */
-  font-weight: bold;
-  line-height: 1.125rem;
-  /* 18px */
 }
 
 .layout-editor-block {

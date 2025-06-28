@@ -34,21 +34,6 @@
   border-radius: calc(var(--gin-border-xs) / 2);
 }
 
-.claro-details {
-  &:focus,
-  &:focus:hover,
-  &__summary:focus,
-  &__summary:focus:hover {
-      box-shadow: none;
-    }
-
-  &__summary {
-    &:after {
-      box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);
-    }
-  }
-}
-
 .tabs__link:focus {
   border: 1px solid transparent;
   box-shadow: inset 0 0 0 1px var(--gin-color-focus-border), inset 0 0 0 4px var(--gin-color-focus);

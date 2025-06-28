@@ -170,8 +170,7 @@
   }
 }
 
-.color-checked .system-status-report__status-title,
-#checked + .claro-details__wrapper--system-status-report .system-status-report__status-title {
+.color-checked .system-status-report__status-title {
   &:before {
     content: "";
     position: absolute;
@@ -185,8 +184,7 @@
 }
 
 .system-status-report__status-title .details-title:before,
-.details .system-status-report__status-icon:before,
-.claro-details .system-status-report__status-icon:before {
+.details .system-status-report__status-icon:before {
   width: 24px;
   height: 24px;
 }

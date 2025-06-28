@@ -345,40 +345,8 @@
               border-color: var(--gin-border-color);
             }
 
-            > .claro-details__summary {
-              display: block;
-              padding-inline-start: #{$sidebarSpacer + 1.5rem};
-
-              .details-title {
-                position: static;
-                padding-inline-start: 0;
-              }
-
-              &::before {
-                top: var(--gin-spacing-xl);
-                left: $sidebarSpacer;
-              }
-
-              &:focus::after {
-                border-radius: 6px;
-              }
-            }
-
-            .claro-details__content {
-              margin-inline-start: $sidebarSpacer;
-              margin-inline-end: $sidebarSpacer;
-
-              .claro-details__wrapper {
-                margin: var(--gin-spacing-l);
-              }
-            }
-
             .redirect-table__path {
               width: 47%;
-            }
-
-            .form-type--entity-autocomplete .claro-autocomplete {
-              width: 100%;
             }
 
             .form-datetime-wrapper {

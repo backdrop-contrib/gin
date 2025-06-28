@@ -216,6 +216,7 @@
 .views-display-top {
   margin: 0;
   padding-block: var(--gin-spacing-m) var(--gin-spacing-xs);
+  padding-inline-start: var(--gin-spacing-s);
   background-color: var(--gin-bg-header);
   border: 0 none;
   border-radius: var(--gin-border-l) var(--gin-border-l) 0 0;
@@ -225,11 +226,6 @@
   > .tabs {
     flex-flow: row wrap;
     flex-grow: 1;
-  }
-
-  // #3186729: Drupal 9.1 fix
-  &__extra-actions-wrapper {
-    margin-block: 0;
   }
 
   .dropbutton-wrapper {
@@ -263,7 +259,7 @@
 #views-display-menu-tabs {
   a {
     padding: var(--gin-spacing-xs) var(--gin-spacing-m);
-    display: flex;
+    display: inline-flex;
 
     &.views-display-disabled-link {
       padding-inline-start: var(--gin-spacing-l);
@@ -273,11 +269,11 @@
         mask-repeat: no-repeat;
         mask-position: center left;
         mask-size: contain;
-        width: var(--gin-spacing-l);
+        width: var(--gin-spacing-s);
         height: var(--gin-spacing-s);
         margin-inline-start: calc(var(--gin-spacing-m) * -1);
         background-color: currentColor;
-        display: inline-block;
+        display: inline-flex;
         content: '';
       }
     }
@@ -296,10 +292,6 @@
     background: transparent;
     border: 2px solid var(--gin-color-primary);
     border-radius: var(--gin-border-xs);
-
-    &::before {
-      display: none !important;
-    }
 
     .icon.add {
       display: block;

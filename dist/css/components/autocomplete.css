@@ -87,12 +87,10 @@ div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-
   background-image: none;
 }
 
-.form-autocomplete.throbbing + .claro-autocomplete__message,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open {
   display: block;
 }
 
-.form-autocomplete.throbbing + .claro-autocomplete__message::after,
 div.autocomplete-deluxe-container div.autocomplete-deluxe-throbber.autocomplete-deluxe-open::after {
   content: "";
   position: absolute;
@@ -220,29 +218,5 @@ div.autocomplete-deluxe-multiple {
 
 .js[dir=rtl] input.form-autocomplete.throbbing {
   background-image: url("../../media/sprite.svg#spinner-rtl-view");
-}
-
-/**
- * Autocomplete wrapper for autocompleting message.
- */
-
-.claro-autocomplete {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-.claro-autocomplete__message {
-  position: absolute;
-  inset-inline-end: 0;
-  inset-block-end: 100%;
-  max-width: 100%;
-  margin-block-end: .15rem;
-  color: var(--color-link);
-  font-size: var(--font-size-xxs);
-  /* ~11px */
-  font-weight: bold;
-  line-height: 1.125rem;
-  /* 18px */
 }
 

@@ -549,16 +549,6 @@ label .form-required {
   background: none;
 }
 
-.claro-details.error {
-  border: 2px solid var(--gin-color-danger);
-}
-
-.claro-details__summary:not(.form-required) {
-  .required-mark {
-    display: none;
-  }
-}
-
 .form-item__warning {
   display: inline-block;
   margin-block-start: var(--gin-spacing-xs);
@@ -606,14 +596,6 @@ html.js .form-autocomplete {
 html.js input.form-linkit-autocomplete {
   padding-inline-end: var(--gin-spacing-xl);
   background-position: right 8px center;
-}
-
-.claro-autocomplete {
-  width: calc(100% - var(--gin-spacing-m));
-
-  .form-autocomplete {
-    width: 100%;
-  }
 }
 
 .no-touchevents .form-element--type-select.form-element--extrasmall {
