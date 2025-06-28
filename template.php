@@ -680,7 +680,7 @@ function gin_form_element($variables) {
   if (!empty($element['#description'])) {
     $description_attributes['class'][] = 'description';
     if ($show_description_toggle) {
-      $element['#attached']['library'][] = array('gin', 'gin_description_toggle');
+      backdrop_add_library('gin', 'gin_description_toggle');
       $attributes['class'][] = 'help-icon__description-container';
       $description_attributes['class'][] = 'visually-hidden';
       $help_icon_open = '<div class="help-icon">';
