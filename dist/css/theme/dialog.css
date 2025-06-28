@@ -575,11 +575,6 @@
   padding-inline-end: calc(var(--gin-spacing-xs) + var(--gin-spacing-xl) - 1px);
 }
 
-.gin--dark-mode .ui-dialog .form-select,
-.gin--dark-mode .ui-dialog .form-element--type-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9'%3E%3Cpath fill='none' stroke-width='1.5' d='M1 1L7 7L13 1' stroke='%23ffffff'/%3E%3C/svg%3E%0A");
-}
-
 .ui-dialog .form-select--small,
 .ui-dialog .form-element--type-select--small {
   font-size: var(--gin-font-size-xs);
@@ -935,7 +930,7 @@
 }
 
 .ui-dialog fieldset:not(.fieldgroup) > .fieldset-wrapper {
-  margin-block-start: 20px;
+  margin-block-start: 0;
 }
 
 .ui-dialog fieldset:not(.fieldgroup).error {
