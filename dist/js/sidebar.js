@@ -1,5 +1,6 @@
 !function($) {
-  const storageDesktop = "Backdrop.gin.sidebarExpanded.desktop", resizer = document.getElementById("gin-sidebar-draggable"), resizable = document.getElementById("gin_sidebar");
+  const storageDesktop = "Backdrop.gin.sidebarExpanded.desktop";
+  var resizer = document.getElementById("gin-sidebar-draggable"), resizable = document.getElementById("gin_sidebar");
   let startX, startWidth, isResizing = !1;
   Backdrop.behaviors.ginSidebar = {
     attach: function(context, settings) {

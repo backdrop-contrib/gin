@@ -495,7 +495,7 @@ fieldset:not(.fieldgroup) {
   box-shadow: none;
 
   > legend {
-    inset-block-start: 20px;
+    inset-block-start: 0;
   }
 
   > .fieldset-wrapper {

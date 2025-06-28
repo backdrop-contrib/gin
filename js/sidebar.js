@@ -6,8 +6,8 @@
   const storageMobile = 'Backdrop.gin.sidebarExpanded.mobile';
   const storageDesktop = 'Backdrop.gin.sidebarExpanded.desktop';
   const storageWidth = "Backdrop.gin.sidebarWidth";
-  const resizer = document.getElementById('gin-sidebar-draggable');
-  const resizable = document.getElementById('gin_sidebar');
+  var resizer = document.getElementById('gin-sidebar-draggable');
+  var resizable = document.getElementById('gin_sidebar');
   let isResizing = false;
   let startX, startWidth;
 

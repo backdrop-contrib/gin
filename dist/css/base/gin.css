@@ -2466,7 +2466,7 @@ fieldset:not(.fieldgroup) {
 }
 
 fieldset:not(.fieldgroup) > legend {
-  inset-block-start: 20px;
+  inset-block-start: 0;
 }
 
 fieldset:not(.fieldgroup) > .fieldset-wrapper {
