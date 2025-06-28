@@ -105,8 +105,22 @@ function gin_preprocess_page(&$variables) {
   $settings['variables_css_path'] = $basethemeurl . '/dist/css/theme/variables.css';
   $settings['accent_css_path'] = $basethemeurl . '/dist/css/theme/accent.css';
   $settings['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
-
   backdrop_add_js(array('gin' => $settings), 'setting');
+
+  if ($settings['darkmode']) {
+    backdrop_add_html_head(
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'type' => 'application/json',
+          'id' => 'gin-setting-darkmode',
+        ],
+        '#value' => backdrop_json_encode(["ginDarkmode" => $settings['darkmode']]),
+      ],
+      'gin_darkmode',
+    );
+  }
+
 
   if (module_exists('simplei')) {
     // This can be removed if the simplei module ends up implmenting its own
