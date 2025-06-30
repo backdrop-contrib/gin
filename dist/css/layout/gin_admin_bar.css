@@ -54,10 +54,6 @@
   display: none;
 }
 
-.gin--dark-mode #admin-bar {
-  background: var(--gin-bg-layer);
-}
-
 #admin-bar li a,
 #admin-bar li span {
   color: var(--gin-color-text);
