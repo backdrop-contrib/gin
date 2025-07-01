@@ -120,17 +120,4 @@ function gin_preprocess_page(&$variables) {
       'gin_darkmode',
     );
   }
-
-
-  if (module_exists('simplei')) {
-    // This can be removed if the simplei module ends up implmenting its own
-    // CSS custom property: https://github.com/backdrop-contrib/simplei/issues/7
-    $simplei = settings_get('simple_environment_indicator');
-    if (!empty($simplei)) {
-      $simplei = explode(' ', str_replace('  ', ' ', $simplei), 2);
-      $simplei_color = $simplei[0];
-      // Add a bar across the top for the Simple EI color.
-      backdrop_add_css(":root { --gin-simplei-color: $simplei_color; }", 'inline');
-    }
-  }
 }

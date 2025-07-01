@@ -3,11 +3,11 @@
 }
 
 #admin-bar #admin-bar-icon .icon::before {
-  background-color: var(--gin-simplei-color);
+  background-color: var(--simplei-background-color);
 }
 
 #admin-bar .dropdown .admin-bar-icon > a .admin-bar-link-text::before {
-  color: var(--gin-simplei-color);
+  color: var(--simplei-background-color);
   font-weight: 600;
   margin-inline-end: .5rem;
 }
