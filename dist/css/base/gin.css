@@ -4136,10 +4136,6 @@ details .details-child-wrapper {
   border-block-end: 1px solid var(--gin-border-color-table);
 }
 
-.admin-item:first-child {
-  margin-block-start: 0;
-}
-
 .admin-item:last-child {
   margin-block-end: 0;
 }
