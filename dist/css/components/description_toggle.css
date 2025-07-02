@@ -1,5 +1,11 @@
 .help-icon {
   display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.help-icon > label:first-child {
+  width: 100%;
 }
 
 .help-icon__description-toggle {

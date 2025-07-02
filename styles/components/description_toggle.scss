@@ -1,6 +1,12 @@
 // Base wrapper
 .help-icon {
   display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  > label:first-child {
+    width: 100%;
+  }
 }
 
 // Size of svg + border added by claro
