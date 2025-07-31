@@ -233,7 +233,7 @@ function gin_library_info() {
       'title' => 'CKEditor5',
       'version' => BACKDROP_VERSION,
       'css' => array(
-        $basethemeurl . '/dist/css/components/ckeditor5.css' => array(),
+        $basethemeurl . '/dist/css/components/gin_ckeditor5.css' => array(),
       ),
     ),
     'gin_ajax' => array(

@@ -37,7 +37,7 @@ module.exports = {
     'components/chosenjs': ['./styles/components/chosenjs.scss'],
     'components/gin_civicrm': ['./styles/components/gin_civicrm.scss'],
     'components/ckeditor': ['./styles/components/ckeditor.scss'],
-    'components/ckeditor5': ['./styles/components/ckeditor5.scss'],
+    'components/gin_ckeditor5': ['./styles/components/gin_ckeditor5.scss'],
     'components/gin_coffee': ['./styles/components/gin_coffee.scss'],
     'components/contextual_links': ['./styles/components/contextual_links.scss'],
     'components/description_toggle': ['./styles/components/description_toggle.scss'],
