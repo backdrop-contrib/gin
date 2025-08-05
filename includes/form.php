@@ -6,45 +6,6 @@
  */
 
 /**
- * Returns HTML for a textfield form element.
- *
- * @param $variables
- *   An associative array containing:
- *   - element: An associative array containing the properties of the element.
- *     Properties used: #title, #value, #description, #size, #maxlength,
- *     #placeholder, #required, #attributes, #autocomplete_path.
- *
- * @ingroup themeable
- */
-function gin_textfield($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'text';
-  element_set_attributes($element, array('id', 'name', 'value', 'size', 'maxlength', 'placeholder'));
-  _form_set_class($element, array(
-    'form-text',
-    'form-element',
-  ));
-
-  $extra = '';
-  if ($element['#autocomplete_path'] && !empty($element['#autocomplete_input'])) {
-    $element['#attached']['library'][] = array('system', 'backdrop.autocomplete');
-    $element['#attributes']['class'][] = 'form-autocomplete';
-
-    $attributes = array();
-    $attributes['type'] = 'hidden';
-    $attributes['id'] = $element['#autocomplete_input']['#id'];
-    $attributes['value'] = $element['#autocomplete_input']['#url_value'];
-    $attributes['disabled'] = 'disabled';
-    $attributes['class'][] = 'autocomplete';
-    $extra = '<input' . backdrop_attributes($attributes) . ' />';
-  }
-
-  $output = '<input' . backdrop_attributes($element['#attributes']) . ' />';
-
-  return $output . $extra;
-}
-
-/**
  * Returns HTML for an email form element.
  *
  * @param $variables
