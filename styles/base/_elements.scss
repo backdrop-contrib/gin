@@ -56,7 +56,8 @@ details {
     }
   }
 
-  .details-child-wrapper {
+.details-content-wrapper,
+.details-child-wrapper {
     padding: var(--gin-spacing-m) var(--gin-spacing-l);
   }
 }

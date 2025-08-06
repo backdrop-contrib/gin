@@ -4100,6 +4100,7 @@ details[open] summary {
   transform: rotate(90deg);
 }
 
+details .details-content-wrapper,
 details .details-child-wrapper {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
