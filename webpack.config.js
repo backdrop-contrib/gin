@@ -36,7 +36,7 @@ module.exports = {
     'components/breadcrumb': ['./styles/components/breadcrumb.scss'],
     'components/chosenjs': ['./styles/components/chosenjs.scss'],
     'components/gin_civicrm': ['./styles/components/gin_civicrm.scss'],
-    'components/ckeditor': ['./styles/components/ckeditor.scss'],
+    'components/gin_ckeditor': ['./styles/components/gin_ckeditor.scss'],
     'components/gin_ckeditor5': ['./styles/components/gin_ckeditor5.scss'],
     'components/gin_coffee': ['./styles/components/gin_coffee.scss'],
     'components/contextual_links': ['./styles/components/contextual_links.scss'],
