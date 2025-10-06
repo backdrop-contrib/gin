@@ -48,6 +48,7 @@ module.exports = {
     'components/more_actions': ['./styles/components/more_actions.scss'],
     'components/edit_form': ['./styles/components/edit_form.scss'],
     'components/inline_entity_form': ['./styles/components/inline_entity_form.scss'],
+    'components/gin_select2': ['./styles/components/gin_select2.scss'],
     'components/gin_paragraphs': ['./styles/components/gin_paragraphs.scss'],
     'components/gin_layout_paragraphs': ['./styles/components/gin_layout_paragraphs.scss'],
     'components/project_installer': ['./styles/components/project_installer.scss'],

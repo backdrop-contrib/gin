@@ -74,6 +74,7 @@ function gin_preprocess_page(&$variables) {
     'module_filter' => 'gin_module_filter',
     'node_preview' => 'gin_node_preview',
     'paragraphs' => 'gin_paragraphs',
+    'select2' => 'gin_select2',
     'simplei' => 'gin_simplei',
     'webform' => 'gin_webform',
   ];
