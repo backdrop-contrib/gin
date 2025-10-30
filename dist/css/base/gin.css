@@ -2175,12 +2175,12 @@ a.tabledrag-handle:hover .handle {
   background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%2382828c'/%3e%3c/svg%3e");
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox {
   position: relative;
   margin-inline-start: 0;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   all: unset;
   appearance: none;
   cursor: pointer;
@@ -2197,17 +2197,17 @@ a.tabledrag-handle:hover .handle {
   box-sizing: border-box;
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
   background-color: var(--gin-bg-input);
 }
 
 @media (forced-colors: active) {
-  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
+  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input {
     border-width: 2px;
   }
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -2218,26 +2218,26 @@ a.tabledrag-handle:hover .handle {
   transition: transform .3s;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
   transform: translateX(-16px);
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
   transform: translateX(16px);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
   background-color: var(--gin-border-color-form-element);
 }
 
 @media (forced-colors: active) {
-  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
+  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::before {
     background-color: CanvasText;
   }
 }
 
 @media (forced-colors: active) {
-  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
+  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -2254,92 +2254,92 @@ a.tabledrag-handle:hover .handle {
     transition: transform .3s;
   }
 
-  [dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
+  [dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
     transform: translateX(-16px);
   }
 
-  [dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
+  [dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input::after {
     transform: translateX(16px);
   }
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled {
   cursor: not-allowed;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:hover {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:hover {
   opacity: .9;
   box-shadow: 0 0 2px rgba(0, 0, 0, .2);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:active, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:focus {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:active, :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:focus {
   box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked {
   background-color: var(--gin-switch);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked {
   background-color: var(--gin-color-primary-light-active);
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
   background-color: #fff;
 }
 
-[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+[dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
   transform: translateX(16px);
 }
 
-[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+[dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
   transform: translateX(-16px);
 }
 
-.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+.gin--dark-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
   background-color: var(--gin-color-primary-hover);
 }
 
-.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+.gin--high-contrast-mode :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
   background-color: var(--gin-border-color);
 }
 
 @media (forced-colors: active) {
-  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
+  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::before {
     padding-inline-start: var(--gin-spacing-xs);
     background-color: LinkText !important;
   }
 }
 
 @media (forced-colors: active) {
-  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
+  :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
     -webkit-mask-image: url("../../media/sprite.svg#checked-view");
             mask-image: url("../../media/sprite.svg#checked-view");
     -webkit-mask-position: 2px 2px;
             mask-position: 2px 2px;
   }
 
-  [dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
+  [dir="ltr"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
     transform: translateX(16px);
   }
 
-  [dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
+  [dir="rtl"] :not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:checked::after {
     transform: translateX(-16px);
   }
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled {
   opacity: .75;
   background-color: var(--gin-color-disabled);
   box-shadow: none;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled::before {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox input:disabled::before {
   background-color: #fff;
   opacity: .6;
 }
 
-:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.media-library-item__click-to-select-checkbox):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
+:not(.form-checkboxes):not(td):not(.tabledrag-cell-content__item):not(.term-line):not(.field-content):not(.filterable-option) > .form-type-checkbox label {
   z-index: 1;
   position: relative;
   padding-inline-start: var(--gin-spacing-xxs);
