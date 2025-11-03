@@ -327,6 +327,13 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/gin_select2.css' => array(),
       ),
     ),
+    'gin_taxonomy_manager' => array(
+      'title' => 'Taxonomy Manager',
+      'version' => BACKDROP_VERSION,
+      'css' => array(
+        $basethemeurl . '/dist/css/components/gin_taxonomy_manager.css' => array(),
+      ),
+    ),
     'gin_webform' => array(
       'title' => 'Webform',
       'version' => BACKDROP_VERSION,

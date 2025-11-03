@@ -76,6 +76,7 @@ function gin_preprocess_page(&$variables) {
     'paragraphs' => 'gin_paragraphs',
     'select2' => 'gin_select2',
     'simplei' => 'gin_simplei',
+    'taxonomy_manager' => 'gin_taxonomy_manager',
     'webform' => 'gin_webform',
   ];
 

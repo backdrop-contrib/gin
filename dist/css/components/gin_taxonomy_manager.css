@@ -1,0 +1,8 @@
+#edit-tm-toolbar ~ fieldset:not(.fieldgroup) {
+  background-color: var(--gin-bg-app);
+}
+
+#edit-tm-toolbar ~ fieldset:not(.fieldgroup) legend {
+  background-color: var(--gin-bg-app);
+}
+
