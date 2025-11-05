@@ -6,3 +6,18 @@
   background-color: var(--gin-bg-app);
 }
 
+.tm--highlighted .form-item {
+  background-color: var(--gin-bg-green-light);
+}
+
+#taxonomy-manager .treeview .form-item,
+#taxonomy-manager .treeview .term-operations {
+  border-radius: var(--gin-border-radius);
+  padding-inline: var(--gin-spacing-xs);
+  padding-block: var(--gin-spacing-xxs);
+}
+
+#taxonomy-manager .treeview .term-operations {
+  display: flex;
+}
+

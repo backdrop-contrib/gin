@@ -7,3 +7,20 @@
     }
   }
 }
+
+.tm--highlighted .form-item {
+  background-color: var(--gin-bg-green-light);
+}
+
+#taxonomy-manager .treeview {
+  .form-item,
+  .term-operations {
+    border-radius: var(--gin-border-radius);
+    padding-inline: var(--gin-spacing-xs);
+    padding-block: var(--gin-spacing-xxs);
+  }
+
+  .term-operations {
+    display: flex;
+  }
+}
