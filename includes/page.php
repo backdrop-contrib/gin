@@ -109,7 +109,7 @@ function gin_preprocess_page(&$variables) {
   $settings['ckeditor_css_path'] = $basethemeurl . '/dist/css/theme/ckeditor.css';
   backdrop_add_js(array('gin' => $settings), 'setting');
 
-  if ($settings['darkmode']) {
+  if (isset($settings['darkmode'])) {
     backdrop_add_html_head(
       [
         '#tag' => 'script',
