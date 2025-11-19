@@ -12,15 +12,23 @@
   background-color: var(--gin-bg-green-light);
 }
 
-#taxonomy-manager .treeview {
-  .form-item,
-  .term-operations {
-    border-radius: var(--gin-border-radius);
-    padding-inline: var(--gin-spacing-xs);
-    padding-block: var(--gin-spacing-xxs);
+#taxonomy-manager {
+  > #taxonomy-term-data,
+  > #tm--double-tree-operations {
+    top: var(--gin-offset-y);
   }
 
-  .term-operations {
-    display: flex;
+  .treeview {
+    .form-item,
+    .term-operations {
+      border-radius: var(--gin-border-radius);
+      padding-inline: var(--gin-spacing-xs);
+      padding-block: var(--gin-spacing-xxs);
+    }
+
+    .term-operations {
+      display: flex;
+    }
   }
 }
+

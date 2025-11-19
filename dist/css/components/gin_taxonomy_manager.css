@@ -10,6 +10,11 @@
   background-color: var(--gin-bg-green-light);
 }
 
+#taxonomy-manager > #taxonomy-term-data,
+#taxonomy-manager > #tm--double-tree-operations {
+  top: var(--gin-offset-y);
+}
+
 #taxonomy-manager .treeview .form-item,
 #taxonomy-manager .treeview .term-operations {
   border-radius: var(--gin-border-radius);
