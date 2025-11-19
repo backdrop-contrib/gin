@@ -1,7 +1,7 @@
 (Backdrop => {
   Backdrop.behaviors.formDescriptionToggle = {
     attach: function(context, settings) {
-      context.querySelectorAll(".help-icon__description-toggle").forEach(((elem, index) => {
+      context[0].querySelectorAll(".help-icon__description-toggle").forEach(((elem, index) => {
         if (elem.dataset.formDescriptionToggleAttached) return;
         elem.dataset.formDescriptionToggleAttached = !0;
         const a11yLabel = "help-icon-label--" + Math.floor(1e4 * Math.random());

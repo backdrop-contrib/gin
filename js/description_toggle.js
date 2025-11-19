@@ -1,7 +1,7 @@
 ((Backdrop) => {
   Backdrop.behaviors.formDescriptionToggle = {
     attach: function (context, settings) {
-      context
+      context[0]
         .querySelectorAll('.help-icon__description-toggle')
         .forEach((elem, index) => {
           if (elem.dataset.formDescriptionToggleAttached) {
