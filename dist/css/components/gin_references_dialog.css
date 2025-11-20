@@ -16,19 +16,8 @@
 .dialog-links ul.references-dialog-links li a.edit-dialog,
 .dialog-links ul.references-dialog-links li a.search-dialog {
   background-image: none;
-  display: flex;
-}
-
-[dir="ltr"] .dialog-links ul.references-dialog-links li a.add-dialog,
-[dir="ltr"] .dialog-links ul.references-dialog-links li a.edit-dialog,
-[dir="ltr"] .dialog-links ul.references-dialog-links li a.search-dialog {
   padding-inline-start: 0;
-}
-
-[dir="rtl"] .dialog-links ul.references-dialog-links li a.add-dialog,
-[dir="rtl"] .dialog-links ul.references-dialog-links li a.edit-dialog,
-[dir="rtl"] .dialog-links ul.references-dialog-links li a.search-dialog {
-  padding-inline-end: 0;
+  display: inline-flex;
 }
 
 .dialog-links ul.references-dialog-links li a.add-dialog::before,
@@ -59,7 +48,18 @@
 }
 
 .dialog-links ul.references-dialog-links li a.search-dialog::before {
-  -webkit-mask-image: var(--icon-search-fill);
-          mask-image: var(--icon-search-fill);
+  -webkit-mask-image: var(--icon-magnifying-glass);
+          mask-image: var(--icon-magnifying-glass);
+}
+
+#references-dialog-page .view-content {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gin-spacing-m);
+}
+
+#references-dialog-page .view-content .views-row {
+  float: none;
+  flex-basis: 25%;
 }
 
