@@ -320,6 +320,18 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/gin_layout_paragraphs.css' => array(),
       ),
     ),
+    'gin_references_dialog' => array(
+      'title' => 'References Dialog',
+      'version' => BACKDROP_VERSION,
+      'css' => array(
+        $basethemeurl . '/dist/css/components/gin_references_dialog.css' => array(),
+      ),
+      'icons' => array(
+        'plus',
+        'search-fill',
+        'pencil-fill',
+      ),
+    ),
     'gin_select2' => array(
       'title' => 'Select2',
       'version' => BACKDROP_VERSION,

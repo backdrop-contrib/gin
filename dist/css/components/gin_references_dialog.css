@@ -1,0 +1,65 @@
+.ui-dialog:has(.references-dialog-iframe) .ui-widget-content.ui-dialog-content {
+  padding-inline: 0;
+  margin-inline: var(--gin-spacing-m);
+  background-color: transparent;
+}
+
+#references-dialog-page fieldset.content-edit-settings {
+  border: none;
+}
+
+#references-dialog-page fieldset.content-edit-settings > .fieldset-wrapper {
+  padding: 0;
+}
+
+.dialog-links ul.references-dialog-links li a.add-dialog,
+.dialog-links ul.references-dialog-links li a.edit-dialog,
+.dialog-links ul.references-dialog-links li a.search-dialog {
+  background-image: none;
+  display: flex;
+}
+
+[dir="ltr"] .dialog-links ul.references-dialog-links li a.add-dialog,
+[dir="ltr"] .dialog-links ul.references-dialog-links li a.edit-dialog,
+[dir="ltr"] .dialog-links ul.references-dialog-links li a.search-dialog {
+  padding-inline-start: 0;
+}
+
+[dir="rtl"] .dialog-links ul.references-dialog-links li a.add-dialog,
+[dir="rtl"] .dialog-links ul.references-dialog-links li a.edit-dialog,
+[dir="rtl"] .dialog-links ul.references-dialog-links li a.search-dialog {
+  padding-inline-end: 0;
+}
+
+.dialog-links ul.references-dialog-links li a.add-dialog::before,
+.dialog-links ul.references-dialog-links li a.edit-dialog::before,
+.dialog-links ul.references-dialog-links li a.search-dialog::before {
+  content: "";
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  margin-inline-end: var(--gin-spacing-xs);
+  background-color: var(--gin-color-primary);
+  -webkit-mask-size: var(--gin-icon-size-default) var(--gin-icon-size-default);
+          mask-size: var(--gin-icon-size-default) var(--gin-icon-size-default);
+}
+
+.dialog-links ul.references-dialog-links li a.add-dialog::before {
+  -webkit-mask-image: var(--icon-plus);
+          mask-image: var(--icon-plus);
+}
+
+.dialog-links ul.references-dialog-links li a.edit-dialog::before {
+  -webkit-mask-image: var(--icon-pencil-fill);
+          mask-image: var(--icon-pencil-fill);
+}
+
+.dialog-links ul.references-dialog-links li a.search-dialog::before {
+  -webkit-mask-image: var(--icon-search-fill);
+          mask-image: var(--icon-search-fill);
+}
+
