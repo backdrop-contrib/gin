@@ -328,7 +328,7 @@ function gin_library_info() {
       ),
       'icons' => array(
         'plus',
-        'search-fill',
+        'magnifying-glass',
         'pencil-fill',
       ),
     ),

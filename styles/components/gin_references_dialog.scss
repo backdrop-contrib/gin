@@ -21,8 +21,8 @@
       a.edit-dialog,
       a.search-dialog {
         background-image: none;
-        padding-left: 0;
-        display: flex;
+        padding-inline-start: 0;
+        display: inline-flex;
 
         &::before {
           content: '';
@@ -45,8 +45,19 @@
       }
 
       a.search-dialog::before {
-        mask-image: var(--icon-search-fill);
+        mask-image: var(--icon-magnifying-glass);
       }
     }
+  }
+}
+
+#references-dialog-page .view-content {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gin-spacing-m);
+
+  .views-row {
+    float: none;
+    flex-basis: 25%;
   }
 }
