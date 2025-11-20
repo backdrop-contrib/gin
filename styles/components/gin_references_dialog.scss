@@ -58,6 +58,21 @@
 
   .views-row {
     float: none;
-    flex-basis: 25%;
+    flex-basis: 20%;
+    flex-grow: 1;
+    border-color: var(--gin-border-color);
+    border-radius: var(--gin-border-l);
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: var(--gin-spacing-m);
+
+    &:hover {
+      background-color: var(--gin-bg-layer);
+    }
+
+    a {
+      pointer-events: none;
+    }
   }
 }
