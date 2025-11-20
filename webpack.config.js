@@ -50,7 +50,6 @@ module.exports = {
     'components/gin_select2': ['./styles/components/gin_select2.scss'],
     'components/gin_taxonomy_manager': ['./styles/components/gin_taxonomy_manager.scss'],
     'components/gin_paragraphs': ['./styles/components/gin_paragraphs.scss'],
-    'components/gin_references_dialog': ['./styles/components/gin_references_dialog.scss'],
     'components/gin_layout_paragraphs': ['./styles/components/gin_layout_paragraphs.scss'],
     'components/gin_simplei': ['./styles/components/gin_simplei.scss'],
     'components/inline_entity_form': ['./styles/components/inline_entity_form.scss'],
