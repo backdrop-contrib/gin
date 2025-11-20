@@ -1,0 +1,52 @@
+.ui-dialog:has(.references-dialog-iframe) .ui-widget-content.ui-dialog-content {
+  padding-inline: 0;
+  margin-inline: var(--gin-spacing-m);
+  background-color: transparent;
+}
+
+#references-dialog-page {
+  fieldset.content-edit-settings {
+    border: none;
+
+    > .fieldset-wrapper {
+      padding: 0;
+    }
+  }
+}
+
+.dialog-links {
+  ul.references-dialog-links {
+    li {
+      a.add-dialog,
+      a.edit-dialog,
+      a.search-dialog {
+        background-image: none;
+        padding-left: 0;
+        display: flex;
+
+        &::before {
+          content: '';
+          mask-repeat: no-repeat;
+          mask-position: center center;
+          width: 1.5rem;
+          height: 1.5rem;
+          display: inline-block;
+          margin-inline-end: var(--gin-spacing-xs);
+          background-color: var(--gin-color-primary);
+          mask-size: var(--gin-icon-size-default) var(--gin-icon-size-default);
+        }
+      }
+      a.add-dialog::before {
+        mask-image: var(--icon-plus);
+      }
+
+      a.edit-dialog::before {
+        mask-image: var(--icon-pencil-fill);
+      }
+
+      a.search-dialog::before {
+        mask-image: var(--icon-search-fill);
+      }
+    }
+  }
+}
