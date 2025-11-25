@@ -71,6 +71,9 @@ function gin_breadcrumb($variables) {
  *     show.
  */
 function gin_tablesort_indicator($variables) {
+  if (empty($variables['style']) || $variables['style'] != 'asc') {
+    $variables['style'] = 'desc';
+  }
   return '<span class="tablesort tablesort--' . $variables['style'] . '">
     <span class="visually-hidden">
       Sort ' . $variables['style'] . 'ending
