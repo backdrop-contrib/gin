@@ -185,25 +185,25 @@
   color: var(--gin-color-button-text);
 }
 
-.ui-dialog #edit-submit.form-submit,
+.ui-dialog #edit-submit.form-submit:not(.button-danger),
 .ui-dialog a.button-primary,
 .ui-dialog a.button-primary:not(:focus) .ief-entity-submit {
   background: var(--gin-color-primary);
 }
 
-[dir="ltr"] .ui-dialog #edit-submit.form-submit,
+[dir="ltr"] .ui-dialog #edit-submit.form-submit:not(.button-danger),
 [dir="ltr"] .ui-dialog a.button-primary,
 [dir="ltr"] .ui-dialog a.button-primary:not(:focus) .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 }
 
-[dir="rtl"] .ui-dialog #edit-submit.form-submit,
+[dir="rtl"] .ui-dialog #edit-submit.form-submit:not(.button-danger),
 [dir="rtl"] .ui-dialog a.button-primary,
 [dir="rtl"] .ui-dialog a.button-primary:not(:focus) .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
-.ui-dialog #edit-submit.form-submit:hover, .ui-dialog #edit-submit.form-submit:focus,
+.ui-dialog #edit-submit.form-submit:not(.button-danger):hover, .ui-dialog #edit-submit.form-submit:not(.button-danger):focus,
 .ui-dialog a.button-primary:hover,
 .ui-dialog a.button-primary:focus,
 .ui-dialog a.button-primary:not(:focus) .ief-entity-submit:hover,
@@ -211,7 +211,7 @@
   background-color: var(--gin-color-primary-hover);
 }
 
-.ui-dialog #edit-submit.form-submit:active, .ui-dialog #edit-submit.form-submit:focus,
+.ui-dialog #edit-submit.form-submit:not(.button-danger):active, .ui-dialog #edit-submit.form-submit:not(.button-danger):focus,
 .ui-dialog a.button-primary:active,
 .ui-dialog a.button-primary:focus,
 .ui-dialog a.button-primary:not(:focus) .ief-entity-submit:active,
@@ -219,7 +219,7 @@
   background-color: var(--gin-color-primary-active);
 }
 
-.ui-dialog #edit-submit.form-submit, .ui-dialog #edit-submit.form-submit:hover, .ui-dialog #edit-submit.form-submit:active, .ui-dialog #edit-submit.form-submit:focus, .ui-dialog #edit-submit.form-submit:focus:hover,
+.ui-dialog #edit-submit.form-submit:not(.button-danger), .ui-dialog #edit-submit.form-submit:not(.button-danger):hover, .ui-dialog #edit-submit.form-submit:not(.button-danger):active, .ui-dialog #edit-submit.form-submit:not(.button-danger):focus, .ui-dialog #edit-submit.form-submit:not(.button-danger):focus:hover,
 .ui-dialog a.button-primary,
 .ui-dialog a.button-primary:hover,
 .ui-dialog a.button-primary:active,
@@ -233,7 +233,7 @@
   color: var(--gin-color-button-text);
 }
 
-.gin--dark-mode .ui-dialog #edit-submit.form-submit, .gin--dark-mode .ui-dialog #edit-submit.form-submit:hover, .gin--dark-mode .ui-dialog #edit-submit.form-submit:active, .gin--dark-mode .ui-dialog #edit-submit.form-submit:focus, .gin--dark-mode .ui-dialog #edit-submit.form-submit:focus:hover,
+.gin--dark-mode .ui-dialog #edit-submit.form-submit:not(.button-danger), .gin--dark-mode .ui-dialog #edit-submit.form-submit:not(.button-danger):hover, .gin--dark-mode .ui-dialog #edit-submit.form-submit:not(.button-danger):active, .gin--dark-mode .ui-dialog #edit-submit.form-submit:not(.button-danger):focus, .gin--dark-mode .ui-dialog #edit-submit.form-submit:not(.button-danger):focus:hover,
 .gin--dark-mode .ui-dialog a.button-primary,
 .gin--dark-mode .ui-dialog a.button-primary:hover,
 .gin--dark-mode .ui-dialog a.button-primary:active,

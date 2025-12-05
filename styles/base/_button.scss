@@ -93,7 +93,7 @@ a.button {
 
 }
 
-#edit-submit.form-submit,
+#edit-submit.form-submit:not(.button-danger),
 a.button-primary,
 a.button-primary:not(:focus)
 .ief-entity-submit {

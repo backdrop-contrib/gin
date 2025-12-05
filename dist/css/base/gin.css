@@ -2786,25 +2786,25 @@ a.button:hover, a.button:active, a.button:focus {
   color: var(--gin-color-button-text);
 }
 
-#edit-submit.form-submit,
+#edit-submit.form-submit:not(.button-danger),
 a.button-primary,
 a.button-primary:not(:focus) .ief-entity-submit {
   background: var(--gin-color-primary);
 }
 
-[dir="ltr"] #edit-submit.form-submit,
+[dir="ltr"] #edit-submit.form-submit:not(.button-danger),
 [dir="ltr"] a.button-primary,
 [dir="ltr"] a.button-primary:not(:focus) .ief-entity-submit {
   box-shadow: .1em .25em .5em var(--gin-color-primary-light);
 }
 
-[dir="rtl"] #edit-submit.form-submit,
+[dir="rtl"] #edit-submit.form-submit:not(.button-danger),
 [dir="rtl"] a.button-primary,
 [dir="rtl"] a.button-primary:not(:focus) .ief-entity-submit {
   box-shadow: -0.1em .25em .5em var(--gin-color-primary-light);
 }
 
-#edit-submit.form-submit:hover, #edit-submit.form-submit:focus,
+#edit-submit.form-submit:not(.button-danger):hover, #edit-submit.form-submit:not(.button-danger):focus,
 a.button-primary:hover,
 a.button-primary:focus,
 a.button-primary:not(:focus) .ief-entity-submit:hover,
@@ -2812,7 +2812,7 @@ a.button-primary:not(:focus) .ief-entity-submit:focus {
   background-color: var(--gin-color-primary-hover);
 }
 
-#edit-submit.form-submit:active, #edit-submit.form-submit:focus,
+#edit-submit.form-submit:not(.button-danger):active, #edit-submit.form-submit:not(.button-danger):focus,
 a.button-primary:active,
 a.button-primary:focus,
 a.button-primary:not(:focus) .ief-entity-submit:active,
@@ -2820,7 +2820,7 @@ a.button-primary:not(:focus) .ief-entity-submit:focus {
   background-color: var(--gin-color-primary-active);
 }
 
-#edit-submit.form-submit, #edit-submit.form-submit:hover, #edit-submit.form-submit:active, #edit-submit.form-submit:focus, #edit-submit.form-submit:focus:hover,
+#edit-submit.form-submit:not(.button-danger), #edit-submit.form-submit:not(.button-danger):hover, #edit-submit.form-submit:not(.button-danger):active, #edit-submit.form-submit:not(.button-danger):focus, #edit-submit.form-submit:not(.button-danger):focus:hover,
 a.button-primary,
 a.button-primary:hover,
 a.button-primary:active,
@@ -2834,7 +2834,7 @@ a.button-primary:not(:focus) .ief-entity-submit:focus:hover {
   color: var(--gin-color-button-text);
 }
 
-.gin--dark-mode #edit-submit.form-submit, .gin--dark-mode #edit-submit.form-submit:hover, .gin--dark-mode #edit-submit.form-submit:active, .gin--dark-mode #edit-submit.form-submit:focus, .gin--dark-mode #edit-submit.form-submit:focus:hover,
+.gin--dark-mode #edit-submit.form-submit:not(.button-danger), .gin--dark-mode #edit-submit.form-submit:not(.button-danger):hover, .gin--dark-mode #edit-submit.form-submit:not(.button-danger):active, .gin--dark-mode #edit-submit.form-submit:not(.button-danger):focus, .gin--dark-mode #edit-submit.form-submit:not(.button-danger):focus:hover,
 .gin--dark-mode a.button-primary,
 .gin--dark-mode a.button-primary:hover,
 .gin--dark-mode a.button-primary:active,
