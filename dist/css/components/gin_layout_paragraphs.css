@@ -2,3 +2,11 @@
   margin-inline: 0;
 }
 
+.layout--paragraphs-edit-main .l-col {
+  display: flex;
+}
+
+.layout--paragraphs-edit-main .layout-editor-region {
+  margin-block: .9375rem;
+}
+
