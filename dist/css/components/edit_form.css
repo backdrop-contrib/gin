@@ -102,6 +102,7 @@
   .gin--edit-form[data-meta-sidebar=open] .block-page-title-block {
     width: 100%;
     max-width: 1280px;
+    overflow-x: hidden;
     margin-inline-start: auto;
     margin-inline-end: auto;
     box-sizing: border-box;
