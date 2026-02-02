@@ -65,6 +65,10 @@ a.tabledrag-handle {
     }
   }
 
+  &-y .handle {
+    mask-image: icon('drag-y');
+  }
+
   &:hover {
     .handle {
       transform: scale(1);

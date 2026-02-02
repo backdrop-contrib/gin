@@ -379,6 +379,7 @@ function gin_css_alter(&$css) {
 function gin_js_alter(&$js) {
   // Remove the default backdrop.js file.
   unset($js['core/misc/tableselect.js']);
+  unset($js['core/misc/tabledrag.js']);
 }
 
 /**

@@ -9,7 +9,7 @@
  * @event columnschange
  */
 
-(function ($, Drupal, drupalSettings) {
+(function ($, Backdrop) {
   /**
    * Determine if an element is visible.
    *
@@ -52,7 +52,7 @@
   /**
    * Drag and drop table rows with field manipulation.
    *
-   * Using the drupal_attach_tabledrag() function, any table with weights or
+   * Using the backdrop_attach_tabledrag() function, any table with weights or
    * parent relationships may be made into draggable tables. Columns containing
    * a field may optionally be hidden, providing a better user experience.
    *
@@ -61,13 +61,13 @@
    * See blocks.js for an example of adding additional functionality to
    * tableDrag.
    *
-   * @type {Drupal~behavior}
+   * @type {Backdrop~behavior}
    */
   Backdrop.behaviors.tableDrag = {
     attach(context, settings) {
       function initTableDrag(table, base) {
         if (table.length) {
-          // Create the new tableDrag instance. Save in the Drupal variable
+          // Create the new tableDrag instance. Save in the Backdrop variable
           // to allow other scripts access to the object.
           Backdrop.tableDrag[base] = new Backdrop.tableDrag(
             table[0],
@@ -90,7 +90,7 @@
    * @param {HTMLElement} table
    *   DOM object for the table to be made draggable.
    * @param {object} tableSettings
-   *   Settings for the table added via drupal_add_dragtable().
+   *   Settings for the table added via backdrop_add_dragtable().
    */
   Backdrop.tableDrag = function (table, tableSettings) {
     const self = this;
@@ -274,7 +274,7 @@
 
     const $toggleWeightWrapper = $(Backdrop.theme('tableDragToggle'));
     this.$toggleWeightButton = $toggleWeightWrapper.find(
-      '[data-drupal-selector="tabledrag-toggle-weight"]',
+      '[data-backdrop-selector="tabledrag-toggle-weight"]',
     );
     this.$toggleWeightButton.on(
       'click',
@@ -1549,12 +1549,12 @@
   Backdrop.tableDrag.prototype.row.prototype.swap = function (position, row) {
     // Makes sure only DOM object are passed to Backdrop.detachBehaviors().
     this.group.forEach((row) => {
-      Backdrop.detachBehaviors(row, drupalSettings, 'move');
+      Backdrop.detachBehaviors(row, Backdrop.settings, 'move');
     });
     $(row)[position](this.group);
     // Makes sure only DOM object are passed to Backdrop.attachBehaviors()s.
     this.group.forEach((row) => {
-      Backdrop.attachBehaviors(row, drupalSettings);
+      Backdrop.attachBehaviors(row, Backdrop.settings);
     });
     this.changed = true;
     this.onSwap(row);
@@ -1800,8 +1800,8 @@
        *   HTML markup for the weight toggle button and its container.
        */
       tableDragToggle: () =>
-        `<div class="tabledrag-toggle-weight-wrapper" data-drupal-selector="tabledrag-toggle-weight-wrapper">
-            <button type="button" class="link tabledrag-toggle-weight" data-drupal-selector="tabledrag-toggle-weight"></button>
+        `<div class="tabledrag-toggle-weight-wrapper" data-backdrop-selector="tabledrag-toggle-weight-wrapper">
+            <button type="button" class="link tabledrag-toggle-weight" data-backdrop-selector="tabledrag-toggle-weight"></button>
             </div>`,
 
       /**
@@ -1844,4 +1844,4 @@
       },
     },
   );
-})(jQuery, Drupal, drupalSettings);
+})(jQuery, Backdrop);

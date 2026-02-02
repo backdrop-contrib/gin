@@ -1,4 +1,5 @@
 .button,
+button.link,
 .project__action_button,
 .dropbutton__item:first-of-type > *,
 .dropbutton__toggle {
@@ -30,6 +31,7 @@
 }
 
 .button,
+button.link,
 .form-actions .button,
 .project__action_button,
 .action-link--icon-trash.action-link {
@@ -68,21 +70,24 @@ input.button {
   }
 }
 
-.button.button--small {
+.button.button--small,
+button.link:has(.action-link--small) {
   font-size: var(--gin-font-size-xxs);
   padding-block: calc(var(--gin-spacing-xxs) + 2px);
   padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
-.button.button--extrasmall {
+.button.button--extrasmall,
+button.link:has(.action-link--extrasmall) {
   font-size: var(--gin-font-size-xxs);
   padding-block: var(--gin-spacing-xxs);
   padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
-a.button {
+a.button,
+button.link {
   color: var(--gin-color-primary);
 
   &:hover,
@@ -91,6 +96,22 @@ a.button {
     color: var(--gin-color-button-text);
   }
 
+}
+
+button.link {
+  border-color: transparent;
+  margin-block: 4px;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    background-color: var(--gin-bg-item-hover);
+    color: var(--gin-color-primary-hover);
+
+    .action-link {
+      background-color: transparent;
+    }
+  }
 }
 
 #edit-submit.form-submit:not(.button-danger),

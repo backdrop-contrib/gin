@@ -1835,6 +1835,11 @@ a.tabledrag-handle .handle {
   }
 }
 
+a.tabledrag-handle-y .handle {
+  -webkit-mask-image: url("../../media/sprite.svg#drag-y-view");
+          mask-image: url("../../media/sprite.svg#drag-y-view");
+}
+
 a.tabledrag-handle:hover .handle {
   transform: scale(1);
 }
@@ -2657,6 +2662,7 @@ tr .form-item {
 }
 
 .button,
+button.link,
 .project__action_button,
 .dropbutton__item:first-of-type > *,
 .dropbutton__toggle {
@@ -2670,6 +2676,7 @@ tr .form-item {
 
 @media (min-width: 80em) {
   .button,
+  button.link,
   .project__action_button,
   .dropbutton__item:first-of-type > *,
   .dropbutton__toggle {
@@ -2678,6 +2685,7 @@ tr .form-item {
 }
 
 .button:hover,
+button.link:hover,
 .project__action_button:hover,
 .dropbutton__item:first-of-type > *:hover,
 .dropbutton__toggle:hover {
@@ -2685,6 +2693,8 @@ tr .form-item {
 }
 
 .button:active, .button:focus,
+button.link:active,
+button.link:focus,
 .project__action_button:active,
 .project__action_button:focus,
 .dropbutton__item:first-of-type > *:active,
@@ -2695,6 +2705,9 @@ tr .form-item {
 }
 
 .button:hover, .button:active, .button:focus,
+button.link:hover,
+button.link:active,
+button.link:focus,
 .project__action_button:hover,
 .project__action_button:active,
 .project__action_button:focus,
@@ -2708,6 +2721,7 @@ tr .form-item {
 }
 
 .button,
+button.link,
 .form-actions .button,
 .project__action_button,
 .action-link--icon-trash.action-link {
@@ -2721,6 +2735,7 @@ tr .form-item {
 }
 
 .button:hover,
+button.link:hover,
 .form-actions .button:hover,
 .project__action_button:hover,
 .action-link--icon-trash.action-link:hover {
@@ -2729,6 +2744,8 @@ tr .form-item {
 }
 
 .button:active, .button:focus,
+button.link:active,
+button.link:focus,
 .form-actions .button:active,
 .form-actions .button:focus,
 .project__action_button:active,
@@ -2739,6 +2756,10 @@ tr .form-item {
 }
 
 .button:hover, .button:active, .button:focus, .button:hover:focus,
+button.link:hover,
+button.link:active,
+button.link:focus,
+button.link:hover:focus,
 .form-actions .button:hover,
 .form-actions .button:active,
 .form-actions .button:focus,
@@ -2764,26 +2785,47 @@ input.button + a {
   margin-inline-start: var(--gin-spacing-xs);
 }
 
-.button.button--small {
+.button.button--small,
+button.link:has(.action-link--small) {
   font-size: var(--gin-font-size-xxs);
   padding-block: calc(var(--gin-spacing-xxs) + 2px);
   padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
-.button.button--extrasmall {
+.button.button--extrasmall,
+button.link:has(.action-link--extrasmall) {
   font-size: var(--gin-font-size-xxs);
   padding-block: var(--gin-spacing-xxs);
   padding-inline: var(--gin-spacing-s);
   border-radius: var(--gin-border-s);
 }
 
-a.button {
+a.button,
+button.link {
   color: var(--gin-color-primary);
 }
 
-a.button:hover, a.button:active, a.button:focus {
+a.button:hover, a.button:active, a.button:focus,
+button.link:hover,
+button.link:active,
+button.link:focus {
   color: var(--gin-color-button-text);
+}
+
+button.link {
+  border-color: transparent;
+  margin-block: 4px;
+  box-shadow: none;
+}
+
+button.link:hover, button.link:focus {
+  background-color: var(--gin-bg-item-hover);
+  color: var(--gin-color-primary-hover);
+}
+
+button.link:hover .action-link, button.link:focus .action-link {
+  background-color: transparent;
 }
 
 #edit-submit.form-submit:not(.button-danger),
@@ -3093,8 +3135,32 @@ ul .layout-condition a.layout-button-link {
   border-radius: var(--gin-border-s);
 }
 
+.action-link:hover,
+.operations > li:hover {
+  color: var(--gin-color-primary-hover);
+  background: var(--gin-bg-item-hover);
+}
+
+.action-link:focus,
+.operations > li:focus {
+  color: var(--gin-color-primary-active);
+  background: var(--gin-color-primary-light-hover);
+}
+
+.action-link.action-link--extrasmall,
+.operations > li.action-link--extrasmall {
+  font-size: var(--gin-font-size-xxs);
+}
+
 .action-link:before,
 .operations > li:before {
+  display: inline-block;
+  content: "";
+  position: relative;
+  inset-block-start: .0625rem;
+  width: var(--gin-spacing-s);
+  height: var(--gin-spacing-s);
+  margin-inline: -0.125rem .4em;
   background-image: none;
   background: var(--gin-color-primary) !important;
   -webkit-mask-size: contain;
@@ -3132,13 +3198,27 @@ ul .layout-condition a.layout-button-link {
           mask-image: url("../../media/sprite.svg#checkmark-view");
 }
 
-.action-link.settings a:before,
+.action-link--icon-show:before,
+.operations > li--icon-show:before {
+  -webkit-mask-image: url("../../media/sprite.svg#show-view");
+          mask-image: url("../../media/sprite.svg#show-view");
+}
+
+.action-link--icon-hide:before,
+.operations > li--icon-hide:before {
+  -webkit-mask-image: url("../../media/sprite.svg#hide-view");
+          mask-image: url("../../media/sprite.svg#hide-view");
+}
+
+.action-link--icon-cog::before, .action-link.settings a:before,
+.operations > li--icon-cog::before,
 .operations > li.settings a:before {
   -webkit-mask-image: url("../../media/sprite.svg#config-view");
           mask-image: url("../../media/sprite.svg#config-view");
 }
 
-.action-link.disable a:before,
+.action-link--icon-ex::before, .action-link.disable a:before,
+.operations > li--icon-ex::before,
 .operations > li.disable a:before {
   -webkit-mask-image: url("../../media/sprite.svg#remove-view");
           mask-image: url("../../media/sprite.svg#remove-view");

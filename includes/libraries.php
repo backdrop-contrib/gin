@@ -180,6 +180,16 @@ function gin_library_info() {
         array('gin', 'gin_once'),
       ),
     ),
+    'gin_tabledrag' => array(
+      'title' => 'Tabledrag',
+      'version' => BACKDROP_VERSION,
+      'js' => array(
+        $basethemeurl . '/js/overrides/tabledrag.js' => array(),
+      ),
+      'dependencies' => array(
+        array('gin', 'gin_once'),
+      ),
+    ),
     'gin_edit_form' => array(
       'title' => 'Edit form',
       'version' => BACKDROP_VERSION,
