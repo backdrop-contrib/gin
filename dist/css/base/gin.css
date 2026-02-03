@@ -3152,23 +3152,49 @@ ul .layout-condition a.layout-button-link {
   font-size: var(--gin-font-size-xxs);
 }
 
-.action-link:before,
-.operations > li:before {
-  display: inline-block;
-  content: "";
-  position: relative;
-  inset-block-start: .0625rem;
-  width: var(--gin-spacing-s);
-  height: var(--gin-spacing-s);
-  margin-inline: -0.125rem .4em;
+.action-link > a,
+.operations > li > a {
+  color: var(--gin-color-primary);
+  background-color: transparent;
+  border-radius: var(--gin-border-s);
+  padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
+  margin-inline-start: var(--gin-spacing-xs);
+}
+
+.action-link > a:hover,
+.operations > li > a:hover {
+  color: var(--gin-color-primary-hover);
+  background-color: var(--gin-bg-item-hover);
+}
+
+.action-link > a:focus,
+.operations > li > a:focus {
+  color: var(--gin-color-primary-active);
+  background-color: var(--gin-color-primary-light-hover);
+}
+
+.action-link > a.action-link--extrasmall,
+.operations > li > a.action-link--extrasmall {
+  font-size: var(--gin-font-size-xxs);
+}
+
+.action-link > a:before,
+.operations > li > a:before {
   background-image: none;
-  background: var(--gin-color-primary) !important;
+  background-color: var(--gin-color-primary);
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
+  content: "";
+  position: relative;
+  display: inline-block;
+  inset-block-start: .0625rem;
+  width: var(--gin-spacing-s);
+  height: var(--gin-spacing-s);
+  margin-inline: -0.125rem .4em;
 }
 
 .action-link--icon-plus:hover:before, .action-link--icon-ex:hover::before, .action-link--icon-checkmark:hover:before, .action-link--icon-show:hover::before, .action-link--icon-cog:hover::before, .action-link--icon-hide:hover::before, .action-link--icon-show:before, .action-link--icon-hide:before,
@@ -3242,49 +3268,22 @@ ul .layout-condition a.layout-button-link {
           mask-image: url("../../media/sprite.svg#help-view");
 }
 
-.action-link > a,
-.operations > li > a {
-  color: var(--gin-color-primary);
-  background-color: transparent;
-  border-radius: var(--gin-border-s);
-  padding: calc(var(--gin-spacing-s) - (var(--gin-spacing-l) - var(--gin-spacing-s)) / 2) var(--gin-spacing-s);
-  margin-inline-start: var(--gin-spacing-xs);
-}
-
-.action-link > a:hover,
-.operations > li > a:hover {
-  color: var(--gin-color-primary-hover);
-  background-color: var(--gin-bg-item-hover);
-}
-
-.action-link > a:focus,
-.operations > li > a:focus {
-  color: var(--gin-color-primary-active);
-  background-color: var(--gin-color-primary-light-hover);
-}
-
-.action-link > a.action-link--extrasmall,
-.operations > li > a.action-link--extrasmall {
-  font-size: var(--gin-font-size-xxs);
-}
-
-.action-link > a:before,
-.operations > li > a:before {
+.action-link:before {
+  display: inline-block;
+  content: "";
+  position: relative;
+  inset-block-start: .0625rem;
+  width: var(--gin-spacing-s);
+  height: var(--gin-spacing-s);
+  margin-inline: -0.125rem .4em;
   background-image: none;
-  background-color: var(--gin-color-primary);
+  background: var(--gin-color-primary) !important;
   -webkit-mask-size: contain;
           mask-size: contain;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
           mask-position: center;
-  content: "";
-  position: relative;
-  display: inline-block;
-  inset-block-start: .0625rem;
-  width: var(--gin-spacing-s);
-  height: var(--gin-spacing-s);
-  margin-inline: -0.125rem .4em;
 }
 
 .action-link:hover {
