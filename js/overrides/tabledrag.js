@@ -565,8 +565,11 @@
       $item.find('td').eq(0).prepend($handle);
     }
 
-    $handle.on('mousedown touchstart pointerdown', (event) => {
+    $handle.closest('tr').on('mousedown touchstart pointerdown', (event) => {
       event.preventDefault();
+      if ($handle.css('display') === 'none') {
+        return;
+      }
       if (event.originalEvent.type === 'touchstart') {
         event = event.originalEvent.touches[0];
       }

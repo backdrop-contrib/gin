@@ -16,6 +16,44 @@
   }
 }
 
+tr.draggable {
+  &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+    cursor: move;
+
+    &:hover {
+      background-color: var(--gin-bg-item);
+
+      .handle {
+        transform: scale(1.1);
+
+        @media (forced-colors: none) {
+          background-color: var(--gin-color-primary);
+        }
+      }
+    }
+
+  }
+  &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+    & .tabledrag-handle:focus {
+      .handle {
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  &.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+    & .tabledrag-handle {
+      .handle {
+        transform: scale(1.25);
+      }
+    }
+  }
+}
+
+tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
+  cursor: row-resize;
+}
+
 .tabledrag-toggle-weight-wrapper {
   margin-block-start: 0;
 
@@ -48,13 +86,22 @@
   }
 }
 
-a.tabledrag-handle {
+.draggable a.tabledrag-handle {
+  margin: .25rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--gin-border-s);
+
   .handle {
     background-image: none;
+    margin: 0;
+    padding: .25rem .5rem;
     mask-image: icon('drag');
     mask-repeat: no-repeat;
     mask-position: center center;
     mask-size: 16px 16px;
+    transition: transform 150ms ease-in-out;
 
     @media (forced-colors: none) {
       background-color: var(--gin-color-text-light);
@@ -69,26 +116,21 @@ a.tabledrag-handle {
     mask-image: icon('drag-y');
   }
 
-  &:hover {
-    .handle {
-      transform: scale(1);
-
-      @media (forced-colors: none) {
-        background-color: var(--gin-color-primary);
-      }
-    }
-  }
 }
 
 .tabledrag-handle.tabledrag-handle-y::after {
   mask-image: icon('drag-y');
 }
 
-.draggable.drag, .draggable.drag:focus {
+.draggable.drag {
   background-color: var(--gin-bg-layer2);
 
   .gin--dark-mode & {
     background-color: var(--gin-color-primary-light-hover);
+  }
+
+  a.tabledrag-handle .handle {
+    transform: scale(1.25);
   }
 }
 
