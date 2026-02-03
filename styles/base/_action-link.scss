@@ -5,16 +5,6 @@
   background: transparent;
   border-radius: var(--gin-border-s);
 
-  &:hover {
-    color: var(--gin-color-primary-hover);
-    background: var(--gin-bg-item-hover);
-  }
-
-  &:focus {
-    color: var(--gin-color-primary-active);
-    background: var(--gin-color-primary-light-hover);
-  }
-
   &.action-link--extrasmall {
     font-size: var(--gin-font-size-xxs);
   }
