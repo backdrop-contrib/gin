@@ -566,10 +566,17 @@
     }
 
     $handle.closest('tr').on('mousedown touchstart pointerdown', (event) => {
-      event.preventDefault();
+      // Only trigger if the event target is the <tr> itself, not a child
+      // element like input/select/etc.
+      if (event.target !== event.currentTarget) {
+      return;
+      }
+      // Don't allow dragging if the handle is not visible (e.g. when weight
+      // columns are hidden).
       if ($handle.css('display') === 'none') {
         return;
       }
+      event.preventDefault();
       if (event.originalEvent.type === 'touchstart') {
         event = event.originalEvent.touches[0];
       }
