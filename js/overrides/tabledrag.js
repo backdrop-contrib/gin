@@ -572,7 +572,7 @@
         return;
       }
       // Don't allow dragging if the handle is not visible (e.g. when weight
-      // columns are hidden).
+      // columns are shown).
       if ($handle.css('display') === 'none') {
         return;
       }
