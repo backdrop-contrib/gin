@@ -566,8 +566,8 @@
     }
 
     $handle.closest('tr').on('mousedown touchstart pointerdown', (event) => {
-      // Only trigger if the event target is the <tr> or <td> but not a child
-      // element like input/select/etc.
+      // Only trigger if the event target is the <tr> or <td> or <div> but not a
+      // child element like input/select/etc.
       if (event.target !== event.currentTarget && !$(event.target).is('td') && !$(event.target).is('div')) {
         return;
       }
