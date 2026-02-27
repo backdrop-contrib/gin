@@ -31,13 +31,10 @@ function gin_preprocess_form(&$variables) {
     $exclude_form_ids = gin_ignore_sticky_form_actions();
     $form_id = backdrop_html_class($variables['element']['#form_id']);
     if (!in_array($form_id, $exclude_form_ids)) {
-      $variables['element']['#attached']['library'][] = array('gin', 'gin_more_actions');
-      $variables['element']['#attached']['js'][] = array(
-        'type' => 'setting',
-        'data' => array(
-          'Gin' => array('actions_form_id' => $form_id),
-        ),
-      );
+      backdrop_add_library('gin', 'gin_more_actions');
+      backdrop_add_js(array(
+        'Gin' => array('actions_form_id' => $form_id),
+      ), 'setting');
     }
   }
 }
