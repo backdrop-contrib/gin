@@ -8,7 +8,7 @@
  * Load include files which contain additional theming logic.
  */
 foreach (glob(path_to_theme('gin') . '/includes/*.php') as $file) {
-  include $file;
+  include_once($file);
 }
 
 /**
