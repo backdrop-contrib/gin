@@ -2,6 +2,7 @@
   #admin-bar-wrapper > #admin-bar-menu > li > .dropdown > li > a.civicrm {
     // This can be removed when it's out of the CiviCRM Backdrop module.
     background-image: none;
+    padding-inline: var(--gin-spacing-xs) var(--gin-spacing-s) !important;
   }
 
   .civicrm::before {

@@ -1,5 +1,6 @@
 #admin-bar #admin-bar-wrapper > #admin-bar-menu > li > .dropdown > li > a.civicrm {
   background-image: none;
+  padding-inline: var(--gin-spacing-xs) var(--gin-spacing-s) !important;
 }
 
 #admin-bar .civicrm::before {
