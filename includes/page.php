@@ -59,34 +59,7 @@ function gin_preprocess_page(&$variables) {
   backdrop_add_library('gin', 'gin_sticky');
   backdrop_add_library('gin', 'gin_tableselect');
   backdrop_add_library('gin', 'gin_tabledrag');
-
-  $module_libraries = [
-    'admin_bar' => 'gin_admin_bar',
-    'chosen' => 'gin_chosen',
-    'ckeditor' => 'gin_ckeditor',
-    'ckeditor5' => 'gin_ckeditor5',
-    'civicrm' => 'gin_civicrm',
-    'coffee' => 'gin_coffee',
-    'dashboard' => 'gin_dashboard',
-    'devel' => 'gin_devel',
-    'inline_entity_form' => 'gin_inline_entity_form',
-    'installer' => 'project_installer',
-    'layout_paragraphs' => 'gin_layout_paragraphs',
-    'module_filter' => 'gin_module_filter',
-    'node_preview' => 'gin_node_preview',
-    'paragraphs' => 'gin_paragraphs',
-    'references_dialog' => 'gin_references_dialog',
-    'select2' => 'gin_select2',
-    'simplei' => 'gin_simplei',
-    'taxonomy_manager' => 'gin_taxonomy_manager',
-    'webform' => 'gin_webform',
-  ];
-
-  foreach ($module_libraries as $module => $library) {
-    if (module_exists($module)) {
-      backdrop_add_library('gin', $library);
-    }
-  }
+  gin_add_module_libraries();
 
   // Custom CSS file.
   // if (file_exists('public://gin-custom.css')) {

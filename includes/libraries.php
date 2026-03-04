@@ -146,20 +146,6 @@ function gin_library_info() {
   # Components
 
   $libraries += array(
-    'gin_dashboard' => array(
-      'title' => 'Dashboard',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_dashboard.css' => array(),
-      ),
-    ),
-    'gin_admin_bar' => array(
-      'title' => 'Admin Bar',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/layout/gin_admin_bar.css' => array(),
-      ),
-    ),
     'gin_tabs' => array(
       'title' => 'Tabs',
       'version' => BACKDROP_VERSION,
@@ -226,26 +212,6 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/contextual_links.css' => array(),
       ),
     ),
-    'gin_ckeditor' => array(
-      'title' => 'CKEditor',
-      'version' => BACKDROP_VERSION,
-      'js' => array(
-        $basethemeurl . '/dist/js/ckeditor.js' => array('weight' => 0),
-      ),
-      'css' => array(
-        $basethemeurl . '/dist/css/components/ckeditor.css' => array(),
-      ),
-      'dependencies' => array(
-        array('gin', 'gin_once'),
-      ),
-    ),
-    'gin_ckeditor5' => array(
-      'title' => 'CKEditor5',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_ckeditor5.css' => array(),
-      ),
-    ),
     'gin_ajax' => array(
       'title' => 'Ajax',
       'version' => BACKDROP_VERSION,
@@ -274,36 +240,6 @@ function gin_library_info() {
         $basethemeurl . '/dist/css/components/breadcrumb.css' => array(),
       ),
     ),
-    'gin_civicrm' => array(
-      'title' => 'CiviCRM',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_civicrm.css' => array(
-          'type' => 'file',
-          'media' => 'screen',
-        ),
-      ),
-    ),
-    'gin_coffee' => array(
-      'title' => 'Coffee',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_coffee.css' => array(
-          'type' => 'file',
-          'media' => 'screen',
-        ),
-      ),
-    ),
-    'gin_devel' => array(
-      'title' => 'Devel',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_devel.css' => array(
-          'type' => 'file',
-          'media' => 'screen',
-        ),
-      ),
-    ),
     'gin_node_preview' => array(
       'title' => 'Node preview',
       'version' => BACKDROP_VERSION,
@@ -315,90 +251,7 @@ function gin_library_info() {
 
   # Modules
 
-  $libraries += array(
-    'gin_paragraphs' => array(
-      'title' => 'Paragraphs',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_paragraphs.css' => array(),
-      ),
-    ),
-    'gin_layout_paragraphs' => array(
-      'title' => 'Layout Paragraphs',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_layout_paragraphs.css' => array(),
-      ),
-    ),
-    'gin_references_dialog' => array(
-      'title' => 'References Dialog',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_references_dialog.css' => array(),
-      ),
-      'icons' => array(
-        'plus',
-        'magnifying-glass',
-        'pencil-fill',
-      ),
-    ),
-    'gin_select2' => array(
-      'title' => 'Select2',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_select2.css' => array(),
-      ),
-    ),
-    'gin_taxonomy_manager' => array(
-      'title' => 'Taxonomy Manager',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_taxonomy_manager.css' => array(),
-      ),
-    ),
-    'gin_webform' => array(
-      'title' => 'Webform',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/webform.css' => array(),
-      ),
-    ),
-    'gin_module_filter' => array(
-      'title' => 'Module filter',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/module_filter.css' => array(),
-      ),
-    ),
-    'gin_chosen' => array(
-      'title' => 'Chosen',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/chosenjs.css' => array(),
-      ),
-    ),
-    'project_installer' => array(
-      'title' => 'Project Installer',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/project_installer.css' => array(),
-      ),
-    ),
-    'gin_inline_entity_form' => array(
-      'title' => 'Inline entity form',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/inline_entity_form.css' => array(),
-      ),
-    ),
-    'gin_simplei' => array(
-      'title' => 'Simple Environment Indicator',
-      'version' => BACKDROP_VERSION,
-      'css' => array(
-        $basethemeurl . '/dist/css/components/gin_simplei.css' => array(),
-      ),
-    ),
-  );
+  $libraries += gin_get_module_libraries();
 
   return $libraries;
 
