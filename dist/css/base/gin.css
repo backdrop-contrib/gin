@@ -1777,6 +1777,36 @@ table tr.disabled.even {
   background-color: #f0f1f9;
 }
 
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+  cursor: move;
+}
+
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover {
+  background-color: var(--gin-bg-item);
+}
+
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
+  transform: scale(1.1);
+}
+
+@media (forced-colors: none) {
+  [data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
+    background-color: var(--gin-color-primary);
+  }
+}
+
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle:focus .handle {
+  transform: scale(1.25);
+}
+
+[data-gin-tabledrag-row=enabled] tr.draggable.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle .handle {
+  transform: scale(1.25);
+}
+
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
+  cursor: row-resize;
+}
+
 .tabledrag-toggle-weight-wrapper {
   margin-block-start: 0;
 }
@@ -1811,8 +1841,18 @@ table tr.disabled.even {
   background-color: var(--gin-bg-layer);
 }
 
-a.tabledrag-handle .handle {
+.draggable a.tabledrag-handle {
+  margin: .25rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--gin-border-s);
+}
+
+.draggable a.tabledrag-handle .handle {
   background-image: none;
+  margin: 0;
+  padding: .25rem .5rem;
   -webkit-mask-image: url("../../media/sprite.svg#drag-view");
           mask-image: url("../../media/sprite.svg#drag-view");
   -webkit-mask-repeat: no-repeat;
@@ -1821,33 +1861,24 @@ a.tabledrag-handle .handle {
           mask-position: center center;
   -webkit-mask-size: 16px 16px;
           mask-size: 16px 16px;
+  transition: transform 150ms ease-in-out;
 }
 
 @media (forced-colors: none) {
-  a.tabledrag-handle .handle {
+  .draggable a.tabledrag-handle .handle {
     background-color: var(--gin-color-text-light);
   }
 }
 
 @supports (-webkit-mask-image: url()) and ((-webkit-mask-composite: source-over) or (mask-composite: source-over)) {
-  a.tabledrag-handle .handle {
+  .draggable a.tabledrag-handle .handle {
     background-color: var(--gin-color-text-light);
   }
 }
 
-a.tabledrag-handle-y .handle {
+.draggable a.tabledrag-handle-y .handle {
   -webkit-mask-image: url("../../media/sprite.svg#drag-y-view");
           mask-image: url("../../media/sprite.svg#drag-y-view");
-}
-
-a.tabledrag-handle:hover .handle {
-  transform: scale(1);
-}
-
-@media (forced-colors: none) {
-  a.tabledrag-handle:hover .handle {
-    background-color: var(--gin-color-primary);
-  }
 }
 
 .tabledrag-handle.tabledrag-handle-y::after {
@@ -1855,12 +1886,16 @@ a.tabledrag-handle:hover .handle {
           mask-image: url("../../media/sprite.svg#drag-y-view");
 }
 
-.draggable.drag, .draggable.drag:focus {
+.draggable.drag {
   background-color: var(--gin-bg-layer2);
 }
 
-.gin--dark-mode .draggable.drag, .gin--dark-mode .draggable.drag:focus {
+.gin--dark-mode .draggable.drag {
   background-color: var(--gin-color-primary-light-hover);
+}
+
+.draggable.drag a.tabledrag-handle .handle {
+  transform: scale(1.25);
 }
 
 .draggable.drag-previous {

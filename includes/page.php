@@ -33,6 +33,9 @@ function gin_preprocess_page(&$variables) {
   // Set accent color.
   $variables['body_attributes']['data-gin-accent'] =  theme_get_setting('preset_accent_color');
 
+  // Set tabledrag row.
+  $variables['body_attributes']['data-gin-tabledrag-row'] =  !empty(theme_get_setting('tabledrag_row')) ? 'enabled' : 'disabled';
+
   // Set focus color.
   $variables['body_attributes']['data-gin-focus'] = theme_get_setting('preset_focus_color');
 
