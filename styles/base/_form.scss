@@ -172,7 +172,9 @@
 
 .form-boolean,
 .form-checkbox,
-.form-radio {
+input[type="checkbox"],
+.form-radio,
+input[type="radio"] {
   appearance: none;
   width: 21px;
   height: 21px;
@@ -184,6 +186,7 @@
 
 // Darkmode Checkbox
 .form-checkbox,
+input[type="checkbox"],
 .form-boolean--type-checkbox {
   &:not(:checked) {
     .gin--dark-mode & {
@@ -210,13 +213,15 @@
   }
 }
 
-.form-checkbox:checked {
+.form-checkbox:checked,
+input[type="checkbox"]:checked {
   background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%23fff'/%3e%3c/svg%3e");
   background-position: center center;
   background-repeat: no-repeat;
 }
 
-.form-checkbox[disabled]:checked {
+.form-checkbox[disabled]:checked,
+input[type="checkbox"][disabled]:checked {
   background-image: url("data:image/svg+xml,%3csvg width='16' height='16' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M3.795 7.096l2.387 2.506 6.023-6.327 1.484 1.56-7.507 7.89L2.31 8.656z' fill='%2382828c'/%3e%3c/svg%3e");
 }
 
@@ -365,7 +370,9 @@ table:has(.tabledrag-cell-content__item .form-checkbox) th.select-all .form-chec
 }
 
 .form-radio,
-.form-checkbox {
+.form-checkbox,
+input[type="checkbox"],
+input[type="radio"] {
 
   &:hover,
   &:active {
@@ -446,6 +453,7 @@ table:has(.tabledrag-cell-content__item .form-checkbox) th.select-all .form-chec
 }
 
 .form-checkbox[disabled],
+input[type="checkbox"][disabled],
 .form-boolean--type-checkbox[disabled] {
 
   &,
