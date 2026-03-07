@@ -12,7 +12,7 @@ details {
   summary {
     padding: var(--gin-spacing-m) var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-xxl);
     position: relative;
-    width: calc(100% - 2px - var(--gin-spacing-l) - var(--gin-spacing-xxl));
+    width: 100%;
     min-width: calc(100% - 2px - var(--gin-spacing-l) - var(--gin-spacing-xxl));
     border-radius: var(--gin-border-m);
     border-block-start: 1px solid var(--gin-border-color);
@@ -48,12 +48,15 @@ details {
     }
   }
 
-  &[open] summary {
+  &[open] > summary {
     border-radius: var(--gin-border-m) var(--gin-border-m) 0 0;
 
     &::before {
       transform: rotate(-90deg);
     }
+  }
+  &:not([open]) > summary {
+    border-radius: var(--gin-border-m);
   }
 
 .details-content-wrapper,

@@ -17,10 +17,15 @@
   --gin-bg-layer-rgb: 42, 42, 45;
 }
 
+:root {
+  --gin-bg-item-hover: rgba(5, 80, 230, .08);
+}
+
 [data-gin-accent=blue] {
   --gin-color-primary-rgb: 5, 80, 230;
   --gin-color-primary-light-rgb: 205, 220, 250;
   --gin-color-primary-hover: #0444c4;
+  --gin-bg-item-hover: rgba(5, 80, 230, .08);
   --gin-color-primary-active: #043cad;
   --gin-bg-app-rgb: 248, 250, 254;
   --gin-bg-header: #e1eafc;
@@ -31,6 +36,7 @@
   --gin-color-primary-rgb: 47, 109, 208;
   --gin-color-primary-light-rgb: 213, 226, 246;
   --gin-color-primary-hover: #285db1;
+  --gin-bg-item-hover: rgba(47, 109, 208, .08);
   --gin-color-primary-active: #23529c;
   --gin-bg-app-rgb: 249, 251, 254;
   --gin-bg-header: #e6edf9;
@@ -41,6 +47,7 @@
   --gin-color-primary-rgb: 67, 0, 191;
   --gin-color-primary-light-rgb: 217, 204, 242;
   --gin-color-primary-hover: #3900a2;
+  --gin-bg-item-hover: rgba(67, 0, 191, .08);
   --gin-color-primary-active: #32008f;
   --gin-bg-app-rgb: 249, 247, 253;
   --gin-bg-header: #e8e0f7;
@@ -48,13 +55,13 @@
   --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);
   --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .25);
   --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .4);
-  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);
 }
 
 [data-gin-accent=purple] {
   --gin-color-primary-rgb: 91, 0, 255;
   --gin-color-primary-light-rgb: 222, 204, 255;
   --gin-color-primary-hover: #4d00d9;
+  --gin-bg-item-hover: rgba(91, 0, 255, .08);
   --gin-color-primary-active: #4400bf;
   --gin-bg-app-rgb: 250, 247, 255;
   --gin-bg-header: #ebe0ff;
@@ -62,13 +69,13 @@
   --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);
   --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .25);
   --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .4);
-  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);
 }
 
 [data-gin-accent=teal] {
   --gin-color-primary-rgb: 16, 133, 127;
   --gin-color-primary-light-rgb: 207, 231, 229;
   --gin-color-primary-hover: #0e716c;
+  --gin-bg-item-hover: rgba(16, 133, 127, .08);
   --gin-color-primary-active: #0c645f;
   --gin-bg-app-rgb: 248, 251, 251;
   --gin-bg-header: #e2f0f0;
@@ -79,6 +86,7 @@
   --gin-color-primary-rgb: 0, 135, 95;
   --gin-color-primary-light-rgb: 204, 231, 223;
   --gin-color-primary-hover: #007351;
+  --gin-bg-item-hover: rgba(0, 135, 95, .08);
   --gin-color-primary-active: #006547;
   --gin-bg-app-rgb: 247, 251, 250;
   --gin-bg-header: #e0f1ec;
@@ -89,6 +97,7 @@
   --gin-color-primary-rgb: 216, 0, 47;
   --gin-color-primary-light-rgb: 247, 204, 213;
   --gin-color-primary-hover: #b80028;
+  --gin-bg-item-hover: rgba(216, 0, 47, .08);
   --gin-color-primary-active: #a20023;
   --gin-bg-app-rgb: 254, 247, 249;
   --gin-bg-header: #fae0e6;
@@ -99,6 +108,7 @@
   --gin-color-primary-rgb: 218, 99, 1;
   --gin-color-primary-light-rgb: 248, 224, 204;
   --gin-color-primary-hover: #b95401;
+  --gin-bg-item-hover: rgba(218, 99, 1, .08);
   --gin-color-primary-active: #a44a01;
   --gin-bg-app-rgb: 254, 250, 247;
   --gin-bg-header: #fbece1;
@@ -109,6 +119,7 @@
   --gin-color-primary-rgb: 179, 122, 0;
   --gin-color-primary-light-rgb: 240, 228, 204;
   --gin-color-primary-hover: #986800;
+  --gin-bg-item-hover: rgba(179, 122, 0, .08);
   --gin-color-primary-active: #865c00;
   --gin-bg-app-rgb: 253, 251, 247;
   --gin-bg-header: #f6efe0;
@@ -119,6 +130,7 @@
   --gin-color-primary-rgb: 209, 47, 112;
   --gin-color-primary-light-rgb: 246, 213, 226;
   --gin-color-primary-hover: #b2285f;
+  --gin-bg-item-hover: rgba(209, 47, 112, .08);
   --gin-color-primary-active: #9d2354;
   --gin-bg-app-rgb: 254, 249, 251;
   --gin-bg-header: #f9e6ee;
@@ -129,6 +141,7 @@
   --gin-color-primary-rgb: 17, 17, 17;
   --gin-color-primary-light-rgb: 207, 207, 207;
   --gin-color-primary-hover: #0e0e0e;
+  --gin-bg-item-hover: rgba(17, 17, 17, .08);
   --gin-color-primary-active: #0d0d0d;
   --gin-bg-app-rgb: 248, 248, 248;
   --gin-bg-header: #e2e2e2;
@@ -139,6 +152,7 @@
   --gin-color-primary-rgb: 17, 17, 17;
   --gin-color-primary-light-rgb: 207, 207, 207;
   --gin-color-primary-hover: #0e0e0e;
+  --gin-bg-item-hover: rgba(17, 17, 17, .08);
   --gin-color-primary-active: #0d0d0d;
   --gin-bg-app-rgb: 248, 248, 248;
   --gin-bg-header: #e2e2e2;

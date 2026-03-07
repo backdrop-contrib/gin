@@ -13,12 +13,18 @@
  */
 function gin_get_module_libraries() {
   $basethemeurl = backdrop_get_path('theme', 'gin');
+  $css_options = [
+    'type' => 'file',
+    'media' => 'screen',
+    'weight' => 999,
+    'group' => CSS_THEME,
+  ];
   return [
     'gin_admin_bar' => [
       'title' => 'Admin Bar',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/layout/gin_admin_bar.css' => [],
+        $basethemeurl . '/dist/css/layout/gin_admin_bar.css' => $css_options,
       ],
       'module' => 'admin_bar',
     ],
@@ -26,7 +32,7 @@ function gin_get_module_libraries() {
       'title' => 'Chosen',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_chosen.css' => [],
+        $basethemeurl . '/dist/css/components/gin_chosen.css' => $css_options,
       ],
       'module' => 'chosen',
     ],
@@ -34,10 +40,10 @@ function gin_get_module_libraries() {
       'title' => 'CiviCRM',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_civicrm.css' => [
-          'type' => 'file',
-          'media' => 'screen',
-        ],
+        $basethemeurl . '/dist/css/components/gin_civicrm.css' => $css_options,
+      ],
+      'dependencies' => [
+        ['gin', 'gin_select2'],
       ],
       'module' => 'civicrm',
     ],
@@ -48,7 +54,7 @@ function gin_get_module_libraries() {
         $basethemeurl . '/dist/js/ckeditor.js' => ['weight' => 0],
       ],
       'css' => [
-        $basethemeurl . '/dist/css/components/ckeditor.css' => [],
+        $basethemeurl . '/dist/css/components/ckeditor.css' => $css_options,
       ],
       'dependencies' => [
         ['gin', 'gin_once'],
@@ -59,7 +65,7 @@ function gin_get_module_libraries() {
       'title' => 'CKEditor 5',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_ckeditor5.css' => [],
+        $basethemeurl . '/dist/css/components/gin_ckeditor5.css' => $css_options,
       ],
       'module' => 'ckeditor5',
     ],
@@ -67,10 +73,7 @@ function gin_get_module_libraries() {
       'title' => 'Coffee',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_coffee.css' => [
-          'type' => 'file',
-          'media' => 'screen',
-        ],
+        $basethemeurl . '/dist/css/components/gin_coffee.css' => $css_options,
       ],
       'module' => 'coffee',
     ],
@@ -78,7 +81,7 @@ function gin_get_module_libraries() {
       'title' => 'Dashboard',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_dashboard.css' => [],
+        $basethemeurl . '/dist/css/components/gin_dashboard.css' => $css_options,
       ],
       'module' => 'dashboard',
     ],
@@ -86,10 +89,7 @@ function gin_get_module_libraries() {
       'title' => 'Devel',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_devel.css' => [
-          'type' => 'file',
-          'media' => 'screen',
-        ],
+        $basethemeurl . '/dist/css/components/gin_devel.css' => $css_options,
       ],
       'module' => 'devel',
     ],
@@ -97,7 +97,7 @@ function gin_get_module_libraries() {
       'title' => 'Inline entity form',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/inline_entity_form.css' => [],
+        $basethemeurl . '/dist/css/components/inline_entity_form.css' => $css_options,
       ],
       'module' => 'inline_entity_form',
     ],
@@ -105,7 +105,7 @@ function gin_get_module_libraries() {
       'title' => 'Project Installer',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/project_installer.css' => [],
+        $basethemeurl . '/dist/css/components/project_installer.css' => $css_options,
       ],
       'module' => 'installer',
     ],
@@ -113,7 +113,7 @@ function gin_get_module_libraries() {
       'title' => 'Layout Paragraphs',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_layout_paragraphs.css' => [],
+        $basethemeurl . '/dist/css/components/gin_layout_paragraphs.css' => $css_options,
       ],
       'module' => 'layout_paragraphs',
     ],
@@ -121,7 +121,7 @@ function gin_get_module_libraries() {
       'title' => 'Module filter',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/module_filter.css' => [],
+        $basethemeurl . '/dist/css/components/module_filter.css' => $css_options,
       ],
       'module' => 'module_filter',
     ],
@@ -129,7 +129,7 @@ function gin_get_module_libraries() {
       'title' => 'Paragraphs',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_paragraphs.css' => [],
+        $basethemeurl . '/dist/css/components/gin_paragraphs.css' => $css_options,
       ],
       'module' => 'paragraphs',
     ],
@@ -137,7 +137,7 @@ function gin_get_module_libraries() {
       'title' => 'References Dialog',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_references_dialog.css' => [],
+        $basethemeurl . '/dist/css/components/gin_references_dialog.css' => $css_options,
       ],
       'icons' => [
         'plus',
@@ -150,7 +150,7 @@ function gin_get_module_libraries() {
       'title' => 'Select2',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_select2.css' => [],
+        $basethemeurl . '/dist/css/components/gin_select2.css' => $css_options,
       ],
       'module' => 'select2',
     ],
@@ -158,7 +158,7 @@ function gin_get_module_libraries() {
       'title' => 'Simple Environment Indicator',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_simplei.css' => [],
+        $basethemeurl . '/dist/css/components/gin_simplei.css' => $css_options,
       ],
       'module' => 'simplei',
     ],
@@ -166,7 +166,7 @@ function gin_get_module_libraries() {
       'title' => 'Taxonomy Manager',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/gin_taxonomy_manager.css' => [],
+        $basethemeurl . '/dist/css/components/gin_taxonomy_manager.css' => $css_options,
       ],
       'module' => 'taxonomy_manager',
     ],
@@ -174,7 +174,7 @@ function gin_get_module_libraries() {
       'title' => 'Webform',
       'version' => BACKDROP_VERSION,
       'css' => [
-        $basethemeurl . '/dist/css/components/webform.css' => [],
+        $basethemeurl . '/dist/css/components/webform.css' => $css_options,
       ],
       'module' => 'webform',
     ],

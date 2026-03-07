@@ -33,6 +33,10 @@ $ginColors: (
   custom: #111111,
 );
 
+:root {
+  --gin-bg-item-hover: rgba(5, 80, 230, .08);
+}
+
 @each $name, $color in $ginColors {
   [data-gin-accent=#{'' + $name}] {
     $bgColor: mix(white, $color, 97%);
@@ -42,6 +46,7 @@ $ginColors: (
     --gin-color-primary-rgb: #{color.red($color)}, #{color.green($color)}, #{color.blue($color)};
     --gin-color-primary-light-rgb: #{color.red($lightColor)}, #{color.green($lightColor)}, #{color.blue($lightColor)};
     --gin-color-primary-hover: #{mix(black, $color, 15%)};
+    --gin-bg-item-hover: rgba(#{color.red($color)}, #{color.green($color)}, #{color.blue($color)}, .08);
     --gin-color-primary-active: #{mix(black, $color, 25%)};
     --gin-bg-app-rgb: #{color.red($bgColor)}, #{color.green($bgColor)}, #{color.blue($bgColor)};
     --gin-bg-header: #{mix(white, $color, 88%)};
@@ -51,7 +56,6 @@ $ginColors: (
       --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);
       --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .25);
       --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .4);
-      --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .08);
     }
   }
 }

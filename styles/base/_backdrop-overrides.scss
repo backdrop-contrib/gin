@@ -3,26 +3,6 @@
 // Periodically it may be good to pull out sections that got too large and
 // deserve their own files.
 
-// Default variables (may need adjustment later).
-:root {
-  --line-height: 1.5;
-
-  // Default accents
-  --gin-color-primary-rgb: 5, 80, 230;
-  --gin-color-primary-hover: #0444c4;
-  --gin-color-primary-active: #043cad;
-  --gin-bg-header: #e1eafc;
-  --gin-color-primary: rgb(var(--gin-color-primary-rgb));
-  --gin-color-primary-light: rgba(var(--gin-color-primary-rgb), .15);
-  --gin-bg-app-rgb: 248, 250, 254;
-  --gin-bg-app: rgb(var(--gin-bg-app-rgb));
-  --gin-color-sticky-rgb: 235, 241, 253;
-  --gin-bg-item-hover: rgba(var(--gin-color-primary-rgb), .1);
-  --gin-color-primary-light-hover: rgba(var(--gin-color-primary-rgb), .2);
-  --gin-color-primary-light-active: rgba(var(--gin-color-primary-rgb), .3);
-  --gin-shadow-primary-light: rgba(var(--gin-color-primary-rgb), .45);
-}
-
 ul {
   list-style-type: disc;
   list-style-image: none;
