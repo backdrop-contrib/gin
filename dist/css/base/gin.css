@@ -1777,33 +1777,33 @@ table tr.disabled.even {
   background-color: #f0f1f9;
 }
 
-tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
   cursor: move;
 }
 
-tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover {
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover {
   background-color: var(--gin-bg-item);
 }
 
-tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
   transform: scale(1.1);
 }
 
 @media (forced-colors: none) {
-  tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
+  [data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])):hover .handle {
     background-color: var(--gin-color-primary);
   }
 }
 
-tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle:focus .handle {
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle:focus .handle {
   transform: scale(1.25);
 }
 
-tr.draggable.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle .handle {
+[data-gin-tabledrag-row=enabled] tr.draggable.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) .tabledrag-handle .handle {
   transform: scale(1.25);
 }
 
-tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
+[data-gin-tabledrag-row=enabled] tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
   cursor: row-resize;
 }
 

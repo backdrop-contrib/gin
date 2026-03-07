@@ -156,7 +156,7 @@ $form['focus_group']['focus_color'] = [
 // High contrast mode.
 $form['high_contrast_mode'] = [
   '#type' => 'checkbox',
-  '#title' => t('Increase contrast') . $experimental_label,
+  '#title' => t('Increase contrast') . $beta_label,
   '#description' => t('Enables high contrast mode.'),
   '#default_value' => theme_get_setting('high_contrast_mode', 'gin'),
 ];
@@ -172,9 +172,17 @@ $form['edit_form_sidebar'] = [
 // Sticky action toggle.
 $form['sticky_action_buttons'] = [
   '#type' => 'checkbox',
-  '#title' => t('Enable sticky action buttons') . $beta_label . $new_label,
+  '#title' => t('Enable sticky action buttons') . $beta_label,
   '#description' => t('Displays all actions of the form in the sticky header.'),
   '#default_value' => theme_get_setting('sticky_action_buttons', 'gin'),
+];
+
+// Sticky action toggle.
+$form['tabledrag_row'] = [
+  '#type' => 'checkbox',
+  '#title' => t('Drag entire row') . $experimental_label . $new_label,
+  '#description' => t('When table rows can be reordered by dragging, allow dragging anywhere in the row.'),
+  '#default_value' => theme_get_setting('tabledrag_row', 'gin'),
 ];
 
 // Toolbar setting.

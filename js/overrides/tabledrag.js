@@ -565,7 +565,9 @@
       $item.find('td').eq(0).prepend($handle);
     }
 
-    $handle.closest('tr').on('mousedown touchstart pointerdown', (event) => {
+    const $draggableRows = $('body').data('gin-tabledrag-row');
+    let $dragOject = ($draggableRows === 'enabled') ? $handle.closest('tr') : $handle;
+    $dragOject.on('mousedown touchstart pointerdown', (event) => {
       // Only trigger if the event target is the <tr> or <td> or <div> but not a
       // child element like input/select/etc.
       if (event.target !== event.currentTarget && !$(event.target).is('td') && !$(event.target).is('div')) {

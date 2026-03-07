@@ -16,42 +16,44 @@
   }
 }
 
-tr.draggable {
-  &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
-    cursor: move;
+[data-gin-tabledrag-row="enabled"] {
+  tr.draggable {
+    &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+      cursor: move;
 
-    &:hover {
-      background-color: var(--gin-bg-item);
+      &:hover {
+        background-color: var(--gin-bg-item);
 
-      .handle {
-        transform: scale(1.1);
+        .handle {
+          transform: scale(1.1);
 
-        @media (forced-colors: none) {
-          background-color: var(--gin-color-primary);
+          @media (forced-colors: none) {
+            background-color: var(--gin-color-primary);
+          }
+        }
+      }
+
+    }
+    &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+      & .tabledrag-handle:focus {
+        .handle {
+          transform: scale(1.25);
         }
       }
     }
 
-  }
-  &:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
-    & .tabledrag-handle:focus {
-      .handle {
-        transform: scale(1.25);
+    &.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
+      & .tabledrag-handle {
+        .handle {
+          transform: scale(1.25);
+        }
       }
     }
   }
 
-  &.drag:has(> td > a.tabledrag-handle:not([style="display: none;"])) {
-    & .tabledrag-handle {
-      .handle {
-        transform: scale(1.25);
-      }
-    }
+  tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
+    cursor: row-resize;
   }
-}
-
-tr.draggable:has(> td > a.tabledrag-handle-y:not([style="display: none;"])) {
-  cursor: row-resize;
 }
 
 .tabledrag-toggle-weight-wrapper {
