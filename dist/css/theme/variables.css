@@ -82,6 +82,7 @@
   --gin-border-m: .5rem;
   --gin-border-l: .75rem;
   --gin-border-xl: 1rem;
+  --gin-border-xxl: 2rem;
   --gin-border-color: #d4d4d8;
   --gin-border-color-secondary: rgba(0, 0, 0, .08);
   --gin-border-color-layer: rgba(0, 0, 0, .08);

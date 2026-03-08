@@ -271,6 +271,15 @@ html.admin-bar body {
   border-color: var(--gin-bg-item-hover) !important;
 }
 
+.crm-container .crm-submit-buttons a.button, .crm-container .crm-submit-buttons a.button:link, .crm-container .crm-submit-buttons a.button:visited {
+  font-size: var(--gin-font-size);
+  padding-block: calc(var(--gin-spacing-xs) - 2px);
+  padding-inline: var(--gin-spacing-s);
+  margin-inline-end: .25em;
+  min-height: 2rem;
+  border-radius: var(--gin-border-xxl);
+}
+
 .crm-container .messages details summary,
 .crm-container .messages fieldset legend,
 .crm-container crm-dashboard details summary,
@@ -376,7 +385,21 @@ html.admin-bar body {
 .crm-container .ui-tabs ul.ui-tabs-nav a:not(.button),
 .crm-container .nav-tabs > li > a,
 .crm-container .panel-heading .nav-tabs > li > a {
+  font-size: var(--gin-font-size);
+  padding-block: calc(var(--gin-spacing-xs) - 2px);
+  padding-inline: var(--gin-spacing-s);
   margin-inline-end: var(--gin-spacing-xxs);
+  min-height: 2rem;
+  border-radius: var(--gin-border-xxl);
+}
+
+.crm-container .ui-tabs ul.ui-tabs-nav > li {
+  border-radius: var(--gin-border-xxl);
+}
+
+.crm-container .ui-tabs ul.ui-tabs-nav .ui-tabs-active a:not(.button) {
+  color: var(--gin-color-primary-active);
+  background: var(--gin-color-primary-light);
 }
 
 .crm-container button,
@@ -419,33 +442,51 @@ html.admin-bar body {
   padding-inline: 0 1.5rem;
 }
 
-.crm-container th > a, .crm-container th.sorting:not(:has(> a)),
+.crm-container th > a, .crm-container th.sorting:not(:has(> a)), .crm-container th.sorting_asc:not(:has(> a)), .crm-container th.sorting_desc:not(:has(> a)),
 .crm-container table thead.sticky th > a,
 .crm-container table thead.sticky th.sorting:not(:has(> a)),
+.crm-container table thead.sticky th.sorting_asc:not(:has(> a)),
+.crm-container table thead.sticky th.sorting_desc:not(:has(> a)),
 .crm-container table.dataTable thead th > a,
 .crm-container table.dataTable thead th.sorting:not(:has(> a)),
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a)),
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a)),
 .crm-container tr.columnheader td > a,
-.crm-container tr.columnheader td.sorting:not(:has(> a)) {
+.crm-container tr.columnheader td.sorting:not(:has(> a)),
+.crm-container tr.columnheader td.sorting_asc:not(:has(> a)),
+.crm-container tr.columnheader td.sorting_desc:not(:has(> a)) {
   padding-block: var(--gin-spacing-xs);
 }
 
-.crm-container th > a:hover, .crm-container th.sorting:not(:has(> a)):hover,
+.crm-container th > a:hover, .crm-container th.sorting:not(:has(> a)):hover, .crm-container th.sorting_asc:not(:has(> a)):hover, .crm-container th.sorting_desc:not(:has(> a)):hover,
 .crm-container table thead.sticky th > a:hover,
 .crm-container table thead.sticky th.sorting:not(:has(> a)):hover,
+.crm-container table thead.sticky th.sorting_asc:not(:has(> a)):hover,
+.crm-container table thead.sticky th.sorting_desc:not(:has(> a)):hover,
 .crm-container table.dataTable thead th > a:hover,
 .crm-container table.dataTable thead th.sorting:not(:has(> a)):hover,
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a)):hover,
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a)):hover,
 .crm-container tr.columnheader td > a:hover,
-.crm-container tr.columnheader td.sorting:not(:has(> a)):hover {
+.crm-container tr.columnheader td.sorting:not(:has(> a)):hover,
+.crm-container tr.columnheader td.sorting_asc:not(:has(> a)):hover,
+.crm-container tr.columnheader td.sorting_desc:not(:has(> a)):hover {
   color: var(--gin-color-primary);
 }
 
-.crm-container th > a::before, .crm-container th.sorting:not(:has(> a))::before,
+.crm-container th > a::before, .crm-container th.sorting:not(:has(> a))::before, .crm-container th.sorting_asc:not(:has(> a))::before, .crm-container th.sorting_desc:not(:has(> a))::before,
 .crm-container table thead.sticky th > a::before,
 .crm-container table thead.sticky th.sorting:not(:has(> a))::before,
+.crm-container table thead.sticky th.sorting_asc:not(:has(> a))::before,
+.crm-container table thead.sticky th.sorting_desc:not(:has(> a))::before,
 .crm-container table.dataTable thead th > a::before,
 .crm-container table.dataTable thead th.sorting:not(:has(> a))::before,
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a))::before,
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a))::before,
 .crm-container tr.columnheader td > a::before,
-.crm-container tr.columnheader td.sorting:not(:has(> a))::before {
+.crm-container tr.columnheader td.sorting:not(:has(> a))::before,
+.crm-container tr.columnheader td.sorting_asc:not(:has(> a))::before,
+.crm-container tr.columnheader td.sorting_desc:not(:has(> a))::before {
   position: absolute;
   z-index: 0;
   inset-block-start: 0;
@@ -456,31 +497,43 @@ html.admin-bar body {
   border-block-end: .125rem solid transparent;
 }
 
-.crm-container th > a:hover::before, .crm-container th.sorting:not(:has(> a)):hover::before,
+.crm-container th > a:hover::before, .crm-container th.sorting:not(:has(> a)):hover::before, .crm-container th.sorting_asc:not(:has(> a)):hover::before, .crm-container th.sorting_desc:not(:has(> a)):hover::before,
 .crm-container table thead.sticky th > a:hover::before,
 .crm-container table thead.sticky th.sorting:not(:has(> a)):hover::before,
+.crm-container table thead.sticky th.sorting_asc:not(:has(> a)):hover::before,
+.crm-container table thead.sticky th.sorting_desc:not(:has(> a)):hover::before,
 .crm-container table.dataTable thead th > a:hover::before,
 .crm-container table.dataTable thead th.sorting:not(:has(> a)):hover::before,
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a)):hover::before,
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a)):hover::before,
 .crm-container tr.columnheader td > a:hover::before,
-.crm-container tr.columnheader td.sorting:not(:has(> a)):hover::before {
+.crm-container tr.columnheader td.sorting:not(:has(> a)):hover::before,
+.crm-container tr.columnheader td.sorting_asc:not(:has(> a)):hover::before,
+.crm-container tr.columnheader td.sorting_desc:not(:has(> a)):hover::before {
   border-block-end: .1875rem solid var(--gin-color-primary-active);
 }
 
-[dir="ltr"] .crm-container th > a::after, [dir="ltr"] .crm-container th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container table thead.sticky th > a::after, [dir="ltr"] .crm-container table thead.sticky th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container table.dataTable thead th > a::after, [dir="ltr"] .crm-container table.dataTable thead th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container tr.columnheader td > a::after, [dir="ltr"] .crm-container tr.columnheader td.sorting:not(:has(> a))::after {
+[dir="ltr"] .crm-container th > a::after, [dir="ltr"] .crm-container th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container th.sorting_asc:not(:has(> a))::after, [dir="ltr"] .crm-container th.sorting_desc:not(:has(> a))::after, [dir="ltr"] .crm-container table thead.sticky th > a::after, [dir="ltr"] .crm-container table thead.sticky th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container table thead.sticky th.sorting_asc:not(:has(> a))::after, [dir="ltr"] .crm-container table thead.sticky th.sorting_desc:not(:has(> a))::after, [dir="ltr"] .crm-container table.dataTable thead th > a::after, [dir="ltr"] .crm-container table.dataTable thead th.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container table.dataTable thead th.sorting_asc:not(:has(> a))::after, [dir="ltr"] .crm-container table.dataTable thead th.sorting_desc:not(:has(> a))::after, [dir="ltr"] .crm-container tr.columnheader td > a::after, [dir="ltr"] .crm-container tr.columnheader td.sorting:not(:has(> a))::after, [dir="ltr"] .crm-container tr.columnheader td.sorting_asc:not(:has(> a))::after, [dir="ltr"] .crm-container tr.columnheader td.sorting_desc:not(:has(> a))::after {
   inset-inline-end: 0;
 }
 
-[dir="rtl"] .crm-container th > a::after, [dir="rtl"] .crm-container th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container table thead.sticky th > a::after, [dir="rtl"] .crm-container table thead.sticky th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container table.dataTable thead th > a::after, [dir="rtl"] .crm-container table.dataTable thead th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container tr.columnheader td > a::after, [dir="rtl"] .crm-container tr.columnheader td.sorting:not(:has(> a))::after {
+[dir="rtl"] .crm-container th > a::after, [dir="rtl"] .crm-container th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container th.sorting_asc:not(:has(> a))::after, [dir="rtl"] .crm-container th.sorting_desc:not(:has(> a))::after, [dir="rtl"] .crm-container table thead.sticky th > a::after, [dir="rtl"] .crm-container table thead.sticky th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container table thead.sticky th.sorting_asc:not(:has(> a))::after, [dir="rtl"] .crm-container table thead.sticky th.sorting_desc:not(:has(> a))::after, [dir="rtl"] .crm-container table.dataTable thead th > a::after, [dir="rtl"] .crm-container table.dataTable thead th.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container table.dataTable thead th.sorting_asc:not(:has(> a))::after, [dir="rtl"] .crm-container table.dataTable thead th.sorting_desc:not(:has(> a))::after, [dir="rtl"] .crm-container tr.columnheader td > a::after, [dir="rtl"] .crm-container tr.columnheader td.sorting:not(:has(> a))::after, [dir="rtl"] .crm-container tr.columnheader td.sorting_asc:not(:has(> a))::after, [dir="rtl"] .crm-container tr.columnheader td.sorting_desc:not(:has(> a))::after {
   inset-inline-start: 0;
 }
 
-.crm-container th > a::after, .crm-container th.sorting:not(:has(> a))::after,
+.crm-container th > a::after, .crm-container th.sorting:not(:has(> a))::after, .crm-container th.sorting_asc:not(:has(> a))::after, .crm-container th.sorting_desc:not(:has(> a))::after,
 .crm-container table thead.sticky th > a::after,
 .crm-container table thead.sticky th.sorting:not(:has(> a))::after,
+.crm-container table thead.sticky th.sorting_asc:not(:has(> a))::after,
+.crm-container table thead.sticky th.sorting_desc:not(:has(> a))::after,
 .crm-container table.dataTable thead th > a::after,
 .crm-container table.dataTable thead th.sorting:not(:has(> a))::after,
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a))::after,
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a))::after,
 .crm-container tr.columnheader td > a::after,
-.crm-container tr.columnheader td.sorting:not(:has(> a))::after {
+.crm-container tr.columnheader td.sorting:not(:has(> a))::after,
+.crm-container tr.columnheader td.sorting_asc:not(:has(> a))::after,
+.crm-container tr.columnheader td.sorting_desc:not(:has(> a))::after {
   background: var(--gin-color-text-light);
   -webkit-mask-image: url("../../media/sprite.svg#sort-view");
           mask-image: url("../../media/sprite.svg#sort-view");
@@ -498,36 +551,24 @@ html.admin-bar body {
   inset-inline-end: 1rem;
 }
 
-.crm-container th > a.sorting_asc::after, .crm-container th.sorting:not(:has(> a)).sorting_asc::after,
-.crm-container table thead.sticky th > a.sorting_asc::after,
-.crm-container table thead.sticky th.sorting:not(:has(> a)).sorting_asc::after,
-.crm-container table.dataTable thead th > a.sorting_asc::after,
-.crm-container table.dataTable thead th.sorting:not(:has(> a)).sorting_asc::after,
-.crm-container tr.columnheader td > a.sorting_asc::after,
-.crm-container tr.columnheader td.sorting:not(:has(> a)).sorting_asc::after {
-  -webkit-mask-image: url("../../media/sprite.svg#sort-asc-view");
-          mask-image: url("../../media/sprite.svg#sort-asc-view");
-  background: var(--gin-color-primary-active);
-}
-
-.crm-container th > a.sorting_desc::after, .crm-container th.sorting:not(:has(> a)).sorting_desc::after,
-.crm-container table thead.sticky th > a.sorting_desc::after,
-.crm-container table thead.sticky th.sorting:not(:has(> a)).sorting_desc::after,
-.crm-container table.dataTable thead th > a.sorting_desc::after,
-.crm-container table.dataTable thead th.sorting:not(:has(> a)).sorting_desc::after,
-.crm-container tr.columnheader td > a.sorting_desc::after,
-.crm-container tr.columnheader td.sorting:not(:has(> a)).sorting_desc::after {
-  -webkit-mask-image: url("../../media/sprite.svg#sort-desc-view");
-          mask-image: url("../../media/sprite.svg#sort-desc-view");
-  background: var(--gin-color-primary-active);
-}
-
 .crm-container th > a:hover::before,
 .crm-container table thead.sticky th > a:hover::before,
 .crm-container table.dataTable thead th > a:hover::before,
 .crm-container tr.columnheader td > a:hover::before {
   inset-inline-start: 1rem;
   inset-inline-end: 1rem;
+}
+
+.crm-container table.dataTable thead th.sorting_asc:not(:has(> a))::after {
+  -webkit-mask-image: url("../../media/sprite.svg#sort-asc-view");
+          mask-image: url("../../media/sprite.svg#sort-asc-view");
+  background: var(--gin-color-primary-active);
+}
+
+.crm-container table.dataTable thead th.sorting_desc:not(:has(> a))::after {
+  -webkit-mask-image: url("../../media/sprite.svg#sort-desc-view");
+          mask-image: url("../../media/sprite.svg#sort-desc-view");
+  background: var(--gin-color-primary-active);
 }
 
 .crm-container table:not(thead) thead tr {
@@ -566,6 +607,13 @@ html.admin-bar body {
   border-radius: var(--gin-border-xs);
   box-sizing: border-box;
   margin-inline-end: var(--gin-spacing-xs);
+  padding-inline: var(--gin-spacing-xxs);
+  padding-block: var(--gin-spacing-xs);
+}
+
+.crm-container input[type=checkbox]:focus, .crm-container input[type=radio]:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
 }
 
 .crm-container details.crm-accordion-settings > .crm-accordion-body {
@@ -583,6 +631,41 @@ html.admin-bar body {
   background-color: var(--gin-color-disabled-bg);
   border-color: --gin-color-disabled;
   cursor: not-allowed;
+}
+
+.crm-container .crm-dashlet {
+  margin-block-end: var(--gin-spacing-l);
+}
+
+.crm-container .crm-dashlet-header {
+  box-shadow: var(--gin-shadow-l1);
+}
+
+.crm-container .admin-section-items {
+  padding: var(--gin-spacing-l);
+}
+
+.crm-container .admin-section-items > dl {
+  position: relative;
+  padding-block: var(--gin-spacing-l);
+  border-block-end: 1px solid var(--gin-border-color-table);
+}
+
+.crm-container .admin-section-items > dl dd {
+  margin-block-start: var(--gin-spacing-s);
+  margin-inline-start: 0;
+}
+
+.crm-container h3,
+#bootstrap-theme h3:not(.crm-dashlet-header h3) {
+  background-color: var(--gin-bg-header);
+  color: var(--gin-color-primary-active);
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  margin: var(--gin-spacing-m) 0;
+}
+
+.crm-content-block div:first-of-type h3 {
+  margin-block-start: 0;
 }
 
 .ui-widget.ui-widget-content.crm-tabset {
@@ -705,6 +788,26 @@ html.admin-bar body {
   background: var(--gin-bg-app) !important;
 }
 
+crm-dashlet {
+  border-radius: var(--gin-border-l);
+  box-shadow: var(--gin-shadow-l1);
+  overflow: hidden;
+  display: block;
+}
+
+crm-inactive-dashlet {
+  background: var(--gin-color-disabled-bg);
+  box-shadow: var(--gin-shadow-l1);
+  border: 1px solid var(--gin-border-color-layer);
+  border-radius: var(--gin-border-l);
+  display: block;
+}
+
+.crm-flex-box,
+#civicrm-dashboard > .crm-flex-box {
+  gap: var(--gin-spacing-l);
+}
+
 .crm-form-block {
   --crm-padding-inset: 0;
 }
@@ -747,7 +850,8 @@ html.admin-bar body {
   border: none;
 }
 
-.action-link.crm-activityLinks::before {
+.crm-container .action-link::before,
+.crm-container .action-link > a::before {
   display: none;
 }
 

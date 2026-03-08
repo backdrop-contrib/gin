@@ -388,7 +388,7 @@
   font-size: var(--gin-font-size-xs);
   font-weight: var(--gin-font-weight-semibold);
   margin-inline-end: .25em;
-  border-radius: 2rem;
+  border-radius: var(--gin-border-xxl);
 }
 
 .pb-project-categories__item,

@@ -1354,6 +1354,11 @@ table tbody td {
   padding: var(--gin-spacing-density-m) var(--gin-spacing-m);
 }
 
+table tbody td hr {
+  margin: var(--gin-spacing-xs) 0;
+  border-color: var(--gin-border-color-table);
+}
+
 table tr,
 table tr:focus-within,
 table .draggable-table.tabledrag-disabled tr {

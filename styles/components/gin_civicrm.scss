@@ -35,6 +35,21 @@ html.admin-bar body {
     }
   }
 
+  .crm-submit-buttons {
+    a.button {
+      &,
+      &:link,
+      &:visited {
+        font-size: var(--gin-font-size);
+        padding-block: calc(var(--gin-spacing-xs) - 2px);
+        padding-inline: var(--gin-spacing-s);
+        margin-inline-end: .25em;
+        min-height: 2rem;
+        border-radius: var(--gin-border-xxl);
+      }
+    }
+  }
+
   .messages,
   crm-dashboard {
     details summary,
@@ -146,7 +161,19 @@ html.admin-bar body {
   .ui-tabs ul.ui-tabs-nav a:not(.button),
   .nav-tabs > li > a,
   .panel-heading .nav-tabs > li > a {
+    font-size: var(--gin-font-size);
+    padding-block: calc(var(--gin-spacing-xs) - 2px);
+    padding-inline: var(--gin-spacing-s);
     margin-inline-end: var(--gin-spacing-xxs);
+    min-height: 2rem;
+    border-radius: var(--gin-border-xxl);
+  }
+  .ui-tabs ul.ui-tabs-nav > li {
+    border-radius: var(--gin-border-xxl);
+  }
+  .ui-tabs ul.ui-tabs-nav .ui-tabs-active a:not(.button) {
+    color: var(--gin-color-primary-active);
+    background: var(--gin-color-primary-light);
   }
 
   button,
@@ -186,7 +213,9 @@ html.admin-bar body {
       padding-inline: 0 1.5rem;
     }
     > a,
-    &.sorting:not(:has(> a)) {
+    &.sorting:not(:has(> a)),
+    &.sorting_asc:not(:has(> a)),
+    &.sorting_desc:not(:has(> a)) {
       padding-block: var(--gin-spacing-xs);
 
       &:hover {
@@ -223,18 +252,20 @@ html.admin-bar body {
         opacity: .5;
         inset-inline-end: 1rem;
       }
-      &.sorting_asc::after {
-        mask-image: icon('sort-asc');
-        background: var(--gin-color-primary-active);
-      }
-      &.sorting_desc::after {
-        mask-image: icon('sort-desc');
-        background: var(--gin-color-primary-active);
-      }
     }
     > a:hover::before {
       inset-inline-start: 1rem;
       inset-inline-end: 1rem;
+    }
+  }
+  table.dataTable thead th {
+    &.sorting_asc:not(:has(> a))::after {
+      mask-image: icon('sort-asc');
+      background: var(--gin-color-primary-active);
+    }
+    &.sorting_desc:not(:has(> a))::after {
+      mask-image: icon('sort-desc');
+      background: var(--gin-color-primary-active);
     }
   }
 
@@ -275,6 +306,13 @@ html.admin-bar body {
       border-radius: var(--gin-border-xs);
       box-sizing: border-box;
       margin-inline-end: var(--gin-spacing-xs);
+      padding-inline: var(--gin-spacing-xxs);
+      padding-block: var(--gin-spacing-xs);
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
+      }
     }
   }
 
@@ -297,6 +335,42 @@ html.admin-bar body {
     }
   }
 
+  .crm-dashlet {
+    margin-block-end: var(--gin-spacing-l);
+  }
+
+  .crm-dashlet-header {
+    box-shadow: var(--gin-shadow-l1);
+  }
+
+  .admin-section-items {
+    padding: var(--gin-spacing-l);
+
+    > dl {
+      position: relative;
+      padding-block: var(--gin-spacing-l);
+      border-block-end: 1px solid var(--gin-border-color-table);
+
+      dd {
+        margin-block-start: var(--gin-spacing-s);
+        margin-inline-start: 0;
+      }
+    }
+  }
+}
+
+.crm-container h3,
+#bootstrap-theme h3:not(.crm-dashlet-header h3) {
+  background-color: var(--gin-bg-header);
+  color: var(--gin-color-primary-active);
+  padding: var(--gin-spacing-m) var(--gin-spacing-l);
+  margin: var(--gin-spacing-m) 0;
+}
+
+.crm-content-block {
+  div:first-of-type h3 {
+    margin-block-start: 0;
+  }
 }
 
 .ui-widget.ui-widget-content.crm-tabset {
@@ -439,6 +513,26 @@ html.admin-bar body {
   }
 }
 
+crm-dashlet {
+  border-radius: var(--gin-border-l);
+  box-shadow: var(--gin-shadow-l1);
+  overflow: hidden;
+  display: block;
+}
+
+crm-inactive-dashlet {
+  background: var(--gin-color-disabled-bg);
+  box-shadow: var(--gin-shadow-l1);
+  border: 1px solid var(--gin-border-color-layer);
+  border-radius: var(--gin-border-l);
+  display: block;
+}
+
+.crm-flex-box,
+#civicrm-dashboard > .crm-flex-box {
+  gap: var(--gin-spacing-l);
+}
+
 .crm-form-block {
   --crm-padding-inset: 0;
 
@@ -473,8 +567,11 @@ html.admin-bar body {
   }
 }
 
-.action-link.crm-activityLinks::before {
-  display: none;
+.crm-container {
+  .action-link::before,
+  .action-link > a::before {
+    display: none;
+  }
 }
 
 .crm-quickSearch-results a {
