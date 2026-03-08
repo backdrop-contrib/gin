@@ -9,6 +9,10 @@
   }
 }
 
+html.admin-bar body {
+  background-color: var(--gin-bg-app);
+}
+
 #admin-bar {
   .civicrm::before {
     mask-image: icon('civicrm');
@@ -115,6 +119,20 @@
       color: var(--gin-color-text);
     }
   }
+
+  #civicrm-footer {
+    .status a {
+      color: var(--gin-color-button-text);
+    }
+    .status.crm-error a {
+      color: var(--gin-color-danger-lightest);
+    }
+
+    .crm-warning {
+      background-color: var(--gin-color-warning);
+    }
+  }
+
   .crm-accordion-light > summary,
   #contact-summary summary {
     padding-block: var(--gin-spacing-m);
@@ -168,7 +186,7 @@
       padding-inline: 0 1.5rem;
     }
     > a,
-    &:not(:has(> a)) {
+    &.sorting:not(:has(> a)) {
       padding-block: var(--gin-spacing-xs);
 
       &:hover {
@@ -180,10 +198,9 @@
         z-index: 0;
         inset-block-start: 0;
         inset-block-end: -2px;
-        inset-inline-start: 1rem;
-        inset-inline-end: 1rem;
         display: block;
-        content: "";
+        content: "" !important;
+        min-width: calc(100% - 1rem);
         border-block-end: .125rem solid transparent;
       }
       &:hover::before {
@@ -214,6 +231,10 @@
         mask-image: icon('sort-desc');
         background: var(--gin-color-primary-active);
       }
+    }
+    > a:hover::before {
+      inset-inline-start: 1rem;
+      inset-inline-end: 1rem;
     }
   }
 
@@ -360,7 +381,7 @@
       color: var(--gin-color-warning);
     }
     &.crm-severity-error {
-      color: var(--gin-color-error);
+      color: var(--gin-color-danger);
     }
   }
 
@@ -385,16 +406,6 @@
 
   &:first-of-type {
     border-block-start: 1px solid var(--gin-border-color-table);
-  }
-}
-
-#civicrm-footer {
-  .status a {
-    color: var(--gin-color-button-text);
-  }
-
-  .crm-warning {
-    background-color: var(--gin-color-warning);
   }
 }
 
@@ -460,4 +471,21 @@
       border: none;
     }
   }
+}
+
+.action-link.crm-activityLinks::before {
+  display: none;
+}
+
+.crm-quickSearch-results a {
+  padding: var(--gin-spacing-xs) var(--gin-spacing-s);
+  margin: var(--gin-spacing-xxs) 0;
+
+  &:hover {
+    background-color: var(--gin-bg-item-hover);
+  }
+}
+.crm-quickSearchField input {
+  background-color: var(--gin-bg-input);
+  border: 1px solid var(--gin-border-color-form-element);
 }

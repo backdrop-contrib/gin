@@ -42,9 +42,6 @@ function gin_get_module_libraries() {
       'css' => [
         $basethemeurl . '/dist/css/components/gin_civicrm.css' => $css_options,
       ],
-      'dependencies' => [
-        ['gin', 'gin_select2'],
-      ],
       'module' => 'civicrm',
     ],
     'gin_ckeditor' => [

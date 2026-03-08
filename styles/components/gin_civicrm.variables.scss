@@ -99,7 +99,7 @@
   --crm-form-block-box-shadow: var(--gin-shadow-l1);
   --crm-form-block-bg-color: var(--gin-bg-layer);
   --crm-form-block-padding: var(--crm-l-medium);
-  --crm-form-block-border-radius: var(--crm-l-radius);
+  --crm-form-block-border-radius: var(--gin-border-l);
   --crm-form-fieldset-border-color: var(--crm-c-gray-400);
   --crm-form-fieldset-border-width: 1px 0 0 0;
   --crm-form-fieldset-padding: var(--crm-padding-reg) var(--crm-padding-small);
@@ -145,7 +145,7 @@
   --crm-tab-count-color: var(--crm-text-light-color);
   --crm-tab-border: 1px solid var(--crm-c-gray-400);
   --crm-tab-bg-active: var(--crm-container-bg-color);
-  --crm-tab-radius: 2rem;
+  --crm-tab-radius: var(--gin-border-l);
   --crm-tab-padding: var(--gin-spacing-m) var(--gin-spacing-l);
   /* Tables */
   --crm-table-bg-color: transparent;
@@ -169,14 +169,14 @@
   --crm-contact-tab-width: auto; /* 100% to fill column width, auto to only cover contents */
   --crm-contact-tab-align: right;
   --crm-contact-tab-hang: 0 -1px 0 0; /* lip to extend tab flush with active region - set to 0 for no lip */
-  --crm-contact-tab-radius: var(--crm-contact-radius) 0 0 var(--crm-contact-radius);
+  --crm-contact-tab-radius: var(--gin-border-l) 0 0 var(--gin-border-l);
   --crm-contact-summary-row-bg-color: var(--crm-layer2-bg-color);
   --crm-contact-heading-inset: var(--crm-contact-side-tabs-width);
   --crm-contact-header-padding: var(--gin-spacing-m) var(--gin-spacing-l);
   --crm-contact-panel-padding: var(--crm-l-reg);
   --crm-contact-panel-bg-color: var(--crm-contact-tab-hover-bg-color);
   --crm-contact-panel-border: var(--crm-border);
-  --crn-dash-panel-radius: var(--crm-contact-radius);
+  --crn-dash-panel-radius: var(--gin-border-l);
   --crm-contact-image-size: 100px;
   --crm-contact-image-radius: 200px;
   --crm-contact-image-right: 0; /* distance from right of dashboard */
@@ -188,15 +188,15 @@
   --crm-dialog-header-color: var(--crm-text-color);
   --crm-dialog-header-size: var(--crm-l-reg);
   --crm-dialog-header-padding: var(--crm-l-small) var(--gin-spacing-m) var(--crm-l-small) var(--crm-l-medium-2);
-  --crm-dialog-header-radius: var(--crm-dialog-radius);
+  --crm-dialog-header-radius: var(--gin-border-l);
   --crm-dialog-body-bg-color: var(--crm-container-bg-color);
   --crm-dialog-body-padding: var(--crm-l-reg);
   /* Dashlet */
-  --crm-dashlet-border: var(--crm-border);
+  --crm-dashlet-border: 1px solid var(--gin-border-color-layer);
   --crm-dashlet-padding: 0;
-  --crm-dashlet-content-padding: var(--crm-l-medium);
-  --crm-dashlet-radius: var(--crm-l-radius) var(--crm-l-radius) 0 0;
-  --crm-dashlet-bg-color: var(--gin-bg-app);
+  --crm-dashlet-content-padding: var(--gin-spacing-l);
+  --crm-dashlet-radius: var(--gin-border-l);
+  --crm-dashlet-bg-color: var(--gin-bg-layer);
   --crm-dashlet-header-bg-color: transparent;
   --crm-dashlet-tabs-border: 0;
   /* Button dropdowns */
