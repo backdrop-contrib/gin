@@ -104,7 +104,8 @@
 }
 
 .form-item-region-count {
-  .form-radio {
+  .form-radio,
+  input[type="radio"] {
     float: none;
   }
 }
@@ -112,7 +113,8 @@
 .form-item-region-style,
 .layout-settings-form .layout-options {
   .form-type-radio {
-    input.form-radio {
+    input.form-radio,
+    input[type="radio"] {
       position: absolute;
       width: 1px;
       height: 1px;

@@ -874,6 +874,11 @@
 }
 
 .ui-dialog .form-radio, .ui-dialog .form-radio:hover, .ui-dialog .form-radio:active, .ui-dialog .form-radio:focus, .ui-dialog .form-radio:hover:focus,
+.ui-dialog input[type=radio],
+.ui-dialog input[type=radio]:hover,
+.ui-dialog input[type=radio]:active,
+.ui-dialog input[type=radio]:focus,
+.ui-dialog input[type=radio]:hover:focus,
 .ui-dialog .form-boolean--type-radio,
 .ui-dialog .form-boolean--type-radio:hover,
 .ui-dialog .form-boolean--type-radio:active,
@@ -886,23 +891,30 @@
 }
 
 .ui-dialog .form-radio:hover,
+.ui-dialog input[type=radio]:hover,
 .ui-dialog .form-boolean--type-radio:hover {
   box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2);
 }
 
 .ui-dialog .form-radio:hover, .gin--dark-mode .ui-dialog .form-radio:hover,
+.ui-dialog input[type=radio]:hover,
+.gin--dark-mode .ui-dialog input[type=radio]:hover,
 .ui-dialog .form-boolean--type-radio:hover,
 .gin--dark-mode .ui-dialog .form-boolean--type-radio:hover {
   border-color: var(--gin-color-text);
 }
 
 .ui-dialog .form-radio:active, .ui-dialog .form-radio:focus,
+.ui-dialog input[type=radio]:active,
+.ui-dialog input[type=radio]:focus,
 .ui-dialog .form-boolean--type-radio:active,
 .ui-dialog .form-boolean--type-radio:focus {
   box-shadow: inset 0 0 0 1px var(--gin-border-color-layer2), 0 0 0 1px var(--gin-color-focus-border), 0 0 0 4px var(--gin-color-focus);
 }
 
 .ui-dialog .form-radio:checked:not(:disabled), .ui-dialog .form-radio:checked:not(:disabled):hover,
+.ui-dialog input[type=radio]:checked:not(:disabled),
+.ui-dialog input[type=radio]:checked:not(:disabled):hover,
 .ui-dialog .form-boolean--type-radio:checked:not(:disabled),
 .ui-dialog .form-boolean--type-radio:checked:not(:disabled):hover {
   background-image: none;
@@ -911,6 +923,9 @@
 }
 
 .ui-dialog .form-radio:checked:not(:disabled):active, .ui-dialog .form-radio:checked:not(:disabled):focus, .ui-dialog .form-radio:checked:not(:disabled):hover:focus,
+.ui-dialog input[type=radio]:checked:not(:disabled):active,
+.ui-dialog input[type=radio]:checked:not(:disabled):focus,
+.ui-dialog input[type=radio]:checked:not(:disabled):hover:focus,
 .ui-dialog .form-boolean--type-radio:checked:not(:disabled):active,
 .ui-dialog .form-boolean--type-radio:checked:not(:disabled):focus,
 .ui-dialog .form-boolean--type-radio:checked:not(:disabled):hover:focus {
@@ -919,6 +934,8 @@
 }
 
 .ui-dialog .form-radio:disabled, .ui-dialog .form-radio:disabled:hover,
+.ui-dialog input[type=radio]:disabled,
+.ui-dialog input[type=radio]:disabled:hover,
 .ui-dialog .form-boolean--type-radio:disabled,
 .ui-dialog .form-boolean--type-radio:disabled:hover {
   cursor: not-allowed;
@@ -927,6 +944,8 @@
 }
 
 .ui-dialog .form-radio:checked:disabled, .ui-dialog .form-radio:checked:disabled:hover,
+.ui-dialog input[type=radio]:checked:disabled,
+.ui-dialog input[type=radio]:checked:disabled:hover,
 .ui-dialog .form-boolean--type-radio:checked:disabled,
 .ui-dialog .form-boolean--type-radio:checked:disabled:hover {
   background: var(--gin-color-disabled);
