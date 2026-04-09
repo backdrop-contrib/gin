@@ -77,7 +77,9 @@
       }
 
       Object.keys(settings.tableDrag || {}).forEach((base) => {
-        initTableDrag($(once('tabledrag', `#${base}`, context)), base);
+        $(`#${base}`, context).once('tableDrag').each(function () {
+          initTableDrag($(this), base);
+        });
       });
     },
   };
