@@ -1,0 +1,32 @@
+#simpletest-test-form .table-filter {
+  background-color: var(--gin-bg-app);
+  border-color: var(--gin-border-color);
+}
+
+#simpletest-form-table th.simpletest-test {
+  min-width: 20em;
+  width: auto;
+}
+
+#simpletest-form-table tr.simpletest-group td,
+#simpletest-form-table tr td {
+  background-color: var(--gin-bg-layer);
+  color: var(--gin-color-text);
+}
+
+#simpletest-form-table tr.test-even td {
+  background-color: var(--gin-bg-layer2);
+}
+
+.simpletest-fail {
+  color: var(--gin-color-error);
+}
+
+tr.simpletest-fail {
+  background-color: var(--gin-bg-danger-light);
+  color: var(--gin-color-danger);
+}
+tr.simpletest-fail.odd {
+  background-color: var(--gin-bg-danger);
+  color: var(--gin-color-danger);
+}

@@ -53,6 +53,7 @@ module.exports = {
     'components/gin_references_dialog': ['./styles/components/gin_references_dialog.scss'],
     'components/gin_layout_paragraphs': ['./styles/components/gin_layout_paragraphs.scss'],
     'components/gin_simplei': ['./styles/components/gin_simplei.scss'],
+    'components/gin_simpletest': ['./styles/components/gin_simpletest.scss'],
     'components/inline_entity_form': ['./styles/components/inline_entity_form.scss'],
     'components/project_installer': ['./styles/components/project_installer.scss'],
     'components/maintenance_page': ['./styles/components/maintenance_page.scss'],

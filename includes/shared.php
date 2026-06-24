@@ -159,6 +159,14 @@ function gin_get_module_libraries() {
       ],
       'module' => 'simplei',
     ],
+    'gin_simpletest' => [
+      'title' => 'Simpletest',
+      'version' => BACKDROP_VERSION,
+      'css' => [
+        $basethemeurl . '/dist/css/components/gin_simpletest.css' => $css_options,
+      ],
+      'module' => 'simpletest',
+    ],
     'gin_taxonomy_manager' => [
       'title' => 'Taxonomy Manager',
       'version' => BACKDROP_VERSION,
