@@ -22,6 +22,11 @@ html.admin-bar body {
 .crm-container {
   background-color: transparent;
 
+  a,
+  .ui-widget-content a {
+    color: var(--crm-link-color);
+  }
+
   .crm-hover-button.btn-slide,
   a.crm-hover-button.action-item,
   .crm-submit-buttons .crm-hover-button {
@@ -115,12 +120,28 @@ html.admin-bar body {
   summary {
     font-weight: var(--gin-font-weight-normal);
   }
-  .help {
-    summary {
-      color: var(--gin-color-green-light);
+  .help,
+  #help,
+  .status,
+  .messages,
+  .alert,
+  .alert-success,
+  .status.crm-ok,
+  .status.crm-ok.alert {
+    summary,
+    a {
+      color: var(--crm-alert-success-text-color);
 
       &::before {
-        background-color: var(--gin-color-green-light);
+        background-color: var(--crm-alert-success-background-color);
+      }
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -356,6 +377,11 @@ html.admin-bar body {
         margin-inline-start: 0;
       }
     }
+  }
+
+  table.dataTable.hover tbody tr.even:hover, table.dataTable.display tbody tr.even:hover, table.row-highlight tr.even-row:hover, table.row-highlight tr.even:hover, table tr.even-row.crm-row-selected, .even.crm-row-selected, table tr.even-row:hover, .even:hover, tbody.scrollContent tr.alternateRow:hover, .table.table-striped tr:nth-of-type(2n):has(.crm-search-ctrl-select-row:checked), .table-striped > tbody > tr:nth-of-type(2n):hover {
+    background-color: var(--gin-bg-app);
+    --crm-striped-bg-color: var(--gin-bg-app);
   }
 }
 

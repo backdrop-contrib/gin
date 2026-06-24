@@ -254,6 +254,11 @@ html.admin-bar body {
   background-color: transparent;
 }
 
+.crm-container a,
+.crm-container .ui-widget-content a {
+  color: var(--crm-link-color);
+}
+
 .crm-container .crm-hover-button.btn-slide,
 .crm-container a.crm-hover-button.action-item,
 .crm-container .crm-submit-buttons .crm-hover-button {
@@ -344,12 +349,64 @@ html.admin-bar body {
   font-weight: var(--gin-font-weight-normal);
 }
 
-.crm-container .help summary {
-  color: var(--gin-color-green-light);
+.crm-container .help summary,
+.crm-container .help a,
+.crm-container #help summary,
+.crm-container #help a,
+.crm-container .status summary,
+.crm-container .status a,
+.crm-container .messages summary,
+.crm-container .messages a,
+.crm-container .alert summary,
+.crm-container .alert a,
+.crm-container .alert-success summary,
+.crm-container .alert-success a,
+.crm-container .status.crm-ok summary,
+.crm-container .status.crm-ok a,
+.crm-container .status.crm-ok.alert summary,
+.crm-container .status.crm-ok.alert a {
+  color: var(--crm-alert-success-text-color);
 }
 
-.crm-container .help summary::before {
-  background-color: var(--gin-color-green-light);
+.crm-container .help summary::before,
+.crm-container .help a::before,
+.crm-container #help summary::before,
+.crm-container #help a::before,
+.crm-container .status summary::before,
+.crm-container .status a::before,
+.crm-container .messages summary::before,
+.crm-container .messages a::before,
+.crm-container .alert summary::before,
+.crm-container .alert a::before,
+.crm-container .alert-success summary::before,
+.crm-container .alert-success a::before,
+.crm-container .status.crm-ok summary::before,
+.crm-container .status.crm-ok a::before,
+.crm-container .status.crm-ok.alert summary::before,
+.crm-container .status.crm-ok.alert a::before {
+  background-color: var(--crm-alert-success-background-color);
+}
+
+.crm-container .help a,
+.crm-container #help a,
+.crm-container .status a,
+.crm-container .messages a,
+.crm-container .alert a,
+.crm-container .alert-success a,
+.crm-container .status.crm-ok a,
+.crm-container .status.crm-ok.alert a {
+  text-decoration: underline;
+}
+
+.crm-container .help a:hover,
+.crm-container #help a:hover,
+.crm-container .status a:hover,
+.crm-container .messages a:hover,
+.crm-container .alert a:hover,
+.crm-container .alert-success a:hover,
+.crm-container .status.crm-ok a:hover,
+.crm-container .status.crm-ok.alert a:hover {
+  background-color: rgba(0, 0, 0, .2);
 }
 
 .crm-container #civicrm-getting-started #help {
@@ -654,6 +711,11 @@ html.admin-bar body {
 .crm-container .admin-section-items > dl dd {
   margin-block-start: var(--gin-spacing-s);
   margin-inline-start: 0;
+}
+
+.crm-container table.dataTable.hover tbody tr.even:hover, .crm-container table.dataTable.display tbody tr.even:hover, .crm-container table.row-highlight tr.even-row:hover, .crm-container table.row-highlight tr.even:hover, .crm-container table tr.even-row.crm-row-selected, .crm-container .even.crm-row-selected, .crm-container table tr.even-row:hover, .crm-container .even:hover, .crm-container tbody.scrollContent tr.alternateRow:hover, .crm-container .table.table-striped tr:nth-of-type(2n):has(.crm-search-ctrl-select-row:checked), .crm-container .table-striped > tbody > tr:nth-of-type(2n):hover {
+  background-color: var(--gin-bg-app);
+  --crm-striped-bg-color: var(--gin-bg-app);
 }
 
 .crm-container h3,
