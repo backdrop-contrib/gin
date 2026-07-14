@@ -50,13 +50,13 @@
 
       li.first {
         a {
-          border-top-left-radius: var(--gin-border-m);
+          border-start-start-radius: var(--gin-border-m);
         }
       }
 
       li.last {
         a {
-          border-bottom-left-radius: var(--gin-border-m);
+          border-start-end-radius: var(--gin-border-m);
         }
       }
     }

@@ -27,23 +27,15 @@
   background: var(--gin-color-contextual);
   box-shadow: none;
   min-height: var(--gin-toolbar-y-offset);
+  inset-inline-start: 0;
   top: 0;
   position: absolute;
+  text-align: inline-start;
   width: 100%;
   line-height: 1;
   padding: 0;
   margin: 0;
   z-index: 999;
-}
-
-[dir="ltr"] #admin-bar {
-  inset-inline-start: 0;
-  text-align: start;
-}
-
-[dir="rtl"] #admin-bar {
-  inset-inline-end: 0;
-  text-align: end;
 }
 
 #admin-bar:has(~ .ui-dialog) {

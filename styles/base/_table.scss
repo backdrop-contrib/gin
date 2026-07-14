@@ -383,13 +383,13 @@ table.layout-list tr.layout-group {
     padding: var(--gin-spacing-m) var(--gin-spacing-l);
 
     &:first-child {
-      border-top-left-radius: var(--gin-border-m);
-      border-bottom-left-radius: var(--gin-border-m);
+      border-start-start-radius: var(--gin-border-m);
+      border-end-start-radius: var(--gin-border-m);
     }
 
     &:last-child {
-      border-top-right-radius: var(--gin-border-m);
-      border-bottom-right-radius: var(--gin-border-m);
+      border-start-end-radius: var(--gin-border-m);
+      border-end-end-radius: var(--gin-border-m);
     }
   }
 }

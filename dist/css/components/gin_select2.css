@@ -42,14 +42,7 @@
 .select2-container a.select2-choice .select2-arrow {
   background-image: none;
   background-color: transparent;
-}
-
-[dir="ltr"] .select2-container a.select2-choice .select2-arrow {
   border-inline-start-color: transparent;
-}
-
-[dir="rtl"] .select2-container a.select2-choice .select2-arrow {
-  border-inline-end-color: transparent;
 }
 
 ul.select2-results .select2-highlighted,

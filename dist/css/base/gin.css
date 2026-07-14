@@ -1684,36 +1684,20 @@ table.layout-list tr.layout-group td {
   padding: var(--gin-spacing-m) var(--gin-spacing-l);
 }
 
-[dir="ltr"] table.field-ui-view-modes tr.header td:first-child,
-[dir="ltr"] table.field-ui-overview tr.region-title td:first-child,
-[dir="ltr"] table#permissions tr.module-row td:first-child,
-[dir="ltr"] table.layout-list tr.layout-group td:first-child {
+table.field-ui-view-modes tr.header td:first-child,
+table.field-ui-overview tr.region-title td:first-child,
+table#permissions tr.module-row td:first-child,
+table.layout-list tr.layout-group td:first-child {
   border-start-start-radius: var(--gin-border-m);
   border-end-start-radius: var(--gin-border-m);
 }
 
-[dir="rtl"] table.field-ui-view-modes tr.header td:first-child,
-[dir="rtl"] table.field-ui-overview tr.region-title td:first-child,
-[dir="rtl"] table#permissions tr.module-row td:first-child,
-[dir="rtl"] table.layout-list tr.layout-group td:first-child {
+table.field-ui-view-modes tr.header td:last-child,
+table.field-ui-overview tr.region-title td:last-child,
+table#permissions tr.module-row td:last-child,
+table.layout-list tr.layout-group td:last-child {
   border-start-end-radius: var(--gin-border-m);
   border-end-end-radius: var(--gin-border-m);
-}
-
-[dir="ltr"] table.field-ui-view-modes tr.header td:last-child,
-[dir="ltr"] table.field-ui-overview tr.region-title td:last-child,
-[dir="ltr"] table#permissions tr.module-row td:last-child,
-[dir="ltr"] table.layout-list tr.layout-group td:last-child {
-  border-start-end-radius: var(--gin-border-m);
-  border-end-end-radius: var(--gin-border-m);
-}
-
-[dir="rtl"] table.field-ui-view-modes tr.header td:last-child,
-[dir="rtl"] table.field-ui-overview tr.region-title td:last-child,
-[dir="rtl"] table#permissions tr.module-row td:last-child,
-[dir="rtl"] table.layout-list tr.layout-group td:last-child {
-  border-start-start-radius: var(--gin-border-m);
-  border-end-start-radius: var(--gin-border-m);
 }
 
 table.sticky-enabled tbody tr:has(+ tr.header), table.sticky-enabled tbody tr:has(+ tr.region-title), table.sticky-enabled tbody tr:has(+ tr.module-row),
@@ -3134,20 +3118,12 @@ ul .layout-condition a.layout-button-link {
   border-radius: 0;
 }
 
-[dir="ltr"] .js .dropbutton-multiple .dropbutton li.first a {
+.js .dropbutton-multiple .dropbutton li.first a {
   border-start-start-radius: var(--gin-border-m);
 }
 
-[dir="rtl"] .js .dropbutton-multiple .dropbutton li.first a {
+.js .dropbutton-multiple .dropbutton li.last a {
   border-start-end-radius: var(--gin-border-m);
-}
-
-[dir="ltr"] .js .dropbutton-multiple .dropbutton li.last a {
-  border-end-start-radius: var(--gin-border-m);
-}
-
-[dir="rtl"] .js .dropbutton-multiple .dropbutton li.last a {
-  border-end-end-radius: var(--gin-border-m);
 }
 
 .dropbutton-toggle button::before {

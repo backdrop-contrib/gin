@@ -27,10 +27,10 @@
   background: var(--gin-color-contextual);
   box-shadow: none;
   min-height: var(--gin-toolbar-y-offset);
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
   position: absolute;
-  text-align: left;
+  text-align: inline-start;
   width: 100%;
   line-height: 1;
   padding: 0;
