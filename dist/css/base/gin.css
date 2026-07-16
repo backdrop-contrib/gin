@@ -990,12 +990,8 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
   background: var(--gin-color-primary);
 }
 
-[dir="ltr"] #views-display-menu-tabs span.icon {
+#views-display-menu-tabs span.icon {
   float: start;
-}
-
-[dir="rtl"] #views-display-menu-tabs span.icon {
-  float: end;
 }
 
 .views-ui-display-tab-bucket__header {
@@ -1170,19 +1166,12 @@ a.views-field-excluded {
 }
 
 .views-display-columns > * {
+  float: start;
   width: 32%;
   margin-block-end: 0;
   margin-block: 0 var(--gin-spacing-l);
   margin-inline: 0;
   margin-inline-start: 2%;
-}
-
-[dir="ltr"] .views-display-columns > * {
-  float: start;
-}
-
-[dir="rtl"] .views-display-columns > * {
-  float: end;
 }
 
 @media screen and (min-width: 60rem) {
@@ -1470,21 +1459,12 @@ table.views-table th > a::after,
           mask-position: center center;
   position: absolute;
   top: 50%;
+  inset-inline-end: 1rem;
   width: .875rem;
   height: 1rem;
   margin-block-start: -0.5rem;
   content: "";
   opacity: .5;
-}
-
-[dir="ltr"] table.views-table th > a::after,
-[dir="ltr"] .sortable-heading > a::after {
-  inset-inline-end: 1rem;
-}
-
-[dir="rtl"] table.views-table th > a::after,
-[dir="rtl"] .sortable-heading > a::after {
-  inset-inline-start: 1rem;
 }
 
 @media (forced-colors: active) {

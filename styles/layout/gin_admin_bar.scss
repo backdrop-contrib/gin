@@ -84,7 +84,8 @@
   #admin-bar-extra .dropdown > li > a,
   #admin-bar-menu > li > .dropdown > li > a,
   #admin-bar-menu.dropdown li > span.menu {
-    padding: var(--gin-spacing-m) var(--gin-spacing-s) var(--gin-spacing-m) var(--gin-spacing-xs);
+    padding-block: var(--gin-spacing-m);
+    padding-inline: var(--gin-spacing-xs) var(--gin-spacing-s);
 
     &::before {
       content: '';
@@ -272,7 +273,8 @@
     font-size: var(--gin-font-size-xxs);
     line-height: 1;
     min-height: calc(var(--input-padding-vertical) * 2 + 1);
-    padding: var(--gin-spacing-xs) var(--gin-spacing-xl) var(--gin-spacing-xs) var(--gin-spacing-m);
+    padding-block: var(--gin-spacing-xs);
+    padding-inline: var(--gin-spacing-m) var(--gin-spacing-xl);
     background: var(--gin-bg-input);
     background-size: var(--gin-icon-size-toolbar-secondary) var(--gin-icon-size-toolbar-secondary);
     border: 1px solid var(--gin-border-color-form-element);
@@ -287,9 +289,8 @@
       content: '';
       display: block;
       position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      inset-inline-end: 0;
+      inset-block-end: 0;
       width: var(--gin-icon-size-toolbar);
       background-color: var(--gin-color-text);
       mask-image: icon('search');
@@ -410,13 +411,12 @@
 }
 
 #admin-bar li {
-
   > a,
   > span {
     background: transparent none;
     border: none;
     font-weight: normal;
-    text-align: left;
+    text-align: start;
     text-decoration: none;
   }
 }
@@ -454,7 +454,7 @@
    read by screen readers). */
 #admin-bar .dropdown li ul {
   display: none;
-  left: -999em;
+  inset-inline-start: -999em;
   line-height: 1.2em;
   margin: 0;
   position: absolute;
@@ -478,7 +478,8 @@
 
 /* Third-and-above-level lists. */
 #admin-bar .dropdown li li.expandable ul {
-  margin: -32px 0 0 180px;
+  margin-block: -32px 0;
+  margin-inline: 180px 0;
   border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
 }
 
@@ -498,7 +499,7 @@
 /* Lists nested under hovered list items. */
 #admin-bar .dropdown ul.expanded {
   display: block;
-  left: auto;
+  inset-inline-start: auto;
 }
 
 /* Icon menu. */
@@ -534,7 +535,8 @@
     font-size: 12px;
     margin: 0;
     outline: none;
-    padding: 5px 22px 3px 8px;
+    padding-block: 5px 3px;
+    padding-inline: 8px 22px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -542,7 +544,7 @@
 
 #admin-bar .admin-bar-search-results .dropdown {
   display: block;
-  left: auto;
+  inset-inline-start: auto;
   top: 100%;
 }
 
@@ -582,7 +584,8 @@ tr.admin-bar-tweak-permissions-processed td.module {
 /* Alert colors. */
 #admin-bar .admin-bar-alert .error-count {
   box-sizing: content-box;
-  padding: 4px 5px 5px 4px;
+  padding-block: 4px 5px;
+  padding-inline: 4px 5px;
   display: inline-block;
   min-width: 13px;
   border-radius: 2em;

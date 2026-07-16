@@ -210,7 +210,7 @@ table.views-table th,
     mask-position: center center;
     position: absolute;
     top: 50%;
-    right: 1rem;
+    inset-inline-end: 1rem;
     width: 0.875rem;
     height: 1rem;
     margin-block-start: -0.5rem;
