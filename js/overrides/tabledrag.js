@@ -440,10 +440,7 @@
 
     // Trigger an event to allow other scripts to react to this display change.
     // Force the extra parameter as a boolean.
-    $(once.filter('tabledrag', 'table')).trigger(
-      'columnschange',
-      !!displayWeight,
-    );
+    $('table.tableDrag-processed').trigger('columnschange', !!displayWeight);
   };
 
   /**
@@ -469,7 +466,7 @@
    * Undo showColumns().
    */
   Backdrop.tableDrag.prototype.hideColumns = function () {
-    const $tables = $(once.filter('tabledrag', 'table'));
+    const $tables = $('table.tableDrag-processed');
     // Hide weight/parent cells and headers.
     $tables.find('.tabledrag-hide').each(function () {
       this.style.display = 'none';
@@ -490,7 +487,7 @@
    * Undo hideColumns().
    */
   Backdrop.tableDrag.prototype.showColumns = function () {
-    const $tables = $(once.filter('tabledrag', 'table'));
+    const $tables = $('table.tableDrag-processed');
     // Show weight/parent cells and headers.
     $tables.find('.tabledrag-hide').each(function () {
       this.style.display = '';
