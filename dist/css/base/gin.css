@@ -3120,18 +3120,17 @@ ul .layout-condition a.layout-button-link {
   width: .75rem;
   position: absolute;
   top: 50%;
+  inset-inline-end: 50%;
   height: .5625rem;
   content: "";
   background-size: contain;
 }
 
 [dir="ltr"] .dropbutton-toggle button::before {
-  inset-inline-end: 50%;
   transform: translate(50%, -50%) rotate(0);
 }
 
 [dir="rtl"] .dropbutton-toggle button::before {
-  inset-inline-start: 50%;
   transform: translate(-50%, -50%) rotate(0);
 }
 

@@ -74,6 +74,7 @@
 #admin-bar #admin-bar-icon .icon,
 #admin-bar #admin-bar-extra .dropdown > li > span,
 #admin-bar #admin-bar-extra .dropdown > li > a,
+#admin-bar #admin-bar-extra li > span.extra,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a,
 #admin-bar #admin-bar-menu.dropdown li > span.menu {
   padding-block: var(--gin-spacing-m);
@@ -83,6 +84,7 @@
 #admin-bar #admin-bar-icon .icon::before,
 #admin-bar #admin-bar-extra .dropdown > li > span::before,
 #admin-bar #admin-bar-extra .dropdown > li > a::before,
+#admin-bar #admin-bar-extra li > span.extra::before,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a::before,
 #admin-bar #admin-bar-menu.dropdown li > span.menu::before {
   content: "";
@@ -99,6 +101,7 @@
 #admin-bar #admin-bar-icon .icon:hover,
 #admin-bar #admin-bar-extra .dropdown > li > span:hover,
 #admin-bar #admin-bar-extra .dropdown > li > a:hover,
+#admin-bar #admin-bar-extra li > span.extra:hover,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a:hover,
 #admin-bar #admin-bar-menu.dropdown li > span.menu:hover {
   color: var(--gin-color-primary);
@@ -108,6 +111,7 @@
 #admin-bar #admin-bar-icon .icon:hover::before,
 #admin-bar #admin-bar-extra .dropdown > li > span:hover::before,
 #admin-bar #admin-bar-extra .dropdown > li > a:hover::before,
+#admin-bar #admin-bar-extra li > span.extra:hover::before,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a:hover::before,
 #admin-bar #admin-bar-menu.dropdown li > span.menu:hover::before {
   background-color: var(--gin-color-primary-active);
@@ -116,6 +120,7 @@
 #admin-bar #admin-bar-icon .icon.active-trail,
 #admin-bar #admin-bar-extra .dropdown > li > span.active-trail,
 #admin-bar #admin-bar-extra .dropdown > li > a.active-trail,
+#admin-bar #admin-bar-extra li > span.extra.active-trail,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail,
 #admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail {
   color: var(--gin-color-primary);
@@ -126,6 +131,7 @@
 #admin-bar #admin-bar-icon .icon.active-trail::before,
 #admin-bar #admin-bar-extra .dropdown > li > span.active-trail::before,
 #admin-bar #admin-bar-extra .dropdown > li > a.active-trail::before,
+#admin-bar #admin-bar-extra li > span.extra.active-trail::before,
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.active-trail::before,
 #admin-bar #admin-bar-menu.dropdown li > span.menu.active-trail::before {
   background-color: var(--gin-color-primary-active);
@@ -263,13 +269,14 @@
   display: block;
   position: absolute;
   inset-inline-end: 0;
+  inset-block-start: 0;
   inset-block-end: 0;
   width: var(--gin-icon-size-toolbar);
   background-color: var(--gin-color-text);
   -webkit-mask-image: url("../../media/sprite.svg#search-view");
           mask-image: url("../../media/sprite.svg#search-view");
-  -webkit-mask-position: center right;
-          mask-position: center right;
+  -webkit-mask-position: center inline-end;
+          mask-position: center inline-end;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -305,7 +312,7 @@
 }
 
 #admin-bar-wrapper #admin-bar-extra {
-  min-width: 100px;
+  min-width: 180px;
 }
 
 #admin-bar-wrapper > .dropdown {
@@ -478,6 +485,7 @@
   border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
 }
 
+#admin-bar .dropdown li li.expandable.outside-left ul,
 #admin-bar .dropdown li li.expandable.outside-right ul {
   margin-inline-start: -180px;
 }

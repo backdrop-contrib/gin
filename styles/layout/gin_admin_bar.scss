@@ -82,6 +82,7 @@
   #admin-bar-icon .icon,
   #admin-bar-extra .dropdown > li > span,
   #admin-bar-extra .dropdown > li > a,
+  #admin-bar-extra li > span.extra,
   #admin-bar-menu > li > .dropdown > li > a,
   #admin-bar-menu.dropdown li > span.menu {
     padding-block: var(--gin-spacing-m);
@@ -290,11 +291,12 @@
       display: block;
       position: absolute;
       inset-inline-end: 0;
+      inset-block-start: 0;
       inset-block-end: 0;
       width: var(--gin-icon-size-toolbar);
       background-color: var(--gin-color-text);
       mask-image: icon('search');
-      mask-position: center right;
+      mask-position: center inline-end;
       mask-repeat: no-repeat;
       mask-size: contain;
       // Manually adjusting this because it doesn't seem to work on input elements
@@ -335,7 +337,7 @@
   }
 
   #admin-bar-extra {
-    min-width: 100px;
+    min-width: 180px;
   }
 
   > .dropdown {
@@ -492,6 +494,7 @@
   }
 }
 
+#admin-bar .dropdown li li.expandable.outside-left ul,
 #admin-bar .dropdown li li.expandable.outside-right ul {
   margin-inline-start: -180px;
 }

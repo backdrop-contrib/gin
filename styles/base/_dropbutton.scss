@@ -75,7 +75,7 @@
       width: 0.75rem;
       position: absolute;
       top: 50%;
-      right: 50%;
+      inset-inline-end: 50%;
       height: 0.5625rem;
       content: "";
       transform: translate(50%, -50%) rotate(0);
