@@ -440,7 +440,10 @@
   position: absolute;
   width: 180px;
   background-color: var(--gin-bg-layer2);
-  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+  border-end-start-radius: var(--gin-border-s);
+  border-end-end-radius: var(--gin-border-s);
 }
 
 #admin-bar .dropdown li ul a:hover, #admin-bar .dropdown li ul li:hover {
@@ -449,7 +452,10 @@
 }
 
 #admin-bar .dropdown li ul li:last-child:hover, #admin-bar .dropdown li ul li:last-child a:hover {
-  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+  border-end-start-radius: var(--gin-border-s);
+  border-end-end-radius: var(--gin-border-s);
 }
 
 /* Third-and-above-level lists. */
@@ -457,37 +463,32 @@
 #admin-bar .dropdown li li.expandable ul {
   margin-block: -32px 0;
   margin-inline: 180px 0;
+  border-start-start-radius: 0;
+  border-start-end-radius: var(--gin-border-s);
+  border-end-start-radius: 0;
+  border-end-end-radius: var(--gin-border-s);
 }
 
-[dir="ltr"] #admin-bar .dropdown li li.expandable ul {
-  border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
-}
-
-[dir="rtl"] #admin-bar .dropdown li li.expandable ul {
-  border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
-}
-
-[dir="ltr"] #admin-bar-extra .dropdown li li.expandable ul {
-  border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
-}
-
-[dir="rtl"] #admin-bar-extra .dropdown li li.expandable ul {
-  border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
-}
-
-[dir="ltr"] #admin-bar-extra .dropdown li li.expandable ul a:hover,
-[dir="ltr"] #admin-bar-extra .dropdown li li.expandable ul li:hover {
-  border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
-}
-
-[dir="rtl"] #admin-bar-extra .dropdown li li.expandable ul a:hover,
-[dir="rtl"] #admin-bar-extra .dropdown li li.expandable ul li:hover {
-  border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
+#admin-bar-extra .dropdown li li.expandable ul, #admin-bar-extra .dropdown li li.expandable ul a, #admin-bar-extra .dropdown li li.expandable ul li {
+  border-start-start-radius: 0;
+  border-start-end-radius: var(--gin-border-s);
+  border-end-start-radius: 0;
+  border-end-end-radius: var(--gin-border-s);
 }
 
 #admin-bar .dropdown li li.expandable.outside-left ul,
 #admin-bar .dropdown li li.expandable.outside-right ul {
   margin-inline-start: -180px;
+}
+
+#admin-bar .dropdown li li.expandable.outside-left ul, #admin-bar .dropdown li li.expandable.outside-left ul a, #admin-bar .dropdown li li.expandable.outside-left ul li,
+#admin-bar .dropdown li li.expandable.outside-right ul,
+#admin-bar .dropdown li li.expandable.outside-right ul a,
+#admin-bar .dropdown li li.expandable.outside-right ul li {
+  border-start-start-radius: var(--gin-border-s);
+  border-start-end-radius: 0;
+  border-end-start-radius: var(--gin-border-s);
+  border-end-end-radius: 0;
 }
 
 /* Lists nested under hovered list items. */

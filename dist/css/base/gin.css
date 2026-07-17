@@ -1523,19 +1523,12 @@ table.views-table th.is-active > a::after,
           mask-position: 0 50%;
   opacity: 1;
   position: absolute;
-  top: 50%;
+  inset-block-start: 50%;
+  inset-inline-end: 1rem;
   width: .875rem;
   height: 1rem;
   margin-block-start: -0.5rem;
   display: inline-block;
-}
-
-[dir="ltr"] .tablesort {
-  inset-inline-end: 1rem;
-}
-
-[dir="rtl"] .tablesort {
-  inset-inline-start: 1rem;
 }
 
 .tablesort--asc,

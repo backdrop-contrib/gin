@@ -462,7 +462,10 @@
   position: absolute;
   width: 180px;
   background-color: var(--gin-bg-layer2);
-  border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
+  border-end-start-radius: var(--gin-border-s);
+  border-end-end-radius: var(--gin-border-s);
 
   & a:hover,
   & li:hover {
@@ -473,7 +476,10 @@
   & li:last-child {
     &:hover,
     & a:hover {
-      border-radius: 0 0 var(--gin-border-s) var(--gin-border-s);
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
+      border-end-start-radius: var(--gin-border-s);
+      border-end-end-radius: var(--gin-border-s);
     }
   }
 }
@@ -482,21 +488,36 @@
 #admin-bar .dropdown li li.expandable ul {
   margin-block: -32px 0;
   margin-inline: 180px 0;
-  border-radius: 0 var(--gin-border-s) var(--gin-border-s) 0;
+  border-start-start-radius: 0;
+  border-start-end-radius: var(--gin-border-s);
+  border-end-start-radius: 0;
+  border-end-end-radius: var(--gin-border-s);
 }
 
 #admin-bar-extra .dropdown li li.expandable ul {
-  border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
 
-  a:hover,
-  li:hover {
-    border-radius: var(--gin-border-s) 0 0 var(--gin-border-s);
+  &,
+  & a,
+  & li {
+    border-start-start-radius: 0;
+    border-start-end-radius: var(--gin-border-s);
+    border-end-start-radius: 0;
+    border-end-end-radius: var(--gin-border-s);
   }
 }
 
 #admin-bar .dropdown li li.expandable.outside-left ul,
 #admin-bar .dropdown li li.expandable.outside-right ul {
   margin-inline-start: -180px;
+
+  &,
+  & a,
+  & li {
+    border-start-start-radius: var(--gin-border-s);
+    border-start-end-radius: 0;
+    border-end-start-radius: var(--gin-border-s);
+    border-end-end-radius: 0;
+  }
 }
 
 /* Lists nested under hovered list items. */

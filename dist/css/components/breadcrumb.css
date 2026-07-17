@@ -70,6 +70,10 @@
           mask-position: center center;
 }
 
+[dir=rtl] .gin-breadcrumb__item:first-of-type .gin-breadcrumb__link::before {
+  transform: translateY(-50%) scaleX(-1);
+}
+
 @media (forced-colors: active) {
   .gin-breadcrumb__item:first-of-type .gin-breadcrumb__link::before {
     background: linktext;

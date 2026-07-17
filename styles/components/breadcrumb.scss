@@ -64,6 +64,10 @@
       mask-size: 100% 100%;
       mask-position: center center;
 
+      [dir="rtl"] & {
+        transform: translateY(-50%) scaleX(-1);
+      }
+
       // forced color style for breadcrumbs
       @media (forced-colors: active) {
         background: linktext;
