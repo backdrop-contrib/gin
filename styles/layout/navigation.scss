@@ -20,7 +20,7 @@
   @include mq(medium) {
     --gin-toolbar-height: 0px; // Needs px to work in calc() functions.
     --gin-toolbar-secondary-height: 52px;
-    --gin-toolbar-x-offset: var(--drupal-displace-offset-left, 64px);
+    --gin-toolbar-x-offset: 64px;
     --gin-scroll-offset: 130px;
     --gin-sticky-offset: var(--gin-height-sticky);
   }
@@ -28,7 +28,7 @@
 
 html.admin-toolbar-expanded {
   @include mq(medium) {
-    --gin-toolbar-x-offset: var(--drupal-displace-offset-left, 264px);
+    --gin-toolbar-x-offset: 264px;
   }
 }
 

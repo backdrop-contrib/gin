@@ -353,13 +353,14 @@ fieldset.collapsible {
 
     a.fieldset-title {
       background: transparent;
-      padding: var(--gin-spacing-m) var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-xxl);
+      padding-block: var(--gin-spacing-m);
+      padding-inline: var(--gin-spacing-xxl) var(--gin-spacing-l);
       max-width: calc(100% - var(--gin-spacing-l) - var(--gin-spacing-xxl) - 4px);
     }
 
     .fieldset-title::before {
-      top: 50%;
-      left: 1.125rem;
+      inset-block-start: 50%;
+      inset-inline-start: 1.125rem;
       background: var(--gin-color-text);
       mask-image: icon('handle');
       mask-repeat: no-repeat;
@@ -430,7 +431,18 @@ fieldset:not(.fieldgroup) {
   }
 
   > .fieldset-wrapper {
-    padding: 0 var(--gin-spacing-l) var(--gin-spacing-m) var(--gin-spacing-l);
+    padding-block: 0 var(--gin-spacing-m);
+    padding-inline: var(--gin-spacing-l);
+  }
+}
+
+fieldset.collapsible.collapse-processed {
+  .fieldset-legend {
+    .fieldset-title {
+      padding-block: var(--gin-spacing-m);
+      padding-inline: var(--gin-spacing-xxl) var(--gin-spacing-l);
+      background-image: none;
+    }
   }
 }
 

@@ -210,7 +210,7 @@ table.views-table th,
     mask-position: center center;
     position: absolute;
     top: 50%;
-    right: 1rem;
+    inset-inline-end: 1rem;
     width: 0.875rem;
     height: 1rem;
     margin-block-start: -0.5rem;
@@ -262,8 +262,8 @@ table.views-table th,
   mask-position: 0 50%;
   opacity: 1;
   position: absolute;
-  top: 50%;
-  right: 1rem;
+  inset-block-start: 50%;
+  inset-inline-end: 1rem;
   width: 0.875rem;
   height: 1rem;
   margin-block-start: -0.5rem;
@@ -383,13 +383,13 @@ table.layout-list tr.layout-group {
     padding: var(--gin-spacing-m) var(--gin-spacing-l);
 
     &:first-child {
-      border-top-left-radius: var(--gin-border-m);
-      border-bottom-left-radius: var(--gin-border-m);
+      border-start-start-radius: var(--gin-border-m);
+      border-end-start-radius: var(--gin-border-m);
     }
 
     &:last-child {
-      border-top-right-radius: var(--gin-border-m);
-      border-bottom-right-radius: var(--gin-border-m);
+      border-start-end-radius: var(--gin-border-m);
+      border-end-end-radius: var(--gin-border-m);
     }
   }
 }

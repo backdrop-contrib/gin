@@ -53,7 +53,7 @@
   & ~ .dialog-off-canvas-main-canvas {
     // Gin Custom start ---------------------
     @include mq(medium) {
-      margin-inline-start: var(--drupal-displace-offset-left, var(--sidebar-width));
+      margin-inline-start: var(--sidebar-width);
       transition: margin-inline-start 0.2s linear;
     }
     // Gin Custom end ------------------------

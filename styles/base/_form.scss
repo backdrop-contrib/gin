@@ -71,13 +71,13 @@
   border-radius: var(--gin-border-m);
 
   &:has(.grippie) .form-textarea {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
   }
 
   .grippie {
-    border-bottom-left-radius: var(--gin-border-m);
-    border-bottom-right-radius: var(--gin-border-m);
+    border-end-start-radius: var(--gin-border-m);
+    border-end-end-radius: var(--gin-border-m);
     border-color: var(--gin-border-color-form-element);
     background-color: var(--gin-bg-input);
   }
@@ -92,8 +92,8 @@
 
     .form-textarea-wrapper,
     .cke.cke_chrome {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
     }
   }
 
@@ -104,8 +104,8 @@
     & > legend,
     & > legend .fieldset-legend,
     & > legend .fieldset-legend a {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
     }
 
     a.fieldset-title {
