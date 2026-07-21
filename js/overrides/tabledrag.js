@@ -258,7 +258,7 @@
         .appendTo(testRow)
         .prepend(indent)
         .prepend(indent);
-      const $indentation = testCell.find('.js-indentation');
+      const $indentation = testCell.find('.indentation');
 
       /**
        *
@@ -554,13 +554,13 @@
     // Insert the handle after indentations (if any).
     const $indentationLast = $item
       .find('td:first-of-type')
-      .find('.js-indentation')
+      .find('.indentation')
       .eq(-1);
     if ($indentationLast.length) {
       $indentationLast.after($handle);
       // Update the total width of indentation in this entire table.
       self.indentCount = Math.max(
-        $item.find('.js-indentation').length,
+        $item.find('.indentation').length,
         self.indentCount,
       );
     } else {
@@ -653,7 +653,7 @@
               groupHeight = 0;
               while (
                 previousRow &&
-                $previousRow.find('.js-indentation').length
+                $previousRow.find('.indentation').length
               ) {
                 $previousRow = $(previousRow).prev('tr').eq(0);
                 previousRow = $previousRow.get(0);
@@ -1120,8 +1120,8 @@
       ) {
         if (this.indentEnabled) {
           if (
-            $previousRow.find('.js-indentations').length ===
-            $changedRow.find('.js-indentations').length
+            $previousRow.find('.indentations').length ===
+            $changedRow.find('.indentations').length
           ) {
             sourceRow = previousRow;
           }
@@ -1135,8 +1135,8 @@
       ) {
         if (this.indentEnabled) {
           if (
-            $nextRow.find('.js-indentations').length ===
-            $changedRow.find('.js-indentations').length
+            $nextRow.find('.indentations').length ===
+            $changedRow.find('.indentations').length
           ) {
             sourceRow = nextRow;
           }
@@ -1152,7 +1152,7 @@
       previousRow = $previousRow;
       while (
         $previousRow.length &&
-        $previousRow.find('.js-indentation').length >= this.rowObject.indents
+        $previousRow.find('.indentation').length >= this.rowObject.indents
       ) {
         $previousRow = $previousRow.prev('tr');
         previousRow = $previousRow;
@@ -1201,7 +1201,7 @@
           // Get the depth of the target row.
           targetElement.value = $(sourceElement)
             .closest('tr')
-            .find('.js-indentation').length;
+            .find('.indentation').length;
           break;
 
         case 'match':
@@ -1410,7 +1410,7 @@
     this.element = tableRow;
     this.method = method;
     this.group = [tableRow];
-    this.groupDepth = $tableRow.find('.js-indentation').length;
+    this.groupDepth = $tableRow.find('.indentation').length;
     this.changed = false;
     this.table = $tableRow.closest('table')[0];
     this.indentEnabled = indentEnabled;
@@ -1418,13 +1418,13 @@
     // Direction the row is being moved.
     this.direction = '';
     if (this.indentEnabled) {
-      this.indents = $tableRow.find('.js-indentation').length;
+      this.indents = $tableRow.find('.indentation').length;
       this.children = this.findChildren(addClasses);
       this.group = this.group.concat(this.children);
       // Find the depth of this entire group.
       for (let n = 0; n < this.group.length; n++) {
         this.groupDepth = Math.max(
-          $(this.group[n]).find('.js-indentation').length,
+          $(this.group[n]).find('.indentation').length,
           this.groupDepth,
         );
       }
@@ -1496,11 +1496,11 @@
 
     while (currentRow.length) {
       // A greater indentation indicates this is a child.
-      if (currentRow.find('.js-indentation').length > parentIndentation) {
+      if (currentRow.find('.indentation').length > parentIndentation) {
         child++;
         rows.push(currentRow[0]);
         if (addClasses) {
-          currentRow.find('.js-indentation').each(rowIndentation);
+          currentRow.find('.indentation').each(rowIndentation);
         }
       } else {
         break;
@@ -1509,7 +1509,7 @@
     }
     if (addClasses && rows.length) {
       $(rows[rows.length - 1])
-        .find(`.js-indentation:nth-child(${parentIndentation + 1})`)
+        .find(`.indentation:nth-child(${parentIndentation + 1})`)
         .addClass('tree-child-last');
     }
     return rows;
@@ -1597,7 +1597,7 @@
 
     // Minimum indentation:
     // Do not orphan the next row.
-    const minIndent = nextRow ? $(nextRow).find('.js-indentation').length : 0;
+    const minIndent = nextRow ? $(nextRow).find('.indentation').length : 0;
 
     // Maximum indentation:
     if (
@@ -1613,7 +1613,7 @@
     } else {
       // Do not go deeper than as a child of the previous row.
       maxIndent =
-        $prevRow.find('.js-indentation').length +
+        $prevRow.find('.indentation').length +
         (prevRow.matches('.tabledrag-leaf') ? 0 : 1);
 
       // Limit by the maximum allowed depth for the table.
@@ -1657,7 +1657,7 @@
     for (let n = 1; n <= Math.abs(indentDiff); n++) {
       // Add or remove indentations.
       if (indentDiff < 0) {
-        $group.find('.js-indentation:first-of-type').remove();
+        $group.find('.indentation:first-of-type').remove();
         this.indents--;
       } else {
         $group
@@ -1703,7 +1703,7 @@
           // Either add immediately if this is a flat table, or check to ensure
           // that this row has the same level of indentation.
           if (this.indentEnabled) {
-            checkRowIndentation = checkRow.find('.js-indentation').length;
+            checkRowIndentation = checkRow.find('.indentation').length;
           }
 
           if (!this.indentEnabled || checkRowIndentation === rowIndentation) {
@@ -1733,7 +1733,7 @@
   Backdrop.tableDrag.prototype.row.prototype.removeIndentClasses = function () {
     Object.keys(this.children || {}).forEach((n) => {
       $(this.children[n])
-        .find('.js-indentation')
+        .find('.indentation')
         .removeClass('tree-child')
         .removeClass('tree-child-first')
         .removeClass('tree-child-last')
