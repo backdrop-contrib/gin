@@ -1794,7 +1794,7 @@
        *   Markup for the indentation.
        */
       tableDragIndentation() {
-        return '<div class="js-indentation indentation">&nbsp;</div>';
+        return '<div class="indentation">&nbsp;</div>';
       },
 
       /**
