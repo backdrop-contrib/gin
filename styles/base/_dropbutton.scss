@@ -47,18 +47,6 @@
       a:focus {
         border-radius: 0;
       }
-
-      li.first {
-        a {
-          border-start-start-radius: var(--gin-border-m);
-        }
-      }
-
-      li.last {
-        a {
-          border-start-end-radius: var(--gin-border-m);
-        }
-      }
     }
   }
 }
