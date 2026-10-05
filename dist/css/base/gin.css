@@ -3091,14 +3091,6 @@ ul .layout-condition a.layout-button-link {
   border-radius: 0;
 }
 
-.js .dropbutton-multiple .dropbutton li.first a {
-  border-start-start-radius: var(--gin-border-m);
-}
-
-.js .dropbutton-multiple .dropbutton li.last a {
-  border-start-end-radius: var(--gin-border-m);
-}
-
 .dropbutton-toggle button::before {
   background-image: none;
   background-color: var(--gin-color-primary);
