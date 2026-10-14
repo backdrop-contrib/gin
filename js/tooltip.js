@@ -1,10 +1,10 @@
-((Drupal, once, { computePosition, offset, shift, flip }) => {
+((Backdrop, once, { computePosition, offset, shift, flip }) => {
   /**
    * Theme function for a tooltip.
    *
    * @param {object} dataset
    *   The dataset object.
-   * @param {string} dataset.drupalTooltipClass
+   * @param {string} dataset.backdropTooltipClass
    *   Extra class for theming.
    * @param {string} dataset.drupalTooltip
    *   The text for tooltip.
@@ -14,17 +14,28 @@
    * @return {HTMLElement}
    *   A DOM Node.
    */
-  Backdrop.theme.ginTooltipWrapper = (dataset, title) =>
-    `<div class="gin-tooltip ${dataset.drupalTooltipClass || ''}">
-      ${dataset.drupalTooltip || title}
-    </div>`;
+  Backdrop.theme.ginTooltipWrapper = (dataset, title) => {
+    const el = document.createElement('div');
+    el.classList.add('gin-tooltip');
+    if (dataset.backdropTooltipClass) {
+      dataset.backdropTooltipClass
+        .split(/\s+/)
+        .filter((token) => token !== '')
+        .forEach((token) => {
+          el.classList.add(token);
+        });
+    }
+    el.textContent = dataset.drupalTooltip || title || '';
+    return el;
+  };
+
 
   /**
    * Attaches the tooltip behavior to all required triggers.
    *
-   * @type {Drupal~behavior}
+   * @type {Backdrop~behavior}
    *
-   * @prop {Drupal~behaviorAttach} attach
+   * @prop {Backdrop~behaviorAttach} attach
    *   Attaches the tooltip behavior.
    */
 
@@ -45,7 +56,7 @@
             trigger.title = '';
           }
 
-          trigger.insertAdjacentHTML(
+          trigger.insertAdjacentElement(
             'afterend',
             Backdrop.theme.ginTooltipWrapper(trigger.dataset, title),
           );
@@ -88,4 +99,4 @@
       });
     },
   };
-})(Drupal, once, FloatingUIDOM);
+})(Backdrop, once, FloatingUIDOM);
