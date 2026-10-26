@@ -4113,7 +4113,7 @@ details {
 
 details summary {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   min-width: calc(100% - 2px - var(--gin-spacing-l) - var(--gin-spacing-xxl));
   border-radius: var(--gin-border-m);
   border-block-start: 1px solid var(--gin-border-color);
