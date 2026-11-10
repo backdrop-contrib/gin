@@ -24,7 +24,7 @@
 #admin-bar {
   font-family: var(--gin-font);
   font-size: small;
-  background: var(--gin-color-contextual);
+  background-color: var(--simplei-background-color, var(--gin-color-contextual));
   box-shadow: none;
   min-height: var(--gin-toolbar-y-offset);
   inset-inline-start: 0;
