@@ -67,18 +67,11 @@ table.update,
 
 // Don't display the gin-layer-wrapper styles when there is another nested
 // inside of it (e.g. the configuration landing page, views, etc.).
-.gin-layer-wrapper {
-
-  &:has(> .view),
-  &:has(> table.update),
-  &:has(> .views-admin),
-  &:has(> .admin-list),
-  &:has(> .admin) {
-    border: none;
-    padding: 0;
-    background: none;
-    box-shadow: none;
-  }
+.gin-layer-wrapper:has(.gin-layer-wrapper) {
+  border: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .field-config-form > .form-item:first-child {

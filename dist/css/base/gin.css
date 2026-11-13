@@ -488,7 +488,7 @@ table.update .layout-region-node-main > .form-wrapper:first-of-type .form-item,
   margin-block-start: 0;
 }
 
-.gin-layer-wrapper:has(> .view), .gin-layer-wrapper:has(> table.update), .gin-layer-wrapper:has(> .views-admin), .gin-layer-wrapper:has(> .admin-list), .gin-layer-wrapper:has(> .admin) {
+.gin-layer-wrapper:has(.gin-layer-wrapper) {
   border: none;
   padding: 0;
   background: none;
@@ -5493,6 +5493,11 @@ table.sticky-enabled {
 
 .panel__content.block-content h3 {
   margin-block-start: 0;
+}
+
+.panel__content.block-content:has(.gin-layer-wrapper) {
+  padding: 0;
+  margin: 0;
 }
 
 fieldset {

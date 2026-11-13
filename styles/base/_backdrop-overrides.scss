@@ -315,8 +315,15 @@ a.button-primary:focus:hover {
     h3 {
       margin-block-start: 0;
     }
+
+    // Remove panel padding and margin if it contains another nested gin-layer-wrapper.
+    &:has(.gin-layer-wrapper) {
+      padding: 0;
+      margin: 0;
+    }
   }
 }
+
 
 fieldset {
   border-radius: var(--gin-border-m);
